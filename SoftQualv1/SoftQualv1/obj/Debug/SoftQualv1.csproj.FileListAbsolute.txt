@@ -1,0 +1,6 @@
+C:\Users\Duane Cressman\Documents\OneDrive - Conestoga College\Software Quality\Code\TMS\SoftQualv1\SoftQualv1\bin\Debug\SoftQualv1.exe.config
+C:\Users\Duane Cressman\Documents\OneDrive - Conestoga College\Software Quality\Code\TMS\SoftQualv1\SoftQualv1\bin\Debug\SoftQualv1.exe
+C:\Users\Duane Cressman\Documents\OneDrive - Conestoga College\Software Quality\Code\TMS\SoftQualv1\SoftQualv1\bin\Debug\SoftQualv1.pdb
+C:\Users\Duane Cressman\Documents\OneDrive - Conestoga College\Software Quality\Code\TMS\SoftQualv1\SoftQualv1\obj\Debug\SoftQualv1.csprojAssemblyReference.cache
+C:\Users\Duane Cressman\Documents\OneDrive - Conestoga College\Software Quality\Code\TMS\SoftQualv1\SoftQualv1\obj\Debug\SoftQualv1.exe
+C:\Users\Duane Cressman\Documents\OneDrive - Conestoga College\Software Quality\Code\TMS\SoftQualv1\SoftQualv1\obj\Debug\SoftQualv1.pdb
