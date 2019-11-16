@@ -9,7 +9,7 @@
     <TabControl>
         <TabItem Name="Buyer" Header="Buyer Tab">
             <TabItem.ContextMenu>
-                <ContextMenu MenuItem.Click="ContextMenuClickEventHandler">
+                <ContextMenu >
                     <MenuItem Header="Red" Name="RedMenuItem" />
                     <MenuItem Header="Blue" Name="BlueMenuItem" />
                     <MenuItem Header="Orange" Name="OrangeMenuItem" />
@@ -21,9 +21,6 @@
                         <DataGridTextColumn Header="First Name"  Binding="{Binding FirstName}"/>
                         <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}" />
                         <!--The Email property contains a URI.  For example "mailto:lucy0@adventure-works.com"-->
-                        <DataGridHyperlinkColumn Header="Email" Binding="{Binding Email}"  ContentBinding="{Binding Email, Converter={StaticResource EmailConverter}}" />
-                        <DataGridCheckBoxColumn Header="Member?" Binding="{Binding IsMember}" />
-                        <DataGridComboBoxColumn Header="Order Status"  SelectedItemBinding="{Binding Status}" ItemsSource="{Binding Source={StaticResource myEnum}}" />
                     </DataGrid.Columns>
                 </DataGrid>
             </TabItem.Content>
