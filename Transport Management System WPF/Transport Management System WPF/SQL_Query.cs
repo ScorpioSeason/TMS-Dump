@@ -1,21 +1,18 @@
-using System;
-using System.Data;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Data.SqlClient;
-using System.Windows.Forms;
 
-namespace WindowsApplication1
+namespace Transport_Management_System_WPF
 {
-    public partial class Form1 : Form
+    class SQL_Query
     {
-        public Form1()
-        {
-            InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        public static void ContractCalling()
         {
             string connetionString = null;
-            SqlConnection connection ;
+            SqlConnection connection;
             SqlDataAdapter adapter = new SqlDataAdapter();
             string sql = null;
             connetionString = "Data Source=159.89.117.198,3306;Initial Catalog=cmp;User ID=DevOSHT;Password=Snodgr4ss!";
@@ -26,37 +23,13 @@ namespace WindowsApplication1
                 connection.Open();
                 adapter.InsertCommand = new SqlCommand(sql, connection);
                 adapter.InsertCommand.ExecuteNonQuery();
-                MessageBox.Show ("Done !!");
+                MessageBox.Show("Done !!");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
         }
+
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

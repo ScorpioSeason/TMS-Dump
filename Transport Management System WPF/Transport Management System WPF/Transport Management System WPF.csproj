@@ -56,8 +56,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BuyerClass.cs" />
+    <Compile Include="SQL_Query.cs" />
     <Compile Include="RouteCalc.cs" />
-    <Compile Include="thing.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
