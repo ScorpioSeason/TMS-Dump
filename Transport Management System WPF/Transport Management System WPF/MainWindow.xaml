@@ -6,7 +6,28 @@
         xmlns:local="clr-namespace:Transport_Management_System_WPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <TabControl>
+        <TabItem Name="Buyer" Header="Buyer Tab">
+            <TabItem.ContextMenu>
+                <ContextMenu MenuItem.Click="ContextMenuClickEventHandler">
+                    <MenuItem Header="Red" Name="RedMenuItem" />
+                    <MenuItem Header="Blue" Name="BlueMenuItem" />
+                    <MenuItem Header="Orange" Name="OrangeMenuItem" />
+                </ContextMenu>
+            </TabItem.ContextMenu>
+            <TabItem.Content>
+                <DataGrid Name="DG1" ItemsSource="{Binding}" AutoGenerateColumns="False" >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="First Name"  Binding="{Binding FirstName}"/>
+                        <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}" />
+                        <!--The Email property contains a URI.  For example "mailto:lucy0@adventure-works.com"-->
+                        <DataGridHyperlinkColumn Header="Email" Binding="{Binding Email}"  ContentBinding="{Binding Email, Converter={StaticResource EmailConverter}}" />
+                        <DataGridCheckBoxColumn Header="Member?" Binding="{Binding IsMember}" />
+                        <DataGridComboBoxColumn Header="Order Status"  SelectedItemBinding="{Binding Status}" ItemsSource="{Binding Source={StaticResource myEnum}}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem.Content>
+        </TabItem>
+        <TabItem Name="ShapeTabItem" Header="Shape Tab"></TabItem>
+    </TabControl>
 </Window>
