@@ -18,10 +18,10 @@ namespace Transport_Management_System_WPF
         public double WestHour;
     };
 
-    class GraphClass
+    public class GraphClass
     {
         private const int Number_of_Cities = 8;
-        private List<GraphNode> nodes = new List<GraphNode>();
+        public  List<GraphNode> nodes = new List<GraphNode>();
 
         public GraphClass()
         {
@@ -137,7 +137,7 @@ namespace Transport_Management_System_WPF
                     }
                 }
 
-
+                current = nextCity;
 
             } while (nextCity.CityID != DestinationID);
 

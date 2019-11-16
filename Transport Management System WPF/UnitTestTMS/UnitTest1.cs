@@ -1,5 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Transport_Management_System_WPF;
+
+
+
 
 namespace UnitTestTMS
 {
@@ -9,6 +14,13 @@ namespace UnitTestTMS
         [TestMethod]
         public void TestMethod1()
         {
+            
+
+            GraphClass graphClass = new GraphClass();
+            List<Transport_Management_System_WPF.GraphClass.TripDataPassBack> AH;// = new List<Transport_Management_System_WPF.GraphClass.TripDataPassBack>();
+
+            AH = graphClass.getTravelData(2, 4, true);
+
         }
     }
 }
