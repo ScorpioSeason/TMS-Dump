@@ -6,76 +6,93 @@ using System.Threading.Tasks;
 
 namespace Transport_Management_System_WPF
 {
-    public struct GraphNode
+    public class CityNode
     {
-        public int CityID;
-        public string CityName;
-        public object East;
-        public int EastKM;
-        public double EastHour;
-        public object West;
-        public int WestKM;
-        public double WestHour;
-    };
+        public int CityID { get; set; }
+        public string CityName { get; set; }
+        public CityNode East { get; set; }
+        public int EastKM { get; set; }
+        public double EastHour { get; set; }
+        public CityNode West { get; set; }
+        public int WestKM { get; set; }
+        public double WestHour { get; set; }
+
+        public CityNode(string inName, int inCityId)
+        {
+            CityName = inName;
+            CityID = inCityId;
+        }
+    }
 
     public class GraphClass
     {
         private const int Number_of_Cities = 8;
-        public  List<GraphNode> nodes = new List<GraphNode>();
+        public List<CityNode> nodes = new List<CityNode>();
 
         public GraphClass()
         {
-            GraphNode Windsor = new GraphNode { CityName = "Windsor", CityID = 0 };
-            GraphNode London = new GraphNode { CityName = "London", CityID = 1 };
-            GraphNode Hamilton = new GraphNode { CityName = "Hamilton", CityID = 2 };
-            GraphNode Toronto = new GraphNode { CityName = "Toronto", CityID = 3 };
-            GraphNode Oshawa = new GraphNode { CityName = "Oshawa", CityID = 4 };
-            GraphNode Belleville = new GraphNode { CityName = "Belleville", CityID = 5 };
-            GraphNode Kingston = new GraphNode { CityName = "Kingston", CityID = 6 };
-            GraphNode Ottawa = new GraphNode { CityName = "Ottawa", CityID = 7 };
 
-            GraphNode[] graphNodes = new GraphNode[Number_of_Cities] { Windsor, London, Hamilton, Toronto, Oshawa, Belleville, Kingston, Ottawa };
+            CityNode Windsor = new CityNode ("Windsor", 0 );
+            CityNode London = new CityNode ( "London", 1 );
+            CityNode Hamilton = new CityNode ( "Hamilton", 2 );
+            CityNode Toronto = new CityNode ( "Toronto", 3 );
+            CityNode Oshawa = new CityNode ( "Oshawa", 4 );
+            CityNode Belleville = new CityNode ( "Belleville", 5 );
+            CityNode Kingston = new CityNode ( "Kingston", 6 );
+            CityNode Ottawa = new CityNode ( "Ottawa", 7 );
 
-            object[] westCityArray = new object[] { null, Windsor, London, Hamilton, Toronto, Oshawa, Belleville, Kingston };
-            for (int i = 0; i < Number_of_Cities; i++)
-            {
-                graphNodes[i].West = westCityArray[i];
-            }
+            Windsor.West = null;
+            London.West = Windsor;
+            Hamilton.West = London;
+            Toronto.West = Hamilton;
+            Oshawa.West = Toronto;
+            Belleville.West = Oshawa;
+            Kingston.West = Belleville;
+            Ottawa.East = Kingston;
 
-            object[] eastCityArray = new object[] { London, Hamilton, Toronto, Oshawa, Belleville, Kingston, Ottawa, null };
-            for (int i = 0; i < Number_of_Cities; i++)
-            {
-                graphNodes[i].East = eastCityArray[i];
-            }
+            Windsor.East = London;
+            London.East = Hamilton;
+            Hamilton.East = Toronto;
+            Toronto.East = Oshawa;
+            Oshawa.East = Belleville;
+            Belleville.East = Kingston;
+            Kingston.East = Oshawa;
+            Ottawa.East = null;
+
+            nodes.Add(Windsor);
+            nodes.Add(London);
+            nodes.Add(Hamilton);
+            nodes.Add(Toronto);
+            nodes.Add(Oshawa);
+            nodes.Add(Belleville);
+            nodes.Add(Kingston);
+            nodes.Add(Ottawa);
 
             int[] eastKMArray = new int[Number_of_Cities] { 191, 128, 68, 60, 134, 82, 196, -1 };
             for (int i = 0; i < Number_of_Cities; i++)
             {
-                graphNodes[i].EastKM = eastKMArray[i];
+                nodes[i].EastKM = eastKMArray[i];
             }
 
             int[] westKMArray = new int[Number_of_Cities] { -1, 191, 128, 68, 60, 134, 82, 196 };
             for (int i = 0; i < Number_of_Cities; i++)
             {
-                graphNodes[i].WestKM = westKMArray[i];
+                nodes[i].WestKM = westKMArray[i];
             }
 
             double[] eastHourArray = new double[Number_of_Cities] { 2.5, 1.75, 1.25, 1.3, 1.65, 1.2, 2.5, -1 };
             for (int i = 0; i < Number_of_Cities; i++)
             {
-                graphNodes[i].EastHour = eastHourArray[i];
+                nodes[i].EastHour = eastHourArray[i];
             }
 
             double[] WestHourArray = new double[Number_of_Cities] { -1, 2.5, 1.75, 1.25, 1.3, 1.65, 1.2, 2.5 };
             for (int i = 0; i < Number_of_Cities; i++)
             {
-                graphNodes[i].WestHour = WestHourArray[i];
+                nodes[i].WestHour = WestHourArray[i];
             }
 
-            for (int i = 0; i < Number_of_Cities; i++)
-            {
-                nodes.Add(graphNodes[i]);
-            }
+            int j = 12;
         }
 
         public struct TripDataPassBack
@@ -86,32 +103,29 @@ namespace Transport_Management_System_WPF
             public int CityB;
         }
 
-
         public List<TripDataPassBack> getTravelData(int OriginID, int DestinationID, bool FLTorLTL) //ftl is true
         {
             //figure out if we need to travel east or west
-            GraphNode current = nodes.Find(x => x.CityID == OriginID);
-            GraphNode nextCity;
+            CityNode current = nodes.Find(x => x.CityID == OriginID);
+            CityNode nextCity;
 
             List<TripDataPassBack> returnList = new List<TripDataPassBack>();
 
-
             do
             {
-
                 TripDataPassBack tripDataPassBack = new TripDataPassBack();
 
                 if (OriginID > DestinationID)
                 {
                     //going west
-                    nextCity = (GraphNode)current.West;
+                    nextCity = current.West;
                     tripDataPassBack.KM = current.WestKM;
                     tripDataPassBack.hours = current.WestHour;
                 }
                 else
                 {
                     //going east
-                    nextCity = (GraphNode)current.East;
+                    nextCity = current.East;
                     tripDataPassBack.KM = current.EastKM;
                     tripDataPassBack.hours = current.EastHour;
                 }
@@ -136,6 +150,8 @@ namespace Transport_Management_System_WPF
                         tripDataPassBack.hours += 2;
                     }
                 }
+
+                returnList.Add(tripDataPassBack);
 
                 current = nextCity;
 

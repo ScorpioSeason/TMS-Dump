@@ -21,6 +21,8 @@ namespace UnitTestTMS
 
             AH = graphClass.getTravelData(2, 4, true);
 
+            int i = 3;
+
         }
     }
 }
