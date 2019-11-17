@@ -6,25 +6,38 @@
         xmlns:local="clr-namespace:Transport_Management_System_WPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <TabControl>
-        <TabItem Name="Buyer" Header="Buyer Tab">
-            <TabItem.ContextMenu>
-                <ContextMenu >
-                    <MenuItem Header="Red" Name="RedMenuItem" />
-                    <MenuItem Header="Blue" Name="BlueMenuItem" />
-                    <MenuItem Header="Orange" Name="OrangeMenuItem" />
-                </ContextMenu>
-            </TabItem.ContextMenu>
-            <TabItem.Content>
-                <DataGrid Name="DG1" ItemsSource="{Binding}" AutoGenerateColumns="False" >
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="First Name"  Binding="{Binding FirstName}"/>
-                        <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}" />
-                        <!--The Email property contains a URI.  For example "mailto:lucy0@adventure-works.com"-->
-                    </DataGrid.Columns>
-                </DataGrid>
-            </TabItem.Content>
-        </TabItem>
-        <TabItem Name="ShapeTabItem" Header="Shape Tab"></TabItem>
-    </TabControl>
+    <Grid DockPanel.Dock="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TabControl Grid.Row="0" >
+            <TabItem Name="Buyer" Header="Buyer Tab">
+                <TabItem.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Red" Name="RedMenuItem" Click="RedMenuItem_Click"/>
+                        <MenuItem Header="Blue" Name="BlueMenuItem" />
+                        <MenuItem Header="Orange" Name="OrangeMenuItem" />
+                    </ContextMenu>
+                </TabItem.ContextMenu>
+                <TabItem.Content>
+                    <DataGrid Name="DG1" ItemsSource="{Binding}" AutoGenerateColumns="False" >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="First Name"  Binding="{Binding FirstName}"/>
+                            <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}" />
+                            <!--The Email property contains a URI.  For example "mailto:lucy0@adventure-works.com"-->
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem Name="ShapeTabItem" Header="Shape Tab"></TabItem>
+        </TabControl>
+        <StatusBar Grid.Row="1">
+            <StatusBarItem>
+                <TextBlock
+                    x:Name="Output"
+                    Text="" />
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
 </Window>
