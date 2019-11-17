@@ -18,7 +18,7 @@ namespace Transport_Management_System_WPF
             string connetionString = null;
             SqlConnection connection;
             SqlDataAdapter adapter = new SqlDataAdapter();
-            connetionString = "Data Source=159.89.117.198,3306;Initial Catalog=cmp;User ID=DevOSHT;Password=Snodgr4ss!";
+            connectionString = "server=159.89.117.198,3306;database=cmp;uid=DevOSHT;pwd=Snodgr4ss!;";
             connection = new SqlConnection(connetionString);
             sql = "SELECT * FROM Contract;";
             
