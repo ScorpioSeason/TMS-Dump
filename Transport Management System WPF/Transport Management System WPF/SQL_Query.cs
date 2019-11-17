@@ -15,7 +15,7 @@ namespace Transport_Management_System_WPF
         public void ContractCalling()
         {
             string connetionString = "server=159.89.117.198;user=DevOSHT;database=cmp;port=3306;password=Snodgr4ss!";
-            MySqlConnection connection = new MySqlConnection(connectionStr);
+            MySqlConnection connection = new MySqlConnection(connetionString);
             
             //SqlDataAdapter adapter = new SqlDataAdapter(); --- We don't need this line until we are updating the database
             //MySqlDataAdapter adapter = new MySqlDataAdapter(); //-- This is the class 
@@ -43,7 +43,10 @@ namespace Transport_Management_System_WPF
             connection.Close();
             Console.WriteLine("Finto!");
         }
-            //This is Zena's Old Try Catch block that broke everything
+    }
+}
+//This can be deleted later when we know what we are doing
+//This is Zena's Old Try Catch block that broke everything
                 //try
                 //{
                 //    connection.Open();
@@ -55,11 +58,3 @@ namespace Transport_Management_System_WPF
                 //{
                 //    MainWindow.SetOutput((ex.ToString()));
                 //}
-
-        public void AH()
-        {
-            
-        }
-
-    }
-}
