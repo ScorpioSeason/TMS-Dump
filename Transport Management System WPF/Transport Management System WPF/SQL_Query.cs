@@ -22,7 +22,7 @@ namespace Transport_Management_System_WPF
             try
             {
                 Console.WriteLine("We is connecting bro");
-                connection.open();
+                connection.Open();
 
                 string sql = "SELECT * FROM Contract";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Transport_Management_System_WPF
 {
-    public struct TripDataPassBack
+    public struct RouteData
     {
         public int KM;
         public double StopTime;
@@ -105,17 +105,17 @@ namespace Transport_Management_System_WPF
 
 
 
-        public List<TripDataPassBack> getTravelData(int OriginID, int DestinationID, bool FLTorLTL) //ftl is true
+        public List<RouteData> getTravelData(int OriginID, int DestinationID, bool FLTorLTL) //ftl is true
         {
             //figure out if we need to travel east or west
             CityNode current = nodes.Find(x => x.CityID == OriginID);
             CityNode nextCity;
 
-            List<TripDataPassBack> returnList = new List<TripDataPassBack>();
+            List<RouteData> returnList = new List<RouteData>();
 
             do
             {
-                TripDataPassBack tripDataPassBack = new TripDataPassBack();
+                RouteData tripDataPassBack = new RouteData();
 
                 if (OriginID > DestinationID)
                 {
