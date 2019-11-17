@@ -30,7 +30,7 @@ namespace Transport_Management_System_WPF
             {
                 while (reader.Read())
                 {  
-                  string returnString = reader.GetValue().ToString().Trim();  
+                  string returnString = reader.ToString().Trim();  
                 }
             }
         }
