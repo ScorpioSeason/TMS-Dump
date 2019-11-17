@@ -4,33 +4,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace Transport_Management_System_WPF
 {
     class SQL_Query
     {
-        public string sql = "";
+        public string sql = null;
         public void ContractCalling()
         {
+            sql = null;
             string connetionString = null;
             SqlConnection connection;
             SqlDataAdapter adapter = new SqlDataAdapter();
-            string sql = null;
             connetionString = "Data Source=159.89.117.198,3306;Initial Catalog=cmp;User ID=DevOSHT;Password=Snodgr4ss!";
             connection = new SqlConnection(connetionString);
             sql = "SELECT * FROM Contract;";
-            //try
-            //{
-            //    connection.Open();
-            //    adapter.InsertCommand = new SqlCommand(sql, connection);
-            //    adapter.InsertCommand.ExecuteNonQuery();
-            //    MainWindow.SetOutput("Done !!");
-            //}
-            //catch (Exception ex)
-            //{
-            //    MainWindow.SetOutput((ex.ToString()));
-            //}
-        }
+            
+            connection.Open();
+            //adapter.InsertCommand = new SqlCommand(sql, connection);
+            //adapter.InsertCommand.ExecuteNonQuery();
 
+            SqlCommand cmd = new SqlCommand(sql, connection);
+            using (SqlDataReader reader = cmd.ExecuteReader()) 
+            {
+                while (reader.Read())
+                {  
+                  string returnString = reader.GetValue().ToString().Trim();  
+                }
+            }
+        }
     }
 }
