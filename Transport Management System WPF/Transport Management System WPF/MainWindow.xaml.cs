@@ -34,5 +34,10 @@ namespace Transport_Management_System_WPF
         {
             Output.Text = "Yeet";
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            BuyerClass.ParseContracts();
+        }
     }
 }

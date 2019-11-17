@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Transport_Management_System_WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="1000" Width="1000">
     <Grid DockPanel.Dock="Top">
         <Grid.RowDefinitions>
             <RowDefinition Height="9*"></RowDefinition>
@@ -21,16 +21,58 @@
                     </ContextMenu>
                 </TabItem.ContextMenu>
                 <TabItem.Content>
-                    <DataGrid Name="DG1" ItemsSource="{Binding}" AutoGenerateColumns="False" >
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="First Name"  Binding="{Binding FirstName}"/>
-                            <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}" />
-                            <!--The Email property contains a URI.  For example "mailto:lucy0@adventure-works.com"-->
-                        </DataGrid.Columns>
-                    </DataGrid>
+                    <StackPanel>
+                        <Button Content="Load/Refresh" Width="100" HorizontalAlignment="Left" Click="Button_Click"/>
+                        <DataGrid Name="DG1" ItemsSource="{Binding}" AutoGenerateColumns="False" >
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="First Name"  Binding="{Binding FirstName}"/>
+                                <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}" />
+                                <!--The Email property contains a URI.  For example "mailto:lucy0@adventure-works.com"-->
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <DataGrid Name="DG2" ItemsSource="{Binding}" AutoGenerateColumns="False" >
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="First Name"  Binding="{Binding FirstName}"/>
+                                <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}" />
+                                <!--The Email property contains a URI.  For example "mailto:lucy0@adventure-works.com"-->
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
                 </TabItem.Content>
             </TabItem>
-            <TabItem Name="ShapeTabItem" Header="Shape Tab"></TabItem>
+            <TabItem Name="Planner" Header="Planner Tab">
+                <TabItem.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Red" Name="Red"/>
+                        <MenuItem Header="Blue" Name="Blue" />
+                        <MenuItem Header="Orange" Name="Orange" />
+                    </ContextMenu>
+                </TabItem.ContextMenu>
+                <TabItem.Content>
+                    <StackPanel>
+                        <Button Content="Load/Refresh" Width="100" HorizontalAlignment="Left" Click="Button_Click"/>
+                        <Label>List Of Available Contracts</Label> 
+                        <DataGrid Name="DG3" ItemsSource="{Binding}" AutoGenerateColumns="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="First Name"  Binding="{Binding FirstName}"/>
+                                <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}" />
+                                <!--The Email property contains a URI.  For example "mailto:lucy0@adventure-works.com"-->
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <Label>List Of Active Tickets</Label>
+                        <DataGrid Name="DG4" ItemsSource="{Binding}" AutoGenerateColumns="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="First Name"  Binding="{Binding FirstName}"/>
+                                <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}" />
+                                <!--The Email property contains a URI.  For example "mailto:lucy0@adventure-works.com"-->
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <Button Content="Increment Time (1 Day)" Width="100" HorizontalAlignment="Left"/>
+                        
+                    </StackPanel>
+                </TabItem.Content>
+            </TabItem>
+            
         </TabControl>
         <StatusBar Grid.Row="1">
             <StatusBarItem>
