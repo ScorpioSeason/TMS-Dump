@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace Transport_Management_System_WPF
 {
+    public struct TripDataPassBack
+    {
+        public int KM;
+        public double hours;
+        public int CityA;
+        public int CityB;
+    }
     public class CityNode
     {
         public int CityID { get; set; }
@@ -95,13 +102,7 @@ namespace Transport_Management_System_WPF
             int j = 12;
         }
 
-        public struct TripDataPassBack
-        {
-            public int KM;
-            public double hours;
-            public int CityA;
-            public int CityB;
-        }
+
 
         public List<TripDataPassBack> getTravelData(int OriginID, int DestinationID, bool FLTorLTL) //ftl is true
         {

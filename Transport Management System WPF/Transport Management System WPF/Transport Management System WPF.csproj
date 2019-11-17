@@ -61,6 +61,7 @@
     </Compile>
     <Compile Include="SQL_Query.cs" />
     <Compile Include="RouteCalc.cs" />
+    <Compile Include="TimePass.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
