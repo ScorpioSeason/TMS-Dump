@@ -25,8 +25,8 @@ namespace Transport_Management_System_WPF
             //adapter.InsertCommand = new SqlCommand(sql, connection);
             //adapter.InsertCommand.ExecuteNonQuery();
 
-            MySqlCommand cmd = new MySqlCommand(sql, connection);
-            using (MySqlDataReader reader = cmd.ExecuteReader()) 
+            SqlCommand cmd = new SqlCommand(sql, connection);
+            using (SqlDataReader reader = cmd.ExecuteReader()) 
             {
                 while (reader.Read())
                 {  
