@@ -19,11 +19,18 @@ namespace Transport_Management_System_WPF
             connetionString = "Data Source=159.89.117.198,3306;Initial Catalog=cmp;User ID=DevOSHT;Password=Snodgr4ss!";
             connection = new SqlConnection(connetionString);
             sql = "SELECT * FROM Contract;";
-            connection.Open();
-            adapter.InsertCommand = new SqlCommand(sql, connection);
-            adapter.InsertCommand.ExecuteNonQuery();
             
-        }
+            connection.Open();
+            //adapter.InsertCommand = new SqlCommand(sql, connection);
+            //adapter.InsertCommand.ExecuteNonQuery();
 
+            MySqlCommand cmd = new MySqlCommand(sql, connection);
+            using (MySqlDataReader reader = cmd.ExecuteReader()) {
+                while (reader.Read())
+                {  
+                  string returnString = reader.GetValue().ToString().Trim();  
+                }
+            }
+        }
     }
 }
