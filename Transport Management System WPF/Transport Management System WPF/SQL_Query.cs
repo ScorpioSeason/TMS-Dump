@@ -32,7 +32,7 @@ namespace Transport_Management_System_WPF
                 while (reader.Read())
                 {
                     string readString = reader.ToString().Trim();
-                    sqlReads.Add(readString);
+                    sqlReads.Add(readString)
                 }
             }
             return;
