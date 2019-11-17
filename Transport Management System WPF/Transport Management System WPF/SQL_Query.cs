@@ -8,10 +8,11 @@ using MySql.Data.MySqlClient;
 
 namespace Transport_Management_System_WPF
 {
-    class SQL_Query
+    static class SQL_Query
     {
-        public string sql = null;
-        public void ContractCalling()
+        public static string sql = null;
+        public static List<string> sqlReads = null; 
+        public static void ContractCalling()
         {
             sql = null;
             string connetionString = null;
@@ -29,10 +30,12 @@ namespace Transport_Management_System_WPF
             using (SqlDataReader reader = cmd.ExecuteReader()) 
             {
                 while (reader.Read())
-                {  
-                  string returnString = reader.GetValue().ToString().Trim();  
+                {
+                    string readString = reader.ToString().Trim();
+                    sqlReads.Add(readString)
                 }
             }
+            return;
         }
     }
 }
