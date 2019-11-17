@@ -15,12 +15,12 @@ namespace Transport_Management_System_WPF
         Trip_Ticket trip = new Trip_Ticket();
 
         //load the route stops
-        List<TripDataPassBack> stops = new List<TripDataPassBack>();
+        List<RouteData> stops = new List<RouteData>();
 
         //find the truck passed on the ticket id
         Truck truck = new Truck();
 
-        //CityNode current = ;
+        CityNode current = ;
 
     }
 }

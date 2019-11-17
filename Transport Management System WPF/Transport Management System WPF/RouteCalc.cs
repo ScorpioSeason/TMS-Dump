@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace Transport_Management_System_WPF
 {
-    public struct TripDataPassBack
+    public struct RouteData
     {
         public int KM;
-        public double StopTime;
+        public double PickupTime;
         public double DriveTime;
+        public double LtlTime;
+        public double DropoffTime;
         public int CityA;
         public int CityB;
     }
@@ -100,22 +102,22 @@ namespace Transport_Management_System_WPF
                 nodes[i].WestHour = WestHourArray[i];
             }
 
-            int j = 12;
+           
         }
 
 
 
-        public List<TripDataPassBack> getTravelData(int OriginID, int DestinationID, bool FLTorLTL) //ftl is true
+        public List<RouteData> getTravelData(int OriginID, int DestinationID, bool FLTorLTL) //ftl is true
         {
             //figure out if we need to travel east or west
             CityNode current = nodes.Find(x => x.CityID == OriginID);
             CityNode nextCity;
 
-            List<TripDataPassBack> returnList = new List<TripDataPassBack>();
+            List<RouteData> returnList = new List<RouteData>();
 
             do
             {
-                TripDataPassBack tripDataPassBack = new TripDataPassBack();
+                RouteData tripDataPassBack = new RouteData();
 
                 if (OriginID > DestinationID)
                 {
@@ -137,21 +139,19 @@ namespace Transport_Management_System_WPF
 
                 if (current.CityID == OriginID)
                 {
-                    tripDataPassBack.StopTime += 2;
+                    tripDataPassBack.PickupTime += 2;
                 }
 
                 if (nextCity.CityID == DestinationID)
                 {
-                    tripDataPassBack.StopTime += 2;
+                    tripDataPassBack.DropoffTime += 2;
                 }
 
-                if (current.CityID != OriginID && nextCity.CityID != DestinationID)
+                if(FLTorLTL && !(nextCity.CityID == DestinationID))
                 {
-                    if (FLTorLTL)
-                    {
-                        tripDataPassBack.StopTime += 2;
-                    }
+                    tripDataPassBack.LtlTime += 2;
                 }
+
 
                 returnList.Add(tripDataPassBack);
 
