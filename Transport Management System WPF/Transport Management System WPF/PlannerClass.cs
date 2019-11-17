@@ -40,7 +40,7 @@ namespace Transport_Management_System_WPF
         public bool Is_Reefer;
         public int Size_In_Palette;
         public bool Is_Complete;
-        public double Hours_Passed;
+        public double Days_Passed;
     }
 
     public struct Trip_Ticket_Line
