@@ -18,19 +18,19 @@ namespace Transport_Management_System_WPF
         public static void ContractCalling()
         {
             sql = null;
-            string connetionString = null;
+            string connectionString = null;
             SqlConnection connection;
             SqlDataAdapter adapter = new SqlDataAdapter();
             connectionString = "server=159.89.117.198,3306;database=cmp;uid=DevOSHT;pwd=Snodgr4ss!;";
-            connection = new SqlConnection(connetionString);
+            connection = new SqlConnection(connectionString);
             sql = "SELECT * FROM Contract;";
             
             connection.Open();
             //adapter.InsertCommand = new SqlCommand(sql, connection);
             //adapter.InsertCommand.ExecuteNonQuery();
 
-            MySqlCommand cmd = new MySqlCommand(sql, connection);
-            using (MySqlDataReader reader = cmd.ExecuteReader()) 
+            SqlCommand cmd = new SqlCommand(sql, connection);
+            using (SqlDataReader reader = cmd.ExecuteReader()) 
             {
                 while (reader.Read())
                 {
