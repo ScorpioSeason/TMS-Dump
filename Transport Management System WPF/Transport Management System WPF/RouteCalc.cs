@@ -9,7 +9,8 @@ namespace Transport_Management_System_WPF
     public struct TripDataPassBack
     {
         public int KM;
-        public double hours;
+        public double StopTime;
+        public double DriveTime;
         public int CityA;
         public int CityB;
     }
@@ -121,14 +122,14 @@ namespace Transport_Management_System_WPF
                     //going west
                     nextCity = current.West;
                     tripDataPassBack.KM = current.WestKM;
-                    tripDataPassBack.hours = current.WestHour;
+                    tripDataPassBack.DriveTime = current.WestHour;
                 }
                 else
                 {
                     //going east
                     nextCity = current.East;
                     tripDataPassBack.KM = current.EastKM;
-                    tripDataPassBack.hours = current.EastHour;
+                    tripDataPassBack.DriveTime = current.EastHour;
                 }
 
                 tripDataPassBack.CityA = current.CityID;
@@ -136,19 +137,19 @@ namespace Transport_Management_System_WPF
 
                 if (current.CityID == OriginID)
                 {
-                    tripDataPassBack.hours += 2;
+                    tripDataPassBack.StopTime += 2;
                 }
 
                 if (nextCity.CityID == DestinationID)
                 {
-                    tripDataPassBack.hours += 2;
+                    tripDataPassBack.StopTime += 2;
                 }
 
                 if (current.CityID != OriginID && nextCity.CityID != DestinationID)
                 {
                     if (FLTorLTL)
                     {
-                        tripDataPassBack.hours += 2;
+                        tripDataPassBack.StopTime += 2;
                     }
                 }
 
