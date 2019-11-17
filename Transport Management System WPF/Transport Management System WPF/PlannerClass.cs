@@ -32,7 +32,6 @@ namespace Transport_Management_System_WPF
         public float Reefer_Charge;
     }
 
-
     public struct Trip_Ticket
     {
         public int TicketID;
@@ -41,6 +40,7 @@ namespace Transport_Management_System_WPF
         public bool Is_Reefer;
         public int Size_In_Palette;
         public bool Is_Complete;
+        public double Hours_Passed;
     }
 
     public struct Trip_Ticket_Line
@@ -59,7 +59,7 @@ namespace Transport_Management_System_WPF
     public struct Truck
     {
         public int TruckID;
-        public Location Current_Location;
+        public int CurrentCityID;
         public Carrier carrier;
         public bool Is_Reefer;
         public int Free_Space;

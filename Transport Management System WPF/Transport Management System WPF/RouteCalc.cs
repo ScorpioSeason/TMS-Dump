@@ -9,8 +9,10 @@ namespace Transport_Management_System_WPF
     public struct RouteData
     {
         public int KM;
-        public double StopTime;
+        public double PickupTime;
         public double DriveTime;
+        public double LtlTime;
+        public double DropoffTime;
         public int CityA;
         public int CityB;
     }
@@ -100,7 +102,7 @@ namespace Transport_Management_System_WPF
                 nodes[i].WestHour = WestHourArray[i];
             }
 
-            int j = 12;
+           
         }
 
 
@@ -137,21 +139,19 @@ namespace Transport_Management_System_WPF
 
                 if (current.CityID == OriginID)
                 {
-                    tripDataPassBack.StopTime += 2;
+                    tripDataPassBack.PickupTime += 2;
                 }
 
                 if (nextCity.CityID == DestinationID)
                 {
-                    tripDataPassBack.StopTime += 2;
+                    tripDataPassBack.DropoffTime += 2;
                 }
 
-                if (current.CityID != OriginID && nextCity.CityID != DestinationID)
+                if(FLTorLTL && !(nextCity.CityID == DestinationID))
                 {
-                    if (FLTorLTL)
-                    {
-                        tripDataPassBack.StopTime += 2;
-                    }
+                    tripDataPassBack.LtlTime += 2;
                 }
+
 
                 returnList.Add(tripDataPassBack);
 
