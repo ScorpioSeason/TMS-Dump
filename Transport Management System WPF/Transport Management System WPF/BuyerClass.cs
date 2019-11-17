@@ -6,35 +6,28 @@ using System.Threading.Tasks;
 
 namespace Transport_Management_System_WPF
 {
-    struct Contract
-    {
-        public string client_Name;
-        public string job_Type;
-        public string quantity;
-        public string origin;
-        public string destination;
-        public string van_Type;
-    }
     public class BuyerClass
     {
 
-        private List<Contract> contracts;
+        private List<Contract> contracts= new List<Contract>();
 
         internal List<Contract> Contracts { get => contracts; set => contracts = value; }
 
         public void ParseContracts()
         {
             SQL_Query.ContractCalling();
-            foreach (string a  in SQL_Query.sqlReads){
-                String[] strlist = a.Split('|');
-                Contract b;
-                b.client_Name = strlist[0];
-                b.job_Type = strlist[1];
-                b.quantity = strlist[2];
-                b.origin = strlist[3];
-                b.destination = strlist[4];
-                b.van_Type = strlist[5];
-                Contracts.Add(b);
+            int i = 0;
+            Contract block = new Contract();
+            while (i <= SQL_Query.sqlReads.Count())
+            {
+                block.client_Name = SQL_Query.sqlReads[i+0];
+                block.job_Type = SQL_Query.sqlReads[i+1];
+                block.quantity = SQL_Query.sqlReads[i+2];
+                block.origin = SQL_Query.sqlReads[i+3];
+                block.destination = SQL_Query.sqlReads[i+4];
+                block.van_Type = SQL_Query.sqlReads[i+5];
+                contracts.Add(block);
+                i += 6;
             }
             
         } 
