@@ -35,9 +35,11 @@ namespace Transport_Management_System_WPF
             Output.Text = "Yeet";
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)//load/ refresh button
         {
-            BuyerClass.ParseContracts();
+            BuyerClass buyer =new BuyerClass();
+            buyer.ParseContracts();
+            DG1.ItemsSource = buyer.Contracts;
         }
     }
 }

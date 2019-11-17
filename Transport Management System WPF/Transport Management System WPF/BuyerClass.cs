@@ -17,9 +17,12 @@ namespace Transport_Management_System_WPF
     }
     public class BuyerClass
     {
+
         private List<Contract> contracts;
+
         internal List<Contract> Contracts { get => contracts; set => contracts = value; }
-        public static void ParseContracts()
+
+        public void ParseContracts()
         {
             SQL_Query.ContractCalling();
             foreach (string a  in SQL_Query.sqlReads){
@@ -31,7 +34,9 @@ namespace Transport_Management_System_WPF
                 b.origin = strlist[3];
                 b.destination = strlist[4];
                 b.van_Type = strlist[5];
-            } 
+                Contracts.Add(b);
+            }
+            
         } 
     }
 }

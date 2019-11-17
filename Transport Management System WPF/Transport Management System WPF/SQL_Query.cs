@@ -4,7 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Configuration;
+using System.Data;
 using MySql.Data.MySqlClient;
+using MySql.Data;
 
 namespace Transport_Management_System_WPF
 {
@@ -26,15 +29,16 @@ namespace Transport_Management_System_WPF
             //adapter.InsertCommand = new SqlCommand(sql, connection);
             //adapter.InsertCommand.ExecuteNonQuery();
 
-            SqlCommand cmd = new SqlCommand(sql, connection);
-            using (SqlDataReader reader = cmd.ExecuteReader()) 
+            MySqlCommand cmd = new MySqlCommand(sql, connection);
+            using (MySqlDataReader reader = cmd.ExecuteReader()) 
             {
                 while (reader.Read())
                 {
                     string readString = reader.ToString().Trim();
-                    sqlReads.Add(readString)
+                    sqlReads.Add(readString);
                 }
             }
+            connection.Close();
             return;
         }
     }
