@@ -102,7 +102,6 @@ namespace Transport_Management_System_WPF
                 nodes[i].WestHour = WestHourArray[i];
             }
 
-           
         }
 
 

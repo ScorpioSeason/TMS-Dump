@@ -20,12 +20,15 @@ namespace Transport_Management_System_WPF
         {
             MySqlConnection connection = new MySqlConnection("database = 'cmd'; server = 159.89.117.198; port = 3306; user id = 'DevOSHT'; Password = 'Snodgr4ss!;'");
 
-            connection.CommandType = System.Data.CommandType.Text;  //I want my connection string to be text
+            var queryString = "SELECT * From Contract";      //Query text string 
+
+            //connection.CommandType = System.Data.CommandType.Text;  //I want my connection string to be text
             
-            connection.CommandText = "SELECT * From Contract";      //Query text string 
+            //connection.CommandText = "SELECT * From Contract";      //Query text string 
 
+            var command = new MySqlConnection(queryString, connection);     //This string might be better
+            
             MySqlCommand command = connection.CreateCommand();      //Create the mySQL command
-
             try                         //"Try" :p
             {
                 connection.Open();      //Open Connection
@@ -46,8 +49,8 @@ namespace Transport_Management_System_WPF
             }
             catch (Exception ex)        //Exception: Gross!
             {
-                //MessageBox.Show(ex.Message);
-                Console.WriteLine(ex.Message);  //Log exception
+                MessageBox.Show(ex.Message);  //This will be used to log exception
+                //Console.WriteLine(ex.Message);  //This is for Megan for debugging purposes - It can be deleted later
             }
         }
     }
