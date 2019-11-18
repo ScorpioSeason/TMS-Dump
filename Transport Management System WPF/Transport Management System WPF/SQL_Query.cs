@@ -22,13 +22,9 @@ namespace Transport_Management_System_WPF
 
             var queryString = "SELECT * From Contract";      //Query text string 
 
-            //connection.CommandType = System.Data.CommandType.Text;  //I want my connection string to be text
-            
-            //connection.CommandText = "SELECT * From Contract";      //Query text string 
+            var command = new MySqlCommand(queryString, connection);     //This string might be better
 
-            var command = new MySqlConnection(queryString, connection);     //This string might be better
-            
-            MySqlCommand command = connection.CreateCommand();      //Create the mySQL command
+            //MySqlCommand command = connection.CreateCommand();      //Create the mySQL command
             try                         //"Try" :p
             {
                 connection.Open();      //Open Connection
@@ -47,9 +43,9 @@ namespace Transport_Management_System_WPF
                 
                 connection.Close();     //Close Connection
             }
-            catch (Exception ex)        //Exception: Gross!
+            catch (Exception)        //Exception: Gross!
             {
-                MessageBox.Show(ex.Message);  //This will be used to log exception
+                //MessageBox.Show(ex.Message);  //This will be used to log exception
                 //Console.WriteLine(ex.Message);  //This is for Megan for debugging purposes - It can be deleted later
             }
         }

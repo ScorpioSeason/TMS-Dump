@@ -20,6 +20,7 @@ namespace Transport_Management_System_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static string a = "";
         public MainWindow()
         {
             InitializeComponent();
@@ -33,6 +34,7 @@ namespace Transport_Management_System_WPF
         private void RedMenuItem_Click(object sender, RoutedEventArgs e)
         {
             Output.Text = "Yeet";
+            //Megan.Append("Yeet");
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)//load/ refresh button
