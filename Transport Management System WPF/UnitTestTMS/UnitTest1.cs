@@ -16,12 +16,12 @@ namespace UnitTestTMS
         {
             
 
-            GraphClass graphClass = new GraphClass();
-            List<Transport_Management_System_WPF.GraphClass.TripDataPassBack> AH;// = new List<Transport_Management_System_WPF.GraphClass.TripDataPassBack>();
+            //GraphClass graphClass = new GraphClass();
+            //List<Transport_Management_System_WPF.GraphClass.TripDataPassBack> AH;// = new List<Transport_Management_System_WPF.GraphClass.TripDataPassBack>();
 
-            AH = graphClass.getTravelData(2, 4, true);
+            //AH = graphClass.getTravelData(2, 4, true);
 
-            int i = 3;
+            //int i = 3;
 
         }
     }
