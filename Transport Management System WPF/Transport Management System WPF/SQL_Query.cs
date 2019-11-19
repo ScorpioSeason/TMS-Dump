@@ -4,7 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Configuration;
+using System.Data;
 using MySql.Data.MySqlClient;
+using MySql.Data;
+using System.Diagnostics;
 
 //from https://www.codeproject.com/articles/43438/connect-c-to-mysql
 

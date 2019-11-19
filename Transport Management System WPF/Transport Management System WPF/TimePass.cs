@@ -23,7 +23,7 @@ namespace Transport_Management_System_WPF
             List<RouteData> stops = new List<RouteData>();
 
             //find the truck passed on the ticket id
-            Truck truck = new Truck();
+            //Truck truck = new Truck();  -----Zena: Commented out for debugging purposes
 
             int i = 0;
             RouteData current;

@@ -25,8 +25,12 @@
                         <Button Content="Load/Refresh" Width="100" HorizontalAlignment="Left" Click="Button_Click"/>
                         <DataGrid Name="DG1" ItemsSource="{Binding}" AutoGenerateColumns="False" >
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="First Name"  Binding="{Binding FirstName}"/>
-                                <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}" />
+                                <DataGridTextColumn Header="Client Name" Binding="{Binding client_Name}" />
+                                <DataGridTextColumn Header="Job Type" Binding="{Binding job_Type}"/>
+                                <DataGridTextColumn Header="Quantity" Binding="{Binding quantity}" />
+                                <DataGridTextColumn Header="Origin" Binding="{Binding origin}"/>
+                                <DataGridTextColumn Header="Destination" Binding="{Binding destination}" />
+                                <DataGridTextColumn Header="Van Type" Binding="{Binding van_Type}"/>
                                 <!--The Email property contains a URI.  For example "mailto:lucy0@adventure-works.com"-->
                             </DataGrid.Columns>
                         </DataGrid>
