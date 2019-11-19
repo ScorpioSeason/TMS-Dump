@@ -15,19 +15,20 @@ namespace Transport_Management_System_WPF
 
         public void ParseContracts()
         {
-            SQL_Query.ContractCalling();
-            int i = 0;
+
+            SQL_Query SQL = new SQL_Query();
             Contract block = new Contract();
-            while (i <= SQL_Query.sqlReads.Count())
+            List<string>[] temp = new List<string>[6];
+            temp = SQL.Select_Contracts();
+            foreach (List<string> entry in temp )
             {
-                block.client_Name = SQL_Query.sqlReads[i+0];
-                block.job_Type = SQL_Query.sqlReads[i+1];
-                block.quantity = SQL_Query.sqlReads[i+2];
-                block.origin = SQL_Query.sqlReads[i+3];
-                block.destination = SQL_Query.sqlReads[i+4];
-                block.van_Type = SQL_Query.sqlReads[i+5];
+                block.client_Name = entry[0];
+                block.job_Type = entry[1];
+                block.quantity = entry[2];
+                block.origin = entry[3];
+                block.destination = entry[4];
+                block.van_Type = entry[5];
                 contracts.Add(block);
-                i += 6;
             }
             
         } 
