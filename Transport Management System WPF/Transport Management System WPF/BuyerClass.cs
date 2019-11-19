@@ -39,11 +39,6 @@ namespace Transport_Management_System_WPF
 
             //foreach (List<string> entry in temp )
             //{
-
-
-
-
-
             //    Contract block = new Contract();
 
             //    block.client_Name = entry[0];
@@ -54,6 +49,7 @@ namespace Transport_Management_System_WPF
             //    block.van_Type = entry[5];
             //    contracts.Add(block);
             //}
+            					
 
         
             
