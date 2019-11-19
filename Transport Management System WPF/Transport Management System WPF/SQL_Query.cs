@@ -15,7 +15,7 @@ using System.Diagnostics;
 
 namespace Transport_Management_System_WPF
 {
-    public class DBConnect
+    public class SQL_Query
     {
         private MySqlConnection connection;
         private string server;
@@ -24,7 +24,7 @@ namespace Transport_Management_System_WPF
         private string password;
 
         //Constructor
-        public DBConnect()
+        public SQL_Query()
         {
             Initialize();
         }
@@ -41,11 +41,6 @@ namespace Transport_Management_System_WPF
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
 
             connection = new MySqlConnection(connectionString);
-
-
-
-
-
 
         }
 
@@ -67,11 +62,11 @@ namespace Transport_Management_System_WPF
                 switch (ex.Number)
                 {
                     case 0:
-                        MessageBox.Show("Cannot connect to server.  Contact administrator");
+                        //MessageBox.Show("Cannot connect to server.  Contact administrator");
                         break;
 
                     case 1045:
-                        MessageBox.Show("Invalid username/password, please try again");
+                        //MessageBox.Show("Invalid username/password, please try again");
                         break;
                 }
                 return false;
@@ -88,13 +83,13 @@ namespace Transport_Management_System_WPF
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
                 return false;
             }
         }
 
         //Select statement
-        public List<string>[] Select()
+        public List<string>[] Select_Contracts()
         {
             string query = "SELECT * FROM Contract;";
 
