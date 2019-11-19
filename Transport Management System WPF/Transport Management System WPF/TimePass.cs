@@ -6,9 +6,6 @@ using System.Threading.Tasks;
 
 namespace Transport_Management_System_WPF
 {
-
-
-
     public class TimePass
     {
 
@@ -59,12 +56,7 @@ namespace Transport_Management_System_WPF
             //update the truck location in the data base
 
 
-           
-
-
-
-
-
+         
         }
 
        
