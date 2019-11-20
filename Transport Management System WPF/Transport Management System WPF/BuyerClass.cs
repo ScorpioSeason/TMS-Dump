@@ -6,21 +6,25 @@ using System.Threading.Tasks;
 
 namespace Transport_Management_System_WPF
 {
+    // This class represents the functions that a Buyer can execute from the UI. 
+    // i.e. Initiate an Order (read and display new contracts from CMP via DAL, select a 
+    // contract from CMP, select cities for the contract, and submit the contract to an 
+    // intermediate table for planner completion.-- This would potentially raise an event... later. )
+    // The buyer can also view the table of completed orders (read and display from db, 
+    // via DAL,select an order, preview an invoice, and then generate the invoice to a text file)
+
     public class BuyerClass
     {
-
         private List<Contract> contracts= new List<Contract>();
 
         internal List<Contract> Contracts { get => contracts; set => contracts = value; }
 
         public void ParseContracts()
         {
-
             SQL_Query SQL = new SQL_Query();
             
             List<string>[] temp = new List<string>[6];
             temp = SQL.Select_Contracts();
-
 
             for(int i = 0; i < temp[0].Count; i++)
             {

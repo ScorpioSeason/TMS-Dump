@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Transport_Management_System_WPF
 {
+    // This is a temporary stub for the incoming CMP data. 
     class MockupCMP
     {
         string[] MockEntries = {"|Hardware Depot|0|0|Belleville|Windsor|0|",

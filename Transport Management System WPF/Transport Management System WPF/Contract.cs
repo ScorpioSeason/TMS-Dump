@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// This class represents the contract table
 namespace Transport_Management_System_WPF
 {
     public class Contract
