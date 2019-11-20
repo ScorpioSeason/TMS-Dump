@@ -39,7 +39,7 @@ namespace Transport_Management_System_WPF
 
         private void Button_Click(object sender, RoutedEventArgs e)//load/ refresh button
         {
-            BuyerClass buyer = new BuyerClass();
+            BuyerClass buyer =new BuyerClass();
             buyer.ParseContracts();
             DG1.ItemsSource = buyer.Contracts;
             

@@ -23,15 +23,6 @@ namespace Transport_Management_System_WPF
         public int Telephone;
     }
 
-    public struct Carrier
-    {
-        public string Carrier_Name;
-        public string Depot_City;
-        public float FTL_Rate;
-        public float LTL_Rate;
-        public float Reefer_Charge;
-    }
-
     public struct Trip_Ticket
     {
         public int TicketID;
