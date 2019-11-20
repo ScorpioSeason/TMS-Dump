@@ -30,22 +30,11 @@
 * ---------------------------------------------------------------------------------------------------- */
 
 
-	/**
-	* \brief 	This is the purpose
-	* \details 	this is a detailed description of what this method does
-	* \param 	newName  - <b>char *</b> - representation of the dog's name
-	* \param 	newBreed - <b>char *</b> - representation of the dog's breed
-	* \param 	newGender - <b>int</b> - representation of the dog's gender (see <i>Static Public Attributes</i>)
-	* \param 	newSize - <b>int</b> - representation of the dog's stature (size) (see <i>Static Public Attributes</i>)
-	* \param 	newDIN - <b>int</b> - specifies this dog's unique <i>dog identification number</i>
-	* \return 	As this is a <i>constructor</i> for the Dog class, nothing is returned
-	*
-	* \see 		~Dog()
-	*/
-
 
 /// This is a doxygen compatible inline comment. 
 // This is not doxygen compatible
+
+
 
 // SEAN'S METHOD HEADER DOXYGEN ============================================================================
 	
