@@ -11,5 +11,6 @@ namespace Transport_Management_System_WPF
 {
     class mysqlConnector
     {
+
     }
 }

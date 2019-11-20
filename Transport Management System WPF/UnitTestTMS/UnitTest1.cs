@@ -12,17 +12,18 @@ namespace UnitTestTMS
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void routCalc1()
         {
-            
 
-            //GraphClass graphClass = new GraphClass();
-            //List<Transport_Management_System_WPF.GraphClass.TripDataPassBack> AH;// = new List<Transport_Management_System_WPF.GraphClass.TripDataPassBack>();
+            GraphClass graphClass = new GraphClass();
 
-            //AH = graphClass.getTravelData(2, 4, true);
+            List<RouteData> RD = new List<RouteData>();
 
-            //int i = 3;
+            RD = graphClass.getTravelData(0, 3, true);
 
+
+            int i = 0;
+        
         }
     }
 }

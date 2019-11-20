@@ -70,11 +70,6 @@ namespace Transport_Management_System_WPF
 
     class PlannerClass
     {
-
-        
-
-
-
         //    class Planner
         //    {
         //        public object SQLMagic(string input)

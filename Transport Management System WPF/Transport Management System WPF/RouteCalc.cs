@@ -58,7 +58,7 @@ namespace Transport_Management_System_WPF
             Oshawa.West = Toronto;
             Belleville.West = Oshawa;
             Kingston.West = Belleville;
-            Ottawa.East = Kingston;
+            Ottawa.West = Kingston;
 
             Windsor.East = London;
             London.East = Hamilton;
@@ -114,51 +114,57 @@ namespace Transport_Management_System_WPF
 
             List<RouteData> returnList = new List<RouteData>();
 
-            do
+            if(OriginID >= 0 && OriginID < Number_of_Cities && DestinationID >= 0 && DestinationID < Number_of_Cities && OriginID != DestinationID)
             {
-                RouteData tripDataPassBack = new RouteData();
-
-                if (OriginID > DestinationID)
+                do
                 {
-                    //going west
-                    nextCity = current.West;
-                    tripDataPassBack.KM = current.WestKM;
-                    tripDataPassBack.DriveTime = current.WestHour;
-                }
-                else
-                {
-                    //going east
-                    nextCity = current.East;
-                    tripDataPassBack.KM = current.EastKM;
-                    tripDataPassBack.DriveTime = current.EastHour;
-                }
+                    RouteData tripDataPassBack = new RouteData();
 
-                tripDataPassBack.CityA = current.CityID;
-                tripDataPassBack.CityB = nextCity.CityID;
+                    if (OriginID > DestinationID)
+                    {
+                        //going west
+                        nextCity = current.West;
+                        tripDataPassBack.KM = current.WestKM;
+                        tripDataPassBack.DriveTime = current.WestHour;
+                    }
+                    else
+                    {
+                        //going east
+                        nextCity = current.East;
+                        tripDataPassBack.KM = current.EastKM;
+                        tripDataPassBack.DriveTime = current.EastHour;
+                    }
 
-                if (current.CityID == OriginID)
-                {
-                    tripDataPassBack.PickupTime += 2;
-                }
+                    tripDataPassBack.CityA = current.CityID;
+                    tripDataPassBack.CityB = nextCity.CityID;
 
-                if (nextCity.CityID == DestinationID)
-                {
-                    tripDataPassBack.DropoffTime += 2;
-                }
+                    if (current.CityID == OriginID)
+                    {
+                        tripDataPassBack.PickupTime += 2;
+                    }
 
-                if(FLTorLTL && !(nextCity.CityID == DestinationID))
-                {
-                    tripDataPassBack.LtlTime += 2;
-                }
+                    if (nextCity.CityID == DestinationID)
+                    {
+                        tripDataPassBack.DropoffTime += 2;
+                    }
+
+                    if (FLTorLTL && !(nextCity.CityID == DestinationID))
+                    {
+                        tripDataPassBack.LtlTime += 2;
+                    }
 
 
-                returnList.Add(tripDataPassBack);
+                    returnList.Add(tripDataPassBack);
 
-                current = nextCity;
+                    current = nextCity;
 
-            } while (nextCity.CityID != DestinationID);
+                } while (nextCity.CityID != DestinationID);
 
-            return returnList;
+                return returnList;
+
+            }
+
+            return null;
         }
     }
 }
