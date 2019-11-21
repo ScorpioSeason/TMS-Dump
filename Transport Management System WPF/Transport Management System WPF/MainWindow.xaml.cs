@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualC.StlClr;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -56,6 +57,7 @@ namespace Transport_Management_System_WPF
 
         private void Button_AddContract(object sender, RoutedEventArgs e)
         {
+            List<DataGridCellInfo> blah = (List<DataGridCellInfo>)DG2.SelectedCells;
             DG2.Items.Refresh();
         }
     }

@@ -21,7 +21,7 @@ namespace Transport_Management_System_WPF
 
         public void ParseContracts()
         {
-            //contracts.Clear();
+            contracts.Clear();
             SQL_Query SQL = new SQL_Query();
             
             List<string>[] temp = new List<string>[6];
