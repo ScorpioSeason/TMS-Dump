@@ -21,6 +21,7 @@ namespace Transport_Management_System_WPF
 
         public void ParseContracts()
         {
+            //contracts.Clear();
             SQL_Query SQL = new SQL_Query();
             
             List<string>[] temp = new List<string>[6];
@@ -38,25 +39,6 @@ namespace Transport_Management_System_WPF
                 block.van_Type = temp[5][i];
                 contracts.Add(block);
             }
-
-            int j = 0;
-
-            //foreach (List<string> entry in temp )
-            //{
-            //    Contract block = new Contract();
-
-            //    block.client_Name = entry[0];
-            //    block.job_Type = entry[1];
-            //    block.quantity = entry[2];
-            //    block.origin = entry[3];
-            //    block.destination = entry[4];
-            //    block.van_Type = entry[5];
-            //    contracts.Add(block);
-            //}
-            					
-
-        
-            
         } 
     }
 }
