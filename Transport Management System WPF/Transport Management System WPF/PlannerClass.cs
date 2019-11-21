@@ -11,15 +11,15 @@ using System.Threading.Tasks;
 
 namespace Transport_Management_System_WPF
 {
-    public struct Customer_Order
-    {
-        public int Customer_OrderID;
-        public Customer Customer_Name;
-        public Location Origin_City;
-        public Location Destination_City;
-        public int Size_in_Palettes;
-        public bool Is_Reefer;
-    };
+    //public struct Customer_Order
+    //{
+    //    public int Customer_OrderID;
+    //    public Customer Customer_Name;
+    //    public Location Origin_City;
+    //    public Location Destination_City;
+    //    public int Size_in_Palettes;
+    //    public bool Is_Reefer;
+    //};
 
     public struct Customer
     {
@@ -42,7 +42,7 @@ namespace Transport_Management_System_WPF
     public struct Trip_Ticket_Line
     {
         public Trip_Ticket Ticket;
-        public Customer_Order Order;
+        public Contract Order;
         public DateTime Date_Added;
     }
 

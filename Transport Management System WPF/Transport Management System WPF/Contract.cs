@@ -16,7 +16,7 @@ namespace Transport_Management_System_WPF
         public string destination { get; set; }
         public bool van_Type { get; set; }
 
-        public int ToCityID(string inputCity)
+        public static int ToCityID(string inputCity)
         {
             if(inputCity == "Windsor")
             {

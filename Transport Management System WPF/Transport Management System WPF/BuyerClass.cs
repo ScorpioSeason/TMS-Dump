@@ -32,11 +32,29 @@ namespace Transport_Management_System_WPF
                 Contract block = new Contract();
 
                 block.client_Name = temp[0][i];
-                block.job_Type = temp[1][i];
-                block.quantity = temp[2][i];
+
+                if(temp[1][i] == "0")
+                {
+                    block.job_Type = false;
+                }
+                else
+                {
+                    block.job_Type = true;
+                }
+
+                block.quantity = int.Parse(temp[2][i]);
                 block.origin = temp[3][i];
                 block.destination = temp[4][i];
-                block.van_Type = temp[5][i];
+
+                if (temp[5][i] == "0")
+                {
+                    block.van_Type = false;
+                }
+                else
+                {
+                    block.van_Type = true;
+                }
+
                 contracts.Add(block);
             }
         } 

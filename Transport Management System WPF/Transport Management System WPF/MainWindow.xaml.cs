@@ -74,6 +74,8 @@ namespace Transport_Management_System_WPF
 
             //List<DataGridCellInfo> blah = (List<DataGridCellInfo>)DG2.SelectedCells;
             //DG2.Items.Refresh();
+
+
         }
 
     }
