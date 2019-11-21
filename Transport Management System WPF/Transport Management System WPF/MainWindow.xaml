@@ -23,7 +23,20 @@
                 <TabItem.Content>
                     <StackPanel>
                         <Button Content="Load/Refresh" Width="100" HorizontalAlignment="Left" Click="Button_Click"/>
-                        <DataGrid Name="DG1" ItemsSource="{Binding}" AutoGenerateColumns="False" >
+                        <DataGrid Name="DG1" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="False"  MaxHeight="140" MinHeight="140">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Client Name" Binding="{Binding client_Name}" IsReadOnly="True" />
+                                <DataGridTextColumn Header="Job Type" Binding="{Binding job_Type}" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="Quantity" Binding="{Binding quantity}" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="Origin" Binding="{Binding origin}" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="Destination" Binding="{Binding destination}" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="Van Type" Binding="{Binding van_Type}" IsReadOnly="True"/>
+                                <!--The Email property contains a URI.  For example "mailto:lucy0@adventure-works.com"-->
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <Button Content="ADD MY SHIT!" Width="100" HorizontalAlignment="Left" Click="Button_AddContract"/>
+                        <Button Content="Load/Refresh" Width="100" HorizontalAlignment="Left" Click="Button_Click_1"/>
+                        <DataGrid Name="DG2" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="False" MaxHeight="200" MinHeight="140">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Client Name" Binding="{Binding client_Name}" />
                                 <DataGridTextColumn Header="Job Type" Binding="{Binding job_Type}"/>
@@ -31,13 +44,6 @@
                                 <DataGridTextColumn Header="Origin" Binding="{Binding origin}"/>
                                 <DataGridTextColumn Header="Destination" Binding="{Binding destination}" />
                                 <DataGridTextColumn Header="Van Type" Binding="{Binding van_Type}"/>
-                                <!--The Email property contains a URI.  For example "mailto:lucy0@adventure-works.com"-->
-                            </DataGrid.Columns>
-                        </DataGrid>
-                        <DataGrid Name="DG2" ItemsSource="{Binding}" AutoGenerateColumns="False" >
-                            <DataGrid.Columns>
-                                <DataGridTextColumn Header="First Name"  Binding="{Binding FirstName}"/>
-                                <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}" />
                                 <!--The Email property contains a URI.  For example "mailto:lucy0@adventure-works.com"-->
                             </DataGrid.Columns>
                         </DataGrid>
