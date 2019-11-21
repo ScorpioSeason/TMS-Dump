@@ -48,12 +48,12 @@ namespace Transport_Management_System_WPF
         }
     }
 
-    public class GraphClass
+    public class MappingClass
     {
         private const int Number_of_Cities = 8;
         public List<CityNode> nodes = new List<CityNode>();
 
-        public GraphClass()
+        public MappingClass()
         {
 
             CityNode Windsor = new CityNode ("Windsor", 0 );
