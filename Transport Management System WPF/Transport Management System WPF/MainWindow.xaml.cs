@@ -57,8 +57,24 @@ namespace Transport_Management_System_WPF
 
         private void Button_AddContract(object sender, RoutedEventArgs e)
         {
-            List<DataGridCellInfo> blah = (List<DataGridCellInfo>)DG2.SelectedCells;
-            DG2.Items.Refresh();
+
+            DataGrid DG = DG2;
+
+            List<Contract> contracts = new List<Contract>();
+
+            foreach(Contract c in DG.SelectedItems)
+            {
+                contracts.Add(c);
+            }
+
+            int i = 0;
+
+            var yeet = DG2.SelectedCells;
+
+
+            //List<DataGridCellInfo> blah = (List<DataGridCellInfo>)DG2.SelectedCells;
+            //DG2.Items.Refresh();
         }
+
     }
 }
