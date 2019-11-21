@@ -4,6 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// This file represents the UI functionality of the Planner class. 
+// This includes selecting carriers for partially complete orders, 
+// viewing active orders, viewing delivered orders pending completion, 
+// and generating invoice reports. Furthermore the planner can also increment time. 
+
 namespace Transport_Management_System_WPF
 {
     public struct Customer_Order

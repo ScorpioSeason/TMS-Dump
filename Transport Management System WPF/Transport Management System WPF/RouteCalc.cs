@@ -4,6 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// This class calculates the optimal route for a new trip. This calculation would
+// occur after the Buyer has selected cities for the order, and (before?) the planner 
+// nominates carriers for the order. 
+
 namespace Transport_Management_System_WPF
 {
     public struct RouteData
