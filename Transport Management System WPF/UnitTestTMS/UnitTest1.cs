@@ -74,6 +74,16 @@ namespace UnitTestTMS
             Assert.AreEqual(totalTrip.totalKM, 60);
         }
 
+        struct TestingContract
+        {
+            public string client_Name { get; set; }
+            public bool job_Type { get; set; }
+            public string quantity { get; set; }
+            public int origin { get; set; }
+            public int destination { get; set; }
+            public string van_Type { get; set; }
+        };
+
 
         [TestMethod]
         public void routCalc4()
@@ -83,13 +93,13 @@ namespace UnitTestTMS
             MappingClass graphClass = new MappingClass();
             List<RouteData> ReturnList = new List<RouteData>();
 
-            Contract contract = new Contract
+            TestingContract contract = new TestingContract
             {
                 client_Name = "Wally World",
-
+                origin = 0,
+                destination = 3,
+                job_Type = true
             };
-
-
 
             ReturnList = graphClass.getTravelData(0, 3, true);
 
@@ -114,11 +124,12 @@ namespace UnitTestTMS
 
             foreach(RouteData x in ReturnList)
             {
-                //Trip_Ticket_Line TTL1 = new Trip_Ticket_Line
-                //{
-                //    Ticket = trip_Ticket,
-                //    Order = 
-                //}
+                Trip_Ticket_Line TTL1 = new Trip_Ticket_Line
+                {
+                    Ticket = trip_Ticket,
+                    Order = contract,
+
+                }
             }
 
     
