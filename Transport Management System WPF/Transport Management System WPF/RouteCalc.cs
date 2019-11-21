@@ -16,6 +16,16 @@ namespace Transport_Management_System_WPF
         public int CityA;
         public int CityB;
     }
+
+    public struct RouteSumData
+    {
+        public double totalDriveTime;
+        public double totalTripTime;
+        public int totalKM;
+        public int OriginCity;
+        public int DestinationCity;
+    };
+
     public class CityNode
     {
         public int CityID { get; set; }
@@ -66,7 +76,7 @@ namespace Transport_Management_System_WPF
             Toronto.East = Oshawa;
             Oshawa.East = Belleville;
             Belleville.East = Kingston;
-            Kingston.East = Oshawa;
+            Kingston.East = Ottawa;
             Ottawa.East = null;
 
             nodes.Add(Windsor);
@@ -101,6 +111,8 @@ namespace Transport_Management_System_WPF
             {
                 nodes[i].WestHour = WestHourArray[i];
             }
+
+            int k = 0;
 
         }
 
@@ -165,6 +177,34 @@ namespace Transport_Management_System_WPF
             }
 
             return null;
+        }
+
+       
+
+        public RouteSumData SummerizeTrip(List<RouteData> inData)
+        {
+            RouteSumData outData = new RouteSumData();
+
+
+            foreach(RouteData x in inData)
+            {
+                outData.totalDriveTime += x.DriveTime;
+
+                outData.totalTripTime += x.DriveTime;
+
+                outData.totalTripTime += x.PickupTime;
+                outData.totalTripTime += x.DropoffTime;
+                outData.totalTripTime += x.LtlTime;
+
+                outData.totalKM += x.KM;
+            }
+
+            outData.OriginCity = inData[0].CityA;
+
+            outData.DestinationCity = inData[inData.Count - 1].CityB;
+
+
+            return outData;
         }
     }
 }
