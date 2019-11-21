@@ -31,7 +31,7 @@ namespace Transport_Management_System_WPF
     public struct Trip_Ticket
     {
         public int TicketID;
-       // public Truck TruckID;
+        public Truck TruckID;
         public bool FTL_or_LTL;
         public bool Is_Reefer;
         public int Size_In_Palette;
@@ -41,8 +41,8 @@ namespace Transport_Management_System_WPF
 
     public struct Trip_Ticket_Line
     {
-        public Trip_Ticket ticket;
-        public Customer_Order order;
+        public Trip_Ticket Ticket;
+        public Customer_Order Order;
         public DateTime Date_Added;
     }
 
@@ -52,16 +52,16 @@ namespace Transport_Management_System_WPF
     }
 
 
-    //public struct Truck
-    //{
-    //    public int TruckID;
-    //    public int CurrentCityID;
-    //    public Carrier carrier;
-    //    public bool Is_Reefer;
-    //    public int Free_Space;
-    //    public bool Waiting_or_Transit;
-    //    public bool FTL_or_LTL;
-    //};
+    public struct Truck
+    {
+        public int TruckID;
+        public int CurrentCityID;
+        //public Carrier carrier;
+        public bool Is_Reefer;
+        public int Free_Space;
+        public bool Waiting_or_Transit;
+        public bool FTL_or_LTL;
+    };
 
 
     class PlannerClass

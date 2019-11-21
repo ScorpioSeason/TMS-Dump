@@ -117,10 +117,7 @@ namespace Transport_Management_System_WPF
             }
 
             int k = 0;
-
         }
-
-
 
         public List<RouteData> getTravelData(int OriginID, int DestinationID, bool FLTorLTL) //ftl is true
         {

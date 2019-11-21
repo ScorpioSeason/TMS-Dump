@@ -83,7 +83,45 @@ namespace UnitTestTMS
             MappingClass graphClass = new MappingClass();
             List<RouteData> ReturnList = new List<RouteData>();
 
+            Contract contract = new Contract
+            {
+                client_Name = "Wally World",
+
+            };
+
+
+
             ReturnList = graphClass.getTravelData(0, 3, true);
+
+            Truck truck = new Truck
+            {
+                TruckID = 1,
+                CurrentCityID = 0,
+                Is_Reefer = false
+            };
+
+            Trip_Ticket trip_Ticket = new Trip_Ticket
+            {
+                TicketID = 32,
+                Days_Passed = 0,
+                FTL_or_LTL = true,
+                Is_Reefer = false,
+                Size_In_Palette = 3,
+                TruckID = truck
+            };
+
+            List<Trip_Ticket_Line> trip_Ticket_Lines = new List<Trip_Ticket_Line>();
+
+            foreach(RouteData x in ReturnList)
+            {
+                //Trip_Ticket_Line TTL1 = new Trip_Ticket_Line
+                //{
+                //    Ticket = trip_Ticket,
+                //    Order = 
+                //}
+            }
+
+    
 
 
 
