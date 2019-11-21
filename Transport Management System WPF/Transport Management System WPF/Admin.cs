@@ -13,6 +13,7 @@
  *
  * =========================================================================================================== */
 
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,7 +42,6 @@ namespace Transport_Management_System_WPF
             adminAlter = new AlterTables(); 
         }
 
-
         // This holds functions that the user can choose to run. For example button presses and UI drawing
 
         // If changes location, move ALL current log files to there, change write location to there. 
@@ -54,9 +54,8 @@ namespace Transport_Management_System_WPF
 
     static public class TMSLogger
     {
-        // Stored location 
-        static string LoggerPath { set; get; }
-        static Dictionary<DateTime, TMSLog> logs = new Dictionary<DateTime, TMSLog>();
+        static string LoggerPath { set; get; }                                          // Stored location of the log file
+        static Dictionary<DateTime, TMSLog> logs = new Dictionary<DateTime, TMSLog>();  // To allow searching by time
 
         // Create Log
         static public void LogIt(string newLogString)
@@ -72,6 +71,38 @@ namespace Transport_Management_System_WPF
         // Save Log
 
         // Move logs
+        static void ChangeLogLocation()
+        {
+            // Select a new location from the popup box
+            //private void SaveAs_Click(object sender, RoutedEventArgs e)
+            //{
+            //    // View Save As File Dialog
+            //    SaveFileDialog saveFileDialog = new SaveFileDialog();
+            //    saveFileDialog.Filter = "Rich Text Format (*.rtf)|*.rtf|All files (*.*)|*.*";
+
+            //    // Set a text range using the textbox name
+            //    TextRange textRange = new TextRange(myTextbox.Document.ContentStart, myTextbox.Document.ContentEnd);
+
+            //    if (saveFileDialog.ShowDialog() == true)
+            //    {
+            //        // Save work area to chosen file
+            //        FileStream fileStream = new FileStream(saveFileDialog.FileName, FileMode.Create);
+            //        textRange.Save(fileStream, DataFormats.Rtf);
+
+            //        // Set unsaved flag to false
+            //        unsavedText = false;
+
+            //    }
+
+            //}
+
+
+            string nLoggerPath = ""; 
+            // Copy log from old location to new one
+                // If successful, inform user, delete old log
+                // If failed, inform user, keep old log
+
+        }
 
         // Search logs (by tags / time)
 
