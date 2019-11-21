@@ -18,11 +18,11 @@ namespace Transport_Management_System_WPF
     /// <summary>
     /// Interaction logic for Page1.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class AdminPage : Page
     {
-        public Page1()
+        public AdminPage()
         {
-            InitializeComponent();
+
         }
     }
 }
