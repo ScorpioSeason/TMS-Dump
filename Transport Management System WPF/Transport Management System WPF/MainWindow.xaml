@@ -61,7 +61,7 @@
                 <TabItem.Content>
                     <StackPanel>
                         <Button Content="Load/Refresh" Width="100" HorizontalAlignment="Left" Click="Button_Click"/>
-                        <Label>List Of Available Contracts</Label> 
+                        <Label>List Of Available Contracts</Label>
                         <DataGrid Name="DG3" ItemsSource="{Binding}" AutoGenerateColumns="False">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="First Name"  Binding="{Binding FirstName}"/>
@@ -78,11 +78,10 @@
                             </DataGrid.Columns>
                         </DataGrid>
                         <Button Content="Increment Time (1 Day)" Width="100" HorizontalAlignment="Left"/>
-                        
+
                     </StackPanel>
                 </TabItem.Content>
             </TabItem>
-            
         </TabControl>
         <StatusBar Grid.Row="1">
             <StatusBarItem>

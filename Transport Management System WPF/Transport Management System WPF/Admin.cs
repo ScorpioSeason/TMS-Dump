@@ -65,12 +65,51 @@ namespace Transport_Management_System_WPF
         }
 
         // Draw logs
+        static void DrawLogList()
+        {
+            //private void Open_Click(object sender, RoutedEventArgs e)
+            //{
+            //    // View Open File Dialog
+            //    OpenFileDialog openFileDialog = new OpenFileDialog();
+            //    openFileDialog.Filter = "Rich Text Format (*.rtf)|*.rtf|All files (*.*)|*.*";
 
+            //    // Set a text range using the textbox name
+            //    TextRange textRange = new TextRange(myTextbox.Document.ContentStart, myTextbox.Document.ContentEnd);
+
+            //    // Save First
+            //    if (unsavedText == true)
+            //    {
+            //        // It doesn't make sense to just open the save file dialog without feedback
+            //        string messageBoxText = "Save changes to your file before opening another one?";
+            //        string caption = "Unsaved Changes!";
+            //        MessageBoxButton button = MessageBoxButton.YesNo;
+            //        MessageBoxResult result = MessageBox.Show(messageBoxText, caption, button);
+
+            //        if (result == MessageBoxResult.Yes)
+            //        {
+            //            // Save changes
+            //            SaveAs_Click(sender, e);
+
+            //        }
+
+            //    }
+
+            //    // Load file to work area
+            //    if (openFileDialog.ShowDialog() == true)
+            //    {
+            //        FileStream fileStream = new FileStream(openFileDialog.FileName, FileMode.Open);
+            //        textRange.Load(fileStream, DataFormats.Rtf);
+            //    }
+
+            //}
+        }
+        
         // Select Log
 
         // Save Log
 
         // Move logs
+
         static void ChangeLogLocation()
         {
             // Select a new location from the popup box
