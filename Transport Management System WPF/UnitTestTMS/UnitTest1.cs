@@ -4,10 +4,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Transport_Management_System_WPF;
 
 
-
-
-
-
 namespace UnitTestTMS
 {
     [TestClass]
@@ -21,7 +17,7 @@ namespace UnitTestTMS
         {
 
             //ARRANGE
-            GraphClass graphClass = new GraphClass();
+            MappingClass graphClass = new MappingClass();
             List<RouteData> ReturnList = new List<RouteData>();
 
             ReturnList = graphClass.getTravelData(7, 0, true);
@@ -42,7 +38,7 @@ namespace UnitTestTMS
         {
 
             //ARRANGE
-            GraphClass graphClass = new GraphClass();
+            MappingClass graphClass = new MappingClass();
             List<RouteData> ReturnList = new List<RouteData>();
 
             ReturnList = graphClass.getTravelData(7, 0, false);
@@ -63,7 +59,7 @@ namespace UnitTestTMS
         {
 
             //ARRANGE
-            GraphClass graphClass = new GraphClass();
+            MappingClass graphClass = new MappingClass();
             List<RouteData> ReturnList = new List<RouteData>();
 
             ReturnList = graphClass.getTravelData(3, 4, true); 
@@ -77,5 +73,22 @@ namespace UnitTestTMS
             Assert.AreEqual((int)(totalTrip.totalTripTime * 100), 530);
             Assert.AreEqual(totalTrip.totalKM, 60);
         }
+
+
+        [TestMethod]
+        public void routCalc4()
+        {
+
+            //ARRANGE
+            MappingClass graphClass = new MappingClass();
+            List<RouteData> ReturnList = new List<RouteData>();
+
+            ReturnList = graphClass.getTravelData(0, 3, true);
+
+
+
+        }
+
+
     }
 }
