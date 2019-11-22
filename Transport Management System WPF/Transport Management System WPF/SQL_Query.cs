@@ -1,4 +1,19 @@
-﻿using System;
+﻿// ADMIN FILE HEADER COMMENT: =================================================================================
+/**
+ *  \file		Admin.cs
+ *  \ingroup	TMS
+ *  \date		November 20, 2019
+ *  \author		8000 Cigarettes - Megan
+ *  \brief	    This file contains the admin functionality	  
+ *  \see		MainWindow.xaml
+ *  \details    This file holds the functionality of the Admin class. The Admin has the ability to view logs as 
+ *              specified by time period, view details of specific logs, alter where the log files are stored, 
+ *              initiate backups of the TMS database, choose where the TMS db is backed up to, alter the Carrier 
+ *              Data Table, the Route Table, and the Rate / Fee Tables.                                       
+ *
+ * =========================================================================================================== */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +27,15 @@ using System.Diagnostics;
 
 //from https://www.codeproject.com/articles/43438/connect-c-to-mysql
 
-
 namespace Transport_Management_System_WPF
 {
+    // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
+    /**   
+    *   \class		Admin
+    *   \brief		This class runs the Admin UI functionality
+    *   \details	... static class?  
+    *   
+    * -------------------------------------------------------------------------------------------------------- */
     public class SQL_Query
     {
         private MySqlConnection connection;
@@ -23,12 +44,36 @@ namespace Transport_Management_System_WPF
         private string uid;
         private string password;
 
+        // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn			int Square()
+        *	\brief		To create a new Square by validating or else defaulting new values
+        *	\details	THis is if you have more to say about what the function does and don't want to inline comment
+        *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
+        *	\param[out]	char[]	newSideLength	An incoming value meant to become the square's side length
+        *	\exception	This is if we have some big ol try catches?
+        *	\see		CallsMade()
+        *	\return		None
+        *
+        * ---------------------------------------------------------------------------------------------------- */
         //Constructor
         public SQL_Query()
         {
             Initialize();
         }
 
+        // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn			int Square()
+        *	\brief		To create a new Square by validating or else defaulting new values
+        *	\details	THis is if you have more to say about what the function does and don't want to inline comment
+        *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
+        *	\param[out]	char[]	newSideLength	An incoming value meant to become the square's side length
+        *	\exception	This is if we have some big ol try catches?
+        *	\see		CallsMade()
+        *	\return		None
+        *
+        * ---------------------------------------------------------------------------------------------------- */
         //Initialize values
         public void Initialize()
         {
@@ -44,6 +89,18 @@ namespace Transport_Management_System_WPF
 
         }
 
+        // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn			int Square()
+        *	\brief		To create a new Square by validating or else defaulting new values
+        *	\details	THis is if you have more to say about what the function does and don't want to inline comment
+        *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
+        *	\param[out]	char[]	newSideLength	An incoming value meant to become the square's side length
+        *	\exception	This is if we have some big ol try catches?
+        *	\see		CallsMade()
+        *	\return		None
+        *
+        * ---------------------------------------------------------------------------------------------------- */
         //open connection to database
         private bool OpenConnection()
         {
@@ -72,7 +129,19 @@ namespace Transport_Management_System_WPF
                 return false;
             }
         }
-
+        
+        // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn			int Square()
+        *	\brief		To create a new Square by validating or else defaulting new values
+        *	\details	THis is if you have more to say about what the function does and don't want to inline comment
+        *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
+        *	\param[out]	char[]	newSideLength	An incoming value meant to become the square's side length
+        *	\exception	This is if we have some big ol try catches?
+        *	\see		CallsMade()
+        *	\return		None
+        *
+        * ---------------------------------------------------------------------------------------------------- */
         //Close connection
         private bool CloseConnection()
         {
@@ -88,6 +157,18 @@ namespace Transport_Management_System_WPF
             }
         }
 
+        // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn			int Square()
+        *	\brief		To create a new Square by validating or else defaulting new values
+        *	\details	THis is if you have more to say about what the function does and don't want to inline comment
+        *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
+        *	\param[out]	char[]	newSideLength	An incoming value meant to become the square's side length
+        *	\exception	This is if we have some big ol try catches?
+        *	\see		CallsMade()
+        *	\return		None
+        *
+        * ---------------------------------------------------------------------------------------------------- */
         //Select statement
         public List<string>[] Select_Contracts()
         {
@@ -101,8 +182,6 @@ namespace Transport_Management_System_WPF
             list[3] = new List<string>();
             list[4] = new List<string>();
             list[5] = new List<string>();
-
-
 
             //Open connection
             if (this.OpenConnection() == true)

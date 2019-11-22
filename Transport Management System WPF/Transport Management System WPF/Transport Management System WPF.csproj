@@ -85,9 +85,6 @@
     <Compile Include="AdminPage.xaml.cs">
       <DependentUpon>AdminPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Page1.xaml.cs">
-      <DependentUpon>Page1.xaml</DependentUpon>
-    </Compile>
     <Compile Include="SQL_FAKEIT.cs" />
     <Compile Include="SQL_Query.cs" />
     <Compile Include="MappingClass.cs" />
@@ -110,10 +107,6 @@
     <Page Include="AdminPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Page1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ViewLogDetailsPage.xaml">
       <Generator>MSBuild:Compile</Generator>
