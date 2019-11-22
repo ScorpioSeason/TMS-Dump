@@ -18,9 +18,9 @@ namespace TMSwPages
     /// <summary>
     /// Interaction logic for MainNavWindow.xaml
     /// </summary>
-    public partial class MainNavWindow : NavigationWindow
+    public partial class MainWindow : NavigationWindow
     {
-        public MainNavWindow()
+        public MainWindow()
         {
             InitializeComponent();
         }

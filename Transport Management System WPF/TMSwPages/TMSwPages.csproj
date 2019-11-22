@@ -59,8 +59,8 @@
     <Compile Include="AdminPage.xaml.cs">
       <DependentUpon>AdminPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainNavWindow.xaml.cs">
-      <DependentUpon>MainNavWindow.xaml</DependentUpon>
+    <Compile Include="mainwindow.xaml.cs">
+      <DependentUpon>mainwindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewLogDetails.xaml.cs">
       <DependentUpon>ViewLogDetails.xaml</DependentUpon>
@@ -69,7 +69,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainNavWindow.xaml">
+    <Page Include="mainwindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

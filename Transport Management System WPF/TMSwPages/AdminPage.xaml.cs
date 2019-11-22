@@ -79,7 +79,7 @@ namespace TMSwPages
         {
             if (LogsList.SelectedItem != null)
             {
-                ViewLogDetailsPage newpage = new ViewLogDetailsPage(this.LogsList.SelectedItem);
+                ViewLogDetails newpage = new ViewLogDetails(this.LogsList.SelectedItem);
                 this.NavigationService.Navigate(newpage);
             }
         }
