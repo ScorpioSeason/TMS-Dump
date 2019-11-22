@@ -95,15 +95,19 @@ namespace SampleWFPUsingPages
                 // Fill the working list with lines from the file 
                 while (!streamReader.EndOfStream)
                 {
-                    string lineString = streamReader.ReadLine();
-                    NewLog(lineString);
+                    string lineString = "";
+                    if ((lineString = streamReader.ReadLine()).Trim() != "")
+                    {
+                        NewLog(lineString);
+                    }
+                        
                 }
 
                 // Close the file
                 streamReader.Close(); fileStream.Close();
             }
             // If an exception is thrown here, create a log for it. 
-            catch ( Exception e)
+            catch (Exception e)
             {
                 LogIt("|" + LoggerPath + "/AdminClasses.cs" + "|" + "TMSLogger" + "|" + "ReadExistingLogFile" + "|" + "Exception" + "|" + e.Message + "|");
                 readSuccess = false;
@@ -237,7 +241,8 @@ namespace SampleWFPUsingPages
                 logTime = DateTime.UtcNow;
                 nUnparsed = "|" + logPath + "|" + logClass + "|" + logMethod + "|" + logType + "|" + logMessage + "|";
             }
-                BSV = "|" + logTime + nUnparsed;
+
+            BSV = "|" + logTime + nUnparsed;
         }
 
     }

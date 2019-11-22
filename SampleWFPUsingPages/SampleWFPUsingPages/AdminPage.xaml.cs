@@ -51,7 +51,6 @@ namespace SampleWFPUsingPages
             
             if (searchTags.Text.Trim() != "")
             {
-
                 foreach (TMSLog l in TMSLogger.logs)
                 {
                     if ((l.logType).Contains(searchTags.Text) || (l.logMessage).Contains(searchTags.Text))
@@ -63,12 +62,6 @@ namespace SampleWFPUsingPages
                         searchResults.Add(l);
                     }
                 }
-                    /*  logPath = nLogPath;
-                        logClass = nLogClass;
-                        logMethod = nLogMethod;
-                        logType = nLogType;
-                        logMessage = nLogMessage;
-                        logTime = DateTime.Now; */
             }
             else
             {
