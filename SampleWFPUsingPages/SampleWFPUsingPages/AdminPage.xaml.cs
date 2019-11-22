@@ -34,14 +34,14 @@ namespace SampleWFPUsingPages
         //    this.DataContext = data;
         //}
 
-        private void SearchClick(object sender, RoutedEventArgs e)
+        // This adds logs which match search strings to the displayed list
+        private void LoadClick(object sender, RoutedEventArgs e)
         {
             // This is just test logs.
-            TMSLogger.LogIt("THIs |is| a |thing?|");
-            TMSLogger.LogIt("THIs is another different thing?");
-            TMSLogger.LogIt("|THIs |is |another |third |different |thing?");
-
-            searchResults.Clear();
+            if (TMSLogger.ReadExistingLogFile())
+            {
+                searchResults.Clear();
+            }
 
             // This actually populates the logs in the UI
             //if ()
@@ -81,6 +81,7 @@ namespace SampleWFPUsingPages
             LogsList.Items.Refresh();
         }
 
+        // This navigates to a new page where the details of the selected log are listed
         private void ViewMoreClick(object sender, RoutedEventArgs e)
         {
             if (LogsList.SelectedItem != null)
@@ -89,5 +90,6 @@ namespace SampleWFPUsingPages
                 this.NavigationService.Navigate(newpage);
             }
         }
+
     }
 }

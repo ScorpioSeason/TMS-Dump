@@ -70,7 +70,7 @@
                             </ComboBox>
                             <DatePicker Grid.Row="0" Grid.Column="1" Margin="5,5,5,5"></DatePicker>
                             <TextBox x:Name="searchTags" Grid.Row="0" Grid.Column="2" Margin="5,5,5,5" Grid.ColumnSpan="2"></TextBox>
-                            <Button Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Click="SearchClick">Search</Button>
+                            <Button Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Click="LoadClick">Load</Button>
 
                             <!--Buttons Row (2) -->
                             <Button Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" VerticalAlignment="Bottom">Log Settings</Button>

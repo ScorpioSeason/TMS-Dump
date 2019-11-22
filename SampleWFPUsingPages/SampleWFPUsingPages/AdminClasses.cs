@@ -14,11 +14,13 @@
  * =========================================================================================================== */
 
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 
 namespace SampleWFPUsingPages
 {
@@ -31,6 +33,8 @@ namespace SampleWFPUsingPages
     * -------------------------------------------------------------------------------------------------------- */
     class Admin
     {
+        // This is actually mostly run in the AdminPage and its code-behind... this class may be redundant... 
+
         //TMSLogger adminLogger = null;
         BackupTMS adminBackup = null;
         AlterTables adminAlter = null;
@@ -55,54 +59,89 @@ namespace SampleWFPUsingPages
     static public class TMSLogger
     {
         static string LoggerPath { set; get; }                                          // Stored location of the log file
-        //static public Dictionary<DateTime, TMSLog> logs = new Dictionary<DateTime, TMSLog>();  // To allow searching by time
-        static public List<TMSLog> logs = new List<TMSLog>();  // To allow searching by time
+        static public List<TMSLog> logs = new List<TMSLog>();
 
-        // Create Log
+        // Add to internal Log list AND append to the external file
         static public void LogIt(string newLogString)
         {
             TMSLog myLog = new TMSLog(newLogString);
-            logs.Add(myLog); 
+            logs.Add(myLog);
+            AppendLogFile(myLog);
+
         }
 
-        // Draw logs
-        static void DrawLogList()
+        // Only add to the internal log list (i.e. read in from file)
+        static public void NewLog(string newLogString)
         {
-            //private void Open_Click(object sender, RoutedEventArgs e)
-            //{
-            //    // View Open File Dialog
-            //    OpenFileDialog openFileDialog = new OpenFileDialog();
-            //    openFileDialog.Filter = "Rich Text Format (*.rtf)|*.rtf|All files (*.*)|*.*";
+            TMSLog myLog = new TMSLog(newLogString);
+            logs.Add(myLog);
+        }
 
-            //    // Set a text range using the textbox name
-            //    TextRange textRange = new TextRange(myTextbox.Document.ContentStart, myTextbox.Document.ContentEnd);
+        // Read logs in from a file
+        static public bool ReadExistingLogFile()
+        {
+            bool readSuccess = true;
+            LoggerPath = Environment.CurrentDirectory;
 
-            //    // Save First
-            //    if (unsavedText == true)
-            //    {
-            //        // It doesn't make sense to just open the save file dialog without feedback
-            //        string messageBoxText = "Save changes to your file before opening another one?";
-            //        string caption = "Unsaved Changes!";
-            //        MessageBoxButton button = MessageBoxButton.YesNo;
-            //        MessageBoxResult result = MessageBox.Show(messageBoxText, caption, button);
+            // Clear out the working list 
+            logs.Clear(); 
 
-            //        if (result == MessageBoxResult.Yes)
-            //        {
-            //            // Save changes
-            //            SaveAs_Click(sender, e);
+            try
+            {
+                // Open the file stream to read from the file
+                FileStream fileStream = new FileStream((LoggerPath + "/TMSLogger.txt"), FileMode.Open, FileAccess.Read);
+                StreamReader streamReader = new StreamReader(fileStream);
 
-            //        }
+                // Fill the working list with lines from the file 
+                while (!streamReader.EndOfStream)
+                {
+                    string lineString = streamReader.ReadLine();
+                    NewLog(lineString);
+                }
 
-            //    }
+                // Close the file
+                streamReader.Close(); fileStream.Close();
+            }
+            // If an exception is thrown here, create a log for it. 
+            catch ( Exception e)
+            {
+                LogIt("|" + LoggerPath + "/AdminClasses.cs" + "|" + "TMSLogger" + "|" + "ReadExistingLogFile" + "|" + "Exception" + "|" + e.Message + "|");
+                readSuccess = false;
+            }
 
-            //    // Load file to work area
-            //    if (openFileDialog.ShowDialog() == true)
-            //    {
-            //        FileStream fileStream = new FileStream(openFileDialog.FileName, FileMode.Open);
-            //        textRange.Load(fileStream, DataFormats.Rtf);
-            //    }
+            return readSuccess;
 
-            //}
+        }
+
+        static public bool AppendLogFile(TMSLog newLog)
+        {
+            bool appendSuccess = true; 
+            LoggerPath = Environment.CurrentDirectory;
+
+            try
+            {
+                // Open the filestream to append to the file. 
+                FileStream fileStream = new FileStream((LoggerPath + "/TMSLogger.txt"), FileMode.Append, FileAccess.Write);
+                StreamWriter fileWriter = new StreamWriter(fileStream);
+
+                // Add each log entry from the working list to the file as a BSV
+               
+                fileWriter.WriteLine(newLog.BSV);
+                fileWriter.Flush(); 
+
+                // Close the file
+                fileWriter.Close();  fileStream.Close(); 
+            }
+            // If an exception is thrown here, catch it
+            catch (Exception e)
+            {
+                // This could become problematic as it calls itself
+                LogIt("|" + LoggerPath + "/AdminClasses.cs" + "|" + "TMSLogger" + "|" + "AppendLogFile" + "|" + "Exception" + "|" + e.Message + "|");
+                appendSuccess = false; 
+            }
+
+            return appendSuccess; 
+
         }
 
         // Select Log
@@ -160,32 +199,34 @@ namespace SampleWFPUsingPages
         public string logMethod { set; get; }
         public string logType { set; get; }
         public string logMessage { set; get; }
-        public string unparsed { set; get; }
+        public string BSV { set; get; } // Bar separated values
         public DateTime logTime { set; get; }
-
-        // Default constructor at least sets time
-        //public TMSLog()
-        //{
-        //    logTime = DateTime.Now;
-        //}
-
-        // Creates a log from an unparsed string
 
         public TMSLog(string nUnparsed)
         {
-            unparsed = nUnparsed;
-            // Set parsed using unparsed
-
-            if (Regex.Matches(unparsed, "|").Count == 6)
+            // Used in Logger / LogIt call
+            if ((Regex.Matches(nUnparsed, "\\|").Count) == 6)
             {
-                string[] temp = unparsed.Split('|');
-                logPath = temp[0];
-                logClass = temp[1];
-                logMethod = temp[2];
-                logType = temp[3];
-                logMessage = temp[4];
+                string[] temp = nUnparsed.Split('|');
+                logPath = temp[1];
+                logClass = temp[2];
+                logMethod = temp[3];
+                logType = temp[4];
+                logMessage = temp[5];
                 logTime = DateTime.UtcNow;
             }
+            // Used in reading in from a file
+            else if ((Regex.Matches(nUnparsed, "\\|").Count) == 7)
+            {
+                string[] temp = nUnparsed.Split('|');
+                logTime = DateTime.Parse(temp[1]);
+                logPath = temp[2];
+                logClass = temp[3];
+                logMethod = temp[4];
+                logType = temp[5];
+                logMessage = temp[6];
+            }
+            // Used in formatting error
             else
             {
                 logPath = "AdminClasses.cs";
@@ -194,21 +235,10 @@ namespace SampleWFPUsingPages
                 logType = "LogParseError";
                 logMessage = "The log message did not enter as the correct string format";
                 logTime = DateTime.UtcNow;
+                nUnparsed = "|" + logPath + "|" + logClass + "|" + logMethod + "|" + logType + "|" + logMessage + "|";
             }
-
+                BSV = "|" + logTime + nUnparsed;
         }
-
-        //// Creates a log object from parsed information
-        //public TMSLog(string nLogPath, string nLogClass, string nLogMethod, string nLogType, string nLogMessage)
-        //{
-        //    logPath = nLogPath;
-        //    logClass = nLogClass;
-        //    logMethod = nLogMethod;
-        //    logType = nLogType;
-        //    logMessage = nLogMessage;
-        //    logTime = DateTime.Now;
-        //    unparsed = "|" + nLogPath + "|" + nLogClass + "|" + nLogMethod + "|" + nLogType + "|" + nLogMessage + "|"; 
-        //}
 
     }
 
