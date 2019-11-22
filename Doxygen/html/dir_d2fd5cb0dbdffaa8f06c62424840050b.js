@@ -1,27 +1,26 @@
 var dir_d2fd5cb0dbdffaa8f06c62424840050b =
 [
     [ "AdminClasses.cs", "_admin_classes_8cs.html", [
-      [ "Admin", "class_t_m_sw_pages_1_1_admin.html", null ],
+      [ "Admin", "class_t_m_sw_pages_1_1_admin.html", "class_t_m_sw_pages_1_1_admin" ],
+      [ "TMSLogger", "class_t_m_sw_pages_1_1_t_m_s_logger.html", "class_t_m_sw_pages_1_1_t_m_s_logger" ],
       [ "TMSLog", "class_t_m_sw_pages_1_1_t_m_s_log.html", "class_t_m_sw_pages_1_1_t_m_s_log" ],
       [ "BackupTMS", "class_t_m_sw_pages_1_1_backup_t_m_s.html", null ],
       [ "AlterTables", "class_t_m_sw_pages_1_1_alter_tables.html", null ]
     ] ],
+    [ "AdminPage.xaml", "_admin_page_8xaml.html", null ],
     [ "AdminPage.xaml.cs", "_admin_page_8xaml_8cs.html", [
-      [ "AdminPage", "class_t_m_sw_pages_1_1_admin_page.html", null ]
+      [ "AdminPage", "class_t_m_sw_pages_1_1_admin_page.html", "class_t_m_sw_pages_1_1_admin_page" ]
     ] ],
+    [ "App.xaml", "_app_8xaml.html", null ],
     [ "App.xaml.cs", "_app_8xaml_8cs.html", [
       [ "App", "class_t_m_sw_pages_1_1_app.html", null ]
     ] ],
+    [ "mainwindow.xaml", "mainwindow_8xaml.html", null ],
     [ "mainwindow.xaml.cs", "mainwindow_8xaml_8cs.html", [
-      [ "MainWindow", "class_t_m_sw_pages_1_1_main_window.html", null ]
+      [ "MainWindow", "class_t_m_sw_pages_1_1_main_window.html", "class_t_m_sw_pages_1_1_main_window" ]
     ] ],
-    [ "Page1.xaml.cs", "_page1_8xaml_8cs.html", [
-      [ "Page1", "class_t_m_sw_pages_1_1_page1.html", null ]
-    ] ],
-    [ "Page2.xaml.cs", "_page2_8xaml_8cs.html", [
-      [ "Page2", "class_t_m_sw_pages_1_1_page2.html", null ]
-    ] ],
+    [ "ViewLogDetails.xaml", "_view_log_details_8xaml.html", null ],
     [ "ViewLogDetails.xaml.cs", "_view_log_details_8xaml_8cs.html", [
-      [ "ViewLogDetails", "class_t_m_sw_pages_1_1_view_log_details.html", null ]
+      [ "ViewLogDetails", "class_t_m_sw_pages_1_1_view_log_details.html", "class_t_m_sw_pages_1_1_view_log_details" ]
     ] ]
 ];

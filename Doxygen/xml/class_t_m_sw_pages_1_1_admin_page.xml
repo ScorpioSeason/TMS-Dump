@@ -64,7 +64,7 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="see"><para>TMSLogger.LogIt() </para>
+<simplesect kind="see"><para><ref refid="class_t_m_sw_pages_1_1_t_m_s_logger_1ae3fc46f0a10cbcbe582f57f0ea75cc8d" kindref="member">TMSLogger.LogIt()</ref> </para>
 </simplesect>
 <simplesect kind="return"><para>void</para>
 </simplesect>

@@ -59,6 +59,26 @@
 <para><hruler/>
  </para>
     </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>TMSwPages.Admin</label>
+        <link refid="class_t_m_sw_pages_1_1_admin"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>adminAlter</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>adminBackup</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>TMSwPages.AlterTables</label>
+        <link refid="class_t_m_sw_pages_1_1_alter_tables"/>
+      </node>
+      <node id="3">
+        <label>TMSwPages.BackupTMS</label>
+        <link refid="class_t_m_sw_pages_1_1_backup_t_m_s"/>
+      </node>
+    </collaborationgraph>
     <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" line="35" column="1" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" bodystart="34" bodyend="47"/>
     <listofallmembers>
       <member refid="class_t_m_sw_pages_1_1_admin_1a9544cc6cc847d75e5eca01c31dfa7655" prot="private" virt="non-virtual"><scope>TMSwPages::Admin</scope><name>Admin</name></member>

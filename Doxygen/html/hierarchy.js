@@ -11,9 +11,8 @@ var hierarchy =
     ] ],
     [ "Page", null, [
       [ "TMSwPages::AdminPage", "class_t_m_sw_pages_1_1_admin_page.html", null ],
-      [ "TMSwPages::Page1", "class_t_m_sw_pages_1_1_page1.html", null ],
-      [ "TMSwPages::Page2", "class_t_m_sw_pages_1_1_page2.html", null ],
       [ "TMSwPages::ViewLogDetails", "class_t_m_sw_pages_1_1_view_log_details.html", null ]
     ] ],
-    [ "TMSwPages.TMSLog", "class_t_m_sw_pages_1_1_t_m_s_log.html", null ]
+    [ "TMSwPages.TMSLog", "class_t_m_sw_pages_1_1_t_m_s_log.html", null ],
+    [ "TMSwPages.TMSLogger", "class_t_m_sw_pages_1_1_t_m_s_logger.html", null ]
 ];

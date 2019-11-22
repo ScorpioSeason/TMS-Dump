@@ -58,7 +58,7 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="see"><para>TMSLog(), logs.Add(), AppendLogFile() </para>
+<simplesect kind="see"><para>TMSLog(), logs.Add(), <ref refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a016f771887948d9c8e41908106fac94d" kindref="member">AppendLogFile()</ref> </para>
 </simplesect>
 <simplesect kind="return"><para>void</para>
 </simplesect>
@@ -121,7 +121,7 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="see"><para>logs.Clear(), NewLog(), LogIt() </para>
+<simplesect kind="see"><para>logs.Clear(), <ref refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a34e534b54ac36d38c33d7a8cb5abb7c7" kindref="member">NewLog()</ref>, <ref refid="class_t_m_sw_pages_1_1_t_m_s_logger_1ae3fc46f0a10cbcbe582f57f0ea75cc8d" kindref="member">LogIt()</ref> </para>
 </simplesect>
 <simplesect kind="return"><para>bool readSuccess A value indicating whether the file read threw an exception.</para>
 </simplesect>
@@ -159,7 +159,7 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="see"><para>LogIt() </para>
+<simplesect kind="see"><para><ref refid="class_t_m_sw_pages_1_1_t_m_s_logger_1ae3fc46f0a10cbcbe582f57f0ea75cc8d" kindref="member">LogIt()</ref> </para>
 </simplesect>
 <simplesect kind="return"><para>bool appendSuccess A value indicating whether the file write threw an exception.</para>
 </simplesect>

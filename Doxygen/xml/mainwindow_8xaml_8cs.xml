@@ -13,7 +13,7 @@
 </simplesect>
 <simplesect kind="author"><para>8000 Cigarettes - Megan </para>
 </simplesect>
-<simplesect kind="see"><para>mainwindow.xaml</para>
+<simplesect kind="see"><para><ref refid="mainwindow_8xaml" kindref="compound">mainwindow.xaml</ref></para>
 </simplesect>
 This file contains the Interaction Logic for the Main navigation window Page. Right now it doesn&apos;t do anything except inherit from NavigationWindow</para>
 <para><hruler/>
@@ -40,7 +40,7 @@ This file contains the Interaction Logic for the Main navigation window Page. Ri
 <codeline lineno="30"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="32" refid="class_t_m_sw_pages_1_1_main_window" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">partial<sp/>class<sp/></highlight><highlight class="normal"><ref refid="class_t_m_sw_pages_1_1_main_window" kindref="compound">MainWindow</ref><sp/>:<sp/>NavigationWindow</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_t_m_sw_pages_1_1_main_window" kindref="compound">MainWindow</ref>()</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_t_m_sw_pages_1_1_main_window_1a466951de520a75e77afa4a40f6cb710f" kindref="member">MainWindow</ref>()</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>InitializeComponent();</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>

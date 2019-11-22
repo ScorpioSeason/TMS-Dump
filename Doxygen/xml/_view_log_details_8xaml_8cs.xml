@@ -5,8 +5,19 @@
     <innerclass refid="class_t_m_sw_pages_1_1_view_log_details" prot="public">TMSwPages::ViewLogDetails</innerclass>
     <innernamespace refid="namespace_t_m_sw_pages">TMSwPages</innernamespace>
     <briefdescription>
+<para>This file contains the interaction logic for the detailed view of a single TMSLog. <linebreak/>
+ </para>
     </briefdescription>
     <detaileddescription>
+<para><simplesect kind="date"><para>November 20, 2019 </para>
+</simplesect>
+<simplesect kind="author"><para>8000 Cigarettes - Megan </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_view_log_details_8xaml" kindref="compound">ViewLogDetails.xaml</ref></para>
+</simplesect>
+This file contains the functionality for the detailed view of a single TMSLog. This only displays the simple details and allows for back-navigation.</para>
+<para><hruler/>
+ </para>
     </detaileddescription>
     <programlisting>
 <codeline lineno="1"><highlight class="comment">//<sp/>VIEWLOGDETAILS<sp/>FILE<sp/>HEADER<sp/>COMMENT:<sp/>========================================================================</highlight></codeline>
@@ -31,13 +42,13 @@
 <codeline lineno="38" refid="class_t_m_sw_pages_1_1_view_log_details" refkind="compound"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">partial<sp/>class<sp/></highlight><highlight class="normal"><ref refid="class_t_m_sw_pages_1_1_view_log_details" kindref="compound">ViewLogDetails</ref><sp/>:<sp/>Page</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>METHOD<sp/>HEADER<sp/>COMMENT<sp/>-------------------------------------------------------------------------------</highlight></codeline>
-<codeline lineno="49"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_t_m_sw_pages_1_1_view_log_details" kindref="compound">ViewLogDetails</ref>()</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_t_m_sw_pages_1_1_view_log_details_1a52d7460a3afa1e236afeeeb29c88584c" kindref="member">ViewLogDetails</ref>()</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>InitializeComponent();</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"></highlight></codeline>
 <codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>METHOD<sp/>HEADER<sp/>COMMENT<sp/>-------------------------------------------------------------------------------</highlight></codeline>
-<codeline lineno="63"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_t_m_sw_pages_1_1_view_log_details" kindref="compound">ViewLogDetails</ref>(</highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>data)<sp/>:<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">()</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_t_m_sw_pages_1_1_view_log_details_1a52d7460a3afa1e236afeeeb29c88584c" kindref="member">ViewLogDetails</ref>(</highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>data)<sp/>:<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">()</highlight></codeline>
 <codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.DataContext<sp/>=<sp/>data;</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['viewlogdetails_23',['ViewLogDetails',['../class_t_m_sw_pages_1_1_view_log_details.html',1,'TMSwPages']]],
-  ['viewlogdetails_2examl_2ecs_24',['ViewLogDetails.xaml.cs',['../_view_log_details_8xaml_8cs.html',1,'']]]
+  ['newlog_30',['NewLog',['../class_t_m_sw_pages_1_1_t_m_s_logger.html#a34e534b54ac36d38c33d7a8cb5abb7c7',1,'TMSwPages::TMSLogger']]]
 ];

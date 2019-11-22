@@ -23,14 +23,6 @@
   <compound refid="class_t_m_sw_pages_1_1_main_window" kind="class"><name>TMSwPages::MainWindow</name>
     <member refid="class_t_m_sw_pages_1_1_main_window_1a466951de520a75e77afa4a40f6cb710f" kind="function"><name>MainWindow</name></member>
   </compound>
-  <compound refid="class_t_m_sw_pages_1_1_page1" kind="class"><name>TMSwPages::Page1</name>
-    <member refid="class_t_m_sw_pages_1_1_page1_1a6e540a2e5c6472d3e75f46425ed5889c" kind="function"><name>Page1</name></member>
-    <member refid="class_t_m_sw_pages_1_1_page1_1a8b04f417b1c3a9bbc3410ff0dfa14c9a" kind="function"><name>Button_Click</name></member>
-  </compound>
-  <compound refid="class_t_m_sw_pages_1_1_page2" kind="class"><name>TMSwPages::Page2</name>
-    <member refid="class_t_m_sw_pages_1_1_page2_1ac0ca36316387e73fa05df96fd7718eb6" kind="function"><name>Page2</name></member>
-    <member refid="class_t_m_sw_pages_1_1_page2_1a6fbe73fc3471144492a7bbd5c11f2e9c" kind="function"><name>Page2</name></member>
-  </compound>
   <compound refid="class_t_m_sw_pages_1_1_t_m_s_log" kind="class"><name>TMSwPages::TMSLog</name>
     <member refid="class_t_m_sw_pages_1_1_t_m_s_log_1a5692db4f00e1e7d73a6dc266cfcf9150" kind="property"><name>logPath</name></member>
     <member refid="class_t_m_sw_pages_1_1_t_m_s_log_1a80193fb90a1d3607eab8ffbef0ed4c0e" kind="property"><name>logClass</name></member>
@@ -74,15 +66,19 @@
   </compound>
   <compound refid="_admin_classes_8cs" kind="file"><name>AdminClasses.cs</name>
   </compound>
+  <compound refid="_admin_page_8xaml" kind="file"><name>AdminPage.xaml</name>
+  </compound>
   <compound refid="_admin_page_8xaml_8cs" kind="file"><name>AdminPage.xaml.cs</name>
+  </compound>
+  <compound refid="_app_8xaml" kind="file"><name>App.xaml</name>
   </compound>
   <compound refid="_app_8xaml_8cs" kind="file"><name>App.xaml.cs</name>
   </compound>
+  <compound refid="mainwindow_8xaml" kind="file"><name>mainwindow.xaml</name>
+  </compound>
   <compound refid="mainwindow_8xaml_8cs" kind="file"><name>mainwindow.xaml.cs</name>
   </compound>
-  <compound refid="_page1_8xaml_8cs" kind="file"><name>Page1.xaml.cs</name>
-  </compound>
-  <compound refid="_page2_8xaml_8cs" kind="file"><name>Page2.xaml.cs</name>
+  <compound refid="_view_log_details_8xaml" kind="file"><name>ViewLogDetails.xaml</name>
   </compound>
   <compound refid="_view_log_details_8xaml_8cs" kind="file"><name>ViewLogDetails.xaml.cs</name>
   </compound>

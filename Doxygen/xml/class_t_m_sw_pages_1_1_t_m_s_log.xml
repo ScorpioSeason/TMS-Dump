@@ -139,7 +139,7 @@
 <para>This class instantiates and stores a <ref refid="class_t_m_sw_pages_1_1_t_m_s_log" kindref="compound">TMSLog</ref> object. </para>
     </briefdescription>
     <detaileddescription>
-<para>This is mainly just called by the TMSLogger class.</para>
+<para>This is mainly just called by the <ref refid="class_t_m_sw_pages_1_1_t_m_s_logger" kindref="compound">TMSLogger</ref> class.</para>
 <para><hruler/>
  </para>
     </detaileddescription>
