@@ -1,12 +1,12 @@
 var searchData=
 [
   ['location_51',['Location',['../struct_transport___management___system___w_p_f_1_1_location.html',1,'Transport_Management_System_WPF']]],
-  ['logclass_52',['logClass',['../class_sample_w_f_p_using_pages_1_1_t_m_s_log.html#a2f326f6d70aefff9164946bad149c3a5',1,'SampleWFPUsingPages.TMSLog.logClass()'],['../class_transport___management___system___w_p_f_1_1_t_m_s_log.html#a10f36b730b4ac22d100f8ca98177ebc2',1,'Transport_Management_System_WPF.TMSLog.logClass()']]],
-  ['logmessage_53',['logMessage',['../class_sample_w_f_p_using_pages_1_1_t_m_s_log.html#ad4be27b42831301776108510172c1bd6',1,'SampleWFPUsingPages.TMSLog.logMessage()'],['../class_transport___management___system___w_p_f_1_1_t_m_s_log.html#a202faabdd0c732b14486524140c7dfc2',1,'Transport_Management_System_WPF.TMSLog.logMessage()']]],
-  ['logmethod_54',['logMethod',['../class_sample_w_f_p_using_pages_1_1_t_m_s_log.html#ab07976c272948eb8c969e0deb2ba8bd3',1,'SampleWFPUsingPages.TMSLog.logMethod()'],['../class_transport___management___system___w_p_f_1_1_t_m_s_log.html#a2bbddc3c725722354d5face887cb5862',1,'Transport_Management_System_WPF.TMSLog.logMethod()']]],
-  ['logpath_55',['logPath',['../class_sample_w_f_p_using_pages_1_1_t_m_s_log.html#a9145eb1bedbd466cb975a43fee9ed0cd',1,'SampleWFPUsingPages.TMSLog.logPath()'],['../class_transport___management___system___w_p_f_1_1_t_m_s_log.html#a6c66e9b1fe544906963ceb13fdfd5c5b',1,'Transport_Management_System_WPF.TMSLog.logPath()']]],
-  ['logtime_56',['logTime',['../class_sample_w_f_p_using_pages_1_1_t_m_s_log.html#a0330cc2fd0587dd51395f86ef2cc5431',1,'SampleWFPUsingPages.TMSLog.logTime()'],['../class_transport___management___system___w_p_f_1_1_t_m_s_log.html#a1ca4f87eebf070245487fa282d010872',1,'Transport_Management_System_WPF.TMSLog.logTime()']]],
-  ['logtype_57',['logType',['../class_sample_w_f_p_using_pages_1_1_t_m_s_log.html#ac76fa6a41753b5197f1ae20882b615d2',1,'SampleWFPUsingPages.TMSLog.logType()'],['../class_transport___management___system___w_p_f_1_1_t_m_s_log.html#a8fa636e2e28157fd772640a561f21cc3',1,'Transport_Management_System_WPF.TMSLog.logType()']]],
+  ['logclass_52',['logClass',['../class_t_m_sw_pages_1_1_t_m_s_log.html#a80193fb90a1d3607eab8ffbef0ed4c0e',1,'TMSwPages::TMSLog']]],
+  ['logmessage_53',['logMessage',['../class_t_m_sw_pages_1_1_t_m_s_log.html#a84112bcd37e5edde679811c354f2f56e',1,'TMSwPages::TMSLog']]],
+  ['logmethod_54',['logMethod',['../class_t_m_sw_pages_1_1_t_m_s_log.html#a57a4d82c2166156ac0e10a24f9e59626',1,'TMSwPages::TMSLog']]],
+  ['logpath_55',['logPath',['../class_t_m_sw_pages_1_1_t_m_s_log.html#a5692db4f00e1e7d73a6dc266cfcf9150',1,'TMSwPages::TMSLog']]],
+  ['logtime_56',['logTime',['../class_t_m_sw_pages_1_1_t_m_s_log.html#ab25ce67e4bb189707d32db0b6b455584',1,'TMSwPages::TMSLog']]],
+  ['logtype_57',['logType',['../class_t_m_sw_pages_1_1_t_m_s_log.html#a344ecbae9fa05e58776252b4373a9991',1,'TMSwPages::TMSLog']]],
   ['ltl_5frate_58',['LTL_Rate',['../class_transport___management___system___w_p_f_1_1_carrier.html#ad4e3a70b3d28e1611edf0b6f4fbfcd43',1,'Transport_Management_System_WPF::Carrier']]],
   ['ltltime_59',['LtlTime',['../struct_transport___management___system___w_p_f_1_1_route_data.html#aac1cdb60d3446d2a2ee8965f11356b72',1,'Transport_Management_System_WPF::RouteData']]]
 ];

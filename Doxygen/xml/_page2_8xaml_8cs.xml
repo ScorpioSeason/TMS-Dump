@@ -2,8 +2,8 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
   <compounddef id="_page2_8xaml_8cs" kind="file" language="C++">
     <compoundname>Page2.xaml.cs</compoundname>
-    <innerclass refid="class_sample_w_f_p_using_pages_1_1_page2" prot="public">SampleWFPUsingPages::Page2</innerclass>
-    <innernamespace refid="namespace_sample_w_f_p_using_pages">SampleWFPUsingPages</innernamespace>
+    <innerclass refid="class_t_m_sw_pages_1_1_page2" prot="public">TMSwPages::Page2</innerclass>
+    <innernamespace refid="namespace_t_m_sw_pages">TMSwPages</innernamespace>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -24,7 +24,7 @@
 <codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>System.Windows.Navigation;</highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>System.Windows.Shapes;</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_sample_w_f_p_using_pages" kindref="compound">SampleWFPUsingPages</ref></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_t_m_sw_pages" kindref="compound">TMSwPages</ref></highlight></codeline>
 <codeline lineno="17"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">partial<sp/>class<sp/></highlight><highlight class="normal">Page2<sp/>:<sp/>Page</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -42,6 +42,6 @@
 <codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="35"><highlight class="normal">}</highlight></codeline>
     </programlisting>
-    <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/Page2.xaml.cs"/>
+    <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/Page2.xaml.cs"/>
   </compounddef>
 </doxygen>

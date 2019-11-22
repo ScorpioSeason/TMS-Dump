@@ -1,12 +1,9 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
-  <compounddef id="namespace_transport___management___system___w_p_f" kind="namespace" language="C#">
+  <compounddef id="namespace_transport___management___system___w_p_f" kind="namespace" language="C++">
     <compoundname>Transport_Management_System_WPF</compoundname>
-    <innerclass refid="class_transport___management___system___w_p_f_1_1_admin" prot="public">Transport_Management_System_WPF::Admin</innerclass>
     <innerclass refid="class_transport___management___system___w_p_f_1_1_admin_page" prot="public">Transport_Management_System_WPF::AdminPage</innerclass>
-    <innerclass refid="class_transport___management___system___w_p_f_1_1_alter_tables" prot="public">Transport_Management_System_WPF::AlterTables</innerclass>
     <innerclass refid="class_transport___management___system___w_p_f_1_1_app" prot="public">Transport_Management_System_WPF::App</innerclass>
-    <innerclass refid="class_transport___management___system___w_p_f_1_1_backup_t_m_s" prot="public">Transport_Management_System_WPF::BackupTMS</innerclass>
     <innerclass refid="class_transport___management___system___w_p_f_1_1_buyer_class" prot="public">Transport_Management_System_WPF::BuyerClass</innerclass>
     <innerclass refid="class_transport___management___system___w_p_f_1_1_carrier" prot="public">Transport_Management_System_WPF::Carrier</innerclass>
     <innerclass refid="class_transport___management___system___w_p_f_1_1_city_node" prot="public">Transport_Management_System_WPF::CityNode</innerclass>
@@ -24,8 +21,6 @@
     <innerclass refid="class_transport___management___system___w_p_f_1_1_s_q_l___f_a_k_e_i_t" prot="public">Transport_Management_System_WPF::SQL_FAKEIT</innerclass>
     <innerclass refid="class_transport___management___system___w_p_f_1_1_s_q_l___query" prot="public">Transport_Management_System_WPF::SQL_Query</innerclass>
     <innerclass refid="class_transport___management___system___w_p_f_1_1_time_pass" prot="public">Transport_Management_System_WPF::TimePass</innerclass>
-    <innerclass refid="class_transport___management___system___w_p_f_1_1_t_m_s_log" prot="public">Transport_Management_System_WPF::TMSLog</innerclass>
-    <innerclass refid="class_transport___management___system___w_p_f_1_1_t_m_s_logger" prot="public">Transport_Management_System_WPF::TMSLogger</innerclass>
     <innerclass refid="struct_transport___management___system___w_p_f_1_1_trip___ticket" prot="public">Transport_Management_System_WPF::Trip_Ticket</innerclass>
     <innerclass refid="struct_transport___management___system___w_p_f_1_1_trip___ticket___line" prot="public">Transport_Management_System_WPF::Trip_Ticket_Line</innerclass>
     <innerclass refid="struct_transport___management___system___w_p_f_1_1_truck" prot="public">Transport_Management_System_WPF::Truck</innerclass>
@@ -34,6 +29,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" line="27" column="1"/>
+    <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/App.xaml.cs" line="10" column="1"/>
   </compounddef>
 </doxygen>

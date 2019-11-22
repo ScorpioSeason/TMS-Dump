@@ -2,10 +2,9 @@
 /**
  *  \file		Admin.cs
  *  \ingroup	TMS
- *  \date		November 20, 2019
+ *  \date		November 22, 2019
  *  \author		8000 Cigarettes - Megan
  *  \brief	    This file contains the admin functionality	  
- *  \see		MainWindow.xaml
  *  \details    This file holds the functionality of the Admin class. The Admin has the ability to view logs as 
  *              specified by time period, view details of specific logs, alter where the log files are stored, 
  *              initiate backups of the TMS database, choose where the TMS db is backed up to, alter the Carrier 
@@ -26,15 +25,14 @@ namespace TMSwPages
 {
     // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
     /**   
-    *   \class		Admin
-    *   \brief		This class runs the Admin UI functionality
-    *   \details	... static class?  
+    *   \class	    Admin
+    *   \brief		This class runs the Admin UI functionality. 
+    *   \details	The AdminPage codebehind should make calls to this. This holds functions that the user can 
+    *   choose to run. For example button presses and UI drawingRight now this class does nothing.
     *   
     * -------------------------------------------------------------------------------------------------------- */
     class Admin
     {
-        // This is actually mostly run in the AdminPage and its code-behind... this class may be redundant... 
-
         //TMSLogger adminLogger = null;
         BackupTMS adminBackup = null;
         AlterTables adminAlter = null;
@@ -46,36 +44,28 @@ namespace TMSwPages
             adminAlter = new AlterTables();
         }
 
-        // This holds functions that the user can choose to run. For example button presses and UI drawing
-
-        // If changes location, move ALL current log files to there, change write location to there. 
-
-        //This file holds the functionality of the Admin class. The Admin has the ability to view logs as 
-        //specified by time period, view details of specific logs, alter where the log files are stored,
-        //initiate backups of the TMS database, choose where the TMS db is backed up to, alter the Carrier
-        // Data Table, the Route Table, and the Rate / Fee Tables.
     }
 
     // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
     /**   
-    *   \class		Admin
-    *   \brief		This class runs the Admin UI functionality
-    *   \details	... static class?  
+    *   \class		TMSLogger
+    *   \brief		This class runs the logging functionality for all files in this solution
+    *   \details	This is a static class containing a list of logs and the methods to create new logs. 
+    *               The main function of this class is to call the TMSLog class. 
     *   
     * -------------------------------------------------------------------------------------------------------- */
     static public class TMSLogger
     {
-        static string LoggerPath { set; get; }                                          // Stored location of the log file
-        static public List<TMSLog> logs = new List<TMSLog>();
+        static string LoggerPath { set; get; }                      /// Stores location of the log file
+        static public List<TMSLog> logs = new List<TMSLog>();       /// This is a list of logs stored locally
 
-        // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
-        *	\fn			int Square()
-        *	\brief		To create a new Square by validating or else defaulting new values
-        *	\details	THis is if you have more to say about what the function does and don't want to inline comment
-        *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
-        *	\param[out]	char[]	newSideLength	An incoming value meant to become the square's side length
-        *	\exception	This is if we have some big ol try catches?
+        *	\fn			static public void LogIt(string newLogString)
+        *	\brief		This creates a new log object
+        *	\details	This creates a new log object, adds it to the local list, then appends it to the 
+        *	external file
+        *	\param[in]	string  newLogString    This is the unparsed BSV string to create the file. 
         *	\see		CallsMade()
         *	\return		None
         *
@@ -89,7 +79,7 @@ namespace TMSwPages
 
         }
 
-        // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
         *	\fn			int Square()
         *	\brief		To create a new Square by validating or else defaulting new values
@@ -108,7 +98,7 @@ namespace TMSwPages
             logs.Add(myLog);
         }
 
-        // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
         *	\fn			int Square()
         *	\brief		To create a new Square by validating or else defaulting new values
@@ -160,7 +150,7 @@ namespace TMSwPages
 
         }
 
-        // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
         *	\fn			int Square()
         *	\brief		To create a new Square by validating or else defaulting new values
@@ -209,7 +199,7 @@ namespace TMSwPages
 
         // Move logs
 
-        // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
         *	\fn			int Square()
         *	\brief		To create a new Square by validating or else defaulting new values
@@ -280,7 +270,7 @@ namespace TMSwPages
         public string BSV { set; get; } // Bar separated values
         public DateTime logTime { set; get; }
 
-        // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
         *	\fn			int Square()
         *	\brief		To create a new Square by validating or else defaulting new values

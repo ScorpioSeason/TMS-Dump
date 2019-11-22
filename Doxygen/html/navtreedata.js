@@ -23,11 +23,10 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "TMS Project - 8000 Ciggies", "index.html", [
-    [ "readme", "md__c_1__users__school__user__code__t_m_s-_dump_readme.html", null ],
     [ "The Bouncy Castle Crypto Package For C Sharp", "md__c_1__users__school__user__code__t_m_s-_dump__transport__management__system__w_p_f_packages__bb4bf1c016a2490d0cd8a96342590661.html", [
-      [ "Mailing Lists", "md__c_1__users__school__user__code__t_m_s-_dump__transport__management__system__w_p_f_packages__bb4bf1c016a2490d0cd8a96342590661.html#autotoc_md3", null ],
-      [ "Feedback", "md__c_1__users__school__user__code__t_m_s-_dump__transport__management__system__w_p_f_packages__bb4bf1c016a2490d0cd8a96342590661.html#autotoc_md4", null ],
-      [ "Finally", "md__c_1__users__school__user__code__t_m_s-_dump__transport__management__system__w_p_f_packages__bb4bf1c016a2490d0cd8a96342590661.html#autotoc_md5", null ]
+      [ "Mailing Lists", "md__c_1__users__school__user__code__t_m_s-_dump__transport__management__system__w_p_f_packages__bb4bf1c016a2490d0cd8a96342590661.html#autotoc_md1", null ],
+      [ "Feedback", "md__c_1__users__school__user__code__t_m_s-_dump__transport__management__system__w_p_f_packages__bb4bf1c016a2490d0cd8a96342590661.html#autotoc_md2", null ],
+      [ "Finally", "md__c_1__users__school__user__code__t_m_s-_dump__transport__management__system__w_p_f_packages__bb4bf1c016a2490d0cd8a96342590661.html#autotoc_md3", null ]
     ] ],
     [ "Packages", "namespaces.html", [
       [ "Packages", "namespaces.html", "namespaces_dup" ]
@@ -51,8 +50,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_buyer_class_8cs.html",
-"struct_transport___management___system___w_p_f_1_1_route_sum_data.html#a3912f1c48f71e670dcaa4f8455100a56"
+"_admin_classes_8cs.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

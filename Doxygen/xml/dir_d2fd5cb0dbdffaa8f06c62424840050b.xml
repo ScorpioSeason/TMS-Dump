@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="dir_d2fd5cb0dbdffaa8f06c62424840050b" kind="dir">
+    <compoundname>C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages</compoundname>
+    <innerdir refid="dir_e7f8ad38f74c498881ecf38baa63119d">C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj</innerdir>
+    <innerdir refid="dir_eb3cf178dd778b282a82ade3518c4405">C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/Properties</innerdir>
+    <innerfile refid="_admin_classes_8cs">AdminClasses.cs</innerfile>
+    <innerfile refid="_admin_page_8xaml_8cs">AdminPage.xaml.cs</innerfile>
+    <innerfile refid="_t_m_sw_pages_2_app_8xaml_8cs">App.xaml.cs</innerfile>
+    <innerfile refid="_t_m_sw_pages_2mainwindow_8xaml_8cs">mainwindow.xaml.cs</innerfile>
+    <innerfile refid="_page1_8xaml_8cs">Page1.xaml.cs</innerfile>
+    <innerfile refid="_page2_8xaml_8cs">Page2.xaml.cs</innerfile>
+    <innerfile refid="_view_log_details_8xaml_8cs">ViewLogDetails.xaml.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/"/>
+  </compounddef>
+</doxygen>

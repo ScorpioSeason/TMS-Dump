@@ -2,16 +2,7 @@ var dir_52959eadf4408b695fdb8febcd655fd5 =
 [
     [ "obj", "dir_19a4f9d1a42d3e7d2a8370ba03e3fd8d.html", "dir_19a4f9d1a42d3e7d2a8370ba03e3fd8d" ],
     [ "Properties", "dir_345fc952d7b9915aa15432f374e46a65.html", "dir_345fc952d7b9915aa15432f374e46a65" ],
-    [ "AdminClasses.cs", "_transport_01_management_01_system_01_w_p_f_2_transport_01_management_01_system_01_w_p_f_2_admin_classes_8cs.html", [
-      [ "Admin", "class_transport___management___system___w_p_f_1_1_admin.html", null ],
-      [ "TMSLog", "class_transport___management___system___w_p_f_1_1_t_m_s_log.html", "class_transport___management___system___w_p_f_1_1_t_m_s_log" ],
-      [ "BackupTMS", "class_transport___management___system___w_p_f_1_1_backup_t_m_s.html", null ],
-      [ "AlterTables", "class_transport___management___system___w_p_f_1_1_alter_tables.html", null ]
-    ] ],
-    [ "AdminPage.xaml.cs", "_transport_01_management_01_system_01_w_p_f_2_transport_01_management_01_system_01_w_p_f_2_admin_page_8xaml_8cs.html", [
-      [ "AdminPage", "class_transport___management___system___w_p_f_1_1_admin_page.html", null ]
-    ] ],
-    [ "App.xaml.cs", "_transport_01_management_01_system_01_w_p_f_2_transport_01_management_01_system_01_w_p_f_2_app_8xaml_8cs.html", [
+    [ "App.xaml.cs", "_transport_01_management_01_system_01_w_p_f_2_app_8xaml_8cs.html", [
       [ "App", "class_transport___management___system___w_p_f_1_1_app.html", null ]
     ] ],
     [ "BuyerClass.cs", "_buyer_class_8cs.html", [
@@ -23,7 +14,7 @@ var dir_52959eadf4408b695fdb8febcd655fd5 =
     [ "Contract.cs", "_contract_8cs.html", [
       [ "Contract", "class_transport___management___system___w_p_f_1_1_contract.html", "class_transport___management___system___w_p_f_1_1_contract" ]
     ] ],
-    [ "MainWindow.xaml.cs", "_transport_01_management_01_system_01_w_p_f_2_transport_01_management_01_system_01_w_p_f_2_main_window_8xaml_8cs.html", [
+    [ "MainWindow.xaml.cs", "_transport_01_management_01_system_01_w_p_f_2mainwindow_8xaml_8cs.html", [
       [ "MainWindow", "class_transport___management___system___w_p_f_1_1_main_window.html", null ]
     ] ],
     [ "MappingClass.cs", "_mapping_class_8cs.html", [
@@ -54,8 +45,5 @@ var dir_52959eadf4408b695fdb8febcd655fd5 =
     ] ],
     [ "TimePass.cs", "_time_pass_8cs.html", [
       [ "TimePass", "class_transport___management___system___w_p_f_1_1_time_pass.html", null ]
-    ] ],
-    [ "ViewLogDetailsPage.xaml.cs", "_transport_01_management_01_system_01_w_p_f_2_transport_01_management_01_system_01_w_p_f_2_view_log_details_page_8xaml_8cs.html", [
-      [ "ViewLogDetailsPage", "class_sample_w_f_p_using_pages_1_1_view_log_details_page.html", null ]
     ] ]
 ];
