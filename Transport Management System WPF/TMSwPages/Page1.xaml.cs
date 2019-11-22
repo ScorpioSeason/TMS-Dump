@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SampleWFPUsingPages
+namespace TMSwPages
 {
     /// <summary>
     /// Interaction logic for Page1.xaml

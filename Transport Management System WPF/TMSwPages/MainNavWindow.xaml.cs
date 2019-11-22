@@ -13,17 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SampleWFPUsingPages
+namespace TMSwPages
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for MainNavWindow.xaml
     /// </summary>
-    public partial class MainWindow : NavigationWindow
+    public partial class MainNavWindow : NavigationWindow
     {
-        public MainWindow()
+        public MainNavWindow()
         {
             InitializeComponent();
         }
-
     }
 }

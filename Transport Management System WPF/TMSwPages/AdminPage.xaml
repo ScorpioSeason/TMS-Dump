@@ -1,13 +1,11 @@
-﻿<Page x:Class="Transport_Management_System_WPF.AdminPage"
-﻿<Page x:Class="SampleWFPUsingPages.AdminPage"
+﻿<Page x:Class="TMSwPages.AdminPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Transport_Management_System_WPF"
-      xmlns:local="clr-namespace:SampleWFPUsingPages"
+      xmlns:local="clr-namespace:TMSwPages"
       mc:Ignorable="d" 
-      d:DesignHeight="1000" d:DesignWidth="1000"
+      d:DesignHeight="750" d:DesignWidth="750"
       Title="AdminPage">
 
     <!--This is the grid which holds the page display-->

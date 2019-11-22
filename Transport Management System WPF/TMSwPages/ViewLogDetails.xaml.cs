@@ -16,20 +16,19 @@ using System.Windows.Shapes;
 namespace TMSwPages
 {
     /// <summary>
-    /// Interaction logic for Page2.xaml
+    /// Interaction logic for ViewLogDetails.xaml
     /// </summary>
-    public partial class Page2 : Page
+    public partial class ViewLogDetails : Page
     {
-        public Page2()
+        public ViewLogDetails()
         {
             InitializeComponent();
         }
-
-        // Custom constructor to pass expense report data
-        public Page2(object data) : this()
+        public ViewLogDetails(object data) : this()
         {
-            // Bind to expense report data.
+            // Bind to incoming log data.
             this.DataContext = data;
         }
+
     }
 }
