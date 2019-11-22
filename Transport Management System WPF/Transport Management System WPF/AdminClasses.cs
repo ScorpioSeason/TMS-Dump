@@ -40,6 +40,18 @@ namespace Transport_Management_System_WPF
         BackupTMS adminBackup = null;
         AlterTables adminAlter = null;
 
+        // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn			int Square()
+        *	\brief		To create a new Square by validating or else defaulting new values
+        *	\details	THis is if you have more to say about what the function does and don't want to inline comment
+        *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
+        *	\param[out]	char[]	newSideLength	An incoming value meant to become the square's side length
+        *	\exception	This is if we have some big ol try catches?
+        *	\see		CallsMade()
+        *	\return		None
+        *
+        * ---------------------------------------------------------------------------------------------------- */
         Admin()
         {
             //adminLogger = new TMSLogger();
@@ -57,12 +69,31 @@ namespace Transport_Management_System_WPF
         // Data Table, the Route Table, and the Rate / Fee Tables.
     }
 
+    // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
+    /**   
+    *   \class		Admin
+    *   \brief		This class runs the Admin UI functionality
+    *   \details	... static class?  
+    *   
+    * -------------------------------------------------------------------------------------------------------- */
     static public class TMSLogger
     {
         static string LoggerPath { set; get; }                                          // Stored location of the log file
         static public List<TMSLog> logs = new List<TMSLog>();
 
         // Add to internal Log list AND append to the external file
+        // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn			int Square()
+        *	\brief		To create a new Square by validating or else defaulting new values
+        *	\details	THis is if you have more to say about what the function does and don't want to inline comment
+        *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
+        *	\param[out]	char[]	newSideLength	An incoming value meant to become the square's side length
+        *	\exception	This is if we have some big ol try catches?
+        *	\see		CallsMade()
+        *	\return		None
+        *
+        * ---------------------------------------------------------------------------------------------------- */
         static public void LogIt(string newLogString)
         {
             TMSLog myLog = new TMSLog(newLogString);
@@ -72,6 +103,18 @@ namespace Transport_Management_System_WPF
         }
 
         // Only add to the internal log list (i.e. read in from file)
+        // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn			int Square()
+        *	\brief		To create a new Square by validating or else defaulting new values
+        *	\details	THis is if you have more to say about what the function does and don't want to inline comment
+        *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
+        *	\param[out]	char[]	newSideLength	An incoming value meant to become the square's side length
+        *	\exception	This is if we have some big ol try catches?
+        *	\see		CallsMade()
+        *	\return		None
+        *
+        * ---------------------------------------------------------------------------------------------------- */
         static public void NewLog(string newLogString)
         {
             TMSLog myLog = new TMSLog(newLogString);
@@ -79,6 +122,18 @@ namespace Transport_Management_System_WPF
         }
 
         // Read logs in from a file
+        // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn			int Square()
+        *	\brief		To create a new Square by validating or else defaulting new values
+        *	\details	THis is if you have more to say about what the function does and don't want to inline comment
+        *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
+        *	\param[out]	char[]	newSideLength	An incoming value meant to become the square's side length
+        *	\exception	This is if we have some big ol try catches?
+        *	\see		CallsMade()
+        *	\return		None
+        *
+        * ---------------------------------------------------------------------------------------------------- */
         static public bool ReadExistingLogFile()
         {
             bool readSuccess = true;
@@ -118,6 +173,18 @@ namespace Transport_Management_System_WPF
 
         }
 
+        // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn			int Square()
+        *	\brief		To create a new Square by validating or else defaulting new values
+        *	\details	THis is if you have more to say about what the function does and don't want to inline comment
+        *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
+        *	\param[out]	char[]	newSideLength	An incoming value meant to become the square's side length
+        *	\exception	This is if we have some big ol try catches?
+        *	\see		CallsMade()
+        *	\return		None
+        *
+        * ---------------------------------------------------------------------------------------------------- */
         static public bool AppendLogFile(TMSLog newLog)
         {
             bool appendSuccess = true; 
@@ -155,6 +222,18 @@ namespace Transport_Management_System_WPF
 
         // Move logs
 
+        // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn			int Square()
+        *	\brief		To create a new Square by validating or else defaulting new values
+        *	\details	THis is if you have more to say about what the function does and don't want to inline comment
+        *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
+        *	\param[out]	char[]	newSideLength	An incoming value meant to become the square's side length
+        *	\exception	This is if we have some big ol try catches?
+        *	\see		CallsMade()
+        *	\return		None
+        *
+        * ---------------------------------------------------------------------------------------------------- */
         static void ChangeLogLocation()
         {
             // Select a new location from the popup box
@@ -196,6 +275,13 @@ namespace Transport_Management_System_WPF
 
     }
 
+    // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
+    /**   
+    *   \class		Admin
+    *   \brief		This class runs the Admin UI functionality
+    *   \details	... static class?  
+    *   
+    * -------------------------------------------------------------------------------------------------------- */
     public class TMSLog
     {
         // Data for each individual log (not exactly protected)
@@ -207,6 +293,18 @@ namespace Transport_Management_System_WPF
         public string BSV { set; get; } // Bar separated values
         public DateTime logTime { set; get; }
 
+        // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn			int Square()
+        *	\brief		To create a new Square by validating or else defaulting new values
+        *	\details	THis is if you have more to say about what the function does and don't want to inline comment
+        *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
+        *	\param[out]	char[]	newSideLength	An incoming value meant to become the square's side length
+        *	\exception	This is if we have some big ol try catches?
+        *	\see		CallsMade()
+        *	\return		None
+        *
+        * ---------------------------------------------------------------------------------------------------- */
         public TMSLog(string nUnparsed)
         {
             // Used in Logger / LogIt call
@@ -248,6 +346,13 @@ namespace Transport_Management_System_WPF
 
     }
 
+    // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
+    /**   
+    *   \class		Admin
+    *   \brief		This class runs the Admin UI functionality
+    *   \details	... static class?  
+    *   
+    * -------------------------------------------------------------------------------------------------------- */
     class BackupTMS
     {
         // Read store location
@@ -261,6 +366,13 @@ namespace Transport_Management_System_WPF
         // If successful write, delete old copy of backup (do not immediately overwrite)
     }
 
+    // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
+    /**   
+    *   \class		Admin
+    *   \brief		This class runs the Admin UI functionality
+    *   \details	... static class?  
+    *   
+    * -------------------------------------------------------------------------------------------------------- */
     class AlterTables
     {
         // Access tables

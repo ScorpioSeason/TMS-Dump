@@ -76,7 +76,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Admin.cs" />
     <Compile Include="AdminClasses.cs" />
     <Compile Include="BuyerClass.cs" />
     <Compile Include="Carrier.cs" />
