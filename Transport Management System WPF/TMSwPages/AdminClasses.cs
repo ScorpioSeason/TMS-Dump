@@ -56,11 +56,30 @@ namespace TMSwPages
         // Data Table, the Route Table, and the Rate / Fee Tables.
     }
 
+    // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
+    /**   
+    *   \class		Admin
+    *   \brief		This class runs the Admin UI functionality
+    *   \details	... static class?  
+    *   
+    * -------------------------------------------------------------------------------------------------------- */
     static public class TMSLogger
     {
         static string LoggerPath { set; get; }                                          // Stored location of the log file
         static public List<TMSLog> logs = new List<TMSLog>();
 
+        // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn			int Square()
+        *	\brief		To create a new Square by validating or else defaulting new values
+        *	\details	THis is if you have more to say about what the function does and don't want to inline comment
+        *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
+        *	\param[out]	char[]	newSideLength	An incoming value meant to become the square's side length
+        *	\exception	This is if we have some big ol try catches?
+        *	\see		CallsMade()
+        *	\return		None
+        *
+        * ---------------------------------------------------------------------------------------------------- */
         // Add to internal Log list AND append to the external file
         static public void LogIt(string newLogString)
         {
@@ -70,6 +89,18 @@ namespace TMSwPages
 
         }
 
+        // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn			int Square()
+        *	\brief		To create a new Square by validating or else defaulting new values
+        *	\details	THis is if you have more to say about what the function does and don't want to inline comment
+        *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
+        *	\param[out]	char[]	newSideLength	An incoming value meant to become the square's side length
+        *	\exception	This is if we have some big ol try catches?
+        *	\see		CallsMade()
+        *	\return		None
+        *
+        * ---------------------------------------------------------------------------------------------------- */
         // Only add to the internal log list (i.e. read in from file)
         static public void NewLog(string newLogString)
         {
@@ -77,6 +108,18 @@ namespace TMSwPages
             logs.Add(myLog);
         }
 
+        // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn			int Square()
+        *	\brief		To create a new Square by validating or else defaulting new values
+        *	\details	THis is if you have more to say about what the function does and don't want to inline comment
+        *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
+        *	\param[out]	char[]	newSideLength	An incoming value meant to become the square's side length
+        *	\exception	This is if we have some big ol try catches?
+        *	\see		CallsMade()
+        *	\return		None
+        *
+        * ---------------------------------------------------------------------------------------------------- */
         // Read logs in from a file
         static public bool ReadExistingLogFile()
         {
@@ -117,6 +160,18 @@ namespace TMSwPages
 
         }
 
+        // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn			int Square()
+        *	\brief		To create a new Square by validating or else defaulting new values
+        *	\details	THis is if you have more to say about what the function does and don't want to inline comment
+        *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
+        *	\param[out]	char[]	newSideLength	An incoming value meant to become the square's side length
+        *	\exception	This is if we have some big ol try catches?
+        *	\see		CallsMade()
+        *	\return		None
+        *
+        * ---------------------------------------------------------------------------------------------------- */
         static public bool AppendLogFile(TMSLog newLog)
         {
             bool appendSuccess = true;
@@ -154,6 +209,18 @@ namespace TMSwPages
 
         // Move logs
 
+        // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn			int Square()
+        *	\brief		To create a new Square by validating or else defaulting new values
+        *	\details	THis is if you have more to say about what the function does and don't want to inline comment
+        *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
+        *	\param[out]	char[]	newSideLength	An incoming value meant to become the square's side length
+        *	\exception	This is if we have some big ol try catches?
+        *	\see		CallsMade()
+        *	\return		None
+        *
+        * ---------------------------------------------------------------------------------------------------- */
         static void ChangeLogLocation()
         {
             // Select a new location from the popup box
@@ -195,6 +262,13 @@ namespace TMSwPages
 
     }
 
+    // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
+    /**   
+    *   \class		Admin
+    *   \brief		This class runs the Admin UI functionality
+    *   \details	... static class?  
+    *   
+    * -------------------------------------------------------------------------------------------------------- */
     public class TMSLog
     {
         // Data for each individual log (not exactly protected)
@@ -206,6 +280,18 @@ namespace TMSwPages
         public string BSV { set; get; } // Bar separated values
         public DateTime logTime { set; get; }
 
+        // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn			int Square()
+        *	\brief		To create a new Square by validating or else defaulting new values
+        *	\details	THis is if you have more to say about what the function does and don't want to inline comment
+        *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
+        *	\param[out]	char[]	newSideLength	An incoming value meant to become the square's side length
+        *	\exception	This is if we have some big ol try catches?
+        *	\see		CallsMade()
+        *	\return		None
+        *
+        * ---------------------------------------------------------------------------------------------------- */
         public TMSLog(string nUnparsed)
         {
             // Used in Logger / LogIt call
@@ -247,6 +333,13 @@ namespace TMSwPages
 
     }
 
+    // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
+    /**   
+    *   \class		Admin
+    *   \brief		This class runs the Admin UI functionality
+    *   \details	... static class?  
+    *   
+    * -------------------------------------------------------------------------------------------------------- */
     class BackupTMS
     {
         // Read store location
@@ -260,6 +353,13 @@ namespace TMSwPages
         // If successful write, delete old copy of backup (do not immediately overwrite)
     }
 
+    // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
+    /**   
+    *   \class		Admin
+    *   \brief		This class runs the Admin UI functionality
+    *   \details	... static class?  
+    *   
+    * -------------------------------------------------------------------------------------------------------- */
     class AlterTables
     {
         // Access tables
