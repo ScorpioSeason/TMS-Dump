@@ -3,10 +3,14 @@
   <compounddef id="class_t_m_sw_pages_1_1_backup_t_m_s" kind="class" language="C#" prot="public">
     <compoundname>TMSwPages::BackupTMS</compoundname>
     <briefdescription>
+<para>This class executes the <ref refid="class_t_m_sw_pages_1_1_admin" kindref="compound">Admin</ref> functions related to Backup. </para>
     </briefdescription>
     <detaileddescription>
+<para>This class can initiate the backup of the TMS database and change where the backup is stored.</para>
+<para><hruler/>
+ </para>
     </detaileddescription>
-    <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" line="344" column="1" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" bodystart="343" bodyend="354"/>
+    <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" line="319" column="1" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" bodystart="318" bodyend="329"/>
     <listofallmembers>
     </listofallmembers>
   </compounddef>

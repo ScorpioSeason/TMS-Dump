@@ -1,15 +1,20 @@
 \hypertarget{class_t_m_sw_pages_1_1_t_m_s_log}{}\doxysection{T\+M\+Sw\+Pages.\+T\+M\+S\+Log Class Reference}
 \label{class_t_m_sw_pages_1_1_t_m_s_log}\index{TMSwPages.TMSLog@{TMSwPages.TMSLog}}
+
+
+This class instantiates and stores a \mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_log}{T\+M\+S\+Log}} object.  
+
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_log_a57526906372d1c9daf1b0a92cc760463}{T\+M\+S\+Log}} (string n\+Unparsed)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_log_a39979ea10bff721dbe7a2cd291e2a425}{T\+M\+S\+Log}} (string n\+Unparsed)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_log}{T\+M\+S\+Log}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
 string \mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_log_a5692db4f00e1e7d73a6dc266cfcf9150}{log\+Path}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Data for each individual log (not currently protected) \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_log_a80193fb90a1d3607eab8ffbef0ed4c0e}{log\+Class}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
 string \mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_log_a57a4d82c2166156ac0e10a24f9e59626}{log\+Method}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
@@ -21,17 +26,45 @@ string \mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_log_a84112bcd37e5edde679811
 string \mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_log_a43041fce2109d76941f63cf87838cd00}{B\+SV}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
 Date\+Time \mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_log_ab25ce67e4bb189707d32db0b6b455584}{log\+Time}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Bar separated values. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+This class instantiates and stores a \mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_log}{T\+M\+S\+Log}} object. 
+
+This is mainly just called by the T\+M\+S\+Logger class.
+
+\DoxyHorRuler
+ 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_t_m_sw_pages_1_1_t_m_s_log_a57526906372d1c9daf1b0a92cc760463}\label{class_t_m_sw_pages_1_1_t_m_s_log_a57526906372d1c9daf1b0a92cc760463}} 
+\mbox{\Hypertarget{class_t_m_sw_pages_1_1_t_m_s_log_a39979ea10bff721dbe7a2cd291e2a425}\label{class_t_m_sw_pages_1_1_t_m_s_log_a39979ea10bff721dbe7a2cd291e2a425}} 
 \index{TMSwPages.TMSLog@{TMSwPages.TMSLog}!TMSLog@{TMSLog}}
 \index{TMSLog@{TMSLog}!TMSwPages.TMSLog@{TMSwPages.TMSLog}}
 \doxysubsubsection{\texorpdfstring{TMSLog()}{TMSLog()}}
 {\footnotesize\ttfamily T\+M\+Sw\+Pages.\+T\+M\+S\+Log.\+T\+M\+S\+Log (\begin{DoxyParamCaption}\item[{string}]{n\+Unparsed }\end{DoxyParamCaption})}
 
 
+
+Constructor for the \mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_log}{T\+M\+S\+Log}} class. 
+
+This takes in a specifically formatted string of B\+SV (Bar separated values) and parses it to create a new log object. If the string isn\textquotesingle{}t parsed correctly, a new log is created which acknowledges this. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em string} & n\+Unparsed An incoming value meant to be parsed into a log object \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+Regex.\+Matches(), n\+Unparsed.\+Split(), Date\+Time.\+Parse() 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+Creates a \mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_log}{T\+M\+S\+Log}} object
+\end{DoxyReturn}
+\DoxyHorRuler
+ Used in Logger / Log\+It call
+
+Used in reading in from a file
+
+Used in formatting error
 
 \doxysubsection{Property Documentation}
 \mbox{\Hypertarget{class_t_m_sw_pages_1_1_t_m_s_log_a43041fce2109d76941f63cf87838cd00}\label{class_t_m_sw_pages_1_1_t_m_s_log_a43041fce2109d76941f63cf87838cd00}} 
@@ -64,11 +97,19 @@ Date\+Time \mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_log_ab25ce67e4bb189707d
 \doxysubsubsection{\texorpdfstring{logPath}{logPath}}
 {\footnotesize\ttfamily string T\+M\+Sw\+Pages.\+T\+M\+S\+Log.\+log\+Path\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
+
+
+Data for each individual log (not currently protected) 
+
 \mbox{\Hypertarget{class_t_m_sw_pages_1_1_t_m_s_log_ab25ce67e4bb189707d32db0b6b455584}\label{class_t_m_sw_pages_1_1_t_m_s_log_ab25ce67e4bb189707d32db0b6b455584}} 
 \index{TMSwPages.TMSLog@{TMSwPages.TMSLog}!logTime@{logTime}}
 \index{logTime@{logTime}!TMSwPages.TMSLog@{TMSwPages.TMSLog}}
 \doxysubsubsection{\texorpdfstring{logTime}{logTime}}
 {\footnotesize\ttfamily Date\+Time T\+M\+Sw\+Pages.\+T\+M\+S\+Log.\+log\+Time\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Bar separated values. 
 
 \mbox{\Hypertarget{class_t_m_sw_pages_1_1_t_m_s_log_a344ecbae9fa05e58776252b4373a9991}\label{class_t_m_sw_pages_1_1_t_m_s_log_a344ecbae9fa05e58776252b4373a9991}} 
 \index{TMSwPages.TMSLog@{TMSwPages.TMSLog}!logType@{logType}}

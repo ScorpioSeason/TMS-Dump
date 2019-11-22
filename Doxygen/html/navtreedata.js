@@ -23,11 +23,6 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "TMS Project - 8000 Ciggies", "index.html", [
-    [ "The Bouncy Castle Crypto Package For C Sharp", "md__c_1__users__school__user__code__t_m_s-_dump__transport__management__system__w_p_f_packages__bb4bf1c016a2490d0cd8a96342590661.html", [
-      [ "Mailing Lists", "md__c_1__users__school__user__code__t_m_s-_dump__transport__management__system__w_p_f_packages__bb4bf1c016a2490d0cd8a96342590661.html#autotoc_md1", null ],
-      [ "Feedback", "md__c_1__users__school__user__code__t_m_s-_dump__transport__management__system__w_p_f_packages__bb4bf1c016a2490d0cd8a96342590661.html#autotoc_md2", null ],
-      [ "Finally", "md__c_1__users__school__user__code__t_m_s-_dump__transport__management__system__w_p_f_packages__bb4bf1c016a2490d0cd8a96342590661.html#autotoc_md3", null ]
-    ] ],
     [ "Packages", "namespaces.html", [
       [ "Packages", "namespaces.html", "namespaces_dup" ]
     ] ],
@@ -38,7 +33,6 @@ var NAVTREE =
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", null ],
         [ "Functions", "functions_func.html", null ],
-        [ "Variables", "functions_vars.html", null ],
         [ "Properties", "functions_prop.html", null ]
       ] ]
     ] ],

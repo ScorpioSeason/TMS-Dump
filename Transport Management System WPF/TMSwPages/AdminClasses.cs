@@ -1,6 +1,6 @@
 ﻿// ADMINCLASSES FILE HEADER COMMENT: ===========================================================================
 /**
- *  \file		Admin.cs
+ *  \file		AdminClasses.cs
  *  \ingroup	TMS
  *  \date		November 22, 2019
  *  \author		8000 Cigarettes - Megan

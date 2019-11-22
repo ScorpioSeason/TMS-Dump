@@ -5,276 +5,31 @@
     <member refid="class_t_m_sw_pages_1_1_admin_1a245dee4eab51de187b4af2c84310d2cd" kind="variable"><name>adminAlter</name></member>
     <member refid="class_t_m_sw_pages_1_1_admin_1a9544cc6cc847d75e5eca01c31dfa7655" kind="function"><name>Admin</name></member>
   </compound>
-  <compound refid="class_admin" kind="class"><name>Admin</name>
-  </compound>
-  <compound refid="class_admin" kind="class"><name>Admin</name>
-  </compound>
-  <compound refid="class_admin" kind="class"><name>Admin</name>
-  </compound>
-  <compound refid="class_admin" kind="class"><name>Admin</name>
-  </compound>
-  <compound refid="class_admin" kind="class"><name>Admin</name>
-  </compound>
-  <compound refid="class_admin" kind="class"><name>Admin</name>
-  </compound>
-  <compound refid="class_admin" kind="class"><name>Admin</name>
-  </compound>
-  <compound refid="class_admin" kind="class"><name>Admin</name>
-  </compound>
-  <compound refid="class_admin" kind="class"><name>Admin</name>
-  </compound>
-  <compound refid="class_admin" kind="class"><name>Admin</name>
-  </compound>
-  <compound refid="class_admin" kind="class"><name>Admin</name>
-  </compound>
-  <compound refid="class_admin" kind="class"><name>Admin</name>
-  </compound>
-  <compound refid="class_admin" kind="class"><name>Admin</name>
-  </compound>
-  <compound refid="class_transport___management___system___w_p_f_1_1_admin_page" kind="class"><name>Transport_Management_System_WPF::AdminPage</name>
-    <member refid="class_transport___management___system___w_p_f_1_1_admin_page_1a6478f14d114918260eab707b90d140a1" kind="variable"><name>OuterGrid</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_admin_page_1a5997ea715e6512d27c947ac8fc59c34b" kind="variable"><name>TopMenu</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_admin_page_1a549d978c5801ba40345450bae0b18a94" kind="variable"><name>Tabs</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_admin_page_1a3c3c28caae30ad96d7b372b53c609e46" kind="variable"><name>StatusBar</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_admin_page_1adda147970c74d0ae226a7925ffdd4b6a" kind="variable"><name>myMenu</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_admin_page_1a320ede62396067c1bd237e1a3566f93c" kind="variable"><name>Logs</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_admin_page_1a3361c1139c6307cff52ae05b9dd8723a" kind="variable"><name>InnerGrid</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_admin_page_1a9b8a714f18710cc768d121de6646fc1a" kind="variable"><name>Controls</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_admin_page_1af610a90cec8c7c88ed95489f61b79c15" kind="variable"><name>Main</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_admin_page_1af8f564f2a22936b709f4722efe998e84" kind="variable"><name>Buttons</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_admin_page_1ae4efe0d956b747e995291cbd13c20ee8" kind="variable"><name>Time_Period</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_admin_page_1a36f8675d8f0923b35b30cc3c355dc480" kind="variable"><name>LogsList</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_admin_page_1a2080953808c94ae981e6a008086d5afb" kind="variable"><name>Backups</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_admin_page_1ad2ca821ad04dacc4081990421bc8b865" kind="variable"><name>Carrier_Data</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_admin_page_1a2584dfac042b73eb8beb4183269b73a0" kind="variable"><name>Route_Table</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_admin_page_1a09195c240e7b1a6e185f6993a4b0a8f2" kind="variable"><name>Rate_Fee_Tables</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_admin_page_1a08185c35af35ff2fa61d01a3c646b6a1" kind="variable"><name>statusItem</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_admin_page_1add024e53bd618449ebaf7b4b2a7322ee" kind="variable"><name>status</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_admin_page_1ae8d65df7204a32559da9220d3a254658" kind="variable"><name>_contentLoaded</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_admin_page_1a550a490f343b5cb02416ee98074a7e8a" kind="function"><name>InitializeComponent</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_admin_page_1a530dd75359c27884801106ce9b5c37fc" kind="function"><name>Connect</name></member>
-  </compound>
   <compound refid="class_t_m_sw_pages_1_1_admin_page" kind="class"><name>TMSwPages::AdminPage</name>
     <member refid="class_t_m_sw_pages_1_1_admin_page_1a0086ede2b1f65bf900f3d7a735be4ae6" kind="variable"><name>searchResults</name></member>
-    <member refid="class_t_m_sw_pages_1_1_admin_page_1afca30e66f42819f5c901571cffc5c621" kind="variable"><name>OuterGrid</name></member>
-    <member refid="class_t_m_sw_pages_1_1_admin_page_1a8ee2cd9681ab6a12402f13c9bb95702f" kind="variable"><name>TopMenu</name></member>
-    <member refid="class_t_m_sw_pages_1_1_admin_page_1ab5858e41477b87eb4325bb476d0c9f5e" kind="variable"><name>Tabs</name></member>
-    <member refid="class_t_m_sw_pages_1_1_admin_page_1aaff02a0217485ac677d004f59c103777" kind="variable"><name>StatusBar</name></member>
-    <member refid="class_t_m_sw_pages_1_1_admin_page_1ae1d9ce7e24b2325d287fd26338393c5e" kind="variable"><name>myMenu</name></member>
-    <member refid="class_t_m_sw_pages_1_1_admin_page_1a19237568486eab0ecae40772520ff58f" kind="variable"><name>Logs</name></member>
-    <member refid="class_t_m_sw_pages_1_1_admin_page_1a5a9260293e7fe19322cc3f078b8c7d01" kind="variable"><name>InnerGrid</name></member>
-    <member refid="class_t_m_sw_pages_1_1_admin_page_1a3bfced84e3a1156a24b3f623ab2a7419" kind="variable"><name>Controls</name></member>
-    <member refid="class_t_m_sw_pages_1_1_admin_page_1a51787b4a579caff4c559e99f98ff4af2" kind="variable"><name>Main</name></member>
-    <member refid="class_t_m_sw_pages_1_1_admin_page_1a180338840463d7cf42d19b3cb953b4e5" kind="variable"><name>Buttons</name></member>
-    <member refid="class_t_m_sw_pages_1_1_admin_page_1ac66f72a3ea6e0c7901fd8ad5d3e79c4e" kind="variable"><name>Time_Period</name></member>
-    <member refid="class_t_m_sw_pages_1_1_admin_page_1aea9dc87c2ce7192a04f127b7d24652a6" kind="variable"><name>searchTags</name></member>
-    <member refid="class_t_m_sw_pages_1_1_admin_page_1aeb6985f8765e01d89d057a38ad879af7" kind="variable"><name>LogsList</name></member>
-    <member refid="class_t_m_sw_pages_1_1_admin_page_1a84ace21cadb638c65d143cf3b5db3ddd" kind="variable"><name>Backups</name></member>
-    <member refid="class_t_m_sw_pages_1_1_admin_page_1a205545feeb6aee3b808aa94560098da1" kind="variable"><name>Carrier_Data</name></member>
-    <member refid="class_t_m_sw_pages_1_1_admin_page_1af319f4bc353482607e5d01a2b212ecaf" kind="variable"><name>Route_Table</name></member>
-    <member refid="class_t_m_sw_pages_1_1_admin_page_1ac99768b21e4bdd802d6692c899e2e25e" kind="variable"><name>Rate_Fee_Tables</name></member>
-    <member refid="class_t_m_sw_pages_1_1_admin_page_1a640661cdb5249b4f218f391bb6edfd38" kind="variable"><name>statusItem</name></member>
-    <member refid="class_t_m_sw_pages_1_1_admin_page_1a6004f227c1d22e0052715b51892e4699" kind="variable"><name>status</name></member>
-    <member refid="class_t_m_sw_pages_1_1_admin_page_1a8f59b1b2288986ed4452f35a6902be03" kind="variable"><name>_contentLoaded</name></member>
     <member refid="class_t_m_sw_pages_1_1_admin_page_1a72015f451ccbfa11f79ea3714d042a51" kind="function"><name>AdminPage</name></member>
     <member refid="class_t_m_sw_pages_1_1_admin_page_1aade1dbb0d543c8d99c6fbbc098ef1d31" kind="function"><name>LoadClick</name></member>
     <member refid="class_t_m_sw_pages_1_1_admin_page_1af6e6c112454636b123385619b0885be7" kind="function"><name>ViewMoreClick</name></member>
-    <member refid="class_t_m_sw_pages_1_1_admin_page_1a17776dacc8deff9ef92b3abd0c6a0d48" kind="function"><name>InitializeComponent</name></member>
-    <member refid="class_t_m_sw_pages_1_1_admin_page_1a27df94885882dd6c49d2b26d80beb7c3" kind="function"><name>Connect</name></member>
-    <member refid="class_t_m_sw_pages_1_1_admin_page_1a17776dacc8deff9ef92b3abd0c6a0d48" kind="function"><name>InitializeComponent</name></member>
-    <member refid="class_t_m_sw_pages_1_1_admin_page_1a27df94885882dd6c49d2b26d80beb7c3" kind="function"><name>Connect</name></member>
+    <member refid="class_t_m_sw_pages_1_1_admin_page_1a0645bad7d23477b1c426ae8828c54543" kind="function"><name>LogSettingsClick</name></member>
+    <member refid="class_t_m_sw_pages_1_1_admin_page_1a5261e670be136ecf3efe39b4eb76049f" kind="function"><name>Time_Period_SelectionChanged</name></member>
+    <member refid="class_t_m_sw_pages_1_1_admin_page_1aeb59dc48d865054286593e141566bcb1" kind="function"><name>DatePicker_SelectedDateChanged</name></member>
   </compound>
   <compound refid="class_t_m_sw_pages_1_1_alter_tables" kind="class"><name>TMSwPages::AlterTables</name>
   </compound>
   <compound refid="class_t_m_sw_pages_1_1_app" kind="class"><name>TMSwPages::App</name>
-    <member refid="class_t_m_sw_pages_1_1_app_1a8b696113a843a987ca1b15b9e3339526" kind="function"><name>InitializeComponent</name></member>
-    <member refid="class_t_m_sw_pages_1_1_app_1a8b696113a843a987ca1b15b9e3339526" kind="function"><name>InitializeComponent</name></member>
-    <member refid="class_t_m_sw_pages_1_1_app_1a72a0244b3c5e1b12977ad5cd4fd3ce52" kind="function"><name>Main</name></member>
-    <member refid="class_t_m_sw_pages_1_1_app_1a72a0244b3c5e1b12977ad5cd4fd3ce52" kind="function"><name>Main</name></member>
-  </compound>
-  <compound refid="class_transport___management___system___w_p_f_1_1_app" kind="class"><name>Transport_Management_System_WPF::App</name>
-    <member refid="class_transport___management___system___w_p_f_1_1_app_1a6c05faf91bdb18c3d31ebfa63eaca8c9" kind="function"><name>InitializeComponent</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_app_1a6c05faf91bdb18c3d31ebfa63eaca8c9" kind="function"><name>InitializeComponent</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_app_1a0ea7ba77b0f68f44dcb00ae1cb54d3e3" kind="function"><name>Main</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_app_1a0ea7ba77b0f68f44dcb00ae1cb54d3e3" kind="function"><name>Main</name></member>
   </compound>
   <compound refid="class_t_m_sw_pages_1_1_backup_t_m_s" kind="class"><name>TMSwPages::BackupTMS</name>
   </compound>
-  <compound refid="class_transport___management___system___w_p_f_1_1_buyer_class" kind="class"><name>Transport_Management_System_WPF::BuyerClass</name>
-    <member refid="class_transport___management___system___w_p_f_1_1_buyer_class_1a57b54a05ef81b5b5b578d5bfc6485a10" kind="variable"><name>contracts</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_buyer_class_1ab77ad4f82c09d7cb319583929b1e1b48" kind="property"><name>Contracts</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_buyer_class_1a31d455fc50a40c6a2b6fc39e7e1e5a7e" kind="function"><name>ParseContracts</name></member>
-  </compound>
-  <compound refid="class_transport___management___system___w_p_f_1_1_carrier" kind="class"><name>Transport_Management_System_WPF::Carrier</name>
-    <member refid="class_transport___management___system___w_p_f_1_1_carrier_1a0b774c178e98ea056604b6f24b73746a" kind="property"><name>Carrier_Name</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_carrier_1af8db30f1235b0a15b7dba2b19a60d42e" kind="property"><name>Depot_City</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_carrier_1a49bf12a5ed6950fcc225a0c4307ec8b1" kind="property"><name>FTL_Rate</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_carrier_1ad4e3a70b3d28e1611edf0b6f4fbfcd43" kind="property"><name>LTL_Rate</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_carrier_1a189b41a6fe917793992cbdc3c283081f" kind="property"><name>Reefer_Charge</name></member>
-  </compound>
-  <compound refid="class_transport___management___system___w_p_f_1_1_city_node" kind="class"><name>Transport_Management_System_WPF::CityNode</name>
-    <member refid="class_transport___management___system___w_p_f_1_1_city_node_1aeca85784cd7fa87b003d372df46195b1" kind="property"><name>CityID</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_city_node_1acf6a7ad108df5682216f0bd71fb827d7" kind="property"><name>CityName</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_city_node_1a1a8b493f67d74c5d238ecf1d4e7d9620" kind="property"><name>East</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_city_node_1a3e017c17a23740fb85e42fca68f541a3" kind="property"><name>EastKM</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_city_node_1aea7ea8b5814108890a32e553958ae85b" kind="property"><name>EastHour</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_city_node_1a42241fedecce3a8de470ed7339432403" kind="property"><name>West</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_city_node_1a9c35751ba5a470c3f8c5c541d6c6ae6e" kind="property"><name>WestKM</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_city_node_1a05008ea061410d2952f1912f76ad26fa" kind="property"><name>WestHour</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_city_node_1a6f66e2a70e57355be0f0ba272bcb2665" kind="function"><name>CityNode</name></member>
-  </compound>
-  <compound refid="class_transport___management___system___w_p_f_1_1_contract" kind="class"><name>Transport_Management_System_WPF::Contract</name>
-    <member refid="class_transport___management___system___w_p_f_1_1_contract_1a41ac173e3c56e0ae7f6a114635c3384f" kind="property"><name>client_Name</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_contract_1aca3e55529a8daa8e8374f2e09fd943a6" kind="property"><name>job_Type</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_contract_1a0e5bada08c53049adfc4a73271316692" kind="property"><name>quantity</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_contract_1a94cc2bb53b867ee05003849bb3d954d6" kind="property"><name>origin</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_contract_1a3609748147e09807df18d132b3e899d9" kind="property"><name>destination</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_contract_1a5fbe75b711bca7ae679a905b87b39d21" kind="property"><name>van_Type</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_contract_1ae545785527515ad158b6121a9702b141" kind="function"><name>ToCityID</name></member>
-  </compound>
-  <compound refid="struct_transport___management___system___w_p_f_1_1_customer" kind="struct"><name>Transport_Management_System_WPF::Customer</name>
-    <member refid="struct_transport___management___system___w_p_f_1_1_customer_1a4b076abe3c377803ce89183a4fd4833a" kind="variable"><name>Customer_Name</name></member>
-    <member refid="struct_transport___management___system___w_p_f_1_1_customer_1aa760a46526733d93b0f9df1d606ca386" kind="variable"><name>AddressID</name></member>
-    <member refid="struct_transport___management___system___w_p_f_1_1_customer_1a3743849924443a4dd759fe6759dd1ba6" kind="variable"><name>Telephone</name></member>
-  </compound>
-  <compound refid="struct_transport___management___system___w_p_f_1_1_location" kind="struct"><name>Transport_Management_System_WPF::Location</name>
-    <member refid="struct_transport___management___system___w_p_f_1_1_location_1a848c8cf678e3b58452154a08f850c3e1" kind="variable"><name>CityName</name></member>
-  </compound>
   <compound refid="class_t_m_sw_pages_1_1_main_window" kind="class"><name>TMSwPages::MainWindow</name>
-    <member refid="class_t_m_sw_pages_1_1_main_window_1a7ac7d28c00ffbca192d0462d9d3b9c9f" kind="variable"><name>_contentLoaded</name></member>
     <member refid="class_t_m_sw_pages_1_1_main_window_1a466951de520a75e77afa4a40f6cb710f" kind="function"><name>MainWindow</name></member>
-    <member refid="class_t_m_sw_pages_1_1_main_window_1a47220c29eaa99d0976b5c104ac3c8336" kind="function"><name>InitializeComponent</name></member>
-    <member refid="class_t_m_sw_pages_1_1_main_window_1ab230b9835dafb2eca3ecec5b0409773f" kind="function"><name>Connect</name></member>
-    <member refid="class_t_m_sw_pages_1_1_main_window_1a47220c29eaa99d0976b5c104ac3c8336" kind="function"><name>InitializeComponent</name></member>
-    <member refid="class_t_m_sw_pages_1_1_main_window_1ab230b9835dafb2eca3ecec5b0409773f" kind="function"><name>Connect</name></member>
-    <member refid="class_t_m_sw_pages_1_1_main_window_1a47220c29eaa99d0976b5c104ac3c8336" kind="function"><name>InitializeComponent</name></member>
-    <member refid="class_t_m_sw_pages_1_1_main_window_1ab230b9835dafb2eca3ecec5b0409773f" kind="function"><name>Connect</name></member>
-  </compound>
-  <compound refid="class_transport___management___system___w_p_f_1_1_main_window" kind="class"><name>Transport_Management_System_WPF::MainWindow</name>
-    <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a37653ae01d60682a07e052147dff7d50" kind="variable"><name>buyer</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_main_window_1afa15319061c0ec966e6aadad8471e897" kind="variable"><name>a</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a7da066761fdda7c2128c1bf7a7181574" kind="variable"><name>Buyer</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a039a7e9267d8ec39abc9ff1102f8dda6" kind="variable"><name>RedMenuItem</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a2f3e93052e5b1591936fbbef5843f812" kind="variable"><name>BlueMenuItem</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_main_window_1af786388b4ce53e5b669028165f618612" kind="variable"><name>OrangeMenuItem</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_main_window_1af45f5640de2af660b6b25f971e0de278" kind="variable"><name>DG1</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a2c48aae355abe548b48824c555cc42c8" kind="variable"><name>DG2</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a80397592ba0b0ee5e305efa60d30392d" kind="variable"><name>Planner</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a309318731bcef5f07cbdd1fd8f65ccf5" kind="variable"><name>Red</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_main_window_1aeccf61dc5bc7f630b876ea14b8ae9b09" kind="variable"><name>Blue</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a848673fcd7434c6e851f7e79abbe13a8" kind="variable"><name>Orange</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_main_window_1ae2d9b5051d1b8bc3bd89988f42c47c41" kind="variable"><name>DG3</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a727cf1f493bc39a940dc75edf0030d3e" kind="variable"><name>DG4</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a247027af81c2591dae41158b7d25b4ea" kind="variable"><name>Output</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_main_window_1ae54e66731716228eaa56daccf6464e36" kind="variable"><name>_contentLoaded</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a2751b4e1cae01713e693ab84e8c217f6" kind="function"><name>MainWindow</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_main_window_1aed4b9bf6216079df88ff73b118b9004e" kind="function"><name>SetOutput</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_main_window_1affee0e4589fca964a7d86d7dcccd3103" kind="function"><name>RedMenuItem_Click</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a60f01f91e8e0a9dd39584e2cd2541727" kind="function"><name>Button_Click</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_main_window_1aaa973d7449198bfd1107404ab534fe0d" kind="function"><name>Button_Click_1</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a9bd5e3542b82523a8fded84c0f343c83" kind="function"><name>Button_AddContract</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_main_window_1af59ae9b65ef7fe3304d44286bd06ac32" kind="function"><name>InitializeComponent</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a0cc7637b254243c63169355d8365b1be" kind="function"><name>Connect</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_main_window_1af59ae9b65ef7fe3304d44286bd06ac32" kind="function"><name>InitializeComponent</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a0cc7637b254243c63169355d8365b1be" kind="function"><name>Connect</name></member>
-  </compound>
-  <compound refid="class_transport___management___system___w_p_f_1_1_mapping_class" kind="class"><name>Transport_Management_System_WPF::MappingClass</name>
-    <member refid="class_transport___management___system___w_p_f_1_1_mapping_class_1a6b13c2cb35ebe12b11e7a0881129cace" kind="variable"><name>Number_of_Cities</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_mapping_class_1adae437d5242ae05821b49c72483a4622" kind="variable"><name>nodes</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_mapping_class_1acde8449a3dd3fceb6c02d32f062f36ab" kind="function"><name>MappingClass</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_mapping_class_1ac2e8511f210a3fc19b4daee2e4f59f24" kind="function"><name>getTravelData</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_mapping_class_1ae07a688d3589c36ddc9bb50da5f2e4c7" kind="function"><name>SummerizeTrip</name></member>
-  </compound>
-  <compound refid="class_transport___management___system___w_p_f_1_1_mockup_c_m_p" kind="class"><name>Transport_Management_System_WPF::MockupCMP</name>
-    <member refid="class_transport___management___system___w_p_f_1_1_mockup_c_m_p_1afd6226c97b2695951f401d01d4391bd9" kind="variable"><name>MockEntries</name></member>
-  </compound>
-  <compound refid="class_transport___management___system___w_p_f_1_1mysql_connector" kind="class"><name>Transport_Management_System_WPF::mysqlConnector</name>
   </compound>
   <compound refid="class_t_m_sw_pages_1_1_page1" kind="class"><name>TMSwPages::Page1</name>
-    <member refid="class_t_m_sw_pages_1_1_page1_1a62fd389b862deb5869ef14ae03d9ef85" kind="variable"><name>peopleListBox</name></member>
-    <member refid="class_t_m_sw_pages_1_1_page1_1ae3db5bcab60b807098c4c598e25c6cf7" kind="variable"><name>_contentLoaded</name></member>
-    <member refid="class_t_m_sw_pages_1_1_page1_1a4a7357725825d7036dd01d1836a5ab4e" kind="function"><name>InitializeComponent</name></member>
-    <member refid="class_t_m_sw_pages_1_1_page1_1a1f08a3f07e67a2fe7dd83e47641888a6" kind="function"><name>Connect</name></member>
-    <member refid="class_t_m_sw_pages_1_1_page1_1a4a7357725825d7036dd01d1836a5ab4e" kind="function"><name>InitializeComponent</name></member>
-    <member refid="class_t_m_sw_pages_1_1_page1_1a1f08a3f07e67a2fe7dd83e47641888a6" kind="function"><name>Connect</name></member>
     <member refid="class_t_m_sw_pages_1_1_page1_1a6e540a2e5c6472d3e75f46425ed5889c" kind="function"><name>Page1</name></member>
     <member refid="class_t_m_sw_pages_1_1_page1_1a8b04f417b1c3a9bbc3410ff0dfa14c9a" kind="function"><name>Button_Click</name></member>
   </compound>
-  <compound refid="class_transport___management___system___w_p_f_1_1_page1" kind="class"><name>Transport_Management_System_WPF::Page1</name>
-    <member refid="class_transport___management___system___w_p_f_1_1_page1_1a59d94a95267768bec8404528effbf273" kind="variable"><name>_contentLoaded</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_page1_1a73eb60d82e146fa9dc182a8c0642a5d8" kind="function"><name>InitializeComponent</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_page1_1a650a93e91615c01dea0bd5520605ef5f" kind="function"><name>Connect</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_page1_1a73eb60d82e146fa9dc182a8c0642a5d8" kind="function"><name>InitializeComponent</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_page1_1a650a93e91615c01dea0bd5520605ef5f" kind="function"><name>Connect</name></member>
-  </compound>
   <compound refid="class_t_m_sw_pages_1_1_page2" kind="class"><name>TMSwPages::Page2</name>
-    <member refid="class_t_m_sw_pages_1_1_page2_1a620772bbd34404c22e6b940894107098" kind="variable"><name>_contentLoaded</name></member>
-    <member refid="class_t_m_sw_pages_1_1_page2_1ad5c80c9feb2b6a726014b786b11d85f7" kind="function"><name>InitializeComponent</name></member>
-    <member refid="class_t_m_sw_pages_1_1_page2_1a766db2b35e69fab702d5ca58c517fc84" kind="function"><name>Connect</name></member>
-    <member refid="class_t_m_sw_pages_1_1_page2_1ad5c80c9feb2b6a726014b786b11d85f7" kind="function"><name>InitializeComponent</name></member>
-    <member refid="class_t_m_sw_pages_1_1_page2_1a766db2b35e69fab702d5ca58c517fc84" kind="function"><name>Connect</name></member>
     <member refid="class_t_m_sw_pages_1_1_page2_1ac0ca36316387e73fa05df96fd7718eb6" kind="function"><name>Page2</name></member>
     <member refid="class_t_m_sw_pages_1_1_page2_1a6fbe73fc3471144492a7bbd5c11f2e9c" kind="function"><name>Page2</name></member>
-  </compound>
-  <compound refid="class_transport___management___system___w_p_f_1_1_planner_class" kind="class"><name>Transport_Management_System_WPF::PlannerClass</name>
-  </compound>
-  <compound refid="class_transport___management___system___w_p_f_1_1_properties_1_1_resources" kind="class"><name>Transport_Management_System_WPF::Properties::Resources</name>
-    <member refid="class_transport___management___system___w_p_f_1_1_properties_1_1_resources_1a448d2011fe850d8e7194545b6a00b73e" kind="variable"><name>resourceMan</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_properties_1_1_resources_1acf117f0e020cc7c2f8238d97c008e531" kind="variable"><name>resourceCulture</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_properties_1_1_resources_1aa16edff058b4f07cad83a8b286845d7e" kind="function"><name>Resources</name></member>
-  </compound>
-  <compound refid="class_t_m_sw_pages_1_1_properties_1_1_resources" kind="class"><name>TMSwPages::Properties::Resources</name>
-    <member refid="class_t_m_sw_pages_1_1_properties_1_1_resources_1a88f42be512232d2602f065861a6a6e37" kind="variable"><name>resourceMan</name></member>
-    <member refid="class_t_m_sw_pages_1_1_properties_1_1_resources_1a7bfb2c148788e3cc1702560f85e9845c" kind="variable"><name>resourceCulture</name></member>
-    <member refid="class_t_m_sw_pages_1_1_properties_1_1_resources_1a352b597cac083613237f987accd081c8" kind="function"><name>Resources</name></member>
-  </compound>
-  <compound refid="struct_transport___management___system___w_p_f_1_1_route_data" kind="struct"><name>Transport_Management_System_WPF::RouteData</name>
-    <member refid="struct_transport___management___system___w_p_f_1_1_route_data_1a23cd8f5e8ad99be71ea319ae12706e35" kind="variable"><name>KM</name></member>
-    <member refid="struct_transport___management___system___w_p_f_1_1_route_data_1a8a1fb3b1c950746f7f44960742163436" kind="variable"><name>PickupTime</name></member>
-    <member refid="struct_transport___management___system___w_p_f_1_1_route_data_1a1c014862156bfa9f7f5c3177e8a8dc30" kind="variable"><name>DriveTime</name></member>
-    <member refid="struct_transport___management___system___w_p_f_1_1_route_data_1aac1cdb60d3446d2a2ee8965f11356b72" kind="variable"><name>LtlTime</name></member>
-    <member refid="struct_transport___management___system___w_p_f_1_1_route_data_1a822646cabf49a7459b97f0aad3bfb838" kind="variable"><name>DropoffTime</name></member>
-    <member refid="struct_transport___management___system___w_p_f_1_1_route_data_1a78ab42300dd9923b0d9914c6fa57441c" kind="variable"><name>CityA</name></member>
-    <member refid="struct_transport___management___system___w_p_f_1_1_route_data_1a4b5ac67440353f1061ba8ba3cbcabc92" kind="variable"><name>CityB</name></member>
-  </compound>
-  <compound refid="struct_transport___management___system___w_p_f_1_1_route_sum_data" kind="struct"><name>Transport_Management_System_WPF::RouteSumData</name>
-    <member refid="struct_transport___management___system___w_p_f_1_1_route_sum_data_1a4519225a57727b844e4adcdc5e4ec378" kind="variable"><name>totalDriveTime</name></member>
-    <member refid="struct_transport___management___system___w_p_f_1_1_route_sum_data_1a3912f1c48f71e670dcaa4f8455100a56" kind="variable"><name>totalTripTime</name></member>
-    <member refid="struct_transport___management___system___w_p_f_1_1_route_sum_data_1aaca3e4b028ef7381d995d32103f44704" kind="variable"><name>totalKM</name></member>
-    <member refid="struct_transport___management___system___w_p_f_1_1_route_sum_data_1a3d2ddcb564dfc2322a2b50156df0f72e" kind="variable"><name>OriginCity</name></member>
-    <member refid="struct_transport___management___system___w_p_f_1_1_route_sum_data_1aa785d7de7cf9f051b5d6e00c6e1aaa08" kind="variable"><name>DestinationCity</name></member>
-  </compound>
-  <compound refid="class_transport___management___system___w_p_f_1_1_properties_1_1_settings" kind="class"><name>Transport_Management_System_WPF::Properties::Settings</name>
-    <member refid="class_transport___management___system___w_p_f_1_1_properties_1_1_settings_1a2ad635c0b2f454ffa07cbd4f1a4cb95d" kind="variable"><name>defaultInstance</name></member>
-  </compound>
-  <compound refid="class_t_m_sw_pages_1_1_properties_1_1_settings" kind="class"><name>TMSwPages::Properties::Settings</name>
-    <member refid="class_t_m_sw_pages_1_1_properties_1_1_settings_1adc8ca03f501f62755b159f255ebf1f90" kind="variable"><name>defaultInstance</name></member>
-  </compound>
-  <compound refid="class_transport___management___system___w_p_f_1_1_s_q_l___f_a_k_e_i_t" kind="class"><name>Transport_Management_System_WPF::SQL_FAKEIT</name>
-    <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___f_a_k_e_i_t_1aa992eda9d5089f1dfa42237992381107" kind="function"><name>Select_Carriers</name></member>
-  </compound>
-  <compound refid="class_transport___management___system___w_p_f_1_1_s_q_l___query" kind="class"><name>Transport_Management_System_WPF::SQL_Query</name>
-    <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query_1af7b60498e05b190cb6a67624ef511bdb" kind="variable"><name>connection</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query_1a74e809c491defe9a639c92f31fd21cbb" kind="variable"><name>server</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query_1a8d537a3d3e432a7348889a9d74c629c6" kind="variable"><name>database</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query_1a9f88738a93abcfe0a2840de3d99487c3" kind="variable"><name>uid</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query_1ab28ec0d2ffcdbc011c59b42a430b87e8" kind="variable"><name>password</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query_1aef2a4735d2091c69cf885890dd1421af" kind="function"><name>SQL_Query</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query_1aad7d3ffbabc1ebd7b7c296d15a375123" kind="function"><name>Initialize</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query_1a3df30e39b2eb1212066e856cfe1a9d39" kind="function"><name>Select_Contracts</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query_1a15b2c69422888768e37ebe82ab99adf1" kind="function"><name>OpenConnection</name></member>
-    <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query_1aa8313dbbb3840f75d4082ca9ef707a70" kind="function"><name>CloseConnection</name></member>
-  </compound>
-  <compound refid="struct_unit_test_t_m_s_1_1_unit_test1_1_1_testing_contract" kind="struct"><name>UnitTestTMS::UnitTest1::TestingContract</name>
-    <member refid="struct_unit_test_t_m_s_1_1_unit_test1_1_1_testing_contract_1a08137c4ce46524fe6b2e590e52b1da5b" kind="property"><name>client_Name</name></member>
-    <member refid="struct_unit_test_t_m_s_1_1_unit_test1_1_1_testing_contract_1a0191d4e41481e34a5580b35e7b105ecc" kind="property"><name>job_Type</name></member>
-    <member refid="struct_unit_test_t_m_s_1_1_unit_test1_1_1_testing_contract_1a0acb463e02c9c7c5991c9e91162cc4c2" kind="property"><name>quantity</name></member>
-    <member refid="struct_unit_test_t_m_s_1_1_unit_test1_1_1_testing_contract_1a53e382f701d9993e6fc5d97addf0e364" kind="property"><name>origin</name></member>
-    <member refid="struct_unit_test_t_m_s_1_1_unit_test1_1_1_testing_contract_1ad314e60a023d68388e8ae22ce78e0106" kind="property"><name>destination</name></member>
-    <member refid="struct_unit_test_t_m_s_1_1_unit_test1_1_1_testing_contract_1add15aeae2687454ed61f22ef75ca0a26" kind="property"><name>van_Type</name></member>
-  </compound>
-  <compound refid="class_transport___management___system___w_p_f_1_1_time_pass" kind="class"><name>Transport_Management_System_WPF::TimePass</name>
-    <member refid="class_transport___management___system___w_p_f_1_1_time_pass_1a1c53b7aa2828e8e8dfb3ea5432494de1" kind="function"><name>incrementDay</name></member>
   </compound>
   <compound refid="class_t_m_sw_pages_1_1_t_m_s_log" kind="class"><name>TMSwPages::TMSLog</name>
     <member refid="class_t_m_sw_pages_1_1_t_m_s_log_1a5692db4f00e1e7d73a6dc266cfcf9150" kind="property"><name>logPath</name></member>
@@ -284,122 +39,28 @@
     <member refid="class_t_m_sw_pages_1_1_t_m_s_log_1a84112bcd37e5edde679811c354f2f56e" kind="property"><name>logMessage</name></member>
     <member refid="class_t_m_sw_pages_1_1_t_m_s_log_1a43041fce2109d76941f63cf87838cd00" kind="property"><name>BSV</name></member>
     <member refid="class_t_m_sw_pages_1_1_t_m_s_log_1ab25ce67e4bb189707d32db0b6b455584" kind="property"><name>logTime</name></member>
-    <member refid="class_t_m_sw_pages_1_1_t_m_s_log_1a57526906372d1c9daf1b0a92cc760463" kind="function"><name>TMSLog</name></member>
+    <member refid="class_t_m_sw_pages_1_1_t_m_s_log_1a39979ea10bff721dbe7a2cd291e2a425" kind="function"><name>TMSLog</name></member>
   </compound>
   <compound refid="class_t_m_sw_pages_1_1_t_m_s_logger" kind="class"><name>TMSwPages::TMSLogger</name>
     <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a70ea68270927cee76213ac2329238bf8" kind="property"><name>LoggerPath</name></member>
     <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a4ba45b1259ce8001fa7a5fddf5fadd46" kind="variable"><name>logs</name></member>
-    <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a81a5353756e6ecd6e51ce79a76196fcc" kind="function"><name>LogIt</name></member>
-    <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a949d7d962a3a8f19556a72c610a23340" kind="function"><name>NewLog</name></member>
-    <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a78d9152f8fc12fdf370b23f0b787999e" kind="function"><name>ReadExistingLogFile</name></member>
-    <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a40f50c4cf1a0cfee17b050a19bea7daf" kind="function"><name>AppendLogFile</name></member>
-    <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a4033a43670161f38a4b8fb99b7d39630" kind="function"><name>ChangeLogLocation</name></member>
-  </compound>
-  <compound refid="struct_transport___management___system___w_p_f_1_1_trip___ticket" kind="struct"><name>Transport_Management_System_WPF::Trip_Ticket</name>
-    <member refid="struct_transport___management___system___w_p_f_1_1_trip___ticket_1acf7c3fb5a7f04d0857f0c4b34cff05b0" kind="variable"><name>TicketID</name></member>
-    <member refid="struct_transport___management___system___w_p_f_1_1_trip___ticket_1a4d7ee0e3563b272b18bc947264f2aac0" kind="variable"><name>TruckID</name></member>
-    <member refid="struct_transport___management___system___w_p_f_1_1_trip___ticket_1aedde328df4cc5ee04967a294549e3d53" kind="variable"><name>FTL_or_LTL</name></member>
-    <member refid="struct_transport___management___system___w_p_f_1_1_trip___ticket_1a027a527cbc51146bd409a8b2f188156d" kind="variable"><name>Is_Reefer</name></member>
-    <member refid="struct_transport___management___system___w_p_f_1_1_trip___ticket_1afbb9ff414d4e62f54c5bc1b3ed449cd2" kind="variable"><name>Size_In_Palette</name></member>
-    <member refid="struct_transport___management___system___w_p_f_1_1_trip___ticket_1a478f4ac1e28bf46a22e1765d96dada0b" kind="variable"><name>Is_Complete</name></member>
-    <member refid="struct_transport___management___system___w_p_f_1_1_trip___ticket_1aa5bd92d965c8040d0848db74dee38889" kind="variable"><name>Days_Passed</name></member>
-  </compound>
-  <compound refid="struct_transport___management___system___w_p_f_1_1_trip___ticket___line" kind="struct"><name>Transport_Management_System_WPF::Trip_Ticket_Line</name>
-    <member refid="struct_transport___management___system___w_p_f_1_1_trip___ticket___line_1ad6c1218c6657864ef7584c30133d423f" kind="variable"><name>Ticket</name></member>
-    <member refid="struct_transport___management___system___w_p_f_1_1_trip___ticket___line_1a6cbb5890bfa786b25fc85631d0ee11ce" kind="variable"><name>Order</name></member>
-    <member refid="struct_transport___management___system___w_p_f_1_1_trip___ticket___line_1a1c46324af80772864f103e4564f40c14" kind="variable"><name>Date_Added</name></member>
-  </compound>
-  <compound refid="struct_transport___management___system___w_p_f_1_1_truck" kind="struct"><name>Transport_Management_System_WPF::Truck</name>
-    <member refid="struct_transport___management___system___w_p_f_1_1_truck_1a32fbe494f246831d2559c25f348c6b18" kind="variable"><name>TruckID</name></member>
-    <member refid="struct_transport___management___system___w_p_f_1_1_truck_1a71ec212b9661e6c7e40d1f2595f0ce64" kind="variable"><name>CurrentCityID</name></member>
-    <member refid="struct_transport___management___system___w_p_f_1_1_truck_1a19d9ffdc88f86af4a2dcd36d8a490daf" kind="variable"><name>Is_Reefer</name></member>
-    <member refid="struct_transport___management___system___w_p_f_1_1_truck_1a9bb588a62475d3fffe50338f4ad756d5" kind="variable"><name>Free_Space</name></member>
-    <member refid="struct_transport___management___system___w_p_f_1_1_truck_1a81ccff97235613b950395988d4e26d52" kind="variable"><name>Waiting_or_Transit</name></member>
-    <member refid="struct_transport___management___system___w_p_f_1_1_truck_1a15e0339edac3a7aae1a720bd4d1ae8ca" kind="variable"><name>FTL_or_LTL</name></member>
-  </compound>
-  <compound refid="class_unit_test_t_m_s_1_1_unit_test1" kind="class"><name>UnitTestTMS::UnitTest1</name>
-    <member refid="class_unit_test_t_m_s_1_1_unit_test1_1aa4e5077044ba9eb1c37e96a124915a82" kind="function"><name>routCalc1</name></member>
-    <member refid="class_unit_test_t_m_s_1_1_unit_test1_1a56053c79be5ef6642503d1594a2ce1b7" kind="function"><name>routCalc2</name></member>
-    <member refid="class_unit_test_t_m_s_1_1_unit_test1_1ad352e40f388597cbd3b3cdd861422c61" kind="function"><name>routCalc3</name></member>
-    <member refid="class_unit_test_t_m_s_1_1_unit_test1_1ab15e0d8d0f34d43ce9351f6c49e8a7e8" kind="function"><name>routCalc4</name></member>
+    <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1ae3fc46f0a10cbcbe582f57f0ea75cc8d" kind="function"><name>LogIt</name></member>
+    <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a34e534b54ac36d38c33d7a8cb5abb7c7" kind="function"><name>NewLog</name></member>
+    <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a836d54e3a54cfe47be113970676871aa" kind="function"><name>ReadExistingLogFile</name></member>
+    <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a016f771887948d9c8e41908106fac94d" kind="function"><name>AppendLogFile</name></member>
+    <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a3feb70f75cd69696b3355f6deac9cb32" kind="function"><name>ChangeLogLocation</name></member>
   </compound>
   <compound refid="class_t_m_sw_pages_1_1_view_log_details" kind="class"><name>TMSwPages::ViewLogDetails</name>
-    <member refid="class_t_m_sw_pages_1_1_view_log_details_1a94b662329eb5c17fb9a5d3c0649aa8ae" kind="variable"><name>OuterGrid</name></member>
-    <member refid="class_t_m_sw_pages_1_1_view_log_details_1a057440104a6cfd8a6c5c56490032725a" kind="variable"><name>TopMenu</name></member>
-    <member refid="class_t_m_sw_pages_1_1_view_log_details_1ae1c76692a3d951bc35c440652d67e7f7" kind="variable"><name>Main</name></member>
-    <member refid="class_t_m_sw_pages_1_1_view_log_details_1a69e0c89106587da53b45a930668841d8" kind="variable"><name>Buttons</name></member>
-    <member refid="class_t_m_sw_pages_1_1_view_log_details_1a0bc4f83fc2521377248b6741906a1d16" kind="variable"><name>StatusBar</name></member>
-    <member refid="class_t_m_sw_pages_1_1_view_log_details_1a10ec037efb79ede947d5a77d34c4b4cf" kind="variable"><name>myMenu</name></member>
-    <member refid="class_t_m_sw_pages_1_1_view_log_details_1a2e3c1d40cfc4871746cb1868f139a41a" kind="variable"><name>LogDetails</name></member>
-    <member refid="class_t_m_sw_pages_1_1_view_log_details_1a53dcfb7c41284571e5edbe91a5aa6cfe" kind="variable"><name>statusItem</name></member>
-    <member refid="class_t_m_sw_pages_1_1_view_log_details_1afa27a0bedbe29a8594463d02187c8ade" kind="variable"><name>status</name></member>
-    <member refid="class_t_m_sw_pages_1_1_view_log_details_1a8dfbb38732d746ec31f78cc330b9ca56" kind="variable"><name>_contentLoaded</name></member>
-    <member refid="class_t_m_sw_pages_1_1_view_log_details_1a0a03c332c65a80a880c9aaa1396d0d73" kind="function"><name>InitializeComponent</name></member>
-    <member refid="class_t_m_sw_pages_1_1_view_log_details_1aa8fb70fbfd5aa3264c34d382ababbe0a" kind="function"><name>Connect</name></member>
-    <member refid="class_t_m_sw_pages_1_1_view_log_details_1a0a03c332c65a80a880c9aaa1396d0d73" kind="function"><name>InitializeComponent</name></member>
-    <member refid="class_t_m_sw_pages_1_1_view_log_details_1aa8fb70fbfd5aa3264c34d382ababbe0a" kind="function"><name>Connect</name></member>
     <member refid="class_t_m_sw_pages_1_1_view_log_details_1a52d7460a3afa1e236afeeeb29c88584c" kind="function"><name>ViewLogDetails</name></member>
     <member refid="class_t_m_sw_pages_1_1_view_log_details_1a39a52a42ed73d7cff66d36a22639806c" kind="function"><name>ViewLogDetails</name></member>
-  </compound>
-  <compound refid="class_t_m_sw_pages_1_1_view_log_details_page" kind="class"><name>TMSwPages::ViewLogDetailsPage</name>
-    <member refid="class_t_m_sw_pages_1_1_view_log_details_page_1aa8281838f3b57354589ebd410e4403eb" kind="variable"><name>OuterGrid</name></member>
-    <member refid="class_t_m_sw_pages_1_1_view_log_details_page_1acd9ebb864c0123829e3264f04f2a8383" kind="variable"><name>TopMenu</name></member>
-    <member refid="class_t_m_sw_pages_1_1_view_log_details_page_1a1580c6aa4e03051ad54ec9029f51a0f9" kind="variable"><name>Main</name></member>
-    <member refid="class_t_m_sw_pages_1_1_view_log_details_page_1af4b201c559edeced91c857148f643486" kind="variable"><name>Buttons</name></member>
-    <member refid="class_t_m_sw_pages_1_1_view_log_details_page_1abe053d4bd4a44e2e1222661063677280" kind="variable"><name>StatusBar</name></member>
-    <member refid="class_t_m_sw_pages_1_1_view_log_details_page_1a32eabbe230285fafc7d785239992d17d" kind="variable"><name>myMenu</name></member>
-    <member refid="class_t_m_sw_pages_1_1_view_log_details_page_1aa10af9f6751319eeea70479afd758f41" kind="variable"><name>LogDetails</name></member>
-    <member refid="class_t_m_sw_pages_1_1_view_log_details_page_1a25bfaf291cae16b802613a1a24111101" kind="variable"><name>statusItem</name></member>
-    <member refid="class_t_m_sw_pages_1_1_view_log_details_page_1a6dbe69260e68242c06990c5d2b7d6525" kind="variable"><name>status</name></member>
-    <member refid="class_t_m_sw_pages_1_1_view_log_details_page_1a2a7844dad09506fce55dc439ddcdd6e7" kind="variable"><name>_contentLoaded</name></member>
-    <member refid="class_t_m_sw_pages_1_1_view_log_details_page_1a01ff3a73bce06f7b7bc077f6567b1569" kind="function"><name>InitializeComponent</name></member>
-    <member refid="class_t_m_sw_pages_1_1_view_log_details_page_1aa4fb8b9dcdcba6c2a1cd2d536611589a" kind="function"><name>Connect</name></member>
-  </compound>
-  <compound refid="class_sample_w_f_p_using_pages_1_1_view_log_details_page" kind="class"><name>SampleWFPUsingPages::ViewLogDetailsPage</name>
-    <member refid="class_sample_w_f_p_using_pages_1_1_view_log_details_page_1a09a04d640550d10877ba3637899daedb" kind="variable"><name>OuterGrid</name></member>
-    <member refid="class_sample_w_f_p_using_pages_1_1_view_log_details_page_1a248730e93d08b879fb010a2192e5f439" kind="variable"><name>TopMenu</name></member>
-    <member refid="class_sample_w_f_p_using_pages_1_1_view_log_details_page_1adab85ec4651c0ece8735567cc09dc495" kind="variable"><name>Main</name></member>
-    <member refid="class_sample_w_f_p_using_pages_1_1_view_log_details_page_1a4cabc08d734bc82cd8a3b4a89b5bac32" kind="variable"><name>Buttons</name></member>
-    <member refid="class_sample_w_f_p_using_pages_1_1_view_log_details_page_1a864f3e9ea0c165c59ab46be35644f94a" kind="variable"><name>StatusBar</name></member>
-    <member refid="class_sample_w_f_p_using_pages_1_1_view_log_details_page_1af5c53ad0d195ad3942c950cea8f0f7d7" kind="variable"><name>myMenu</name></member>
-    <member refid="class_sample_w_f_p_using_pages_1_1_view_log_details_page_1afa2669cea590a08a69405763a85a6d7e" kind="variable"><name>LogDetails</name></member>
-    <member refid="class_sample_w_f_p_using_pages_1_1_view_log_details_page_1a8ea747e4655d52f4b15dd820478afe29" kind="variable"><name>statusItem</name></member>
-    <member refid="class_sample_w_f_p_using_pages_1_1_view_log_details_page_1af93a6d51a46b2fb3b56ebe3e2a0a9d9e" kind="variable"><name>status</name></member>
-    <member refid="class_sample_w_f_p_using_pages_1_1_view_log_details_page_1a30bc410864b344edc927fa81d7241ace" kind="variable"><name>_contentLoaded</name></member>
-    <member refid="class_sample_w_f_p_using_pages_1_1_view_log_details_page_1a6502946101ae8c9f7fe4d03a4393e5a6" kind="function"><name>InitializeComponent</name></member>
-    <member refid="class_sample_w_f_p_using_pages_1_1_view_log_details_page_1a29159f186748ea800d41c7ed83431b62" kind="function"><name>Connect</name></member>
-  </compound>
-  <compound refid="namespace_microsoft_1_1_visual_studio_1_1_test_tools_1_1_unit_testing" kind="namespace"><name>Microsoft::VisualStudio::TestTools::UnitTesting</name>
-  </compound>
-  <compound refid="namespace_my_sql_1_1_data" kind="namespace"><name>MySql::Data</name>
-  </compound>
-  <compound refid="namespace_my_sql_1_1_data_1_1_my_sql_client" kind="namespace"><name>MySql::Data::MySqlClient</name>
-  </compound>
-  <compound refid="namespace_sample_w_f_p_using_pages" kind="namespace"><name>SampleWFPUsingPages</name>
   </compound>
   <compound refid="namespace_system" kind="namespace"><name>System</name>
   </compound>
   <compound refid="namespace_system_1_1_collections_1_1_generic" kind="namespace"><name>System::Collections::Generic</name>
   </compound>
-  <compound refid="namespace_system_1_1_configuration" kind="namespace"><name>System::Configuration</name>
-  </compound>
-  <compound refid="namespace_system_1_1_data" kind="namespace"><name>System::Data</name>
-  </compound>
-  <compound refid="namespace_system_1_1_data_1_1_sql_client" kind="namespace"><name>System::Data::SqlClient</name>
-  </compound>
-  <compound refid="namespace_system_1_1_diagnostics" kind="namespace"><name>System::Diagnostics</name>
-  </compound>
   <compound refid="namespace_system_1_1_i_o" kind="namespace"><name>System::IO</name>
   </compound>
   <compound refid="namespace_system_1_1_linq" kind="namespace"><name>System::Linq</name>
-  </compound>
-  <compound refid="namespace_system_1_1_reflection" kind="namespace"><name>System::Reflection</name>
-  </compound>
-  <compound refid="namespace_system_1_1_resources" kind="namespace"><name>System::Resources</name>
-  </compound>
-  <compound refid="namespace_system_1_1_runtime_1_1_compiler_services" kind="namespace"><name>System::Runtime::CompilerServices</name>
-  </compound>
-  <compound refid="namespace_system_1_1_runtime_1_1_interop_services" kind="namespace"><name>System::Runtime::InteropServices</name>
   </compound>
   <compound refid="namespace_system_1_1_text" kind="namespace"><name>System::Text</name>
   </compound>
@@ -407,146 +68,26 @@
   </compound>
   <compound refid="namespace_system_1_1_threading_1_1_tasks" kind="namespace"><name>System::Threading::Tasks</name>
   </compound>
-  <compound refid="namespace_system_1_1_windows" kind="namespace"><name>System::Windows</name>
-  </compound>
   <compound refid="namespace_system_1_1_windows_1_1_documents" kind="namespace"><name>System::Windows::Documents</name>
   </compound>
   <compound refid="namespace_t_m_sw_pages" kind="namespace"><name>TMSwPages</name>
-  </compound>
-  <compound refid="namespace_t_m_sw_pages_1_1_properties" kind="namespace"><name>TMSwPages::Properties</name>
-  </compound>
-  <compound refid="namespace_transport___management___system___w_p_f" kind="namespace"><name>Transport_Management_System_WPF</name>
-  </compound>
-  <compound refid="namespace_transport___management___system___w_p_f_1_1_properties" kind="namespace"><name>Transport_Management_System_WPF::Properties</name>
-  </compound>
-  <compound refid="namespace_unit_test_t_m_s" kind="namespace"><name>UnitTestTMS</name>
-  </compound>
-  <compound refid="_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
   </compound>
   <compound refid="_admin_classes_8cs" kind="file"><name>AdminClasses.cs</name>
   </compound>
   <compound refid="_admin_page_8xaml_8cs" kind="file"><name>AdminPage.xaml.cs</name>
   </compound>
-  <compound refid="_t_m_sw_pages_2_app_8xaml_8cs" kind="file"><name>App.xaml.cs</name>
+  <compound refid="_app_8xaml_8cs" kind="file"><name>App.xaml.cs</name>
   </compound>
-  <compound refid="_transport_01_management_01_system_01_w_p_f_2_app_8xaml_8cs" kind="file"><name>App.xaml.cs</name>
-  </compound>
-  <compound refid="_t_m_sw_pages_2mainwindow_8xaml_8cs" kind="file"><name>mainwindow.xaml.cs</name>
-  </compound>
-  <compound refid="_transport_01_management_01_system_01_w_p_f_2mainwindow_8xaml_8cs" kind="file"><name>MainWindow.xaml.cs</name>
-  </compound>
-  <compound refid="_admin_page_8g_8cs" kind="file"><name>AdminPage.g.cs</name>
-  </compound>
-  <compound refid="_t_m_sw_pages_2obj_2_debug_2_admin_page_8g_8i_8cs" kind="file"><name>AdminPage.g.i.cs</name>
-  </compound>
-  <compound refid="_transport_01_management_01_system_01_w_p_f_2obj_2_debug_2_admin_page_8g_8i_8cs" kind="file"><name>AdminPage.g.i.cs</name>
-  </compound>
-  <compound refid="_t_m_sw_pages_2obj_2_debug_2_app_8g_8cs" kind="file"><name>App.g.cs</name>
-  </compound>
-  <compound refid="_transport_01_management_01_system_01_w_p_f_2obj_2_debug_2_app_8g_8cs" kind="file"><name>App.g.cs</name>
-  </compound>
-  <compound refid="_t_m_sw_pages_2obj_2_debug_2_app_8g_8i_8cs" kind="file"><name>App.g.i.cs</name>
-  </compound>
-  <compound refid="_transport_01_management_01_system_01_w_p_f_2obj_2_debug_2_app_8g_8i_8cs" kind="file"><name>App.g.i.cs</name>
-  </compound>
-  <compound refid="_main_nav_window_8g_8i_8cs" kind="file"><name>MainNavWindow.g.i.cs</name>
-  </compound>
-  <compound refid="_t_m_sw_pages_2obj_2_debug_2mainwindow_8g_8cs" kind="file"><name>mainwindow.g.cs</name>
-  </compound>
-  <compound refid="_transport_01_management_01_system_01_w_p_f_2obj_2_debug_2mainwindow_8g_8cs" kind="file"><name>MainWindow.g.cs</name>
-  </compound>
-  <compound refid="_t_m_sw_pages_2obj_2_debug_2_main_window_8g_8i_8cs" kind="file"><name>MainWindow.g.i.cs</name>
-  </compound>
-  <compound refid="_transport_01_management_01_system_01_w_p_f_2obj_2_debug_2_main_window_8g_8i_8cs" kind="file"><name>MainWindow.g.i.cs</name>
-  </compound>
-  <compound refid="_page1_8g_8cs" kind="file"><name>Page1.g.cs</name>
-  </compound>
-  <compound refid="_t_m_sw_pages_2obj_2_debug_2_page1_8g_8i_8cs" kind="file"><name>Page1.g.i.cs</name>
-  </compound>
-  <compound refid="_transport_01_management_01_system_01_w_p_f_2obj_2_debug_2_page1_8g_8i_8cs" kind="file"><name>Page1.g.i.cs</name>
-  </compound>
-  <compound refid="_page2_8g_8cs" kind="file"><name>Page2.g.cs</name>
-  </compound>
-  <compound refid="_page2_8g_8i_8cs" kind="file"><name>Page2.g.i.cs</name>
-  </compound>
-  <compound refid="_view_log_details_8g_8cs" kind="file"><name>ViewLogDetails.g.cs</name>
-  </compound>
-  <compound refid="_view_log_details_8g_8i_8cs" kind="file"><name>ViewLogDetails.g.i.cs</name>
-  </compound>
-  <compound refid="_t_m_sw_pages_2obj_2_debug_2_view_log_details_page_8g_8i_8cs" kind="file"><name>ViewLogDetailsPage.g.i.cs</name>
-  </compound>
-  <compound refid="_transport_01_management_01_system_01_w_p_f_2obj_2_debug_2_view_log_details_page_8g_8i_8cs" kind="file"><name>ViewLogDetailsPage.g.i.cs</name>
+  <compound refid="mainwindow_8xaml_8cs" kind="file"><name>mainwindow.xaml.cs</name>
   </compound>
   <compound refid="_page1_8xaml_8cs" kind="file"><name>Page1.xaml.cs</name>
   </compound>
   <compound refid="_page2_8xaml_8cs" kind="file"><name>Page2.xaml.cs</name>
   </compound>
-  <compound refid="_t_m_sw_pages_2_properties_2_assembly_info_8cs" kind="file"><name>AssemblyInfo.cs</name>
-  </compound>
-  <compound refid="_transport_01_management_01_system_01_w_p_f_2_properties_2_assembly_info_8cs" kind="file"><name>AssemblyInfo.cs</name>
-  </compound>
-  <compound refid="_unit_test_t_m_s_2_properties_2_assembly_info_8cs" kind="file"><name>AssemblyInfo.cs</name>
-  </compound>
-  <compound refid="_t_m_sw_pages_2_properties_2_resources_8_designer_8cs" kind="file"><name>Resources.Designer.cs</name>
-  </compound>
-  <compound refid="_transport_01_management_01_system_01_w_p_f_2_properties_2_resources_8_designer_8cs" kind="file"><name>Resources.Designer.cs</name>
-  </compound>
-  <compound refid="_t_m_sw_pages_2_properties_2_settings_8_designer_8cs" kind="file"><name>Settings.Designer.cs</name>
-  </compound>
-  <compound refid="_transport_01_management_01_system_01_w_p_f_2_properties_2_settings_8_designer_8cs" kind="file"><name>Settings.Designer.cs</name>
-  </compound>
   <compound refid="_view_log_details_8xaml_8cs" kind="file"><name>ViewLogDetails.xaml.cs</name>
-  </compound>
-  <compound refid="_buyer_class_8cs" kind="file"><name>BuyerClass.cs</name>
-  </compound>
-  <compound refid="_carrier_8cs" kind="file"><name>Carrier.cs</name>
-  </compound>
-  <compound refid="_contract_8cs" kind="file"><name>Contract.cs</name>
-  </compound>
-  <compound refid="_mapping_class_8cs" kind="file"><name>MappingClass.cs</name>
-  </compound>
-  <compound refid="_mockup_c_m_p_8cs" kind="file"><name>MockupCMP.cs</name>
-  </compound>
-  <compound refid="mysql_connector_8cs" kind="file"><name>mysqlConnector.cs</name>
-  </compound>
-  <compound refid="_page1_01-_01_copy_8g_8i_8cs" kind="file"><name>Page1 - Copy.g.i.cs</name>
-  </compound>
-  <compound refid="_planner_class_8cs" kind="file"><name>PlannerClass.cs</name>
-  </compound>
-  <compound refid="_s_q_l___f_a_k_e_i_t_8cs" kind="file"><name>SQL_FAKEIT.cs</name>
-  </compound>
-  <compound refid="_s_q_l___query_8cs" kind="file"><name>SQL_Query.cs</name>
-  </compound>
-  <compound refid="_time_pass_8cs" kind="file"><name>TimePass.cs</name>
-  </compound>
-  <compound refid="_unit_test1_8cs" kind="file"><name>UnitTest1.cs</name>
-  </compound>
-  <compound refid="md__c_1__users__school__user__code__t_m_s-_dump__transport__management__system__w_p_f_packages__bb4bf1c016a2490d0cd8a96342590661" kind="page"><name>md_C:_Users_School_User_Code_TMS-Dump_Transport_Management_System_WPF_packages_BouncyCastle.1.8.3.1_README</name>
-  </compound>
-  <compound refid="dir_94edb2a50426fc5fb5e2d9ccbce28393" kind="dir"><name>C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/packages/BouncyCastle.1.8.3.1</name>
-  </compound>
-  <compound refid="dir_cc61ff6365a91cce9a2d230499e8f5d1" kind="dir"><name>C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug</name>
-  </compound>
-  <compound refid="dir_c525ec3d8b529c810a91e1bbc514eb44" kind="dir"><name>C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug</name>
-  </compound>
-  <compound refid="dir_19a4f9d1a42d3e7d2a8370ba03e3fd8d" kind="dir"><name>C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj</name>
-  </compound>
-  <compound refid="dir_e7f8ad38f74c498881ecf38baa63119d" kind="dir"><name>C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj</name>
-  </compound>
-  <compound refid="dir_99fb040fad9d52db45a6842cbaf8430e" kind="dir"><name>C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/packages</name>
-  </compound>
-  <compound refid="dir_345fc952d7b9915aa15432f374e46a65" kind="dir"><name>C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/Properties</name>
-  </compound>
-  <compound refid="dir_ee5f9d90f766a784e55b61afc3255a6a" kind="dir"><name>C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/Properties</name>
-  </compound>
-  <compound refid="dir_eb3cf178dd778b282a82ade3518c4405" kind="dir"><name>C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/Properties</name>
   </compound>
   <compound refid="dir_d2fd5cb0dbdffaa8f06c62424840050b" kind="dir"><name>C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages</name>
   </compound>
   <compound refid="dir_07459c758fbbcf9ae534443fd0b3129b" kind="dir"><name>C:/Users/School User/Code/TMS-Dump/Transport Management System WPF</name>
-  </compound>
-  <compound refid="dir_52959eadf4408b695fdb8febcd655fd5" kind="dir"><name>C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF</name>
-  </compound>
-  <compound refid="dir_fe956ec00ed815f665d9aec623da35f3" kind="dir"><name>C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS</name>
   </compound>
 </doxygenindex>

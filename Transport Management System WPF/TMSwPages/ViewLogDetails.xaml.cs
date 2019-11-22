@@ -1,6 +1,6 @@
 ﻿// VIEWLOGDETAILS FILE HEADER COMMENT: ========================================================================
 /**
- *  \file		Admin.cs
+ *  \file		ViewLogDetails.xaml.cs
  *  \ingroup	TMS
  *  \date		November 20, 2019
  *  \author		8000 Cigarettes - Megan

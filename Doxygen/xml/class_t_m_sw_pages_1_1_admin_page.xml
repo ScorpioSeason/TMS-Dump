@@ -3,10 +3,6 @@
   <compounddef id="class_t_m_sw_pages_1_1_admin_page" kind="class" language="C++" prot="public">
     <compoundname>TMSwPages::AdminPage</compoundname>
     <basecompoundref prot="private" virt="non-virtual">Page</basecompoundref>
-    <basecompoundref prot="private" virt="non-virtual">IComponentConnector</basecompoundref>
-    <basecompoundref prot="private" virt="non-virtual">Page</basecompoundref>
-    <basecompoundref prot="private" virt="non-virtual">IComponentConnector</basecompoundref>
-    <basecompoundref prot="private" virt="non-virtual">Page</basecompoundref>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="class_t_m_sw_pages_1_1_admin_page_1a0086ede2b1f65bf900f3d7a735be4ae6" prot="private" static="no" mutable="no">
         <type>List&lt; <ref refid="class_t_m_sw_pages_1_1_t_m_s_log" kindref="compound">TMSLog</ref> &gt;</type>
@@ -20,267 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminPage.xaml.cs" line="47" column="14" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminPage.xaml.cs" bodystart="47" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_t_m_sw_pages_1_1_admin_page_1afca30e66f42819f5c901571cffc5c621" prot="private" static="no" mutable="no">
-        <type>internal System Windows Controls Grid</type>
-        <definition>internal System Windows Controls Grid TMSwPages::AdminPage::OuterGrid</definition>
-        <argsstring></argsstring>
-        <name>OuterGrid</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" line="46" column="44" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" bodystart="46" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_t_m_sw_pages_1_1_admin_page_1a8ee2cd9681ab6a12402f13c9bb95702f" prot="private" static="no" mutable="no">
-        <type>internal System Windows Controls RowDefinition</type>
-        <definition>internal System Windows Controls RowDefinition TMSwPages::AdminPage::TopMenu</definition>
-        <argsstring></argsstring>
-        <name>TopMenu</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" line="54" column="53" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" bodystart="54" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_t_m_sw_pages_1_1_admin_page_1ab5858e41477b87eb4325bb476d0c9f5e" prot="private" static="no" mutable="no">
-        <type>internal System Windows Controls RowDefinition</type>
-        <definition>internal System Windows Controls RowDefinition TMSwPages::AdminPage::Tabs</definition>
-        <argsstring></argsstring>
-        <name>Tabs</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" line="62" column="53" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" bodystart="62" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_t_m_sw_pages_1_1_admin_page_1aaff02a0217485ac677d004f59c103777" prot="private" static="no" mutable="no">
-        <type>internal System Windows Controls RowDefinition</type>
-        <definition>internal System Windows Controls RowDefinition TMSwPages::AdminPage::StatusBar</definition>
-        <argsstring></argsstring>
-        <name>StatusBar</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" line="70" column="53" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" bodystart="70" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_t_m_sw_pages_1_1_admin_page_1ae1d9ce7e24b2325d287fd26338393c5e" prot="private" static="no" mutable="no">
-        <type>internal System Windows Controls Menu</type>
-        <definition>internal System Windows Controls Menu TMSwPages::AdminPage::myMenu</definition>
-        <argsstring></argsstring>
-        <name>myMenu</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" line="78" column="44" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" bodystart="78" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_t_m_sw_pages_1_1_admin_page_1a19237568486eab0ecae40772520ff58f" prot="private" static="no" mutable="no">
-        <type>internal System Windows Controls TabItem</type>
-        <definition>internal System Windows Controls TabItem TMSwPages::AdminPage::Logs</definition>
-        <argsstring></argsstring>
-        <name>Logs</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" line="86" column="47" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" bodystart="86" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_t_m_sw_pages_1_1_admin_page_1a5a9260293e7fe19322cc3f078b8c7d01" prot="private" static="no" mutable="no">
-        <type>internal System Windows Controls Grid</type>
-        <definition>internal System Windows Controls Grid TMSwPages::AdminPage::InnerGrid</definition>
-        <argsstring></argsstring>
-        <name>InnerGrid</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" line="94" column="44" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" bodystart="94" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_t_m_sw_pages_1_1_admin_page_1a3bfced84e3a1156a24b3f623ab2a7419" prot="private" static="no" mutable="no">
-        <type>internal System Windows Controls RowDefinition</type>
-        <definition>internal System Windows Controls RowDefinition TMSwPages::AdminPage::Controls</definition>
-        <argsstring></argsstring>
-        <name>Controls</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" line="102" column="53" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" bodystart="102" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_t_m_sw_pages_1_1_admin_page_1a51787b4a579caff4c559e99f98ff4af2" prot="private" static="no" mutable="no">
-        <type>internal System Windows Controls RowDefinition</type>
-        <definition>internal System Windows Controls RowDefinition TMSwPages::AdminPage::Main</definition>
-        <argsstring></argsstring>
-        <name>Main</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" line="110" column="53" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" bodystart="110" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_t_m_sw_pages_1_1_admin_page_1a180338840463d7cf42d19b3cb953b4e5" prot="private" static="no" mutable="no">
-        <type>internal System Windows Controls RowDefinition</type>
-        <definition>internal System Windows Controls RowDefinition TMSwPages::AdminPage::Buttons</definition>
-        <argsstring></argsstring>
-        <name>Buttons</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" line="118" column="53" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" bodystart="118" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_t_m_sw_pages_1_1_admin_page_1ac66f72a3ea6e0c7901fd8ad5d3e79c4e" prot="private" static="no" mutable="no">
-        <type>internal System Windows Controls ComboBox</type>
-        <definition>internal System Windows Controls ComboBox TMSwPages::AdminPage::Time_Period</definition>
-        <argsstring></argsstring>
-        <name>Time_Period</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" line="126" column="48" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" bodystart="126" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_t_m_sw_pages_1_1_admin_page_1aea9dc87c2ce7192a04f127b7d24652a6" prot="private" static="no" mutable="no">
-        <type>internal System Windows Controls TextBox</type>
-        <definition>internal System Windows Controls TextBox TMSwPages::AdminPage::searchTags</definition>
-        <argsstring></argsstring>
-        <name>searchTags</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" line="134" column="47" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" bodystart="134" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_t_m_sw_pages_1_1_admin_page_1aeb6985f8765e01d89d057a38ad879af7" prot="private" static="no" mutable="no">
-        <type>internal System Windows Controls DataGrid</type>
-        <definition>internal System Windows Controls DataGrid TMSwPages::AdminPage::LogsList</definition>
-        <argsstring></argsstring>
-        <name>LogsList</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" line="142" column="48" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" bodystart="142" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_t_m_sw_pages_1_1_admin_page_1a84ace21cadb638c65d143cf3b5db3ddd" prot="private" static="no" mutable="no">
-        <type>internal System Windows Controls TabItem</type>
-        <definition>internal System Windows Controls TabItem TMSwPages::AdminPage::Backups</definition>
-        <argsstring></argsstring>
-        <name>Backups</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" line="150" column="47" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" bodystart="150" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_t_m_sw_pages_1_1_admin_page_1a205545feeb6aee3b808aa94560098da1" prot="private" static="no" mutable="no">
-        <type>internal System Windows Controls TabItem</type>
-        <definition>internal System Windows Controls TabItem TMSwPages::AdminPage::Carrier_Data</definition>
-        <argsstring></argsstring>
-        <name>Carrier_Data</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" line="158" column="47" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" bodystart="158" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_t_m_sw_pages_1_1_admin_page_1af319f4bc353482607e5d01a2b212ecaf" prot="private" static="no" mutable="no">
-        <type>internal System Windows Controls TabItem</type>
-        <definition>internal System Windows Controls TabItem TMSwPages::AdminPage::Route_Table</definition>
-        <argsstring></argsstring>
-        <name>Route_Table</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" line="166" column="47" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" bodystart="166" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_t_m_sw_pages_1_1_admin_page_1ac99768b21e4bdd802d6692c899e2e25e" prot="private" static="no" mutable="no">
-        <type>internal System Windows Controls TabItem</type>
-        <definition>internal System Windows Controls TabItem TMSwPages::AdminPage::Rate_Fee_Tables</definition>
-        <argsstring></argsstring>
-        <name>Rate_Fee_Tables</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" line="174" column="47" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" bodystart="174" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_t_m_sw_pages_1_1_admin_page_1a640661cdb5249b4f218f391bb6edfd38" prot="private" static="no" mutable="no">
-        <type>internal System Windows Controls Primitives StatusBarItem</type>
-        <definition>internal System Windows Controls Primitives StatusBarItem TMSwPages::AdminPage::statusItem</definition>
-        <argsstring></argsstring>
-        <name>statusItem</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" line="182" column="63" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" bodystart="182" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_t_m_sw_pages_1_1_admin_page_1a6004f227c1d22e0052715b51892e4699" prot="private" static="no" mutable="no">
-        <type>internal System Windows Controls TextBlock</type>
-        <definition>internal System Windows Controls TextBlock TMSwPages::AdminPage::status</definition>
-        <argsstring></argsstring>
-        <name>status</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" line="190" column="49" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" bodystart="190" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_t_m_sw_pages_1_1_admin_page_1a8f59b1b2288986ed4452f35a6902be03" prot="private" static="no" mutable="no">
-        <type>private bool</type>
-        <definition>private bool TMSwPages::AdminPage::_contentLoaded</definition>
-        <argsstring></argsstring>
-        <name>_contentLoaded</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" line="195" column="22" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" bodystart="195" bodyend="-1"/>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminPage.xaml.cs" line="43" column="14" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminPage.xaml.cs" bodystart="43" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -290,12 +26,17 @@
         <argsstring>()</argsstring>
         <name>AdminPage</name>
         <briefdescription>
+<para>This is a constructor for the <ref refid="class_t_m_sw_pages_1_1_admin_page" kindref="compound">AdminPage</ref> user interface. </para>
         </briefdescription>
         <detaileddescription>
+<para>This loads the searchResults TMSLogs into the LogsList data grid. <simplesect kind="return"><para>Instantiates the <ref refid="class_t_m_sw_pages_1_1_admin_page" kindref="compound">AdminPage</ref></para>
+</simplesect>
+<hruler/>
+ </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminPage.xaml.cs" line="61" column="16" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminPage.xaml.cs" bodystart="61" bodyend="65"/>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminPage.xaml.cs" line="53" column="16" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminPage.xaml.cs" bodystart="53" bodyend="57"/>
       </memberdef>
       <memberdef kind="function" id="class_t_m_sw_pages_1_1_admin_page_1aade1dbb0d543c8d99c6fbbc098ef1d31" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>private void</type>
@@ -311,12 +52,33 @@
           <declname>e</declname>
         </param>
         <briefdescription>
+<para>This adds logs to the search results. </para>
         </briefdescription>
         <detaileddescription>
+<para>This adds logs to the search results which match search strings entered. This will first read from the Log file before it adds in any entries. This isn&apos;t done the most efficiently <parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>string.Contains()</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>may throw an Argument Null exception </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para>TMSLogger.LogIt() </para>
+</simplesect>
+<simplesect kind="return"><para>void</para>
+</simplesect>
+<hruler/>
+ </para>
         </detaileddescription>
         <inbodydescription>
+<para>This clears searchResults if the Log file is read in successfully</para>
+<para>Compare search tags box to logs in the local list and add to searchResults list if matching</para>
+<para>If there are no search strings, add indescriminately</para>
+<para>Catch errors from Contains</para>
+<para>Refresh the UI data grid</para>
         </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminPage.xaml.cs" line="87" column="22" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminPage.xaml.cs" bodystart="87" bodyend="124"/>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminPage.xaml.cs" line="77" column="22" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminPage.xaml.cs" bodystart="77" bodyend="120"/>
       </memberdef>
       <memberdef kind="function" id="class_t_m_sw_pages_1_1_admin_page_1af6e6c112454636b123385619b0885be7" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>private void</type>
@@ -332,115 +94,139 @@
           <declname>e</declname>
         </param>
         <briefdescription>
+<para>Sends the user to <ref refid="class_t_m_sw_pages_1_1_view_log_details" kindref="compound">ViewLogDetails</ref> page using selected <ref refid="class_t_m_sw_pages_1_1_t_m_s_log" kindref="compound">TMSLog</ref> item&apos;s details. </para>
         </briefdescription>
         <detaileddescription>
+<para>Does not activate if nothing is selected in the datagrid. <simplesect kind="see"><para>NavigationService.Navigate() </para>
+</simplesect>
+<simplesect kind="return"><para>void</para>
+</simplesect>
+<hruler/>
+ </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminPage.xaml.cs" line="139" column="22" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminPage.xaml.cs" bodystart="139" bodyend="146"/>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminPage.xaml.cs" line="131" column="22" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminPage.xaml.cs" bodystart="131" bodyend="138"/>
       </memberdef>
-      <memberdef kind="function" id="class_t_m_sw_pages_1_1_admin_page_1a17776dacc8deff9ef92b3abd0c6a0d48" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>public void</type>
-        <definition>public void TMSwPages::AdminPage::InitializeComponent</definition>
-        <argsstring>()</argsstring>
-        <name>InitializeComponent</name>
-        <briefdescription>
-<para>InitializeComponent </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" line="202" column="21" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" bodystart="202" bodyend="214"/>
-      </memberdef>
-      <memberdef kind="function" id="class_t_m_sw_pages_1_1_admin_page_1a27df94885882dd6c49d2b26d80beb7c3" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void System Windows Markup IComponentConnector</type>
-        <definition>void System Windows Markup IComponentConnector TMSwPages::AdminPage::Connect</definition>
-        <argsstring>(int connectionId, object target)</argsstring>
-        <name>Connect</name>
-        <param>
-          <type>int</type>
-          <declname>connectionId</declname>
-        </param>
+      <memberdef kind="function" id="class_t_m_sw_pages_1_1_admin_page_1a0645bad7d23477b1c426ae8828c54543" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>private void</type>
+        <definition>private void TMSwPages::AdminPage::LogSettingsClick</definition>
+        <argsstring>(object sender, RoutedEventArgs e)</argsstring>
+        <name>LogSettingsClick</name>
         <param>
           <type>object</type>
-          <declname>target</declname>
+          <declname>sender</declname>
         </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" line="222" column="52" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.cs" bodystart="222" bodyend="300"/>
-      </memberdef>
-      <memberdef kind="function" id="class_t_m_sw_pages_1_1_admin_page_1a17776dacc8deff9ef92b3abd0c6a0d48" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>public void</type>
-        <definition>public void TMSwPages::AdminPage::InitializeComponent</definition>
-        <argsstring>()</argsstring>
-        <name>InitializeComponent</name>
-        <briefdescription>
-<para>InitializeComponent </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.i.cs" line="202" column="21" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.i.cs" bodystart="202" bodyend="214"/>
-      </memberdef>
-      <memberdef kind="function" id="class_t_m_sw_pages_1_1_admin_page_1a27df94885882dd6c49d2b26d80beb7c3" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void System Windows Markup IComponentConnector</type>
-        <definition>void System Windows Markup IComponentConnector TMSwPages::AdminPage::Connect</definition>
-        <argsstring>(int connectionId, object target)</argsstring>
-        <name>Connect</name>
         <param>
-          <type>int</type>
-          <declname>connectionId</declname>
+          <type>RoutedEventArgs</type>
+          <declname>e</declname>
         </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>
+        </briefdescription>
+        <detaileddescription>
+<para><linebreak/>
+ <simplesect kind="see"><para><linebreak/>
+ </para>
+</simplesect>
+<simplesect kind="return"><para><linebreak/>
+</para>
+</simplesect>
+<hruler/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminPage.xaml.cs" line="149" column="22" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminPage.xaml.cs" bodystart="149" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="class_t_m_sw_pages_1_1_admin_page_1a5261e670be136ecf3efe39b4eb76049f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>private void</type>
+        <definition>private void TMSwPages::AdminPage::Time_Period_SelectionChanged</definition>
+        <argsstring>(object sender, SelectionChangedEventArgs e)</argsstring>
+        <name>Time_Period_SelectionChanged</name>
         <param>
           <type>object</type>
-          <declname>target</declname>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>SelectionChangedEventArgs</type>
+          <declname>e</declname>
         </param>
         <briefdescription>
+<para>METHOD HEADER COMMENT ----------------------------------------------------------------------------<mdash/>. </para>
         </briefdescription>
         <detaileddescription>
+<para><linebreak/>
+</para>
+<para><linebreak/>
+ <simplesect kind="see"><para><linebreak/>
+ </para>
+</simplesect>
+<simplesect kind="return"><para><linebreak/>
+</para>
+</simplesect>
+<hruler/>
+ </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.i.cs" line="222" column="52" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/AdminPage.g.i.cs" bodystart="222" bodyend="300"/>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminPage.xaml.cs" line="163" column="22" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminPage.xaml.cs" bodystart="163" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="class_t_m_sw_pages_1_1_admin_page_1aeb59dc48d865054286593e141566bcb1" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>private void</type>
+        <definition>private void TMSwPages::AdminPage::DatePicker_SelectedDateChanged</definition>
+        <argsstring>(object sender, SelectionChangedEventArgs e)</argsstring>
+        <name>DatePicker_SelectedDateChanged</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>SelectionChangedEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para><linebreak/>
+ </para>
+        </briefdescription>
+        <detaileddescription>
+<para><linebreak/>
+ <simplesect kind="see"><para><linebreak/>
+ </para>
+</simplesect>
+<simplesect kind="return"><para><linebreak/>
+</para>
+</simplesect>
+<hruler/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminPage.xaml.cs" line="177" column="22" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminPage.xaml.cs" bodystart="177" bodyend="180"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para><ref refid="class_t_m_sw_pages_1_1_admin_page" kindref="compound">AdminPage</ref> </para>
+<para>This class runs the <ref refid="class_t_m_sw_pages_1_1_admin_page" kindref="compound">AdminPage</ref> UI functionality. </para>
     </briefdescription>
     <detaileddescription>
+<para>This currently allows searching and updating of a local log list which is displayed to the screen. <linebreak/>
+</para>
+<para><hruler/>
+ </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="3">
-        <label>IComponentConnector</label>
-      </node>
       <node id="2">
         <label>Page</label>
       </node>
       <node id="1">
         <label>TMSwPages::AdminPage</label>
         <link refid="class_t_m_sw_pages_1_1_admin_page"/>
-        <childnode refid="2" relation="private-inheritance">
-        </childnode>
-        <childnode refid="3" relation="private-inheritance">
-        </childnode>
-        <childnode refid="2" relation="private-inheritance">
-        </childnode>
-        <childnode refid="3" relation="private-inheritance">
-        </childnode>
         <childnode refid="2" relation="private-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="3">
-        <label>IComponentConnector</label>
-      </node>
       <node id="2">
         <label>Page</label>
       </node>
@@ -449,45 +235,16 @@
         <link refid="class_t_m_sw_pages_1_1_admin_page"/>
         <childnode refid="2" relation="private-inheritance">
         </childnode>
-        <childnode refid="3" relation="private-inheritance">
-        </childnode>
-        <childnode refid="2" relation="private-inheritance">
-        </childnode>
-        <childnode refid="3" relation="private-inheritance">
-        </childnode>
-        <childnode refid="2" relation="private-inheritance">
-        </childnode>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminPage.xaml.cs" line="46" column="1" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminPage.xaml.cs" bodystart="45" bodyend="148"/>
+    <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminPage.xaml.cs" line="42" column="1" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminPage.xaml.cs" bodystart="41" bodyend="181"/>
     <listofallmembers>
-      <member refid="class_t_m_sw_pages_1_1_admin_page_1a8f59b1b2288986ed4452f35a6902be03" prot="private" virt="non-virtual"><scope>TMSwPages::AdminPage</scope><name>_contentLoaded</name></member>
       <member refid="class_t_m_sw_pages_1_1_admin_page_1a72015f451ccbfa11f79ea3714d042a51" prot="private" virt="non-virtual"><scope>TMSwPages::AdminPage</scope><name>AdminPage</name></member>
-      <member refid="class_t_m_sw_pages_1_1_admin_page_1a84ace21cadb638c65d143cf3b5db3ddd" prot="private" virt="non-virtual"><scope>TMSwPages::AdminPage</scope><name>Backups</name></member>
-      <member refid="class_t_m_sw_pages_1_1_admin_page_1a180338840463d7cf42d19b3cb953b4e5" prot="private" virt="non-virtual"><scope>TMSwPages::AdminPage</scope><name>Buttons</name></member>
-      <member refid="class_t_m_sw_pages_1_1_admin_page_1a205545feeb6aee3b808aa94560098da1" prot="private" virt="non-virtual"><scope>TMSwPages::AdminPage</scope><name>Carrier_Data</name></member>
-      <member refid="class_t_m_sw_pages_1_1_admin_page_1a27df94885882dd6c49d2b26d80beb7c3" prot="private" virt="non-virtual"><scope>TMSwPages::AdminPage</scope><name>Connect</name></member>
-      <member refid="class_t_m_sw_pages_1_1_admin_page_1a27df94885882dd6c49d2b26d80beb7c3" prot="private" virt="non-virtual"><scope>TMSwPages::AdminPage</scope><name>Connect</name></member>
-      <member refid="class_t_m_sw_pages_1_1_admin_page_1a3bfced84e3a1156a24b3f623ab2a7419" prot="private" virt="non-virtual"><scope>TMSwPages::AdminPage</scope><name>Controls</name></member>
-      <member refid="class_t_m_sw_pages_1_1_admin_page_1a17776dacc8deff9ef92b3abd0c6a0d48" prot="private" virt="non-virtual"><scope>TMSwPages::AdminPage</scope><name>InitializeComponent</name></member>
-      <member refid="class_t_m_sw_pages_1_1_admin_page_1a17776dacc8deff9ef92b3abd0c6a0d48" prot="private" virt="non-virtual"><scope>TMSwPages::AdminPage</scope><name>InitializeComponent</name></member>
-      <member refid="class_t_m_sw_pages_1_1_admin_page_1a5a9260293e7fe19322cc3f078b8c7d01" prot="private" virt="non-virtual"><scope>TMSwPages::AdminPage</scope><name>InnerGrid</name></member>
+      <member refid="class_t_m_sw_pages_1_1_admin_page_1aeb59dc48d865054286593e141566bcb1" prot="private" virt="non-virtual"><scope>TMSwPages::AdminPage</scope><name>DatePicker_SelectedDateChanged</name></member>
       <member refid="class_t_m_sw_pages_1_1_admin_page_1aade1dbb0d543c8d99c6fbbc098ef1d31" prot="private" virt="non-virtual"><scope>TMSwPages::AdminPage</scope><name>LoadClick</name></member>
-      <member refid="class_t_m_sw_pages_1_1_admin_page_1a19237568486eab0ecae40772520ff58f" prot="private" virt="non-virtual"><scope>TMSwPages::AdminPage</scope><name>Logs</name></member>
-      <member refid="class_t_m_sw_pages_1_1_admin_page_1aeb6985f8765e01d89d057a38ad879af7" prot="private" virt="non-virtual"><scope>TMSwPages::AdminPage</scope><name>LogsList</name></member>
-      <member refid="class_t_m_sw_pages_1_1_admin_page_1a51787b4a579caff4c559e99f98ff4af2" prot="private" virt="non-virtual"><scope>TMSwPages::AdminPage</scope><name>Main</name></member>
-      <member refid="class_t_m_sw_pages_1_1_admin_page_1ae1d9ce7e24b2325d287fd26338393c5e" prot="private" virt="non-virtual"><scope>TMSwPages::AdminPage</scope><name>myMenu</name></member>
-      <member refid="class_t_m_sw_pages_1_1_admin_page_1afca30e66f42819f5c901571cffc5c621" prot="private" virt="non-virtual"><scope>TMSwPages::AdminPage</scope><name>OuterGrid</name></member>
-      <member refid="class_t_m_sw_pages_1_1_admin_page_1ac99768b21e4bdd802d6692c899e2e25e" prot="private" virt="non-virtual"><scope>TMSwPages::AdminPage</scope><name>Rate_Fee_Tables</name></member>
-      <member refid="class_t_m_sw_pages_1_1_admin_page_1af319f4bc353482607e5d01a2b212ecaf" prot="private" virt="non-virtual"><scope>TMSwPages::AdminPage</scope><name>Route_Table</name></member>
+      <member refid="class_t_m_sw_pages_1_1_admin_page_1a0645bad7d23477b1c426ae8828c54543" prot="private" virt="non-virtual"><scope>TMSwPages::AdminPage</scope><name>LogSettingsClick</name></member>
       <member refid="class_t_m_sw_pages_1_1_admin_page_1a0086ede2b1f65bf900f3d7a735be4ae6" prot="private" virt="non-virtual"><scope>TMSwPages::AdminPage</scope><name>searchResults</name></member>
-      <member refid="class_t_m_sw_pages_1_1_admin_page_1aea9dc87c2ce7192a04f127b7d24652a6" prot="private" virt="non-virtual"><scope>TMSwPages::AdminPage</scope><name>searchTags</name></member>
-      <member refid="class_t_m_sw_pages_1_1_admin_page_1a6004f227c1d22e0052715b51892e4699" prot="private" virt="non-virtual"><scope>TMSwPages::AdminPage</scope><name>status</name></member>
-      <member refid="class_t_m_sw_pages_1_1_admin_page_1aaff02a0217485ac677d004f59c103777" prot="private" virt="non-virtual"><scope>TMSwPages::AdminPage</scope><name>StatusBar</name></member>
-      <member refid="class_t_m_sw_pages_1_1_admin_page_1a640661cdb5249b4f218f391bb6edfd38" prot="private" virt="non-virtual"><scope>TMSwPages::AdminPage</scope><name>statusItem</name></member>
-      <member refid="class_t_m_sw_pages_1_1_admin_page_1ab5858e41477b87eb4325bb476d0c9f5e" prot="private" virt="non-virtual"><scope>TMSwPages::AdminPage</scope><name>Tabs</name></member>
-      <member refid="class_t_m_sw_pages_1_1_admin_page_1ac66f72a3ea6e0c7901fd8ad5d3e79c4e" prot="private" virt="non-virtual"><scope>TMSwPages::AdminPage</scope><name>Time_Period</name></member>
-      <member refid="class_t_m_sw_pages_1_1_admin_page_1a8ee2cd9681ab6a12402f13c9bb95702f" prot="private" virt="non-virtual"><scope>TMSwPages::AdminPage</scope><name>TopMenu</name></member>
+      <member refid="class_t_m_sw_pages_1_1_admin_page_1a5261e670be136ecf3efe39b4eb76049f" prot="private" virt="non-virtual"><scope>TMSwPages::AdminPage</scope><name>Time_Period_SelectionChanged</name></member>
       <member refid="class_t_m_sw_pages_1_1_admin_page_1af6e6c112454636b123385619b0885be7" prot="private" virt="non-virtual"><scope>TMSwPages::AdminPage</scope><name>ViewMoreClick</name></member>
     </listofallmembers>
   </compounddef>

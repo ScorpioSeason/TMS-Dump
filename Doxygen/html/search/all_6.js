@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['gettraveldata_44',['getTravelData',['../class_transport___management___system___w_p_f_1_1_mapping_class.html#ac2e8511f210a3fc19b4daee2e4f59f24',1,'Transport_Management_System_WPF::MappingClass']]]
+  ['viewlogdetails_23',['ViewLogDetails',['../class_t_m_sw_pages_1_1_view_log_details.html',1,'TMSwPages']]],
+  ['viewlogdetails_2examl_2ecs_24',['ViewLogDetails.xaml.cs',['../_view_log_details_8xaml_8cs.html',1,'']]]
 ];
