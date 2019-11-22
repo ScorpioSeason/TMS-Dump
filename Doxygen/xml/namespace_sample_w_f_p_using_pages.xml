@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="namespace_sample_w_f_p_using_pages" kind="namespace" language="C#">
+    <compoundname>SampleWFPUsingPages</compoundname>
+    <innerclass refid="class_sample_w_f_p_using_pages_1_1_admin" prot="public">SampleWFPUsingPages::Admin</innerclass>
+    <innerclass refid="class_sample_w_f_p_using_pages_1_1_admin_page" prot="public">SampleWFPUsingPages::AdminPage</innerclass>
+    <innerclass refid="class_sample_w_f_p_using_pages_1_1_alter_tables" prot="public">SampleWFPUsingPages::AlterTables</innerclass>
+    <innerclass refid="class_sample_w_f_p_using_pages_1_1_backup_t_m_s" prot="public">SampleWFPUsingPages::BackupTMS</innerclass>
+    <innerclass refid="class_sample_w_f_p_using_pages_1_1_t_m_s_log" prot="public">SampleWFPUsingPages::TMSLog</innerclass>
+    <innerclass refid="class_sample_w_f_p_using_pages_1_1_t_m_s_logger" prot="public">SampleWFPUsingPages::TMSLogger</innerclass>
+    <innerclass refid="class_sample_w_f_p_using_pages_1_1_view_log_details_page" prot="public">SampleWFPUsingPages::ViewLogDetailsPage</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" line="26" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_transport___management___system___w_p_f_1_1_carrier" kind="class" language="C#" prot="public">
+    <compoundname>Transport_Management_System_WPF::Carrier</compoundname>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_transport___management___system___w_p_f_1_1_carrier_1a0b774c178e98ea056604b6f24b73746a" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string Transport_Management_System_WPF.Carrier.Carrier_Name</definition>
+        <argsstring></argsstring>
+        <name>Carrier_Name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Transport Management System WPF/Transport Management System WPF/Carrier.cs" line="11" column="23" bodyfile="Transport Management System WPF/Transport Management System WPF/Carrier.cs" bodystart="11" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="property" id="class_transport___management___system___w_p_f_1_1_carrier_1af8db30f1235b0a15b7dba2b19a60d42e" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string Transport_Management_System_WPF.Carrier.Depot_City</definition>
+        <argsstring></argsstring>
+        <name>Depot_City</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Transport Management System WPF/Transport Management System WPF/Carrier.cs" line="12" column="23" bodyfile="Transport Management System WPF/Transport Management System WPF/Carrier.cs" bodystart="12" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="property" id="class_transport___management___system___w_p_f_1_1_carrier_1a49bf12a5ed6950fcc225a0c4307ec8b1" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float Transport_Management_System_WPF.Carrier.FTL_Rate</definition>
+        <argsstring></argsstring>
+        <name>FTL_Rate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Transport Management System WPF/Transport Management System WPF/Carrier.cs" line="13" column="22" bodyfile="Transport Management System WPF/Transport Management System WPF/Carrier.cs" bodystart="13" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="property" id="class_transport___management___system___w_p_f_1_1_carrier_1ad4e3a70b3d28e1611edf0b6f4fbfcd43" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float Transport_Management_System_WPF.Carrier.LTL_Rate</definition>
+        <argsstring></argsstring>
+        <name>LTL_Rate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Transport Management System WPF/Transport Management System WPF/Carrier.cs" line="14" column="22" bodyfile="Transport Management System WPF/Transport Management System WPF/Carrier.cs" bodystart="14" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="property" id="class_transport___management___system___w_p_f_1_1_carrier_1a189b41a6fe917793992cbdc3c283081f" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float Transport_Management_System_WPF.Carrier.Reefer_Charge</definition>
+        <argsstring></argsstring>
+        <name>Reefer_Charge</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Transport Management System WPF/Transport Management System WPF/Carrier.cs" line="15" column="22" bodyfile="Transport Management System WPF/Transport Management System WPF/Carrier.cs" bodystart="15" bodyend="15"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Transport Management System WPF/Transport Management System WPF/Carrier.cs" line="10" column="1" bodyfile="Transport Management System WPF/Transport Management System WPF/Carrier.cs" bodystart="9" bodyend="16"/>
+    <listofallmembers>
+      <member refid="class_transport___management___system___w_p_f_1_1_carrier_1a0b774c178e98ea056604b6f24b73746a" prot="public" virt="non-virtual"><scope>Transport_Management_System_WPF::Carrier</scope><name>Carrier_Name</name></member>
+      <member refid="class_transport___management___system___w_p_f_1_1_carrier_1af8db30f1235b0a15b7dba2b19a60d42e" prot="public" virt="non-virtual"><scope>Transport_Management_System_WPF::Carrier</scope><name>Depot_City</name></member>
+      <member refid="class_transport___management___system___w_p_f_1_1_carrier_1a49bf12a5ed6950fcc225a0c4307ec8b1" prot="public" virt="non-virtual"><scope>Transport_Management_System_WPF::Carrier</scope><name>FTL_Rate</name></member>
+      <member refid="class_transport___management___system___w_p_f_1_1_carrier_1ad4e3a70b3d28e1611edf0b6f4fbfcd43" prot="public" virt="non-virtual"><scope>Transport_Management_System_WPF::Carrier</scope><name>LTL_Rate</name></member>
+      <member refid="class_transport___management___system___w_p_f_1_1_carrier_1a189b41a6fe917793992cbdc3c283081f" prot="public" virt="non-virtual"><scope>Transport_Management_System_WPF::Carrier</scope><name>Reefer_Charge</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

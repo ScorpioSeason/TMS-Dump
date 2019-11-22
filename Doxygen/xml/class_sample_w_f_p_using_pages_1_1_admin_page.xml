@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_sample_w_f_p_using_pages_1_1_admin_page" kind="class" language="C++" prot="public">
+    <compoundname>SampleWFPUsingPages::AdminPage</compoundname>
+    <basecompoundref prot="private" virt="non-virtual">Page</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_sample_w_f_p_using_pages_1_1_admin_page_1a6068949a07cab542e407da8721a11357" prot="private" static="no" mutable="no">
+        <type>List&lt; <ref refid="class_sample_w_f_p_using_pages_1_1_t_m_s_log" kindref="compound">TMSLog</ref> &gt;</type>
+        <definition>List&lt;TMSLog&gt; SampleWFPUsingPages::AdminPage::searchResults</definition>
+        <argsstring></argsstring>
+        <name>searchResults</name>
+        <initializer>= new List&lt;<ref refid="class_sample_w_f_p_using_pages_1_1_t_m_s_log" kindref="compound">TMSLog</ref>&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Transport Management System WPF/Transport Management System WPF/AdminPage.xaml.cs" line="24" column="14" bodyfile="Transport Management System WPF/Transport Management System WPF/AdminPage.xaml.cs" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_sample_w_f_p_using_pages_1_1_admin_page_1ab1d8ba149997209a8f7bfad31a2d232b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>public</type>
+        <definition>public SampleWFPUsingPages::AdminPage::AdminPage</definition>
+        <argsstring>()</argsstring>
+        <name>AdminPage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Transport Management System WPF/Transport Management System WPF/AdminPage.xaml.cs" line="26" column="16" bodyfile="Transport Management System WPF/Transport Management System WPF/AdminPage.xaml.cs" bodystart="26" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="class_sample_w_f_p_using_pages_1_1_admin_page_1a7b3d274a716086b793c337129e414671" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>private void</type>
+        <definition>private void SampleWFPUsingPages::AdminPage::LoadClick</definition>
+        <argsstring>(object sender, RoutedEventArgs e)</argsstring>
+        <name>LoadClick</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>RoutedEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Transport Management System WPF/Transport Management System WPF/AdminPage.xaml.cs" line="39" column="22" bodyfile="Transport Management System WPF/Transport Management System WPF/AdminPage.xaml.cs" bodystart="39" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="class_sample_w_f_p_using_pages_1_1_admin_page_1a410e37e48f1c08025e1b73cf840646f8" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>private void</type>
+        <definition>private void SampleWFPUsingPages::AdminPage::ViewMoreClick</definition>
+        <argsstring>(object sender, RoutedEventArgs e)</argsstring>
+        <name>ViewMoreClick</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>RoutedEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Transport Management System WPF/Transport Management System WPF/AdminPage.xaml.cs" line="79" column="22" bodyfile="Transport Management System WPF/Transport Management System WPF/AdminPage.xaml.cs" bodystart="79" bodyend="86"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Interaction logic for AdminPage.xaml </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Page</label>
+      </node>
+      <node id="1">
+        <label>SampleWFPUsingPages::AdminPage</label>
+        <link refid="class_sample_w_f_p_using_pages_1_1_admin_page"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Page</label>
+      </node>
+      <node id="1">
+        <label>SampleWFPUsingPages::AdminPage</label>
+        <link refid="class_sample_w_f_p_using_pages_1_1_admin_page"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Transport Management System WPF/Transport Management System WPF/AdminPage.xaml.cs" line="23" column="1" bodyfile="Transport Management System WPF/Transport Management System WPF/AdminPage.xaml.cs" bodystart="22" bodyend="88"/>
+    <listofallmembers>
+      <member refid="class_sample_w_f_p_using_pages_1_1_admin_page_1ab1d8ba149997209a8f7bfad31a2d232b" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::AdminPage</scope><name>AdminPage</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_admin_page_1a7b3d274a716086b793c337129e414671" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::AdminPage</scope><name>LoadClick</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_admin_page_1a6068949a07cab542e407da8721a11357" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::AdminPage</scope><name>searchResults</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_admin_page_1a410e37e48f1c08025e1b73cf840646f8" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::AdminPage</scope><name>ViewMoreClick</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

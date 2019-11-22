@@ -77,6 +77,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Admin.cs" />
+    <Compile Include="AdminClasses.cs" />
     <Compile Include="BuyerClass.cs" />
     <Compile Include="Carrier.cs" />
     <Compile Include="mysqlConnector.cs" />
@@ -91,6 +92,9 @@
     <Compile Include="SQL_Query.cs" />
     <Compile Include="MappingClass.cs" />
     <Compile Include="TimePass.cs" />
+    <Compile Include="ViewLogDetailsPage.xaml.cs">
+      <DependentUpon>ViewLogDetailsPage.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -110,6 +114,10 @@
     <Page Include="Page1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewLogDetailsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_sample_w_f_p_using_pages_1_1_view_log_details_page" kind="class" language="C++" prot="public">
+    <compoundname>SampleWFPUsingPages::ViewLogDetailsPage</compoundname>
+    <basecompoundref prot="private" virt="non-virtual">Page</basecompoundref>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_sample_w_f_p_using_pages_1_1_view_log_details_page_1aae8cb502e7382b530ac128acd1195d1e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>public</type>
+        <definition>public SampleWFPUsingPages::ViewLogDetailsPage::ViewLogDetailsPage</definition>
+        <argsstring>()</argsstring>
+        <name>ViewLogDetailsPage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Transport Management System WPF/Transport Management System WPF/ViewLogDetailsPage.xaml.cs" line="23" column="16" bodyfile="Transport Management System WPF/Transport Management System WPF/ViewLogDetailsPage.xaml.cs" bodystart="23" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="class_sample_w_f_p_using_pages_1_1_view_log_details_page_1afd3c1902724f2cd11e615c2c22928843" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>public</type>
+        <definition>public SampleWFPUsingPages::ViewLogDetailsPage::ViewLogDetailsPage</definition>
+        <argsstring>(object data)</argsstring>
+        <name>ViewLogDetailsPage</name>
+        <param>
+          <type>object</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Transport Management System WPF/Transport Management System WPF/ViewLogDetailsPage.xaml.cs" line="27" column="16" bodyfile="Transport Management System WPF/Transport Management System WPF/ViewLogDetailsPage.xaml.cs" bodystart="27" bodyend="31"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Interaction logic for ViewLogDetailsPage.xaml </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>SampleWFPUsingPages::ViewLogDetailsPage</label>
+        <link refid="class_sample_w_f_p_using_pages_1_1_view_log_details_page"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Page</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>SampleWFPUsingPages::ViewLogDetailsPage</label>
+        <link refid="class_sample_w_f_p_using_pages_1_1_view_log_details_page"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Page</label>
+      </node>
+    </collaborationgraph>
+    <location file="Transport Management System WPF/Transport Management System WPF/ViewLogDetailsPage.xaml.cs" line="22" column="1" bodyfile="Transport Management System WPF/Transport Management System WPF/ViewLogDetailsPage.xaml.cs" bodystart="21" bodyend="33"/>
+    <listofallmembers>
+      <member refid="class_sample_w_f_p_using_pages_1_1_view_log_details_page_1aae8cb502e7382b530ac128acd1195d1e" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::ViewLogDetailsPage</scope><name>ViewLogDetailsPage</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_view_log_details_page_1afd3c1902724f2cd11e615c2c22928843" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::ViewLogDetailsPage</scope><name>ViewLogDetailsPage</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

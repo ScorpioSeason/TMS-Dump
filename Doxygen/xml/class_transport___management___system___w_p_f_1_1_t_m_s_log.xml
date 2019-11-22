@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_transport___management___system___w_p_f_1_1_t_m_s_log" kind="class" language="C#" prot="public">
+    <compoundname>Transport_Management_System_WPF::TMSLog</compoundname>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_transport___management___system___w_p_f_1_1_t_m_s_log_1a6c66e9b1fe544906963ceb13fdfd5c5b" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string Transport_Management_System_WPF.TMSLog.logPath</definition>
+        <argsstring></argsstring>
+        <name>logPath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Transport Management System WPF/Transport Management System WPF/Admin.cs" line="157" column="23" bodyfile="Transport Management System WPF/Transport Management System WPF/Admin.cs" bodystart="157" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="property" id="class_transport___management___system___w_p_f_1_1_t_m_s_log_1a10f36b730b4ac22d100f8ca98177ebc2" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string Transport_Management_System_WPF.TMSLog.logClass</definition>
+        <argsstring></argsstring>
+        <name>logClass</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Transport Management System WPF/Transport Management System WPF/Admin.cs" line="158" column="23" bodyfile="Transport Management System WPF/Transport Management System WPF/Admin.cs" bodystart="158" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="property" id="class_transport___management___system___w_p_f_1_1_t_m_s_log_1a2bbddc3c725722354d5face887cb5862" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string Transport_Management_System_WPF.TMSLog.logMethod</definition>
+        <argsstring></argsstring>
+        <name>logMethod</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Transport Management System WPF/Transport Management System WPF/Admin.cs" line="159" column="23" bodyfile="Transport Management System WPF/Transport Management System WPF/Admin.cs" bodystart="159" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="property" id="class_transport___management___system___w_p_f_1_1_t_m_s_log_1a8fa636e2e28157fd772640a561f21cc3" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string Transport_Management_System_WPF.TMSLog.logType</definition>
+        <argsstring></argsstring>
+        <name>logType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Transport Management System WPF/Transport Management System WPF/Admin.cs" line="160" column="23" bodyfile="Transport Management System WPF/Transport Management System WPF/Admin.cs" bodystart="160" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="property" id="class_transport___management___system___w_p_f_1_1_t_m_s_log_1a202faabdd0c732b14486524140c7dfc2" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string Transport_Management_System_WPF.TMSLog.logMessage</definition>
+        <argsstring></argsstring>
+        <name>logMessage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Transport Management System WPF/Transport Management System WPF/Admin.cs" line="161" column="23" bodyfile="Transport Management System WPF/Transport Management System WPF/Admin.cs" bodystart="161" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="property" id="class_transport___management___system___w_p_f_1_1_t_m_s_log_1abac2e7b02a8fead4de14e0b309390f4f" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string Transport_Management_System_WPF.TMSLog.unparsed</definition>
+        <argsstring></argsstring>
+        <name>unparsed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Transport Management System WPF/Transport Management System WPF/Admin.cs" line="162" column="23" bodyfile="Transport Management System WPF/Transport Management System WPF/Admin.cs" bodystart="162" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="property" id="class_transport___management___system___w_p_f_1_1_t_m_s_log_1a1ca4f87eebf070245487fa282d010872" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>DateTime</type>
+        <definition>DateTime Transport_Management_System_WPF.TMSLog.logTime</definition>
+        <argsstring></argsstring>
+        <name>logTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Transport Management System WPF/Transport Management System WPF/Admin.cs" line="163" column="25" bodyfile="Transport Management System WPF/Transport Management System WPF/Admin.cs" bodystart="163" bodyend="163"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_transport___management___system___w_p_f_1_1_t_m_s_log_1ac4b2c3d05f4854063132ff835f0c7ca9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Transport_Management_System_WPF.TMSLog.TMSLog</definition>
+        <argsstring>(string nUnparsed)</argsstring>
+        <name>TMSLog</name>
+        <param>
+          <type>string</type>
+          <declname>nUnparsed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Transport Management System WPF/Transport Management System WPF/Admin.cs" line="173" column="16" bodyfile="Transport Management System WPF/Transport Management System WPF/Admin.cs" bodystart="173" bodyend="185"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Transport Management System WPF/Transport Management System WPF/Admin.cs" line="155" column="1" bodyfile="Transport Management System WPF/Transport Management System WPF/Admin.cs" bodystart="154" bodyend="199"/>
+    <listofallmembers>
+      <member refid="class_transport___management___system___w_p_f_1_1_t_m_s_log_1a10f36b730b4ac22d100f8ca98177ebc2" prot="public" virt="non-virtual"><scope>Transport_Management_System_WPF::TMSLog</scope><name>logClass</name></member>
+      <member refid="class_transport___management___system___w_p_f_1_1_t_m_s_log_1a202faabdd0c732b14486524140c7dfc2" prot="public" virt="non-virtual"><scope>Transport_Management_System_WPF::TMSLog</scope><name>logMessage</name></member>
+      <member refid="class_transport___management___system___w_p_f_1_1_t_m_s_log_1a2bbddc3c725722354d5face887cb5862" prot="public" virt="non-virtual"><scope>Transport_Management_System_WPF::TMSLog</scope><name>logMethod</name></member>
+      <member refid="class_transport___management___system___w_p_f_1_1_t_m_s_log_1a6c66e9b1fe544906963ceb13fdfd5c5b" prot="public" virt="non-virtual"><scope>Transport_Management_System_WPF::TMSLog</scope><name>logPath</name></member>
+      <member refid="class_transport___management___system___w_p_f_1_1_t_m_s_log_1a1ca4f87eebf070245487fa282d010872" prot="public" virt="non-virtual"><scope>Transport_Management_System_WPF::TMSLog</scope><name>logTime</name></member>
+      <member refid="class_transport___management___system___w_p_f_1_1_t_m_s_log_1a8fa636e2e28157fd772640a561f21cc3" prot="public" virt="non-virtual"><scope>Transport_Management_System_WPF::TMSLog</scope><name>logType</name></member>
+      <member refid="class_transport___management___system___w_p_f_1_1_t_m_s_log_1ac4b2c3d05f4854063132ff835f0c7ca9" prot="public" virt="non-virtual"><scope>Transport_Management_System_WPF::TMSLog</scope><name>TMSLog</name></member>
+      <member refid="class_transport___management___system___w_p_f_1_1_t_m_s_log_1abac2e7b02a8fead4de14e0b309390f4f" prot="public" virt="non-virtual"><scope>Transport_Management_System_WPF::TMSLog</scope><name>unparsed</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
