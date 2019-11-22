@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Transport_Management_System_WPF
-namespace SampleWFPUsingPages
+//namespace SampleWFPUsingPages
 {
     /// <summary>
     /// Interaction logic for AdminPage.xaml
