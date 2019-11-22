@@ -1,0 +1,26 @@
+﻿<NavigationWindow x:Class="SampleWFPUsingPages.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SampleWFPUsingPages"
+        mc:Ignorable="d"
+        Title="MainNavWindow" Height="1000" Width="1000" Source="AdminPage.xaml">
+
+    <!-- 
+    https://docs.microsoft.com/en-us/dotnet/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application
+    This app navigates to different content depending 
+    on the user input. This is why the main Window needs to
+    be changed to a NavigationWindow. NavigationWindow 
+    inherits all the properties of Window. The NavigationWindow 
+    element in the XAML file creates an instance of the 
+    NavigationWindow class. For more information, see Navigation 
+    overview.
+    
+    Add a Source property to the NavigationWindow element 
+    and set it to "ExpenseItHome.xaml".
+
+    This sets ExpenseItHome.xaml to be the first page opened 
+    when the application starts.
+    -->
+</NavigationWindow>

@@ -13,14 +13,14 @@
  *
  * =========================================================================================================== */
 
-using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace Transport_Management_System_WPF
+namespace SampleWFPUsingPages
 {
     // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
     /**   
@@ -55,13 +55,14 @@ namespace Transport_Management_System_WPF
     static public class TMSLogger
     {
         static string LoggerPath { set; get; }                                          // Stored location of the log file
-        static Dictionary<DateTime, TMSLog> logs = new Dictionary<DateTime, TMSLog>();  // To allow searching by time
+        //static public Dictionary<DateTime, TMSLog> logs = new Dictionary<DateTime, TMSLog>();  // To allow searching by time
+        static public List<TMSLog> logs = new List<TMSLog>();  // To allow searching by time
 
         // Create Log
         static public void LogIt(string newLogString)
         {
             TMSLog myLog = new TMSLog(newLogString);
-            logs.Add(myLog.logTime, myLog);
+            logs.Add(myLog); 
         }
 
         // Draw logs
@@ -136,7 +137,7 @@ namespace Transport_Management_System_WPF
             //}
 
 
-            string nLoggerPath = "";
+            //string nLoggerPath = "";
             // Copy log from old location to new one
             // If successful, inform user, delete old log
             // If failed, inform user, keep old log
@@ -175,13 +176,26 @@ namespace Transport_Management_System_WPF
             unparsed = nUnparsed;
             // Set parsed using unparsed
 
-            string[] temp = unparsed.Split('|');
-            logPath = temp[0];
-            logClass = temp[1];
-            logMethod = temp[2];
-            logType = temp[3];
-            logMessage = temp[4];
-            logTime = DateTime.Now;
+            if (Regex.Matches(unparsed, "|").Count == 6)
+            {
+                string[] temp = unparsed.Split('|');
+                logPath = temp[0];
+                logClass = temp[1];
+                logMethod = temp[2];
+                logType = temp[3];
+                logMessage = temp[4];
+                logTime = DateTime.UtcNow;
+            }
+            else
+            {
+                logPath = "AdminClasses.cs";
+                logClass = "TMSLog";
+                logMethod = "Constructor";
+                logType = "LogParseError";
+                logMessage = "The log message did not enter as the correct string format";
+                logTime = DateTime.UtcNow;
+            }
+
         }
 
         //// Creates a log object from parsed information
@@ -226,5 +240,4 @@ namespace Transport_Management_System_WPF
         // Route Table
         // Rate / Fee Table
     }
-
 }
