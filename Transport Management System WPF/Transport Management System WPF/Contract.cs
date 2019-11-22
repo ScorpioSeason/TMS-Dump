@@ -9,12 +9,40 @@ namespace Transport_Management_System_WPF
 {
     public class Contract
     {
-        public string client_Name { get; set; }
-        public bool job_Type { get; set; }
-        public int quantity { get; set; }
-        public string origin { get; set; }
-        public string destination { get; set; }
-        public bool van_Type { get; set; }
+        public string client_Name 
+        { 
+            get;
+            set; 
+        }
+        public string job_Type 
+        { 
+            get; 
+            set; 
+        }
+        public string quantity 
+        { 
+            get;
+            set; 
+        }
+        public string origin 
+        { 
+            get;
+            set; 
+        }
+        public string destination 
+        { 
+            get;
+            set; 
+        }
+        public string van_Type 
+        { 
+            get;
+            set; 
+        }
+
+        public List<string> nominatedCarriers;
+
+
 
         public int ToCityID(string inputCity)
         {
