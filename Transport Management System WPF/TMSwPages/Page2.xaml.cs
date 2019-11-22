@@ -16,14 +16,20 @@ using System.Windows.Shapes;
 namespace SampleWFPUsingPages
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Page2.xaml
     /// </summary>
-    public partial class MainWindow : NavigationWindow
+    public partial class Page2 : Page
     {
-        public MainWindow()
+        public Page2()
         {
             InitializeComponent();
         }
 
+        // Custom constructor to pass expense report data
+        public Page2(object data) : this()
+        {
+            // Bind to expense report data.
+            this.DataContext = data;
+        }
     }
 }

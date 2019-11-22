@@ -1,0 +1,124 @@
+﻿<Page x:Class="SampleWFPUsingPages.AdminPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SampleWFPUsingPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="1000" d:DesignWidth="1000"
+      Title="AdminPage">
+
+    <!--This is the grid which holds the page display-->
+    <Grid Name="OuterGrid" Margin="0,0,0,0">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Name="TopMenu" Height="auto"></RowDefinition>
+            <RowDefinition Name="Tabs" Height="*"></RowDefinition>
+            <RowDefinition Name="StatusBar" Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <!--This is the user menu allowing help or navigation-->
+        <Menu Name="myMenu" Grid.Row ="0" IsMainMenu="True" VerticalAlignment="Top">
+
+            <!-- File Menu: Open, New, Save As, Close -->
+            <MenuItem Header="Admin">
+                <MenuItem Header="Admin Main Page"/>
+                <MenuItem Header="Switch User" />
+            </MenuItem>
+
+            <!-- Help Menu: About -->
+            <MenuItem Header="Help">
+                <MenuItem Header="About Admin" />
+                <MenuItem Header="About TMS" />
+            </MenuItem>
+
+        </Menu>
+
+        <!--These tabs allow different functions of the Admin to be accessed from one main page-->
+        <TabControl Grid.Row="1" Margin="5,5,5,5">
+
+            <!--This is the content of the first tab-->
+            <TabItem Name="Logs" Header="Logs">
+
+                <!--Logs Tab-->
+                <TabItem.Content>
+
+                    <StackPanel  Grid.Row="1">
+
+                        <!--This is only visible within the logs tab-->
+                        <Grid Name="InnerGrid" VerticalAlignment="Center" Grid.Row="1">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition x:Name="Controls" Height="auto"></RowDefinition>
+                                <RowDefinition x:Name="Main" Height="*"></RowDefinition>
+                                <RowDefinition x:Name="Buttons" Height="auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <!--Controls Row (0) -->
+                            <ComboBox Grid.Row="0" Grid.Column="0" Margin="5,5,5,5" Name="Time_Period">
+                                <ComboBoxItem>Date Range Picker...</ComboBoxItem>
+                            </ComboBox>
+                            <DatePicker Grid.Row="0" Grid.Column="1" Margin="5,5,5,5"></DatePicker>
+                            <TextBox x:Name="searchTags" Grid.Row="0" Grid.Column="2" Margin="5,5,5,5" Grid.ColumnSpan="2"></TextBox>
+                            <Button Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Click="LoadClick">Load</Button>
+
+                            <!--Buttons Row (2) -->
+                            <Button Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" VerticalAlignment="Bottom">Log Settings</Button>
+                            <Button Grid.Row="2" Grid.Column="4" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="ViewMoreClick" >View More...</Button>
+
+                            <!--Main Content Row (1) -->
+                            <DataGrid Grid.Row="1" Grid.ColumnSpan="5" Name="LogsList" ItemsSource="{Binding}" Margin="5,5,5,5" SelectionMode="Single" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="UTC Date/Time" Binding="{Binding logTime}"/>
+                                    <DataGridTextColumn Header="Tag" Binding="{Binding logType}" />
+                                    <DataGridTextColumn Header="Brief" Binding="{Binding logMessage}" />
+                                </DataGrid.Columns>
+                                <DataGrid.Resources></DataGrid.Resources>
+                            </DataGrid>
+
+                            <!--public string logPath { set; get; }
+                            
+                            TMSLogger.logs.TryGetValue(this, out logType);
+                            
+                            public string logClass { set; get; }
+                            public string logMethod { set; get; }
+                            public string logType { set; get; }
+                            public string logMessage { set; get; }
+                            public string unparsed { set; get; }
+                            public DateTime logTime { set; get; }-->
+
+                        </Grid>
+
+                    </StackPanel>
+
+                </TabItem.Content>
+
+            </TabItem>
+
+            <!--These are the other admin functional tabs-->
+            <TabItem Name="Backups" Header="Backups"></TabItem>
+            <TabItem Name="Carrier_Data" Header="Carrier_Data"></TabItem>
+            <TabItem Name="Route_Table" Header="Route Table"></TabItem>
+            <TabItem Name="Rate_Fee_Tables" Header="Rate / Fee Tables"></TabItem>
+
+        </TabControl >
+
+        <!--This displays statuses for the user-->
+        <StatusBar Grid.Row="5" VerticalAlignment="Bottom">
+            <StatusBarItem Name="statusItem">
+                <TextBlock Name="status" Text="Status: "/>
+            </StatusBarItem>
+        </StatusBar >
+
+    </Grid>
+</Page>

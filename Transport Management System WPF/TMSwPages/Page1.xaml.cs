@@ -16,14 +16,21 @@ using System.Windows.Shapes;
 namespace SampleWFPUsingPages
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Page1.xaml
     /// </summary>
-    public partial class MainWindow : NavigationWindow
+    public partial class Page1 : Page
     {
-        public MainWindow()
+        public Page1()
         {
             InitializeComponent();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            // View Expense Report
+            Page2 page2 = new Page2(this.peopleListBox.SelectedItem);
+            this.NavigationService.Navigate(page2);
+
+        }
     }
 }

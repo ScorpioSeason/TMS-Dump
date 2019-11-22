@@ -16,13 +16,18 @@ using System.Windows.Shapes;
 namespace SampleWFPUsingPages
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for ViewLogDetailsPage.xaml
     /// </summary>
-    public partial class MainWindow : NavigationWindow
+    public partial class ViewLogDetailsPage : Page
     {
-        public MainWindow()
+        public ViewLogDetailsPage()
         {
             InitializeComponent();
+        }
+        public ViewLogDetailsPage(object data) : this()
+        {
+            // Bind to incoming log data.
+            this.DataContext = data;
         }
 
     }
