@@ -1,15 +1,13 @@
-﻿// ADMIN FILE HEADER COMMENT: =================================================================================
+﻿// VIEWLOGDETAILS FILE HEADER COMMENT: ========================================================================
 /**
  *  \file		Admin.cs
  *  \ingroup	TMS
  *  \date		November 20, 2019
  *  \author		8000 Cigarettes - Megan
- *  \brief	    This file contains the admin functionality	  
- *  \see		MainWindow.xaml
- *  \details    This file holds the functionality of the Admin class. The Admin has the ability to view logs as 
- *              specified by time period, view details of specific logs, alter where the log files are stored, 
- *              initiate backups of the TMS database, choose where the TMS db is backed up to, alter the Carrier 
- *              Data Table, the Route Table, and the Rate / Fee Tables.                                       
+ *  \brief	    This file contains the interaction logic for the detailed view of a single TMSLog.  
+ *  \see		ViewLogDetails.xaml
+ *  \details    This file contains the functionality for the detailed view of a single TMSLog. This only 
+ *              displays the simple details and allows for back-navigation. 
  *
  * =========================================================================================================== */
 
@@ -30,10 +28,6 @@ using System.Windows.Shapes;
 
 namespace TMSwPages
 {
-    /// <summary>
-    /// Interaction logic for ViewLogDetails.xaml
-    /// </summary>
- 
     // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
     /**   
     *   \class		Admin
@@ -43,16 +37,13 @@ namespace TMSwPages
     * -------------------------------------------------------------------------------------------------------- */
     public partial class ViewLogDetails : Page
     {
-        // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
-        *	\fn			int Square()
-        *	\brief		To create a new Square by validating or else defaulting new values
-        *	\details	THis is if you have more to say about what the function does and don't want to inline comment
-        *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
-        *	\param[out]	char[]	newSideLength	An incoming value meant to become the square's side length
-        *	\exception	This is if we have some big ol try catches?
-        *	\see		CallsMade()
-        *	\return		None
+        *	\fn			public ViewLogDetails()
+        *	\brief		Constructor for the ViewLogDetails page. 
+        *	\details	Initializes the page. 
+        *	\see		InitializeComponent()
+        *	\return		N/A
         *
         * ---------------------------------------------------------------------------------------------------- */
         public ViewLogDetails()
@@ -60,21 +51,18 @@ namespace TMSwPages
             InitializeComponent();
         }
 
-        // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
-        *	\fn			int Square()
-        *	\brief		To create a new Square by validating or else defaulting new values
-        *	\details	THis is if you have more to say about what the function does and don't want to inline comment
-        *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
-        *	\param[out]	char[]	newSideLength	An incoming value meant to become the square's side length
-        *	\exception	This is if we have some big ol try catches?
-        *	\see		CallsMade()
-        *	\return		None
+        *	\fn			public ViewLogDetails(object data) : this()
+        *	\brief		Alternative constructor for the ViewLogDetails
+        *	\details	This constructor allows population of the page using data selected in a previous page. 
+        *	\param[in]	object  data    this()		The value in the datagrid selected in the previous page.
+        *	\return		N/A
         *
         * ---------------------------------------------------------------------------------------------------- */
         public ViewLogDetails(object data) : this()
         {
-            // Bind to incoming log data.
+            /// Bind to incoming log data.
             this.DataContext = data;
         }
 
