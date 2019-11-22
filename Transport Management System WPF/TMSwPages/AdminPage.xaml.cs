@@ -137,5 +137,46 @@ namespace TMSwPages
             }
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn			private void LogSettingsClick(object sender, RoutedEventArgs e) -- STUB
+        *	\brief		
+        *	\details	
+        *	\see		
+        *	\return		
+        *
+        * ---------------------------------------------------------------------------------------------------- */
+        private void LogSettingsClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        /// METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn			private void Time_Period_SelectionChanged(object sender, SelectionChangedEventArgs e) -- STUB
+        *	\brief		
+        *	\details	
+        *	\see		
+        *	\return		
+        *
+        * ---------------------------------------------------------------------------------------------------- */
+        private void Time_Period_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn			private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e) -- STUB
+        *	\brief		
+        *	\details	
+        *	\see		
+        *	\return		
+        *
+        * ---------------------------------------------------------------------------------------------------- */
+        private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
