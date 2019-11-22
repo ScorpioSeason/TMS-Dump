@@ -3,6 +3,10 @@
   <compounddef id="class_sample_w_f_p_using_pages_1_1_admin_page" kind="class" language="C++" prot="public">
     <compoundname>SampleWFPUsingPages::AdminPage</compoundname>
     <basecompoundref prot="private" virt="non-virtual">Page</basecompoundref>
+    <basecompoundref prot="private" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="private" virt="non-virtual">Page</basecompoundref>
+    <basecompoundref prot="private" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="private" virt="non-virtual">Page</basecompoundref>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="class_sample_w_f_p_using_pages_1_1_admin_page_1a6068949a07cab542e407da8721a11357" prot="private" static="no" mutable="no">
         <type>List&lt; <ref refid="class_sample_w_f_p_using_pages_1_1_t_m_s_log" kindref="compound">TMSLog</ref> &gt;</type>
@@ -16,7 +20,267 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Transport Management System WPF/Transport Management System WPF/AdminPage.xaml.cs" line="24" column="14" bodyfile="Transport Management System WPF/Transport Management System WPF/AdminPage.xaml.cs" bodystart="24" bodyend="-1"/>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/AdminPage.xaml.cs" line="23" column="14" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/AdminPage.xaml.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sample_w_f_p_using_pages_1_1_admin_page_1a6bfe8f79da8fee721228778c2754b8ff" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls Grid</type>
+        <definition>internal System Windows Controls Grid SampleWFPUsingPages::AdminPage::OuterGrid</definition>
+        <argsstring></argsstring>
+        <name>OuterGrid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" line="46" column="44" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sample_w_f_p_using_pages_1_1_admin_page_1add90548eb1e85ef250ef153cfbeb1bc5" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls RowDefinition</type>
+        <definition>internal System Windows Controls RowDefinition SampleWFPUsingPages::AdminPage::TopMenu</definition>
+        <argsstring></argsstring>
+        <name>TopMenu</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" line="54" column="53" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sample_w_f_p_using_pages_1_1_admin_page_1a4c4d51d0a00a263a3405137c03a79c76" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls RowDefinition</type>
+        <definition>internal System Windows Controls RowDefinition SampleWFPUsingPages::AdminPage::Tabs</definition>
+        <argsstring></argsstring>
+        <name>Tabs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" line="62" column="53" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sample_w_f_p_using_pages_1_1_admin_page_1ae210556f4fd0ba5a641c35b303ade4b0" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls RowDefinition</type>
+        <definition>internal System Windows Controls RowDefinition SampleWFPUsingPages::AdminPage::StatusBar</definition>
+        <argsstring></argsstring>
+        <name>StatusBar</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" line="70" column="53" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sample_w_f_p_using_pages_1_1_admin_page_1a6f4fd3cc41882866b0c91d0c43d1e66a" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls Menu</type>
+        <definition>internal System Windows Controls Menu SampleWFPUsingPages::AdminPage::myMenu</definition>
+        <argsstring></argsstring>
+        <name>myMenu</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" line="78" column="44" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sample_w_f_p_using_pages_1_1_admin_page_1a6bece4091bab5e2cf445fe7641f2dc9a" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls TabItem</type>
+        <definition>internal System Windows Controls TabItem SampleWFPUsingPages::AdminPage::Logs</definition>
+        <argsstring></argsstring>
+        <name>Logs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" line="86" column="47" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sample_w_f_p_using_pages_1_1_admin_page_1a51e264f0e05127ce187e1450672215ed" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls Grid</type>
+        <definition>internal System Windows Controls Grid SampleWFPUsingPages::AdminPage::InnerGrid</definition>
+        <argsstring></argsstring>
+        <name>InnerGrid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" line="94" column="44" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sample_w_f_p_using_pages_1_1_admin_page_1a8f1f626b16a457cff15fe419d2b67d38" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls RowDefinition</type>
+        <definition>internal System Windows Controls RowDefinition SampleWFPUsingPages::AdminPage::Controls</definition>
+        <argsstring></argsstring>
+        <name>Controls</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" line="102" column="53" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sample_w_f_p_using_pages_1_1_admin_page_1a45afc3961a1884464b671abd7b0c7341" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls RowDefinition</type>
+        <definition>internal System Windows Controls RowDefinition SampleWFPUsingPages::AdminPage::Main</definition>
+        <argsstring></argsstring>
+        <name>Main</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" line="110" column="53" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sample_w_f_p_using_pages_1_1_admin_page_1a3b64406e3d456ca837662ab4a993b196" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls RowDefinition</type>
+        <definition>internal System Windows Controls RowDefinition SampleWFPUsingPages::AdminPage::Buttons</definition>
+        <argsstring></argsstring>
+        <name>Buttons</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" line="118" column="53" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sample_w_f_p_using_pages_1_1_admin_page_1a9203d552713333af0dbd7d93557391dd" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls ComboBox</type>
+        <definition>internal System Windows Controls ComboBox SampleWFPUsingPages::AdminPage::Time_Period</definition>
+        <argsstring></argsstring>
+        <name>Time_Period</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" line="126" column="48" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sample_w_f_p_using_pages_1_1_admin_page_1a333fa97e4f6edf380bbe9be0c8f6bee0" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls TextBox</type>
+        <definition>internal System Windows Controls TextBox SampleWFPUsingPages::AdminPage::searchTags</definition>
+        <argsstring></argsstring>
+        <name>searchTags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" line="134" column="47" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sample_w_f_p_using_pages_1_1_admin_page_1ae92ca74e825a6b6d8e0b0c13f755ac74" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls DataGrid</type>
+        <definition>internal System Windows Controls DataGrid SampleWFPUsingPages::AdminPage::LogsList</definition>
+        <argsstring></argsstring>
+        <name>LogsList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" line="142" column="48" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sample_w_f_p_using_pages_1_1_admin_page_1a97b5d5e35d7a47fbb871e68a5aa357b7" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls TabItem</type>
+        <definition>internal System Windows Controls TabItem SampleWFPUsingPages::AdminPage::Backups</definition>
+        <argsstring></argsstring>
+        <name>Backups</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" line="150" column="47" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sample_w_f_p_using_pages_1_1_admin_page_1aac86adc9d06daf60ec79b9ea16129a54" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls TabItem</type>
+        <definition>internal System Windows Controls TabItem SampleWFPUsingPages::AdminPage::Carrier_Data</definition>
+        <argsstring></argsstring>
+        <name>Carrier_Data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" line="158" column="47" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sample_w_f_p_using_pages_1_1_admin_page_1adf1b85c90f267883c0430dbc0a310fb1" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls TabItem</type>
+        <definition>internal System Windows Controls TabItem SampleWFPUsingPages::AdminPage::Route_Table</definition>
+        <argsstring></argsstring>
+        <name>Route_Table</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" line="166" column="47" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sample_w_f_p_using_pages_1_1_admin_page_1a8b3c05d24829338946bfd3d4aab18ffa" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls TabItem</type>
+        <definition>internal System Windows Controls TabItem SampleWFPUsingPages::AdminPage::Rate_Fee_Tables</definition>
+        <argsstring></argsstring>
+        <name>Rate_Fee_Tables</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" line="174" column="47" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sample_w_f_p_using_pages_1_1_admin_page_1af65f65338c8a01a25eb04e0db33779e1" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls Primitives StatusBarItem</type>
+        <definition>internal System Windows Controls Primitives StatusBarItem SampleWFPUsingPages::AdminPage::statusItem</definition>
+        <argsstring></argsstring>
+        <name>statusItem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" line="182" column="63" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sample_w_f_p_using_pages_1_1_admin_page_1a4520f9244d189b71a20a079d33434b3b" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls TextBlock</type>
+        <definition>internal System Windows Controls TextBlock SampleWFPUsingPages::AdminPage::status</definition>
+        <argsstring></argsstring>
+        <name>status</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" line="190" column="49" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" bodystart="190" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sample_w_f_p_using_pages_1_1_admin_page_1a6f41b5853f3b25151da93c8da8f4803d" prot="private" static="no" mutable="no">
+        <type>private bool</type>
+        <definition>private bool SampleWFPUsingPages::AdminPage::_contentLoaded</definition>
+        <argsstring></argsstring>
+        <name>_contentLoaded</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" line="195" column="22" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" bodystart="195" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -31,7 +295,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Transport Management System WPF/Transport Management System WPF/AdminPage.xaml.cs" line="26" column="16" bodyfile="Transport Management System WPF/Transport Management System WPF/AdminPage.xaml.cs" bodystart="26" bodyend="30"/>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/AdminPage.xaml.cs" line="25" column="16" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/AdminPage.xaml.cs" bodystart="25" bodyend="29"/>
       </memberdef>
       <memberdef kind="function" id="class_sample_w_f_p_using_pages_1_1_admin_page_1a7b3d274a716086b793c337129e414671" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>private void</type>
@@ -52,7 +316,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Transport Management System WPF/Transport Management System WPF/AdminPage.xaml.cs" line="39" column="22" bodyfile="Transport Management System WPF/Transport Management System WPF/AdminPage.xaml.cs" bodystart="39" bodyend="76"/>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/AdminPage.xaml.cs" line="38" column="22" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/AdminPage.xaml.cs" bodystart="38" bodyend="75"/>
       </memberdef>
       <memberdef kind="function" id="class_sample_w_f_p_using_pages_1_1_admin_page_1a410e37e48f1c08025e1b73cf840646f8" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>private void</type>
@@ -73,26 +337,111 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Transport Management System WPF/Transport Management System WPF/AdminPage.xaml.cs" line="79" column="22" bodyfile="Transport Management System WPF/Transport Management System WPF/AdminPage.xaml.cs" bodystart="79" bodyend="86"/>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/AdminPage.xaml.cs" line="78" column="22" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/AdminPage.xaml.cs" bodystart="78" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="class_sample_w_f_p_using_pages_1_1_admin_page_1a937bfe8fc5dc4e1a85fc48a37faa9da5" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>public void</type>
+        <definition>public void SampleWFPUsingPages::AdminPage::InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" line="202" column="21" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" bodystart="202" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="class_sample_w_f_p_using_pages_1_1_admin_page_1a98544ba84f2409b03f424bb2016b2b7f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System Windows Markup IComponentConnector</type>
+        <definition>void System Windows Markup IComponentConnector SampleWFPUsingPages::AdminPage::Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" line="222" column="52" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.cs" bodystart="222" bodyend="300"/>
+      </memberdef>
+      <memberdef kind="function" id="class_sample_w_f_p_using_pages_1_1_admin_page_1a937bfe8fc5dc4e1a85fc48a37faa9da5" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>public void</type>
+        <definition>public void SampleWFPUsingPages::AdminPage::InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.i.cs" line="202" column="21" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.i.cs" bodystart="202" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="class_sample_w_f_p_using_pages_1_1_admin_page_1a98544ba84f2409b03f424bb2016b2b7f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System Windows Markup IComponentConnector</type>
+        <definition>void System Windows Markup IComponentConnector SampleWFPUsingPages::AdminPage::Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.i.cs" line="222" column="52" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/AdminPage.g.i.cs" bodystart="222" bodyend="300"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>Interaction logic for AdminPage.xaml </para>
     </briefdescription>
     <detaileddescription>
+<para><ref refid="class_sample_w_f_p_using_pages_1_1_admin_page" kindref="compound">AdminPage</ref></para>
     </detaileddescription>
     <inheritancegraph>
+      <node id="3">
+        <label>IComponentConnector</label>
+      </node>
       <node id="2">
         <label>Page</label>
       </node>
       <node id="1">
         <label>SampleWFPUsingPages::AdminPage</label>
         <link refid="class_sample_w_f_p_using_pages_1_1_admin_page"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="3" relation="private-inheritance">
+        </childnode>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="3" relation="private-inheritance">
+        </childnode>
         <childnode refid="2" relation="private-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
+      <node id="3">
+        <label>IComponentConnector</label>
+      </node>
       <node id="2">
         <label>Page</label>
       </node>
@@ -101,13 +450,45 @@
         <link refid="class_sample_w_f_p_using_pages_1_1_admin_page"/>
         <childnode refid="2" relation="private-inheritance">
         </childnode>
+        <childnode refid="3" relation="private-inheritance">
+        </childnode>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="3" relation="private-inheritance">
+        </childnode>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
       </node>
     </collaborationgraph>
-    <location file="Transport Management System WPF/Transport Management System WPF/AdminPage.xaml.cs" line="23" column="1" bodyfile="Transport Management System WPF/Transport Management System WPF/AdminPage.xaml.cs" bodystart="22" bodyend="88"/>
+    <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/AdminPage.xaml.cs" line="22" column="1" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/AdminPage.xaml.cs" bodystart="21" bodyend="87"/>
     <listofallmembers>
+      <member refid="class_sample_w_f_p_using_pages_1_1_admin_page_1a6f41b5853f3b25151da93c8da8f4803d" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::AdminPage</scope><name>_contentLoaded</name></member>
       <member refid="class_sample_w_f_p_using_pages_1_1_admin_page_1ab1d8ba149997209a8f7bfad31a2d232b" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::AdminPage</scope><name>AdminPage</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_admin_page_1a97b5d5e35d7a47fbb871e68a5aa357b7" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::AdminPage</scope><name>Backups</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_admin_page_1a3b64406e3d456ca837662ab4a993b196" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::AdminPage</scope><name>Buttons</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_admin_page_1aac86adc9d06daf60ec79b9ea16129a54" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::AdminPage</scope><name>Carrier_Data</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_admin_page_1a98544ba84f2409b03f424bb2016b2b7f" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::AdminPage</scope><name>Connect</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_admin_page_1a98544ba84f2409b03f424bb2016b2b7f" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::AdminPage</scope><name>Connect</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_admin_page_1a8f1f626b16a457cff15fe419d2b67d38" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::AdminPage</scope><name>Controls</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_admin_page_1a937bfe8fc5dc4e1a85fc48a37faa9da5" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::AdminPage</scope><name>InitializeComponent</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_admin_page_1a937bfe8fc5dc4e1a85fc48a37faa9da5" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::AdminPage</scope><name>InitializeComponent</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_admin_page_1a51e264f0e05127ce187e1450672215ed" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::AdminPage</scope><name>InnerGrid</name></member>
       <member refid="class_sample_w_f_p_using_pages_1_1_admin_page_1a7b3d274a716086b793c337129e414671" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::AdminPage</scope><name>LoadClick</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_admin_page_1a6bece4091bab5e2cf445fe7641f2dc9a" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::AdminPage</scope><name>Logs</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_admin_page_1ae92ca74e825a6b6d8e0b0c13f755ac74" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::AdminPage</scope><name>LogsList</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_admin_page_1a45afc3961a1884464b671abd7b0c7341" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::AdminPage</scope><name>Main</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_admin_page_1a6f4fd3cc41882866b0c91d0c43d1e66a" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::AdminPage</scope><name>myMenu</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_admin_page_1a6bfe8f79da8fee721228778c2754b8ff" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::AdminPage</scope><name>OuterGrid</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_admin_page_1a8b3c05d24829338946bfd3d4aab18ffa" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::AdminPage</scope><name>Rate_Fee_Tables</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_admin_page_1adf1b85c90f267883c0430dbc0a310fb1" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::AdminPage</scope><name>Route_Table</name></member>
       <member refid="class_sample_w_f_p_using_pages_1_1_admin_page_1a6068949a07cab542e407da8721a11357" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::AdminPage</scope><name>searchResults</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_admin_page_1a333fa97e4f6edf380bbe9be0c8f6bee0" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::AdminPage</scope><name>searchTags</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_admin_page_1a4520f9244d189b71a20a079d33434b3b" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::AdminPage</scope><name>status</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_admin_page_1ae210556f4fd0ba5a641c35b303ade4b0" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::AdminPage</scope><name>StatusBar</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_admin_page_1af65f65338c8a01a25eb04e0db33779e1" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::AdminPage</scope><name>statusItem</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_admin_page_1a4c4d51d0a00a263a3405137c03a79c76" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::AdminPage</scope><name>Tabs</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_admin_page_1a9203d552713333af0dbd7d93557391dd" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::AdminPage</scope><name>Time_Period</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_admin_page_1add90548eb1e85ef250ef153cfbeb1bc5" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::AdminPage</scope><name>TopMenu</name></member>
       <member refid="class_sample_w_f_p_using_pages_1_1_admin_page_1a410e37e48f1c08025e1b73cf840646f8" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::AdminPage</scope><name>ViewMoreClick</name></member>
     </listofallmembers>
   </compounddef>

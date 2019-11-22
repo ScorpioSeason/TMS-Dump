@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" line="39" column="19" bodyfile="Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" bodystart="39" bodyend="-1"/>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/AdminClasses.cs" line="39" column="19" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/AdminClasses.cs" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_sample_w_f_p_using_pages_1_1_admin_1a7fcba20d9ba64e4bd41a376a346d7c14" prot="private" static="no" mutable="no">
         <type><ref refid="class_sample_w_f_p_using_pages_1_1_alter_tables" kindref="compound">AlterTables</ref></type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" line="40" column="21" bodyfile="Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" bodystart="40" bodyend="-1"/>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/AdminClasses.cs" line="40" column="21" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/AdminClasses.cs" bodystart="40" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" line="42" column="9" bodyfile="Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" bodystart="42" bodyend="47"/>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/AdminClasses.cs" line="42" column="9" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/AdminClasses.cs" bodystart="42" bodyend="47"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -56,7 +56,7 @@
 <para><hruler/>
  </para>
     </detaileddescription>
-    <location file="Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" line="35" column="1" bodyfile="Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" bodystart="34" bodyend="57"/>
+    <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/AdminClasses.cs" line="35" column="1" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/AdminClasses.cs" bodystart="34" bodyend="57"/>
     <listofallmembers>
       <member refid="class_sample_w_f_p_using_pages_1_1_admin_1a9fabe642f472587c88e23dfd53eb94ad" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::Admin</scope><name>Admin</name></member>
       <member refid="class_sample_w_f_p_using_pages_1_1_admin_1a7fcba20d9ba64e4bd41a376a346d7c14" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::Admin</scope><name>adminAlter</name></member>

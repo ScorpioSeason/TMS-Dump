@@ -1,0 +1,229 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_sample_w_f_p_using_pages_1_1_view_log" kind="class" language="C++" prot="public">
+    <compoundname>SampleWFPUsingPages::ViewLog</compoundname>
+    <basecompoundref prot="private" virt="non-virtual">Page</basecompoundref>
+    <basecompoundref prot="private" virt="non-virtual">IComponentConnector</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_sample_w_f_p_using_pages_1_1_view_log_1a438635678824f6a7bba6fdb9796d701b" prot="private" static="no" mutable="no">
+        <type>private bool</type>
+        <definition>private bool SampleWFPUsingPages::ViewLog::_contentLoaded</definition>
+        <argsstring></argsstring>
+        <name>_contentLoaded</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/ViewLog.g.i.cs" line="45" column="22" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/ViewLog.g.i.cs" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sample_w_f_p_using_pages_1_1_view_log_1a6dade038ee1b210f566cb4cd267ff7cd" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls Grid</type>
+        <definition>internal System Windows Controls Grid SampleWFPUsingPages::ViewLog::OuterGrid</definition>
+        <argsstring></argsstring>
+        <name>OuterGrid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/ViewLog.g.i.cs" line="79" column="44" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/ViewLog.g.i.cs" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sample_w_f_p_using_pages_1_1_view_log_1af400f5c62212d388512bfb16ef919ade" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls RowDefinition</type>
+        <definition>internal System Windows Controls RowDefinition SampleWFPUsingPages::ViewLog::TopMenu</definition>
+        <argsstring></argsstring>
+        <name>TopMenu</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/ViewLog.g.i.cs" line="80" column="53" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/ViewLog.g.i.cs" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sample_w_f_p_using_pages_1_1_view_log_1ab81211d3eaa55ed6b4cca4cbd81eb54d" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls RowDefinition</type>
+        <definition>internal System Windows Controls RowDefinition SampleWFPUsingPages::ViewLog::StatusBar</definition>
+        <argsstring></argsstring>
+        <name>StatusBar</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/ViewLog.g.i.cs" line="81" column="53" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/ViewLog.g.i.cs" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sample_w_f_p_using_pages_1_1_view_log_1a032fdf7687ee6fe4c6454491a72ef333" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls Menu</type>
+        <definition>internal System Windows Controls Menu SampleWFPUsingPages::ViewLog::myMenu</definition>
+        <argsstring></argsstring>
+        <name>myMenu</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/ViewLog.g.i.cs" line="82" column="44" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/ViewLog.g.i.cs" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sample_w_f_p_using_pages_1_1_view_log_1a4c5424d8699e23f7fae1e3a504010b47" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls Primitives StatusBarItem</type>
+        <definition>internal System Windows Controls Primitives StatusBarItem SampleWFPUsingPages::ViewLog::statusItem</definition>
+        <argsstring></argsstring>
+        <name>statusItem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/ViewLog.g.i.cs" line="83" column="63" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/ViewLog.g.i.cs" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sample_w_f_p_using_pages_1_1_view_log_1aa5ad9458a757800cba530f143ecaecb6" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls TextBlock</type>
+        <definition>internal System Windows Controls TextBlock SampleWFPUsingPages::ViewLog::status</definition>
+        <argsstring></argsstring>
+        <name>status</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/ViewLog.g.i.cs" line="84" column="49" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/ViewLog.g.i.cs" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sample_w_f_p_using_pages_1_1_view_log_1a05a749b58fcfcb3d1202e583d9ba11c8" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls RowDefinition</type>
+        <definition>internal System Windows Controls RowDefinition SampleWFPUsingPages::ViewLog::Main</definition>
+        <argsstring></argsstring>
+        <name>Main</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/ViewLog.g.i.cs" line="85" column="53" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/ViewLog.g.i.cs" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sample_w_f_p_using_pages_1_1_view_log_1a34088b52cca56271cc60541ecb5a3042" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls RowDefinition</type>
+        <definition>internal System Windows Controls RowDefinition SampleWFPUsingPages::ViewLog::Buttons</definition>
+        <argsstring></argsstring>
+        <name>Buttons</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/ViewLog.g.i.cs" line="86" column="53" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/ViewLog.g.i.cs" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sample_w_f_p_using_pages_1_1_view_log_1a8004576f09e6b14daa7b0d98c1dde10c" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls ListBox</type>
+        <definition>internal System Windows Controls ListBox SampleWFPUsingPages::ViewLog::LogDetails</definition>
+        <argsstring></argsstring>
+        <name>LogDetails</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/ViewLog.g.i.cs" line="87" column="47" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/ViewLog.g.i.cs" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_sample_w_f_p_using_pages_1_1_view_log_1ab0e2015bb22013716538c756882aa097" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>public void</type>
+        <definition>public void SampleWFPUsingPages::ViewLog::InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/ViewLog.g.i.cs" line="52" column="21" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/ViewLog.g.i.cs" bodystart="52" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="class_sample_w_f_p_using_pages_1_1_view_log_1a98d4f7113ef76aec01a931c4e6230239" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System Windows Markup IComponentConnector</type>
+        <definition>void System Windows Markup IComponentConnector SampleWFPUsingPages::ViewLog::Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/ViewLog.g.i.cs" line="74" column="52" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/ViewLog.g.i.cs" bodystart="74" bodyend="77"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="class_sample_w_f_p_using_pages_1_1_view_log" kindref="compound">ViewLog</ref> </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>IComponentConnector</label>
+      </node>
+      <node id="2">
+        <label>Page</label>
+      </node>
+      <node id="1">
+        <label>SampleWFPUsingPages::ViewLog</label>
+        <link refid="class_sample_w_f_p_using_pages_1_1_view_log"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="3" relation="private-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>IComponentConnector</label>
+      </node>
+      <node id="2">
+        <label>Page</label>
+      </node>
+      <node id="1">
+        <label>SampleWFPUsingPages::ViewLog</label>
+        <link refid="class_sample_w_f_p_using_pages_1_1_view_log"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="3" relation="private-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/ViewLog.g.i.cs" line="43" column="1" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/ViewLog.g.i.cs" bodystart="42" bodyend="88"/>
+    <listofallmembers>
+      <member refid="class_sample_w_f_p_using_pages_1_1_view_log_1a438635678824f6a7bba6fdb9796d701b" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::ViewLog</scope><name>_contentLoaded</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_view_log_1a34088b52cca56271cc60541ecb5a3042" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::ViewLog</scope><name>Buttons</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_view_log_1a98d4f7113ef76aec01a931c4e6230239" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::ViewLog</scope><name>Connect</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_view_log_1ab0e2015bb22013716538c756882aa097" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::ViewLog</scope><name>InitializeComponent</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_view_log_1a8004576f09e6b14daa7b0d98c1dde10c" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::ViewLog</scope><name>LogDetails</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_view_log_1a05a749b58fcfcb3d1202e583d9ba11c8" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::ViewLog</scope><name>Main</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_view_log_1a032fdf7687ee6fe4c6454491a72ef333" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::ViewLog</scope><name>myMenu</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_view_log_1a6dade038ee1b210f566cb4cd267ff7cd" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::ViewLog</scope><name>OuterGrid</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_view_log_1aa5ad9458a757800cba530f143ecaecb6" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::ViewLog</scope><name>status</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_view_log_1ab81211d3eaa55ed6b4cca4cbd81eb54d" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::ViewLog</scope><name>StatusBar</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_view_log_1a4c5424d8699e23f7fae1e3a504010b47" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::ViewLog</scope><name>statusItem</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_view_log_1af400f5c62212d388512bfb16ef919ade" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::ViewLog</scope><name>TopMenu</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

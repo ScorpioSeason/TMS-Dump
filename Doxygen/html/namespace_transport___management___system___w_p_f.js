@@ -1,6 +1,8 @@
 var namespace_transport___management___system___w_p_f =
 [
+    [ "Properties", "namespace_transport___management___system___w_p_f_1_1_properties.html", "namespace_transport___management___system___w_p_f_1_1_properties" ],
     [ "Admin", "class_transport___management___system___w_p_f_1_1_admin.html", null ],
+    [ "AdminPage", "class_transport___management___system___w_p_f_1_1_admin_page.html", null ],
     [ "AlterTables", "class_transport___management___system___w_p_f_1_1_alter_tables.html", null ],
     [ "App", "class_transport___management___system___w_p_f_1_1_app.html", null ],
     [ "BackupTMS", "class_transport___management___system___w_p_f_1_1_backup_t_m_s.html", null ],

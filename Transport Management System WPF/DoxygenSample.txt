@@ -16,18 +16,6 @@
 * =========================================================================================================== */
 
 
-// COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
-/**
-*	\fn			int Square()
-*	\brief		To create a new Square by validating or else defaulting new values
-*	\details	THis is if you have more to say about what the function does and don't want to inline comment
-*	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
-*	\param[out]	char[]	newSideLength	An incoming value meant to become the square's side length
-*	\exception	This is if we have some big ol try catches?
-*	\see		CallsMade()
-*	\return		None
-*
-* ---------------------------------------------------------------------------------------------------- */
 
 
 

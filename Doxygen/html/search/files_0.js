@@ -1,7 +1,11 @@
 var searchData=
 [
-  ['admin_2ecs_139',['Admin.cs',['../_admin_8cs.html',1,'']]],
-  ['adminclasses_2ecs_140',['AdminClasses.cs',['../_admin_classes_8cs.html',1,'']]],
-  ['adminpage_2examl_2ecs_141',['AdminPage.xaml.cs',['../_admin_page_8xaml_8cs.html',1,'']]],
-  ['app_2examl_2ecs_142',['App.xaml.cs',['../_app_8xaml_8cs.html',1,'']]]
+  ['adminclasses_2ecs_182',['AdminClasses.cs',['../_sample_w_f_p_using_pages_2_sample_w_f_p_using_pages_2_admin_classes_8cs.html',1,'(Global Namespace)'],['../_transport_01_management_01_system_01_w_p_f_2_transport_01_management_01_system_01_w_p_f_2_admin_classes_8cs.html',1,'(Global Namespace)']]],
+  ['adminpage_2eg_2ecs_183',['AdminPage.g.cs',['../_sample_w_f_p_using_pages_2_sample_w_f_p_using_pages_2obj_2_debug_2_admin_page_8g_8cs.html',1,'(Global Namespace)'],['../_transport_01_management_01_system_01_w_p_f_2_transport_01_management_01_system_01_w_p_f_2obj_2_debug_2_admin_page_8g_8cs.html',1,'(Global Namespace)']]],
+  ['adminpage_2eg_2ei_2ecs_184',['AdminPage.g.i.cs',['../_sample_w_f_p_using_pages_2_sample_w_f_p_using_pages_2obj_2_debug_2_admin_page_8g_8i_8cs.html',1,'(Global Namespace)'],['../_transport_01_management_01_system_01_w_p_f_2_transport_01_management_01_system_01_w_p_f_2obj_2_debug_2_admin_page_8g_8i_8cs.html',1,'(Global Namespace)']]],
+  ['adminpage_2examl_2ecs_185',['AdminPage.xaml.cs',['../_sample_w_f_p_using_pages_2_sample_w_f_p_using_pages_2_admin_page_8xaml_8cs.html',1,'(Global Namespace)'],['../_transport_01_management_01_system_01_w_p_f_2_transport_01_management_01_system_01_w_p_f_2_admin_page_8xaml_8cs.html',1,'(Global Namespace)']]],
+  ['app_2eg_2ecs_186',['App.g.cs',['../_sample_w_f_p_using_pages_2_sample_w_f_p_using_pages_2obj_2_debug_2_app_8g_8cs.html',1,'(Global Namespace)'],['../_transport_01_management_01_system_01_w_p_f_2_transport_01_management_01_system_01_w_p_f_2obj_2_debug_2_app_8g_8cs.html',1,'(Global Namespace)']]],
+  ['app_2eg_2ei_2ecs_187',['App.g.i.cs',['../_sample_w_f_p_using_pages_2_sample_w_f_p_using_pages_2obj_2_debug_2_app_8g_8i_8cs.html',1,'(Global Namespace)'],['../_transport_01_management_01_system_01_w_p_f_2_transport_01_management_01_system_01_w_p_f_2obj_2_debug_2_app_8g_8i_8cs.html',1,'(Global Namespace)']]],
+  ['app_2examl_2ecs_188',['App.xaml.cs',['../_sample_w_f_p_using_pages_2_sample_w_f_p_using_pages_2_app_8xaml_8cs.html',1,'(Global Namespace)'],['../_transport_01_management_01_system_01_w_p_f_2_transport_01_management_01_system_01_w_p_f_2_app_8xaml_8cs.html',1,'(Global Namespace)']]],
+  ['assemblyinfo_2ecs_189',['AssemblyInfo.cs',['../_sample_w_f_p_using_pages_2_sample_w_f_p_using_pages_2_properties_2_assembly_info_8cs.html',1,'(Global Namespace)'],['../_transport_01_management_01_system_01_w_p_f_2_transport_01_management_01_system_01_w_p_f_2_properties_2_assembly_info_8cs.html',1,'(Global Namespace)'],['../_transport_01_management_01_system_01_w_p_f_2_unit_test_t_m_s_2_properties_2_assembly_info_8cs.html',1,'(Global Namespace)']]]
 ];
