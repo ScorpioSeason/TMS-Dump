@@ -1,12 +1,12 @@
-﻿// ADMIN FILE HEADER COMMENT: =================================================================================
+﻿// ADMINPAGE FILE HEADER COMMENT: ===============================================================================
 /**
- *  \file		Admin.cs
+ *  \file		AdminPage.xaml.cs
  *  \ingroup	TMS
- *  \date		November 20, 2019
+ *  \date		November 22, 2019
  *  \author		8000 Cigarettes - Megan
- *  \brief	    This file contains the admin functionality	  
- *  \see		MainWindow.xaml
- *  \details    This file holds the functionality of the Admin class. The Admin has the ability to view logs as 
+ *  \brief	    This file contains the Interaction Logic for the Admin Page (code-behind)  
+ *  \see		AdminPage.xaml
+ *  \details    This file holds the functionality of the Admin Page. The Admin has the ability to view logs as 
  *              specified by time period, view details of specific logs, alter where the log files are stored, 
  *              initiate backups of the TMS database, choose where the TMS db is backed up to, alter the Carrier 
  *              Data Table, the Route Table, and the Rate / Fee Tables.                                       
@@ -30,32 +30,24 @@ using System.Windows.Shapes;
 
 namespace TMSwPages
 {
-    /// <summary>
-    /// Interaction logic for AdminPage.xaml
-    /// </summary>
-    /// 
-
     // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
     /**   
-    *   \class		Admin
-    *   \brief		This class runs the Admin UI functionality
-    *   \details	... static class?  
+    *   \class		AdminPage
+    *   \brief		This class runs the AdminPage UI functionality
+    *   \details	This currently allows searching and updating of a local log list which is displayed 
+    *               to the screen.  
     *   
     * -------------------------------------------------------------------------------------------------------- */
     public partial class AdminPage : Page
     {
         List<TMSLog> searchResults = new List<TMSLog>();
 
-        // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
-        *	\fn			int Square()
-        *	\brief		To create a new Square by validating or else defaulting new values
-        *	\details	THis is if you have more to say about what the function does and don't want to inline comment
-        *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
-        *	\param[out]	char[]	newSideLength	An incoming value meant to become the square's side length
-        *	\exception	This is if we have some big ol try catches?
-        *	\see		CallsMade()
-        *	\return		None
+        *	\fn			public AdminPage()
+        *	\brief		This is a constructor for the AdminPage user interface. 
+        *	\details	This loads the searchResults TMSLogs into the LogsList data grid. 
+        *	\return		Instantiates the AdminPage
         *
         * ---------------------------------------------------------------------------------------------------- */
         public AdminPage()
@@ -64,78 +56,78 @@ namespace TMSwPages
             LogsList.ItemsSource = searchResults;
         }
 
-        //public AdminPage(object data) : this()
-        //{
+        // public AdminPage(object data) : this()
+        // {
         //    // Bind to expense report data.
         //    this.DataContext = data;
-        //}
+        // }
 
-        // This adds logs which match search strings to the displayed list
 
-        // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
-        *	\fn			int Square()
-        *	\brief		To create a new Square by validating or else defaulting new values
-        *	\details	THis is if you have more to say about what the function does and don't want to inline comment
-        *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
-        *	\param[out]	char[]	newSideLength	An incoming value meant to become the square's side length
-        *	\exception	This is if we have some big ol try catches?
-        *	\see		CallsMade()
-        *	\return		None
+        *	\fn			private void LoadClick(object sender, RoutedEventArgs e)
+        *	\brief		This adds logs to the search results.
+        *	\details	This adds logs to the search results which match search strings entered. This will first
+        *	            read from the Log file before it adds in any entries. This isn't done the most efficiently
+        *	\exception	string.Contains() may throw an Argument Null exception
+        *	\see		TMSLogger.LogIt()
+        *	\return		void
         *
         * ---------------------------------------------------------------------------------------------------- */
         private void LoadClick(object sender, RoutedEventArgs e)
         {
-            // This is just test logs.
-            if (TMSLogger.ReadExistingLogFile())
+            /// This clears searchResults if the Log file is read in successfully
+            if (TMSLogger.ReadExistingLogFile() == true)
             {
                 searchResults.Clear();
             }
 
-            // This actually populates the logs in the UI
-            //if ()
-            //{
-            // Search by time/date is currently incomplete
-            //}
-
-            if (searchTags.Text.Trim() != "")
+            try
             {
-                foreach (TMSLog l in TMSLogger.logs)
+                /// Compare search tags box to logs in the local list and add to searchResults list if matching
+                if (searchTags.Text.Trim() != "")
                 {
-                    if ((l.logType).Contains(searchTags.Text) || (l.logMessage).Contains(searchTags.Text))
+                    foreach (TMSLog l in TMSLogger.logs)
                     {
-                        searchResults.Add(l);
+                        if ((l.logType).Contains(searchTags.Text) || (l.logMessage).Contains(searchTags.Text))
+                        {
+                            searchResults.Add(l);
+                        }
+                        else if ((l.logClass).Contains(searchTags.Text) || (l.logMethod).Contains(searchTags.Text))
+                        {
+                            searchResults.Add(l);
+                        }
                     }
-                    else if ((l.logClass).Contains(searchTags.Text) || (l.logMethod).Contains(searchTags.Text))
+                }
+                else
+                {
+                    /// If there are no search strings, add indescriminately
+                    foreach (TMSLog l in TMSLogger.logs)
                     {
                         searchResults.Add(l);
                     }
                 }
             }
-            else
+            /// Catch errors from Contains
+            catch (Exception ex)
             {
-                foreach (TMSLog l in TMSLogger.logs)
-                {
-                    searchResults.Add(l);
-                }
+                TMSLogger.LogIt("|"+ "/AdminPage.xaml.cs" + "|" + "AdminPage" + "|" + "LoadClick" + "|" + "Exception" + "|" + ex.Message + "|");
+
             }
 
+            /// Refresh the UI data grid
             LogsList.Items.Refresh();
         }
 
-        // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
-        *	\fn			int Square()
-        *	\brief		To create a new Square by validating or else defaulting new values
-        *	\details	THis is if you have more to say about what the function does and don't want to inline comment
-        *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
-        *	\param[out]	char[]	newSideLength	An incoming value meant to become the square's side length
-        *	\exception	This is if we have some big ol try catches?
-        *	\see		CallsMade()
-        *	\return		None
+        *	\fn			private void ViewMoreClick(object sender, RoutedEventArgs e)
+        *	\brief		Sends the user to ViewLogDetails page using selected TMSLog item's details. 
+        *	\details	Does not activate if nothing is selected in the datagrid.
+        *	\see		NavigationService.Navigate()
+        *	\return		void
         *
         * ---------------------------------------------------------------------------------------------------- */
-        // This navigates to a new page where the details of the selected log are listed
         private void ViewMoreClick(object sender, RoutedEventArgs e)
         {
             if (LogsList.SelectedItem != null)
