@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_sample_w_f_p_using_pages_1_1_page2" kind="class" language="C++" prot="public">
+    <compoundname>SampleWFPUsingPages::Page2</compoundname>
+    <basecompoundref prot="private" virt="non-virtual">Page</basecompoundref>
+    <basecompoundref prot="private" virt="non-virtual">Page</basecompoundref>
+    <basecompoundref prot="private" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="private" virt="non-virtual">Page</basecompoundref>
+    <basecompoundref prot="private" virt="non-virtual">IComponentConnector</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_sample_w_f_p_using_pages_1_1_page2_1a87cd19343b9a0298e5625e47cd51b998" prot="private" static="no" mutable="no">
+        <type>private bool</type>
+        <definition>private bool SampleWFPUsingPages::Page2::_contentLoaded</definition>
+        <argsstring></argsstring>
+        <name>_contentLoaded</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/Page2.g.cs" line="43" column="22" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/Page2.g.cs" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_sample_w_f_p_using_pages_1_1_page2_1aa4379d5b3166d959a5e04f89cd1c5d85" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>public void</type>
+        <definition>public void SampleWFPUsingPages::Page2::InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/Page2.g.cs" line="50" column="21" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/Page2.g.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="class_sample_w_f_p_using_pages_1_1_page2_1a1f264dcbc2c3a819fd04545f09439a46" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System Windows Markup IComponentConnector</type>
+        <definition>void System Windows Markup IComponentConnector SampleWFPUsingPages::Page2::Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/Page2.g.cs" line="70" column="52" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/Page2.g.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="class_sample_w_f_p_using_pages_1_1_page2_1aa4379d5b3166d959a5e04f89cd1c5d85" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>public void</type>
+        <definition>public void SampleWFPUsingPages::Page2::InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/Page2.g.i.cs" line="50" column="21" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/Page2.g.i.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="class_sample_w_f_p_using_pages_1_1_page2_1a1f264dcbc2c3a819fd04545f09439a46" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System Windows Markup IComponentConnector</type>
+        <definition>void System Windows Markup IComponentConnector SampleWFPUsingPages::Page2::Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/Page2.g.i.cs" line="70" column="52" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/Page2.g.i.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="class_sample_w_f_p_using_pages_1_1_page2_1abb0137e08b16ebe8eaba9be0dd8fb4dd" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>public</type>
+        <definition>public SampleWFPUsingPages::Page2::Page2</definition>
+        <argsstring>()</argsstring>
+        <name>Page2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/Page2.xaml.cs" line="23" column="16" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/Page2.xaml.cs" bodystart="23" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="class_sample_w_f_p_using_pages_1_1_page2_1a61bf84ff2416ad8a398e1c33bef0b1b3" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>public</type>
+        <definition>public SampleWFPUsingPages::Page2::Page2</definition>
+        <argsstring>(object data)</argsstring>
+        <name>Page2</name>
+        <param>
+          <type>object</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/Page2.xaml.cs" line="29" column="16" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/Page2.xaml.cs" bodystart="29" bodyend="33"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="class_sample_w_f_p_using_pages_1_1_page2" kindref="compound">Page2</ref> </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Interaction logic for Page2.xaml</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>IComponentConnector</label>
+      </node>
+      <node id="2">
+        <label>Page</label>
+      </node>
+      <node id="1">
+        <label>SampleWFPUsingPages::Page2</label>
+        <link refid="class_sample_w_f_p_using_pages_1_1_page2"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="3" relation="private-inheritance">
+        </childnode>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="3" relation="private-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>IComponentConnector</label>
+      </node>
+      <node id="2">
+        <label>Page</label>
+      </node>
+      <node id="1">
+        <label>SampleWFPUsingPages::Page2</label>
+        <link refid="class_sample_w_f_p_using_pages_1_1_page2"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="3" relation="private-inheritance">
+        </childnode>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="3" relation="private-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/Page2.g.cs" line="41" column="34" bodyfile="C:/Users/School User/Code/TMS-Dump/SampleWFPUsingPages/SampleWFPUsingPages/obj/Debug/Page2.g.cs" bodystart="41" bodyend="73"/>
+    <listofallmembers>
+      <member refid="class_sample_w_f_p_using_pages_1_1_page2_1a87cd19343b9a0298e5625e47cd51b998" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::Page2</scope><name>_contentLoaded</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_page2_1a1f264dcbc2c3a819fd04545f09439a46" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::Page2</scope><name>Connect</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_page2_1a1f264dcbc2c3a819fd04545f09439a46" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::Page2</scope><name>Connect</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_page2_1aa4379d5b3166d959a5e04f89cd1c5d85" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::Page2</scope><name>InitializeComponent</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_page2_1aa4379d5b3166d959a5e04f89cd1c5d85" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::Page2</scope><name>InitializeComponent</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_page2_1abb0137e08b16ebe8eaba9be0dd8fb4dd" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::Page2</scope><name>Page2</name></member>
+      <member refid="class_sample_w_f_p_using_pages_1_1_page2_1a61bf84ff2416ad8a398e1c33bef0b1b3" prot="private" virt="non-virtual"><scope>SampleWFPUsingPages::Page2</scope><name>Page2</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

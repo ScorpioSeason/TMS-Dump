@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="struct_unit_test_t_m_s_1_1_unit_test1_1_1_testing_contract" kind="struct" language="C#" prot="private">
+    <compoundname>UnitTestTMS::UnitTest1::TestingContract</compoundname>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="struct_unit_test_t_m_s_1_1_unit_test1_1_1_testing_contract_1a08137c4ce46524fe6b2e590e52b1da5b" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string UnitTestTMS.UnitTest1.TestingContract.client_Name</definition>
+        <argsstring></argsstring>
+        <name>client_Name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/UnitTest1.cs" line="99" column="27" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/UnitTest1.cs" bodystart="99" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="property" id="struct_unit_test_t_m_s_1_1_unit_test1_1_1_testing_contract_1a0191d4e41481e34a5580b35e7b105ecc" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>bool</type>
+        <definition>bool UnitTestTMS.UnitTest1.TestingContract.job_Type</definition>
+        <argsstring></argsstring>
+        <name>job_Type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/UnitTest1.cs" line="100" column="25" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/UnitTest1.cs" bodystart="100" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="property" id="struct_unit_test_t_m_s_1_1_unit_test1_1_1_testing_contract_1a0acb463e02c9c7c5991c9e91162cc4c2" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string UnitTestTMS.UnitTest1.TestingContract.quantity</definition>
+        <argsstring></argsstring>
+        <name>quantity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/UnitTest1.cs" line="101" column="27" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/UnitTest1.cs" bodystart="101" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="property" id="struct_unit_test_t_m_s_1_1_unit_test1_1_1_testing_contract_1a53e382f701d9993e6fc5d97addf0e364" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int UnitTestTMS.UnitTest1.TestingContract.origin</definition>
+        <argsstring></argsstring>
+        <name>origin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/UnitTest1.cs" line="102" column="24" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/UnitTest1.cs" bodystart="102" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="property" id="struct_unit_test_t_m_s_1_1_unit_test1_1_1_testing_contract_1ad314e60a023d68388e8ae22ce78e0106" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int UnitTestTMS.UnitTest1.TestingContract.destination</definition>
+        <argsstring></argsstring>
+        <name>destination</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/UnitTest1.cs" line="103" column="24" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/UnitTest1.cs" bodystart="103" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="property" id="struct_unit_test_t_m_s_1_1_unit_test1_1_1_testing_contract_1add15aeae2687454ed61f22ef75ca0a26" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string UnitTestTMS.UnitTest1.TestingContract.van_Type</definition>
+        <argsstring></argsstring>
+        <name>van_Type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/UnitTest1.cs" line="104" column="27" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/UnitTest1.cs" bodystart="104" bodyend="104"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/UnitTest1.cs" line="98" column="1" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/UnitTest1.cs" bodystart="97" bodyend="105"/>
+    <listofallmembers>
+      <member refid="struct_unit_test_t_m_s_1_1_unit_test1_1_1_testing_contract_1a08137c4ce46524fe6b2e590e52b1da5b" prot="public" virt="non-virtual"><scope>UnitTestTMS::UnitTest1::TestingContract</scope><name>client_Name</name></member>
+      <member refid="struct_unit_test_t_m_s_1_1_unit_test1_1_1_testing_contract_1ad314e60a023d68388e8ae22ce78e0106" prot="public" virt="non-virtual"><scope>UnitTestTMS::UnitTest1::TestingContract</scope><name>destination</name></member>
+      <member refid="struct_unit_test_t_m_s_1_1_unit_test1_1_1_testing_contract_1a0191d4e41481e34a5580b35e7b105ecc" prot="public" virt="non-virtual"><scope>UnitTestTMS::UnitTest1::TestingContract</scope><name>job_Type</name></member>
+      <member refid="struct_unit_test_t_m_s_1_1_unit_test1_1_1_testing_contract_1a53e382f701d9993e6fc5d97addf0e364" prot="public" virt="non-virtual"><scope>UnitTestTMS::UnitTest1::TestingContract</scope><name>origin</name></member>
+      <member refid="struct_unit_test_t_m_s_1_1_unit_test1_1_1_testing_contract_1a0acb463e02c9c7c5991c9e91162cc4c2" prot="public" virt="non-virtual"><scope>UnitTestTMS::UnitTest1::TestingContract</scope><name>quantity</name></member>
+      <member refid="struct_unit_test_t_m_s_1_1_unit_test1_1_1_testing_contract_1add15aeae2687454ed61f22ef75ca0a26" prot="public" virt="non-virtual"><scope>UnitTestTMS::UnitTest1::TestingContract</scope><name>van_Type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

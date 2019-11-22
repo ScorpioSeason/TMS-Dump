@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="dir_cc61ff6365a91cce9a2d230499e8f5d1" kind="dir">
+    <compoundname>C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug</compoundname>
+    <innerfile refid="_transport_01_management_01_system_01_w_p_f_2obj_2_debug_2_admin_page_8g_8i_8cs">AdminPage.g.i.cs</innerfile>
+    <innerfile refid="_transport_01_management_01_system_01_w_p_f_2obj_2_debug_2_app_8g_8cs">App.g.cs</innerfile>
+    <innerfile refid="_transport_01_management_01_system_01_w_p_f_2obj_2_debug_2_app_8g_8i_8cs">App.g.i.cs</innerfile>
+    <innerfile refid="_transport_01_management_01_system_01_w_p_f_2obj_2_debug_2mainwindow_8g_8cs">MainWindow.g.cs</innerfile>
+    <innerfile refid="_transport_01_management_01_system_01_w_p_f_2obj_2_debug_2_main_window_8g_8i_8cs">MainWindow.g.i.cs</innerfile>
+    <innerfile refid="_page1_01-_01_copy_8g_8i_8cs">Page1 - Copy.g.i.cs</innerfile>
+    <innerfile refid="_transport_01_management_01_system_01_w_p_f_2obj_2_debug_2_page1_8g_8i_8cs">Page1.g.i.cs</innerfile>
+    <innerfile refid="_transport_01_management_01_system_01_w_p_f_2obj_2_debug_2_view_log_details_page_8g_8i_8cs">ViewLogDetailsPage.g.i.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="namespace_sample_w_f_p_using_pages" kind="namespace" language="C++">
+    <compoundname>SampleWFPUsingPages</compoundname>
+    <innerclass refid="class_sample_w_f_p_using_pages_1_1_view_log_details_page" prot="public">SampleWFPUsingPages::ViewLogDetailsPage</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/ViewLogDetailsPage.g.i.cs" line="35" column="29"/>
+  </compounddef>
+</doxygen>

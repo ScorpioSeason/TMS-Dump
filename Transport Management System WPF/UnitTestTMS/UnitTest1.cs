@@ -1,16 +1,36 @@
-﻿using System;
+﻿// ADMIN FILE HEADER COMMENT: =================================================================================
+/**
+ *  \file		Admin.cs
+ *  \ingroup	TMS
+ *  \date		November 20, 2019
+ *  \author		8000 Cigarettes - Megan
+ *  \brief	    This file contains the admin functionality	  
+ *  \see		MainWindow.xaml
+ *  \details    This file holds the functionality of the Admin class. The Admin has the ability to view logs as 
+ *              specified by time period, view details of specific logs, alter where the log files are stored, 
+ *              initiate backups of the TMS database, choose where the TMS db is backed up to, alter the Carrier 
+ *              Data Table, the Route Table, and the Rate / Fee Tables.                                       
+ *
+ * =========================================================================================================== */
+
+using System;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Transport_Management_System_WPF;
 
-
 namespace UnitTestTMS
-{
+{   
+    // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
+    /**   
+    *   \class		Admin
+    *   \brief		This class runs the Admin UI functionality
+    *   \details	... static class?  
+    *   
+    * -------------------------------------------------------------------------------------------------------- */
     [TestClass]
     public class UnitTest1
     {
 
-        
         //Test city 7 - 0, FTL
         [TestMethod]
         public void routCalc1()
@@ -89,23 +109,25 @@ namespace UnitTestTMS
         public void routCalc4()
         {
 
+           
+
             //ARRANGE
             MappingClass graphClass = new MappingClass();
             List<RouteData> ReturnList = new List<RouteData>();
 
-            TestingContract contract = new TestingContract
+            Contract contract = new Contract
             {
                 client_Name = "Wally World",
-                origin = 0,
-                destination = 3,
+                origin = "Windsor",
+                destination = "Hamilton",
                 job_Type = true
             };
 
-            ReturnList = graphClass.getTravelData(0, 3, true);
+            ReturnList = graphClass.getTravelData(Contract.ToCityID(contract.origin), Contract.ToCityID(contract.destination), contract.job_Type);
 
             Truck truck = new Truck
             {
-                TruckID = 1,
+                TruckID = ReturnList[0].CityA,
                 CurrentCityID = 0,
                 Is_Reefer = false
             };
@@ -127,17 +149,16 @@ namespace UnitTestTMS
                 Trip_Ticket_Line TTL1 = new Trip_Ticket_Line
                 {
                     Ticket = trip_Ticket,
-                    Order = contract,
-
-                }
+                    Order = contract
+                };
             }
 
-    
+            TimePass.incrementDay(ReturnList, truck, trip_Ticket);
+
+            
 
 
 
         }
-
-
     }
 }

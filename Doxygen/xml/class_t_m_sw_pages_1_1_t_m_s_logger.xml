@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_t_m_sw_pages_1_1_t_m_s_logger" kind="class" language="C#" prot="public">
+    <compoundname>TMSwPages::TMSLogger</compoundname>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_t_m_sw_pages_1_1_t_m_s_logger_1a70ea68270927cee76213ac2329238bf8" prot="private" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string TMSwPages.TMSLogger.LoggerPath</definition>
+        <argsstring></argsstring>
+        <name>LoggerPath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" line="68" column="23" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" bodystart="68" bodyend="68"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_t_m_sw_pages_1_1_t_m_s_logger_1a4ba45b1259ce8001fa7a5fddf5fadd46" prot="public" static="yes" mutable="no">
+        <type>List&lt; <ref refid="class_t_m_sw_pages_1_1_t_m_s_log" kindref="compound">TMSLog</ref> &gt;</type>
+        <definition>List&lt;TMSLog&gt; TMSwPages.TMSLogger.logs</definition>
+        <argsstring></argsstring>
+        <name>logs</name>
+        <initializer>= new List&lt;<ref refid="class_t_m_sw_pages_1_1_t_m_s_log" kindref="compound">TMSLog</ref>&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" line="69" column="28" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_t_m_sw_pages_1_1_t_m_s_logger_1a81a5353756e6ecd6e51ce79a76196fcc" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void TMSwPages.TMSLogger.LogIt</definition>
+        <argsstring>(string newLogString)</argsstring>
+        <name>LogIt</name>
+        <param>
+          <type>string</type>
+          <declname>newLogString</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" line="84" column="28" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" bodystart="84" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="class_t_m_sw_pages_1_1_t_m_s_logger_1a949d7d962a3a8f19556a72c610a23340" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void TMSwPages.TMSLogger.NewLog</definition>
+        <argsstring>(string newLogString)</argsstring>
+        <name>NewLog</name>
+        <param>
+          <type>string</type>
+          <declname>newLogString</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" line="105" column="28" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" bodystart="105" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="class_t_m_sw_pages_1_1_t_m_s_logger_1a78d9152f8fc12fdf370b23f0b787999e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool TMSwPages.TMSLogger.ReadExistingLogFile</definition>
+        <argsstring>()</argsstring>
+        <name>ReadExistingLogFile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" line="124" column="28" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" bodystart="124" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="function" id="class_t_m_sw_pages_1_1_t_m_s_logger_1a40f50c4cf1a0cfee17b050a19bea7daf" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool TMSwPages.TMSLogger.AppendLogFile</definition>
+        <argsstring>(TMSLog newLog)</argsstring>
+        <name>AppendLogFile</name>
+        <param>
+          <type><ref refid="class_t_m_sw_pages_1_1_t_m_s_log" kindref="compound">TMSLog</ref></type>
+          <declname>newLog</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" line="175" column="28" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" bodystart="175" bodyend="204"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_t_m_sw_pages_1_1_t_m_s_logger_1a4033a43670161f38a4b8fb99b7d39630" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void TMSwPages.TMSLogger.ChangeLogLocation</definition>
+        <argsstring>()</argsstring>
+        <name>ChangeLogLocation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" line="224" column="21" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" bodystart="224" bodyend="255"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" line="67" column="1" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" bodystart="66" bodyend="263"/>
+    <listofallmembers>
+      <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a40f50c4cf1a0cfee17b050a19bea7daf" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLogger</scope><name>AppendLogFile</name></member>
+      <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a4033a43670161f38a4b8fb99b7d39630" prot="private" virt="non-virtual"><scope>TMSwPages::TMSLogger</scope><name>ChangeLogLocation</name></member>
+      <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a70ea68270927cee76213ac2329238bf8" prot="private" virt="non-virtual"><scope>TMSwPages::TMSLogger</scope><name>LoggerPath</name></member>
+      <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a81a5353756e6ecd6e51ce79a76196fcc" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLogger</scope><name>LogIt</name></member>
+      <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a4ba45b1259ce8001fa7a5fddf5fadd46" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLogger</scope><name>logs</name></member>
+      <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a949d7d962a3a8f19556a72c610a23340" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLogger</scope><name>NewLog</name></member>
+      <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a78d9152f8fc12fdf370b23f0b787999e" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLogger</scope><name>ReadExistingLogFile</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_t_m_sw_pages_1_1_backup_t_m_s" kind="class" language="C#" prot="public">
+    <compoundname>TMSwPages::BackupTMS</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" line="344" column="1" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" bodystart="343" bodyend="354"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

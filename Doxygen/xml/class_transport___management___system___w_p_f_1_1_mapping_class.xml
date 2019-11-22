@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_transport___management___system___w_p_f_1_1_mapping_class" kind="class" language="C#" prot="public">
+    <compoundname>Transport_Management_System_WPF::MappingClass</compoundname>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_transport___management___system___w_p_f_1_1_mapping_class_1a6b13c2cb35ebe12b11e7a0881129cace" prot="private" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int Transport_Management_System_WPF.MappingClass.Number_of_Cities</definition>
+        <argsstring></argsstring>
+        <name>Number_of_Cities</name>
+        <initializer>= 8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MappingClass.cs" line="82" column="27" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MappingClass.cs" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_transport___management___system___w_p_f_1_1_mapping_class_1adae437d5242ae05821b49c72483a4622" prot="public" static="no" mutable="no">
+        <type>List&lt; <ref refid="class_transport___management___system___w_p_f_1_1_city_node" kindref="compound">CityNode</ref> &gt;</type>
+        <definition>List&lt;CityNode&gt; Transport_Management_System_WPF.MappingClass.nodes</definition>
+        <argsstring></argsstring>
+        <name>nodes</name>
+        <initializer>= new List&lt;<ref refid="class_transport___management___system___w_p_f_1_1_city_node" kindref="compound">CityNode</ref>&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MappingClass.cs" line="83" column="21" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MappingClass.cs" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_transport___management___system___w_p_f_1_1_mapping_class_1acde8449a3dd3fceb6c02d32f062f36ab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Transport_Management_System_WPF.MappingClass.MappingClass</definition>
+        <argsstring>()</argsstring>
+        <name>MappingClass</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MappingClass.cs" line="85" column="16" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MappingClass.cs" bodystart="85" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="class_transport___management___system___w_p_f_1_1_mapping_class_1ac2e8511f210a3fc19b4daee2e4f59f24" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; <ref refid="struct_transport___management___system___w_p_f_1_1_route_data" kindref="compound">RouteData</ref> &gt;</type>
+        <definition>List&lt;RouteData&gt; Transport_Management_System_WPF.MappingClass.getTravelData</definition>
+        <argsstring>(int OriginID, int DestinationID, bool FLTorLTL)</argsstring>
+        <name>getTravelData</name>
+        <param>
+          <type>int</type>
+          <declname>OriginID</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>DestinationID</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>FLTorLTL</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MappingClass.cs" line="163" column="21" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MappingClass.cs" bodystart="163" bodyend="222"/>
+      </memberdef>
+      <memberdef kind="function" id="class_transport___management___system___w_p_f_1_1_mapping_class_1ae07a688d3589c36ddc9bb50da5f2e4c7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="struct_transport___management___system___w_p_f_1_1_route_sum_data" kindref="compound">RouteSumData</ref></type>
+        <definition>RouteSumData Transport_Management_System_WPF.MappingClass.SummerizeTrip</definition>
+        <argsstring>(List&lt; RouteData &gt; inData)</argsstring>
+        <name>SummerizeTrip</name>
+        <param>
+          <type>List&lt; <ref refid="struct_transport___management___system___w_p_f_1_1_route_data" kindref="compound">RouteData</ref> &gt;</type>
+          <declname>inData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MappingClass.cs" line="236" column="29" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MappingClass.cs" bodystart="236" bodyend="260"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MappingClass.cs" line="81" column="1" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MappingClass.cs" bodystart="80" bodyend="261"/>
+    <listofallmembers>
+      <member refid="class_transport___management___system___w_p_f_1_1_mapping_class_1ac2e8511f210a3fc19b4daee2e4f59f24" prot="public" virt="non-virtual"><scope>Transport_Management_System_WPF::MappingClass</scope><name>getTravelData</name></member>
+      <member refid="class_transport___management___system___w_p_f_1_1_mapping_class_1acde8449a3dd3fceb6c02d32f062f36ab" prot="public" virt="non-virtual"><scope>Transport_Management_System_WPF::MappingClass</scope><name>MappingClass</name></member>
+      <member refid="class_transport___management___system___w_p_f_1_1_mapping_class_1adae437d5242ae05821b49c72483a4622" prot="public" virt="non-virtual"><scope>Transport_Management_System_WPF::MappingClass</scope><name>nodes</name></member>
+      <member refid="class_transport___management___system___w_p_f_1_1_mapping_class_1a6b13c2cb35ebe12b11e7a0881129cace" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MappingClass</scope><name>Number_of_Cities</name></member>
+      <member refid="class_transport___management___system___w_p_f_1_1_mapping_class_1ae07a688d3589c36ddc9bb50da5f2e4c7" prot="public" virt="non-virtual"><scope>Transport_Management_System_WPF::MappingClass</scope><name>SummerizeTrip</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
