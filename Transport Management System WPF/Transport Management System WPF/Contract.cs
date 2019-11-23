@@ -22,8 +22,8 @@ namespace Transport_Management_System_WPF
 {
     // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
     /**   
-    *   \class		Admin
-    *   \brief		This class runs the Admin UI functionality
+    *   \class		Contract
+    *   \brief		This class holds the contracts
     *   \details	... static class?  
     *   
     * -------------------------------------------------------------------------------------------------------- */

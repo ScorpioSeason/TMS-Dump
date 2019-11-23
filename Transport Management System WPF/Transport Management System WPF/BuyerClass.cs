@@ -1,13 +1,19 @@
 ﻿// ADMIN FILE HEADER COMMENT: =================================================================================
 /**
- *  \file		Contract.cs
+ *  \file		BuyerClass.cs
  *  \ingroup	TMS
  *  \date		November 20, 2019
- *  \author		8000 Cigarettes - Ivan,Megan,Ivan,Duane
+ *  \author		8000 Cigarettes - Ivan,Megan,Zena,Duane
  *  \brief	    This file contains the buyer functionality 
  *  \see		MainWindow.xaml
  *  \details    This file holds the functionality of the buyer class. The buyer has the ability to accept contracts from the
  *              contract market place using the SQL_Query Class, to create invopices and nominate carriers for each contract.
+ *              This class represents the functions that a Buyer can execute from the UI. 
+ *              i.e. Initiate an Order (read and display new contracts from CMP via DAL, select a 
+ *              contract from CMP, select cities for the contract, and submit the contract to an 
+ *              intermediate table for planner completion.-- This would potentially raise an event... later. )
+ *              The buyer can also view the table of completed orders (read and display from db, 
+ *              via DAL,select an order, preview an invoice, and then generate the invoice to a text file)
  *
  * =========================================================================================================== */
 
@@ -19,13 +25,7 @@ using System.Threading.Tasks;
 
 namespace Transport_Management_System_WPF
 {
-    // This class represents the functions that a Buyer can execute from the UI. 
-    // i.e. Initiate an Order (read and display new contracts from CMP via DAL, select a 
-    // contract from CMP, select cities for the contract, and submit the contract to an 
-    // intermediate table for planner completion.-- This would potentially raise an event... later. )
-    // The buyer can also view the table of completed orders (read and display from db, 
-    // via DAL,select an order, preview an invoice, and then generate the invoice to a text file)
-
+    
     // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
     /**   
     *   \class		BuyerClass
@@ -39,7 +39,7 @@ namespace Transport_Management_System_WPF
 
         internal List<Contract> Contracts { get => contracts; set => contracts = value; }
 
-        // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
         *	\fn			int ParseContracts()
         *	\brief		To call the sql query to populate list of contract class objects in order to display to the program all available contracts.

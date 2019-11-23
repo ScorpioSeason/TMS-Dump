@@ -1,12 +1,17 @@
 \hypertarget{class_transport___management___system___w_p_f_1_1_s_q_l___query}{}\doxysection{Transport\+\_\+\+Management\+\_\+\+System\+\_\+\+W\+P\+F.\+S\+Q\+L\+\_\+\+Query Class Reference}
 \label{class_transport___management___system___w_p_f_1_1_s_q_l___query}\index{Transport\_Management\_System\_WPF.SQL\_Query@{Transport\_Management\_System\_WPF.SQL\_Query}}
+
+
+This class does all of the querys dealing with the cmp db.  
+
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_transport___management___system___w_p_f_1_1_s_q_l___query_aef2a4735d2091c69cf885890dd1421af}{S\+Q\+L\+\_\+\+Query}} ()
-\item 
-void \mbox{\hyperlink{class_transport___management___system___w_p_f_1_1_s_q_l___query_aad7d3ffbabc1ebd7b7c296d15a375123}{Initialize}} ()
-\item 
+\mbox{\hyperlink{class_transport___management___system___w_p_f_1_1_s_q_l___query_a7d034c7bc3c6a46bb58fd2e8b828a34d}{S\+Q\+L\+\_\+\+Query}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transport___management___system___w_p_f_1_1_s_q_l___query_a8470abbd9b4a29d1ab96d9f40f9ab978}{Initialize}} ()
+\begin{DoxyCompactList}\small\item\em Sets all values for the sql connection. \end{DoxyCompactList}\item 
 List$<$ string $>$\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_transport___management___system___w_p_f_1_1_s_q_l___query_a15ae7fdb11fdb83e124c875b7d949b0b}{Select\+\_\+\+Contracts}} ()
 \begin{DoxyCompactList}\small\item\em public function that pulls all contracts from database for the buyer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
@@ -15,7 +20,7 @@ List$<$ string $>$\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_transport___manage
 bool \mbox{\hyperlink{class_transport___management___system___w_p_f_1_1_s_q_l___query_a84f129cd23e49a64a4d0a31b7cea2e21}{Open\+Connection}} ()
 \begin{DoxyCompactList}\small\item\em To create a new Square by validating or else defaulting new values. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_transport___management___system___w_p_f_1_1_s_q_l___query_a3b1b6790a3ca4aec7c3585b7a8bc7d79}{Close\+Connection}} ()
-\begin{DoxyCompactList}\small\item\em To create a new Square by validating or else defaulting new values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Closes the connection to the S\+QL database server. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -31,14 +36,46 @@ string \mbox{\hyperlink{class_transport___management___system___w_p_f_1_1_s_q_l_
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+This class does all of the querys dealing with the cmp db. 
+
+public class. ~\newline
+
+
+\DoxyHorRuler
+ 
+
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_transport___management___system___w_p_f_1_1_s_q_l___query_aef2a4735d2091c69cf885890dd1421af}\label{class_transport___management___system___w_p_f_1_1_s_q_l___query_aef2a4735d2091c69cf885890dd1421af}} 
+\mbox{\Hypertarget{class_transport___management___system___w_p_f_1_1_s_q_l___query_a7d034c7bc3c6a46bb58fd2e8b828a34d}\label{class_transport___management___system___w_p_f_1_1_s_q_l___query_a7d034c7bc3c6a46bb58fd2e8b828a34d}} 
 \index{Transport\_Management\_System\_WPF.SQL\_Query@{Transport\_Management\_System\_WPF.SQL\_Query}!SQL\_Query@{SQL\_Query}}
 \index{SQL\_Query@{SQL\_Query}!Transport\_Management\_System\_WPF.SQL\_Query@{Transport\_Management\_System\_WPF.SQL\_Query}}
 \doxysubsubsection{\texorpdfstring{SQL\_Query()}{SQL\_Query()}}
-{\footnotesize\ttfamily Transport\+\_\+\+Management\+\_\+\+System\+\_\+\+W\+P\+F.\+S\+Q\+L\+\_\+\+Query.\+S\+Q\+L\+\_\+\+Query (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Transport\+\_\+\+Management\+\_\+\+System\+\_\+\+W\+P\+F.\+S\+Q\+L\+\_\+\+Query.\+S\+Q\+L\+\_\+\+Query (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
+
+Constructor. 
+
+Constructor. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em none} & \\
+\hline
+\mbox{\texttt{ out}}  & {\em none} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em none} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_transport___management___system___w_p_f_1_1_s_q_l___query_a8470abbd9b4a29d1ab96d9f40f9ab978}{Initialize()}} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+None
+\end{DoxyReturn}
+\DoxyHorRuler
+ 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_transport___management___system___w_p_f_1_1_s_q_l___query_a3b1b6790a3ca4aec7c3585b7a8bc7d79}\label{class_transport___management___system___w_p_f_1_1_s_q_l___query_a3b1b6790a3ca4aec7c3585b7a8bc7d79}} 
@@ -49,34 +86,57 @@ string \mbox{\hyperlink{class_transport___management___system___w_p_f_1_1_s_q_l_
 
 
 
-To create a new Square by validating or else defaulting new values. 
+Closes the connection to the S\+QL database server. 
 
-T\+His is if you have more to say about what the function does and don\textquotesingle{}t want to inline comment 
+Closes the connection to the S\+QL database server and outputs an exeption to the log and to the screen if a exception is thrown. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em char\mbox{[}$\,$\mbox{]}} & new\+Colour An incoming value meant to become the square\textquotesingle{}s colour \\
+\mbox{\texttt{ in}}  & {\em none} & \\
 \hline
-\mbox{\texttt{ out}}  & {\em char\mbox{[}$\,$\mbox{]}} & new\+Side\+Length An incoming value meant to become the square\textquotesingle{}s side length \\
+\mbox{\texttt{ out}}  & {\em none} & \\
 \hline
 \end{DoxyParams}
 
 \begin{DoxyExceptions}{Exceptions}
-{\em This} & is if we have some big ol try catches? \\
+{\em My\+Sql\+Exception} & \\
 \hline
 \end{DoxyExceptions}
 \begin{DoxySeeAlso}{See also}
-Calls\+Made() 
+connection.\+Close() 
 \end{DoxySeeAlso}
 \begin{DoxyReturn}{Returns}
 None
 \end{DoxyReturn}
 \DoxyHorRuler
- \mbox{\Hypertarget{class_transport___management___system___w_p_f_1_1_s_q_l___query_aad7d3ffbabc1ebd7b7c296d15a375123}\label{class_transport___management___system___w_p_f_1_1_s_q_l___query_aad7d3ffbabc1ebd7b7c296d15a375123}} 
+ \mbox{\Hypertarget{class_transport___management___system___w_p_f_1_1_s_q_l___query_a8470abbd9b4a29d1ab96d9f40f9ab978}\label{class_transport___management___system___w_p_f_1_1_s_q_l___query_a8470abbd9b4a29d1ab96d9f40f9ab978}} 
 \index{Transport\_Management\_System\_WPF.SQL\_Query@{Transport\_Management\_System\_WPF.SQL\_Query}!Initialize@{Initialize}}
 \index{Initialize@{Initialize}!Transport\_Management\_System\_WPF.SQL\_Query@{Transport\_Management\_System\_WPF.SQL\_Query}}
 \doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
 {\footnotesize\ttfamily void Transport\+\_\+\+Management\+\_\+\+System\+\_\+\+W\+P\+F.\+S\+Q\+L\+\_\+\+Query.\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_transport___management___system___w_p_f_1_1_s_q_l___query_a84f129cd23e49a64a4d0a31b7cea2e21}\label{class_transport___management___system___w_p_f_1_1_s_q_l___query_a84f129cd23e49a64a4d0a31b7cea2e21}} 
+
+
+Sets all values for the sql connection. 
+
+Sets all values for the sql connection. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em none} & \\
+\hline
+\mbox{\texttt{ out}}  & {\em none} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em none} & should be thrown \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxySeeAlso}{See also}
+none 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+None
+\end{DoxyReturn}
+\DoxyHorRuler
+ \mbox{\Hypertarget{class_transport___management___system___w_p_f_1_1_s_q_l___query_a84f129cd23e49a64a4d0a31b7cea2e21}\label{class_transport___management___system___w_p_f_1_1_s_q_l___query_a84f129cd23e49a64a4d0a31b7cea2e21}} 
 \index{Transport\_Management\_System\_WPF.SQL\_Query@{Transport\_Management\_System\_WPF.SQL\_Query}!OpenConnection@{OpenConnection}}
 \index{OpenConnection@{OpenConnection}!Transport\_Management\_System\_WPF.SQL\_Query@{Transport\_Management\_System\_WPF.SQL\_Query}}
 \doxysubsubsection{\texorpdfstring{OpenConnection()}{OpenConnection()}}
@@ -88,14 +148,14 @@ To create a new Square by validating or else defaulting new values.
 
 T\+His is if you have more to say about what the function does and don\textquotesingle{}t want to inline comment 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em char\mbox{[}$\,$\mbox{]}} & new\+Colour An incoming value meant to become the square\textquotesingle{}s colour \\
+\mbox{\texttt{ in}}  & {\em none} & \\
 \hline
-\mbox{\texttt{ out}}  & {\em char\mbox{[}$\,$\mbox{]}} & new\+Side\+Length An incoming value meant to become the square\textquotesingle{}s side length \\
+\mbox{\texttt{ out}}  & {\em none} & \\
 \hline
 \end{DoxyParams}
 
 \begin{DoxyExceptions}{Exceptions}
-{\em This} & is if we have some big ol try catches? \\
+{\em My\+Sql\+Exception} & ex, 0\+: Cannot connect to server. Contact administrator / 1\+: Invalid username/password, please try again \\
 \hline
 \end{DoxyExceptions}
 \begin{DoxySeeAlso}{See also}

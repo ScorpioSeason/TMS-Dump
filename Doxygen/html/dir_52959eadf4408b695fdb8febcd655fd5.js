@@ -7,7 +7,6 @@ var dir_52959eadf4408b695fdb8febcd655fd5 =
       [ "BackupTMS", "class_t_m_sw_pages_1_1_backup_t_m_s.html", null ],
       [ "AlterTables", "class_t_m_sw_pages_1_1_alter_tables.html", null ]
     ] ],
-    [ "App.xaml", "_app_8xaml.html", null ],
     [ "App.xaml.cs", "_app_8xaml_8cs.html", [
       [ "App", "class_transport___management___system___w_p_f_1_1_app.html", null ]
     ] ],
@@ -20,7 +19,6 @@ var dir_52959eadf4408b695fdb8febcd655fd5 =
     [ "Contract.cs", "_contract_8cs.html", [
       [ "Contract", "class_transport___management___system___w_p_f_1_1_contract.html", "class_transport___management___system___w_p_f_1_1_contract" ]
     ] ],
-    [ "MainWindow.xaml", "_main_window_8xaml.html", null ],
     [ "MainWindow.xaml.cs", "_main_window_8xaml_8cs.html", [
       [ "MainWindow", "class_transport___management___system___w_p_f_1_1_main_window.html", "class_transport___management___system___w_p_f_1_1_main_window" ]
     ] ],

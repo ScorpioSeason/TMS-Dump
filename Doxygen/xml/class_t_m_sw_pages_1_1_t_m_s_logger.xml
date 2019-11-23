@@ -3,7 +3,7 @@
   <compounddef id="class_t_m_sw_pages_1_1_t_m_s_logger" kind="class" language="C#" prot="public">
     <compoundname>TMSwPages::TMSLogger</compoundname>
       <sectiondef kind="property">
-      <memberdef kind="property" id="class_t_m_sw_pages_1_1_t_m_s_logger_1a70ea68270927cee76213ac2329238bf8" prot="public" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+      <memberdef kind="property" id="class_t_m_sw_pages_1_1_t_m_s_logger_1a70ea68270927cee76213ac2329238bf8" prot="private" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>string</type>
         <definition>string TMSwPages.TMSLogger.LoggerPath</definition>
         <argsstring></argsstring>
@@ -14,7 +14,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" line="59" column="30" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" bodystart="59" bodyend="59"/>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" line="59" column="23" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" bodystart="59" bodyend="59"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-attrib">
@@ -220,7 +220,7 @@
     <listofallmembers>
       <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a016f771887948d9c8e41908106fac94d" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLogger</scope><name>AppendLogFile</name></member>
       <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a3feb70f75cd69696b3355f6deac9cb32" prot="private" virt="non-virtual"><scope>TMSwPages::TMSLogger</scope><name>ChangeLogLocation</name></member>
-      <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a70ea68270927cee76213ac2329238bf8" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLogger</scope><name>LoggerPath</name></member>
+      <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a70ea68270927cee76213ac2329238bf8" prot="private" virt="non-virtual"><scope>TMSwPages::TMSLogger</scope><name>LoggerPath</name></member>
       <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1ae3fc46f0a10cbcbe582f57f0ea75cc8d" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLogger</scope><name>LogIt</name></member>
       <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a4ba45b1259ce8001fa7a5fddf5fadd46" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLogger</scope><name>logs</name></member>
       <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a34e534b54ac36d38c33d7a8cb5abb7c7" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLogger</scope><name>NewLog</name></member>

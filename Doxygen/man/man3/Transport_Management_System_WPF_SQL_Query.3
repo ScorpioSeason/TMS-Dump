@@ -2,7 +2,8 @@
 .ad l
 .nh
 .SH NAME
-Transport_Management_System_WPF.SQL_Query
+Transport_Management_System_WPF.SQL_Query \- This class does all of the querys dealing with the cmp db\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -12,9 +13,11 @@ Transport_Management_System_WPF.SQL_Query
 .ti -1c
 .RI "\fBSQL_Query\fP ()"
 .br
+.RI "Constructor\&. "
 .ti -1c
 .RI "void \fBInitialize\fP ()"
 .br
+.RI "Sets all values for the sql connection\&. "
 .ti -1c
 .RI "List< string >[] \fBSelect_Contracts\fP ()"
 .br
@@ -30,7 +33,7 @@ Transport_Management_System_WPF.SQL_Query
 .ti -1c
 .RI "bool \fBCloseConnection\fP ()"
 .br
-.RI "To create a new Square by validating or else defaulting new values\&. "
+.RI "Closes the connection to the SQL database server\&. "
 .in -1c
 .SS "Private Attributes"
 
@@ -51,32 +54,68 @@ Transport_Management_System_WPF.SQL_Query
 .RI "string \fBpassword\fP"
 .br
 .in -1c
+.SH "Detailed Description"
+.PP 
+This class does all of the querys dealing with the cmp db\&. 
+
+public class\&. 
+.br
+.PP
+.PP
+ 
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "Transport_Management_System_WPF\&.SQL_Query\&.SQL_Query ()"
+.SS "void Transport_Management_System_WPF\&.SQL_Query\&.SQL_Query ()"
 
+.PP
+Constructor\&. Constructor\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fInone\fP 
+.br
+\fInone\fP 
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fInone\fP 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBInitialize()\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+None
+.RE
+.PP
+.PP
+ 
 .SH "Member Function Documentation"
 .PP 
 .SS "bool Transport_Management_System_WPF\&.SQL_Query\&.CloseConnection ()\fC [private]\fP"
 
 .PP
-To create a new Square by validating or else defaulting new values\&. THis is if you have more to say about what the function does and don't want to inline comment 
+Closes the connection to the SQL database server\&. Closes the connection to the SQL database server and outputs an exeption to the log and to the screen if a exception is thrown\&. 
 .PP
 \fBParameters\fP
 .RS 4
-\fIchar[]\fP newColour An incoming value meant to become the square's colour 
+\fInone\fP 
 .br
-\fIchar[]\fP newSideLength An incoming value meant to become the square's side length 
+\fInone\fP 
 .RE
 .PP
 \fBExceptions\fP
 .RS 4
-\fIThis\fP is if we have some big ol try catches? 
+\fIMySqlException\fP 
 .RE
 .PP
 \fBSee also\fP
 .RS 4
-CallsMade() 
+connection\&.Close() 
 .RE
 .PP
 \fBReturns\fP
@@ -88,6 +127,33 @@ None
  
 .SS "void Transport_Management_System_WPF\&.SQL_Query\&.Initialize ()"
 
+.PP
+Sets all values for the sql connection\&. Sets all values for the sql connection\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fInone\fP 
+.br
+\fInone\fP 
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fInone\fP should be thrown 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+none 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+None
+.RE
+.PP
+.PP
+ 
 .SS "bool Transport_Management_System_WPF\&.SQL_Query\&.OpenConnection ()\fC [private]\fP"
 
 .PP
@@ -95,14 +161,14 @@ To create a new Square by validating or else defaulting new values\&. THis is if
 .PP
 \fBParameters\fP
 .RS 4
-\fIchar[]\fP newColour An incoming value meant to become the square's colour 
+\fInone\fP 
 .br
-\fIchar[]\fP newSideLength An incoming value meant to become the square's side length 
+\fInone\fP 
 .RE
 .PP
 \fBExceptions\fP
 .RS 4
-\fIThis\fP is if we have some big ol try catches? 
+\fIMySqlException\fP ex, 0: Cannot connect to server\&. Contact administrator / 1: Invalid username/password, please try again 
 .RE
 .PP
 \fBSee also\fP

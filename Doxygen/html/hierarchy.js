@@ -8,9 +8,6 @@ var hierarchy =
     [ "Admin", "class_admin.html", null ],
     [ "Admin", "class_admin.html", null ],
     [ "Admin", "class_admin.html", null ],
-    [ "Admin", "class_admin.html", null ],
-    [ "Admin", "class_admin.html", null ],
-    [ "Admin", "class_admin.html", null ],
     [ "TMSwPages.AlterTables", "class_t_m_sw_pages_1_1_alter_tables.html", null ],
     [ "Application", null, [
       [ "Transport_Management_System_WPF::App", "class_transport___management___system___w_p_f_1_1_app.html", null ]
