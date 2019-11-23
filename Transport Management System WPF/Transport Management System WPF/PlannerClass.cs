@@ -104,7 +104,7 @@ namespace Transport_Management_System_WPF
                 List<Carrier> NominatedCarriers = new List<Carrier>(); //from the database
 
                     
-                List<Trip_Ticket> tickets = Select_Carriers_From_Nominations(NominatedCarriers, NewContract);
+                //List<Trip_Ticket> tickets = Select_Carriers_From_Nominations(NominatedCarriers, NewContract);
 
                 //List<Trip_Ticket_Line> trip_Ticket_Lines = new List<Trip_Ticket_Line>();
 
