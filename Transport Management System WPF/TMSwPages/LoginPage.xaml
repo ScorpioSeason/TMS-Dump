@@ -8,7 +8,50 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="LoginPage">
 
-    <Grid>
+    <Grid Name="OuterGrid" Margin="0,0,0,0">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Name="TopMenu" Height="auto"></RowDefinition>
+            <RowDefinition Name="Blank1" Height="1*"></RowDefinition>
+            <RowDefinition Name="Buttons" Height="1*"></RowDefinition>
+            <RowDefinition Name="Blank2" Height="1*"></RowDefinition>
+            <RowDefinition Name="StatusBar" Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <!--This is the user menu allowing help or navigation-->
+        <Menu Name="myMenu" Grid.Row ="0" Grid.ColumnSpan="3" IsMainMenu="True" VerticalAlignment="Top">
+
+            <!-- File Menu: Open, New, Save As, Close -->
+            <MenuItem Header="Options">
+                <MenuItem Header="Exit Application"/>
+            </MenuItem>
+
+            <!-- Help Menu: About -->
+            <MenuItem Header="Help">
+                <MenuItem Header="About TMS" />
+            </MenuItem>
+
+        </Menu>
+
+        <Label Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="15" Content="TMS APPLICATION"></Label>
         
+        <StackPanel Grid.Row="2" Grid.Column="1" VerticalAlignment="Center">
+            <Button Click="AdminClick">Admin</Button>
+            <Button Click="BuyerClick">Buyer</Button>
+            <Button Click="PlannerClick">Planner</Button>
+        </StackPanel>
+
+        <!--This displays statuses for the user-->
+        <StatusBar Grid.Row="3" Grid.ColumnSpan="3" VerticalAlignment="Bottom">
+            <StatusBarItem Name="statusItem">
+                <TextBlock Name="status" Text="Status: "/>
+            </StatusBarItem>
+        </StatusBar >
+
     </Grid>
 </Page>
