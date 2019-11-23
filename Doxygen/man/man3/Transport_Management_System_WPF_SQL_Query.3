@@ -1,0 +1,164 @@
+.TH "Transport_Management_System_WPF.SQL_Query" 3 "Fri Nov 22 2019" "Version 3.0" "TMS Project - 8000 Ciggies" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Transport_Management_System_WPF.SQL_Query
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSQL_Query\fP ()"
+.br
+.ti -1c
+.RI "void \fBInitialize\fP ()"
+.br
+.ti -1c
+.RI "List< string >[] \fBSelect_Contracts\fP ()"
+.br
+.RI "public function that pulls all contracts from database for the buyer\&. "
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBOpenConnection\fP ()"
+.br
+.RI "To create a new Square by validating or else defaulting new values\&. "
+.ti -1c
+.RI "bool \fBCloseConnection\fP ()"
+.br
+.RI "To create a new Square by validating or else defaulting new values\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "MySqlConnection \fBconnection\fP"
+.br
+.ti -1c
+.RI "string \fBserver\fP"
+.br
+.ti -1c
+.RI "string \fBdatabase\fP"
+.br
+.ti -1c
+.RI "string \fBuid\fP"
+.br
+.ti -1c
+.RI "string \fBpassword\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Transport_Management_System_WPF\&.SQL_Query\&.SQL_Query ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "bool Transport_Management_System_WPF\&.SQL_Query\&.CloseConnection ()\fC [private]\fP"
+
+.PP
+To create a new Square by validating or else defaulting new values\&. THis is if you have more to say about what the function does and don't want to inline comment 
+.PP
+\fBParameters\fP
+.RS 4
+\fIchar[]\fP newColour An incoming value meant to become the square's colour 
+.br
+\fIchar[]\fP newSideLength An incoming value meant to become the square's side length 
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fIThis\fP is if we have some big ol try catches? 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+CallsMade() 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+None
+.RE
+.PP
+.PP
+ 
+.SS "void Transport_Management_System_WPF\&.SQL_Query\&.Initialize ()"
+
+.SS "bool Transport_Management_System_WPF\&.SQL_Query\&.OpenConnection ()\fC [private]\fP"
+
+.PP
+To create a new Square by validating or else defaulting new values\&. THis is if you have more to say about what the function does and don't want to inline comment 
+.PP
+\fBParameters\fP
+.RS 4
+\fIchar[]\fP newColour An incoming value meant to become the square's colour 
+.br
+\fIchar[]\fP newSideLength An incoming value meant to become the square's side length 
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fIThis\fP is if we have some big ol try catches? 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+CallsMade() 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+None
+.RE
+.PP
+.PP
+ 
+.SS "Transport_Management_System_WPF\&.SQL_Query\&.Select_Contracts ()"
+
+.PP
+public function that pulls all contracts from database for the buyer\&. Pulls all contracts from database usinhg mysql querys and populates a list which and returns the list\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvoid\fP 
+.br
+\fIvoid\fP 
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fIno\fP exceptions should be thrown\&. 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBBuyerClass\fP Class 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+List<string>[]
+.RE
+.PP
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "MySqlConnection Transport_Management_System_WPF\&.SQL_Query\&.connection\fC [private]\fP"
+
+.SS "string Transport_Management_System_WPF\&.SQL_Query\&.database\fC [private]\fP"
+
+.SS "string Transport_Management_System_WPF\&.SQL_Query\&.password\fC [private]\fP"
+
+.SS "string Transport_Management_System_WPF\&.SQL_Query\&.server\fC [private]\fP"
+
+.SS "string Transport_Management_System_WPF\&.SQL_Query\&.uid\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for TMS Project - 8000 Ciggies from the source code\&.
