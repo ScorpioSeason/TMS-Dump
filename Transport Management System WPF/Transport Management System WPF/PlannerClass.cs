@@ -81,7 +81,6 @@ namespace Transport_Management_System_WPF
     {
         class Planner
         {
-
             // Recive_Customer_Order_From_Buyer METHOD HEADER COMMENT -------------------------------------------------------------------------------
             /**
             *	\fn			int Recive_Customer_Order_From_Buyer()
