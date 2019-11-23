@@ -1,0 +1,142 @@
+.TH "Transport_Management_System_WPF.MappingClass" 3 "Fri Nov 22 2019" "Version 3.0" "TMS Project - 8000 Ciggies" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Transport_Management_System_WPF.MappingClass \- This class will be used by the planner to calculate route information for trip tickets\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMappingClass\fP ()"
+.br
+.RI "The constructor for the Mapping Class\&. "
+.ti -1c
+.RI "List< \fBRouteData\fP > \fBGetTravelData\fP (int OriginID, int DestinationID, bool FLTorLTL)"
+.br
+.RI "This method will determine the info for a trip the between to cities\&. "
+.ti -1c
+.RI "\fBRouteSumData\fP \fBSummerizeTrip\fP (List< \fBRouteData\fP > inData)"
+.br
+.RI "Summarize a list of Route Data structs into the total time and Km\&. This data will be used in invoice generation\&. "
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "List< \fBCityNode\fP > \fBnodes\fP = new List<\fBCityNode\fP>()"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "const int \fBNumber_of_Cities\fP = 8"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class will be used by the planner to calculate route information for trip tickets\&. 
+
+
+.SS "\\details  This is a public class that will be used by the planner\&."
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Transport_Management_System_WPF\&.MappingClass\&.MappingClass ()"
+
+.PP
+The constructor for the Mapping Class\&. The data for each city will be read out of the database\&. It will then converted into a List datastructure so that it can be steped though easily\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fInull\fP 
+.br
+\fInull\fP 
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fInull\fP 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+na 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+null
+.RE
+.PP
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "List< \fBRouteData\fP > Transport_Management_System_WPF\&.MappingClass\&.GetTravelData (int OriginID, int DestinationID, bool FLTorLTL)"
+
+.PP
+This method will determine the info for a trip the between to cities\&. A list of \fBRouteData\fP structs, each struct will hold all timing and KM data\&. The timing for each element will keep track of the pick up time at the origin city, the drop off time at the destination, and the LTL time at intermediate cities\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIint\fP OriginID, int DestinationID, bool FLTorLTL The origin and destination cities, and if the trip is Flt or Ltl\&. 
+.br
+\fInull\fP 
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fInull\fP 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+Struct: \fBRouteData\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+List<RouteData> A list of the \fBRouteData\fP structs\&. The list all together will hold all the data for a trip\&.
+.RE
+.PP
+.PP
+ 
+.SS "\fBRouteSumData\fP Transport_Management_System_WPF\&.MappingClass\&.SummerizeTrip (List< \fBRouteData\fP > inData)"
+
+.PP
+Summarize a list of Route Data structs into the total time and Km\&. This data will be used in invoice generation\&. The resultant struct will hold the Origin City, Destination City, total drive time, total trip time(drive + load/unload/LTL), and total KM\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIList<RouteData>\fP inData The List holding all the data for the trip\&. 
+.br
+\fInull\fP 
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fInull\fP 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+na 
+.RE
+.PP
+.SS "\\return       None"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "List<\fBCityNode\fP> Transport_Management_System_WPF\&.MappingClass\&.nodes = new List<\fBCityNode\fP>()"
+
+.SS "const int Transport_Management_System_WPF\&.MappingClass\&.Number_of_Cities = 8\fC [static]\fP, \fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for TMS Project - 8000 Ciggies from the source code\&.

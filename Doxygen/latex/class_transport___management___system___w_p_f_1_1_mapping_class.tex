@@ -1,0 +1,142 @@
+\hypertarget{class_transport___management___system___w_p_f_1_1_mapping_class}{}\doxysection{Transport\+\_\+\+Management\+\_\+\+System\+\_\+\+W\+P\+F.\+Mapping\+Class Class Reference}
+\label{class_transport___management___system___w_p_f_1_1_mapping_class}\index{Transport\_Management\_System\_WPF.MappingClass@{Transport\_Management\_System\_WPF.MappingClass}}
+
+
+This class will be used by the planner to calculate route information for trip tickets.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_transport___management___system___w_p_f_1_1_mapping_class_a730543415ef496d02528a5b4b815fa23}{Mapping\+Class}} ()
+\begin{DoxyCompactList}\small\item\em The constructor for the Mapping Class. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{struct_transport___management___system___w_p_f_1_1_route_data}{Route\+Data}} $>$ \mbox{\hyperlink{class_transport___management___system___w_p_f_1_1_mapping_class_a2d0bf5b2ac5ef1514c9f28ade98716cc}{Get\+Travel\+Data}} (int Origin\+ID, int Destination\+ID, bool F\+L\+Tor\+L\+TL)
+\begin{DoxyCompactList}\small\item\em This method will determine the info for a trip the between to cities. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_transport___management___system___w_p_f_1_1_route_sum_data}{Route\+Sum\+Data}} \mbox{\hyperlink{class_transport___management___system___w_p_f_1_1_mapping_class_a58b3c5157086cc0f11722192607bc422}{Summerize\+Trip}} (List$<$ \mbox{\hyperlink{struct_transport___management___system___w_p_f_1_1_route_data}{Route\+Data}} $>$ in\+Data)
+\begin{DoxyCompactList}\small\item\em Summarize a list of Route Data structs into the total time and Km. This data will be used in invoice generation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{class_transport___management___system___w_p_f_1_1_city_node}{City\+Node}} $>$ \mbox{\hyperlink{class_transport___management___system___w_p_f_1_1_mapping_class_adae437d5242ae05821b49c72483a4622}{nodes}} = new List$<$\mbox{\hyperlink{class_transport___management___system___w_p_f_1_1_city_node}{City\+Node}}$>$()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{class_transport___management___system___w_p_f_1_1_mapping_class_a6b13c2cb35ebe12b11e7a0881129cace}{Number\+\_\+of\+\_\+\+Cities}} = 8
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class will be used by the planner to calculate route information for trip tickets. 
+
+\hypertarget{class_transport___management___system___w_p_f_1_1_mapping_class_autotoc_md31}{}\doxysubsubsection{\textbackslash{}details  This is a public class that will be used by the planner.}\label{class_transport___management___system___w_p_f_1_1_mapping_class_autotoc_md31}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_transport___management___system___w_p_f_1_1_mapping_class_a730543415ef496d02528a5b4b815fa23}\label{class_transport___management___system___w_p_f_1_1_mapping_class_a730543415ef496d02528a5b4b815fa23}} 
+\index{Transport\_Management\_System\_WPF.MappingClass@{Transport\_Management\_System\_WPF.MappingClass}!MappingClass@{MappingClass}}
+\index{MappingClass@{MappingClass}!Transport\_Management\_System\_WPF.MappingClass@{Transport\_Management\_System\_WPF.MappingClass}}
+\doxysubsubsection{\texorpdfstring{MappingClass()}{MappingClass()}}
+{\footnotesize\ttfamily Transport\+\_\+\+Management\+\_\+\+System\+\_\+\+W\+P\+F.\+Mapping\+Class.\+Mapping\+Class (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The constructor for the Mapping Class. 
+
+The data for each city will be read out of the database. It will then converted into a List datastructure so that it can be steped though easily. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em null} & \\
+\hline
+\mbox{\texttt{ out}}  & {\em null} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em null} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxySeeAlso}{See also}
+na 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+null
+\end{DoxyReturn}
+\DoxyHorRuler
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_transport___management___system___w_p_f_1_1_mapping_class_a2d0bf5b2ac5ef1514c9f28ade98716cc}\label{class_transport___management___system___w_p_f_1_1_mapping_class_a2d0bf5b2ac5ef1514c9f28ade98716cc}} 
+\index{Transport\_Management\_System\_WPF.MappingClass@{Transport\_Management\_System\_WPF.MappingClass}!GetTravelData@{GetTravelData}}
+\index{GetTravelData@{GetTravelData}!Transport\_Management\_System\_WPF.MappingClass@{Transport\_Management\_System\_WPF.MappingClass}}
+\doxysubsubsection{\texorpdfstring{GetTravelData()}{GetTravelData()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{struct_transport___management___system___w_p_f_1_1_route_data}{Route\+Data}} $>$ Transport\+\_\+\+Management\+\_\+\+System\+\_\+\+W\+P\+F.\+Mapping\+Class.\+Get\+Travel\+Data (\begin{DoxyParamCaption}\item[{int}]{Origin\+ID,  }\item[{int}]{Destination\+ID,  }\item[{bool}]{F\+L\+Tor\+L\+TL }\end{DoxyParamCaption})}
+
+
+
+This method will determine the info for a trip the between to cities. 
+
+A list of \mbox{\hyperlink{struct_transport___management___system___w_p_f_1_1_route_data}{Route\+Data}} structs, each struct will hold all timing and KM data. The timing for each element will keep track of the pick up time at the origin city, the drop off time at the destination, and the L\+TL time at intermediate cities. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em int} & Origin\+ID, int Destination\+ID, bool F\+L\+Tor\+L\+TL The origin and destination cities, and if the trip is Flt or Ltl. \\
+\hline
+\mbox{\texttt{ out}}  & {\em null} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em null} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxySeeAlso}{See also}
+Struct\+: \mbox{\hyperlink{struct_transport___management___system___w_p_f_1_1_route_data}{Route\+Data}} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+List$<$\+Route\+Data$>$ A list of the \mbox{\hyperlink{struct_transport___management___system___w_p_f_1_1_route_data}{Route\+Data}} structs. The list all together will hold all the data for a trip.
+\end{DoxyReturn}
+\DoxyHorRuler
+ \mbox{\Hypertarget{class_transport___management___system___w_p_f_1_1_mapping_class_a58b3c5157086cc0f11722192607bc422}\label{class_transport___management___system___w_p_f_1_1_mapping_class_a58b3c5157086cc0f11722192607bc422}} 
+\index{Transport\_Management\_System\_WPF.MappingClass@{Transport\_Management\_System\_WPF.MappingClass}!SummerizeTrip@{SummerizeTrip}}
+\index{SummerizeTrip@{SummerizeTrip}!Transport\_Management\_System\_WPF.MappingClass@{Transport\_Management\_System\_WPF.MappingClass}}
+\doxysubsubsection{\texorpdfstring{SummerizeTrip()}{SummerizeTrip()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_transport___management___system___w_p_f_1_1_route_sum_data}{Route\+Sum\+Data}} Transport\+\_\+\+Management\+\_\+\+System\+\_\+\+W\+P\+F.\+Mapping\+Class.\+Summerize\+Trip (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{struct_transport___management___system___w_p_f_1_1_route_data}{Route\+Data}} $>$}]{in\+Data }\end{DoxyParamCaption})}
+
+
+
+Summarize a list of Route Data structs into the total time and Km. This data will be used in invoice generation. 
+
+The resultant struct will hold the Origin City, Destination City, total drive time, total trip time(drive + load/unload/\+L\+TL), and total KM. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em List$<$\+Route\+Data$>$} & in\+Data The List holding all the data for the trip. \\
+\hline
+\mbox{\texttt{ out}}  & {\em null} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em null} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxySeeAlso}{See also}
+na 
+\end{DoxySeeAlso}
+\hypertarget{class_transport___management___system___w_p_f_1_1_mapping_class_autotoc_md34}{}\doxysubsubsection{\textbackslash{}return       None}\label{class_transport___management___system___w_p_f_1_1_mapping_class_autotoc_md34}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_transport___management___system___w_p_f_1_1_mapping_class_adae437d5242ae05821b49c72483a4622}\label{class_transport___management___system___w_p_f_1_1_mapping_class_adae437d5242ae05821b49c72483a4622}} 
+\index{Transport\_Management\_System\_WPF.MappingClass@{Transport\_Management\_System\_WPF.MappingClass}!nodes@{nodes}}
+\index{nodes@{nodes}!Transport\_Management\_System\_WPF.MappingClass@{Transport\_Management\_System\_WPF.MappingClass}}
+\doxysubsubsection{\texorpdfstring{nodes}{nodes}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_transport___management___system___w_p_f_1_1_city_node}{City\+Node}}$>$ Transport\+\_\+\+Management\+\_\+\+System\+\_\+\+W\+P\+F.\+Mapping\+Class.\+nodes = new List$<$\mbox{\hyperlink{class_transport___management___system___w_p_f_1_1_city_node}{City\+Node}}$>$()}
+
+\mbox{\Hypertarget{class_transport___management___system___w_p_f_1_1_mapping_class_a6b13c2cb35ebe12b11e7a0881129cace}\label{class_transport___management___system___w_p_f_1_1_mapping_class_a6b13c2cb35ebe12b11e7a0881129cace}} 
+\index{Transport\_Management\_System\_WPF.MappingClass@{Transport\_Management\_System\_WPF.MappingClass}!Number\_of\_Cities@{Number\_of\_Cities}}
+\index{Number\_of\_Cities@{Number\_of\_Cities}!Transport\_Management\_System\_WPF.MappingClass@{Transport\_Management\_System\_WPF.MappingClass}}
+\doxysubsubsection{\texorpdfstring{Number\_of\_Cities}{Number\_of\_Cities}}
+{\footnotesize\ttfamily const int Transport\+\_\+\+Management\+\_\+\+System\+\_\+\+W\+P\+F.\+Mapping\+Class.\+Number\+\_\+of\+\_\+\+Cities = 8\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+School User/\+Code/\+T\+M\+S-\/\+Dump/\+Transport Management System W\+P\+F/\+Transport Management System W\+P\+F/\mbox{\hyperlink{_mapping_class_8cs}{Mapping\+Class.\+cs}}\end{DoxyCompactItemize}

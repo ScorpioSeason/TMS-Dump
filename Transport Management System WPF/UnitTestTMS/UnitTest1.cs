@@ -152,7 +152,7 @@ namespace UnitTestTMS
                 };
             }
 
-            TimePass.IncrementDay(ReturnList, truck, trip_Ticket);
+            //TimePass.IncrementDay(ReturnList, truck, trip_Ticket);
 
         }
     }

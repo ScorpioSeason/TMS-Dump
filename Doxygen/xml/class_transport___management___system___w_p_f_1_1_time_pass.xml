@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_transport___management___system___w_p_f_1_1_time_pass" kind="class" language="C#" prot="public">
+    <compoundname>Transport_Management_System_WPF::TimePass</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_transport___management___system___w_p_f_1_1_time_pass_1ac82dacc3b496a410800b997cc112494c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Transport_Management_System_WPF.TimePass::IncrementDay</definition>
+        <argsstring>()</argsstring>
+        <name>IncrementDay</name>
+        <briefdescription>
+<para>This method will be used to simulate the passage of time. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The data from each of the current trip tickets and their Route Data will be read from the data base. The time that each ticket has been alive will be used to determin the current location of the truck. This data will be daved back into the database. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">null</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">null</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>null</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para>na </para>
+</simplesect>
+<simplesect kind="return"><para>void</para>
+</simplesect>
+<hruler/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/TimePass.cs" line="47" column="28" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/TimePass.cs" bodystart="47" bodyend="92"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This class will be used to simulate the passage of time. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class is public and will be used by the <ref refid="class_transport___management___system___w_p_f_1_1_planner_class" kindref="compound">PlannerClass</ref></para>
+<para><hruler/>
+ </para>
+    </detaileddescription>
+    <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/TimePass.cs" line="29" column="1" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/TimePass.cs" bodystart="28" bodyend="93"/>
+    <listofallmembers>
+      <member refid="class_transport___management___system___w_p_f_1_1_time_pass_1ac82dacc3b496a410800b997cc112494c" prot="public" virt="non-virtual"><scope>Transport_Management_System_WPF::TimePass</scope><name>IncrementDay</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

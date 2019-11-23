@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_transport___management___system___w_p_f_1_1_planner_class" kind="class" language="C#" prot="public">
+    <compoundname>Transport_Management_System_WPF::PlannerClass</compoundname>
+    <innerclass refid="class_transport___management___system___w_p_f_1_1_planner_class_1_1_planner" prot="private">Transport_Management_System_WPF::PlannerClass::Planner</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/PlannerClass.cs" line="88" column="1" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/PlannerClass.cs" bodystart="87" bodyend="330"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

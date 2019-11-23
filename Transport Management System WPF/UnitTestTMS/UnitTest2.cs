@@ -88,61 +88,24 @@ namespace UnitTestTMS
         [TestMethod]
         public void TestAdminClasses1()
         {
-            // AdminClasses: TMSLog /TMSLogger 
-            // TMSLogger(ReadExistingLogFile, AppendLogFile)
-
             //ARRANGE ------------------------------------------
-            TMSLogger.LoggerPath = "C:\Users\School User";                     /// Stores location of the log file
+            TMSLogger.LoggerPath = "C:\\Users\\School User";                     /// Stores location of the log file
             TMSLogger.logs.Clear();
-
             List<TMSLog> testList = new List<TMSLog>(); 
 
+            // ACT ---------------------------------------------
             /// Test incorrect input string
             TMSLog testLog1 = new TMSLog("");
             /// Test correct input with 6 '|'
-            TMSLog testLog2 = new TMSLog("|2019-11-22 5:37:37 PM|C:\Users\School User\Code\TMS-Dump\Transport Management System WPF\TMSwPages\bin\Debug/AdminClasses.cs|TMSLogger|ReadExistingLogFile|Exception|Could not find file 'C:\Users\School User\Code\TMS-Dump\Transport Management System WPF\TMSwPages\bin\Debug\TMSLogger.txt'.|");
+            TMSLog testLog2 = new TMSLog("|C:\\Users\\School User\\Code\\TMS-Dump\\Transport Management System WPF\\TMSwPages\\bin\\Debug/AdminClasses.cs|TMSLogger|ReadExistingLogFile|Exception|Could not find file 'C:\\Users\\School User\\Code\\TMS-Dump\\Transport Management System WPF\\TMSwPages\\bin\\Debug\\TMSLogger.txt'.|");
             /// Test correct input with 7 '|'
-            TMSLog testLog3 = new TMSLog("|AdminClasses.cs|TMSLog|Constructor|LogParseError|The log message did not enter as the correct string format|");
+            TMSLog testLog3 = new TMSLog("|2019-11-22 5:37:37 PM|UnitTest2.cs|UnitTest2|TestAdminClasses1|TestSuccess|This is a log message|");
 
-            testList.Add(testLog1);
-            testList.Add(testLog2);
-            testList.Add(testLog3);
-
+            //ASSERT -------------------------------------------
             Assert.AreEqual(testLog1.BSV, "|" + testLog1.logTime.ToString() + "|AdminClasses.cs|TMSLog|Constructor|LogParseError|The log message did not enter as the correct string format|");
-            Assert.AreEqual(testLog2.BSV, "|2019-11-22 5:37:37 PM|C:\Users\School User\Code\TMS-Dump\Transport Management System WPF\TMSwPages\bin\Debug/AdminClasses.cs|TMSLogger|ReadExistingLogFile|Exception|Could not find file 'C:\Users\School User\Code\TMS-Dump\Transport Management System WPF\TMSwPages\bin\Debug\TMSLogger.txt'.|");
-            Assert.AreEqual(testLog3.BSV, "");
+            Assert.AreEqual(testLog2.BSV, "|" + testLog1.logTime.ToString() + "|C:\\Users\\School User\\Code\\TMS-Dump\\Transport Management System WPF\\TMSwPages\\bin\\Debug/AdminClasses.cs|TMSLogger|ReadExistingLogFile|Exception|Could not find file 'C:\\Users\\School User\\Code\\TMS-Dump\\Transport Management System WPF\\TMSwPages\\bin\\Debug\\TMSLogger.txt'.|");
+            Assert.AreEqual(testLog3.BSV, "|2019-11-22 5:37:37 PM|UnitTest2.cs|UnitTest2|TestAdminClasses1|TestSuccess|This is a log message|");
 
-            //foreach (TMSLog l in TMSLogger.logs)
-            //{
-            //    Console.WriteLine(l.BSV);
-            //}
-
-            //ACT ----------------------------------------------
-            /// Add a new log with a blank string
-            TMSLogger.LogIt("");
-            /// Add a new log with a 5 piece input
-            TMSLogger.LogIt("|2019-11-22 5:37:37 PM|C:\Users\School User\Code\TMS-Dump\Transport Management System WPF\TMSwPages\bin\Debug/AdminClasses.cs|TMSLogger|ReadExistingLogFile|Exception|Could not find file 'C:\Users\School User\Code\TMS-Dump\Transport Management System WPF\TMSwPages\bin\Debug\TMSLogger.txt'.|");
-            /// Add a new log with a 6 piece input
-            TMSLogger.LogIt("|AdminClasses.cs|TMSLog|Constructor|LogParseError|The log message did not enter as the correct string format|");
-
-            //foreach (TMSLog l in TMSLogger.logs)
-            //{
-            //    Console.WriteLine(l.BSV); 
-            //}
-
-            /// Add a new log with a blank string
-            TMSLogger.NewLog("");
-            /// Add a new log with a 5 piece input
-            TMSLogger.NewLog("|2019-11-22 5:37:37 PM|C:\Users\School User\Code\TMS-Dump\Transport Management System WPF\TMSwPages\bin\Debug/AdminClasses.cs|TMSLogger|ReadExistingLogFile|Exception|Could not find file 'C:\Users\School User\Code\TMS-Dump\Transport Management System WPF\TMSwPages\bin\Debug\TMSLogger.txt'.|");
-            /// Add a new log with a 6 piece input
-            TMSLogger.NewLog("|AdminClasses.cs|TMSLog|Constructor|LogParseError|The log message did not enter as the correct string format|");
-
-            //ASSERT
-            //Assert.AreEqual(totalTrip.DestinationCity, 0);
-            //Assert.AreEqual(totalTrip.OriginCity, 7);
-            //Assert.AreEqual((int)(totalTrip.totalDriveTime * 100), 1214);
-            //Assert.AreEqual((int)(totalTrip.totalTripTime * 100), 1614);
-            //Assert.AreEqual(totalTrip.totalKM, 859);
         }
 
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
@@ -156,24 +119,31 @@ namespace UnitTestTMS
         [TestMethod]
         public void TestAdminClasses2()
         {
+            //ARRANGE ------------------------------------------
+            TMSLogger.LoggerPath = "C:\\Users\\School User";                     /// Stores location of the log file
+            TMSLogger.logs.Clear();
+            List<TMSLog> testList = new List<TMSLog>();
 
-            // AdminClasses: TMSLog /TMSLogger 
-            // TMSLog (constructor), TMSLogger(LogIt, NewLog, ReadExistingLogFile, AppendLogFile)
+            /// Test incorrect input string
+            TMSLog testLog1 = new TMSLog("");
+            /// Test correct input with 6 '|'
+            TMSLog testLog2 = new TMSLog("|C:\\Users\\School User\\Code\\TMS-Dump\\Transport Management System WPF\\TMSwPages\\bin\\Debug/AdminClasses.cs|TMSLogger|ReadExistingLogFile|Exception|Could not find file 'C:\\Users\\School User\\Code\\TMS-Dump\\Transport Management System WPF\\TMSwPages\\bin\\Debug\\TMSLogger.txt'.|");
+            /// Test correct input with 7 '|'
+            TMSLog testLog3 = new TMSLog("|2019-11-22 5:37:37 PM|UnitTest2.cs|UnitTest2|TestAdminClasses1|TestSuccess|This is a log message|");
 
-            //ARRANGE
-            //MappingClass graphClass = new MappingClass();
-            //List<RouteData> ReturnList = new List<RouteData>();
+            //ACT ----------------------------------------------
+            /// Add a new log with a blank string. This also appends to the log file. 
+            TMSLogger.LogIt(testLog1.BSV);
+            /// Add a new log with a 5 piece input
+            TMSLogger.LogIt(testLog2.BSV);
+            /// Add a new log with a 6 piece input
+            TMSLogger.LogIt(testLog3.BSV);
 
-            //ACT
-            //ReturnList = graphClass.getTravelData(7, 0, false);
-            //RouteSumData totalTrip = graphClass.SummerizeTrip(ReturnList);
+            //ASSERT -------------------------------------------
+            Assert.AreEqual(TMSLogger.logs[0], testLog1.BSV);
+            Assert.AreEqual(TMSLogger.logs[1], testLog2.BSV);
+            Assert.AreEqual(TMSLogger.logs[2], testLog2.BSV);
 
-            //ASSERT
-            //Assert.AreEqual(totalTrip.DestinationCity, 0);
-            //Assert.AreEqual(totalTrip.OriginCity, 7);
-            //Assert.AreEqual((int)(totalTrip.totalDriveTime * 100), 1214);
-            //Assert.AreEqual((int)(totalTrip.totalTripTime * 100), 1614);
-            //Assert.AreEqual(totalTrip.totalKM, 859);
         }
 
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
@@ -187,23 +157,30 @@ namespace UnitTestTMS
         [TestMethod]
         public void TestAdminClasses3()
         {
-            // AdminClasses: TMSLog /TMSLogger 
-            // TMSLog (constructor), TMSLogger(LogIt, NewLog, ReadExistingLogFile, AppendLogFile)
+            //ARRANGE ------------------------------------------
+            TMSLogger.LoggerPath = "C:\\Users\\School User";                     /// Stores location of the log file
+            TMSLogger.logs.Clear();
+            List<TMSLog> testList = new List<TMSLog>();
 
-            //ARRANGE
-            //MappingClass graphClass = new MappingClass();
-            //List<RouteData> ReturnList = new List<RouteData>();
+            /// Test incorrect input string
+            TMSLog testLog1 = new TMSLog("");
+            /// Test correct input with 6 '|'
+            TMSLog testLog2 = new TMSLog("|C:\\Users\\School User\\Code\\TMS-Dump\\Transport Management System WPF\\TMSwPages\\bin\\Debug/AdminClasses.cs|TMSLogger|ReadExistingLogFile|Exception|Could not find file 'C:\\Users\\School User\\Code\\TMS-Dump\\Transport Management System WPF\\TMSwPages\\bin\\Debug\\TMSLogger.txt'.|");
+            /// Test correct input with 7 '|'
+            TMSLog testLog3 = new TMSLog("|2019-11-22 5:37:37 PM|UnitTest2.cs|UnitTest2|TestAdminClasses1|TestSuccess|This is a log message|");
 
-            //ACT
-            //ReturnList = graphClass.getTravelData(7, 0, false);
-            //RouteSumData totalTrip = graphClass.SummerizeTrip(ReturnList);
+            //ACT ----------------------------------------------
+            /// Add a new log with a blank string
+            TMSLogger.NewLog("");
+            /// Add a new log with a 5 piece input
+            TMSLogger.NewLog("|C:\\Users\\School User\\Code\\TMS-Dump\\Transport Management System WPF\\TMSwPages\\bin\\Debug/AdminClasses.cs|TMSLogger|ReadExistingLogFile|Exception|Could not find file 'C:\\Users\\School User\\Code\\TMS-Dump\\Transport Management System WPF\\TMSwPages\\bin\\Debug\\TMSLogger.txt'.|");
+            /// Add a new log with a 6 piece input
+            TMSLogger.NewLog("|2019-11-22 5:37:37 PM|UnitTest2.cs|UnitTest2|TestAdminClasses1|TestSuccess|This is a log message|");
 
-            //ASSERT
-            //Assert.AreEqual(totalTrip.DestinationCity, 0);
-            //Assert.AreEqual(totalTrip.OriginCity, 7);
-            //Assert.AreEqual((int)(totalTrip.totalDriveTime * 100), 1214);
-            //Assert.AreEqual((int)(totalTrip.totalTripTime * 100), 1614);
-            //Assert.AreEqual(totalTrip.totalKM, 859);
+            //ASSERT -------------------------------------------
+            Assert.AreEqual(TMSLogger.logs[0], testLog1.BSV);
+            Assert.AreEqual(TMSLogger.logs[1], testLog2.BSV);
+            Assert.AreEqual(TMSLogger.logs[2], testLog2.BSV);
         }
 
     }

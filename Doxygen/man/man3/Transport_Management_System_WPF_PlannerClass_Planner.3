@@ -1,0 +1,65 @@
+.TH "Transport_Management_System_WPF.PlannerClass.Planner" 3 "Fri Nov 22 2019" "Version 3.0" "TMS Project - 8000 Ciggies" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Transport_Management_System_WPF.PlannerClass.Planner
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "object \fBSQLMagic\fP (string input)"
+.br
+.ti -1c
+.RI "int \fBRecive_Customer_Order_From_Buyer\fP ()"
+.br
+.RI "This method will read the contracts that the buy has set aside\&. "
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "List< \fBTrip_Ticket\fP > \fBSelect_Carriers_From_Nominations\fP (List< \fBCarrier\fP > list_of_carriers, \fBContract\fP InContract)"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "int Transport_Management_System_WPF\&.PlannerClass\&.Planner\&.Recive_Customer_Order_From_Buyer ()"
+
+.PP
+This method will read the contracts that the buy has set aside\&. The method will read from the data base\&. The buy will have flagged orders and nominated carries for each\&. First the method will determine which carrier is the best option\&. It will then use the Mapping Class to determine the trip the trucks will take\&. All of this data will be saved into the data base after\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fInull\fP 
+.br
+\fInull\fP 
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fInull\fP 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBMappingClass\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+None
+.RE
+.PP
+.PP
+ 
+.SS "List<\fBTrip_Ticket\fP> Transport_Management_System_WPF\&.PlannerClass\&.Planner\&.Select_Carriers_From_Nominations (List< \fBCarrier\fP > list_of_carriers, \fBContract\fP InContract)\fC [private]\fP"
+
+.SS "object Transport_Management_System_WPF\&.PlannerClass\&.Planner\&.SQLMagic (string input)"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for TMS Project - 8000 Ciggies from the source code\&.

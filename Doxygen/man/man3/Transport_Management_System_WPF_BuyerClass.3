@@ -1,0 +1,71 @@
+.TH "Transport_Management_System_WPF.BuyerClass" 3 "Fri Nov 22 2019" "Version 3.0" "TMS Project - 8000 Ciggies" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Transport_Management_System_WPF.BuyerClass \- This class runs the Buyer functionality\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBParseContracts\fP ()"
+.br
+.RI "To call the sql query to populate list of contract class objects in order to display to the program all available contracts\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "List< \fBContract\fP > \fBcontracts\fP = new List<\fBContract\fP>()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class runs the Buyer functionality\&. 
+
+public class
+.PP
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "int Transport_Management_System_WPF\&.BuyerClass\&.ParseContracts ()"
+
+.PP
+To call the sql query to populate list of contract class objects in order to display to the program all available contracts\&. Calls \fBSQL_Query\&.Select_Contracts\fP from a instance of the class and uses the list it returns to populate the list\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvoid\fP 
+.br
+\fIvoid\fP 
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fInone\fP 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSQL_Query\fP Class 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+None
+.RE
+.PP
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "List<\fBContract\fP> Transport_Management_System_WPF\&.BuyerClass\&.contracts = new List<\fBContract\fP>()\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for TMS Project - 8000 Ciggies from the source code\&.
