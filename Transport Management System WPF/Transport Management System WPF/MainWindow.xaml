@@ -31,6 +31,7 @@
                                 <DataGridTextColumn Header="Origin" Binding="{Binding origin}" IsReadOnly="True"/>
                                 <DataGridTextColumn Header="Destination" Binding="{Binding destination}" IsReadOnly="True"/>
                                 <DataGridTextColumn Header="Van Type" Binding="{Binding van_Type}" IsReadOnly="True"/>
+                                <DataGridCheckBoxColumn Header="Selected" Binding="{Binding is_Selected}" />
                                 <!--The Email property contains a URI.  For example "mailto:lucy0@adventure-works.com"-->
                             </DataGrid.Columns>
                         </DataGrid>

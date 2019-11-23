@@ -1,6 +1,6 @@
 ﻿// ADMIN FILE HEADER COMMENT: =================================================================================
 /**
- *  \file		Admin.cs
+ *  \file		SQL_Query.cs
  *  \ingroup	TMS
  *  \date		November 20, 2019
  *  \author		8000 Cigarettes - Megan
@@ -91,7 +91,7 @@ namespace Transport_Management_System_WPF
 
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
-        *	\fn			int Square()
+        *	\fn			bool OpenConnection()
         *	\brief		To create a new Square by validating or else defaulting new values
         *	\details	THis is if you have more to say about what the function does and don't want to inline comment
         *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
@@ -129,10 +129,10 @@ namespace Transport_Management_System_WPF
                 return false;
             }
         }
-        
+
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
-        *	\fn			int Square()
+        *	\fn			bool CloseConnection()
         *	\brief		To create a new Square by validating or else defaulting new values
         *	\details	THis is if you have more to say about what the function does and don't want to inline comment
         *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
@@ -159,14 +159,14 @@ namespace Transport_Management_System_WPF
 
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
-        *	\fn			int Square()
-        *	\brief		To create a new Square by validating or else defaulting new values
-        *	\details	THis is if you have more to say about what the function does and don't want to inline comment
-        *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
-        *	\param[out]	char[]	newSideLength	An incoming value meant to become the square's side length
-        *	\exception	This is if we have some big ol try catches?
-        *	\see		CallsMade()
-        *	\return		None
+        *	\fn			Select_Contracts()
+        *	\brief		public function that pulls all contracts from database for the buyer.
+        *	\details	Pulls all contracts from database usinhg mysql querys and populates a list which and returns the list.
+        *	\param[in]	void
+        *	\param[out]	void
+        *	\exception	no exceptions should be thrown.
+        *	\see		BuyerClass Class
+        *	\return		List<string>[]
         *
         * ---------------------------------------------------------------------------------------------------- */
         //Select statement
@@ -216,7 +216,6 @@ namespace Transport_Management_System_WPF
                 return list;
             }
         }
-
 
         ////Insert statement
         //public void Insert()

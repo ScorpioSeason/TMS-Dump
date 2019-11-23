@@ -1,7 +1,7 @@
 ﻿// ADMIN FILE HEADER COMMENT: =================================================================================
 /**
  *  \file		Admin.cs
- *  \ingroup	TMS
+ *  \ingroup	TMSTesting
  *  \date		November 20, 2019
  *  \author		8000 Cigarettes - Megan
  *  \brief	    This file contains the admin functionality	  
@@ -77,7 +77,6 @@ namespace UnitTestTMS
         [TestMethod]
         public void routCalc3()
         {
-
             //ARRANGE
             MappingClass graphClass = new MappingClass();
             List<RouteData> ReturnList = new List<RouteData>();

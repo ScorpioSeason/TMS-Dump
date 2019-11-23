@@ -45,6 +45,7 @@ namespace Transport_Management_System_WPF
     * -------------------------------------------------------------------------------------------------------- */
     public partial class MainWindow : Window
     {
+        List<Contract> acceptedContracts = new List<Contract>();
         public static BuyerClass buyer = new BuyerClass();
         public static string a = "";
 
@@ -63,8 +64,8 @@ namespace Transport_Management_System_WPF
         public MainWindow()
         {
             InitializeComponent();
-            DG2.ItemsSource = buyer.Contracts;
             DG1.ItemsSource = buyer.Contracts;
+            DG2.ItemsSource = this.acceptedContracts;
         }
 
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
@@ -153,25 +154,7 @@ namespace Transport_Management_System_WPF
         private void Button_AddContract(object sender, RoutedEventArgs e)
         {
 
-            DataGrid DG = DG2;
-
-            List<Contract> contracts = new List<Contract>();
-
-            foreach(Contract c in DG.SelectedItems)
-            {
-                contracts.Add(c);
-            }
-
-            int i = 0;
-
-            var yeet = DG2.SelectedCells;
-
-
-            //List<DataGridCellInfo> blah = (List<DataGridCellInfo>)DG2.SelectedCells;
-            //DG2.Items.Refresh();
-
-
+            DG2.Items.Refresh();
         }
-
     }
 }

@@ -62,7 +62,6 @@ namespace TMSwPages
         //    this.DataContext = data;
         // }
 
-
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
         *	\fn			private void LoadClick(object sender, RoutedEventArgs e)

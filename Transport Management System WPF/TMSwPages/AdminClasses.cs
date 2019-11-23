@@ -56,7 +56,7 @@ namespace TMSwPages
     * -------------------------------------------------------------------------------------------------------- */
     static public class TMSLogger
     {
-        static string LoggerPath { set; get; }                      /// Stores location of the log file
+        static public string LoggerPath { set; get; }               /// Stores location of the log file
         static public List<TMSLog> logs = new List<TMSLog>();       /// This is a list of logs stored locally
 
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------

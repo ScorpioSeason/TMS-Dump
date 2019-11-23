@@ -1,15 +1,13 @@
 ﻿// ADMIN FILE HEADER COMMENT: =================================================================================
 /**
- *  \file		Admin.cs
+ *  \file		Contract.cs
  *  \ingroup	TMS
  *  \date		November 20, 2019
- *  \author		8000 Cigarettes - Megan
- *  \brief	    This file contains the admin functionality	  
+ *  \author		8000 Cigarettes - Ivan,Megan,Ivan,Duane
+ *  \brief	    This file contains the buyer functionality 
  *  \see		MainWindow.xaml
- *  \details    This file holds the functionality of the Admin class. The Admin has the ability to view logs as 
- *              specified by time period, view details of specific logs, alter where the log files are stored, 
- *              initiate backups of the TMS database, choose where the TMS db is backed up to, alter the Carrier 
- *              Data Table, the Route Table, and the Rate / Fee Tables.                                       
+ *  \details    This file holds the functionality of the buyer class. The buyer has the ability to accept contracts from the
+ *              contract market place using the SQL_Query Class, to create invopices and nominate carriers for each contract.
  *
  * =========================================================================================================== */
 
@@ -31,23 +29,52 @@ namespace Transport_Management_System_WPF
     * -------------------------------------------------------------------------------------------------------- */
     public class Contract
     {
-        public string client_Name { get; set; }
-        public bool job_Type { get; set; }
-        public int quantity { get; set; }
-        public string origin { get; set; }
-        public string destination { get; set; }
-        public bool van_Type { get; set; }
+        public string client_Name 
+        { 
+            get;
+            set; 
+        }
+        public bool job_Type 
+        { 
+            get; 
+            set; 
+        }
+        public int quantity 
+        { 
+            get;
+            set; 
+        }
+        public string origin 
+        { 
+            get;
+            set; 
+        }
+        public string destination 
+        { 
+            get;
+            set; 
+        }
+        public bool van_Type 
+        { 
+            get;
+            set; 
+        }
+
+        public List<string> nominatedCarriers;
+
+
+
 
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
-        *	\fn			int Square()
-        *	\brief		To create a new Square by validating or else defaulting new values
-        *	\details	THis is if you have more to say about what the function does and don't want to inline comment
-        *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
-        *	\param[out]	char[]	newSideLength	An incoming value meant to become the square's side length
-        *	\exception	This is if we have some big ol try catches?
-        *	\see		CallsMade()
-        *	\return		None
+        *	\fn			int ToCityID()
+        *	\brief		Converts a city name to the corresponding int.
+        *	\details	This function converts a city to the corresponding int by comparing the input string to city names and outputs the proper value for the city.
+        *	\param[in]	string  inputCity		An incoming value meant to become the square's colour
+        *	\param[out]	none
+        *	\exception	none
+        *	\see		none
+        *	\return		cityID in int format
         *
         * ---------------------------------------------------------------------------------------------------- */
         public static int ToCityID(string inputCity)
