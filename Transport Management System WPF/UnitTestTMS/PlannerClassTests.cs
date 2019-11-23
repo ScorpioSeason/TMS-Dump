@@ -1,10 +1,10 @@
 ﻿// ADMIN FILE HEADER COMMENT: =================================================================================
 /**
- *  \file		Admin.cs
- *  \ingroup	TMS
+ *  \file		PlannerClassTests.cs
+ *  \ingroup	TMSTesting
  *  \date		November 20, 2019
- *  \author		8000 Cigarettes - Megan
- *  \brief	    This file contains the admin functionality	  
+ *  \author		8000 Cigarettes - Duane
+ *  \brief	    This file contains unit tests for the   
  *  \see		MainWindow.xaml
  *  \details    This file holds the functionality of the Admin class. The Admin has the ability to view logs as 
  *              specified by time period, view details of specific logs, alter where the log files are stored, 
@@ -28,7 +28,7 @@ namespace UnitTestTMS
     *   
     * -------------------------------------------------------------------------------------------------------- */
     [TestClass]
-    public class UnitTest1
+    public class PlannerClassTests
     {
 
         //Test city 7 - 0, FTL
@@ -40,7 +40,7 @@ namespace UnitTestTMS
             MappingClass graphClass = new MappingClass();
             List<RouteData> ReturnList = new List<RouteData>();
 
-            ReturnList = graphClass.getTravelData(7, 0, true);
+            ReturnList = graphClass.GetTravelData(7, 0, true);
 
             RouteSumData totalTrip = graphClass.SummerizeTrip(ReturnList);
 
@@ -61,7 +61,7 @@ namespace UnitTestTMS
             MappingClass graphClass = new MappingClass();
             List<RouteData> ReturnList = new List<RouteData>();
 
-            ReturnList = graphClass.getTravelData(7, 0, false);
+            ReturnList = graphClass.GetTravelData(7, 0, false);
 
             RouteSumData totalTrip = graphClass.SummerizeTrip(ReturnList);
 
@@ -77,12 +77,11 @@ namespace UnitTestTMS
         [TestMethod]
         public void routCalc3()
         {
-
             //ARRANGE
             MappingClass graphClass = new MappingClass();
             List<RouteData> ReturnList = new List<RouteData>();
 
-            ReturnList = graphClass.getTravelData(3, 4, true); 
+            ReturnList = graphClass.GetTravelData(3, 4, true); 
 
             RouteSumData totalTrip = graphClass.SummerizeTrip(ReturnList);
 
@@ -123,7 +122,7 @@ namespace UnitTestTMS
                 job_Type = true
             };
 
-            ReturnList = graphClass.getTravelData(Contract.ToCityID(contract.origin), Contract.ToCityID(contract.destination), contract.job_Type);
+            ReturnList = graphClass.GetTravelData(Contract.ToCityID(contract.origin), Contract.ToCityID(contract.destination), contract.job_Type);
 
             Truck truck = new Truck
             {
@@ -149,15 +148,11 @@ namespace UnitTestTMS
                 Trip_Ticket_Line TTL1 = new Trip_Ticket_Line
                 {
                     Ticket = trip_Ticket,
-                    Order = contract
+                    Route = x
                 };
             }
 
-            TimePass.incrementDay(ReturnList, truck, trip_Ticket);
-
-            
-
-
+            TimePass.IncrementDay(ReturnList, truck, trip_Ticket);
 
         }
     }

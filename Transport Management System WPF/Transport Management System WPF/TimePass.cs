@@ -1,15 +1,12 @@
 ﻿// ADMIN FILE HEADER COMMENT: =================================================================================
 /**
- *  \file		Admin.cs
+ *  \file		TImePass.cs
  *  \ingroup	TMS
  *  \date		November 20, 2019
- *  \author		8000 Cigarettes - Megan
- *  \brief	    This file contains the admin functionality	  
- *  \see		MainWindow.xaml
- *  \details    This file holds the functionality of the Admin class. The Admin has the ability to view logs as 
- *              specified by time period, view details of specific logs, alter where the log files are stored, 
- *              initiate backups of the TMS database, choose where the TMS db is backed up to, alter the Carrier 
- *              Data Table, the Route Table, and the Rate / Fee Tables.                                       
+ *  \author		8000 Cigarettes - Duane
+ *  \brief	    This file contains the functionality to simulate time.	   
+ *  \see		PlannerClass.cs
+ *  \details    See TimePass Class description for more details.                                  
  *
  * =========================================================================================================== */
 
@@ -23,40 +20,41 @@ namespace Transport_Management_System_WPF
 {
     // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
     /**   
-    *   \class		Admin
-    *   \brief		This class runs the Admin UI functionality
-    *   \details	... static class?  
+    *   \class		TimePass
+    *   \brief		This class will be used to simulate the passage of time
+    *   \details	This class is public and will be used by the PlannerClass
     *   
     * -------------------------------------------------------------------------------------------------------- */
     public class TimePass
     {
-        // This function represents the planner's ability to simulate the passage of time by 1day
+        // This function represents the planner's ability to simulate the passage of time by 1 day
         // This will calculate where each active truck is after 24h: which is convoluted by the 
         // amount of time between stops and time spent at each stop.
         
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
-        *	\fn			int Square()
-        *	\brief		To create a new Square by validating or else defaulting new values
-        *	\details	THis is if you have more to say about what the function does and don't want to inline comment
-        *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
-        *	\param[out]	char[]	newSideLength	An incoming value meant to become the square's side length
-        *	\exception	This is if we have some big ol try catches?
-        *	\see		CallsMade()
-        *	\return		None
+        *	\fn			static void IncrementDay()
+        *	\brief		This method will be used to simulate the passage of time.
+        *	\details	The data from each of the current trip tickets and their Route Data will be read from the data base.
+        *	            The time that each ticket has been alive will be used to determin the current location of the truck. This data will be daved back into the database.
+        *	\param[in]	null
+        *	\param[out]	null
+        *	\exception	null
+        *	\see		na
+        *	\return		void
         *
         * ---------------------------------------------------------------------------------------------------- */
-        public static void incrementDay(List<RouteData> routes, /*out*/ Truck truck, /*out*/ Trip_Ticket ticket)
+        public static void IncrementDay()
         {
             //pull down a ticket from the orders that are incomplete
             // Trip_Ticket trip = new Trip_Ticket();
 
-            double localDaysPassed = ticket.Days_Passed;
+            double localDaysPassed = 0; //From the data base
             double DriveTime = localDaysPassed * 8;
             double StopTime = localDaysPassed * 12;
 
-            //load the route stops
-            //List<RouteData> stops = new List<RouteData>();
+            //load the route stops from data base
+            List<RouteData> stops = new List<RouteData>();
 
             //find the truck passed on the ticket id
             //Truck truck = new Truck();  -----Zena: Commented out for debugging purposes
@@ -67,7 +65,7 @@ namespace Transport_Management_System_WPF
             // Calculate how much distance is left for the truck's delivery. 
             while (true)
             {
-                current = routes[i];
+                current = stops[i];
 
                 DriveTime -= current.PickupTime;
                 StopTime -= current.PickupTime;
@@ -89,9 +87,8 @@ namespace Transport_Management_System_WPF
             }
 
             //update the truck location in the data base
-            truck.CurrentCityID = current.CityA;
+            //truck.CurrentCityID = current.CityA;
 
-         
         }
     }
 }
