@@ -1,6 +1,6 @@
 ﻿// ADMIN FILE HEADER COMMENT: =================================================================================
 /**
- *  \file		Admin.cs
+ *  \file		PlannerClass.cs
  *  \ingroup	TMS
  *  \date		November 20, 2019
  *  \author		8000 Cigarettes - Megan
@@ -56,7 +56,7 @@ namespace Transport_Management_System_WPF
 
     public struct Trip_Ticket_Line
     {
-        public Trip_Ticket Ticket;
+        public Trip_Ticket Ticket; ///The ticket for this order
         public RouteData Route;
         public DateTime Date_Added;
     }
