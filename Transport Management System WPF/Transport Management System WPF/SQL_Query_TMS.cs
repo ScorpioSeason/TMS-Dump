@@ -1,5 +1,5 @@
 ﻿// ADMIN FILE HEADER COMMENT: =================================================================================
-/**
+/*
  *  \file		Admin.cs
  *  \ingroup	TMS
  *  \date		November 20, 2019
@@ -31,7 +31,7 @@ using TMSwPages;
 namespace Transport_Management_System_WPF
 {
     // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
-    /**   
+    /*
     *   \class		Admin
     *   \brief		This class runs the Admin UI functionality
     *   \details	... static class?  
@@ -46,7 +46,7 @@ namespace Transport_Management_System_WPF
         private string password;
 
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
-        /**
+        /*
         *	\fn			int Square()
         *	\brief		To create a new Square by validating or else defaulting new values
         *	\details	THis is if you have more to say about what the function does and don't want to inline comment
@@ -64,7 +64,7 @@ namespace Transport_Management_System_WPF
         }
 
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
-        /**
+        /*
         *	\fn			int Square()
         *	\brief		To create a new Square by validating or else defaulting new values
         *	\details	THis is if you have more to say about what the function does and don't want to inline comment
@@ -160,7 +160,7 @@ namespace Transport_Management_System_WPF
         }
 
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
-        /**
+        /*
         *	\fn			int Square()
         *	\brief		To create a new Square by validating or else defaulting new values
         *	\details	THis is if you have more to say about what the function does and don't want to inline comment
