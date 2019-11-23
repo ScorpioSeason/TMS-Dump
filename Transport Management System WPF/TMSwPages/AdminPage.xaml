@@ -21,7 +21,7 @@
         </Grid.RowDefinitions>
 
         <!--This is the user menu allowing help or navigation-->
-        <Menu Name="myMenu" Grid.Row ="0" IsMainMenu="True" VerticalAlignment="Top">
+        <Menu Name="AdminMenu" Grid.Row ="0" IsMainMenu="True" VerticalAlignment="Top">
 
             <!-- File Menu: Open, New, Save As, Close -->
             <MenuItem Header="Admin">

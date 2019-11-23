@@ -27,29 +27,23 @@ namespace TMSwPages
 
         private void AdminClick(object sender, RoutedEventArgs e)
         {
-            //if (LogsList.SelectedItem != null)
-            //{
-                ViewLogDetails newpage = new ViewLogDetails(/*this.LogsList.SelectedItem*/);
-                this.NavigationService.Navigate(newpage);
-            //}
+            AdminPage newpage = new AdminPage();
+            this.NavigationService.Navigate(newpage);
+
         }
 
         private void BuyerClick(object sender, RoutedEventArgs e)
         {
-            //if (LogsList.SelectedItem != null)
-            //{
-                ViewLogDetails newpage = new ViewLogDetails(/*this.LogsList.SelectedItem*/);
-                this.NavigationService.Navigate(newpage);
-            //}
+            BuyerPage newpage = new BuyerPage();
+            this.NavigationService.Navigate(newpage);
+
         }
 
         private void PlannerClick(object sender, RoutedEventArgs e)
         {
-            //if (LogsList.SelectedItem != null)
-            //{
-                ViewLogDetails newpage = new ViewLogDetails(/*this.LogsList.SelectedItem*/);
-                this.NavigationService.Navigate(newpage);
-            //}
+            PlannerPage newpage = new PlannerPage();
+            this.NavigationService.Navigate(newpage);
+
         }
 
     }
