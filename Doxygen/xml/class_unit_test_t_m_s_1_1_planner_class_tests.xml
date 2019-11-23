@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_unit_test_t_m_s_1_1_planner_class_tests" kind="class" language="C#" prot="public">
+    <compoundname>UnitTestTMS::PlannerClassTests</compoundname>
+    <innerclass refid="struct_unit_test_t_m_s_1_1_planner_class_tests_1_1_testing_contract" prot="private">UnitTestTMS::PlannerClassTests::TestingContract</innerclass>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_unit_test_t_m_s_1_1_planner_class_tests_1a4e31ac6e504b4945b97e4714d1bc4606" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void UnitTestTMS.PlannerClassTests.GetTravelData1</definition>
+        <argsstring>()</argsstring>
+        <name>GetTravelData1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/PlannerClassTests.cs" line="33" column="21" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/PlannerClassTests.cs" bodystart="33" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="class_unit_test_t_m_s_1_1_planner_class_tests_1a0d2b84ddbfaca55d9c6f9fc0e7106531" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void UnitTestTMS.PlannerClassTests.GetTravelData2</definition>
+        <argsstring>()</argsstring>
+        <name>GetTravelData2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/PlannerClassTests.cs" line="54" column="21" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/PlannerClassTests.cs" bodystart="54" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="class_unit_test_t_m_s_1_1_planner_class_tests_1ab7dbb9d628468b0319d811bacd84ccaf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void UnitTestTMS.PlannerClassTests.GetTravelData3</definition>
+        <argsstring>()</argsstring>
+        <name>GetTravelData3</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/PlannerClassTests.cs" line="75" column="21" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/PlannerClassTests.cs" bodystart="75" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="class_unit_test_t_m_s_1_1_planner_class_tests_1a405b9fa55b3a649112562752bf61f32d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void UnitTestTMS.PlannerClassTests.routCalc3</definition>
+        <argsstring>()</argsstring>
+        <name>routCalc3</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/PlannerClassTests.cs" line="94" column="21" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/PlannerClassTests.cs" bodystart="94" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="class_unit_test_t_m_s_1_1_planner_class_tests_1acb075973e51f35b42679b0e836c96807" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void UnitTestTMS.PlannerClassTests.routCalc4</definition>
+        <argsstring>()</argsstring>
+        <name>routCalc4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/PlannerClassTests.cs" line="124" column="21" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/PlannerClassTests.cs" bodystart="124" bodyend="171"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This class will run a suite of test for the planner class. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>See the test plan document attached to this milestone.</para>
+<para><hruler/>
+ </para>
+    </detaileddescription>
+    <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/PlannerClassTests.cs" line="29" column="1" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/PlannerClassTests.cs" bodystart="28" bodyend="172"/>
+    <listofallmembers>
+      <member refid="class_unit_test_t_m_s_1_1_planner_class_tests_1a4e31ac6e504b4945b97e4714d1bc4606" prot="public" virt="non-virtual"><scope>UnitTestTMS::PlannerClassTests</scope><name>GetTravelData1</name></member>
+      <member refid="class_unit_test_t_m_s_1_1_planner_class_tests_1a0d2b84ddbfaca55d9c6f9fc0e7106531" prot="public" virt="non-virtual"><scope>UnitTestTMS::PlannerClassTests</scope><name>GetTravelData2</name></member>
+      <member refid="class_unit_test_t_m_s_1_1_planner_class_tests_1ab7dbb9d628468b0319d811bacd84ccaf" prot="public" virt="non-virtual"><scope>UnitTestTMS::PlannerClassTests</scope><name>GetTravelData3</name></member>
+      <member refid="class_unit_test_t_m_s_1_1_planner_class_tests_1a405b9fa55b3a649112562752bf61f32d" prot="public" virt="non-virtual"><scope>UnitTestTMS::PlannerClassTests</scope><name>routCalc3</name></member>
+      <member refid="class_unit_test_t_m_s_1_1_planner_class_tests_1acb075973e51f35b42679b0e836c96807" prot="public" virt="non-virtual"><scope>UnitTestTMS::PlannerClassTests</scope><name>routCalc4</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

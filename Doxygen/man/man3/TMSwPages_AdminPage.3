@@ -1,14 +1,14 @@
-.TH "TMSwPages::AdminPage" 3 "Fri Nov 22 2019" "Version 3.0" "TMS Project - 8000 Ciggies" \" -*- nroff -*-
+.TH "TMSwPages::AdminPage" 3 "Fri Nov 22 2019" "Version 3.0" "TMS Project - 8000 Cigs" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-TMSwPages::AdminPage \- This class runs the \fBAdminPage\fP UI functionality\&.  
+TMSwPages::AdminPage \- \fBAdminPage\fP  
 
 .SH SYNOPSIS
 .br
 .PP
 .PP
-Inherits Page\&.
+Inherits Page, IComponentConnector, Page, IComponentConnector, and Page\&.
 .SS "Private Member Functions"
 
 .in +1c
@@ -40,6 +40,20 @@ Inherits Page\&.
 .RI "
 .br
  "
+.ti -1c
+.RI "public void \fBInitializeComponent\fP ()"
+.br
+.RI "InitializeComponent "
+.ti -1c
+.RI "void System Windows Markup IComponentConnector \fBConnect\fP (int connectionId, object target)"
+.br
+.ti -1c
+.RI "public void \fBInitializeComponent\fP ()"
+.br
+.RI "InitializeComponent "
+.ti -1c
+.RI "void System Windows Markup IComponentConnector \fBConnect\fP (int connectionId, object target)"
+.br
 .in -1c
 .SS "Private Attributes"
 
@@ -47,11 +61,73 @@ Inherits Page\&.
 .ti -1c
 .RI "List< \fBTMSLog\fP > \fBsearchResults\fP = new List<\fBTMSLog\fP>()"
 .br
+.ti -1c
+.RI "internal System Windows \fBControls\fP Grid \fBOuterGrid\fP"
+.br
+.ti -1c
+.RI "internal System Windows \fBControls\fP RowDefinition \fBTopMenu\fP"
+.br
+.ti -1c
+.RI "internal System Windows \fBControls\fP RowDefinition \fBTabs\fP"
+.br
+.ti -1c
+.RI "internal System Windows \fBControls\fP RowDefinition \fBStatusBar\fP"
+.br
+.ti -1c
+.RI "internal System Windows \fBControls\fP Menu \fBmyMenu\fP"
+.br
+.ti -1c
+.RI "internal System Windows \fBControls\fP TabItem \fBLogs\fP"
+.br
+.ti -1c
+.RI "internal System Windows \fBControls\fP Grid \fBInnerGrid\fP"
+.br
+.ti -1c
+.RI "internal System Windows Controls RowDefinition \fBControls\fP"
+.br
+.ti -1c
+.RI "internal System Windows \fBControls\fP RowDefinition \fBMain\fP"
+.br
+.ti -1c
+.RI "internal System Windows \fBControls\fP RowDefinition \fBButtons\fP"
+.br
+.ti -1c
+.RI "internal System Windows \fBControls\fP ComboBox \fBTime_Period\fP"
+.br
+.ti -1c
+.RI "internal System Windows \fBControls\fP TextBox \fBsearchTags\fP"
+.br
+.ti -1c
+.RI "internal System Windows \fBControls\fP DataGrid \fBLogsList\fP"
+.br
+.ti -1c
+.RI "internal System Windows \fBControls\fP TabItem \fBBackups\fP"
+.br
+.ti -1c
+.RI "internal System Windows \fBControls\fP TabItem \fBCarrier_Data\fP"
+.br
+.ti -1c
+.RI "internal System Windows \fBControls\fP TabItem \fBRoute_Table\fP"
+.br
+.ti -1c
+.RI "internal System Windows \fBControls\fP TabItem \fBRate_Fee_Tables\fP"
+.br
+.ti -1c
+.RI "internal System Windows \fBControls\fP Primitives StatusBarItem \fBstatusItem\fP"
+.br
+.ti -1c
+.RI "internal System Windows \fBControls\fP TextBlock \fBstatus\fP"
+.br
+.ti -1c
+.RI "private bool \fB_contentLoaded\fP"
+.br
 .in -1c
 .SH "Detailed Description"
 .PP 
-This class runs the \fBAdminPage\fP UI functionality\&. 
+\fBAdminPage\fP 
 
+This class runs the \fBAdminPage\fP UI functionality\&.
+.PP
 This currently allows searching and updating of a local log list which is displayed to the screen\&. 
 .br
 .PP
@@ -73,6 +149,10 @@ Instantiates the \fBAdminPage\fP
  
 .SH "Member Function Documentation"
 .PP 
+.SS "void System Windows Markup IComponentConnector TMSwPages::AdminPage::Connect (int connectionId, object target)\fC [private]\fP"
+
+.SS "void System Windows Markup IComponentConnector TMSwPages::AdminPage::Connect (int connectionId, object target)\fC [private]\fP"
+
 .SS "private void TMSwPages::AdminPage::DatePicker_SelectedDateChanged (object sender, SelectionChangedEventArgs e)\fC [private]\fP"
 
 .PP
@@ -97,6 +177,14 @@ Instantiates the \fBAdminPage\fP
 .PP
 .PP
  
+.SS "public void TMSwPages::AdminPage::InitializeComponent ()\fC [private]\fP"
+
+.PP
+InitializeComponent 
+.SS "public void TMSwPages::AdminPage::InitializeComponent ()\fC [private]\fP"
+
+.PP
+InitializeComponent 
 .SS "private void TMSwPages::AdminPage::LoadClick (object sender, RoutedEventArgs e)\fC [private]\fP"
 
 .PP
@@ -195,9 +283,49 @@ void
  
 .SH "Member Data Documentation"
 .PP 
+.SS "private bool TMSwPages::AdminPage::_contentLoaded\fC [private]\fP"
+
+.SS "internal System Windows \fBControls\fP TabItem TMSwPages::AdminPage::Backups\fC [private]\fP"
+
+.SS "internal System Windows \fBControls\fP RowDefinition TMSwPages::AdminPage::Buttons\fC [private]\fP"
+
+.SS "internal System Windows \fBControls\fP TabItem TMSwPages::AdminPage::Carrier_Data\fC [private]\fP"
+
+.SS "internal System Windows Controls RowDefinition TMSwPages::AdminPage::Controls\fC [private]\fP"
+
+.SS "internal System Windows \fBControls\fP Grid TMSwPages::AdminPage::InnerGrid\fC [private]\fP"
+
+.SS "internal System Windows \fBControls\fP TabItem TMSwPages::AdminPage::Logs\fC [private]\fP"
+
+.SS "internal System Windows \fBControls\fP DataGrid TMSwPages::AdminPage::LogsList\fC [private]\fP"
+
+.SS "internal System Windows \fBControls\fP RowDefinition TMSwPages::AdminPage::Main\fC [private]\fP"
+
+.SS "internal System Windows \fBControls\fP Menu TMSwPages::AdminPage::myMenu\fC [private]\fP"
+
+.SS "internal System Windows \fBControls\fP Grid TMSwPages::AdminPage::OuterGrid\fC [private]\fP"
+
+.SS "internal System Windows \fBControls\fP TabItem TMSwPages::AdminPage::Rate_Fee_Tables\fC [private]\fP"
+
+.SS "internal System Windows \fBControls\fP TabItem TMSwPages::AdminPage::Route_Table\fC [private]\fP"
+
 .SS "List<\fBTMSLog\fP> TMSwPages::AdminPage::searchResults = new List<\fBTMSLog\fP>()\fC [private]\fP"
+
+.SS "internal System Windows \fBControls\fP TextBox TMSwPages::AdminPage::searchTags\fC [private]\fP"
+
+.SS "internal System Windows \fBControls\fP TextBlock TMSwPages::AdminPage::status\fC [private]\fP"
+
+.SS "internal System Windows \fBControls\fP RowDefinition TMSwPages::AdminPage::StatusBar\fC [private]\fP"
+
+.SS "internal System Windows \fBControls\fP Primitives StatusBarItem TMSwPages::AdminPage::statusItem\fC [private]\fP"
+
+.SS "internal System Windows \fBControls\fP RowDefinition TMSwPages::AdminPage::Tabs\fC [private]\fP"
+
+.SS "internal System Windows \fBControls\fP ComboBox TMSwPages::AdminPage::Time_Period\fC [private]\fP"
+
+.SS "internal System Windows \fBControls\fP RowDefinition TMSwPages::AdminPage::TopMenu\fC [private]\fP"
 
 
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for TMS Project - 8000 Ciggies from the source code\&.
+Generated automatically by Doxygen for TMS Project - 8000 Cigs from the source code\&.

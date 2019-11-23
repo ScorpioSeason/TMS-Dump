@@ -1,4 +1,4 @@
-.TH "TMSwPages.TMSLogger" 3 "Fri Nov 22 2019" "Version 3.0" "TMS Project - 8000 Ciggies" \" -*- nroff -*-
+.TH "TMSwPages.TMSLogger" 3 "Fri Nov 22 2019" "Version 3.0" "TMS Project - 8000 Cigs" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -25,7 +25,18 @@ TMSwPages.TMSLogger \- This class runs the logging functionality for all files i
 .ti -1c
 .RI "static bool \fBAppendLogFile\fP (\fBTMSLog\fP newLog)"
 .br
-.RI "Writes new logs into a file\&. "
+.ti -1c
+.RI "static void \fBLogIt\fP (string newLogString)"
+.br
+.ti -1c
+.RI "static void \fBNewLog\fP (string newLogString)"
+.br
+.ti -1c
+.RI "static bool \fBReadExistingLogFile\fP ()"
+.br
+.ti -1c
+.RI "static bool \fBAppendLogFile\fP (\fBTMSLog\fP newLog)"
+.br
 .in -1c
 .SS "Static Public Attributes"
 
@@ -49,6 +60,9 @@ TMSwPages.TMSLogger \- This class runs the logging functionality for all files i
 .RI "static void \fBChangeLogLocation\fP ()"
 .br
 .RI "This function will change where the log file is stored\&. "
+.ti -1c
+.RI "static void \fBChangeLogLocation\fP ()"
+.br
 .in -1c
 .SH "Detailed Description"
 .PP 
@@ -60,28 +74,18 @@ This is a static class containing a list of logs and the methods to create new l
  
 .SH "Member Function Documentation"
 .PP 
-.SS "static public bool TMSwPages\&.TMSLogger\&.AppendLogFile (\fBTMSLog\fP newLog)\fC [static]\fP"
-
+.SS "static bool TMSwPages\&.TMSLogger\&.AppendLogFile (\fBTMSLog\fP newLog)\fC [static]\fP"
+Open the filestream to append to the file\&.
 .PP
-Writes new logs into a file\&. This writes individual logs into the file specified by the loggerPath variable\&. If there is an error, it throws an exception to a new log\&. 
+Add each log entry from the working list to the file as a BSV
 .PP
-\fBExceptions\fP
-.RS 4
-\fIFrom\fP FileStream and StreamWriter 
-.RE
+Close the file
 .PP
-\fBSee also\fP
-.RS 4
-\fBLogIt()\fP 
-.RE
+If an exception is thrown here, catch it
 .PP
-\fBReturns\fP
-.RS 4
-bool appendSuccess A value indicating whether the file write threw an exception\&.
-.RE
-.PP
-.PP
- Open the filestream to append to the file\&.
+This could become problematic as it calls itself
+.SS "static bool TMSwPages\&.TMSLogger\&.AppendLogFile (\fBTMSLog\fP newLog)\fC [static]\fP"
+Open the filestream to append to the file\&.
 .PP
 Add each log entry from the working list to the file as a BSV
 .PP
@@ -114,6 +118,8 @@ Void
 .PP
 .PP
  
+.SS "static void TMSwPages\&.TMSLogger\&.ChangeLogLocation ()\fC [static]\fP, \fC [private]\fP"
+
 .SS "static public void TMSwPages\&.TMSLogger\&.LogIt (string newLogString)\fC [static]\fP"
 
 .PP
@@ -138,6 +144,8 @@ void
 .PP
 .PP
  Error writing to Log File: Try once again
+.SS "static void TMSwPages\&.TMSLogger\&.LogIt (string newLogString)\fC [static]\fP"
+Error writing to Log File: Try once again
 .SS "static public void TMSwPages\&.TMSLogger\&.NewLog (string newLogString)\fC [static]\fP"
 
 .PP
@@ -160,6 +168,8 @@ void
 .PP
 .PP
  
+.SS "static void TMSwPages\&.TMSLogger\&.NewLog (string newLogString)\fC [static]\fP"
+
 .SS "static public bool TMSwPages\&.TMSLogger\&.ReadExistingLogFile ()\fC [static]\fP"
 
 .PP
@@ -190,17 +200,27 @@ Fill the working list with lines from the file
 Close the file
 .PP
 If an exception is thrown here, create a log for it\&.
+.SS "static bool TMSwPages\&.TMSLogger\&.ReadExistingLogFile ()\fC [static]\fP"
+Clear out the working list
+.PP
+Open the file stream to read from the file
+.PP
+Fill the working list with lines from the file
+.PP
+Close the file
+.PP
+If an exception is thrown here, create a log for it\&.
 .SH "Member Data Documentation"
 .PP 
-.SS "List<\fBTMSLog\fP> TMSwPages\&.TMSLogger\&.logs = new List<\fBTMSLog\fP>()\fC [static]\fP"
+.SS "static List< \fBTMSLog\fP > TMSwPages\&.TMSLogger\&.logs = new List<\fBTMSLog\fP>()\fC [static]\fP"
 
 .PP
 Stores location of the log file\&. 
 .SH "Property Documentation"
 .PP 
-.SS "string TMSwPages\&.TMSLogger\&.LoggerPath\fC [static]\fP, \fC [get]\fP, \fC [set]\fP, \fC [private]\fP"
+.SS "static string TMSwPages\&.TMSLogger\&.LoggerPath\fC [static]\fP, \fC [get]\fP, \fC [set]\fP"
 
 
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for TMS Project - 8000 Ciggies from the source code\&.
+Generated automatically by Doxygen for TMS Project - 8000 Cigs from the source code\&.

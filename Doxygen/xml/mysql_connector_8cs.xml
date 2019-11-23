@@ -5,11 +5,23 @@
     <innerclass refid="class_transport___management___system___w_p_f_1_1mysql_connector" prot="public">Transport_Management_System_WPF::mysqlConnector</innerclass>
     <innernamespace refid="namespace_transport___management___system___w_p_f">Transport_Management_System_WPF</innernamespace>
     <briefdescription>
+<para>This file contains the admin functionality <linebreak/>
+ </para>
     </briefdescription>
     <detaileddescription>
+<para><simplesect kind="date"><para>November 20, 2019 </para>
+</simplesect>
+<simplesect kind="author"><para>8000 Cigarettes - Megan </para>
+</simplesect>
+<simplesect kind="see"><para>MainWindow.xaml</para>
+</simplesect>
+This file holds the functionality of the Admin class. The Admin has the ability to view logs as specified by time period, view details of specific logs, alter where the log files are stored, initiate backups of the TMS database, choose where the TMS db is backed up to, alter the Carrier Data Table, the Route Table, and the Rate / Fee Tables. <linebreak/>
+</para>
+<para><hruler/>
+ </para>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1"><highlight class="comment">//<sp/>ADMIN<sp/>FILE<sp/>HEADER<sp/>COMMENT:<sp/>=================================================================================</highlight></codeline>
+<codeline lineno="1"><highlight class="comment">//<sp/>mysqlConnector<sp/>FILE<sp/>HEADER<sp/>COMMENT:<sp/>=================================================================================</highlight></codeline>
 <codeline lineno="16"><highlight class="comment"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>System;</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>System.Collections.Generic;</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>System.Linq;</highlight></codeline>

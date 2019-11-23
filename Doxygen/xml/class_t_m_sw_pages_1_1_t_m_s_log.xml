@@ -3,9 +3,9 @@
   <compounddef id="class_t_m_sw_pages_1_1_t_m_s_log" kind="class" language="C#" prot="public">
     <compoundname>TMSwPages::TMSLog</compoundname>
       <sectiondef kind="property">
-      <memberdef kind="property" id="class_t_m_sw_pages_1_1_t_m_s_log_1a5692db4f00e1e7d73a6dc266cfcf9150" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+      <memberdef kind="property" id="class_t_m_sw_pages_1_1_t_m_s_log_1a73ddb0bd8fd9f180a64cf9bd60cbdcbc" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>string</type>
-        <definition>string TMSwPages.TMSLog.logPath</definition>
+        <definition>string TMSwPages.TMSLog::logPath</definition>
         <argsstring></argsstring>
         <name>logPath</name>
         <briefdescription>
@@ -15,11 +15,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" line="249" column="23" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" bodystart="249" bodyend="249"/>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" line="249" column="23" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" bodystart="249" bodyend="249"/>
       </memberdef>
-      <memberdef kind="property" id="class_t_m_sw_pages_1_1_t_m_s_log_1a80193fb90a1d3607eab8ffbef0ed4c0e" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+      <memberdef kind="property" id="class_t_m_sw_pages_1_1_t_m_s_log_1a75eef8a95a889fbdaa91108eb36616f8" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>string</type>
-        <definition>string TMSwPages.TMSLog.logClass</definition>
+        <definition>string TMSwPages.TMSLog::logClass</definition>
         <argsstring></argsstring>
         <name>logClass</name>
         <briefdescription>
@@ -28,11 +28,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" line="250" column="23" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" bodystart="250" bodyend="250"/>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" line="250" column="23" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" bodystart="250" bodyend="250"/>
       </memberdef>
-      <memberdef kind="property" id="class_t_m_sw_pages_1_1_t_m_s_log_1a57a4d82c2166156ac0e10a24f9e59626" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+      <memberdef kind="property" id="class_t_m_sw_pages_1_1_t_m_s_log_1a4737e680e5065cca97a9126366f6c45b" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>string</type>
-        <definition>string TMSwPages.TMSLog.logMethod</definition>
+        <definition>string TMSwPages.TMSLog::logMethod</definition>
         <argsstring></argsstring>
         <name>logMethod</name>
         <briefdescription>
@@ -41,11 +41,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" line="251" column="23" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" bodystart="251" bodyend="251"/>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" line="251" column="23" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" bodystart="251" bodyend="251"/>
       </memberdef>
-      <memberdef kind="property" id="class_t_m_sw_pages_1_1_t_m_s_log_1a344ecbae9fa05e58776252b4373a9991" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+      <memberdef kind="property" id="class_t_m_sw_pages_1_1_t_m_s_log_1a96c4b0ad4d89080acfea990ded895990" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>string</type>
-        <definition>string TMSwPages.TMSLog.logType</definition>
+        <definition>string TMSwPages.TMSLog::logType</definition>
         <argsstring></argsstring>
         <name>logType</name>
         <briefdescription>
@@ -54,11 +54,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" line="252" column="23" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" bodystart="252" bodyend="252"/>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" line="252" column="23" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" bodystart="252" bodyend="252"/>
       </memberdef>
-      <memberdef kind="property" id="class_t_m_sw_pages_1_1_t_m_s_log_1a84112bcd37e5edde679811c354f2f56e" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+      <memberdef kind="property" id="class_t_m_sw_pages_1_1_t_m_s_log_1a8c2f5627d9867c65b384fcb9c112e870" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>string</type>
-        <definition>string TMSwPages.TMSLog.logMessage</definition>
+        <definition>string TMSwPages.TMSLog::logMessage</definition>
         <argsstring></argsstring>
         <name>logMessage</name>
         <briefdescription>
@@ -67,11 +67,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" line="253" column="23" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" bodystart="253" bodyend="253"/>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" line="253" column="23" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" bodystart="253" bodyend="253"/>
       </memberdef>
-      <memberdef kind="property" id="class_t_m_sw_pages_1_1_t_m_s_log_1a43041fce2109d76941f63cf87838cd00" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+      <memberdef kind="property" id="class_t_m_sw_pages_1_1_t_m_s_log_1ad019d775d3aa5dab214b38e2c7649d9e" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>string</type>
-        <definition>string TMSwPages.TMSLog.BSV</definition>
+        <definition>string TMSwPages.TMSLog::BSV</definition>
         <argsstring></argsstring>
         <name>BSV</name>
         <briefdescription>
@@ -80,11 +80,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" line="254" column="23" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" bodystart="254" bodyend="254"/>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" line="254" column="23" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" bodystart="254" bodyend="254"/>
       </memberdef>
-      <memberdef kind="property" id="class_t_m_sw_pages_1_1_t_m_s_log_1ab25ce67e4bb189707d32db0b6b455584" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+      <memberdef kind="property" id="class_t_m_sw_pages_1_1_t_m_s_log_1a5915525c995d3de3adbffb989fd5d57c" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>DateTime</type>
-        <definition>DateTime TMSwPages.TMSLog.logTime</definition>
+        <definition>DateTime TMSwPages.TMSLog::logTime</definition>
         <argsstring></argsstring>
         <name>logTime</name>
         <briefdescription>
@@ -94,7 +94,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" line="255" column="25" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" bodystart="255" bodyend="255"/>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" line="255" column="25" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" bodystart="255" bodyend="255"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -132,6 +132,26 @@
 <para>Used in reading in from a file</para>
 <para>Used in formatting error</para>
         </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" line="269" column="16" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" bodystart="269" bodyend="306"/>
+      </memberdef>
+      <memberdef kind="function" id="class_t_m_sw_pages_1_1_t_m_s_log_1a57526906372d1c9daf1b0a92cc760463" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>TMSwPages.TMSLog.TMSLog</definition>
+        <argsstring>(string nUnparsed)</argsstring>
+        <name>TMSLog</name>
+        <param>
+          <type>string</type>
+          <declname>nUnparsed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Used in Logger / LogIt call</para>
+<para>Used in reading in from a file</para>
+<para>Used in formatting error</para>
+        </inbodydescription>
         <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" line="269" column="16" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" bodystart="269" bodyend="306"/>
       </memberdef>
       </sectiondef>
@@ -143,16 +163,17 @@
 <para><hruler/>
  </para>
     </detaileddescription>
-    <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" line="247" column="1" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" bodystart="246" bodyend="308"/>
+    <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" line="247" column="1" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" bodystart="246" bodyend="308"/>
     <listofallmembers>
-      <member refid="class_t_m_sw_pages_1_1_t_m_s_log_1a43041fce2109d76941f63cf87838cd00" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLog</scope><name>BSV</name></member>
-      <member refid="class_t_m_sw_pages_1_1_t_m_s_log_1a80193fb90a1d3607eab8ffbef0ed4c0e" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLog</scope><name>logClass</name></member>
-      <member refid="class_t_m_sw_pages_1_1_t_m_s_log_1a84112bcd37e5edde679811c354f2f56e" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLog</scope><name>logMessage</name></member>
-      <member refid="class_t_m_sw_pages_1_1_t_m_s_log_1a57a4d82c2166156ac0e10a24f9e59626" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLog</scope><name>logMethod</name></member>
-      <member refid="class_t_m_sw_pages_1_1_t_m_s_log_1a5692db4f00e1e7d73a6dc266cfcf9150" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLog</scope><name>logPath</name></member>
-      <member refid="class_t_m_sw_pages_1_1_t_m_s_log_1ab25ce67e4bb189707d32db0b6b455584" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLog</scope><name>logTime</name></member>
-      <member refid="class_t_m_sw_pages_1_1_t_m_s_log_1a344ecbae9fa05e58776252b4373a9991" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLog</scope><name>logType</name></member>
+      <member refid="class_t_m_sw_pages_1_1_t_m_s_log_1ad019d775d3aa5dab214b38e2c7649d9e" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLog</scope><name>BSV</name></member>
+      <member refid="class_t_m_sw_pages_1_1_t_m_s_log_1a75eef8a95a889fbdaa91108eb36616f8" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLog</scope><name>logClass</name></member>
+      <member refid="class_t_m_sw_pages_1_1_t_m_s_log_1a8c2f5627d9867c65b384fcb9c112e870" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLog</scope><name>logMessage</name></member>
+      <member refid="class_t_m_sw_pages_1_1_t_m_s_log_1a4737e680e5065cca97a9126366f6c45b" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLog</scope><name>logMethod</name></member>
+      <member refid="class_t_m_sw_pages_1_1_t_m_s_log_1a73ddb0bd8fd9f180a64cf9bd60cbdcbc" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLog</scope><name>logPath</name></member>
+      <member refid="class_t_m_sw_pages_1_1_t_m_s_log_1a5915525c995d3de3adbffb989fd5d57c" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLog</scope><name>logTime</name></member>
+      <member refid="class_t_m_sw_pages_1_1_t_m_s_log_1a96c4b0ad4d89080acfea990ded895990" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLog</scope><name>logType</name></member>
       <member refid="class_t_m_sw_pages_1_1_t_m_s_log_1a39979ea10bff721dbe7a2cd291e2a425" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLog</scope><name>TMSLog</name></member>
+      <member refid="class_t_m_sw_pages_1_1_t_m_s_log_1a57526906372d1c9daf1b0a92cc760463" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLog</scope><name>TMSLog</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

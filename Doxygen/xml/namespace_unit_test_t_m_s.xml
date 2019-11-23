@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="namespace_unit_test_t_m_s" kind="namespace" language="C#">
+    <compoundname>UnitTestTMS</compoundname>
+    <innerclass refid="class_unit_test_t_m_s_1_1_planner_class_tests" prot="public">UnitTestTMS::PlannerClassTests</innerclass>
+    <innerclass refid="class_unit_test_t_m_s_1_1_unit_test2" prot="public">UnitTestTMS::UnitTest2</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/PlannerClassTests.cs" line="19" column="1"/>
+  </compounddef>
+</doxygen>

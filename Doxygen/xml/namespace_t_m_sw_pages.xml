@@ -3,14 +3,22 @@
   <compounddef id="namespace_t_m_sw_pages" kind="namespace" language="C#">
     <compoundname>TMSwPages</compoundname>
     <innerclass refid="class_t_m_sw_pages_1_1_admin" prot="public">TMSwPages::Admin</innerclass>
+    <innerclass refid="class_t_m_sw_pages_1_1_admin_page" prot="public">TMSwPages::AdminPage</innerclass>
     <innerclass refid="class_t_m_sw_pages_1_1_alter_tables" prot="public">TMSwPages::AlterTables</innerclass>
+    <innerclass refid="class_t_m_sw_pages_1_1_app" prot="public">TMSwPages::App</innerclass>
     <innerclass refid="class_t_m_sw_pages_1_1_backup_t_m_s" prot="public">TMSwPages::BackupTMS</innerclass>
+    <innerclass refid="class_t_m_sw_pages_1_1_main_window" prot="public">TMSwPages::MainWindow</innerclass>
+    <innerclass refid="class_t_m_sw_pages_1_1_page1" prot="public">TMSwPages::Page1</innerclass>
+    <innerclass refid="class_t_m_sw_pages_1_1_page2" prot="public">TMSwPages::Page2</innerclass>
     <innerclass refid="class_t_m_sw_pages_1_1_t_m_s_log" prot="public">TMSwPages::TMSLog</innerclass>
     <innerclass refid="class_t_m_sw_pages_1_1_t_m_s_logger" prot="public">TMSwPages::TMSLogger</innerclass>
+    <innerclass refid="class_t_m_sw_pages_1_1_view_log_details" prot="public">TMSwPages::ViewLogDetails</innerclass>
+    <innerclass refid="class_t_m_sw_pages_1_1_view_log_details_page" prot="public">TMSwPages::ViewLogDetailsPage</innerclass>
+    <innernamespace refid="namespace_t_m_sw_pages_1_1_properties">TMSwPages::Properties</innernamespace>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" line="25" column="1"/>
+    <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" line="25" column="1"/>
   </compounddef>
 </doxygen>

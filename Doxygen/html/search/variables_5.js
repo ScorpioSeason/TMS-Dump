@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['is_5fcomplete_225',['Is_Complete',['../struct_transport___management___system___w_p_f_1_1_trip___ticket.html#a478f4ac1e28bf46a22e1765d96dada0b',1,'Transport_Management_System_WPF::Trip_Ticket']]],
-  ['is_5freefer_226',['Is_Reefer',['../struct_transport___management___system___w_p_f_1_1_trip___ticket.html#a027a527cbc51146bd409a8b2f188156d',1,'Transport_Management_System_WPF.Trip_Ticket.Is_Reefer()'],['../struct_transport___management___system___w_p_f_1_1_truck.html#a19d9ffdc88f86af4a2dcd36d8a490daf',1,'Transport_Management_System_WPF.Truck.Is_Reefer()']]]
+  ['free_5fspace_377',['Free_Space',['../struct_transport___management___system___w_p_f_1_1_truck.html#a9bb588a62475d3fffe50338f4ad756d5',1,'Transport_Management_System_WPF::Truck']]],
+  ['ftl_5for_5fltl_378',['FTL_or_LTL',['../struct_transport___management___system___w_p_f_1_1_trip___ticket.html#aedde328df4cc5ee04967a294549e3d53',1,'Transport_Management_System_WPF.Trip_Ticket.FTL_or_LTL()'],['../struct_transport___management___system___w_p_f_1_1_truck.html#a15e0339edac3a7aae1a720bd4d1ae8ca',1,'Transport_Management_System_WPF.Truck.FTL_or_LTL()']]]
 ];

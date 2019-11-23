@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['openconnection_192',['OpenConnection',['../class_transport___management___system___w_p_f_1_1_s_q_l___query.html#a84f129cd23e49a64a4d0a31b7cea2e21',1,'Transport_Management_System_WPF.SQL_Query.OpenConnection()'],['../class_transport___management___system___w_p_f_1_1_s_q_l___query___t_m_s.html#aee1eea15a09e4b889f7f595db573dc85',1,'Transport_Management_System_WPF.SQL_Query_TMS.OpenConnection()']]]
+  ['newlog_321',['NewLog',['../class_t_m_sw_pages_1_1_t_m_s_logger.html#a34e534b54ac36d38c33d7a8cb5abb7c7',1,'TMSwPages.TMSLogger.NewLog(string newLogString)'],['../class_t_m_sw_pages_1_1_t_m_s_logger.html#a949d7d962a3a8f19556a72c610a23340',1,'TMSwPages.TMSLogger.NewLog(string newLogString)']]]
 ];

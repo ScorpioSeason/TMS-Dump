@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['mockentries_230',['MockEntries',['../class_transport___management___system___w_p_f_1_1_mockup_c_m_p.html#afd6226c97b2695951f401d01d4391bd9',1,'Transport_Management_System_WPF::MockupCMP']]]
+  ['logdetails_383',['LogDetails',['../class_t_m_sw_pages_1_1_view_log_details.html#a2e3c1d40cfc4871746cb1868f139a41a',1,'TMSwPages::ViewLogDetails::LogDetails()'],['../class_t_m_sw_pages_1_1_view_log_details_page.html#aa10af9f6751319eeea70479afd758f41',1,'TMSwPages::ViewLogDetailsPage::LogDetails()'],['../class_sample_w_f_p_using_pages_1_1_view_log_details_page.html#afa2669cea590a08a69405763a85a6d7e',1,'SampleWFPUsingPages::ViewLogDetailsPage::LogDetails()']]],
+  ['logs_384',['logs',['../class_t_m_sw_pages_1_1_t_m_s_logger.html#a02bbc48a021dcef462bdc3a2e984b5a6',1,'TMSwPages.TMSLogger.logs()'],['../class_t_m_sw_pages_1_1_admin_page.html#a19237568486eab0ecae40772520ff58f',1,'TMSwPages::AdminPage::Logs()'],['../class_transport___management___system___w_p_f_1_1_admin_page.html#a320ede62396067c1bd237e1a3566f93c',1,'Transport_Management_System_WPF::AdminPage::Logs()']]],
+  ['logslist_385',['LogsList',['../class_t_m_sw_pages_1_1_admin_page.html#aeb6985f8765e01d89d057a38ad879af7',1,'TMSwPages::AdminPage::LogsList()'],['../class_transport___management___system___w_p_f_1_1_admin_page.html#a36f8675d8f0923b35b30cc3c355dc480',1,'Transport_Management_System_WPF::AdminPage::LogsList()']]],
+  ['ltltime_386',['LtlTime',['../struct_transport___management___system___w_p_f_1_1_route_data.html#aac1cdb60d3446d2a2ee8965f11356b72',1,'Transport_Management_System_WPF::RouteData']]]
 ];

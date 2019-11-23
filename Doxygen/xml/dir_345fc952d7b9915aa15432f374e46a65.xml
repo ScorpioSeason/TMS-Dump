@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="dir_345fc952d7b9915aa15432f374e46a65" kind="dir">
+    <compoundname>C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/Properties</compoundname>
+    <innerfile refid="_transport_01_management_01_system_01_w_p_f_2_properties_2_assembly_info_8cs">AssemblyInfo.cs</innerfile>
+    <innerfile refid="_transport_01_management_01_system_01_w_p_f_2_properties_2_resources_8_designer_8cs">Resources.Designer.cs</innerfile>
+    <innerfile refid="_transport_01_management_01_system_01_w_p_f_2_properties_2_settings_8_designer_8cs">Settings.Designer.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/Properties/"/>
+  </compounddef>
+</doxygen>

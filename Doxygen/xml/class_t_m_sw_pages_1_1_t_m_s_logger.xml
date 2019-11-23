@@ -3,9 +3,9 @@
   <compounddef id="class_t_m_sw_pages_1_1_t_m_s_logger" kind="class" language="C#" prot="public">
     <compoundname>TMSwPages::TMSLogger</compoundname>
       <sectiondef kind="property">
-      <memberdef kind="property" id="class_t_m_sw_pages_1_1_t_m_s_logger_1a70ea68270927cee76213ac2329238bf8" prot="private" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+      <memberdef kind="property" id="class_t_m_sw_pages_1_1_t_m_s_logger_1abd17098cd11371b489a998544f09ac74" prot="public" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>string</type>
-        <definition>string TMSwPages.TMSLogger.LoggerPath</definition>
+        <definition>static string TMSwPages.TMSLogger::LoggerPath</definition>
         <argsstring></argsstring>
         <name>LoggerPath</name>
         <briefdescription>
@@ -14,13 +14,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" line="59" column="23" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" bodystart="59" bodyend="59"/>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" line="59" column="30" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" bodystart="59" bodyend="59"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-attrib">
-      <memberdef kind="variable" id="class_t_m_sw_pages_1_1_t_m_s_logger_1a4ba45b1259ce8001fa7a5fddf5fadd46" prot="public" static="yes" mutable="no">
+      <memberdef kind="variable" id="class_t_m_sw_pages_1_1_t_m_s_logger_1a02bbc48a021dcef462bdc3a2e984b5a6" prot="public" static="yes" mutable="no">
         <type>List&lt; <ref refid="class_t_m_sw_pages_1_1_t_m_s_log" kindref="compound">TMSLog</ref> &gt;</type>
-        <definition>List&lt;TMSLog&gt; TMSwPages.TMSLogger.logs</definition>
+        <definition>static List&lt; TMSLog &gt; TMSwPages.TMSLogger::logs</definition>
         <argsstring></argsstring>
         <name>logs</name>
         <initializer>= new List&lt;<ref refid="class_t_m_sw_pages_1_1_t_m_s_log" kindref="compound">TMSLog</ref>&gt;()</initializer>
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" line="60" column="28" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" bodystart="60" bodyend="-1"/>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" line="60" column="28" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" bodystart="60" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -58,7 +58,7 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="see"><para>TMSLog(), logs.Add(), <ref refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a016f771887948d9c8e41908106fac94d" kindref="member">AppendLogFile()</ref> </para>
+<simplesect kind="see"><para>TMSLog(), logs.Add(), <ref refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a40f50c4cf1a0cfee17b050a19bea7daf" kindref="member">AppendLogFile()</ref> </para>
 </simplesect>
 <simplesect kind="return"><para>void</para>
 </simplesect>
@@ -68,7 +68,7 @@
         <inbodydescription>
 <para>Error writing to Log File: Try once again</para>
         </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" line="73" column="28" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" bodystart="73" bodyend="83"/>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" line="73" column="28" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" bodystart="73" bodyend="83"/>
       </memberdef>
       <memberdef kind="function" id="class_t_m_sw_pages_1_1_t_m_s_logger_1a34e534b54ac36d38c33d7a8cb5abb7c7" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -101,7 +101,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" line="96" column="28" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" bodystart="96" bodyend="100"/>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" line="96" column="28" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" bodystart="96" bodyend="100"/>
       </memberdef>
       <memberdef kind="function" id="class_t_m_sw_pages_1_1_t_m_s_logger_1a836d54e3a54cfe47be113970676871aa" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -135,11 +135,11 @@
 <para>Close the file</para>
 <para>If an exception is thrown here, create a log for it.</para>
         </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" line="113" column="28" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" bodystart="113" bodyend="150"/>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" line="113" column="28" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" bodystart="113" bodyend="150"/>
       </memberdef>
-      <memberdef kind="function" id="class_t_m_sw_pages_1_1_t_m_s_logger_1a016f771887948d9c8e41908106fac94d" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_t_m_sw_pages_1_1_t_m_s_logger_1a40f50c4cf1a0cfee17b050a19bea7daf" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
-        <definition>static public bool TMSwPages.TMSLogger::AppendLogFile</definition>
+        <definition>static bool TMSwPages.TMSLogger.AppendLogFile</definition>
         <argsstring>(TMSLog newLog)</argsstring>
         <name>AppendLogFile</name>
         <param>
@@ -147,24 +147,83 @@
           <declname>newLog</declname>
         </param>
         <briefdescription>
-<para>Writes new logs into a file. </para>
         </briefdescription>
         <detaileddescription>
-<para>This writes individual logs into the file specified by the loggerPath variable. If there is an error, it throws an exception to a new log. <parameterlist kind="exception"><parameteritem>
-<parameternamelist>
-<parametername>From</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>FileStream and StreamWriter </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="see"><para><ref refid="class_t_m_sw_pages_1_1_t_m_s_logger_1ae3fc46f0a10cbcbe582f57f0ea75cc8d" kindref="member">LogIt()</ref> </para>
-</simplesect>
-<simplesect kind="return"><para>bool appendSuccess A value indicating whether the file write threw an exception.</para>
-</simplesect>
-<hruler/>
- </para>
+        </detaileddescription>
+        <inbodydescription>
+<para>Open the filestream to append to the file.</para>
+<para>Add each log entry from the working list to the file as a BSV</para>
+<para>Close the file</para>
+<para>If an exception is thrown here, catch it</para>
+<para>This could become problematic as it calls itself</para>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" line="163" column="28" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" bodystart="163" bodyend="191"/>
+      </memberdef>
+      <memberdef kind="function" id="class_t_m_sw_pages_1_1_t_m_s_logger_1a81a5353756e6ecd6e51ce79a76196fcc" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void TMSwPages.TMSLogger.LogIt</definition>
+        <argsstring>(string newLogString)</argsstring>
+        <name>LogIt</name>
+        <param>
+          <type>string</type>
+          <declname>newLogString</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Error writing to Log File: Try once again</para>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" line="73" column="28" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" bodystart="73" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="class_t_m_sw_pages_1_1_t_m_s_logger_1a949d7d962a3a8f19556a72c610a23340" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void TMSwPages.TMSLogger.NewLog</definition>
+        <argsstring>(string newLogString)</argsstring>
+        <name>NewLog</name>
+        <param>
+          <type>string</type>
+          <declname>newLogString</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" line="96" column="28" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" bodystart="96" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="class_t_m_sw_pages_1_1_t_m_s_logger_1a78d9152f8fc12fdf370b23f0b787999e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool TMSwPages.TMSLogger.ReadExistingLogFile</definition>
+        <argsstring>()</argsstring>
+        <name>ReadExistingLogFile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Clear out the working list</para>
+<para>Open the file stream to read from the file</para>
+<para>Fill the working list with lines from the file</para>
+<para>Close the file</para>
+<para>If an exception is thrown here, create a log for it.</para>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" line="113" column="28" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" bodystart="113" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="class_t_m_sw_pages_1_1_t_m_s_logger_1a40f50c4cf1a0cfee17b050a19bea7daf" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool TMSwPages.TMSLogger.AppendLogFile</definition>
+        <argsstring>(TMSLog newLog)</argsstring>
+        <name>AppendLogFile</name>
+        <param>
+          <type><ref refid="class_t_m_sw_pages_1_1_t_m_s_log" kindref="compound">TMSLog</ref></type>
+          <declname>newLog</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
         </detaileddescription>
         <inbodydescription>
 <para>Open the filestream to append to the file.</para>
@@ -205,6 +264,19 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" line="205" column="21" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" bodystart="205" bodyend="235"/>
+      </memberdef>
+      <memberdef kind="function" id="class_t_m_sw_pages_1_1_t_m_s_logger_1a4033a43670161f38a4b8fb99b7d39630" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void TMSwPages.TMSLogger.ChangeLogLocation</definition>
+        <argsstring>()</argsstring>
+        <name>ChangeLogLocation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
         <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" line="205" column="21" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" bodystart="205" bodyend="235"/>
       </memberdef>
       </sectiondef>
@@ -216,15 +288,20 @@
 <para><hruler/>
  </para>
     </detaileddescription>
-    <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" line="58" column="1" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/AdminClasses.cs" bodystart="57" bodyend="237"/>
+    <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" line="58" column="1" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/AdminClasses.cs" bodystart="57" bodyend="237"/>
     <listofallmembers>
-      <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a016f771887948d9c8e41908106fac94d" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLogger</scope><name>AppendLogFile</name></member>
+      <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a40f50c4cf1a0cfee17b050a19bea7daf" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLogger</scope><name>AppendLogFile</name></member>
+      <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a40f50c4cf1a0cfee17b050a19bea7daf" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLogger</scope><name>AppendLogFile</name></member>
       <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a3feb70f75cd69696b3355f6deac9cb32" prot="private" virt="non-virtual"><scope>TMSwPages::TMSLogger</scope><name>ChangeLogLocation</name></member>
-      <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a70ea68270927cee76213ac2329238bf8" prot="private" virt="non-virtual"><scope>TMSwPages::TMSLogger</scope><name>LoggerPath</name></member>
+      <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a4033a43670161f38a4b8fb99b7d39630" prot="private" virt="non-virtual"><scope>TMSwPages::TMSLogger</scope><name>ChangeLogLocation</name></member>
+      <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1abd17098cd11371b489a998544f09ac74" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLogger</scope><name>LoggerPath</name></member>
       <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1ae3fc46f0a10cbcbe582f57f0ea75cc8d" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLogger</scope><name>LogIt</name></member>
-      <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a4ba45b1259ce8001fa7a5fddf5fadd46" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLogger</scope><name>logs</name></member>
+      <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a81a5353756e6ecd6e51ce79a76196fcc" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLogger</scope><name>LogIt</name></member>
+      <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a02bbc48a021dcef462bdc3a2e984b5a6" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLogger</scope><name>logs</name></member>
       <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a34e534b54ac36d38c33d7a8cb5abb7c7" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLogger</scope><name>NewLog</name></member>
+      <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a949d7d962a3a8f19556a72c610a23340" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLogger</scope><name>NewLog</name></member>
       <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a836d54e3a54cfe47be113970676871aa" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLogger</scope><name>ReadExistingLogFile</name></member>
+      <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a78d9152f8fc12fdf370b23f0b787999e" prot="public" virt="non-virtual"><scope>TMSwPages::TMSLogger</scope><name>ReadExistingLogFile</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

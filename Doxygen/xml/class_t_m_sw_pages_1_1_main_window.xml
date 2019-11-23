@@ -3,6 +3,27 @@
   <compounddef id="class_t_m_sw_pages_1_1_main_window" kind="class" language="C++" prot="public">
     <compoundname>TMSwPages::MainWindow</compoundname>
     <basecompoundref prot="private" virt="non-virtual">NavigationWindow</basecompoundref>
+    <basecompoundref prot="private" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="private" virt="non-virtual">NavigationWindow</basecompoundref>
+    <basecompoundref prot="private" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="private" virt="non-virtual">NavigationWindow</basecompoundref>
+    <basecompoundref prot="private" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="private" virt="non-virtual">NavigationWindow</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_t_m_sw_pages_1_1_main_window_1a7ac7d28c00ffbca192d0462d9d3b9c9f" prot="private" static="no" mutable="no">
+        <type>private bool</type>
+        <definition>private bool TMSwPages::MainWindow::_contentLoaded</definition>
+        <argsstring></argsstring>
+        <name>_contentLoaded</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/MainNavWindow.g.i.cs" line="43" column="22" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/MainNavWindow.g.i.cs" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
       <sectiondef kind="private-func">
       <memberdef kind="function" id="class_t_m_sw_pages_1_1_main_window_1a466951de520a75e77afa4a40f6cb710f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>public</type>
@@ -17,14 +38,123 @@
         </inbodydescription>
         <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/mainwindow.xaml.cs" line="34" column="16" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/mainwindow.xaml.cs" bodystart="34" bodyend="37"/>
       </memberdef>
+      <memberdef kind="function" id="class_t_m_sw_pages_1_1_main_window_1a47220c29eaa99d0976b5c104ac3c8336" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>public void</type>
+        <definition>public void TMSwPages::MainWindow::InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/MainNavWindow.g.i.cs" line="50" column="21" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/MainNavWindow.g.i.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="class_t_m_sw_pages_1_1_main_window_1ab230b9835dafb2eca3ecec5b0409773f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System Windows Markup IComponentConnector</type>
+        <definition>void System Windows Markup IComponentConnector TMSwPages::MainWindow::Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/MainNavWindow.g.i.cs" line="70" column="52" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/MainNavWindow.g.i.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="class_t_m_sw_pages_1_1_main_window_1a47220c29eaa99d0976b5c104ac3c8336" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>public void</type>
+        <definition>public void TMSwPages::MainWindow::InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/mainwindow.g.cs" line="50" column="21" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/mainwindow.g.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="class_t_m_sw_pages_1_1_main_window_1ab230b9835dafb2eca3ecec5b0409773f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System Windows Markup IComponentConnector</type>
+        <definition>void System Windows Markup IComponentConnector TMSwPages::MainWindow::Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/mainwindow.g.cs" line="70" column="52" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/mainwindow.g.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="class_t_m_sw_pages_1_1_main_window_1a47220c29eaa99d0976b5c104ac3c8336" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>public void</type>
+        <definition>public void TMSwPages::MainWindow::InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/MainWindow.g.i.cs" line="50" column="21" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/MainWindow.g.i.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="class_t_m_sw_pages_1_1_main_window_1ab230b9835dafb2eca3ecec5b0409773f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System Windows Markup IComponentConnector</type>
+        <definition>void System Windows Markup IComponentConnector TMSwPages::MainWindow::Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/MainWindow.g.i.cs" line="70" column="52" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/MainWindow.g.i.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
       </sectiondef>
     <briefdescription>
 <para>\summary This is the Interaction Logic for the main nagivation window </para>
     </briefdescription>
     <detaileddescription>
+<para><ref refid="class_t_m_sw_pages_1_1_main_window" kindref="compound">MainWindow</ref></para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="2">
+      <node id="3">
+        <label>IComponentConnector</label>
+      </node>
+      <node id="4">
         <label>NavigationWindow</label>
       </node>
       <node id="1">
@@ -32,10 +162,28 @@
         <link refid="class_t_m_sw_pages_1_1_main_window"/>
         <childnode refid="2" relation="private-inheritance">
         </childnode>
+        <childnode refid="3" relation="private-inheritance">
+        </childnode>
+        <childnode refid="4" relation="private-inheritance">
+        </childnode>
+        <childnode refid="3" relation="private-inheritance">
+        </childnode>
+        <childnode refid="4" relation="private-inheritance">
+        </childnode>
+        <childnode refid="3" relation="private-inheritance">
+        </childnode>
+        <childnode refid="4" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>System::Windows::Navigation::NavigationWindow</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="2">
+      <node id="3">
+        <label>IComponentConnector</label>
+      </node>
+      <node id="4">
         <label>NavigationWindow</label>
       </node>
       <node id="1">
@@ -43,10 +191,32 @@
         <link refid="class_t_m_sw_pages_1_1_main_window"/>
         <childnode refid="2" relation="private-inheritance">
         </childnode>
+        <childnode refid="3" relation="private-inheritance">
+        </childnode>
+        <childnode refid="4" relation="private-inheritance">
+        </childnode>
+        <childnode refid="3" relation="private-inheritance">
+        </childnode>
+        <childnode refid="4" relation="private-inheritance">
+        </childnode>
+        <childnode refid="3" relation="private-inheritance">
+        </childnode>
+        <childnode refid="4" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>System::Windows::Navigation::NavigationWindow</label>
       </node>
     </collaborationgraph>
     <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/mainwindow.xaml.cs" line="33" column="1" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/mainwindow.xaml.cs" bodystart="32" bodyend="38"/>
     <listofallmembers>
+      <member refid="class_t_m_sw_pages_1_1_main_window_1a7ac7d28c00ffbca192d0462d9d3b9c9f" prot="private" virt="non-virtual"><scope>TMSwPages::MainWindow</scope><name>_contentLoaded</name></member>
+      <member refid="class_t_m_sw_pages_1_1_main_window_1ab230b9835dafb2eca3ecec5b0409773f" prot="private" virt="non-virtual"><scope>TMSwPages::MainWindow</scope><name>Connect</name></member>
+      <member refid="class_t_m_sw_pages_1_1_main_window_1ab230b9835dafb2eca3ecec5b0409773f" prot="private" virt="non-virtual"><scope>TMSwPages::MainWindow</scope><name>Connect</name></member>
+      <member refid="class_t_m_sw_pages_1_1_main_window_1ab230b9835dafb2eca3ecec5b0409773f" prot="private" virt="non-virtual"><scope>TMSwPages::MainWindow</scope><name>Connect</name></member>
+      <member refid="class_t_m_sw_pages_1_1_main_window_1a47220c29eaa99d0976b5c104ac3c8336" prot="private" virt="non-virtual"><scope>TMSwPages::MainWindow</scope><name>InitializeComponent</name></member>
+      <member refid="class_t_m_sw_pages_1_1_main_window_1a47220c29eaa99d0976b5c104ac3c8336" prot="private" virt="non-virtual"><scope>TMSwPages::MainWindow</scope><name>InitializeComponent</name></member>
+      <member refid="class_t_m_sw_pages_1_1_main_window_1a47220c29eaa99d0976b5c104ac3c8336" prot="private" virt="non-virtual"><scope>TMSwPages::MainWindow</scope><name>InitializeComponent</name></member>
       <member refid="class_t_m_sw_pages_1_1_main_window_1a466951de520a75e77afa4a40f6cb710f" prot="private" virt="non-virtual"><scope>TMSwPages::MainWindow</scope><name>MainWindow</name></member>
     </listofallmembers>
   </compounddef>

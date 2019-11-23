@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="struct_unit_test_t_m_s_1_1_planner_class_tests_1_1_testing_contract" kind="struct" language="C#" prot="private">
+    <compoundname>UnitTestTMS::PlannerClassTests::TestingContract</compoundname>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="struct_unit_test_t_m_s_1_1_planner_class_tests_1_1_testing_contract_1a1348e05b980c8c61d859e3dff4e8aed8" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string UnitTestTMS.PlannerClassTests.TestingContract.client_Name</definition>
+        <argsstring></argsstring>
+        <name>client_Name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/PlannerClassTests.cs" line="114" column="27" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/PlannerClassTests.cs" bodystart="114" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="property" id="struct_unit_test_t_m_s_1_1_planner_class_tests_1_1_testing_contract_1a19a2cb017e49479a9e0b6242926ca319" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>bool</type>
+        <definition>bool UnitTestTMS.PlannerClassTests.TestingContract.job_Type</definition>
+        <argsstring></argsstring>
+        <name>job_Type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/PlannerClassTests.cs" line="115" column="25" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/PlannerClassTests.cs" bodystart="115" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="property" id="struct_unit_test_t_m_s_1_1_planner_class_tests_1_1_testing_contract_1a1ebce732704706051d972453dc50f15d" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string UnitTestTMS.PlannerClassTests.TestingContract.quantity</definition>
+        <argsstring></argsstring>
+        <name>quantity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/PlannerClassTests.cs" line="116" column="27" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/PlannerClassTests.cs" bodystart="116" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="property" id="struct_unit_test_t_m_s_1_1_planner_class_tests_1_1_testing_contract_1acf3066dfc08cd9b25118e64c59916eab" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int UnitTestTMS.PlannerClassTests.TestingContract.origin</definition>
+        <argsstring></argsstring>
+        <name>origin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/PlannerClassTests.cs" line="117" column="24" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/PlannerClassTests.cs" bodystart="117" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="property" id="struct_unit_test_t_m_s_1_1_planner_class_tests_1_1_testing_contract_1abc6a4a8848d1ccc4952d3fa5f1312b92" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int UnitTestTMS.PlannerClassTests.TestingContract.destination</definition>
+        <argsstring></argsstring>
+        <name>destination</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/PlannerClassTests.cs" line="118" column="24" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/PlannerClassTests.cs" bodystart="118" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="property" id="struct_unit_test_t_m_s_1_1_planner_class_tests_1_1_testing_contract_1a2c6ae12eaba41f1489ccb87d2e4e2a80" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string UnitTestTMS.PlannerClassTests.TestingContract.van_Type</definition>
+        <argsstring></argsstring>
+        <name>van_Type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/PlannerClassTests.cs" line="119" column="27" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/PlannerClassTests.cs" bodystart="119" bodyend="119"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/PlannerClassTests.cs" line="113" column="1" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/UnitTestTMS/PlannerClassTests.cs" bodystart="112" bodyend="120"/>
+    <listofallmembers>
+      <member refid="struct_unit_test_t_m_s_1_1_planner_class_tests_1_1_testing_contract_1a1348e05b980c8c61d859e3dff4e8aed8" prot="public" virt="non-virtual"><scope>UnitTestTMS::PlannerClassTests::TestingContract</scope><name>client_Name</name></member>
+      <member refid="struct_unit_test_t_m_s_1_1_planner_class_tests_1_1_testing_contract_1abc6a4a8848d1ccc4952d3fa5f1312b92" prot="public" virt="non-virtual"><scope>UnitTestTMS::PlannerClassTests::TestingContract</scope><name>destination</name></member>
+      <member refid="struct_unit_test_t_m_s_1_1_planner_class_tests_1_1_testing_contract_1a19a2cb017e49479a9e0b6242926ca319" prot="public" virt="non-virtual"><scope>UnitTestTMS::PlannerClassTests::TestingContract</scope><name>job_Type</name></member>
+      <member refid="struct_unit_test_t_m_s_1_1_planner_class_tests_1_1_testing_contract_1acf3066dfc08cd9b25118e64c59916eab" prot="public" virt="non-virtual"><scope>UnitTestTMS::PlannerClassTests::TestingContract</scope><name>origin</name></member>
+      <member refid="struct_unit_test_t_m_s_1_1_planner_class_tests_1_1_testing_contract_1a1ebce732704706051d972453dc50f15d" prot="public" virt="non-virtual"><scope>UnitTestTMS::PlannerClassTests::TestingContract</scope><name>quantity</name></member>
+      <member refid="struct_unit_test_t_m_s_1_1_planner_class_tests_1_1_testing_contract_1a2c6ae12eaba41f1489ccb87d2e4e2a80" prot="public" virt="non-virtual"><scope>UnitTestTMS::PlannerClassTests::TestingContract</scope><name>van_Type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

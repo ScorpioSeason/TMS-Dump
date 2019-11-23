@@ -1,0 +1,243 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_t_m_sw_pages_1_1_view_log_details_page" kind="class" language="C++" prot="public">
+    <compoundname>TMSwPages::ViewLogDetailsPage</compoundname>
+    <basecompoundref prot="private" virt="non-virtual">Page</basecompoundref>
+    <basecompoundref prot="private" virt="non-virtual">IComponentConnector</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_t_m_sw_pages_1_1_view_log_details_page_1aa8281838f3b57354589ebd410e4403eb" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls Grid</type>
+        <definition>internal System Windows Controls Grid TMSwPages::ViewLogDetailsPage::OuterGrid</definition>
+        <argsstring></argsstring>
+        <name>OuterGrid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/ViewLogDetailsPage.g.i.cs" line="46" column="44" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/ViewLogDetailsPage.g.i.cs" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_t_m_sw_pages_1_1_view_log_details_page_1acd9ebb864c0123829e3264f04f2a8383" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls RowDefinition</type>
+        <definition>internal System Windows Controls RowDefinition TMSwPages::ViewLogDetailsPage::TopMenu</definition>
+        <argsstring></argsstring>
+        <name>TopMenu</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/ViewLogDetailsPage.g.i.cs" line="54" column="53" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/ViewLogDetailsPage.g.i.cs" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_t_m_sw_pages_1_1_view_log_details_page_1a1580c6aa4e03051ad54ec9029f51a0f9" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls RowDefinition</type>
+        <definition>internal System Windows Controls RowDefinition TMSwPages::ViewLogDetailsPage::Main</definition>
+        <argsstring></argsstring>
+        <name>Main</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/ViewLogDetailsPage.g.i.cs" line="62" column="53" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/ViewLogDetailsPage.g.i.cs" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_t_m_sw_pages_1_1_view_log_details_page_1af4b201c559edeced91c857148f643486" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls RowDefinition</type>
+        <definition>internal System Windows Controls RowDefinition TMSwPages::ViewLogDetailsPage::Buttons</definition>
+        <argsstring></argsstring>
+        <name>Buttons</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/ViewLogDetailsPage.g.i.cs" line="70" column="53" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/ViewLogDetailsPage.g.i.cs" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_t_m_sw_pages_1_1_view_log_details_page_1abe053d4bd4a44e2e1222661063677280" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls RowDefinition</type>
+        <definition>internal System Windows Controls RowDefinition TMSwPages::ViewLogDetailsPage::StatusBar</definition>
+        <argsstring></argsstring>
+        <name>StatusBar</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/ViewLogDetailsPage.g.i.cs" line="78" column="53" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/ViewLogDetailsPage.g.i.cs" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_t_m_sw_pages_1_1_view_log_details_page_1a32eabbe230285fafc7d785239992d17d" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls Menu</type>
+        <definition>internal System Windows Controls Menu TMSwPages::ViewLogDetailsPage::myMenu</definition>
+        <argsstring></argsstring>
+        <name>myMenu</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/ViewLogDetailsPage.g.i.cs" line="86" column="44" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/ViewLogDetailsPage.g.i.cs" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_t_m_sw_pages_1_1_view_log_details_page_1aa10af9f6751319eeea70479afd758f41" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls ListBox</type>
+        <definition>internal System Windows Controls ListBox TMSwPages::ViewLogDetailsPage::LogDetails</definition>
+        <argsstring></argsstring>
+        <name>LogDetails</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/ViewLogDetailsPage.g.i.cs" line="94" column="47" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/ViewLogDetailsPage.g.i.cs" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_t_m_sw_pages_1_1_view_log_details_page_1a25bfaf291cae16b802613a1a24111101" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls Primitives StatusBarItem</type>
+        <definition>internal System Windows Controls Primitives StatusBarItem TMSwPages::ViewLogDetailsPage::statusItem</definition>
+        <argsstring></argsstring>
+        <name>statusItem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/ViewLogDetailsPage.g.i.cs" line="102" column="63" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/ViewLogDetailsPage.g.i.cs" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_t_m_sw_pages_1_1_view_log_details_page_1a6dbe69260e68242c06990c5d2b7d6525" prot="private" static="no" mutable="no">
+        <type>internal System Windows Controls TextBlock</type>
+        <definition>internal System Windows Controls TextBlock TMSwPages::ViewLogDetailsPage::status</definition>
+        <argsstring></argsstring>
+        <name>status</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/ViewLogDetailsPage.g.i.cs" line="110" column="49" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/ViewLogDetailsPage.g.i.cs" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_t_m_sw_pages_1_1_view_log_details_page_1a2a7844dad09506fce55dc439ddcdd6e7" prot="private" static="no" mutable="no">
+        <type>private bool</type>
+        <definition>private bool TMSwPages::ViewLogDetailsPage::_contentLoaded</definition>
+        <argsstring></argsstring>
+        <name>_contentLoaded</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/ViewLogDetailsPage.g.i.cs" line="115" column="22" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/ViewLogDetailsPage.g.i.cs" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_t_m_sw_pages_1_1_view_log_details_page_1a01ff3a73bce06f7b7bc077f6567b1569" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>public void</type>
+        <definition>public void TMSwPages::ViewLogDetailsPage::InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/ViewLogDetailsPage.g.i.cs" line="122" column="21" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/ViewLogDetailsPage.g.i.cs" bodystart="122" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="class_t_m_sw_pages_1_1_view_log_details_page_1aa4fb8b9dcdcba6c2a1cd2d536611589a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System Windows Markup IComponentConnector</type>
+        <definition>void System Windows Markup IComponentConnector TMSwPages::ViewLogDetailsPage::Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/ViewLogDetailsPage.g.i.cs" line="142" column="52" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/ViewLogDetailsPage.g.i.cs" bodystart="142" bodyend="174"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="class_t_m_sw_pages_1_1_view_log_details_page" kindref="compound">ViewLogDetailsPage</ref> </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>IComponentConnector</label>
+      </node>
+      <node id="2">
+        <label>Page</label>
+      </node>
+      <node id="1">
+        <label>TMSwPages::ViewLogDetailsPage</label>
+        <link refid="class_t_m_sw_pages_1_1_view_log_details_page"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="3" relation="private-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>IComponentConnector</label>
+      </node>
+      <node id="2">
+        <label>Page</label>
+      </node>
+      <node id="1">
+        <label>TMSwPages::ViewLogDetailsPage</label>
+        <link refid="class_t_m_sw_pages_1_1_view_log_details_page"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="3" relation="private-inheritance">
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>statusItem</edgelabel>
+          <edgelabel>status</edgelabel>
+          <edgelabel>Buttons</edgelabel>
+          <edgelabel>TopMenu</edgelabel>
+          <edgelabel>Main</edgelabel>
+          <edgelabel>OuterGrid</edgelabel>
+          <edgelabel>myMenu</edgelabel>
+          <edgelabel>StatusBar</edgelabel>
+          <edgelabel>LogDetails</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>System</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/ViewLogDetailsPage.g.i.cs" line="41" column="47" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/obj/Debug/ViewLogDetailsPage.g.i.cs" bodystart="41" bodyend="175"/>
+    <listofallmembers>
+      <member refid="class_t_m_sw_pages_1_1_view_log_details_page_1a2a7844dad09506fce55dc439ddcdd6e7" prot="private" virt="non-virtual"><scope>TMSwPages::ViewLogDetailsPage</scope><name>_contentLoaded</name></member>
+      <member refid="class_t_m_sw_pages_1_1_view_log_details_page_1af4b201c559edeced91c857148f643486" prot="private" virt="non-virtual"><scope>TMSwPages::ViewLogDetailsPage</scope><name>Buttons</name></member>
+      <member refid="class_t_m_sw_pages_1_1_view_log_details_page_1aa4fb8b9dcdcba6c2a1cd2d536611589a" prot="private" virt="non-virtual"><scope>TMSwPages::ViewLogDetailsPage</scope><name>Connect</name></member>
+      <member refid="class_t_m_sw_pages_1_1_view_log_details_page_1a01ff3a73bce06f7b7bc077f6567b1569" prot="private" virt="non-virtual"><scope>TMSwPages::ViewLogDetailsPage</scope><name>InitializeComponent</name></member>
+      <member refid="class_t_m_sw_pages_1_1_view_log_details_page_1aa10af9f6751319eeea70479afd758f41" prot="private" virt="non-virtual"><scope>TMSwPages::ViewLogDetailsPage</scope><name>LogDetails</name></member>
+      <member refid="class_t_m_sw_pages_1_1_view_log_details_page_1a1580c6aa4e03051ad54ec9029f51a0f9" prot="private" virt="non-virtual"><scope>TMSwPages::ViewLogDetailsPage</scope><name>Main</name></member>
+      <member refid="class_t_m_sw_pages_1_1_view_log_details_page_1a32eabbe230285fafc7d785239992d17d" prot="private" virt="non-virtual"><scope>TMSwPages::ViewLogDetailsPage</scope><name>myMenu</name></member>
+      <member refid="class_t_m_sw_pages_1_1_view_log_details_page_1aa8281838f3b57354589ebd410e4403eb" prot="private" virt="non-virtual"><scope>TMSwPages::ViewLogDetailsPage</scope><name>OuterGrid</name></member>
+      <member refid="class_t_m_sw_pages_1_1_view_log_details_page_1a6dbe69260e68242c06990c5d2b7d6525" prot="private" virt="non-virtual"><scope>TMSwPages::ViewLogDetailsPage</scope><name>status</name></member>
+      <member refid="class_t_m_sw_pages_1_1_view_log_details_page_1abe053d4bd4a44e2e1222661063677280" prot="private" virt="non-virtual"><scope>TMSwPages::ViewLogDetailsPage</scope><name>StatusBar</name></member>
+      <member refid="class_t_m_sw_pages_1_1_view_log_details_page_1a25bfaf291cae16b802613a1a24111101" prot="private" virt="non-virtual"><scope>TMSwPages::ViewLogDetailsPage</scope><name>statusItem</name></member>
+      <member refid="class_t_m_sw_pages_1_1_view_log_details_page_1acd9ebb864c0123829e3264f04f2a8383" prot="private" virt="non-virtual"><scope>TMSwPages::ViewLogDetailsPage</scope><name>TopMenu</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

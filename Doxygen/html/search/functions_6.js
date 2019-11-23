@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['mainwindow_189',['MainWindow',['../class_transport___management___system___w_p_f_1_1_main_window.html#a2751b4e1cae01713e693ab84e8c217f6',1,'Transport_Management_System_WPF::MainWindow']]],
-  ['mappingclass_190',['MappingClass',['../class_transport___management___system___w_p_f_1_1_mapping_class.html#a730543415ef496d02528a5b4b815fa23',1,'Transport_Management_System_WPF::MappingClass']]]
+  ['loadclick_315',['LoadClick',['../class_t_m_sw_pages_1_1_admin_page.html#aade1dbb0d543c8d99c6fbbc098ef1d31',1,'TMSwPages::AdminPage']]],
+  ['logit_316',['LogIt',['../class_t_m_sw_pages_1_1_t_m_s_logger.html#ae3fc46f0a10cbcbe582f57f0ea75cc8d',1,'TMSwPages.TMSLogger.LogIt(string newLogString)'],['../class_t_m_sw_pages_1_1_t_m_s_logger.html#a81a5353756e6ecd6e51ce79a76196fcc',1,'TMSwPages.TMSLogger.LogIt(string newLogString)']]],
+  ['logsettingsclick_317',['LogSettingsClick',['../class_t_m_sw_pages_1_1_admin_page.html#a0645bad7d23477b1c426ae8828c54543',1,'TMSwPages::AdminPage']]]
 ];

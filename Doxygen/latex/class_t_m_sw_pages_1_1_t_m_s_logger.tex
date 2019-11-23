@@ -14,23 +14,33 @@ static void \mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_logger_a34e534b54ac36d
 \begin{DoxyCompactList}\small\item\em This creates a new log object. \end{DoxyCompactList}\item 
 static bool \mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_logger_a836d54e3a54cfe47be113970676871aa}{Read\+Existing\+Log\+File}} ()
 \begin{DoxyCompactList}\small\item\em Reads logs in from a file. \end{DoxyCompactList}\item 
-static bool \mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_logger_a016f771887948d9c8e41908106fac94d}{Append\+Log\+File}} (\mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_log}{T\+M\+S\+Log}} new\+Log)
-\begin{DoxyCompactList}\small\item\em Writes new logs into a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+static bool \mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_logger_a40f50c4cf1a0cfee17b050a19bea7daf}{Append\+Log\+File}} (\mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_log}{T\+M\+S\+Log}} new\+Log)
+\item 
+static void \mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_logger_a81a5353756e6ecd6e51ce79a76196fcc}{Log\+It}} (string new\+Log\+String)
+\item 
+static void \mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_logger_a949d7d962a3a8f19556a72c610a23340}{New\+Log}} (string new\+Log\+String)
+\item 
+static bool \mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_logger_a78d9152f8fc12fdf370b23f0b787999e}{Read\+Existing\+Log\+File}} ()
+\item 
+static bool \mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_logger_a40f50c4cf1a0cfee17b050a19bea7daf}{Append\+Log\+File}} (\mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_log}{T\+M\+S\+Log}} new\+Log)
+\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static List$<$ \mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_log}{T\+M\+S\+Log}} $>$ \mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_logger_a4ba45b1259ce8001fa7a5fddf5fadd46}{logs}} = new List$<$\mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_log}{T\+M\+S\+Log}}$>$()
+static List$<$ \mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_log}{T\+M\+S\+Log}} $>$ \mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_logger_a02bbc48a021dcef462bdc3a2e984b5a6}{logs}} = new List$<$\mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_log}{T\+M\+S\+Log}}$>$()
 \begin{DoxyCompactList}\small\item\em Stores location of the log file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-static string \mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_logger_a70ea68270927cee76213ac2329238bf8}{Logger\+Path}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+static string \mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_logger_abd17098cd11371b489a998544f09ac74}{Logger\+Path}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Static Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static void \mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_logger_a3feb70f75cd69696b3355f6deac9cb32}{Change\+Log\+Location}} ()
-\begin{DoxyCompactList}\small\item\em This function will change where the log file is stored. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This function will change where the log file is stored. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_logger_a4033a43670161f38a4b8fb99b7d39630}{Change\+Log\+Location}} ()
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -42,29 +52,27 @@ This is a static class containing a list of logs and the methods to create new l
  
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_t_m_sw_pages_1_1_t_m_s_logger_a016f771887948d9c8e41908106fac94d}\label{class_t_m_sw_pages_1_1_t_m_s_logger_a016f771887948d9c8e41908106fac94d}} 
+\mbox{\Hypertarget{class_t_m_sw_pages_1_1_t_m_s_logger_a40f50c4cf1a0cfee17b050a19bea7daf}\label{class_t_m_sw_pages_1_1_t_m_s_logger_a40f50c4cf1a0cfee17b050a19bea7daf}} 
 \index{TMSwPages.TMSLogger@{TMSwPages.TMSLogger}!AppendLogFile@{AppendLogFile}}
 \index{AppendLogFile@{AppendLogFile}!TMSwPages.TMSLogger@{TMSwPages.TMSLogger}}
-\doxysubsubsection{\texorpdfstring{AppendLogFile()}{AppendLogFile()}}
-{\footnotesize\ttfamily static public bool T\+M\+Sw\+Pages.\+T\+M\+S\+Logger.\+Append\+Log\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_log}{T\+M\+S\+Log}}}]{new\+Log }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\doxysubsubsection{\texorpdfstring{AppendLogFile()}{AppendLogFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static bool T\+M\+Sw\+Pages.\+T\+M\+S\+Logger.\+Append\+Log\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_log}{T\+M\+S\+Log}}}]{new\+Log }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+Open the filestream to append to the file.
 
+Add each log entry from the working list to the file as a B\+SV
 
-Writes new logs into a file. 
+Close the file
 
-This writes individual logs into the file specified by the logger\+Path variable. If there is an error, it throws an exception to a new log. 
-\begin{DoxyExceptions}{Exceptions}
-{\em From} & File\+Stream and Stream\+Writer \\
-\hline
-\end{DoxyExceptions}
-\begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_logger_ae3fc46f0a10cbcbe582f57f0ea75cc8d}{Log\+It()}} 
-\end{DoxySeeAlso}
-\begin{DoxyReturn}{Returns}
-bool append\+Success A value indicating whether the file write threw an exception.
-\end{DoxyReturn}
-\DoxyHorRuler
- Open the filestream to append to the file.
+If an exception is thrown here, catch it
+
+This could become problematic as it calls itself\mbox{\Hypertarget{class_t_m_sw_pages_1_1_t_m_s_logger_a40f50c4cf1a0cfee17b050a19bea7daf}\label{class_t_m_sw_pages_1_1_t_m_s_logger_a40f50c4cf1a0cfee17b050a19bea7daf}} 
+\index{TMSwPages.TMSLogger@{TMSwPages.TMSLogger}!AppendLogFile@{AppendLogFile}}
+\index{AppendLogFile@{AppendLogFile}!TMSwPages.TMSLogger@{TMSwPages.TMSLogger}}
+\doxysubsubsection{\texorpdfstring{AppendLogFile()}{AppendLogFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static bool T\+M\+Sw\+Pages.\+T\+M\+S\+Logger.\+Append\+Log\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_log}{T\+M\+S\+Log}}}]{new\+Log }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Open the filestream to append to the file.
 
 Add each log entry from the working list to the file as a B\+SV
 
@@ -75,7 +83,7 @@ If an exception is thrown here, catch it
 This could become problematic as it calls itself\mbox{\Hypertarget{class_t_m_sw_pages_1_1_t_m_s_logger_a3feb70f75cd69696b3355f6deac9cb32}\label{class_t_m_sw_pages_1_1_t_m_s_logger_a3feb70f75cd69696b3355f6deac9cb32}} 
 \index{TMSwPages.TMSLogger@{TMSwPages.TMSLogger}!ChangeLogLocation@{ChangeLogLocation}}
 \index{ChangeLogLocation@{ChangeLogLocation}!TMSwPages.TMSLogger@{TMSwPages.TMSLogger}}
-\doxysubsubsection{\texorpdfstring{ChangeLogLocation()}{ChangeLogLocation()}}
+\doxysubsubsection{\texorpdfstring{ChangeLogLocation()}{ChangeLogLocation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void T\+M\+Sw\+Pages.\+T\+M\+S\+Logger.\+Change\+Log\+Location (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
 
 
@@ -95,10 +103,16 @@ This function allows the user to select a new location for the log file storage.
 Void
 \end{DoxyReturn}
 \DoxyHorRuler
- \mbox{\Hypertarget{class_t_m_sw_pages_1_1_t_m_s_logger_ae3fc46f0a10cbcbe582f57f0ea75cc8d}\label{class_t_m_sw_pages_1_1_t_m_s_logger_ae3fc46f0a10cbcbe582f57f0ea75cc8d}} 
+ \mbox{\Hypertarget{class_t_m_sw_pages_1_1_t_m_s_logger_a4033a43670161f38a4b8fb99b7d39630}\label{class_t_m_sw_pages_1_1_t_m_s_logger_a4033a43670161f38a4b8fb99b7d39630}} 
+\index{TMSwPages.TMSLogger@{TMSwPages.TMSLogger}!ChangeLogLocation@{ChangeLogLocation}}
+\index{ChangeLogLocation@{ChangeLogLocation}!TMSwPages.TMSLogger@{TMSwPages.TMSLogger}}
+\doxysubsubsection{\texorpdfstring{ChangeLogLocation()}{ChangeLogLocation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void T\+M\+Sw\+Pages.\+T\+M\+S\+Logger.\+Change\+Log\+Location (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_t_m_sw_pages_1_1_t_m_s_logger_ae3fc46f0a10cbcbe582f57f0ea75cc8d}\label{class_t_m_sw_pages_1_1_t_m_s_logger_ae3fc46f0a10cbcbe582f57f0ea75cc8d}} 
 \index{TMSwPages.TMSLogger@{TMSwPages.TMSLogger}!LogIt@{LogIt}}
 \index{LogIt@{LogIt}!TMSwPages.TMSLogger@{TMSwPages.TMSLogger}}
-\doxysubsubsection{\texorpdfstring{LogIt()}{LogIt()}}
+\doxysubsubsection{\texorpdfstring{LogIt()}{LogIt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily static public void T\+M\+Sw\+Pages.\+T\+M\+S\+Logger.\+Log\+It (\begin{DoxyParamCaption}\item[{string}]{new\+Log\+String }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
@@ -113,16 +127,22 @@ This creates a new log object, adds it to the local list, then appends it to the
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-T\+M\+S\+Log(), logs.\+Add(), \mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_logger_a016f771887948d9c8e41908106fac94d}{Append\+Log\+File()}} 
+T\+M\+S\+Log(), logs.\+Add(), \mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_logger_a40f50c4cf1a0cfee17b050a19bea7daf}{Append\+Log\+File()}} 
 \end{DoxySeeAlso}
 \begin{DoxyReturn}{Returns}
 void
 \end{DoxyReturn}
 \DoxyHorRuler
- Error writing to Log File\+: Try once again\mbox{\Hypertarget{class_t_m_sw_pages_1_1_t_m_s_logger_a34e534b54ac36d38c33d7a8cb5abb7c7}\label{class_t_m_sw_pages_1_1_t_m_s_logger_a34e534b54ac36d38c33d7a8cb5abb7c7}} 
+ Error writing to Log File\+: Try once again\mbox{\Hypertarget{class_t_m_sw_pages_1_1_t_m_s_logger_a81a5353756e6ecd6e51ce79a76196fcc}\label{class_t_m_sw_pages_1_1_t_m_s_logger_a81a5353756e6ecd6e51ce79a76196fcc}} 
+\index{TMSwPages.TMSLogger@{TMSwPages.TMSLogger}!LogIt@{LogIt}}
+\index{LogIt@{LogIt}!TMSwPages.TMSLogger@{TMSwPages.TMSLogger}}
+\doxysubsubsection{\texorpdfstring{LogIt()}{LogIt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void T\+M\+Sw\+Pages.\+T\+M\+S\+Logger.\+Log\+It (\begin{DoxyParamCaption}\item[{string}]{new\+Log\+String }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Error writing to Log File\+: Try once again\mbox{\Hypertarget{class_t_m_sw_pages_1_1_t_m_s_logger_a34e534b54ac36d38c33d7a8cb5abb7c7}\label{class_t_m_sw_pages_1_1_t_m_s_logger_a34e534b54ac36d38c33d7a8cb5abb7c7}} 
 \index{TMSwPages.TMSLogger@{TMSwPages.TMSLogger}!NewLog@{NewLog}}
 \index{NewLog@{NewLog}!TMSwPages.TMSLogger@{TMSwPages.TMSLogger}}
-\doxysubsubsection{\texorpdfstring{NewLog()}{NewLog()}}
+\doxysubsubsection{\texorpdfstring{NewLog()}{NewLog()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily static public void T\+M\+Sw\+Pages.\+T\+M\+S\+Logger.\+New\+Log (\begin{DoxyParamCaption}\item[{string}]{new\+Log\+String }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
@@ -141,10 +161,16 @@ T\+M\+S\+Log(), logs.\+Add()
 void
 \end{DoxyReturn}
 \DoxyHorRuler
- \mbox{\Hypertarget{class_t_m_sw_pages_1_1_t_m_s_logger_a836d54e3a54cfe47be113970676871aa}\label{class_t_m_sw_pages_1_1_t_m_s_logger_a836d54e3a54cfe47be113970676871aa}} 
+ \mbox{\Hypertarget{class_t_m_sw_pages_1_1_t_m_s_logger_a949d7d962a3a8f19556a72c610a23340}\label{class_t_m_sw_pages_1_1_t_m_s_logger_a949d7d962a3a8f19556a72c610a23340}} 
+\index{TMSwPages.TMSLogger@{TMSwPages.TMSLogger}!NewLog@{NewLog}}
+\index{NewLog@{NewLog}!TMSwPages.TMSLogger@{TMSwPages.TMSLogger}}
+\doxysubsubsection{\texorpdfstring{NewLog()}{NewLog()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void T\+M\+Sw\+Pages.\+T\+M\+S\+Logger.\+New\+Log (\begin{DoxyParamCaption}\item[{string}]{new\+Log\+String }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_t_m_sw_pages_1_1_t_m_s_logger_a836d54e3a54cfe47be113970676871aa}\label{class_t_m_sw_pages_1_1_t_m_s_logger_a836d54e3a54cfe47be113970676871aa}} 
 \index{TMSwPages.TMSLogger@{TMSwPages.TMSLogger}!ReadExistingLogFile@{ReadExistingLogFile}}
 \index{ReadExistingLogFile@{ReadExistingLogFile}!TMSwPages.TMSLogger@{TMSwPages.TMSLogger}}
-\doxysubsubsection{\texorpdfstring{ReadExistingLogFile()}{ReadExistingLogFile()}}
+\doxysubsubsection{\texorpdfstring{ReadExistingLogFile()}{ReadExistingLogFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily static public bool T\+M\+Sw\+Pages.\+T\+M\+S\+Logger.\+Read\+Existing\+Log\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
@@ -171,14 +197,28 @@ Fill the working list with lines from the file
 
 Close the file
 
+If an exception is thrown here, create a log for it.\mbox{\Hypertarget{class_t_m_sw_pages_1_1_t_m_s_logger_a78d9152f8fc12fdf370b23f0b787999e}\label{class_t_m_sw_pages_1_1_t_m_s_logger_a78d9152f8fc12fdf370b23f0b787999e}} 
+\index{TMSwPages.TMSLogger@{TMSwPages.TMSLogger}!ReadExistingLogFile@{ReadExistingLogFile}}
+\index{ReadExistingLogFile@{ReadExistingLogFile}!TMSwPages.TMSLogger@{TMSwPages.TMSLogger}}
+\doxysubsubsection{\texorpdfstring{ReadExistingLogFile()}{ReadExistingLogFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static bool T\+M\+Sw\+Pages.\+T\+M\+S\+Logger.\+Read\+Existing\+Log\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Clear out the working list
+
+Open the file stream to read from the file
+
+Fill the working list with lines from the file
+
+Close the file
+
 If an exception is thrown here, create a log for it.
 
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{class_t_m_sw_pages_1_1_t_m_s_logger_a4ba45b1259ce8001fa7a5fddf5fadd46}\label{class_t_m_sw_pages_1_1_t_m_s_logger_a4ba45b1259ce8001fa7a5fddf5fadd46}} 
+\mbox{\Hypertarget{class_t_m_sw_pages_1_1_t_m_s_logger_a02bbc48a021dcef462bdc3a2e984b5a6}\label{class_t_m_sw_pages_1_1_t_m_s_logger_a02bbc48a021dcef462bdc3a2e984b5a6}} 
 \index{TMSwPages.TMSLogger@{TMSwPages.TMSLogger}!logs@{logs}}
 \index{logs@{logs}!TMSwPages.TMSLogger@{TMSwPages.TMSLogger}}
 \doxysubsubsection{\texorpdfstring{logs}{logs}}
-{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_log}{T\+M\+S\+Log}}$>$ T\+M\+Sw\+Pages.\+T\+M\+S\+Logger.\+logs = new List$<$\mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_log}{T\+M\+S\+Log}}$>$()\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static List$<$ \mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_log}{T\+M\+S\+Log}} $>$ T\+M\+Sw\+Pages.\+T\+M\+S\+Logger.\+logs = new List$<$\mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_log}{T\+M\+S\+Log}}$>$()\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -187,14 +227,14 @@ Stores location of the log file.
 
 
 \doxysubsection{Property Documentation}
-\mbox{\Hypertarget{class_t_m_sw_pages_1_1_t_m_s_logger_a70ea68270927cee76213ac2329238bf8}\label{class_t_m_sw_pages_1_1_t_m_s_logger_a70ea68270927cee76213ac2329238bf8}} 
+\mbox{\Hypertarget{class_t_m_sw_pages_1_1_t_m_s_logger_abd17098cd11371b489a998544f09ac74}\label{class_t_m_sw_pages_1_1_t_m_s_logger_abd17098cd11371b489a998544f09ac74}} 
 \index{TMSwPages.TMSLogger@{TMSwPages.TMSLogger}!LoggerPath@{LoggerPath}}
 \index{LoggerPath@{LoggerPath}!TMSwPages.TMSLogger@{TMSwPages.TMSLogger}}
 \doxysubsubsection{\texorpdfstring{LoggerPath}{LoggerPath}}
-{\footnotesize\ttfamily string T\+M\+Sw\+Pages.\+T\+M\+S\+Logger.\+Logger\+Path\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [private]}}
+{\footnotesize\ttfamily static string T\+M\+Sw\+Pages.\+T\+M\+S\+Logger.\+Logger\+Path\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}, {\ttfamily [set]}}
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/\+School User/\+Code/\+T\+M\+S-\/\+Dump/\+Transport Management System W\+P\+F/\+Transport Management System W\+P\+F/\mbox{\hyperlink{_admin_classes_8cs}{Admin\+Classes.\+cs}}\end{DoxyCompactItemize}
+C\+:/\+Users/\+School User/\+Code/\+T\+M\+S-\/\+Dump/\+Transport Management System W\+P\+F/\+T\+M\+Sw\+Pages/\mbox{\hyperlink{_t_m_sw_pages_2_admin_classes_8cs}{Admin\+Classes.\+cs}}\end{DoxyCompactItemize}
