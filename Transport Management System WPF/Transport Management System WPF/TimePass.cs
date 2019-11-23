@@ -36,7 +36,7 @@ namespace Transport_Management_System_WPF
         *	\fn			static void IncrementDay()
         *	\brief		This method will be used to simulate the passage of time.
         *	\details	The data from each of the current trip tickets and their Route Data will be read from the data base.
-        *	            The time that each ticket has been alive will be used to determin the current location of the truck. This data will be daved back into the database.
+        *	            The time that each ticket has been alive will be used to determine the current location of the truck. This data will be saved back into the database.
         *	\param[in]	null
         *	\param[out]	null
         *	\exception	null
