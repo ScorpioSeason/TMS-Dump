@@ -1,5 +1,6 @@
 ﻿// ADMIN FILE HEADER COMMENT: =================================================================================
 /*
+ *  ********************************* TO COMPILE GO TO PROPERTIES AND CHANGE BUILD ACTION FROM NONE TO COMPILE!!
  *  \file		Admin.cs
  *  \ingroup	TMS
  *  \date		November 20, 2019
@@ -123,10 +124,12 @@ namespace TMSwPages
                         //MessageBox.Show("Cannot connect to server.  Contact administrator");
                         break;
 
-                    case 1045:
+                    case 1045: 
+                        
                         //MessageBox.Show("Invalid username/password, please try again");
                         .LogIt("Invalid username/password, please try again");
-                        break;
+                            break;
+                        
                 }
                 return false;
             }
