@@ -108,8 +108,8 @@ namespace UnitTestTMS
             testList.Add(testLog2);
             testList.Add(testLog3);
 
-            Assert.AreEqual(testLog1.BSV, "");
-            Assert.AreEqual(testLog2.BSV, "");
+            Assert.AreEqual(testLog1.BSV, "|" + testLog1.logTime.ToString() + "|AdminClasses.cs|TMSLog|Constructor|LogParseError|The log message did not enter as the correct string format|");
+            Assert.AreEqual(testLog2.BSV, "|2019-11-22 5:37:37 PM|C:\Users\School User\Code\TMS-Dump\Transport Management System WPF\TMSwPages\bin\Debug/AdminClasses.cs|TMSLogger|ReadExistingLogFile|Exception|Could not find file 'C:\Users\School User\Code\TMS-Dump\Transport Management System WPF\TMSwPages\bin\Debug\TMSLogger.txt'.|");
             Assert.AreEqual(testLog3.BSV, "");
 
             //foreach (TMSLog l in TMSLogger.logs)
