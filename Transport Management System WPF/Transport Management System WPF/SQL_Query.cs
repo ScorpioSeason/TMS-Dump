@@ -3,13 +3,10 @@
  *  \file		SQL_Query.cs
  *  \ingroup	TMS
  *  \date		November 20, 2019
- *  \author		8000 Cigarettes - Megan
- *  \brief	    This file contains the admin functionality	  
- *  \see		MainWindow.xaml
- *  \details    This file holds the functionality of the Admin class. The Admin has the ability to view logs as 
- *              specified by time period, view details of specific logs, alter where the log files are stored, 
- *              initiate backups of the TMS database, choose where the TMS db is backed up to, alter the Carrier 
- *              Data Table, the Route Table, and the Rate / Fee Tables.                                       
+ *  \author		8000 Cigarettes - Megan,Ivan,Zena,Duane
+ *  \brief	    This file contains the SQL Querys to the cmp.  
+ *  \see		
+ *  \details    This file holds the functionality to communicate withe the cmp database through MySQL.                                       
  *
  * =========================================================================================================== */
 
@@ -24,6 +21,7 @@ using System.Data;
 using MySql.Data.MySqlClient;
 using MySql.Data;
 using System.Diagnostics;
+using TMSwPages;
 
 //from https://www.codeproject.com/articles/43438/connect-c-to-mysql
 
@@ -31,13 +29,14 @@ namespace Transport_Management_System_WPF
 {
     // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
     /**   
-    *   \class		Admin
-    *   \brief		This class runs the Admin UI functionality
-    *   \details	... static class?  
+    *   \class		SQL_Query
+    *   \brief		This class does all of the querys dealing with the cmp db.
+    *   \details	public class.  
     *   
     * -------------------------------------------------------------------------------------------------------- */
     public class SQL_Query
     {
+        //variables
         private MySqlConnection connection;
         private string server;
         private string database;
@@ -46,13 +45,13 @@ namespace Transport_Management_System_WPF
 
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
-        *	\fn			int Square()
-        *	\brief		To create a new Square by validating or else defaulting new values
-        *	\details	THis is if you have more to say about what the function does and don't want to inline comment
-        *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
-        *	\param[out]	char[]	newSideLength	An incoming value meant to become the square's side length
-        *	\exception	This is if we have some big ol try catches?
-        *	\see		CallsMade()
+        *	\fn			void SQL_Query()
+        *	\brief		Constructor.
+        *	\details	Constructor.
+        *	\param[in]	none
+        *	\param[out]	none
+        *	\exception	none
+        *	\see		Initialize()
         *	\return		None
         *
         * ---------------------------------------------------------------------------------------------------- */
@@ -64,13 +63,13 @@ namespace Transport_Management_System_WPF
 
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
-        *	\fn			int Square()
-        *	\brief		To create a new Square by validating or else defaulting new values
-        *	\details	THis is if you have more to say about what the function does and don't want to inline comment
-        *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
-        *	\param[out]	char[]	newSideLength	An incoming value meant to become the square's side length
-        *	\exception	This is if we have some big ol try catches?
-        *	\see		CallsMade()
+        *	\fn			void Initialize()
+        *	\brief		Sets all values for the sql connection.
+        *	\details	Sets all values for the sql connection.
+        *	\param[in]	none
+        *	\param[out]	none
+        *	\exception  none should be thrown
+        *	\see		none
         *	\return		None
         *
         * ---------------------------------------------------------------------------------------------------- */
@@ -82,8 +81,7 @@ namespace Transport_Management_System_WPF
             uid = "DevOSHT";
             password = "Snodgr4ss!";
             string connectionString;
-            connectionString = "SERVER=" + server + ";" + "DATABASE=" +
-            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+            connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
 
             connection = new MySqlConnection(connectionString);
 
@@ -94,9 +92,9 @@ namespace Transport_Management_System_WPF
         *	\fn			bool OpenConnection()
         *	\brief		To create a new Square by validating or else defaulting new values
         *	\details	THis is if you have more to say about what the function does and don't want to inline comment
-        *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
-        *	\param[out]	char[]	newSideLength	An incoming value meant to become the square's side length
-        *	\exception	This is if we have some big ol try catches?
+        *	\param[in]	none
+        *	\param[out]	none
+        *	\exception	MySqlException ex, 0: Cannot connect to server.  Contact administrator / 1: Invalid username/password, please try again
         *	\see		CallsMade()
         *	\return		None
         *
@@ -120,10 +118,12 @@ namespace Transport_Management_System_WPF
                 {
                     case 0:
                         //MessageBox.Show("Cannot connect to server.  Contact administrator");
+                        TMSLogger.LogIt("Cannot connect to server.  Contact administrator");
                         break;
 
                     case 1045:
                         //MessageBox.Show("Invalid username/password, please try again");
+                        TMSLogger.LogIt("Invalid username/password, please try again");
                         break;
                 }
                 return false;
@@ -133,12 +133,12 @@ namespace Transport_Management_System_WPF
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
         *	\fn			bool CloseConnection()
-        *	\brief		To create a new Square by validating or else defaulting new values
-        *	\details	THis is if you have more to say about what the function does and don't want to inline comment
-        *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
-        *	\param[out]	char[]	newSideLength	An incoming value meant to become the square's side length
-        *	\exception	This is if we have some big ol try catches?
-        *	\see		CallsMade()
+        *	\brief		Closes the connection to the SQL database server.
+        *	\details	Closes the connection to the SQL database server and outputs an exeption to the log and to the screen if a exception is thrown.
+        *	\param[in]	none
+        *	\param[out]	none
+        *	\exception	MySqlException
+        *	\see		connection.Close()
         *	\return		None
         *
         * ---------------------------------------------------------------------------------------------------- */
@@ -153,6 +153,7 @@ namespace Transport_Management_System_WPF
             catch (MySqlException ex)
             {
                 //MessageBox.Show(ex.Message);
+                TMSLogger.LogIt(ex.Message);
                 return false;
             }
         }

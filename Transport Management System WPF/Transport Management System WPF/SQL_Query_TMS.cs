@@ -1,5 +1,5 @@
 ﻿// ADMIN FILE HEADER COMMENT: =================================================================================
-/**
+/*
  *  \file		Admin.cs
  *  \ingroup	TMS
  *  \date		November 20, 2019
@@ -24,13 +24,14 @@ using System.Data;
 using MySql.Data.MySqlClient;
 using MySql.Data;
 using System.Diagnostics;
+using TMSwPages;
 
 //from https://www.codeproject.com/articles/43438/connect-c-to-mysql
 
 namespace Transport_Management_System_WPF
 {
     // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
-    /**   
+    /*
     *   \class		Admin
     *   \brief		This class runs the Admin UI functionality
     *   \details	... static class?  
@@ -45,7 +46,7 @@ namespace Transport_Management_System_WPF
         private string password;
 
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
-        /**
+        /*
         *	\fn			int Square()
         *	\brief		To create a new Square by validating or else defaulting new values
         *	\details	THis is if you have more to say about what the function does and don't want to inline comment
@@ -63,7 +64,7 @@ namespace Transport_Management_System_WPF
         }
 
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
-        /**
+        /*
         *	\fn			int Square()
         *	\brief		To create a new Square by validating or else defaulting new values
         *	\details	THis is if you have more to say about what the function does and don't want to inline comment
@@ -77,10 +78,10 @@ namespace Transport_Management_System_WPF
         //Initialize values
         public void Initialize()
         {
-            server = "159.89.117.198";
-            database = "cmp";
-            uid = "DevOSHT";
-            password = "Snodgr4ss!";
+            server = "35.193.37.75";
+            database = "cigtms";
+            uid = "test";
+            password = "password";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
@@ -90,7 +91,7 @@ namespace Transport_Management_System_WPF
         }
 
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
-        /**
+        /*
         *	\fn			int Square()
         *	\brief		To create a new Square by validating or else defaulting new values
         *	\details	THis is if you have more to say about what the function does and don't want to inline comment
@@ -124,7 +125,7 @@ namespace Transport_Management_System_WPF
 
                     case 1045:
                         //MessageBox.Show("Invalid username/password, please try again");
-
+                        .LogIt("Invalid username/password, please try again");
                         break;
                 }
                 return false;
@@ -159,7 +160,7 @@ namespace Transport_Management_System_WPF
         }
 
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
-        /**
+        /*
         *	\fn			int Square()
         *	\brief		To create a new Square by validating or else defaulting new values
         *	\details	THis is if you have more to say about what the function does and don't want to inline comment
@@ -171,9 +172,9 @@ namespace Transport_Management_System_WPF
         *
         * ---------------------------------------------------------------------------------------------------- */
         //Select statement
-        public List<string>[] Select_Contracts()
+        public List<string>[] Select_Carriers()
         {
-            string query = "SELECT * FROM Contract;";
+            string query = "SELECT * FROM CUS;";
 
             //Create a list to store the result
             List<string>[] list = new List<string>[6];
@@ -183,6 +184,7 @@ namespace Transport_Management_System_WPF
             list[3] = new List<string>();
             list[4] = new List<string>();
             list[5] = new List<string>();
+            list[6] = new List<string>();
 
             //Open connection
             if (this.OpenConnection() == true)
@@ -195,12 +197,13 @@ namespace Transport_Management_System_WPF
                 //Read the data and store them in the list
                 while (dataReader.Read())
                 {
-                    list[0].Add(dataReader["Client_Name"] + "");
-                    list[1].Add(dataReader["Job_Type"] + "");
-                    list[2].Add(dataReader["Quantity"] + "");
-                    list[3].Add(dataReader["Origin"] + "");
-                    list[4].Add(dataReader["Destination"] + "");
-                    list[5].Add(dataReader["Van_Type"] + "");
+                    list[0].Add(dataReader["cName"] + "");
+                    list[1].Add(dataReader["CityID"] + "");
+                    list[2].Add(dataReader["FTLA"] + "");
+                    list[3].Add(dataReader["LTLA"] + "");
+                    list[4].Add(dataReader["FTLRate"] + "");
+                    list[5].Add(dataReader["LTLRate"] + "");
+                    list[7].Add(dataReader["reefCharge"] + "");
                 }
 
                 //close Data Reader
