@@ -4,12 +4,9 @@
  *  \ingroup	TMSTesting
  *  \date		November 20, 2019
  *  \author		8000 Cigarettes - Duane
- *  \brief	    This file contains unit tests for the   
- *  \see		MainWindow.xaml
- *  \details    This file holds the functionality of the Admin class. The Admin has the ability to view logs as 
- *              specified by time period, view details of specific logs, alter where the log files are stored, 
- *              initiate backups of the TMS database, choose where the TMS db is backed up to, alter the Carrier 
- *              Data Table, the Route Table, and the Rate / Fee Tables.                                       
+ *  \brief	    This file contains unit tests for the parts of the code related to the planner.
+ *  \see	    PlannerClass.cs
+ *  \details    These tests will test the basic functionality needed for the planner class.                              
  *
  * =========================================================================================================== */
 
@@ -19,12 +16,12 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Transport_Management_System_WPF;
 
 namespace UnitTestTMS
-{   
+{
     // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
     /**   
-    *   \class		Admin
-    *   \brief		This class runs the Admin UI functionality
-    *   \details	... static class?  
+    *   \class		PlannerClassTests
+    *   \brief		This class will run a suite of test for the planner class. 
+    *   \details	See the test plan document attached to this milestone.
     *   
     * -------------------------------------------------------------------------------------------------------- */
     [TestClass]
@@ -152,7 +149,7 @@ namespace UnitTestTMS
                 };
             }
 
-            TimePass.IncrementDay(ReturnList, truck, trip_Ticket);
+            //TimePass.IncrementDay(ReturnList, truck, trip_Ticket);
 
         }
     }
