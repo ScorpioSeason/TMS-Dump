@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="mainwindow_8xaml" kind="file" language="C++">
+    <compoundname>mainwindow.xaml</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">&lt;NavigationWindow<sp/>x:Class=&quot;TMSwPages.MainWindow&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xmlns:local=&quot;clr-namespace:TMSwPages&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mc:Ignorable=&quot;d&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Title=&quot;MainWindow&quot;<sp/>Height=&quot;750&quot;<sp/>Width=&quot;750&quot;<sp/>Source=&quot;AdminPage.xaml&quot;&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;!--<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>https://docs.microsoft.com/en-us/dotnet/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>This<sp/>app<sp/>navigates<sp/>to<sp/>different<sp/>content<sp/>depending<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>on<sp/>the<sp/>user<sp/>input.<sp/>This<sp/>is<sp/>why<sp/>the<sp/>main<sp/>Window<sp/>needs<sp/>to</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>be<sp/>changed<sp/>to<sp/>a<sp/>NavigationWindow.<sp/>NavigationWindow<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>inherits<sp/>all<sp/>the<sp/>properties<sp/>of<sp/>Window.<sp/>The<sp/>NavigationWindow<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>element<sp/>in<sp/>the<sp/>XAML<sp/>file<sp/>creates<sp/>an<sp/>instance<sp/>of<sp/>the<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>NavigationWindow<sp/>class.<sp/>For<sp/>more<sp/>information,<sp/>see<sp/>Navigation<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>overview.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Add<sp/>a<sp/>Source<sp/>property<sp/>to<sp/>the<sp/>NavigationWindow<sp/>element<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>and<sp/>set<sp/>it<sp/>to<sp/>&quot;ExpenseItHome.xaml&quot;.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>This<sp/>sets<sp/>ExpenseItHome.xaml<sp/>to<sp/>be<sp/>the<sp/>first<sp/>page<sp/>opened<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>when<sp/>the<sp/>application<sp/>starts.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>--&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;/NavigationWindow&gt;</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages/mainwindow.xaml"/>
+  </compounddef>
+</doxygen>

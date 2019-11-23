@@ -2,7 +2,8 @@
 .ad l
 .nh
 .SH NAME
-TMSwPages.TMSLog
+TMSwPages.TMSLog \- This class instantiates and stores a \fBTMSLog\fP object\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -12,6 +13,7 @@ TMSwPages.TMSLog
 .ti -1c
 .RI "\fBTMSLog\fP (string nUnparsed)"
 .br
+.RI "Constructor for the \fBTMSLog\fP class\&. "
 .in -1c
 .SS "Properties"
 
@@ -19,6 +21,7 @@ TMSwPages.TMSLog
 .ti -1c
 .RI "string \fBlogPath\fP\fC [get, set]\fP"
 .br
+.RI "Data for each individual log (not currently protected) "
 .ti -1c
 .RI "string \fBlogClass\fP\fC [get, set]\fP"
 .br
@@ -37,11 +40,44 @@ TMSwPages.TMSLog
 .ti -1c
 .RI "DateTime \fBlogTime\fP\fC [get, set]\fP"
 .br
+.RI "Bar separated values\&. "
 .in -1c
+.SH "Detailed Description"
+.PP 
+This class instantiates and stores a \fBTMSLog\fP object\&. 
+
+This is mainly just called by the \fBTMSLogger\fP class\&.
+.PP
+.PP
+ 
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "TMSwPages\&.TMSLog\&.TMSLog (string nUnparsed)"
 
+.PP
+Constructor for the \fBTMSLog\fP class\&. This takes in a specifically formatted string of BSV (Bar separated values) and parses it to create a new log object\&. If the string isn't parsed correctly, a new log is created which acknowledges this\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstring\fP nUnparsed An incoming value meant to be parsed into a log object 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+Regex\&.Matches(), nUnparsed\&.Split(), DateTime\&.Parse() 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Creates a \fBTMSLog\fP object
+.RE
+.PP
+.PP
+ Used in Logger / LogIt call
+.PP
+Used in reading in from a file
+.PP
+Used in formatting error
 .SH "Property Documentation"
 .PP 
 .SS "string TMSwPages\&.TMSLog\&.BSV\fC [get]\fP, \fC [set]\fP"
@@ -54,8 +90,12 @@ TMSwPages.TMSLog
 
 .SS "string TMSwPages\&.TMSLog\&.logPath\fC [get]\fP, \fC [set]\fP"
 
+.PP
+Data for each individual log (not currently protected) 
 .SS "DateTime TMSwPages\&.TMSLog\&.logTime\fC [get]\fP, \fC [set]\fP"
 
+.PP
+Bar separated values\&. 
 .SS "string TMSwPages\&.TMSLog\&.logType\fC [get]\fP, \fC [set]\fP"
 
 

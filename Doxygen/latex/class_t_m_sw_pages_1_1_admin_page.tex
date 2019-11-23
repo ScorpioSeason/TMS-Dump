@@ -2,24 +2,189 @@
 \label{class_t_m_sw_pages_1_1_admin_page}\index{TMSwPages::AdminPage@{TMSwPages::AdminPage}}
 
 
-\mbox{\hyperlink{class_t_m_sw_pages_1_1_admin_page}{Admin\+Page}}  
+This class runs the \mbox{\hyperlink{class_t_m_sw_pages_1_1_admin_page}{Admin\+Page}} UI functionality.  
 
 
 Inheritance diagram for T\+M\+Sw\+Pages\+::Admin\+Page\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=1.400000cm]{class_t_m_sw_pages_1_1_admin_page}
+\includegraphics[height=2.000000cm]{class_t_m_sw_pages_1_1_admin_page}
 \end{center}
 \end{figure}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+public \mbox{\hyperlink{class_t_m_sw_pages_1_1_admin_page_a72015f451ccbfa11f79ea3714d042a51}{Admin\+Page}} ()
+\begin{DoxyCompactList}\small\item\em This is a constructor for the \mbox{\hyperlink{class_t_m_sw_pages_1_1_admin_page}{Admin\+Page}} user interface. \end{DoxyCompactList}\item 
+private void \mbox{\hyperlink{class_t_m_sw_pages_1_1_admin_page_aade1dbb0d543c8d99c6fbbc098ef1d31}{Load\+Click}} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em This adds logs to the search results. \end{DoxyCompactList}\item 
+private void \mbox{\hyperlink{class_t_m_sw_pages_1_1_admin_page_af6e6c112454636b123385619b0885be7}{View\+More\+Click}} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Sends the user to \mbox{\hyperlink{class_t_m_sw_pages_1_1_view_log_details}{View\+Log\+Details}} page using selected \mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_log}{T\+M\+S\+Log}} item\textquotesingle{}s details. \end{DoxyCompactList}\item 
+private void \mbox{\hyperlink{class_t_m_sw_pages_1_1_admin_page_a0645bad7d23477b1c426ae8828c54543}{Log\+Settings\+Click}} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em ~\newline
+ \end{DoxyCompactList}\item 
+private void \mbox{\hyperlink{class_t_m_sw_pages_1_1_admin_page_a5261e670be136ecf3efe39b4eb76049f}{Time\+\_\+\+Period\+\_\+\+Selection\+Changed}} (object sender, Selection\+Changed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em M\+E\+T\+H\+OD H\+E\+A\+D\+ER C\+O\+M\+M\+E\+NT -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---. \end{DoxyCompactList}\item 
+private void \mbox{\hyperlink{class_t_m_sw_pages_1_1_admin_page_aeb59dc48d865054286593e141566bcb1}{Date\+Picker\+\_\+\+Selected\+Date\+Changed}} (object sender, Selection\+Changed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_log}{T\+M\+S\+Log}} $>$ \mbox{\hyperlink{class_t_m_sw_pages_1_1_admin_page_a0086ede2b1f65bf900f3d7a735be4ae6}{search\+Results}} = new List$<$\mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_log}{T\+M\+S\+Log}}$>$()
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-\mbox{\hyperlink{class_t_m_sw_pages_1_1_admin_page}{Admin\+Page}} 
+This class runs the \mbox{\hyperlink{class_t_m_sw_pages_1_1_admin_page}{Admin\+Page}} UI functionality. 
+
+This currently allows searching and updating of a local log list which is displayed to the screen. ~\newline
+
+
+\DoxyHorRuler
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_t_m_sw_pages_1_1_admin_page_a72015f451ccbfa11f79ea3714d042a51}\label{class_t_m_sw_pages_1_1_admin_page_a72015f451ccbfa11f79ea3714d042a51}} 
+\index{TMSwPages::AdminPage@{TMSwPages::AdminPage}!AdminPage@{AdminPage}}
+\index{AdminPage@{AdminPage}!TMSwPages::AdminPage@{TMSwPages::AdminPage}}
+\doxysubsubsection{\texorpdfstring{AdminPage()}{AdminPage()}}
+{\footnotesize\ttfamily public T\+M\+Sw\+Pages\+::\+Admin\+Page\+::\+Admin\+Page (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+This is a constructor for the \mbox{\hyperlink{class_t_m_sw_pages_1_1_admin_page}{Admin\+Page}} user interface. 
+
+This loads the search\+Results T\+M\+S\+Logs into the Logs\+List data grid. \begin{DoxyReturn}{Returns}
+Instantiates the \mbox{\hyperlink{class_t_m_sw_pages_1_1_admin_page}{Admin\+Page}}
+\end{DoxyReturn}
+\DoxyHorRuler
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_t_m_sw_pages_1_1_admin_page_aeb59dc48d865054286593e141566bcb1}\label{class_t_m_sw_pages_1_1_admin_page_aeb59dc48d865054286593e141566bcb1}} 
+\index{TMSwPages::AdminPage@{TMSwPages::AdminPage}!DatePicker\_SelectedDateChanged@{DatePicker\_SelectedDateChanged}}
+\index{DatePicker\_SelectedDateChanged@{DatePicker\_SelectedDateChanged}!TMSwPages::AdminPage@{TMSwPages::AdminPage}}
+\doxysubsubsection{\texorpdfstring{DatePicker\_SelectedDateChanged()}{DatePicker\_SelectedDateChanged()}}
+{\footnotesize\ttfamily private void T\+M\+Sw\+Pages\+::\+Admin\+Page\+::\+Date\+Picker\+\_\+\+Selected\+Date\+Changed (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Selection\+Changed\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+~\newline
+ 
+
+~\newline
+ \begin{DoxySeeAlso}{See also}
+~\newline
+ 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+~\newline
+
+\end{DoxyReturn}
+\DoxyHorRuler
+ \mbox{\Hypertarget{class_t_m_sw_pages_1_1_admin_page_aade1dbb0d543c8d99c6fbbc098ef1d31}\label{class_t_m_sw_pages_1_1_admin_page_aade1dbb0d543c8d99c6fbbc098ef1d31}} 
+\index{TMSwPages::AdminPage@{TMSwPages::AdminPage}!LoadClick@{LoadClick}}
+\index{LoadClick@{LoadClick}!TMSwPages::AdminPage@{TMSwPages::AdminPage}}
+\doxysubsubsection{\texorpdfstring{LoadClick()}{LoadClick()}}
+{\footnotesize\ttfamily private void T\+M\+Sw\+Pages\+::\+Admin\+Page\+::\+Load\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Routed\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This adds logs to the search results. 
+
+This adds logs to the search results which match search strings entered. This will first read from the Log file before it adds in any entries. This isn\textquotesingle{}t done the most efficiently 
+\begin{DoxyExceptions}{Exceptions}
+{\em string.\+Contains()} & may throw an Argument Null exception \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_logger_ae3fc46f0a10cbcbe582f57f0ea75cc8d}{T\+M\+S\+Logger.\+Log\+It()}} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+\DoxyHorRuler
+ This clears search\+Results if the Log file is read in successfully
+
+Compare search tags box to logs in the local list and add to search\+Results list if matching
+
+If there are no search strings, add indescriminately
+
+Catch errors from Contains
+
+Refresh the UI data grid\mbox{\Hypertarget{class_t_m_sw_pages_1_1_admin_page_a0645bad7d23477b1c426ae8828c54543}\label{class_t_m_sw_pages_1_1_admin_page_a0645bad7d23477b1c426ae8828c54543}} 
+\index{TMSwPages::AdminPage@{TMSwPages::AdminPage}!LogSettingsClick@{LogSettingsClick}}
+\index{LogSettingsClick@{LogSettingsClick}!TMSwPages::AdminPage@{TMSwPages::AdminPage}}
+\doxysubsubsection{\texorpdfstring{LogSettingsClick()}{LogSettingsClick()}}
+{\footnotesize\ttfamily private void T\+M\+Sw\+Pages\+::\+Admin\+Page\+::\+Log\+Settings\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Routed\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+~\newline
+ 
+
+~\newline
+ \begin{DoxySeeAlso}{See also}
+~\newline
+ 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+~\newline
+
+\end{DoxyReturn}
+\DoxyHorRuler
+ \mbox{\Hypertarget{class_t_m_sw_pages_1_1_admin_page_a5261e670be136ecf3efe39b4eb76049f}\label{class_t_m_sw_pages_1_1_admin_page_a5261e670be136ecf3efe39b4eb76049f}} 
+\index{TMSwPages::AdminPage@{TMSwPages::AdminPage}!Time\_Period\_SelectionChanged@{Time\_Period\_SelectionChanged}}
+\index{Time\_Period\_SelectionChanged@{Time\_Period\_SelectionChanged}!TMSwPages::AdminPage@{TMSwPages::AdminPage}}
+\doxysubsubsection{\texorpdfstring{Time\_Period\_SelectionChanged()}{Time\_Period\_SelectionChanged()}}
+{\footnotesize\ttfamily private void T\+M\+Sw\+Pages\+::\+Admin\+Page\+::\+Time\+\_\+\+Period\+\_\+\+Selection\+Changed (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Selection\+Changed\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+M\+E\+T\+H\+OD H\+E\+A\+D\+ER C\+O\+M\+M\+E\+NT -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---. 
+
+~\newline
+
+
+~\newline
+ \begin{DoxySeeAlso}{See also}
+~\newline
+ 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+~\newline
+
+\end{DoxyReturn}
+\DoxyHorRuler
+ \mbox{\Hypertarget{class_t_m_sw_pages_1_1_admin_page_af6e6c112454636b123385619b0885be7}\label{class_t_m_sw_pages_1_1_admin_page_af6e6c112454636b123385619b0885be7}} 
+\index{TMSwPages::AdminPage@{TMSwPages::AdminPage}!ViewMoreClick@{ViewMoreClick}}
+\index{ViewMoreClick@{ViewMoreClick}!TMSwPages::AdminPage@{TMSwPages::AdminPage}}
+\doxysubsubsection{\texorpdfstring{ViewMoreClick()}{ViewMoreClick()}}
+{\footnotesize\ttfamily private void T\+M\+Sw\+Pages\+::\+Admin\+Page\+::\+View\+More\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Routed\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sends the user to \mbox{\hyperlink{class_t_m_sw_pages_1_1_view_log_details}{View\+Log\+Details}} page using selected \mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_log}{T\+M\+S\+Log}} item\textquotesingle{}s details. 
+
+Does not activate if nothing is selected in the datagrid. \begin{DoxySeeAlso}{See also}
+Navigation\+Service.\+Navigate() 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+\DoxyHorRuler
+ 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_t_m_sw_pages_1_1_admin_page_a0086ede2b1f65bf900f3d7a735be4ae6}\label{class_t_m_sw_pages_1_1_admin_page_a0086ede2b1f65bf900f3d7a735be4ae6}} 
+\index{TMSwPages::AdminPage@{TMSwPages::AdminPage}!searchResults@{searchResults}}
+\index{searchResults@{searchResults}!TMSwPages::AdminPage@{TMSwPages::AdminPage}}
+\doxysubsubsection{\texorpdfstring{searchResults}{searchResults}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_log}{T\+M\+S\+Log}}$>$ T\+M\+Sw\+Pages\+::\+Admin\+Page\+::search\+Results = new List$<$\mbox{\hyperlink{class_t_m_sw_pages_1_1_t_m_s_log}{T\+M\+S\+Log}}$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/\+School User/\+Code/\+T\+M\+S-\/\+Dump/\+Transport Management System W\+P\+F/\+T\+M\+Sw\+Pages/\mbox{\hyperlink{_admin_page_8xaml_8cs}{Admin\+Page.\+xaml.\+cs}}\item 
-C\+:/\+Users/\+School User/\+Code/\+T\+M\+S-\/\+Dump/\+Transport Management System W\+P\+F/\+T\+M\+Sw\+Pages/obj/\+Debug/\mbox{\hyperlink{_admin_page_8g_8cs}{Admin\+Page.\+g.\+cs}}\item 
-C\+:/\+Users/\+School User/\+Code/\+T\+M\+S-\/\+Dump/\+Transport Management System W\+P\+F/\+T\+M\+Sw\+Pages/obj/\+Debug/\mbox{\hyperlink{_t_m_sw_pages_2obj_2_debug_2_admin_page_8g_8i_8cs}{Admin\+Page.\+g.\+i.\+cs}}\end{DoxyCompactItemize}
+C\+:/\+Users/\+School User/\+Code/\+T\+M\+S-\/\+Dump/\+Transport Management System W\+P\+F/\+T\+M\+Sw\+Pages/\mbox{\hyperlink{_admin_page_8xaml_8cs}{Admin\+Page.\+xaml.\+cs}}\end{DoxyCompactItemize}

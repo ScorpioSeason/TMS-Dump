@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['carrier_2ecs_188',['Carrier.cs',['../_carrier_8cs.html',1,'']]],
-  ['contract_2ecs_189',['Contract.cs',['../_contract_8cs.html',1,'']]]
+  ['viewlogdetails_2examl_58',['ViewLogDetails.xaml',['../_view_log_details_8xaml.html',1,'']]],
+  ['viewlogdetails_2examl_2ecs_59',['ViewLogDetails.xaml.cs',['../_view_log_details_8xaml_8cs.html',1,'']]]
 ];
