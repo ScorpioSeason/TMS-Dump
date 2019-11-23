@@ -26,7 +26,7 @@
             <!-- File Menu: Open, New, Save As, Close -->
             <MenuItem Header="Admin">
                 <MenuItem Header="Admin Main Page"/>
-                <MenuItem Header="Switch User" />
+                <MenuItem Header="Switch User" Click="SwitchUserClick" />
             </MenuItem>
 
             <!-- Help Menu: About -->

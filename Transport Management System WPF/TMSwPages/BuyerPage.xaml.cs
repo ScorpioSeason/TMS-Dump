@@ -129,5 +129,11 @@ namespace TMSwPages
         {
             DG2.Items.Refresh();
         }
+
+        private void SwitchUserClick(object sender, RoutedEventArgs e)
+        {
+            LoginPage newpage = new LoginPage();
+            this.NavigationService.Navigate(newpage);
+        }
     }
 }
