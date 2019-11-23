@@ -24,6 +24,7 @@ using System.Data;
 using MySql.Data.MySqlClient;
 using MySql.Data;
 using System.Diagnostics;
+using TMSwPages;
 
 //from https://www.codeproject.com/articles/43438/connect-c-to-mysql
 
@@ -133,12 +134,12 @@ namespace Transport_Management_System_WPF
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
         *	\fn			bool CloseConnection()
-        *	\brief		To create a new Square by validating or else defaulting new values
-        *	\details	THis is if you have more to say about what the function does and don't want to inline comment
-        *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
-        *	\param[out]	char[]	newSideLength	An incoming value meant to become the square's side length
-        *	\exception	This is if we have some big ol try catches?
-        *	\see		CallsMade()
+        *	\brief		Closes the connection to the SQL database server.
+        *	\details	Closes the connection to the SQL database server and outputs an exeption to the log and to the screen if a exception is thrown.
+        *	\param[in]	none
+        *	\param[out]	none
+        *	\exception	MySqlException
+        *	\see		connection.Close
         *	\return		None
         *
         * ---------------------------------------------------------------------------------------------------- */
@@ -153,6 +154,7 @@ namespace Transport_Management_System_WPF
             catch (MySqlException ex)
             {
                 //MessageBox.Show(ex.Message);
+                TMSLogger.LogIt(ex.Message);
                 return false;
             }
         }

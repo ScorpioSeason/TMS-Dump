@@ -70,7 +70,7 @@ namespace Transport_Management_System_WPF
         *	\fn			int ToCityID()
         *	\brief		Converts a city name to the corresponding int.
         *	\details	This function converts a city to the corresponding int by comparing the input string to city names and outputs the proper value for the city.
-        *	\param[in]	string  inputCity		An incoming value meant to become the square's colour
+        *	\param[in]	string  inputCity       An incoming value meant to become the square's colour
         *	\param[out]	none
         *	\exception	none
         *	\see		none
