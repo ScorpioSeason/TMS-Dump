@@ -1,6 +1,6 @@
-﻿// ADMIN FILE HEADER COMMENT: =================================================================================
+﻿// mysqlConnector FILE HEADER COMMENT: =================================================================================
 /**
- *  \file		Admin.cs
+ *  \file		mysqlConnector.cs
  *  \ingroup	TMS
  *  \date		November 20, 2019
  *  \author		8000 Cigarettes - Megan
@@ -26,7 +26,7 @@ namespace Transport_Management_System_WPF
 {
     // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
     /**   
-    *   \class		Admin
+    *   \class		mysqlConnector
     *   \brief		This class runs the Admin UI functionality
     *   \details	... static class?  
     *   

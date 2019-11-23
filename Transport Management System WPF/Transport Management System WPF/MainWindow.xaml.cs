@@ -1,15 +1,12 @@
 ﻿// ADMIN FILE HEADER COMMENT: =================================================================================
 /**
- *  \file		Admin.cs
+ *  \file		MainWindow.xaml.cs
  *  \ingroup	TMS
  *  \date		November 20, 2019
  *  \author		8000 Cigarettes - Megan
  *  \brief	    This file contains the admin functionality	  
  *  \see		MainWindow.xaml
- *  \details    This file holds the functionality of the Admin class. The Admin has the ability to view logs as 
- *              specified by time period, view details of specific logs, alter where the log files are stored, 
- *              initiate backups of the TMS database, choose where the TMS db is backed up to, alter the Carrier 
- *              Data Table, the Route Table, and the Rate / Fee Tables.                                       
+ *  \details    This file holds the functionality of the MainWindow class.                                      
  *
  * =========================================================================================================== */
 
@@ -31,15 +28,11 @@ using System.Windows.Shapes;
 
 namespace Transport_Management_System_WPF
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    /// 
-    
+
     // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
     /**   
-    *   \class		Admin
-    *   \brief		This class runs the Admin UI functionality
+    *   \class		MainWindow
+    *   \brief		Interaction logic for MainWindow.xaml
     *   \details	... static class?  
     *   
     * -------------------------------------------------------------------------------------------------------- */
@@ -50,7 +43,7 @@ namespace Transport_Management_System_WPF
         public static string a = "";
 
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
-        /**
+        /*
         *	\fn			int Square()
         *	\brief		To create a new Square by validating or else defaulting new values
         *	\details	THis is if you have more to say about what the function does and don't want to inline comment
@@ -69,7 +62,7 @@ namespace Transport_Management_System_WPF
         }
 
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
-        /**
+        /*
         *	\fn			int Square()
         *	\brief		To create a new Square by validating or else defaulting new values
         *	\details	THis is if you have more to say about what the function does and don't want to inline comment
@@ -86,7 +79,7 @@ namespace Transport_Management_System_WPF
         }
 
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
-        /**
+        /*
         *	\fn			int Square()
         *	\brief		To create a new Square by validating or else defaulting new values
         *	\details	THis is if you have more to say about what the function does and don't want to inline comment
@@ -104,7 +97,7 @@ namespace Transport_Management_System_WPF
         }
 
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
-        /**
+        /*
         *	\fn			int Square()
         *	\brief		To create a new Square by validating or else defaulting new values
         *	\details	THis is if you have more to say about what the function does and don't want to inline comment
@@ -123,7 +116,7 @@ namespace Transport_Management_System_WPF
         }
 
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
-        /**
+        /*
         *	\fn			int Square()
         *	\brief		To create a new Square by validating or else defaulting new values
         *	\details	THis is if you have more to say about what the function does and don't want to inline comment
@@ -140,7 +133,7 @@ namespace Transport_Management_System_WPF
         }
 
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
-        /**
+        /*
         *	\fn			int Square()
         *	\brief		To create a new Square by validating or else defaulting new values
         *	\details	THis is if you have more to say about what the function does and don't want to inline comment

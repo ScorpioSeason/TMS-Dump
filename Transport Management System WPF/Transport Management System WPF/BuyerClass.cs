@@ -1,4 +1,4 @@
-﻿// ADMIN FILE HEADER COMMENT: =================================================================================
+﻿// BUYERCLASS FILE HEADER COMMENT: =================================================================================
 /**
  *  \file		BuyerClass.cs
  *  \ingroup	TMS
@@ -7,7 +7,7 @@
  *  \brief	    This file contains the buyer functionality 
  *  \see		MainWindow.xaml
  *  \details    This file holds the functionality of the buyer class. The buyer has the ability to accept contracts from the
- *              contract market place using the SQL_Query Class, to create invopices and nominate carriers for each contract.
+ *              contract market place using the SQL_Query Class, to create invoices and nominate carriers for each contract.
  *              This class represents the functions that a Buyer can execute from the UI. 
  *              i.e. Initiate an Order (read and display new contracts from CMP via DAL, select a 
  *              contract from CMP, select cities for the contract, and submit the contract to an 

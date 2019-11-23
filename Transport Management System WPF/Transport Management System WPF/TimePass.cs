@@ -1,6 +1,6 @@
-﻿// ADMIN FILE HEADER COMMENT: =================================================================================
+﻿// TIMEPASS FILE HEADER COMMENT: =================================================================================
 /**
- *  \file		TImePass.cs
+ *  \file		TimePass.cs
  *  \ingroup	TMS
  *  \date		November 20, 2019
  *  \author		8000 Cigarettes - Duane
@@ -31,7 +31,7 @@ namespace Transport_Management_System_WPF
         // This will calculate where each active truck is after 24h: which is convoluted by the 
         // amount of time between stops and time spent at each stop.
         
-        // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
         *	\fn			static void IncrementDay()
         *	\brief		This method will be used to simulate the passage of time.

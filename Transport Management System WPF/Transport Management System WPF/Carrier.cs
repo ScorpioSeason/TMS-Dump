@@ -1,4 +1,4 @@
-﻿// ADMIN FILE HEADER COMMENT: =================================================================================
+﻿// CARRIER FILE HEADER COMMENT: =================================================================================
 /**
  *  \file		Carrier.cs
  *  \ingroup	TMS
@@ -21,10 +21,11 @@ using System.Threading.Tasks;
 namespace Transport_Management_System_WPF
 {
     // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
-    /**   
+    /*   
     *   \class		Carrier
     *   \brief		This class holds all the values for the carriers and their locations of operation.
-    *   \details	This class holds all the values for the carriers and their locations of operation, along with all the values for the amount of vehiles and their types, as well as .
+    *   \details	This class holds all the values for the carriers and their locations of operation, 
+    *   along with all the values for the amount of vehicles and their types. 
     *   
     * -------------------------------------------------------------------------------------------------------- */
     class Carrier

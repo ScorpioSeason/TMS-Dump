@@ -47,8 +47,8 @@ namespace Transport_Management_System_WPF
 
     // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
     /**   
-    *   \class		Admin
-    *   \brief		This class runs the Admin UI functionality
+    *   \class		CityNode
+    *   \brief		This class runs the CityNode functionality
     *   \details	... static class?  
     *   
     * -------------------------------------------------------------------------------------------------------- */

@@ -81,7 +81,6 @@
     <Compile Include="Carrier.cs" />
     <Compile Include="mysqlConnector.cs" />
     <Compile Include="Contract.cs" />
-    <Compile Include="SQL_FAKEIT.cs" />
     <Compile Include="SQL_Query_TMS.cs" />
     <Compile Include="SQL_Query.cs" />
     <Compile Include="MappingClass.cs" />

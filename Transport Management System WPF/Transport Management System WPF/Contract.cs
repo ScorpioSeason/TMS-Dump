@@ -64,7 +64,7 @@ namespace Transport_Management_System_WPF
 
 
 
-        // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
         *	\fn			int ToCityID()
         *	\brief		Converts a city name to the corresponding int.
