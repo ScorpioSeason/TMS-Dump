@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_transport___management___system___w_p_f_1_1_s_q_l___query___t_m_s" kind="class" language="C#" prot="public">
+    <compoundname>Transport_Management_System_WPF::SQL_Query_TMS</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_transport___management___system___w_p_f_1_1_s_q_l___query___t_m_s_1ae892a829faf4f780b88920b944098a20" prot="private" static="no" mutable="no">
+        <type>MySqlConnection</type>
+        <definition>MySqlConnection Transport_Management_System_WPF.SQL_Query_TMS.connection</definition>
+        <argsstring></argsstring>
+        <name>connection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/SQL_Query_TMS.cs" line="41" column="33" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/SQL_Query_TMS.cs" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_transport___management___system___w_p_f_1_1_s_q_l___query___t_m_s_1a1925e46bbbaca908c0c5c791a6d3db4f" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Transport_Management_System_WPF.SQL_Query_TMS.server</definition>
+        <argsstring></argsstring>
+        <name>server</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/SQL_Query_TMS.cs" line="42" column="24" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/SQL_Query_TMS.cs" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_transport___management___system___w_p_f_1_1_s_q_l___query___t_m_s_1a656bf529a4f73200c3afe2415c0c5da1" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Transport_Management_System_WPF.SQL_Query_TMS.database</definition>
+        <argsstring></argsstring>
+        <name>database</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/SQL_Query_TMS.cs" line="43" column="24" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/SQL_Query_TMS.cs" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_transport___management___system___w_p_f_1_1_s_q_l___query___t_m_s_1a5144ebf4b2142b813a27987515a9f031" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Transport_Management_System_WPF.SQL_Query_TMS.uid</definition>
+        <argsstring></argsstring>
+        <name>uid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/SQL_Query_TMS.cs" line="44" column="24" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/SQL_Query_TMS.cs" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_transport___management___system___w_p_f_1_1_s_q_l___query___t_m_s_1a5002cfbc324dbe60c4dbc7348497525b" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Transport_Management_System_WPF.SQL_Query_TMS.password</definition>
+        <argsstring></argsstring>
+        <name>password</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/SQL_Query_TMS.cs" line="45" column="24" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/SQL_Query_TMS.cs" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_transport___management___system___w_p_f_1_1_s_q_l___query___t_m_s_1a252b08ffbeac754f95236459867a24fd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Transport_Management_System_WPF.SQL_Query_TMS.SQL_Query_TMS</definition>
+        <argsstring>()</argsstring>
+        <name>SQL_Query_TMS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/SQL_Query_TMS.cs" line="60" column="16" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/SQL_Query_TMS.cs" bodystart="60" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="class_transport___management___system___w_p_f_1_1_s_q_l___query___t_m_s_1a0c96051ff444fa74a29f6170187eb554" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Transport_Management_System_WPF.SQL_Query_TMS.Initialize</definition>
+        <argsstring>()</argsstring>
+        <name>Initialize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/SQL_Query_TMS.cs" line="78" column="21" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/SQL_Query_TMS.cs" bodystart="78" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="class_transport___management___system___w_p_f_1_1_s_q_l___query___t_m_s_1a91dc263c9b0a27c1f870c4429e74d1e2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; string &gt;[]</type>
+        <definition>List&lt;string&gt; [] Transport_Management_System_WPF.SQL_Query_TMS.Select_Contracts</definition>
+        <argsstring>()</argsstring>
+        <name>Select_Contracts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/SQL_Query_TMS.cs" line="174" column="21" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/SQL_Query_TMS.cs" bodystart="174" bodyend="219"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_transport___management___system___w_p_f_1_1_s_q_l___query___t_m_s_1aee1eea15a09e4b889f7f595db573dc85" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Transport_Management_System_WPF.SQL_Query_TMS.OpenConnection</definition>
+        <argsstring>()</argsstring>
+        <name>OpenConnection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/SQL_Query_TMS.cs" line="105" column="22" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/SQL_Query_TMS.cs" bodystart="105" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="class_transport___management___system___w_p_f_1_1_s_q_l___query___t_m_s_1a75e0ac629c196f2adc77e21be7b5f6f4" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Transport_Management_System_WPF.SQL_Query_TMS.CloseConnection</definition>
+        <argsstring>()</argsstring>
+        <name>CloseConnection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/SQL_Query_TMS.cs" line="147" column="22" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/SQL_Query_TMS.cs" bodystart="147" bodyend="159"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/SQL_Query_TMS.cs" line="40" column="1" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/SQL_Query_TMS.cs" bodystart="39" bodyend="256"/>
+    <listofallmembers>
+      <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query___t_m_s_1a75e0ac629c196f2adc77e21be7b5f6f4" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::SQL_Query_TMS</scope><name>CloseConnection</name></member>
+      <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query___t_m_s_1ae892a829faf4f780b88920b944098a20" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::SQL_Query_TMS</scope><name>connection</name></member>
+      <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query___t_m_s_1a656bf529a4f73200c3afe2415c0c5da1" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::SQL_Query_TMS</scope><name>database</name></member>
+      <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query___t_m_s_1a0c96051ff444fa74a29f6170187eb554" prot="public" virt="non-virtual"><scope>Transport_Management_System_WPF::SQL_Query_TMS</scope><name>Initialize</name></member>
+      <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query___t_m_s_1aee1eea15a09e4b889f7f595db573dc85" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::SQL_Query_TMS</scope><name>OpenConnection</name></member>
+      <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query___t_m_s_1a5002cfbc324dbe60c4dbc7348497525b" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::SQL_Query_TMS</scope><name>password</name></member>
+      <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query___t_m_s_1a91dc263c9b0a27c1f870c4429e74d1e2" prot="public" virt="non-virtual"><scope>Transport_Management_System_WPF::SQL_Query_TMS</scope><name>Select_Contracts</name></member>
+      <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query___t_m_s_1a1925e46bbbaca908c0c5c791a6d3db4f" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::SQL_Query_TMS</scope><name>server</name></member>
+      <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query___t_m_s_1a252b08ffbeac754f95236459867a24fd" prot="public" virt="non-virtual"><scope>Transport_Management_System_WPF::SQL_Query_TMS</scope><name>SQL_Query_TMS</name></member>
+      <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query___t_m_s_1a5144ebf4b2142b813a27987515a9f031" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::SQL_Query_TMS</scope><name>uid</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

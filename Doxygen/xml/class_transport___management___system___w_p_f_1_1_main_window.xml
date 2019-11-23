@@ -1,0 +1,214 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_transport___management___system___w_p_f_1_1_main_window" kind="class" language="C++" prot="public">
+    <compoundname>Transport_Management_System_WPF::MainWindow</compoundname>
+    <basecompoundref prot="private" virt="non-virtual">Window</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_transport___management___system___w_p_f_1_1_main_window_1aea3c35693adbbaf5eb02439b30dbade5" prot="private" static="no" mutable="no">
+        <type>List&lt; <ref refid="class_transport___management___system___w_p_f_1_1_contract" kindref="compound">Contract</ref> &gt;</type>
+        <definition>List&lt;Contract&gt; Transport_Management_System_WPF::MainWindow::acceptedContracts</definition>
+        <argsstring></argsstring>
+        <name>acceptedContracts</name>
+        <initializer>= new List&lt;<ref refid="class_transport___management___system___w_p_f_1_1_contract" kindref="compound">Contract</ref>&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MainWindow.xaml.cs" line="48" column="14" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MainWindow.xaml.cs" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_transport___management___system___w_p_f_1_1_main_window_1a37653ae01d60682a07e052147dff7d50" prot="private" static="yes" mutable="no">
+        <type>public <ref refid="class_transport___management___system___w_p_f_1_1_buyer_class" kindref="compound">BuyerClass</ref></type>
+        <definition>public BuyerClass Transport_Management_System_WPF::MainWindow::buyer</definition>
+        <argsstring></argsstring>
+        <name>buyer</name>
+        <initializer>= new <ref refid="class_transport___management___system___w_p_f_1_1_buyer_class" kindref="compound">BuyerClass</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MainWindow.xaml.cs" line="49" column="34" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MainWindow.xaml.cs" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_transport___management___system___w_p_f_1_1_main_window_1afa15319061c0ec966e6aadad8471e897" prot="private" static="yes" mutable="no">
+        <type>public string</type>
+        <definition>public string Transport_Management_System_WPF::MainWindow::a</definition>
+        <argsstring></argsstring>
+        <name>a</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MainWindow.xaml.cs" line="50" column="30" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MainWindow.xaml.cs" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_transport___management___system___w_p_f_1_1_main_window_1a2751b4e1cae01713e693ab84e8c217f6" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>public</type>
+        <definition>public Transport_Management_System_WPF::MainWindow::MainWindow</definition>
+        <argsstring>()</argsstring>
+        <name>MainWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MainWindow.xaml.cs" line="64" column="16" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MainWindow.xaml.cs" bodystart="64" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="class_transport___management___system___w_p_f_1_1_main_window_1aed4b9bf6216079df88ff73b118b9004e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>public void</type>
+        <definition>public void Transport_Management_System_WPF::MainWindow::SetOutput</definition>
+        <argsstring>(string outputString)</argsstring>
+        <name>SetOutput</name>
+        <param>
+          <type>string</type>
+          <declname>outputString</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MainWindow.xaml.cs" line="83" column="21" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MainWindow.xaml.cs" bodystart="83" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="class_transport___management___system___w_p_f_1_1_main_window_1affee0e4589fca964a7d86d7dcccd3103" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>private void</type>
+        <definition>private void Transport_Management_System_WPF::MainWindow::RedMenuItem_Click</definition>
+        <argsstring>(object sender, RoutedEventArgs e)</argsstring>
+        <name>RedMenuItem_Click</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>RoutedEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MainWindow.xaml.cs" line="100" column="22" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MainWindow.xaml.cs" bodystart="100" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="class_transport___management___system___w_p_f_1_1_main_window_1a60f01f91e8e0a9dd39584e2cd2541727" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>private void</type>
+        <definition>private void Transport_Management_System_WPF::MainWindow::Button_Click</definition>
+        <argsstring>(object sender, RoutedEventArgs e)</argsstring>
+        <name>Button_Click</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>RoutedEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MainWindow.xaml.cs" line="118" column="22" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MainWindow.xaml.cs" bodystart="118" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="class_transport___management___system___w_p_f_1_1_main_window_1aaa973d7449198bfd1107404ab534fe0d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>private void</type>
+        <definition>private void Transport_Management_System_WPF::MainWindow::Button_Click_1</definition>
+        <argsstring>(object sender, RoutedEventArgs e)</argsstring>
+        <name>Button_Click_1</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>RoutedEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MainWindow.xaml.cs" line="137" column="22" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MainWindow.xaml.cs" bodystart="137" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="class_transport___management___system___w_p_f_1_1_main_window_1a9bd5e3542b82523a8fded84c0f343c83" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>private void</type>
+        <definition>private void Transport_Management_System_WPF::MainWindow::Button_AddContract</definition>
+        <argsstring>(object sender, RoutedEventArgs e)</argsstring>
+        <name>Button_AddContract</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>RoutedEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MainWindow.xaml.cs" line="154" column="22" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MainWindow.xaml.cs" bodystart="154" bodyend="158"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Transport_Management_System_WPF::MainWindow</label>
+        <link refid="class_transport___management___system___w_p_f_1_1_main_window"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Window</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>Transport_Management_System_WPF::MainWindow</label>
+        <link refid="class_transport___management___system___w_p_f_1_1_main_window"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>buyer</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Window</label>
+      </node>
+      <node id="3">
+        <label>Transport_Management_System_WPF.BuyerClass</label>
+        <link refid="class_transport___management___system___w_p_f_1_1_buyer_class"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MainWindow.xaml.cs" line="47" column="1" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MainWindow.xaml.cs" bodystart="46" bodyend="159"/>
+    <listofallmembers>
+      <member refid="class_transport___management___system___w_p_f_1_1_main_window_1afa15319061c0ec966e6aadad8471e897" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>a</name></member>
+      <member refid="class_transport___management___system___w_p_f_1_1_main_window_1aea3c35693adbbaf5eb02439b30dbade5" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>acceptedContracts</name></member>
+      <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a9bd5e3542b82523a8fded84c0f343c83" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>Button_AddContract</name></member>
+      <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a60f01f91e8e0a9dd39584e2cd2541727" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>Button_Click</name></member>
+      <member refid="class_transport___management___system___w_p_f_1_1_main_window_1aaa973d7449198bfd1107404ab534fe0d" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>Button_Click_1</name></member>
+      <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a37653ae01d60682a07e052147dff7d50" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>buyer</name></member>
+      <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a2751b4e1cae01713e693ab84e8c217f6" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>MainWindow</name></member>
+      <member refid="class_transport___management___system___w_p_f_1_1_main_window_1affee0e4589fca964a7d86d7dcccd3103" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>RedMenuItem_Click</name></member>
+      <member refid="class_transport___management___system___w_p_f_1_1_main_window_1aed4b9bf6216079df88ff73b118b9004e" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>SetOutput</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

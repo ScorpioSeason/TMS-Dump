@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_transport___management___system___w_p_f_1_1_planner_class_1_1_planner" kind="class" language="C#" prot="private">
+    <compoundname>Transport_Management_System_WPF::PlannerClass::Planner</compoundname>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_transport___management___system___w_p_f_1_1_planner_class_1_1_planner_1a0359b9abd4fdeb0f4d1b36fac64fb28c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>object</type>
+        <definition>object Transport_Management_System_WPF.PlannerClass.Planner.SQLMagic</definition>
+        <argsstring>(string input)</argsstring>
+        <name>SQLMagic</name>
+        <param>
+          <type>string</type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/PlannerClass.cs" line="91" column="27" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/PlannerClass.cs" bodystart="91" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="class_transport___management___system___w_p_f_1_1_planner_class_1_1_planner_1ae211926ad0bc343c083c0c8bd8b0439d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int Transport_Management_System_WPF.PlannerClass.Planner::Recive_Customer_Order_From_Buyer</definition>
+        <argsstring>()</argsstring>
+        <name>Recive_Customer_Order_From_Buyer</name>
+        <briefdescription>
+<para>This method will read the contracts that the buy has set aside. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The method will read from the data base. The buy will have flagged orders and nominated carries for each. First the method will determine which carrier is the best option. It will then use the Mapping Class to determine the trip the trucks will take. All of this data will be saved into the data base after.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">null</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">null</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>null</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_transport___management___system___w_p_f_1_1_mapping_class" kindref="compound">MappingClass</ref> </para>
+</simplesect>
+<simplesect kind="return"><para>None</para>
+</simplesect>
+<hruler/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/PlannerClass.cs" line="112" column="24" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/PlannerClass.cs" bodystart="112" bodyend="139"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_transport___management___system___w_p_f_1_1_planner_class_1_1_planner_1a0b32872a65f915b1b256b91c81f1691f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; <ref refid="struct_transport___management___system___w_p_f_1_1_trip___ticket" kindref="compound">Trip_Ticket</ref> &gt;</type>
+        <definition>List&lt;Trip_Ticket&gt; Transport_Management_System_WPF.PlannerClass.Planner.Select_Carriers_From_Nominations</definition>
+        <argsstring>(List&lt; Carrier &gt; list_of_carriers, Contract InContract)</argsstring>
+        <name>Select_Carriers_From_Nominations</name>
+        <param>
+          <type>List&lt; <ref refid="class_transport___management___system___w_p_f_1_1_carrier" kindref="compound">Carrier</ref> &gt;</type>
+          <declname>list_of_carriers</declname>
+        </param>
+        <param>
+          <type><ref refid="class_transport___management___system___w_p_f_1_1_contract" kindref="compound">Contract</ref></type>
+          <declname>InContract</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/PlannerClass.cs" line="142" column="26" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/PlannerClass.cs" bodystart="142" bodyend="326"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/PlannerClass.cs" line="90" column="1" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/PlannerClass.cs" bodystart="89" bodyend="329"/>
+    <listofallmembers>
+      <member refid="class_transport___management___system___w_p_f_1_1_planner_class_1_1_planner_1ae211926ad0bc343c083c0c8bd8b0439d" prot="public" virt="non-virtual"><scope>Transport_Management_System_WPF::PlannerClass::Planner</scope><name>Recive_Customer_Order_From_Buyer</name></member>
+      <member refid="class_transport___management___system___w_p_f_1_1_planner_class_1_1_planner_1a0b32872a65f915b1b256b91c81f1691f" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::PlannerClass::Planner</scope><name>Select_Carriers_From_Nominations</name></member>
+      <member refid="class_transport___management___system___w_p_f_1_1_planner_class_1_1_planner_1a0359b9abd4fdeb0f4d1b36fac64fb28c" prot="public" virt="non-virtual"><scope>Transport_Management_System_WPF::PlannerClass::Planner</scope><name>SQLMagic</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

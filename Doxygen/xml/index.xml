@@ -5,23 +5,149 @@
     <member refid="class_t_m_sw_pages_1_1_admin_1a245dee4eab51de187b4af2c84310d2cd" kind="variable"><name>adminAlter</name></member>
     <member refid="class_t_m_sw_pages_1_1_admin_1a9544cc6cc847d75e5eca01c31dfa7655" kind="function"><name>Admin</name></member>
   </compound>
-  <compound refid="class_t_m_sw_pages_1_1_admin_page" kind="class"><name>TMSwPages::AdminPage</name>
-    <member refid="class_t_m_sw_pages_1_1_admin_page_1a0086ede2b1f65bf900f3d7a735be4ae6" kind="variable"><name>searchResults</name></member>
-    <member refid="class_t_m_sw_pages_1_1_admin_page_1a72015f451ccbfa11f79ea3714d042a51" kind="function"><name>AdminPage</name></member>
-    <member refid="class_t_m_sw_pages_1_1_admin_page_1aade1dbb0d543c8d99c6fbbc098ef1d31" kind="function"><name>LoadClick</name></member>
-    <member refid="class_t_m_sw_pages_1_1_admin_page_1af6e6c112454636b123385619b0885be7" kind="function"><name>ViewMoreClick</name></member>
-    <member refid="class_t_m_sw_pages_1_1_admin_page_1a0645bad7d23477b1c426ae8828c54543" kind="function"><name>LogSettingsClick</name></member>
-    <member refid="class_t_m_sw_pages_1_1_admin_page_1a5261e670be136ecf3efe39b4eb76049f" kind="function"><name>Time_Period_SelectionChanged</name></member>
-    <member refid="class_t_m_sw_pages_1_1_admin_page_1aeb59dc48d865054286593e141566bcb1" kind="function"><name>DatePicker_SelectedDateChanged</name></member>
+  <compound refid="class_admin" kind="class"><name>Admin</name>
+  </compound>
+  <compound refid="class_admin" kind="class"><name>Admin</name>
+  </compound>
+  <compound refid="class_admin" kind="class"><name>Admin</name>
+  </compound>
+  <compound refid="class_admin" kind="class"><name>Admin</name>
+  </compound>
+  <compound refid="class_admin" kind="class"><name>Admin</name>
+  </compound>
+  <compound refid="class_admin" kind="class"><name>Admin</name>
+  </compound>
+  <compound refid="class_admin" kind="class"><name>Admin</name>
+  </compound>
+  <compound refid="class_admin" kind="class"><name>Admin</name>
+  </compound>
+  <compound refid="class_admin" kind="class"><name>Admin</name>
+  </compound>
+  <compound refid="class_admin" kind="class"><name>Admin</name>
   </compound>
   <compound refid="class_t_m_sw_pages_1_1_alter_tables" kind="class"><name>TMSwPages::AlterTables</name>
   </compound>
-  <compound refid="class_t_m_sw_pages_1_1_app" kind="class"><name>TMSwPages::App</name>
+  <compound refid="class_transport___management___system___w_p_f_1_1_app" kind="class"><name>Transport_Management_System_WPF::App</name>
   </compound>
   <compound refid="class_t_m_sw_pages_1_1_backup_t_m_s" kind="class"><name>TMSwPages::BackupTMS</name>
   </compound>
-  <compound refid="class_t_m_sw_pages_1_1_main_window" kind="class"><name>TMSwPages::MainWindow</name>
-    <member refid="class_t_m_sw_pages_1_1_main_window_1a466951de520a75e77afa4a40f6cb710f" kind="function"><name>MainWindow</name></member>
+  <compound refid="class_transport___management___system___w_p_f_1_1_buyer_class" kind="class"><name>Transport_Management_System_WPF::BuyerClass</name>
+    <member refid="class_transport___management___system___w_p_f_1_1_buyer_class_1a57b54a05ef81b5b5b578d5bfc6485a10" kind="variable"><name>contracts</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_buyer_class_1ab77ad4f82c09d7cb319583929b1e1b48" kind="property"><name>Contracts</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_buyer_class_1a9719c333eae5095d5fc9cf1d185c0677" kind="function"><name>ParseContracts</name></member>
+  </compound>
+  <compound refid="class_transport___management___system___w_p_f_1_1_carrier" kind="class"><name>Transport_Management_System_WPF::Carrier</name>
+    <member refid="class_transport___management___system___w_p_f_1_1_carrier_1a0b774c178e98ea056604b6f24b73746a" kind="property"><name>Carrier_Name</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_carrier_1af8db30f1235b0a15b7dba2b19a60d42e" kind="property"><name>Depot_City</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_carrier_1a49bf12a5ed6950fcc225a0c4307ec8b1" kind="property"><name>FTL_Rate</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_carrier_1ad4e3a70b3d28e1611edf0b6f4fbfcd43" kind="property"><name>LTL_Rate</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_carrier_1a189b41a6fe917793992cbdc3c283081f" kind="property"><name>Reefer_Charge</name></member>
+  </compound>
+  <compound refid="class_transport___management___system___w_p_f_1_1_city_node" kind="class"><name>Transport_Management_System_WPF::CityNode</name>
+    <member refid="class_transport___management___system___w_p_f_1_1_city_node_1aeca85784cd7fa87b003d372df46195b1" kind="property"><name>CityID</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_city_node_1acf6a7ad108df5682216f0bd71fb827d7" kind="property"><name>CityName</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_city_node_1a1a8b493f67d74c5d238ecf1d4e7d9620" kind="property"><name>East</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_city_node_1a3e017c17a23740fb85e42fca68f541a3" kind="property"><name>EastKM</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_city_node_1aea7ea8b5814108890a32e553958ae85b" kind="property"><name>EastHour</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_city_node_1a42241fedecce3a8de470ed7339432403" kind="property"><name>West</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_city_node_1a9c35751ba5a470c3f8c5c541d6c6ae6e" kind="property"><name>WestKM</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_city_node_1a05008ea061410d2952f1912f76ad26fa" kind="property"><name>WestHour</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_city_node_1a6f66e2a70e57355be0f0ba272bcb2665" kind="function"><name>CityNode</name></member>
+  </compound>
+  <compound refid="class_transport___management___system___w_p_f_1_1_contract" kind="class"><name>Transport_Management_System_WPF::Contract</name>
+    <member refid="class_transport___management___system___w_p_f_1_1_contract_1a41ac173e3c56e0ae7f6a114635c3384f" kind="property"><name>client_Name</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_contract_1aca3e55529a8daa8e8374f2e09fd943a6" kind="property"><name>job_Type</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_contract_1a0e5bada08c53049adfc4a73271316692" kind="property"><name>quantity</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_contract_1a94cc2bb53b867ee05003849bb3d954d6" kind="property"><name>origin</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_contract_1a3609748147e09807df18d132b3e899d9" kind="property"><name>destination</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_contract_1a5fbe75b711bca7ae679a905b87b39d21" kind="property"><name>van_Type</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_contract_1ae7c3e9a488287e6703064acda1bed8d1" kind="variable"><name>nominatedCarriers</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_contract_1a254ed52cf71342faa887347d1b3ca016" kind="function"><name>ToCityID</name></member>
+  </compound>
+  <compound refid="struct_transport___management___system___w_p_f_1_1_customer" kind="struct"><name>Transport_Management_System_WPF::Customer</name>
+    <member refid="struct_transport___management___system___w_p_f_1_1_customer_1a4b076abe3c377803ce89183a4fd4833a" kind="variable"><name>Customer_Name</name></member>
+    <member refid="struct_transport___management___system___w_p_f_1_1_customer_1aa760a46526733d93b0f9df1d606ca386" kind="variable"><name>AddressID</name></member>
+    <member refid="struct_transport___management___system___w_p_f_1_1_customer_1a3743849924443a4dd759fe6759dd1ba6" kind="variable"><name>Telephone</name></member>
+  </compound>
+  <compound refid="struct_transport___management___system___w_p_f_1_1_location" kind="struct"><name>Transport_Management_System_WPF::Location</name>
+    <member refid="struct_transport___management___system___w_p_f_1_1_location_1a848c8cf678e3b58452154a08f850c3e1" kind="variable"><name>CityName</name></member>
+  </compound>
+  <compound refid="class_transport___management___system___w_p_f_1_1_main_window" kind="class"><name>Transport_Management_System_WPF::MainWindow</name>
+    <member refid="class_transport___management___system___w_p_f_1_1_main_window_1aea3c35693adbbaf5eb02439b30dbade5" kind="variable"><name>acceptedContracts</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a37653ae01d60682a07e052147dff7d50" kind="variable"><name>buyer</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_main_window_1afa15319061c0ec966e6aadad8471e897" kind="variable"><name>a</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a2751b4e1cae01713e693ab84e8c217f6" kind="function"><name>MainWindow</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_main_window_1aed4b9bf6216079df88ff73b118b9004e" kind="function"><name>SetOutput</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_main_window_1affee0e4589fca964a7d86d7dcccd3103" kind="function"><name>RedMenuItem_Click</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a60f01f91e8e0a9dd39584e2cd2541727" kind="function"><name>Button_Click</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_main_window_1aaa973d7449198bfd1107404ab534fe0d" kind="function"><name>Button_Click_1</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a9bd5e3542b82523a8fded84c0f343c83" kind="function"><name>Button_AddContract</name></member>
+  </compound>
+  <compound refid="class_transport___management___system___w_p_f_1_1_mapping_class" kind="class"><name>Transport_Management_System_WPF::MappingClass</name>
+    <member refid="class_transport___management___system___w_p_f_1_1_mapping_class_1a6b13c2cb35ebe12b11e7a0881129cace" kind="variable"><name>Number_of_Cities</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_mapping_class_1adae437d5242ae05821b49c72483a4622" kind="variable"><name>nodes</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_mapping_class_1a730543415ef496d02528a5b4b815fa23" kind="function"><name>MappingClass</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_mapping_class_1a2d0bf5b2ac5ef1514c9f28ade98716cc" kind="function"><name>GetTravelData</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_mapping_class_1a58b3c5157086cc0f11722192607bc422" kind="function"><name>SummerizeTrip</name></member>
+  </compound>
+  <compound refid="class_transport___management___system___w_p_f_1_1_mockup_c_m_p" kind="class"><name>Transport_Management_System_WPF::MockupCMP</name>
+    <member refid="class_transport___management___system___w_p_f_1_1_mockup_c_m_p_1afd6226c97b2695951f401d01d4391bd9" kind="variable"><name>MockEntries</name></member>
+  </compound>
+  <compound refid="class_transport___management___system___w_p_f_1_1mysql_connector" kind="class"><name>Transport_Management_System_WPF::mysqlConnector</name>
+  </compound>
+  <compound refid="class_transport___management___system___w_p_f_1_1_planner_class_1_1_planner" kind="class"><name>Transport_Management_System_WPF::PlannerClass::Planner</name>
+    <member refid="class_transport___management___system___w_p_f_1_1_planner_class_1_1_planner_1a0359b9abd4fdeb0f4d1b36fac64fb28c" kind="function"><name>SQLMagic</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_planner_class_1_1_planner_1ae211926ad0bc343c083c0c8bd8b0439d" kind="function"><name>Recive_Customer_Order_From_Buyer</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_planner_class_1_1_planner_1a0b32872a65f915b1b256b91c81f1691f" kind="function"><name>Select_Carriers_From_Nominations</name></member>
+  </compound>
+  <compound refid="class_transport___management___system___w_p_f_1_1_planner_class" kind="class"><name>Transport_Management_System_WPF::PlannerClass</name>
+  </compound>
+  <compound refid="struct_transport___management___system___w_p_f_1_1_route_data" kind="struct"><name>Transport_Management_System_WPF::RouteData</name>
+    <member refid="struct_transport___management___system___w_p_f_1_1_route_data_1a7c32b69555f2b7546a00cbb7cc1fc4b2" kind="variable"><name>RouteDataID</name></member>
+    <member refid="struct_transport___management___system___w_p_f_1_1_route_data_1a23cd8f5e8ad99be71ea319ae12706e35" kind="variable"><name>KM</name></member>
+    <member refid="struct_transport___management___system___w_p_f_1_1_route_data_1a8a1fb3b1c950746f7f44960742163436" kind="variable"><name>PickupTime</name></member>
+    <member refid="struct_transport___management___system___w_p_f_1_1_route_data_1a1c014862156bfa9f7f5c3177e8a8dc30" kind="variable"><name>DriveTime</name></member>
+    <member refid="struct_transport___management___system___w_p_f_1_1_route_data_1aac1cdb60d3446d2a2ee8965f11356b72" kind="variable"><name>LtlTime</name></member>
+    <member refid="struct_transport___management___system___w_p_f_1_1_route_data_1a822646cabf49a7459b97f0aad3bfb838" kind="variable"><name>DropoffTime</name></member>
+    <member refid="struct_transport___management___system___w_p_f_1_1_route_data_1a78ab42300dd9923b0d9914c6fa57441c" kind="variable"><name>CityA</name></member>
+    <member refid="struct_transport___management___system___w_p_f_1_1_route_data_1a4b5ac67440353f1061ba8ba3cbcabc92" kind="variable"><name>CityB</name></member>
+  </compound>
+  <compound refid="struct_transport___management___system___w_p_f_1_1_route_sum_data" kind="struct"><name>Transport_Management_System_WPF::RouteSumData</name>
+    <member refid="struct_transport___management___system___w_p_f_1_1_route_sum_data_1a4519225a57727b844e4adcdc5e4ec378" kind="variable"><name>totalDriveTime</name></member>
+    <member refid="struct_transport___management___system___w_p_f_1_1_route_sum_data_1a3912f1c48f71e670dcaa4f8455100a56" kind="variable"><name>totalTripTime</name></member>
+    <member refid="struct_transport___management___system___w_p_f_1_1_route_sum_data_1aaca3e4b028ef7381d995d32103f44704" kind="variable"><name>totalKM</name></member>
+    <member refid="struct_transport___management___system___w_p_f_1_1_route_sum_data_1a3d2ddcb564dfc2322a2b50156df0f72e" kind="variable"><name>OriginCity</name></member>
+    <member refid="struct_transport___management___system___w_p_f_1_1_route_sum_data_1aa785d7de7cf9f051b5d6e00c6e1aaa08" kind="variable"><name>DestinationCity</name></member>
+  </compound>
+  <compound refid="class_transport___management___system___w_p_f_1_1_s_q_l___f_a_k_e_i_t" kind="class"><name>Transport_Management_System_WPF::SQL_FAKEIT</name>
+    <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___f_a_k_e_i_t_1aa992eda9d5089f1dfa42237992381107" kind="function"><name>Select_Carriers</name></member>
+  </compound>
+  <compound refid="class_transport___management___system___w_p_f_1_1_s_q_l___query" kind="class"><name>Transport_Management_System_WPF::SQL_Query</name>
+    <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query_1af7b60498e05b190cb6a67624ef511bdb" kind="variable"><name>connection</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query_1a74e809c491defe9a639c92f31fd21cbb" kind="variable"><name>server</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query_1a8d537a3d3e432a7348889a9d74c629c6" kind="variable"><name>database</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query_1a9f88738a93abcfe0a2840de3d99487c3" kind="variable"><name>uid</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query_1ab28ec0d2ffcdbc011c59b42a430b87e8" kind="variable"><name>password</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query_1aef2a4735d2091c69cf885890dd1421af" kind="function"><name>SQL_Query</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query_1aad7d3ffbabc1ebd7b7c296d15a375123" kind="function"><name>Initialize</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query_1a15ae7fdb11fdb83e124c875b7d949b0b" kind="function"><name>Select_Contracts</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query_1a84f129cd23e49a64a4d0a31b7cea2e21" kind="function"><name>OpenConnection</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query_1a3b1b6790a3ca4aec7c3585b7a8bc7d79" kind="function"><name>CloseConnection</name></member>
+  </compound>
+  <compound refid="class_transport___management___system___w_p_f_1_1_s_q_l___query___t_m_s" kind="class"><name>Transport_Management_System_WPF::SQL_Query_TMS</name>
+    <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query___t_m_s_1ae892a829faf4f780b88920b944098a20" kind="variable"><name>connection</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query___t_m_s_1a1925e46bbbaca908c0c5c791a6d3db4f" kind="variable"><name>server</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query___t_m_s_1a656bf529a4f73200c3afe2415c0c5da1" kind="variable"><name>database</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query___t_m_s_1a5144ebf4b2142b813a27987515a9f031" kind="variable"><name>uid</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query___t_m_s_1a5002cfbc324dbe60c4dbc7348497525b" kind="variable"><name>password</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query___t_m_s_1a252b08ffbeac754f95236459867a24fd" kind="function"><name>SQL_Query_TMS</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query___t_m_s_1a0c96051ff444fa74a29f6170187eb554" kind="function"><name>Initialize</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query___t_m_s_1a91dc263c9b0a27c1f870c4429e74d1e2" kind="function"><name>Select_Contracts</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query___t_m_s_1aee1eea15a09e4b889f7f595db573dc85" kind="function"><name>OpenConnection</name></member>
+    <member refid="class_transport___management___system___w_p_f_1_1_s_q_l___query___t_m_s_1a75e0ac629c196f2adc77e21be7b5f6f4" kind="function"><name>CloseConnection</name></member>
+  </compound>
+  <compound refid="class_transport___management___system___w_p_f_1_1_time_pass" kind="class"><name>Transport_Management_System_WPF::TimePass</name>
+    <member refid="class_transport___management___system___w_p_f_1_1_time_pass_1ac82dacc3b496a410800b997cc112494c" kind="function"><name>IncrementDay</name></member>
   </compound>
   <compound refid="class_t_m_sw_pages_1_1_t_m_s_log" kind="class"><name>TMSwPages::TMSLog</name>
     <member refid="class_t_m_sw_pages_1_1_t_m_s_log_1a5692db4f00e1e7d73a6dc266cfcf9150" kind="property"><name>logPath</name></member>
@@ -42,13 +168,43 @@
     <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a016f771887948d9c8e41908106fac94d" kind="function"><name>AppendLogFile</name></member>
     <member refid="class_t_m_sw_pages_1_1_t_m_s_logger_1a3feb70f75cd69696b3355f6deac9cb32" kind="function"><name>ChangeLogLocation</name></member>
   </compound>
-  <compound refid="class_t_m_sw_pages_1_1_view_log_details" kind="class"><name>TMSwPages::ViewLogDetails</name>
-    <member refid="class_t_m_sw_pages_1_1_view_log_details_1a52d7460a3afa1e236afeeeb29c88584c" kind="function"><name>ViewLogDetails</name></member>
-    <member refid="class_t_m_sw_pages_1_1_view_log_details_1a39a52a42ed73d7cff66d36a22639806c" kind="function"><name>ViewLogDetails</name></member>
+  <compound refid="struct_transport___management___system___w_p_f_1_1_trip___ticket" kind="struct"><name>Transport_Management_System_WPF::Trip_Ticket</name>
+    <member refid="struct_transport___management___system___w_p_f_1_1_trip___ticket_1acf7c3fb5a7f04d0857f0c4b34cff05b0" kind="variable"><name>TicketID</name></member>
+    <member refid="struct_transport___management___system___w_p_f_1_1_trip___ticket_1a4d7ee0e3563b272b18bc947264f2aac0" kind="variable"><name>TruckID</name></member>
+    <member refid="struct_transport___management___system___w_p_f_1_1_trip___ticket_1aedde328df4cc5ee04967a294549e3d53" kind="variable"><name>FTL_or_LTL</name></member>
+    <member refid="struct_transport___management___system___w_p_f_1_1_trip___ticket_1a027a527cbc51146bd409a8b2f188156d" kind="variable"><name>Is_Reefer</name></member>
+    <member refid="struct_transport___management___system___w_p_f_1_1_trip___ticket_1afbb9ff414d4e62f54c5bc1b3ed449cd2" kind="variable"><name>Size_In_Palette</name></member>
+    <member refid="struct_transport___management___system___w_p_f_1_1_trip___ticket_1a478f4ac1e28bf46a22e1765d96dada0b" kind="variable"><name>Is_Complete</name></member>
+    <member refid="struct_transport___management___system___w_p_f_1_1_trip___ticket_1aa6fe515cc7c37d8caf41dcaf4ae7a80a" kind="variable"><name>Days_Passed</name></member>
+  </compound>
+  <compound refid="struct_transport___management___system___w_p_f_1_1_trip___ticket___line" kind="struct"><name>Transport_Management_System_WPF::Trip_Ticket_Line</name>
+    <member refid="struct_transport___management___system___w_p_f_1_1_trip___ticket___line_1ad6c1218c6657864ef7584c30133d423f" kind="variable"><name>Ticket</name></member>
+    <member refid="struct_transport___management___system___w_p_f_1_1_trip___ticket___line_1a4681ae5f7c24c679200f3d3e435b9270" kind="variable"><name>Route</name></member>
+    <member refid="struct_transport___management___system___w_p_f_1_1_trip___ticket___line_1a1c46324af80772864f103e4564f40c14" kind="variable"><name>Date_Added</name></member>
+  </compound>
+  <compound refid="struct_transport___management___system___w_p_f_1_1_truck" kind="struct"><name>Transport_Management_System_WPF::Truck</name>
+    <member refid="struct_transport___management___system___w_p_f_1_1_truck_1a32fbe494f246831d2559c25f348c6b18" kind="variable"><name>TruckID</name></member>
+    <member refid="struct_transport___management___system___w_p_f_1_1_truck_1a71ec212b9661e6c7e40d1f2595f0ce64" kind="variable"><name>CurrentCityID</name></member>
+    <member refid="struct_transport___management___system___w_p_f_1_1_truck_1a19d9ffdc88f86af4a2dcd36d8a490daf" kind="variable"><name>Is_Reefer</name></member>
+    <member refid="struct_transport___management___system___w_p_f_1_1_truck_1a9bb588a62475d3fffe50338f4ad756d5" kind="variable"><name>Free_Space</name></member>
+    <member refid="struct_transport___management___system___w_p_f_1_1_truck_1a81ccff97235613b950395988d4e26d52" kind="variable"><name>Waiting_or_Transit</name></member>
+    <member refid="struct_transport___management___system___w_p_f_1_1_truck_1a15e0339edac3a7aae1a720bd4d1ae8ca" kind="variable"><name>FTL_or_LTL</name></member>
+  </compound>
+  <compound refid="namespace_my_sql_1_1_data" kind="namespace"><name>MySql::Data</name>
+  </compound>
+  <compound refid="namespace_my_sql_1_1_data_1_1_my_sql_client" kind="namespace"><name>MySql::Data::MySqlClient</name>
   </compound>
   <compound refid="namespace_system" kind="namespace"><name>System</name>
   </compound>
   <compound refid="namespace_system_1_1_collections_1_1_generic" kind="namespace"><name>System::Collections::Generic</name>
+  </compound>
+  <compound refid="namespace_system_1_1_configuration" kind="namespace"><name>System::Configuration</name>
+  </compound>
+  <compound refid="namespace_system_1_1_data" kind="namespace"><name>System::Data</name>
+  </compound>
+  <compound refid="namespace_system_1_1_data_1_1_sql_client" kind="namespace"><name>System::Data::SqlClient</name>
+  </compound>
+  <compound refid="namespace_system_1_1_diagnostics" kind="namespace"><name>System::Diagnostics</name>
   </compound>
   <compound refid="namespace_system_1_1_i_o" kind="namespace"><name>System::IO</name>
   </compound>
@@ -64,26 +220,42 @@
   </compound>
   <compound refid="namespace_t_m_sw_pages" kind="namespace"><name>TMSwPages</name>
   </compound>
+  <compound refid="namespace_transport___management___system___w_p_f" kind="namespace"><name>Transport_Management_System_WPF</name>
+  </compound>
   <compound refid="_admin_classes_8cs" kind="file"><name>AdminClasses.cs</name>
-  </compound>
-  <compound refid="_admin_page_8xaml" kind="file"><name>AdminPage.xaml</name>
-  </compound>
-  <compound refid="_admin_page_8xaml_8cs" kind="file"><name>AdminPage.xaml.cs</name>
   </compound>
   <compound refid="_app_8xaml" kind="file"><name>App.xaml</name>
   </compound>
   <compound refid="_app_8xaml_8cs" kind="file"><name>App.xaml.cs</name>
   </compound>
-  <compound refid="mainwindow_8xaml" kind="file"><name>mainwindow.xaml</name>
+  <compound refid="_buyer_class_8cs" kind="file"><name>BuyerClass.cs</name>
   </compound>
-  <compound refid="mainwindow_8xaml_8cs" kind="file"><name>mainwindow.xaml.cs</name>
+  <compound refid="_carrier_8cs" kind="file"><name>Carrier.cs</name>
   </compound>
-  <compound refid="_view_log_details_8xaml" kind="file"><name>ViewLogDetails.xaml</name>
+  <compound refid="_contract_8cs" kind="file"><name>Contract.cs</name>
   </compound>
-  <compound refid="_view_log_details_8xaml_8cs" kind="file"><name>ViewLogDetails.xaml.cs</name>
+  <compound refid="_main_window_8xaml" kind="file"><name>MainWindow.xaml</name>
   </compound>
-  <compound refid="dir_d2fd5cb0dbdffaa8f06c62424840050b" kind="dir"><name>C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/TMSwPages</name>
+  <compound refid="_main_window_8xaml_8cs" kind="file"><name>MainWindow.xaml.cs</name>
+  </compound>
+  <compound refid="_mapping_class_8cs" kind="file"><name>MappingClass.cs</name>
+  </compound>
+  <compound refid="_mockup_c_m_p_8cs" kind="file"><name>MockupCMP.cs</name>
+  </compound>
+  <compound refid="mysql_connector_8cs" kind="file"><name>mysqlConnector.cs</name>
+  </compound>
+  <compound refid="_planner_class_8cs" kind="file"><name>PlannerClass.cs</name>
+  </compound>
+  <compound refid="_s_q_l___f_a_k_e_i_t_8cs" kind="file"><name>SQL_FAKEIT.cs</name>
+  </compound>
+  <compound refid="_s_q_l___query_8cs" kind="file"><name>SQL_Query.cs</name>
+  </compound>
+  <compound refid="_s_q_l___query___t_m_s_8cs" kind="file"><name>SQL_Query_TMS.cs</name>
+  </compound>
+  <compound refid="_time_pass_8cs" kind="file"><name>TimePass.cs</name>
   </compound>
   <compound refid="dir_07459c758fbbcf9ae534443fd0b3129b" kind="dir"><name>C:/Users/School User/Code/TMS-Dump/Transport Management System WPF</name>
+  </compound>
+  <compound refid="dir_52959eadf4408b695fdb8febcd655fd5" kind="dir"><name>C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF</name>
   </compound>
 </doxygenindex>

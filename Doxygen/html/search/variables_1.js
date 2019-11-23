@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['logs_77',['logs',['../class_t_m_sw_pages_1_1_t_m_s_logger.html#a4ba45b1259ce8001fa7a5fddf5fadd46',1,'TMSwPages::TMSLogger']]]
+  ['buyer_220',['buyer',['../class_transport___management___system___w_p_f_1_1_main_window.html#a37653ae01d60682a07e052147dff7d50',1,'Transport_Management_System_WPF::MainWindow']]]
 ];
