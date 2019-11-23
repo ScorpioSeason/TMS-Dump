@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TMSwPages"
       mc:Ignorable="d" 
-      d:DesignHeight="750" d:DesignWidth="750"
+      d:DesignHeight="450" d:DesignWidth="800"
       Title="AdminPage">
 
     <!--This is the grid which holds the page display-->
@@ -46,11 +46,10 @@
                 <!--Logs Tab-->
                 <TabItem.Content>
 
-                    <!--Dock panel and put the stack panel inside the dock panel. Buttons would be outside stackpanel but inside dock panel-->
-                    <StackPanel  Grid.Row="1">
+                    <DockPanel>
 
                         <!--This is only visible within the logs tab-->
-                        <Grid Name="InnerGrid" VerticalAlignment="Center" Grid.Row="1">
+                        <Grid Name="InnerGrid">
 
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition></ColumnDefinition>
@@ -66,19 +65,15 @@
                             </Grid.RowDefinitions>
 
                             <!--Controls Row (0) -->
-                            <ComboBox Grid.Row="0" Grid.Column="0" Margin="5,5,5,5" Name="Time_Period" SelectionChanged="Time_Period_SelectionChanged">
+                            <ComboBox DockPanel.Dock="top" Grid.Row="0" Grid.Column="0" Margin="5,5,5,5" Name="Time_Period" SelectionChanged="Time_Period_SelectionChanged">
                                 <ComboBoxItem>Date Range Picker...</ComboBoxItem>
                             </ComboBox>
-                            <DatePicker Grid.Row="0" Grid.Column="1" Margin="5,5,5,5" SelectedDateChanged="DatePicker_SelectedDateChanged"></DatePicker>
-                            <TextBox x:Name="searchTags" Grid.Row="0" Grid.Column="2" Margin="5,5,5,5" Grid.ColumnSpan="2"></TextBox>
-                            <Button Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Click="LoadClick">Load</Button>
-
-                            <!--Buttons Row (2) -->
-                            <Button Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="LogSettingsClick">Log Settings</Button>
-                            <Button Grid.Row="2" Grid.Column="4" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="ViewMoreClick" >View More...</Button>
+                            <DatePicker DockPanel.Dock="top" Grid.Row="0" Grid.Column="1" Margin="5,5,5,5" SelectedDateChanged="DatePicker_SelectedDateChanged"></DatePicker>
+                            <TextBox DockPanel.Dock="top" x:Name="searchTags" Grid.Row="0" Grid.Column="2" Margin="5,5,5,5" Grid.ColumnSpan="2"></TextBox>
+                            <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Click="LoadClick">Load</Button>
 
                             <!--Main Content Row (1) -->
-                            <DataGrid Grid.Row="1" Grid.ColumnSpan="5" Name="LogsList" ItemsSource="{Binding}" Margin="5,5,5,5" SelectionMode="Single" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
+                            <DataGrid Grid.ColumnSpan="5" Grid.Row="1" Name="LogsList" ItemsSource="{Binding}" Margin="5,5,5,5" SelectionMode="Single" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="UTC Date/Time" Binding="{Binding logTime}"/>
                                     <DataGridTextColumn Header="Tag" Binding="{Binding logType}" />
@@ -86,21 +81,14 @@
                                 </DataGrid.Columns>
                                 <DataGrid.Resources></DataGrid.Resources>
                             </DataGrid>
-
-                            <!--public string logPath { set; get; }
                             
-                            TMSLogger.logs.TryGetValue(this, out logType);
-                            
-                            public string logClass { set; get; }
-                            public string logMethod { set; get; }
-                            public string logType { set; get; }
-                            public string logMessage { set; get; }
-                            public string unparsed { set; get; }
-                            public DateTime logTime { set; get; }-->
-
+                            <!--Buttons Row (2) -->
+                            <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="LogSettingsClick">Log Settings</Button>
+                            <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="4" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="ViewMoreClick" >View More...</Button>
+                    
                         </Grid>
-
-                    </StackPanel>
+                        
+                    </DockPanel>
 
                 </TabItem.Content>
 

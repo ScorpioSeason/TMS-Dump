@@ -54,6 +54,7 @@ namespace TMSwPages
         {
             InitializeComponent();
             LogsList.ItemsSource = searchResults;
+            LoadClick(null, null); 
         }
 
         // public AdminPage(object data) : this()
@@ -86,13 +87,15 @@ namespace TMSwPages
                 /// Compare search tags box to logs in the local list and add to searchResults list if matching
                 if (searchTags.Text.Trim() != "")
                 {
+                    string tempString = (searchTags.Text.Trim()).ToLower(); 
+
                     foreach (TMSLog l in TMSLogger.logs)
                     {
-                        if ((l.logType).Contains(searchTags.Text) || (l.logMessage).Contains(searchTags.Text))
+                        if ((l.logType.ToLower()).Contains(tempString) || (l.logMessage.ToLower()).Contains(tempString))
                         {
                             searchResults.Add(l);
                         }
-                        else if ((l.logClass).Contains(searchTags.Text) || (l.logMethod).Contains(searchTags.Text))
+                        else if ((l.logClass.ToLower()).Contains(tempString) || (l.logMethod.ToLower()).Contains(tempString))
                         {
                             searchResults.Add(l);
                         }
@@ -105,6 +108,7 @@ namespace TMSwPages
                     {
                         searchResults.Add(l);
                     }
+                    
                 }
             }
             /// Catch errors from Contains
