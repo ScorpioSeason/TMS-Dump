@@ -153,12 +153,8 @@ namespace Transport_Management_System_WPF
         * ---------------------------------------------------------------------------------------------------- */
         private void Button_AddContract(object sender, RoutedEventArgs e)
         {
-            DataGrid DG = DG2;
-            foreach (Contract c in DG.SelectedItems)
-            {
-                acceptedContracts.Add(c);
-            }
-             
+
+            DG2.Items.Refresh();
         }
     }
 }
