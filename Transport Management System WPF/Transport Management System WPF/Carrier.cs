@@ -1,15 +1,14 @@
 ﻿// ADMIN FILE HEADER COMMENT: =================================================================================
 /**
- *  \file		Admin.cs
+ *  \file		Carrier.cs
  *  \ingroup	TMS
  *  \date		November 20, 2019
- *  \author		8000 Cigarettes - Megan
+ *  \author		8000 Cigarettes - Megan,Ivan,Zena,Duane
  *  \brief	    This file contains the admin functionality	  
  *  \see		MainWindow.xaml
- *  \details    This file holds the functionality of the Admin class. The Admin has the ability to view logs as 
- *              specified by time period, view details of specific logs, alter where the log files are stored, 
- *              initiate backups of the TMS database, choose where the TMS db is backed up to, alter the Carrier 
- *              Data Table, the Route Table, and the Rate / Fee Tables.                                       
+ *  \details    This file holds the functionality of the Carrier class This file holds the functionality of the
+ *              contract class holds all values for contracts and functions for translating their values to 
+ *              integers.                                    
  *
  * =========================================================================================================== */
 
@@ -23,15 +22,17 @@ namespace Transport_Management_System_WPF
 {
     // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
     /**   
-    *   \class		Admin
-    *   \brief		This class runs the Admin UI functionality
-    *   \details	... static class?  
+    *   \class		Carrier
+    *   \brief		This class holds all the values for the carriers and their locations of operation.
+    *   \details	This class holds all the values for the carriers and their locations of operation, along with all the values for the amount of vehiles and their types, as well as .
     *   
     * -------------------------------------------------------------------------------------------------------- */
     class Carrier
     {
         public string Carrier_Name { get; set; }
         public string Depot_City { get; set; }
+        public int FTL { get; set; }
+        public int LTL { get; set; }
         public float FTL_Rate { get; set; }
         public float LTL_Rate { get; set; }
         public float Reefer_Charge { get; set; }

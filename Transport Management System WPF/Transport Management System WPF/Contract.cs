@@ -3,11 +3,10 @@
  *  \file		Contract.cs
  *  \ingroup	TMS
  *  \date		November 20, 2019
- *  \author		8000 Cigarettes - Ivan,Megan,Ivan,Duane
+ *  \author		8000 Cigarettes - Ivan,Megan,Zena,Duane
  *  \brief	    This file contains the buyer functionality 
  *  \see		MainWindow.xaml
- *  \details    This file holds the functionality of the buyer class. The buyer has the ability to accept contracts from the
- *              contract market place using the SQL_Query Class, to create invopices and nominate carriers for each contract.
+ *  \details    This file holds the functionality of the contract class holds all values for contracts and functions for translating their values to integers.
  *
  * =========================================================================================================== */
 
@@ -24,7 +23,7 @@ namespace Transport_Management_System_WPF
     /**   
     *   \class		Admin
     *   \brief		This class runs the Admin UI functionality
-    *   \details	... static class?  
+    *   \details	Holds all values for contracts and functions for translating their values to integers.
     *   
     * -------------------------------------------------------------------------------------------------------- */
     public class Contract

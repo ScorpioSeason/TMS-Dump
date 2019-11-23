@@ -3,8 +3,8 @@
  *  \file		PlannerClass.cs
  *  \ingroup	TMS
  *  \date		November 20, 2019
- *  \author		8000 Cigarettes - Duane
- *  \brief	    This file contains the Planner functionality	  
+ *  \author		8000 Cigarettes - Duane,Megan,Ivan,Zena
+ *  \brief	    This file contains the Planner functionality
  *  \see		MainWindow.xaml
  *  \details    See the class description for the more details                            
  *
@@ -23,8 +23,6 @@ using System.Threading.Tasks;
 
 namespace Transport_Management_System_WPF
 {
-
-
     public struct Customer
     {
         public string Customer_Name; ///The Customer Name
@@ -82,9 +80,9 @@ namespace Transport_Management_System_WPF
         class Planner
         {
 
-            // Recive_Customer_Order_From_Buyer METHOD HEADER COMMENT -------------------------------------------------------------------------------
+            // Receive_Customer_Order_From_Buyer METHOD HEADER COMMENT -------------------------------------------------------------------------------
             /**
-            *	\fn			int Recive_Customer_Order_From_Buyer()
+            *	\fn			int Receive_Customer_Order_From_Buyer()
             *	\brief		This method will read the contracts that the buy has set aside.
             *	\details	The method will read from the data base. The buy will have flagged orders and nominated carries for each. 
             *	            First the method will determine which carrier is the best option. It will then use the Mapping Class to determine the trip the trucks will take.
@@ -97,7 +95,7 @@ namespace Transport_Management_System_WPF
             *	\return		None
             *
             * ---------------------------------------------------------------------------------------------------- */
-            public int Recive_Customer_Order_From_Buyer()
+            public int Receive_Customer_Order_From_Buyer()
             {
 
                 Contract NewContract = null; //from the database

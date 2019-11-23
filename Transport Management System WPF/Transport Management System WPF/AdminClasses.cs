@@ -154,7 +154,7 @@ namespace TMSwPages
         *	\fn			static public bool AppendLogFile()
         *	\brief		Writes new logs into a file
         *	\details	This writes individual logs into the file specified by the loggerPath variable. 
-        *	If there is an error, it throws an exception to a new log.
+        *	            If there is an error, it throws an exception to a new log.
         *	\exception	From FileStream and StreamWriter
         *	\see		LogIt()
         *	\return		bool    appendSuccess    A value indicating whether the file write threw an exception. 
