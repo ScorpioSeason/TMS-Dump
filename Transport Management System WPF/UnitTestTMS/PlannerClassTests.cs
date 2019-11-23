@@ -1,10 +1,10 @@
 ﻿// ADMIN FILE HEADER COMMENT: =================================================================================
 /**
- *  \file		Admin.cs
+ *  \file		PlannerClassTests.cs
  *  \ingroup	TMSTesting
  *  \date		November 20, 2019
- *  \author		8000 Cigarettes - Megan
- *  \brief	    This file contains the admin functionality	  
+ *  \author		8000 Cigarettes - Duane
+ *  \brief	    This file contains unit tests for the   
  *  \see		MainWindow.xaml
  *  \details    This file holds the functionality of the Admin class. The Admin has the ability to view logs as 
  *              specified by time period, view details of specific logs, alter where the log files are stored, 
@@ -28,7 +28,7 @@ namespace UnitTestTMS
     *   
     * -------------------------------------------------------------------------------------------------------- */
     [TestClass]
-    public class UnitTest1
+    public class PlannerClassTests
     {
 
         //Test city 7 - 0, FTL

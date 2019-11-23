@@ -3,13 +3,10 @@
  *  \file		PlannerClass.cs
  *  \ingroup	TMS
  *  \date		November 20, 2019
- *  \author		8000 Cigarettes - Megan
- *  \brief	    This file contains the admin functionality	  
+ *  \author		8000 Cigarettes - Duane
+ *  \brief	    This file contains the Planner functionality	  
  *  \see		MainWindow.xaml
- *  \details    This file holds the functionality of the Admin class. The Admin has the ability to view logs as 
- *              specified by time period, view details of specific logs, alter where the log files are stored, 
- *              initiate backups of the TMS database, choose where the TMS db is backed up to, alter the Carrier 
- *              Data Table, the Route Table, and the Rate / Fee Tables.                                       
+ *  \details    See the class description for the more details                            
  *
  * =========================================================================================================== */
 
@@ -26,33 +23,24 @@ using System.Threading.Tasks;
 
 namespace Transport_Management_System_WPF
 {
-    //public struct Customer_Order
-    //{
-    //    public int Customer_OrderID;
-    //    public Customer Customer_Name;
-    //    public Location Origin_City;
-    //    public Location Destination_City;
-    //    public int Size_in_Palettes;
-    //    public bool Is_Reefer;
-    //};
+
 
     public struct Customer
     {
-        public string Customer_Name;
-        public string AddressID;
-        public int Telephone;
+        public string Customer_Name; ///The Customer Name
     }
 
     public struct Trip_Ticket
     {
-        public int TicketID;
-        public Truck TruckID;
-        public bool FTL_or_LTL;
-        public bool Is_Reefer;
-        public int Size_In_Palette;
-        public bool Is_Complete;
-        public int Days_Passed;
+        public int TicketID; ///The ticket ID Number
+        public Truck TruckID; ///The Truck that the ticket will attached to
+        public bool FTL_or_LTL; ///If the ticket is FTL or LTL
+        public bool Is_Reefer; ///If the ticket is reefer
+        public int Size_In_Palette; ///Size of the ticket
+        public bool Is_Complete; ///If the ticket is marked as complete
+        public int Days_Passed; ///The days passed for this ticket.
     }
+
 
     public struct Trip_Ticket_Line
     {
@@ -79,20 +67,20 @@ namespace Transport_Management_System_WPF
 
     // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
     /**   
-    *   \class		Admin
-    *   \brief		This class runs the Admin UI functionality
-    *   \details	... static class?  
+    *   \class		PlannerClass
+    *   \brief		This class runs the Planner functionality
+    *   \details	This class will interface with the XAML main window to preform the Planner tasks.
+    *               This class will use many other classes to complete its task. At this point, much of the actual PlannerClass Functionality is obfuscated.
+    *               Most of support classes have been complete.
+    *               
+    *   \see        MappingClass.cs TimePass.cs 
+    *   
     *   
     * -------------------------------------------------------------------------------------------------------- */
-    class PlannerClass
+    public class PlannerClass
     {
         class Planner
         {
-            public object SQLMagic(string input)
-            {
-                return null;
-            }
-
 
             // Recive_Customer_Order_From_Buyer METHOD HEADER COMMENT -------------------------------------------------------------------------------
             /**
@@ -138,159 +126,160 @@ namespace Transport_Management_System_WPF
                 return 0;
             }
 
+          
+            //private List<Trip_Ticket> Select_Carriers_From_Nominations(List<Carrier> list_of_carriers, Contract InContract)
+            //{
+            //    ////check if the each carrier has enough trucks in the origin city
+
+            //    //List<Truck> carrier_trucks = new List<Truck>(); 
+
+            //    //List<Trip_Ticket_Line> ticket_line_list = new List<Trip_Ticket_Line>();
+
+            //    ////This will be a list of lists that will hold a list of all the trucks for each carrier
+            //    //List<List<Truck>> trucks_all_carriers = new List<List<Truck>>();
+
+            //    ////get a list of trucks that are from the nominated carriers in the orgin city
+            //    //foreach (Carrier carrier in list_of_carriers)
+            //    //{
+            //    //    allTrucks = (List<Truck>)SQLMagic("Gimmie all the trucks for carrier \"carrier\" in the city \"order.Origin_City\"");
+
+            //    //    List<Truck> tempList = new List<Truck>();
+
+            //    //    foreach (Truck truck in allTrucks)
+            //    //    {
+            //    //        //check if the truck the correct type of truck
+            //    //        if (order.Is_Reefer == truck.Is_Reefer && order.Origin_City.CityName == truck.Current_Location.CityName)
+            //    //        {
+            //    //            tempList.Add(truck);
+            //    //        }
+            //    //    }
 
-            private List<Trip_Ticket> Select_Carriers_From_Nominations(List<Carrier> list_of_carriers, Contract InContract)
-            {
-                ////check if the each carrier has enough trucks in the origin city
-
-                //List<Truck> carrier_trucks = new List<Truck>(); 
-
-                //List<Trip_Ticket_Line> ticket_line_list = new List<Trip_Ticket_Line>();
-
-                ////This will be a list of lists that will hold a list of all the trucks for each carrier
-                //List<List<Truck>> trucks_all_carriers = new List<List<Truck>>();
-
-                ////get a list of trucks that are from the nominated carriers in the orgin city
-                //foreach (Carrier carrier in list_of_carriers)
-                //{
-                //    allTrucks = (List<Truck>)SQLMagic("Gimmie all the trucks for carrier \"carrier\" in the city \"order.Origin_City\"");
-
-                //    List<Truck> tempList = new List<Truck>();
-
-                //    foreach (Truck truck in allTrucks)
-                //    {
-                //        //check if the truck the correct type of truck
-                //        if (order.Is_Reefer == truck.Is_Reefer && order.Origin_City.CityName == truck.Current_Location.CityName)
-                //        {
-                //            tempList.Add(truck);
-                //        }
-                //    }
+            //    //    trucks_all_carriers.Add(tempList);
+            //    //}
 
-                //    trucks_all_carriers.Add(tempList);
-                //}
+            //    ////will hold the tickets that will be needed to make the order
+            //    //List<Trip_Ticket> tickets = new List<Trip_Ticket>();
 
-                ////will hold the tickets that will be needed to make the order
-                //List<Trip_Ticket> tickets = new List<Trip_Ticket>();
+            //    //const int MaxTruckPalettes = 26;
 
-                //const int MaxTruckPalettes = 26;
+            //    ////determine all the tickets that have to be made
+            //    //if (order.Size_in_Palettes == MaxTruckPalettes)
+            //    //{
+            //    //    //we need one ticket that is ftl
+            //    //    Trip_Ticket ticket = new Trip_Ticket();
+            //    //    ticket.FTL_or_LTL = true; //lets say for now true means FTL
+            //    //    ticket.Size_In_Palette = MaxTruckPalettes;
+            //    //    ticket.Is_Reefer = order.Is_Reefer;
 
-                ////determine all the tickets that have to be made
-                //if (order.Size_in_Palettes == MaxTruckPalettes)
-                //{
-                //    //we need one ticket that is ftl
-                //    Trip_Ticket ticket = new Trip_Ticket();
-                //    ticket.FTL_or_LTL = true; //lets say for now true means FTL
-                //    ticket.Size_In_Palette = MaxTruckPalettes;
-                //    ticket.Is_Reefer = order.Is_Reefer;
+            //    //    tickets.Add(ticket);
+            //    //}
+            //    //else if (order.Size_in_Palettes < MaxTruckPalettes)
+            //    //{
+            //    //    //we need one ticket that is LTL
+            //    //    Trip_Ticket ticket = new Trip_Ticket();
+            //    //    ticket.FTL_or_LTL = false; //lets say for now true means FTL
+            //    //    ticket.Size_In_Palette = order.Size_in_Palettes;
+            //    //    ticket.Is_Reefer = order.Is_Reefer;
 
-                //    tickets.Add(ticket);
-                //}
-                //else if (order.Size_in_Palettes < MaxTruckPalettes)
-                //{
-                //    //we need one ticket that is LTL
-                //    Trip_Ticket ticket = new Trip_Ticket();
-                //    ticket.FTL_or_LTL = false; //lets say for now true means FTL
-                //    ticket.Size_In_Palette = order.Size_in_Palettes;
-                //    ticket.Is_Reefer = order.Is_Reefer;
+            //    //    tickets.Add(ticket);
+            //    //}
+            //    //else if (order.Size_in_Palettes > MaxTruckPalettes)
+            //    //{
+            //    //    int localPalettes = order.Size_in_Palettes;
+            //    //    Trip_Ticket ticket;
 
-                //    tickets.Add(ticket);
-                //}
-                //else if (order.Size_in_Palettes > MaxTruckPalettes)
-                //{
-                //    int localPalettes = order.Size_in_Palettes;
-                //    Trip_Ticket ticket;
+            //    //    do
+            //    //    {
+            //    //        ticket = new Trip_Ticket();
+            //    //        ticket.FTL_or_LTL = true; //lets say for now true means FTL
+            //    //        ticket.Is_Reefer = order.Is_Reefer;
+            //    //        ticket.Size_In_Palette = MaxTruckPalettes;
 
-                //    do
-                //    {
-                //        ticket = new Trip_Ticket();
-                //        ticket.FTL_or_LTL = true; //lets say for now true means FTL
-                //        ticket.Is_Reefer = order.Is_Reefer;
-                //        ticket.Size_In_Palette = MaxTruckPalettes;
+            //    //        tickets.Add(ticket);
 
-                //        tickets.Add(ticket);
+            //    //        localPalettes -= MaxTruckPalettes;
+            //    //    } while (localPalettes > MaxTruckPalettes);
 
-                //        localPalettes -= MaxTruckPalettes;
-                //    } while (localPalettes > MaxTruckPalettes);
+            //    //    if (localPalettes > 0)
+            //    //    {
+            //    //        //we need one ticket that is ltl
+            //    //        ticket = new Trip_Ticket();
+            //    //        ticket.FTL_or_LTL = false; //lets say for now true means FTL
+            //    //        ticket.Size_In_Palette = order.Size_in_Palettes;
+            //    //        ticket.Is_Reefer = order.Is_Reefer;
 
-                //    if (localPalettes > 0)
-                //    {
-                //        //we need one ticket that is ltl
-                //        ticket = new Trip_Ticket();
-                //        ticket.FTL_or_LTL = false; //lets say for now true means FTL
-                //        ticket.Size_In_Palette = order.Size_in_Palettes;
-                //        ticket.Is_Reefer = order.Is_Reefer;
+            //    //        tickets.Add(ticket);
+            //    //    }
+            //    //}
 
-                //        tickets.Add(ticket);
-                //    }
-                //}
+            //    ////so now, the list "tickets" will contain all the tickets that this customer order needs
 
-                ////so now, the list "tickets" will contain all the tickets that this customer order needs
+            //    ////now we have to match all the tickets with trucks.
 
-                ////now we have to match all the tickets with trucks.
+            //    ////remove the carriers that dont have enough trucks
+            //    //foreach (List<Truck> trucks in trucks_all_carriers)
+            //    //{
+            //    //    if (trucks.Count < tickets.Count)
+            //    //    {
+            //    //        trucks_all_carriers.Remove(trucks);
+            //    //    }
+            //    //}
 
-                ////remove the carriers that dont have enough trucks
-                //foreach (List<Truck> trucks in trucks_all_carriers)
-                //{
-                //    if (trucks.Count < tickets.Count)
-                //    {
-                //        trucks_all_carriers.Remove(trucks);
-                //    }
-                //}
+            //    //if (trucks_all_carriers.Count == 0)
+            //    //{
+            //    //    //there are no carriers that have enough trucks in the origin city.
+            //    //}
 
-                //if (trucks_all_carriers.Count == 0)
-                //{
-                //    //there are no carriers that have enough trucks in the origin city.
-                //}
+            //    //List<Truck> selected_carriers = new List<Truck>();
 
-                //List<Truck> selected_carriers = new List<Truck>();
+            //    //Carrier selectedCarrier;
 
-                //Carrier selectedCarrier;
+            //    ////choose the lowest rate that will 
+            //    //while (trucks_all_carriers.Count != 1)
+            //    //{
 
-                ////choose the lowest rate that will 
-                //while (trucks_all_carriers.Count != 1)
-                //{
 
+            //    //    Carrier tempCarrier;
 
-                //    Carrier tempCarrier;
+            //    //    float tempRate = 0;
 
-                //    float tempRate = 0;
+            //    //    your working here, you need to make it so that it selects that carrier that has the lowest rate.
 
-                //    your working here, you need to make it so that it selects that carrier that has the lowest rate.
 
+            //    //        foreach (List<Truck> trucks in trucks_all_carriers)
+            //    //    {
+            //    //        tempCarrier = trucks[0].carrier;
 
-                //        foreach (List<Truck> trucks in trucks_all_carriers)
-                //    {
-                //        tempCarrier = trucks[0].carrier;
+            //    //        if (trucks.)
+            //    //        }
 
-                //        if (trucks.)
-                //        }
+            //    //}
 
-                //}
 
 
 
 
 
 
+            //    //determine how many trucks we will need.
 
-                //determine how many trucks we will need.
 
+            //    //if(order.Size_in_Palettes == MaxTruckPalettes)
+            //    //{
+            //    //    //we need one Full Truck
+            //    //    Truck tempTruck = new Truck();
 
-                //if(order.Size_in_Palettes == MaxTruckPalettes)
-                //{
-                //    //we need one Full Truck
-                //    Truck tempTruck = new Truck();
+            //    //    tempTruck.Is_Reefer = order.Is_Reefer;
+            //    //    tempTruck.FTL_or_LTL = true; //lets say for now true means FTL
+            //    //    tempTruck.
 
-                //    tempTruck.Is_Reefer = order.Is_Reefer;
-                //    tempTruck.FTL_or_LTL = true; //lets say for now true means FTL
-                //    tempTruck.
+            //    //}
 
-                //}
+            //    //if (order.Size_in_Palettes > MaxTruckPalettes)
+            //    //{
 
-                //if (order.Size_in_Palettes > MaxTruckPalettes)
-                //{
+            //    //}
 
-                //}
 
 
 
@@ -300,30 +289,29 @@ namespace Transport_Management_System_WPF
 
 
 
+            //    //check which carriers have enough trucks in the city to fulfill order size.
 
-                //check which carriers have enough trucks in the city to fulfill order size.
+            //    //create a new ticket based on the number of pallets that are needed.
 
-                //create a new ticket based on the number of pallets that are needed.
 
 
+            //    ////for each ticket needed
+            //    ////{
+            //    //Trip_Ticket trip_Ticket = new Trip_Ticket();
 
-                ////for each ticket needed
-                ////{
-                //Trip_Ticket trip_Ticket = new Trip_Ticket();
+            //    //trip_Ticket.Is_Reefer = order.Is_Reefer;
+            //    //trip_Ticket.TicketID = 0; //create a way that we will make new ids
+            //    //trip_Ticket.TruckID = new Truck(); //claim on of the trucks from the city
+            //    //trip_Ticket.FTL_or_LTL = false; // determine based of size of pallets
 
-                //trip_Ticket.Is_Reefer = order.Is_Reefer;
-                //trip_Ticket.TicketID = 0; //create a way that we will make new ids
-                //trip_Ticket.TruckID = new Truck(); //claim on of the trucks from the city
-                //trip_Ticket.FTL_or_LTL = false; // determine based of size of pallets
+            //    //tickets.Add(trip_Ticket);
+            //    ////}
 
-                //tickets.Add(trip_Ticket);
-                ////}
 
+            //    //return tickets;
 
-                //return tickets;
-
-                return null;
-            }
+            //    return null;
+            //}
 
 
         }
