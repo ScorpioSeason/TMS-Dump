@@ -1,8 +1,6 @@
 var namespace_transport___management___system___w_p_f =
 [
-    [ "Properties", "namespace_transport___management___system___w_p_f_1_1_properties.html", "namespace_transport___management___system___w_p_f_1_1_properties" ],
-    [ "AdminPage", "class_transport___management___system___w_p_f_1_1_admin_page.html", "class_transport___management___system___w_p_f_1_1_admin_page" ],
-    [ "App", "class_transport___management___system___w_p_f_1_1_app.html", "class_transport___management___system___w_p_f_1_1_app" ],
+    [ "App", "class_transport___management___system___w_p_f_1_1_app.html", null ],
     [ "BuyerClass", "class_transport___management___system___w_p_f_1_1_buyer_class.html", "class_transport___management___system___w_p_f_1_1_buyer_class" ],
     [ "Carrier", "class_transport___management___system___w_p_f_1_1_carrier.html", "class_transport___management___system___w_p_f_1_1_carrier" ],
     [ "CityNode", "class_transport___management___system___w_p_f_1_1_city_node.html", "class_transport___management___system___w_p_f_1_1_city_node" ],
@@ -12,7 +10,6 @@ var namespace_transport___management___system___w_p_f =
     [ "MainWindow", "class_transport___management___system___w_p_f_1_1_main_window.html", "class_transport___management___system___w_p_f_1_1_main_window" ],
     [ "MappingClass", "class_transport___management___system___w_p_f_1_1_mapping_class.html", "class_transport___management___system___w_p_f_1_1_mapping_class" ],
     [ "mysqlConnector", "class_transport___management___system___w_p_f_1_1mysql_connector.html", null ],
-    [ "Page1", "class_transport___management___system___w_p_f_1_1_page1.html", "class_transport___management___system___w_p_f_1_1_page1" ],
     [ "PlannerClass", "class_transport___management___system___w_p_f_1_1_planner_class.html", [
       [ "Planner", "class_transport___management___system___w_p_f_1_1_planner_class_1_1_planner.html", "class_transport___management___system___w_p_f_1_1_planner_class_1_1_planner" ]
     ] ],

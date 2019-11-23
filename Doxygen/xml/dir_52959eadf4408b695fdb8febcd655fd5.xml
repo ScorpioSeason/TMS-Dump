@@ -2,8 +2,6 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
   <compounddef id="dir_52959eadf4408b695fdb8febcd655fd5" kind="dir">
     <compoundname>C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF</compoundname>
-    <innerdir refid="dir_19a4f9d1a42d3e7d2a8370ba03e3fd8d">C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj</innerdir>
-    <innerdir refid="dir_345fc952d7b9915aa15432f374e46a65">C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/Properties</innerdir>
     <innerfile refid="_transport_01_management_01_system_01_w_p_f_2_admin_classes_8cs">AdminClasses.cs</innerfile>
     <innerfile refid="_transport_01_management_01_system_01_w_p_f_2_app_8xaml_8cs">App.xaml.cs</innerfile>
     <innerfile refid="_buyer_class_8cs">BuyerClass.cs</innerfile>

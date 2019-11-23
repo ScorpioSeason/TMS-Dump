@@ -3,10 +3,6 @@
   <compounddef id="class_transport___management___system___w_p_f_1_1_main_window" kind="class" language="C++" prot="public">
     <compoundname>Transport_Management_System_WPF::MainWindow</compoundname>
     <basecompoundref prot="private" virt="non-virtual">Window</basecompoundref>
-    <basecompoundref prot="private" virt="non-virtual">IComponentConnector</basecompoundref>
-    <basecompoundref prot="private" virt="non-virtual">Window</basecompoundref>
-    <basecompoundref prot="private" virt="non-virtual">IComponentConnector</basecompoundref>
-    <basecompoundref prot="private" virt="non-virtual">Window</basecompoundref>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="class_transport___management___system___w_p_f_1_1_main_window_1aea3c35693adbbaf5eb02439b30dbade5" prot="private" static="no" mutable="no">
         <type>List&lt; <ref refid="class_transport___management___system___w_p_f_1_1_contract" kindref="compound">Contract</ref> &gt;</type>
@@ -21,188 +17,6 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MainWindow.xaml.cs" line="41" column="14" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MainWindow.xaml.cs" bodystart="41" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_transport___management___system___w_p_f_1_1_main_window_1a7da066761fdda7c2128c1bf7a7181574" prot="private" static="no" mutable="no">
-        <type>internal System Windows Controls TabItem</type>
-        <definition>internal System Windows Controls TabItem Transport_Management_System_WPF::MainWindow::Buyer</definition>
-        <argsstring></argsstring>
-        <name>Buyer</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.cs" line="46" column="47" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.cs" bodystart="46" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_transport___management___system___w_p_f_1_1_main_window_1a039a7e9267d8ec39abc9ff1102f8dda6" prot="private" static="no" mutable="no">
-        <type>internal System Windows Controls MenuItem</type>
-        <definition>internal System Windows Controls MenuItem Transport_Management_System_WPF::MainWindow::RedMenuItem</definition>
-        <argsstring></argsstring>
-        <name>RedMenuItem</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.cs" line="54" column="48" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.cs" bodystart="54" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_transport___management___system___w_p_f_1_1_main_window_1a2f3e93052e5b1591936fbbef5843f812" prot="private" static="no" mutable="no">
-        <type>internal System Windows Controls MenuItem</type>
-        <definition>internal System Windows Controls MenuItem Transport_Management_System_WPF::MainWindow::BlueMenuItem</definition>
-        <argsstring></argsstring>
-        <name>BlueMenuItem</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.cs" line="62" column="48" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.cs" bodystart="62" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_transport___management___system___w_p_f_1_1_main_window_1af786388b4ce53e5b669028165f618612" prot="private" static="no" mutable="no">
-        <type>internal System Windows Controls MenuItem</type>
-        <definition>internal System Windows Controls MenuItem Transport_Management_System_WPF::MainWindow::OrangeMenuItem</definition>
-        <argsstring></argsstring>
-        <name>OrangeMenuItem</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.cs" line="70" column="48" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.cs" bodystart="70" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_transport___management___system___w_p_f_1_1_main_window_1af45f5640de2af660b6b25f971e0de278" prot="private" static="no" mutable="no">
-        <type>internal System Windows Controls DataGrid</type>
-        <definition>internal System Windows Controls DataGrid Transport_Management_System_WPF::MainWindow::DG1</definition>
-        <argsstring></argsstring>
-        <name>DG1</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.cs" line="78" column="48" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.cs" bodystart="78" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_transport___management___system___w_p_f_1_1_main_window_1a2c48aae355abe548b48824c555cc42c8" prot="private" static="no" mutable="no">
-        <type>internal System Windows Controls DataGrid</type>
-        <definition>internal System Windows Controls DataGrid Transport_Management_System_WPF::MainWindow::DG2</definition>
-        <argsstring></argsstring>
-        <name>DG2</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.cs" line="86" column="48" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.cs" bodystart="86" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_transport___management___system___w_p_f_1_1_main_window_1a80397592ba0b0ee5e305efa60d30392d" prot="private" static="no" mutable="no">
-        <type>internal System Windows Controls TabItem</type>
-        <definition>internal System Windows Controls TabItem Transport_Management_System_WPF::MainWindow::Planner</definition>
-        <argsstring></argsstring>
-        <name>Planner</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.cs" line="94" column="47" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.cs" bodystart="94" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_transport___management___system___w_p_f_1_1_main_window_1a309318731bcef5f07cbdd1fd8f65ccf5" prot="private" static="no" mutable="no">
-        <type>internal System Windows Controls MenuItem</type>
-        <definition>internal System Windows Controls MenuItem Transport_Management_System_WPF::MainWindow::Red</definition>
-        <argsstring></argsstring>
-        <name>Red</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.cs" line="102" column="48" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.cs" bodystart="102" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_transport___management___system___w_p_f_1_1_main_window_1aeccf61dc5bc7f630b876ea14b8ae9b09" prot="private" static="no" mutable="no">
-        <type>internal System Windows Controls MenuItem</type>
-        <definition>internal System Windows Controls MenuItem Transport_Management_System_WPF::MainWindow::Blue</definition>
-        <argsstring></argsstring>
-        <name>Blue</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.cs" line="110" column="48" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.cs" bodystart="110" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_transport___management___system___w_p_f_1_1_main_window_1a848673fcd7434c6e851f7e79abbe13a8" prot="private" static="no" mutable="no">
-        <type>internal System Windows Controls MenuItem</type>
-        <definition>internal System Windows Controls MenuItem Transport_Management_System_WPF::MainWindow::Orange</definition>
-        <argsstring></argsstring>
-        <name>Orange</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.cs" line="118" column="48" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.cs" bodystart="118" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_transport___management___system___w_p_f_1_1_main_window_1ae2d9b5051d1b8bc3bd89988f42c47c41" prot="private" static="no" mutable="no">
-        <type>internal System Windows Controls DataGrid</type>
-        <definition>internal System Windows Controls DataGrid Transport_Management_System_WPF::MainWindow::DG3</definition>
-        <argsstring></argsstring>
-        <name>DG3</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.cs" line="126" column="48" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.cs" bodystart="126" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_transport___management___system___w_p_f_1_1_main_window_1a727cf1f493bc39a940dc75edf0030d3e" prot="private" static="no" mutable="no">
-        <type>internal System Windows Controls DataGrid</type>
-        <definition>internal System Windows Controls DataGrid Transport_Management_System_WPF::MainWindow::DG4</definition>
-        <argsstring></argsstring>
-        <name>DG4</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.cs" line="134" column="48" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.cs" bodystart="134" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_transport___management___system___w_p_f_1_1_main_window_1a247027af81c2591dae41158b7d25b4ea" prot="private" static="no" mutable="no">
-        <type>internal System Windows Controls TextBlock</type>
-        <definition>internal System Windows Controls TextBlock Transport_Management_System_WPF::MainWindow::Output</definition>
-        <argsstring></argsstring>
-        <name>Output</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.cs" line="142" column="49" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.cs" bodystart="142" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_transport___management___system___w_p_f_1_1_main_window_1ae54e66731716228eaa56daccf6464e36" prot="private" static="no" mutable="no">
-        <type>private bool</type>
-        <definition>private bool Transport_Management_System_WPF::MainWindow::_contentLoaded</definition>
-        <argsstring></argsstring>
-        <name>_contentLoaded</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.cs" line="147" column="22" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.cs" bodystart="147" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-static-attrib">
@@ -350,193 +164,54 @@
         </inbodydescription>
         <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MainWindow.xaml.cs" line="147" column="22" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MainWindow.xaml.cs" bodystart="147" bodyend="151"/>
       </memberdef>
-      <memberdef kind="function" id="class_transport___management___system___w_p_f_1_1_main_window_1af59ae9b65ef7fe3304d44286bd06ac32" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>public void</type>
-        <definition>public void Transport_Management_System_WPF::MainWindow::InitializeComponent</definition>
-        <argsstring>()</argsstring>
-        <name>InitializeComponent</name>
-        <briefdescription>
-<para>InitializeComponent </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.cs" line="154" column="21" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.cs" bodystart="154" bodyend="166"/>
-      </memberdef>
-      <memberdef kind="function" id="class_transport___management___system___w_p_f_1_1_main_window_1a0cc7637b254243c63169355d8365b1be" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void System Windows Markup IComponentConnector</type>
-        <definition>void System Windows Markup IComponentConnector Transport_Management_System_WPF::MainWindow::Connect</definition>
-        <argsstring>(int connectionId, object target)</argsstring>
-        <name>Connect</name>
-        <param>
-          <type>int</type>
-          <declname>connectionId</declname>
-        </param>
-        <param>
-          <type>object</type>
-          <declname>target</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.cs" line="174" column="52" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.cs" bodystart="174" bodyend="256"/>
-      </memberdef>
-      <memberdef kind="function" id="class_transport___management___system___w_p_f_1_1_main_window_1af59ae9b65ef7fe3304d44286bd06ac32" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>public void</type>
-        <definition>public void Transport_Management_System_WPF::MainWindow::InitializeComponent</definition>
-        <argsstring>()</argsstring>
-        <name>InitializeComponent</name>
-        <briefdescription>
-<para>InitializeComponent </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.i.cs" line="154" column="21" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.i.cs" bodystart="154" bodyend="166"/>
-      </memberdef>
-      <memberdef kind="function" id="class_transport___management___system___w_p_f_1_1_main_window_1a0cc7637b254243c63169355d8365b1be" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void System Windows Markup IComponentConnector</type>
-        <definition>void System Windows Markup IComponentConnector Transport_Management_System_WPF::MainWindow::Connect</definition>
-        <argsstring>(int connectionId, object target)</argsstring>
-        <name>Connect</name>
-        <param>
-          <type>int</type>
-          <declname>connectionId</declname>
-        </param>
-        <param>
-          <type>object</type>
-          <declname>target</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.i.cs" line="174" column="52" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/obj/Debug/MainWindow.g.i.cs" bodystart="174" bodyend="256"/>
-      </memberdef>
       </sectiondef>
     <briefdescription>
-<para><ref refid="class_transport___management___system___w_p_f_1_1_main_window" kindref="compound">MainWindow</ref> </para>
+<para>Interaction logic for MainWindow.xaml. </para>
     </briefdescription>
     <detaileddescription>
-<para>Interaction logic for MainWindow.xaml.</para>
 <para>... static class? <linebreak/>
 </para>
 <para><hruler/>
  </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="5">
-        <label>IComponentConnector</label>
-      </node>
       <node id="1">
         <label>Transport_Management_System_WPF::MainWindow</label>
         <link refid="class_transport___management___system___w_p_f_1_1_main_window"/>
         <childnode refid="2" relation="private-inheritance">
-        </childnode>
-        <childnode refid="3" relation="private-inheritance">
-        </childnode>
-        <childnode refid="4" relation="private-inheritance">
-        </childnode>
-        <childnode refid="5" relation="private-inheritance">
-        </childnode>
-        <childnode refid="4" relation="private-inheritance">
         </childnode>
       </node>
       <node id="2">
-        <label>System::Windows::Window</label>
-      </node>
-      <node id="4">
         <label>Window</label>
-      </node>
-      <node id="3">
-        <label>System::Windows::Markup::IComponentConnector</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="5">
-        <label>IComponentConnector</label>
-      </node>
       <node id="1">
         <label>Transport_Management_System_WPF::MainWindow</label>
         <link refid="class_transport___management___system___w_p_f_1_1_main_window"/>
         <childnode refid="2" relation="private-inheritance">
         </childnode>
-        <childnode refid="3" relation="private-inheritance">
-        </childnode>
-        <childnode refid="4" relation="private-inheritance">
-        </childnode>
-        <childnode refid="5" relation="private-inheritance">
-        </childnode>
-        <childnode refid="4" relation="private-inheritance">
-        </childnode>
-        <childnode refid="6" relation="usage">
-          <edgelabel>BlueMenuItem</edgelabel>
-          <edgelabel>Planner</edgelabel>
-          <edgelabel>Blue</edgelabel>
-          <edgelabel>RedMenuItem</edgelabel>
-          <edgelabel>Orange</edgelabel>
-          <edgelabel>DG1</edgelabel>
-          <edgelabel>Red</edgelabel>
-          <edgelabel>DG2</edgelabel>
-          <edgelabel>DG3</edgelabel>
-          <edgelabel>DG4</edgelabel>
-          <edgelabel>...</edgelabel>
-        </childnode>
-        <childnode refid="7" relation="usage">
+        <childnode refid="3" relation="usage">
           <edgelabel>buyer</edgelabel>
         </childnode>
       </node>
       <node id="2">
-        <label>System::Windows::Window</label>
-      </node>
-      <node id="4">
         <label>Window</label>
       </node>
-      <node id="6">
-        <label>System</label>
-      </node>
-      <node id="7">
+      <node id="3">
         <label>Transport_Management_System_WPF.BuyerClass</label>
         <link refid="class_transport___management___system___w_p_f_1_1_buyer_class"/>
-      </node>
-      <node id="3">
-        <label>System::Windows::Markup::IComponentConnector</label>
       </node>
     </collaborationgraph>
     <location file="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MainWindow.xaml.cs" line="40" column="1" bodyfile="C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF/MainWindow.xaml.cs" bodystart="39" bodyend="152"/>
     <listofallmembers>
-      <member refid="class_transport___management___system___w_p_f_1_1_main_window_1ae54e66731716228eaa56daccf6464e36" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>_contentLoaded</name></member>
       <member refid="class_transport___management___system___w_p_f_1_1_main_window_1afa15319061c0ec966e6aadad8471e897" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>a</name></member>
       <member refid="class_transport___management___system___w_p_f_1_1_main_window_1aea3c35693adbbaf5eb02439b30dbade5" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>acceptedContracts</name></member>
-      <member refid="class_transport___management___system___w_p_f_1_1_main_window_1aeccf61dc5bc7f630b876ea14b8ae9b09" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>Blue</name></member>
-      <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a2f3e93052e5b1591936fbbef5843f812" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>BlueMenuItem</name></member>
       <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a9bd5e3542b82523a8fded84c0f343c83" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>Button_AddContract</name></member>
       <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a60f01f91e8e0a9dd39584e2cd2541727" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>Button_Click</name></member>
       <member refid="class_transport___management___system___w_p_f_1_1_main_window_1aaa973d7449198bfd1107404ab534fe0d" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>Button_Click_1</name></member>
       <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a37653ae01d60682a07e052147dff7d50" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>buyer</name></member>
-      <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a7da066761fdda7c2128c1bf7a7181574" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>Buyer</name></member>
-      <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a0cc7637b254243c63169355d8365b1be" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>Connect</name></member>
-      <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a0cc7637b254243c63169355d8365b1be" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>Connect</name></member>
-      <member refid="class_transport___management___system___w_p_f_1_1_main_window_1af45f5640de2af660b6b25f971e0de278" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>DG1</name></member>
-      <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a2c48aae355abe548b48824c555cc42c8" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>DG2</name></member>
-      <member refid="class_transport___management___system___w_p_f_1_1_main_window_1ae2d9b5051d1b8bc3bd89988f42c47c41" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>DG3</name></member>
-      <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a727cf1f493bc39a940dc75edf0030d3e" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>DG4</name></member>
-      <member refid="class_transport___management___system___w_p_f_1_1_main_window_1af59ae9b65ef7fe3304d44286bd06ac32" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>InitializeComponent</name></member>
-      <member refid="class_transport___management___system___w_p_f_1_1_main_window_1af59ae9b65ef7fe3304d44286bd06ac32" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>InitializeComponent</name></member>
       <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a2751b4e1cae01713e693ab84e8c217f6" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>MainWindow</name></member>
-      <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a848673fcd7434c6e851f7e79abbe13a8" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>Orange</name></member>
-      <member refid="class_transport___management___system___w_p_f_1_1_main_window_1af786388b4ce53e5b669028165f618612" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>OrangeMenuItem</name></member>
-      <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a247027af81c2591dae41158b7d25b4ea" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>Output</name></member>
-      <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a80397592ba0b0ee5e305efa60d30392d" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>Planner</name></member>
-      <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a309318731bcef5f07cbdd1fd8f65ccf5" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>Red</name></member>
-      <member refid="class_transport___management___system___w_p_f_1_1_main_window_1a039a7e9267d8ec39abc9ff1102f8dda6" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>RedMenuItem</name></member>
       <member refid="class_transport___management___system___w_p_f_1_1_main_window_1affee0e4589fca964a7d86d7dcccd3103" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>RedMenuItem_Click</name></member>
       <member refid="class_transport___management___system___w_p_f_1_1_main_window_1aed4b9bf6216079df88ff73b118b9004e" prot="private" virt="non-virtual"><scope>Transport_Management_System_WPF::MainWindow</scope><name>SetOutput</name></member>
     </listofallmembers>

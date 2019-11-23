@@ -1,7 +1,5 @@
 var dir_52959eadf4408b695fdb8febcd655fd5 =
 [
-    [ "obj", "dir_19a4f9d1a42d3e7d2a8370ba03e3fd8d.html", "dir_19a4f9d1a42d3e7d2a8370ba03e3fd8d" ],
-    [ "Properties", "dir_345fc952d7b9915aa15432f374e46a65.html", "dir_345fc952d7b9915aa15432f374e46a65" ],
     [ "AdminClasses.cs", "_transport_01_management_01_system_01_w_p_f_2_admin_classes_8cs.html", [
       [ "Admin", "class_t_m_sw_pages_1_1_admin.html", "class_t_m_sw_pages_1_1_admin" ],
       [ "TMSLogger", "class_t_m_sw_pages_1_1_t_m_s_logger.html", "class_t_m_sw_pages_1_1_t_m_s_logger" ],
@@ -10,7 +8,7 @@ var dir_52959eadf4408b695fdb8febcd655fd5 =
       [ "AlterTables", "class_t_m_sw_pages_1_1_alter_tables.html", null ]
     ] ],
     [ "App.xaml.cs", "_transport_01_management_01_system_01_w_p_f_2_app_8xaml_8cs.html", [
-      [ "App", "class_transport___management___system___w_p_f_1_1_app.html", "class_transport___management___system___w_p_f_1_1_app" ]
+      [ "App", "class_transport___management___system___w_p_f_1_1_app.html", null ]
     ] ],
     [ "BuyerClass.cs", "_buyer_class_8cs.html", [
       [ "BuyerClass", "class_transport___management___system___w_p_f_1_1_buyer_class.html", "class_transport___management___system___w_p_f_1_1_buyer_class" ]

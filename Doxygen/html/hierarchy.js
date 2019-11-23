@@ -4,15 +4,7 @@ var hierarchy =
     [ "TMSwPages.AlterTables", "class_t_m_sw_pages_1_1_alter_tables.html", null ],
     [ "Application", null, [
       [ "TMSwPages::App", "class_t_m_sw_pages_1_1_app.html", null ],
-      [ "TMSwPages::App", "class_t_m_sw_pages_1_1_app.html", null ],
-      [ "TMSwPages::App", "class_t_m_sw_pages_1_1_app.html", null ],
-      [ "Transport_Management_System_WPF::App", "class_transport___management___system___w_p_f_1_1_app.html", null ],
-      [ "Transport_Management_System_WPF::App", "class_transport___management___system___w_p_f_1_1_app.html", null ],
       [ "Transport_Management_System_WPF::App", "class_transport___management___system___w_p_f_1_1_app.html", null ]
-    ] ],
-    [ "ApplicationSettingsBase", null, [
-      [ "TMSwPages::Properties::Settings", "class_t_m_sw_pages_1_1_properties_1_1_settings.html", null ],
-      [ "Transport_Management_System_WPF::Properties::Settings", "class_transport___management___system___w_p_f_1_1_properties_1_1_settings.html", null ]
     ] ],
     [ "TMSwPages.BackupTMS", "class_t_m_sw_pages_1_1_backup_t_m_s.html", null ],
     [ "Transport_Management_System_WPF.BuyerClass", "class_transport___management___system___w_p_f_1_1_buyer_class.html", null ],
@@ -20,59 +12,19 @@ var hierarchy =
     [ "Transport_Management_System_WPF.CityNode", "class_transport___management___system___w_p_f_1_1_city_node.html", null ],
     [ "Transport_Management_System_WPF.Contract", "class_transport___management___system___w_p_f_1_1_contract.html", null ],
     [ "Transport_Management_System_WPF.Customer", "struct_transport___management___system___w_p_f_1_1_customer.html", null ],
-    [ "IComponentConnector", null, [
-      [ "SampleWFPUsingPages::ViewLogDetailsPage", "class_sample_w_f_p_using_pages_1_1_view_log_details_page.html", null ],
-      [ "TMSwPages::AdminPage", "class_t_m_sw_pages_1_1_admin_page.html", null ],
-      [ "TMSwPages::AdminPage", "class_t_m_sw_pages_1_1_admin_page.html", null ],
-      [ "TMSwPages::MainWindow", "class_t_m_sw_pages_1_1_main_window.html", null ],
-      [ "TMSwPages::MainWindow", "class_t_m_sw_pages_1_1_main_window.html", null ],
-      [ "TMSwPages::MainWindow", "class_t_m_sw_pages_1_1_main_window.html", null ],
-      [ "TMSwPages::Page1", "class_t_m_sw_pages_1_1_page1.html", null ],
-      [ "TMSwPages::Page1", "class_t_m_sw_pages_1_1_page1.html", null ],
-      [ "TMSwPages::Page2", "class_t_m_sw_pages_1_1_page2.html", null ],
-      [ "TMSwPages::Page2", "class_t_m_sw_pages_1_1_page2.html", null ],
-      [ "TMSwPages::ViewLogDetails", "class_t_m_sw_pages_1_1_view_log_details.html", null ],
-      [ "TMSwPages::ViewLogDetails", "class_t_m_sw_pages_1_1_view_log_details.html", null ],
-      [ "TMSwPages::ViewLogDetailsPage", "class_t_m_sw_pages_1_1_view_log_details_page.html", null ],
-      [ "Transport_Management_System_WPF::AdminPage", "class_transport___management___system___w_p_f_1_1_admin_page.html", null ],
-      [ "Transport_Management_System_WPF::MainWindow", "class_transport___management___system___w_p_f_1_1_main_window.html", null ],
-      [ "Transport_Management_System_WPF::MainWindow", "class_transport___management___system___w_p_f_1_1_main_window.html", null ],
-      [ "Transport_Management_System_WPF::Page1", "class_transport___management___system___w_p_f_1_1_page1.html", null ],
-      [ "Transport_Management_System_WPF::Page1", "class_transport___management___system___w_p_f_1_1_page1.html", null ]
-    ] ],
     [ "Transport_Management_System_WPF.Location", "struct_transport___management___system___w_p_f_1_1_location.html", null ],
     [ "Transport_Management_System_WPF.MappingClass", "class_transport___management___system___w_p_f_1_1_mapping_class.html", null ],
     [ "Transport_Management_System_WPF.mysqlConnector", "class_transport___management___system___w_p_f_1_1mysql_connector.html", null ],
     [ "NavigationWindow", null, [
-      [ "TMSwPages::MainWindow", "class_t_m_sw_pages_1_1_main_window.html", null ],
-      [ "TMSwPages::MainWindow", "class_t_m_sw_pages_1_1_main_window.html", null ],
-      [ "TMSwPages::MainWindow", "class_t_m_sw_pages_1_1_main_window.html", null ],
       [ "TMSwPages::MainWindow", "class_t_m_sw_pages_1_1_main_window.html", null ]
     ] ],
     [ "Page", null, [
-      [ "SampleWFPUsingPages::ViewLogDetailsPage", "class_sample_w_f_p_using_pages_1_1_view_log_details_page.html", null ],
       [ "TMSwPages::AdminPage", "class_t_m_sw_pages_1_1_admin_page.html", null ],
-      [ "TMSwPages::AdminPage", "class_t_m_sw_pages_1_1_admin_page.html", null ],
-      [ "TMSwPages::AdminPage", "class_t_m_sw_pages_1_1_admin_page.html", null ],
-      [ "TMSwPages::Page1", "class_t_m_sw_pages_1_1_page1.html", null ],
-      [ "TMSwPages::Page1", "class_t_m_sw_pages_1_1_page1.html", null ],
-      [ "TMSwPages::Page1", "class_t_m_sw_pages_1_1_page1.html", null ],
-      [ "TMSwPages::Page2", "class_t_m_sw_pages_1_1_page2.html", null ],
-      [ "TMSwPages::Page2", "class_t_m_sw_pages_1_1_page2.html", null ],
-      [ "TMSwPages::Page2", "class_t_m_sw_pages_1_1_page2.html", null ],
-      [ "TMSwPages::ViewLogDetails", "class_t_m_sw_pages_1_1_view_log_details.html", null ],
-      [ "TMSwPages::ViewLogDetails", "class_t_m_sw_pages_1_1_view_log_details.html", null ],
-      [ "TMSwPages::ViewLogDetails", "class_t_m_sw_pages_1_1_view_log_details.html", null ],
-      [ "TMSwPages::ViewLogDetailsPage", "class_t_m_sw_pages_1_1_view_log_details_page.html", null ],
-      [ "Transport_Management_System_WPF::AdminPage", "class_transport___management___system___w_p_f_1_1_admin_page.html", null ],
-      [ "Transport_Management_System_WPF::Page1", "class_transport___management___system___w_p_f_1_1_page1.html", null ],
-      [ "Transport_Management_System_WPF::Page1", "class_transport___management___system___w_p_f_1_1_page1.html", null ]
+      [ "TMSwPages::ViewLogDetails", "class_t_m_sw_pages_1_1_view_log_details.html", null ]
     ] ],
     [ "Transport_Management_System_WPF.PlannerClass.Planner", "class_transport___management___system___w_p_f_1_1_planner_class_1_1_planner.html", null ],
     [ "Transport_Management_System_WPF.PlannerClass", "class_transport___management___system___w_p_f_1_1_planner_class.html", null ],
     [ "UnitTestTMS.PlannerClassTests", "class_unit_test_t_m_s_1_1_planner_class_tests.html", null ],
-    [ "Transport_Management_System_WPF::Properties::Resources", "class_transport___management___system___w_p_f_1_1_properties_1_1_resources.html", null ],
-    [ "TMSwPages::Properties::Resources", "class_t_m_sw_pages_1_1_properties_1_1_resources.html", null ],
     [ "Transport_Management_System_WPF.RouteData", "struct_transport___management___system___w_p_f_1_1_route_data.html", null ],
     [ "Transport_Management_System_WPF.RouteSumData", "struct_transport___management___system___w_p_f_1_1_route_sum_data.html", null ],
     [ "Transport_Management_System_WPF.SQL_Query", "class_transport___management___system___w_p_f_1_1_s_q_l___query.html", null ],
@@ -86,8 +38,6 @@ var hierarchy =
     [ "Transport_Management_System_WPF.Truck", "struct_transport___management___system___w_p_f_1_1_truck.html", null ],
     [ "UnitTestTMS.UnitTest2", "class_unit_test_t_m_s_1_1_unit_test2.html", null ],
     [ "Window", null, [
-      [ "Transport_Management_System_WPF::MainWindow", "class_transport___management___system___w_p_f_1_1_main_window.html", null ],
-      [ "Transport_Management_System_WPF::MainWindow", "class_transport___management___system___w_p_f_1_1_main_window.html", null ],
       [ "Transport_Management_System_WPF::MainWindow", "class_transport___management___system___w_p_f_1_1_main_window.html", null ]
     ] ]
 ];
