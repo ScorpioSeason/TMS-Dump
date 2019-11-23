@@ -110,8 +110,12 @@
 Transport_Management_System_WPF.SQL_Query Class Reference\par \pard\plain 
 {\tc\tcl2 \v Transport_Management_System_WPF.SQL_Query}
 {\xe \v Transport_Management_System_WPF.SQL_Query}
-{\bkmkstart AAAAAAAAEQ}
-{\bkmkend AAAAAAAAEQ}
+{\bkmkstart AAAAAAAAEK}
+{\bkmkend AAAAAAAAEK}
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+This class does all of the querys dealing with the cmp db. }}\par
 \pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
 Public Member Functions\par
 \pard\plain 
@@ -119,8 +123,18 @@ Public Member Functions\par
 {
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 {\b SQL_Query} ()\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Constructor. }{
+}\par
+}\par}
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 void {\b Initialize} ()\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Sets all values for the sql connection. }{
+}\par
+}\par}
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 List< string >[] {\b Select_Contracts} ()\par
 {
@@ -145,7 +159,7 @@ To create a new Square by validating or else defaulting new values. }{
 bool {\b CloseConnection} ()\par
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
-To create a new Square by validating or else defaulting new values. }{
+Closes the connection to the SQL database server. }{
 }\par
 }\par}
 }
@@ -167,19 +181,73 @@ string {\b password}\par
 }
 {\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
 \pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+This class does all of the querys dealing with the cmp db. \par
+}
+
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+public class. \par
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+ \par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
 Constructor & Destructor Documentation\par
 \pard\plain 
 {\xe \v SQL_Query\:Transport_Management_System_WPF.SQL_Query}
 {\xe \v Transport_Management_System_WPF.SQL_Query\:SQL_Query}
 \pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
 {\b 
-Transport_Management_System_WPF.SQL_Query.SQL_Query ()}}
+void Transport_Management_System_WPF.SQL_Query.SQL_Query ()}}
 \par
-{\bkmkstart AAAAAAAAER}
-{\bkmkend AAAAAAAAER}
+{\bkmkstart AAAAAAAAEL}
+{\bkmkend AAAAAAAAEL}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Constructor. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Constructor. {\par
+{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Parameters\par}
+\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid \trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx1224
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx3061
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{in\cell }{{\i none} \cell }{\cell }
+{\row }
+\trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx1224
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx3061
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{out\cell }{{\i none} \cell }{\cell }
+{\row }
 }
+{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Exceptions\par}
+\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid \trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{{\i none} \cell }{\cell }
+{\row }
+}
+{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+See also\par}\pard\plain \s82\li720\widctlpar\ql\adjustright \fs20\cgrid {\s17 \sa60 \sb30
+{\b Initialize()} \par
+}}{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Returns\par}\pard\plain \s82\li720\widctlpar\ql\adjustright \fs20\cgrid {\s17 \sa60 \sb30
+None\par
+}}{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+ \par
+}}
 {\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
 \pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
 Member Function Documentation\par
@@ -190,16 +258,16 @@ Member Function Documentation\par
 {\b 
 bool Transport_Management_System_WPF.SQL_Query.CloseConnection (){\f2 [private]}}}
 \par
-{\bkmkstart AAAAAAAAES}
-{\bkmkend AAAAAAAAES}
+{\bkmkstart AAAAAAAAEM}
+{\bkmkend AAAAAAAAEM}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
 {
 {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
-To create a new Square by validating or else defaulting new values. }}\par
+Closes the connection to the SQL database server. }}\par
 {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
-THis is if you have more to say about what the function does and don't want to inline comment {\par
+Closes the connection to the SQL database server and outputs an exeption to the log and to the screen if a exception is thrown. {\par
 {\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
 Parameters\par}
 \pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid \trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
@@ -207,14 +275,14 @@ Parameters\par}
 \clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx3061
 \clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
 \pard \widctlpar\intbl\adjustright
-{in\cell }{{\i char[]} \cell }{newColour An incoming value meant to become the square's colour \cell }
+{in\cell }{{\i none} \cell }{\cell }
 {\row }
 \trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
 \clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx1224
 \clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx3061
 \clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
 \pard \widctlpar\intbl\adjustright
-{out\cell }{{\i char[]} \cell }{newSideLength An incoming value meant to become the square's side length \cell }
+{out\cell }{{\i none} \cell }{\cell }
 {\row }
 }
 {{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
@@ -223,12 +291,12 @@ Exceptions\par}
 \clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
 \clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
 \pard \widctlpar\intbl\adjustright
-{{\i This} \cell }{is if we have some big ol try catches? \cell }
+{{\i MySqlException} \cell }{\cell }
 {\row }
 }
 {{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
 See also\par}\pard\plain \s82\li720\widctlpar\ql\adjustright \fs20\cgrid {\s17 \sa60 \sb30
-CallsMade() \par
+connection.Close() \par
 }}{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
 Returns\par}\pard\plain \s82\li720\widctlpar\ql\adjustright \fs20\cgrid {\s17 \sa60 \sb30
 None\par
@@ -241,19 +309,59 @@ None\par
 {\b 
 void Transport_Management_System_WPF.SQL_Query.Initialize ()}}
 \par
-{\bkmkstart AAAAAAAAET}
-{\bkmkend AAAAAAAAET}
+{\bkmkstart AAAAAAAAEN}
+{\bkmkend AAAAAAAAEN}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Sets all values for the sql connection. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Sets all values for the sql connection. {\par
+{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Parameters\par}
+\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid \trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx1224
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx3061
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{in\cell }{{\i none} \cell }{\cell }
+{\row }
+\trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx1224
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx3061
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{out\cell }{{\i none} \cell }{\cell }
+{\row }
 }
+{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Exceptions\par}
+\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid \trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{{\i none} \cell }{should be thrown \cell }
+{\row }
+}
+{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+See also\par}\pard\plain \s82\li720\widctlpar\ql\adjustright \fs20\cgrid {\s17 \sa60 \sb30
+none \par
+}}{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Returns\par}\pard\plain \s82\li720\widctlpar\ql\adjustright \fs20\cgrid {\s17 \sa60 \sb30
+None\par
+}}{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+ \par
+}}
 {\xe \v OpenConnection\:Transport_Management_System_WPF.SQL_Query}
 {\xe \v Transport_Management_System_WPF.SQL_Query\:OpenConnection}
 \pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
 {\b 
 bool Transport_Management_System_WPF.SQL_Query.OpenConnection (){\f2 [private]}}}
 \par
-{\bkmkstart AAAAAAAAEU}
-{\bkmkend AAAAAAAAEU}
+{\bkmkstart AAAAAAAAEO}
+{\bkmkend AAAAAAAAEO}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -269,14 +377,14 @@ Parameters\par}
 \clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx3061
 \clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
 \pard \widctlpar\intbl\adjustright
-{in\cell }{{\i char[]} \cell }{newColour An incoming value meant to become the square's colour \cell }
+{in\cell }{{\i none} \cell }{\cell }
 {\row }
 \trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
 \clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx1224
 \clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx3061
 \clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
 \pard \widctlpar\intbl\adjustright
-{out\cell }{{\i char[]} \cell }{newSideLength An incoming value meant to become the square's side length \cell }
+{out\cell }{{\i none} \cell }{\cell }
 {\row }
 }
 {{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
@@ -285,7 +393,7 @@ Exceptions\par}
 \clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
 \clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
 \pard \widctlpar\intbl\adjustright
-{{\i This} \cell }{is if we have some big ol try catches? \cell }
+{{\i MySqlException} \cell }{ex, 0: Cannot connect to server. Contact administrator / 1: Invalid username/password, please try again \cell }
 {\row }
 }
 {{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
@@ -303,8 +411,8 @@ None\par
 {\b 
 Transport_Management_System_WPF.SQL_Query.Select_Contracts ()}}
 \par
-{\bkmkstart AAAAAAAAEV}
-{\bkmkend AAAAAAAAEV}
+{\bkmkstart AAAAAAAAEP}
+{\bkmkend AAAAAAAAEP}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -358,8 +466,8 @@ Member Data Documentation\par
 {\b 
 MySqlConnection Transport_Management_System_WPF.SQL_Query.connection{\f2 [private]}}}
 \par
-{\bkmkstart AAAAAAAAEW}
-{\bkmkend AAAAAAAAEW}
+{\bkmkstart AAAAAAAAEQ}
+{\bkmkend AAAAAAAAEQ}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 }
@@ -369,8 +477,8 @@ MySqlConnection Transport_Management_System_WPF.SQL_Query.connection{\f2 [privat
 {\b 
 string Transport_Management_System_WPF.SQL_Query.database{\f2 [private]}}}
 \par
-{\bkmkstart AAAAAAAAEX}
-{\bkmkend AAAAAAAAEX}
+{\bkmkstart AAAAAAAAER}
+{\bkmkend AAAAAAAAER}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 }
@@ -380,8 +488,8 @@ string Transport_Management_System_WPF.SQL_Query.database{\f2 [private]}}}
 {\b 
 string Transport_Management_System_WPF.SQL_Query.password{\f2 [private]}}}
 \par
-{\bkmkstart AAAAAAAAEY}
-{\bkmkend AAAAAAAAEY}
+{\bkmkstart AAAAAAAAES}
+{\bkmkend AAAAAAAAES}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 }
@@ -391,8 +499,8 @@ string Transport_Management_System_WPF.SQL_Query.password{\f2 [private]}}}
 {\b 
 string Transport_Management_System_WPF.SQL_Query.server{\f2 [private]}}}
 \par
-{\bkmkstart AAAAAAAAEZ}
-{\bkmkend AAAAAAAAEZ}
+{\bkmkstart AAAAAAAAET}
+{\bkmkend AAAAAAAAET}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 }
@@ -402,8 +510,8 @@ string Transport_Management_System_WPF.SQL_Query.server{\f2 [private]}}}
 {\b 
 string Transport_Management_System_WPF.SQL_Query.uid{\f2 [private]}}}
 \par
-{\bkmkstart AAAAAAAAFA}
-{\bkmkend AAAAAAAAFA}
+{\bkmkstart AAAAAAAAEU}
+{\bkmkend AAAAAAAAEU}
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 }

@@ -8,8 +8,5 @@ var annotated_dup =
     [ "Admin", "class_admin.html", null ],
     [ "Admin", "class_admin.html", null ],
     [ "Admin", "class_admin.html", null ],
-    [ "Admin", "class_admin.html", null ],
-    [ "Admin", "class_admin.html", null ],
-    [ "Admin", "class_admin.html", null ],
     [ "Admin", "class_admin.html", null ]
 ];

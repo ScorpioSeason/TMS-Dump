@@ -3,12 +3,10 @@
   <compounddef id="dir_52959eadf4408b695fdb8febcd655fd5" kind="dir">
     <compoundname>C:/Users/School User/Code/TMS-Dump/Transport Management System WPF/Transport Management System WPF</compoundname>
     <innerfile refid="_admin_classes_8cs">AdminClasses.cs</innerfile>
-    <innerfile refid="_app_8xaml">App.xaml</innerfile>
     <innerfile refid="_app_8xaml_8cs">App.xaml.cs</innerfile>
     <innerfile refid="_buyer_class_8cs">BuyerClass.cs</innerfile>
     <innerfile refid="_carrier_8cs">Carrier.cs</innerfile>
     <innerfile refid="_contract_8cs">Contract.cs</innerfile>
-    <innerfile refid="_main_window_8xaml">MainWindow.xaml</innerfile>
     <innerfile refid="_main_window_8xaml_8cs">MainWindow.xaml.cs</innerfile>
     <innerfile refid="_mapping_class_8cs">MappingClass.cs</innerfile>
     <innerfile refid="_mockup_c_m_p_8cs">MockupCMP.cs</innerfile>

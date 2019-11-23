@@ -244,30 +244,31 @@ namespace Transport_Management_System_WPF
         *	\param[out]	null
         *	\exception	null
         *	\see		na
-        *	\return		None
+        *	\return		RouteSumData The condensed data
         * ---------------------------------------------------------------------------------------------------- */
         public RouteSumData SummerizeTrip(List<RouteData> inData)
         {
             RouteSumData outData = new RouteSumData();
+            outData.DestinationCity = -1;
 
-
-            foreach(RouteData x in inData)
+            if (inData == null)
             {
-                outData.totalDriveTime += x.DriveTime;
+                foreach (RouteData x in inData)
+                {
+                    outData.totalDriveTime += x.DriveTime;
 
-                outData.totalTripTime += x.DriveTime;
+                    outData.totalTripTime += x.DriveTime;
 
-                outData.totalTripTime += x.PickupTime;
-                outData.totalTripTime += x.DropoffTime;
-                outData.totalTripTime += x.LtlTime;
+                    outData.totalTripTime += x.PickupTime;
+                    outData.totalTripTime += x.DropoffTime;
+                    outData.totalTripTime += x.LtlTime;
 
-                outData.totalKM += x.KM;
+                    outData.totalKM += x.KM;
+                }
+
+                outData.OriginCity = inData[0].CityA;
+                outData.DestinationCity = inData[inData.Count - 1].CityB;
             }
-
-            outData.OriginCity = inData[0].CityA;
-
-            outData.DestinationCity = inData[inData.Count - 1].CityB;
-
 
             return outData;
         }

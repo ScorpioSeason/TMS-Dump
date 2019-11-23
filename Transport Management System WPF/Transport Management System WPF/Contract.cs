@@ -1,4 +1,4 @@
-﻿// ADMIN FILE HEADER COMMENT: =================================================================================
+﻿// Contract FILE HEADER COMMENT: =================================================================================
 /**
  *  \file		Contract.cs
  *  \ingroup	TMS
@@ -21,9 +21,9 @@ namespace Transport_Management_System_WPF
 {
     // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
     /**   
-    *   \class		Admin
-    *   \brief		This class runs the Admin UI functionality
-    *   \details	Holds all values for contracts and functions for translating their values to integers.
+    *   \class		Contract
+    *   \brief		This class holds the contracts
+    *   \details	... static class?  
     *   
     * -------------------------------------------------------------------------------------------------------- */
     public class Contract

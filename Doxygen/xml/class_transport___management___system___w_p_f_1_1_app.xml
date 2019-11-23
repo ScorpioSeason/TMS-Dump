@@ -4,7 +4,7 @@
     <compoundname>Transport_Management_System_WPF::App</compoundname>
     <basecompoundref prot="private" virt="non-virtual">Application</basecompoundref>
     <briefdescription>
-<para>Interaction logic for <ref refid="_app_8xaml" kindref="compound">App.xaml</ref> </para>
+<para>Interaction logic for App.xaml </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>

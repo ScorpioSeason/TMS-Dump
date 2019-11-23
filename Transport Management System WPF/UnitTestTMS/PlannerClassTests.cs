@@ -30,7 +30,7 @@ namespace UnitTestTMS
 
         //Test city 7 - 0, FTL
         [TestMethod]
-        public void routCalc1()
+        public void GetTravelData1()
         {
 
             //ARRANGE
@@ -51,7 +51,7 @@ namespace UnitTestTMS
 
         //Test city 7 - 0, LTL
         [TestMethod]
-        public void routCalc2()
+        public void GetTravelData2()
         {
 
             //ARRANGE
@@ -69,6 +69,25 @@ namespace UnitTestTMS
             Assert.AreEqual((int)(totalTrip.totalTripTime * 100), 1614);
             Assert.AreEqual(totalTrip.totalKM, 859);
         }
+
+        //Test city 7 - 0, LTL
+        [TestMethod]
+        public void GetTravelData3()
+        {
+
+            //ARRANGE
+            MappingClass graphClass = new MappingClass();
+            List<RouteData> ReturnList = new List<RouteData>();
+
+            ReturnList = graphClass.GetTravelData(8, -1, false);
+
+            RouteSumData totalTrip = graphClass.SummerizeTrip(ReturnList);
+
+            //ASSERT
+            Assert.AreEqual(totalTrip.DestinationCity, -1);
+        }
+
+
 
         //Test city 7 - 0, LTL
         [TestMethod]
@@ -104,8 +123,6 @@ namespace UnitTestTMS
         [TestMethod]
         public void routCalc4()
         {
-
-           
 
             //ARRANGE
             MappingClass graphClass = new MappingClass();
