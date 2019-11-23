@@ -25,7 +25,6 @@ using System.Data;
 using MySql.Data.MySqlClient;
 using MySql.Data;
 using System.Diagnostics;
-using TMSwPages;
 
 //from https://www.codeproject.com/articles/43438/connect-c-to-mysql
 
@@ -127,7 +126,7 @@ namespace TMSwPages
                     case 1045: 
                         
                         //MessageBox.Show("Invalid username/password, please try again");
-                        .LogIt("Invalid username/password, please try again");
+                        TMSLogger.LogIt("Invalid username/password, please try again");
                             break;
                         
                 }
