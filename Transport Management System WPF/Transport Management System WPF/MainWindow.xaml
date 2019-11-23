@@ -12,6 +12,7 @@
             <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
         <TabControl Grid.Row="0" >
+		
             <TabItem Name="Buyer" Header="Buyer Tab">
                 <TabItem.ContextMenu>
                     <ContextMenu>
@@ -23,6 +24,7 @@
                 <TabItem.Content>
                     <StackPanel>
                         <Button Content="Load/Refresh" Width="100" HorizontalAlignment="Left" Click="Button_Click"/>
+						
                         <DataGrid Name="DG1" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="False"  MaxHeight="140" MinHeight="140">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Client Name" Binding="{Binding client_Name}" IsReadOnly="True" />
@@ -35,8 +37,10 @@
                                 <!--The Email property contains a URI.  For example "mailto:lucy0@adventure-works.com"-->
                             </DataGrid.Columns>
                         </DataGrid>
+						
                         <Button Content="ADD MY SHIT!" Width="100" HorizontalAlignment="Left" Click="Button_AddContract"/>
                         <Button Content="Load/Refresh" Width="100" HorizontalAlignment="Left" Click="Button_Click_1"/>
+						
                         <DataGrid Name="DG2" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="False" MaxHeight="200" MinHeight="140">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Client Name" Binding="{Binding client_Name}" />
@@ -48,9 +52,11 @@
                                 <!--The Email property contains a URI.  For example "mailto:lucy0@adventure-works.com"-->
                             </DataGrid.Columns>
                         </DataGrid>
+						
                     </StackPanel>
                 </TabItem.Content>
             </TabItem>
+			
             <TabItem Name="Planner" Header="Planner Tab">
                 <TabItem.ContextMenu>
                     <ContextMenu>
@@ -62,6 +68,7 @@
                 <TabItem.Content>
                     <StackPanel>
                         <Button Content="Load/Refresh" Width="100" HorizontalAlignment="Left" Click="Button_Click"/>
+						
                         <Label>List Of Available Contracts</Label>
                         <DataGrid Name="DG3" ItemsSource="{Binding}" AutoGenerateColumns="False">
                             <DataGrid.Columns>
@@ -70,6 +77,7 @@
                                 <!--The Email property contains a URI.  For example "mailto:lucy0@adventure-works.com"-->
                             </DataGrid.Columns>
                         </DataGrid>
+						
                         <Label>List Of Active Tickets</Label>
                         <DataGrid Name="DG4" ItemsSource="{Binding}" AutoGenerateColumns="False">
                             <DataGrid.Columns>
@@ -78,11 +86,13 @@
                                 <!--The Email property contains a URI.  For example "mailto:lucy0@adventure-works.com"-->
                             </DataGrid.Columns>
                         </DataGrid>
+						
                         <Button Content="Increment Time (1 Day)" Width="100" HorizontalAlignment="Left"/>
 
                     </StackPanel>
                 </TabItem.Content>
             </TabItem>
+			
         </TabControl>
         <StatusBar Grid.Row="1">
             <StatusBarItem>

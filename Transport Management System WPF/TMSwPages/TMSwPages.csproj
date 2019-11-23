@@ -55,38 +55,47 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AdminClasses.cs" />
-    <Compile Include="AdminPage.xaml.cs">
+    <Compile Include="Classes\AdminClasses.cs" />
+    <Compile Include="UI\AdminPage.xaml.cs">
       <DependentUpon>AdminPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BuyerPage.xaml.cs">
+    <Compile Include="Classes\BuyerClass.cs" />
+    <Compile Include="UI\BuyerPage.xaml.cs">
       <DependentUpon>BuyerPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LoginPage.xaml.cs">
+    <Compile Include="Classes\Carrier.cs" />
+    <Compile Include="Classes\Contract.cs" />
+    <Compile Include="UI\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="mainwindow.xaml.cs">
+    <Compile Include="UI\mainwindow.xaml.cs">
       <DependentUpon>mainwindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PlannerPage.xaml.cs">
+    <Compile Include="Classes\MappingClass.cs" />
+    <Compile Include="Classes\mysqlConnector.cs" />
+    <Compile Include="Classes\PlannerClass.cs" />
+    <Compile Include="UI\PlannerPage.xaml.cs">
       <DependentUpon>PlannerPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewLogDetails.xaml.cs">
+    <Compile Include="Classes\SQL_Query.cs" />
+    <Compile Include="Classes\SQL_Query_TMS.cs" />
+    <Compile Include="Classes\TimePass.cs" />
+    <Compile Include="UI\ViewLogDetails.xaml.cs">
       <DependentUpon>ViewLogDetails.xaml</DependentUpon>
     </Compile>
-    <Page Include="AdminPage.xaml">
+    <Page Include="UI\AdminPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="BuyerPage.xaml">
+    <Page Include="UI\BuyerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LoginPage.xaml">
+    <Page Include="UI\LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="mainwindow.xaml">
+    <Page Include="UI\mainwindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -94,11 +103,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="PlannerPage.xaml">
+    <Page Include="UI\PlannerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewLogDetails.xaml">
+    <Page Include="UI\ViewLogDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -129,8 +138,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UI\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

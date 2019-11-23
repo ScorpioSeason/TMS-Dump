@@ -1,0 +1,164 @@
+﻿<Page x:Class="TMSwPages.BuyerPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TMSwPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="BuyerPage">
+
+    <!--This is the grid which holds the page display-->
+    <Grid Name="OuterGrid" Margin="0,0,0,0">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Name="TopMenu" Height="auto"></RowDefinition>
+            <RowDefinition Name="Tabs" Height="*"></RowDefinition>
+            <RowDefinition Name="StatusBar" Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <!--This is the user menu allowing help or navigation-->
+        <Menu Name="BuyerMenu" Grid.Row ="0" IsMainMenu="True" VerticalAlignment="Top">
+
+            <!-- File Menu: Open, New, Save As, Close -->
+            <MenuItem Header="Buyer">
+                <MenuItem Header="Buyer Main Page"/>
+                <MenuItem Header="Switch User" />
+            </MenuItem>
+
+            <!-- Help Menu: About -->
+            <MenuItem Header="Help">
+                <MenuItem Header="About Buyer" />
+                <MenuItem Header="About TMS" />
+            </MenuItem>
+
+            <!--Don't know what these are for but I included them?-->
+            <MenuItem Header="Red" Name="RedMenuItem" Click="RedMenuItem_Click"/>
+            <MenuItem Header="Blue" Name="BlueMenuItem" />
+            <MenuItem Header="Orange" Name="OrangeMenuItem" />
+
+        </Menu>
+
+        <!--These tabs allow different functions of the Buyer to be accessed from one main page-->
+        <TabControl Grid.Row="1" Margin="5,5,5,5">
+
+            <!--This is the content of the Initiate Order tab-->
+            <TabItem Name="InitiateOrder" Header="Initiate an Order / Add contract??">
+
+                <!--InitiateOrder Tab-->
+                <TabItem.Content>
+
+                    <DockPanel>
+
+                        <!--This is only visible within the logs tab-->
+                        <Grid Name="InitiateOrderInnerGrid">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition x:Name="InitiateOrderControls" Height="auto"></RowDefinition>
+                                <RowDefinition x:Name="InitiateOrderMain" Height="*"></RowDefinition>
+                                <RowDefinition x:Name="InitiateOrderButtons" Height="auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <!--Controls Row (0) -->
+                            <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="0" Margin="5,5,5,5" Content="ADD MY SHIT!" Click="Button_AddContract"></Button>
+                            <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Content="Load/Refresh" Click="Button_Click_1"></Button>
+
+                            <!--Main Content Row (1) -->
+                            <DataGrid Name="DG2" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="False" Grid.ColumnSpan="5" Grid.Row="1" Margin="5,5,5,5">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Client Name" Binding="{Binding client_Name}" />
+                                    <DataGridTextColumn Header="Job Type" Binding="{Binding job_Type}"/>
+                                    <DataGridTextColumn Header="Quantity" Binding="{Binding quantity}" />
+                                    <DataGridTextColumn Header="Origin" Binding="{Binding origin}"/>
+                                    <DataGridTextColumn Header="Destination" Binding="{Binding destination}" />
+                                    <DataGridTextColumn Header="Van Type" Binding="{Binding van_Type}"/>
+                                    <!--The Email property contains a URI.  For example "mailto:lucy0@adventure-works.com"-->
+                                </DataGrid.Columns>
+                            </DataGrid>
+
+                            <!--Buttons Row (2) -->
+                            <!--<Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="LogSettingsClick">Log Settings</Button>
+                            <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="4" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="ViewMoreClick" >View More...</Button>-->
+
+                        </Grid>
+
+                    </DockPanel>
+
+                </TabItem.Content>
+
+            </TabItem>
+
+            <!--This is the content of the ReviewCompletedOrders tab-->
+            <TabItem Name="ReviewCompletedOrders" Header="Review Completed Orders">
+
+                <!--ReviewCompletedOrders Tab-->
+                <TabItem.Content>
+
+                    <DockPanel>
+
+                        <!--This is only visible within the logs tab-->
+                        <Grid Name="ReviewCompletedOrdersInnerGrid">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition x:Name="ReviewCompletedOrdersControls" Height="auto"></RowDefinition>
+                                <RowDefinition x:Name="ReviewCompletedOrdersMain" Height="*"></RowDefinition>
+                                <RowDefinition x:Name="ReviewCompletedOrdersButtons" Height="auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <!--Controls Row (0) -->
+                            <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Content="Load/Refresh" Click="Button_Click"></Button>
+                            <!--<Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="0" Margin="5,5,5,5" Content="Increment Time (1 Day)"/>-->
+
+                            <!--Main Content Row (1) -->
+                            <DataGrid Name="DG1" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="False"  Grid.ColumnSpan="5" Grid.Row="1" Margin="5,5,5,5">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Client Name" Binding="{Binding client_Name}" IsReadOnly="True" />
+                                    <DataGridTextColumn Header="Job Type" Binding="{Binding job_Type}" IsReadOnly="True"/>
+                                    <DataGridTextColumn Header="Quantity" Binding="{Binding quantity}" IsReadOnly="True"/>
+                                    <DataGridTextColumn Header="Origin" Binding="{Binding origin}" IsReadOnly="True"/>
+                                    <DataGridTextColumn Header="Destination" Binding="{Binding destination}" IsReadOnly="True"/>
+                                    <DataGridTextColumn Header="Van Type" Binding="{Binding van_Type}" IsReadOnly="True"/>
+                                    <DataGridCheckBoxColumn Header="Selected" Binding="{Binding is_Selected}" />
+                                    <!--The Email property contains a URI.  For example "mailto:lucy0@adventure-works.com"-->
+                                </DataGrid.Columns>
+                            </DataGrid>
+
+                            <!--Buttons Row (2) -->
+                            <!--<Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="LogSettingsClick">Log Settings</Button>-->
+
+                        </Grid>
+
+                    </DockPanel>
+
+                </TabItem.Content>
+
+            </TabItem>
+            
+        </TabControl >
+
+        <!--This displays statuses for the user-->
+        <StatusBar Name="Output" Grid.Row="5" VerticalAlignment="Bottom">
+            <StatusBarItem Name="statusItem">
+                <TextBlock Name="status" Text="Status: "/>
+            </StatusBarItem>
+        </StatusBar >
+
+    </Grid>
+</Page>

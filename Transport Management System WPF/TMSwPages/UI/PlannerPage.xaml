@@ -75,8 +75,8 @@
                             </Grid.RowDefinitions>
 
                             <!--Controls Row (0) -->
-                            <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Content="Load/Refresh" Click="Button_Click"></Button>
-                            <Button  DockPanel.Dock="top" Grid.Row="0" Grid.Column="0" Margin="5,5,5,5" Content="Increment Time (1 Day)"/>
+                            <!--<Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Content="Load/Refresh" Click="Button_Click"></Button>
+                            <Button  DockPanel.Dock="top" Grid.Row="0" Grid.Column="0" Margin="5,5,5,5" Content="Increment Time (1 Day)"/>-->
 
                             <!--Main Content Row (1) -->
                             <DataGrid Grid.ColumnSpan="5" Grid.Row="1" Name="DG3" ItemsSource="{Binding}"  Margin="5,5,5,5" AutoGenerateColumns="False">
@@ -124,8 +124,8 @@
                             </Grid.RowDefinitions>
 
                             <!--Controls Row (0) -->
-                            <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Content="Load/Refresh" Click="Button_Click"></Button>
-                            <Button  DockPanel.Dock="top" Grid.Row="0" Grid.Column="0" Margin="5,5,5,5" Content="Increment Time (1 Day)"/>
+                            <!--<Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Content="Load/Refresh" Click="Button_Click"></Button>
+                            <Button  DockPanel.Dock="top" Grid.Row="0" Grid.Column="0" Margin="5,5,5,5" Content="Increment Time (1 Day)"/>-->
                             
                             <!--Main Content Row (1) -->
                             <DataGrid Grid.ColumnSpan="5" Grid.Row="1" Margin="5,5,5,5" Name="DG4" ItemsSource="{Binding}" AutoGenerateColumns="False">

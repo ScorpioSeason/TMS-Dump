@@ -24,5 +24,13 @@ namespace TMSwPages
         {
             InitializeComponent();
         }
+
+        //private void Button_Click(object sender, RoutedEventArgs e)//load/ refresh button
+        //{
+        //    buyer.ParseContracts();
+        //    DG1.Items.Refresh();
+        //}
+
+
     }
 }
