@@ -1,15 +1,13 @@
-﻿// ADMIN FILE HEADER COMMENT: =================================================================================
+﻿// MappingClass FILE HEADER COMMENT: =================================================================================
 /**
- *  \file		Admin.cs
+ *  \file		MappingClass.cs
  *  \ingroup	TMS
  *  \date		November 20, 2019
- *  \author		8000 Cigarettes - Megan
- *  \brief	    This file contains the admin functionality	  
- *  \see		MainWindow.xaml
- *  \details    This file holds the functionality of the Admin class. The Admin has the ability to view logs as 
- *              specified by time period, view details of specific logs, alter where the log files are stored, 
- *              initiate backups of the TMS database, choose where the TMS db is backed up to, alter the Carrier 
- *              Data Table, the Route Table, and the Rate / Fee Tables.                                       
+ *  \author		8000 Cigarettes - Duane
+ *  \brief	    This file contains the functionality for Route Calculation. This will be used by the Planner.
+ *  \see		PlannerClass.cs
+ *  \details    This file holds the struct definitions that will be used to pass data from class to class.                                       
+ *              It also holds the definition Mapping class. This class has the functionality that is needed to calculate route data for trip tickets.
  *
  * =========================================================================================================== */
 
@@ -20,13 +18,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 // This class calculates the optimal route for a new trip. This calculation would
-// occur after the Buyer has selected cities for the order, and (before?) the planner 
+// occur after the Buyer has selected cities for the order, and the planner 
 // nominates carriers for the order. 
 
 namespace Transport_Management_System_WPF
 {
+
     public struct RouteData
     {
+        public int RouteDataID;
         public int KM;
         public double PickupTime;
         public double DriveTime;
@@ -72,16 +72,29 @@ namespace Transport_Management_System_WPF
 
     // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
     /**   
-    *   \class		Admin
-    *   \brief		This class runs the Admin UI functionality
-    *   \details	... static class?  
-    *   
+    *   \class		MappingClass
+    *   \brief		This class will be used by the planner to calculate route information for trip tickets.
+    *   \details	This is a public class that will be used by the planner.
     * -------------------------------------------------------------------------------------------------------- */
     public class MappingClass
     {
         private const int Number_of_Cities = 8;
         public List<CityNode> nodes = new List<CityNode>();
 
+
+
+        // MappingClass Constructor HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn			MappingClass() Constructor
+        *	\brief		The constructor for the Mapping Class
+        *	\details	The data for each city will be read out of the database. It will then converted into a List datastructure so that it can be steped though easily.
+        *	\param[in]	null
+        *	\param[out]	null
+        *	\exception	null
+        *	\see		na
+        *	\return		null
+        *
+        * ---------------------------------------------------------------------------------------------------- */
         public MappingClass()
         {
 
@@ -148,19 +161,20 @@ namespace Transport_Management_System_WPF
             int k = 0;
         }
 
-        // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        // GetTravelData METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
-        *	\fn			int Square()
-        *	\brief		To create a new Square by validating or else defaulting new values
-        *	\details	THis is if you have more to say about what the function does and don't want to inline comment
-        *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
-        *	\param[out]	char[]	newSideLength	An incoming value meant to become the square's side length
-        *	\exception	This is if we have some big ol try catches?
-        *	\see		CallsMade()
-        *	\return		None
+        *	\fn			List<RouteData> GetTravelData(int OriginID, int DestinationID, bool FLTorLTL)
+        *	\brief		This method will determine the info for a trip the between to cities.
+        *	\details	A list of RouteData structs, each struct will hold all timing and KM data. 
+        *	            The timing for each element will keep track of the pick up time at the origin city, the drop off time at the destination, and the LTL time at intermediate cities.
+        *	\param[in]	int OriginID, int DestinationID, bool FLTorLTL  The origin and destination cities, and if the trip is Flt or Ltl.
+        *	\param[out]	null
+        *	\exception	null
+        *	\see		Struct: RouteData
+        *	\return		List<RouteData> A list of the RouteData structs. The list all together will hold all the data for a trip.
         *
         * ---------------------------------------------------------------------------------------------------- */
-        public List<RouteData> getTravelData(int OriginID, int DestinationID, bool FLTorLTL) //ftl is true
+        public List<RouteData> GetTravelData(int OriginID, int DestinationID, bool FLTorLTL) //ftl is true
         {
             //figure out if we need to travel east or west
             CityNode current = nodes.Find(x => x.CityID == OriginID);
@@ -221,17 +235,16 @@ namespace Transport_Management_System_WPF
             return null;
         }
 
-        // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        // SummerizeTrip METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
-        *	\fn			int Square()
-        *	\brief		To create a new Square by validating or else defaulting new values
-        *	\details	THis is if you have more to say about what the function does and don't want to inline comment
-        *	\param[in]	char[]	newColour		An incoming value meant to become the square's colour
-        *	\param[out]	char[]	newSideLength	An incoming value meant to become the square's side length
-        *	\exception	This is if we have some big ol try catches?
-        *	\see		CallsMade()
+        *	\fn			RouteSumData SummerizeTrip(List<RouteData> inData)
+        *	\brief		Summarize a list of Route Data structs into the total time and Km. This data will be used in invoice generation.
+        *	\details	The resultant struct will hold the Origin City, Destination City, total drive time, total trip time(drive + load/unload/LTL), and total KM.
+        *	\param[in]	List<RouteData> inData The List holding all the data for the trip.
+        *	\param[out]	null
+        *	\exception	null
+        *	\see		na
         *	\return		None
-        *
         * ---------------------------------------------------------------------------------------------------- */
         public RouteSumData SummerizeTrip(List<RouteData> inData)
         {

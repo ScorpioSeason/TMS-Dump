@@ -40,7 +40,7 @@ namespace UnitTestTMS
             MappingClass graphClass = new MappingClass();
             List<RouteData> ReturnList = new List<RouteData>();
 
-            ReturnList = graphClass.getTravelData(7, 0, true);
+            ReturnList = graphClass.GetTravelData(7, 0, true);
 
             RouteSumData totalTrip = graphClass.SummerizeTrip(ReturnList);
 
@@ -61,7 +61,7 @@ namespace UnitTestTMS
             MappingClass graphClass = new MappingClass();
             List<RouteData> ReturnList = new List<RouteData>();
 
-            ReturnList = graphClass.getTravelData(7, 0, false);
+            ReturnList = graphClass.GetTravelData(7, 0, false);
 
             RouteSumData totalTrip = graphClass.SummerizeTrip(ReturnList);
 
@@ -81,7 +81,7 @@ namespace UnitTestTMS
             MappingClass graphClass = new MappingClass();
             List<RouteData> ReturnList = new List<RouteData>();
 
-            ReturnList = graphClass.getTravelData(3, 4, true); 
+            ReturnList = graphClass.GetTravelData(3, 4, true); 
 
             RouteSumData totalTrip = graphClass.SummerizeTrip(ReturnList);
 
@@ -122,7 +122,7 @@ namespace UnitTestTMS
                 job_Type = true
             };
 
-            ReturnList = graphClass.getTravelData(Contract.ToCityID(contract.origin), Contract.ToCityID(contract.destination), contract.job_Type);
+            ReturnList = graphClass.GetTravelData(Contract.ToCityID(contract.origin), Contract.ToCityID(contract.destination), contract.job_Type);
 
             Truck truck = new Truck
             {
@@ -148,15 +148,11 @@ namespace UnitTestTMS
                 Trip_Ticket_Line TTL1 = new Trip_Ticket_Line
                 {
                     Ticket = trip_Ticket,
-                    Order = contract
+                    Route = x
                 };
             }
 
-            TimePass.incrementDay(ReturnList, truck, trip_Ticket);
-
-            
-
-
+            TimePass.IncrementDay(ReturnList, truck, trip_Ticket);
 
         }
     }
