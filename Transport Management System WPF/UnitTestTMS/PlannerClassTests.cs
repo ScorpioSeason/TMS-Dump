@@ -84,11 +84,7 @@ namespace UnitTestTMS
             RouteSumData totalTrip = graphClass.SummerizeTrip(ReturnList);
 
             //ASSERT
-            Assert.AreEqual(totalTrip.DestinationCity, 0);
-            Assert.AreEqual(totalTrip.OriginCity, 7);
-            Assert.AreEqual((int)(totalTrip.totalDriveTime * 100), 1214);
-            Assert.AreEqual((int)(totalTrip.totalTripTime * 100), 1614);
-            Assert.AreEqual(totalTrip.totalKM, 859);
+            Assert.AreEqual(totalTrip.DestinationCity, -1);
         }
 
 
@@ -127,8 +123,6 @@ namespace UnitTestTMS
         [TestMethod]
         public void routCalc4()
         {
-
-           
 
             //ARRANGE
             MappingClass graphClass = new MappingClass();
