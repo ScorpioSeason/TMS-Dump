@@ -19,11 +19,11 @@ using System.Threading.Tasks;
 // This class represents the contract table
 namespace Transport_Management_System_WPF
 {
-    // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
+    // Contract HEADER COMMENT -----------------------------------------------------------------------------------
     /**   
     *   \class		Contract
     *   \brief		This class holds the contracts
-    *   \details	... static class?  
+    *   \details	This class will mainly be used to pass contract data through out the application.
     *   
     * -------------------------------------------------------------------------------------------------------- */
     public class Contract
