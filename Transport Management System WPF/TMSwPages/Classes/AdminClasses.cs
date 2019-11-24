@@ -56,8 +56,23 @@ namespace TMSwPages
     * -------------------------------------------------------------------------------------------------------- */
     static public class TMSLogger
     {
-        static public string LoggerPath { set; get; }               /// Stores location of the log file
+        static public string LogFilePath;                                  /// Stores location of the log file
         static public List<TMSLog> logs = new List<TMSLog>();       /// This is a list of logs stored locally
+        static public string thisFileDir;
+
+        static public void SetDefaultLogFilePath()
+        {
+            try
+            {
+                LogFilePath = Environment.CurrentDirectory + "/TMSLogger.txt";
+                thisFileDir = Environment.CurrentDirectory;
+            }
+            catch (Exception e)
+            {
+                // error finding/starting logger file. 
+            }
+            
+        }
 
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
@@ -113,7 +128,6 @@ namespace TMSwPages
         static public bool ReadExistingLogFile()
         {
             bool readSuccess = true;
-            LoggerPath = Environment.CurrentDirectory;
 
             try
             {
@@ -121,7 +135,7 @@ namespace TMSwPages
                 logs.Clear();
 
                 /// Open the file stream to read from the file
-                FileStream fileStream = new FileStream((LoggerPath + "/TMSLogger.txt"), FileMode.Open, FileAccess.Read);
+                FileStream fileStream = new FileStream((TMSLogger.LogFilePath), FileMode.Open, FileAccess.Read);
                 StreamReader streamReader = new StreamReader(fileStream);
 
                 /// Fill the working list with lines from the file 
@@ -141,7 +155,7 @@ namespace TMSwPages
             /// If an exception is thrown here, create a log for it. 
             catch (Exception e)
             {
-                LogIt("|" + LoggerPath + "/AdminClasses.cs" + "|" + "TMSLogger" + "|" + "ReadExistingLogFile" + "|" + "Exception" + "|" + e.Message + "|");
+                LogIt("|" + thisFileDir + "/AdminClasses.cs" + "|" + "TMSLogger" + "|" + "ReadExistingLogFile" + "|" + "Exception" + "|" + e.Message + "|");
                 readSuccess = false;
             }
 
@@ -163,12 +177,11 @@ namespace TMSwPages
         static public bool AppendLogFile(TMSLog newLog)
         {
             bool appendSuccess = true;
-            LoggerPath = Environment.CurrentDirectory;
 
             try
             {
                 /// Open the filestream to append to the file. 
-                FileStream fileStream = new FileStream((LoggerPath + "/TMSLogger.txt"), FileMode.Append, FileAccess.Write);
+                FileStream fileStream = new FileStream(TMSLogger.LogFilePath, FileMode.Append, FileAccess.Write);
                 StreamWriter fileWriter = new StreamWriter(fileStream);
 
                 /// Add each log entry from the working list to the file as a BSV
@@ -182,7 +195,7 @@ namespace TMSwPages
             catch (Exception e)
             {
                 /// This could become problematic as it calls itself
-                LogIt("|" + LoggerPath + "/AdminClasses.cs" + "|" + "TMSLogger" + "|" + "AppendLogFile" + "|" + "Exception" + "|" + e.Message + "|");
+                LogIt("|" + thisFileDir + "/AdminClasses.cs" + "|" + "TMSLogger" + "|" + "AppendLogFile" + "|" + "Exception" + "|" + e.Message + "|");
                 appendSuccess = false;
             }
 
@@ -249,7 +262,7 @@ namespace TMSwPages
             /// Used in formatting error
             else
             {
-                logPath = "AdminClasses.cs";
+                logPath = TMSLogger.thisFileDir + "/AdminClasses.cs";
                 logClass = "TMSLog";
                 logMethod = "Constructor";
                 logType = "LogParseError";
@@ -259,6 +272,7 @@ namespace TMSwPages
             }
 
             BSV = "|" + logTime + nUnparsed;
+
         }
 
     }
@@ -294,17 +308,60 @@ namespace TMSwPages
     * -------------------------------------------------------------------------------------------------------- */
     class AlterTables
     {
-        // Access tables
+        // Access tables -- xaml.cs?
         // Carrier Data Table
         // Route Table
         // Rate / Fee Table
 
-        // Draw tables
+        /*DROP TABLE IF EXISTS 'Carrier';
+        CREATE TABLE 'Carrier' (
+        'Carrier_Name' VARCHAR(100),
+        'FTL_Rate' DOUBLE(5, 4),
+        'LTL_Rate' DOUBLE(5, 4),
+        'Reefer_Charge' DOUBLE(5, 4),
+        'FTL_Availability' INT,
+        'LTL_Availability' INT,
+        PRIMARY KEY('Carrier_Name')
+        )*/
+
+        /*
+        DROP TABLE IF EXISTS 'RouteData';
+        CREATE TABLE 'RouteData' (
+        'RouteDataID' VARCHAR(100),
+        'CityA' VARCHAR(100),
+        'CityB' VARCHAR(100),
+        'PickUpTime' DOUBLE(2, 2),
+        'DropOffTime' DOUBLE(2, 2),
+        'LtlTime' DOUBLE(2, 2),
+        'DrivenTime' DOUBLE(2, 2),
+        PRIMARY KEY('RouteDataID'),
+        FOREIGN KEY('CityA') REFERENCES Location('CityID'),
+        FOREIGN KEY('CityB') REFERENCES Location('CityID')) 
+         */
+
+        /*
+        cName,dCity,FTLA,LTLA,FTLRate,LTLRate,reefCharge
+        Planet Express,Windsor,50,640,5.21,0.3621,0.08
+        ,Hamilton,50,640,5.21,0.3621,0.08
+        ,Oshawa,50,640,5.21,0.3621,0.08
+        ,Belleville,50,640,5.21,0.3621,0.08
+        ,Ottawa,50,640,5.21,0.3621,0.08
+        Schooner's,London,18,98,5.05,0.3434,0.07
+        ,Toronto,18,98,5.05,0.3434,0.07
+        ,Kingston,18,98,5.05,0.3434,0.07
+        Tillman Transport,Windsor,24,35,5.11,0.3012,0.09
+        ,London,18,45,5.11,0.3012,0.09
+        ,Hamilton,18,45,5.11,0.3012,0.09
+        We Haul,Ottawa,11,0,5.2,0,0.065
+        ,Toronto,11,0,5.2,0,0.065
+        */
+
+        // Draw tables -- UI
         // Carrier Data Table
         // Route Table
         // Rate / Fee Table
 
-        // Change table data 
+        // Change table data -- UI
         // Carrier Data Table
         // Route Table
         // Rate / Fee Table

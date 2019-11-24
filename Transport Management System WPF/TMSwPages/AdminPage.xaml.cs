@@ -56,12 +56,12 @@ namespace TMSwPages
         {
             InitializeComponent();
 
-            // Load the page components
-            startDate.SelectedDate = (DateTime.Today.AddDays(-7));
-            endDate.SelectedDate = DateTime.Today;
-            searchTags.Focus(); 
+            // Load the page LOG components
+            LogStartDate.SelectedDate = (DateTime.Today.AddDays(-7));
+            LogEndDate.SelectedDate = DateTime.Today;
+            LogSearchTags.Focus(); 
             LogsList.ItemsSource = searchResults;
-            LoadClick(null, null); 
+            LogLoadClick(null, null); 
         }
 
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
@@ -75,10 +75,10 @@ namespace TMSwPages
         *	\return		void
         *
         * ---------------------------------------------------------------------------------------------------- */
-        private void LoadClick(object sender, RoutedEventArgs e)
+        private void LogLoadClick(object sender, RoutedEventArgs e)
         {
             bool dateRange = false;
-            string tempString = (searchTags.Text.Trim()).ToLower();
+            string tempString = (LogSearchTags.Text.Trim()).ToLower();
 
             /// This clears searchResults if the Log file is read in successfully
             if (TMSLogger.ReadExistingLogFile() == true)
@@ -91,7 +91,7 @@ namespace TMSwPages
                 {
                     dateRange = false;
 
-                    if ((l.logTime.Date >= startDate.SelectedDate) && (l.logTime.Date <= endDate.SelectedDate))
+                    if ((l.logTime.Date >= LogStartDate.SelectedDate) && (l.logTime.Date <= LogEndDate.SelectedDate))
                     {
                         dateRange = true;
                     }
@@ -136,7 +136,7 @@ namespace TMSwPages
         *	\return		void
         *
         * ---------------------------------------------------------------------------------------------------- */
-        private void ViewMoreClick(object sender, RoutedEventArgs e)
+        private void LogViewMoreClick(object sender, RoutedEventArgs e)
         {
             if (LogsList.SelectedItem != null)
             {
@@ -159,31 +159,67 @@ namespace TMSwPages
         * ---------------------------------------------------------------------------------------------------- */
         private void ChangeLogLocation(object sender, RoutedEventArgs e)
         {
-            string newLocationName = "";
+            bool saveSuccess = true;
+            string oldLogPath = TMSLogger.LogFilePath;
+            string newLogPath = "";
+
             // View Save As File Dialog
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Text Document (*.txt)|*.txt|All files (*.*)|*.*";
 
             // Set a text range using the textbox name
-            //TextRange textRange = new TextRange(myTextbox.Document.ContentStart, myTextbox.Document.ContentEnd);
+            // TextRange textRange = new TextRange(myTextbox.Document.ContentStart, myTextbox.Document.ContentEnd);
 
             if (saveFileDialog.ShowDialog() == true)
             {
-                newLocationName = saveFileDialog.FileName; 
+                /// Get the new path
+                newLogPath = (saveFileDialog.FileName); 
 
-                //// Save work area to chosen file
-                FileStream fileStream = new FileStream(saveFileDialog.FileName, FileMode.Create);
-                //textRange.Save(fileStream, DataFormats.Rtf);
+                /// Open both files to copy
+                try
+                {
+                    /// Open file streams
+                    FileStream newFile = new FileStream(newLogPath, FileMode.Create);
+                    FileStream oldFile = new FileStream(oldLogPath, FileMode.Open);
+                    StreamReader streamReader = new StreamReader(oldFile);
+                    StreamWriter streamWriter = new StreamWriter(newFile);
 
-                //// Set unsaved flag to false
-                //unsavedText = false;
+                    /// Read any copy through the files
+                    while (!streamReader.EndOfStream)
+                    {
+                        streamWriter.WriteLine(streamReader.ReadLine());
+                        streamWriter.Flush(); 
+                    }
+
+                    /// Close all the streams
+                    streamWriter.Close(); streamReader.Close();
+                    newFile.Close(); oldFile.Close(); 
+
+                }
+                catch (Exception ex)
+                {
+                    TMSLogger.LogIt("|" + "/AdminPage.xaml.cs" + "|" + "AdminPage" + "|" + "ChangeLogLocation" + "|" + ex.GetType() + "|" + ex.Message + "|");
+                    saveSuccess = false; 
+                }
+                
+                if (saveSuccess == true)
+                {
+                    /// Set location of LogFilePath to new path
+                    TMSLogger.LogFilePath = newLogPath;
+
+                    /// Delete old file 
+                    try
+                    {
+                        File.Delete(oldLogPath);
+                    }
+                    catch (Exception exc)
+                    {
+                        TMSLogger.LogIt("|" + "/AdminPage.xaml.cs" + "|" + "AdminPage" + "|" + "ChangeLogLocation" + "|" + exc.GetType() + "|" + exc.Message + "|");
+                    }
+                }
 
             }
-            
-            //string nLoggerPath = "";
-            // Copy over log from old location to new one
-            // If successful, inform user, delete old log
-            // If failed, inform user, keep old log  
+
         }
 
         private void SwitchUserClick(object sender, RoutedEventArgs e)
@@ -191,5 +227,11 @@ namespace TMSwPages
             LoginPage newpage = new LoginPage();
             this.NavigationService.Navigate(newpage);
         }
+
+        private void Carrier_DataLoadClick(object sender, RoutedEventArgs e)
+        {
+            Carrier_DataList.Items.Refresh(); 
+        }
+
     }
 }

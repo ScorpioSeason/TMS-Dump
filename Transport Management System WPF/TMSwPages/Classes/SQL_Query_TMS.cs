@@ -1,17 +1,13 @@
 ﻿// ADMIN FILE HEADER COMMENT: =================================================================================
 /*
- *  ********************************* TO COMPILE GO TO PROPERTIES AND CHANGE BUILD ACTION FROM NONE TO COMPILE!!
- *  \file		Admin.cs
+ *  \file		SQL_Query_TMS.cs
  *  \ingroup	TMS
- *  \date		November 20, 2019
- *  \author		8000 Cigarettes - Megan
- *  \brief	    This file contains the admin functionality	  
- *  \see		MainWindow.xaml
- *  \details    This file holds the functionality of the Admin class. The Admin has the ability to view logs as 
- *              specified by time period, view details of specific logs, alter where the log files are stored, 
- *              initiate backups of the TMS database, choose where the TMS db is backed up to, alter the Carrier 
- *              Data Table, the Route Table, and the Rate / Fee Tables.                                       
- *
+ *  \date		
+ *  \author		8000 Cigarettes 
+ *  \brief	     
+ *  \see		
+ *  \details    
+ *  
  * =========================================================================================================== */
 
 using System;
