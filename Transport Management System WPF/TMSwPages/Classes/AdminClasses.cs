@@ -313,6 +313,49 @@ namespace TMSwPages
         // Route Table
         // Rate / Fee Table
 
+        /*DROP TABLE IF EXISTS 'Carrier';
+        CREATE TABLE 'Carrier' (
+        'Carrier_Name' VARCHAR(100),
+        'FTL_Rate' DOUBLE(5, 4),
+        'LTL_Rate' DOUBLE(5, 4),
+        'Reefer_Charge' DOUBLE(5, 4),
+        'FTL_Availability' INT,
+        'LTL_Availability' INT,
+        PRIMARY KEY('Carrier_Name')
+        )*/
+
+        /*
+        DROP TABLE IF EXISTS 'RouteData';
+        CREATE TABLE 'RouteData' (
+        'RouteDataID' VARCHAR(100),
+        'CityA' VARCHAR(100),
+        'CityB' VARCHAR(100),
+        'PickUpTime' DOUBLE(2, 2),
+        'DropOffTime' DOUBLE(2, 2),
+        'LtlTime' DOUBLE(2, 2),
+        'DrivenTime' DOUBLE(2, 2),
+        PRIMARY KEY('RouteDataID'),
+        FOREIGN KEY('CityA') REFERENCES Location('CityID'),
+        FOREIGN KEY('CityB') REFERENCES Location('CityID')) 
+         */
+
+        /*
+        cName,dCity,FTLA,LTLA,FTLRate,LTLRate,reefCharge
+        Planet Express,Windsor,50,640,5.21,0.3621,0.08
+        ,Hamilton,50,640,5.21,0.3621,0.08
+        ,Oshawa,50,640,5.21,0.3621,0.08
+        ,Belleville,50,640,5.21,0.3621,0.08
+        ,Ottawa,50,640,5.21,0.3621,0.08
+        Schooner's,London,18,98,5.05,0.3434,0.07
+        ,Toronto,18,98,5.05,0.3434,0.07
+        ,Kingston,18,98,5.05,0.3434,0.07
+        Tillman Transport,Windsor,24,35,5.11,0.3012,0.09
+        ,London,18,45,5.11,0.3012,0.09
+        ,Hamilton,18,45,5.11,0.3012,0.09
+        We Haul,Ottawa,11,0,5.2,0,0.065
+        ,Toronto,11,0,5.2,0,0.065
+        */
+
         // Draw tables -- UI
         // Carrier Data Table
         // Route Table

@@ -56,7 +56,7 @@ namespace TMSwPages
         {
             InitializeComponent();
 
-            // Load the page components
+            // Load the page LOG components
             LogStartDate.SelectedDate = (DateTime.Today.AddDays(-7));
             LogEndDate.SelectedDate = DateTime.Today;
             LogSearchTags.Focus(); 
