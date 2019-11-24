@@ -66,6 +66,18 @@ namespace TMSwPages
             this.DataContext = data;
         }
 
+        private void SwitchUserClick(object sender, RoutedEventArgs e)
+        {
+            LoginPage newpage = new LoginPage();
+            this.NavigationService.Navigate(newpage);
+        }
+
+        private void AdminPageClick(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack(); 
+            //AdminPage newpage = new AdminPage();
+            //this.NavigationService.Navigate(newpage);
+        }
     }
 }
 

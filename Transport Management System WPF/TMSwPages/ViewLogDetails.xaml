@@ -30,9 +30,8 @@
 
             <!-- File Menu: Open, New, Save As, Close -->
             <MenuItem Header="Admin">
-                <MenuItem Header="Admin Main Page"/>
-                <MenuItem Header="Admin Logs Page"/>
-                <MenuItem Header="Switch User" />
+                <MenuItem Header="Admin Page" Click="AdminPageClick"/>
+                <MenuItem Header="Switch User" Click="SwitchUserClick" />
             </MenuItem>
 
             <!-- Help Menu: About -->

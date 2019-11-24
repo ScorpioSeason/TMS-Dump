@@ -22,6 +22,17 @@ namespace TMSwPages
     {
         public LoginPage()
         {
+            ShowsNavigationUI = false;
+            /* If ShowsNavigationUI is true it will show the arrows in the top left corner. 
+             * I want to avoid this and simply make a back button on each page where applicable. 
+               from a UI perspective, it provides a cleaner interface and gives the impression 
+               that if we DID use log-in security it would be easier to implement. 
+             
+               We can implement navigation as seen below in AdminClick OR using the 
+               NavigationService object's methods (this.NavigationService.GoBack());
+              
+             */
+
             InitializeComponent();
         }
 

@@ -13,8 +13,10 @@
  *
  * =========================================================================================================== */
 
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -53,15 +55,14 @@ namespace TMSwPages
         public AdminPage()
         {
             InitializeComponent();
+
+            // Load the page components
+            startDate.SelectedDate = (DateTime.Today.AddDays(-7));
+            endDate.SelectedDate = DateTime.Today;
+            searchTags.Focus(); 
             LogsList.ItemsSource = searchResults;
             LoadClick(null, null); 
         }
-
-        // public AdminPage(object data) : this()
-        // {
-        //    // Bind to expense report data.
-        //    this.DataContext = data;
-        // }
 
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
@@ -76,42 +77,45 @@ namespace TMSwPages
         * ---------------------------------------------------------------------------------------------------- */
         private void LoadClick(object sender, RoutedEventArgs e)
         {
+            bool dateRange = false;
+            string tempString = (searchTags.Text.Trim()).ToLower();
+
             /// This clears searchResults if the Log file is read in successfully
             if (TMSLogger.ReadExistingLogFile() == true)
             {
                 searchResults.Clear();
             }
-
             try
             {
-                /// Compare search tags box to logs in the local list and add to searchResults list if matching
-                if (searchTags.Text.Trim() != "")
+                foreach (TMSLog l in TMSLogger.logs)
                 {
-                    string tempString = (searchTags.Text.Trim()).ToLower(); 
+                    dateRange = false;
 
-                    foreach (TMSLog l in TMSLogger.logs)
+                    if ((l.logTime.Date >= startDate.SelectedDate) && (l.logTime.Date <= endDate.SelectedDate))
                     {
-                        if ((l.logType.ToLower()).Contains(tempString) || (l.logMessage.ToLower()).Contains(tempString))
+                        dateRange = true;
+                    }
+
+                    if ((dateRange == true) && (tempString != ""))
+                    {
+                        /// Compare search tags box to logs in the local list and add to searchResults list if matching
+                        if ((l.logType.ToLower()).Contains(tempString) || ((l.logMessage.ToLower()).Contains(tempString)))
                         {
                             searchResults.Add(l);
                         }
-                        else if ((l.logClass.ToLower()).Contains(tempString) || (l.logMethod.ToLower()).Contains(tempString))
+                        else if ((l.logMethod.ToLower()).Contains(tempString) || ((l.logClass.ToLower()).Contains(tempString)))
                         {
                             searchResults.Add(l);
                         }
                     }
-                }
-                else
-                {
-                    /// If there are no search strings, add indescriminately
-                    foreach (TMSLog l in TMSLogger.logs)
+                    else if ((dateRange == true) && (tempString == ""))
                     {
                         searchResults.Add(l);
                     }
-                    
+
                 }
             }
-            /// Catch errors from Contains
+            /// Catch errors from Contains calls
             catch (Exception ex)
             {
                 TMSLogger.LogIt("|"+ "/AdminPage.xaml.cs" + "|" + "AdminPage" + "|" + "LoadClick" + "|" + "Exception" + "|" + ex.Message + "|");
@@ -120,6 +124,7 @@ namespace TMSwPages
 
             /// Refresh the UI data grid
             LogsList.Items.Refresh();
+
         }
 
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
@@ -142,44 +147,43 @@ namespace TMSwPages
 
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
-        *	\fn			private void LogSettingsClick(object sender, RoutedEventArgs e) -- STUB
-        *	\brief		
-        *	\details	
+        *	\fn			void ChangeLogLocation() -- STUB
+        *	\brief		This function will change where the log file is stored
+        *	\details	This function allows the user to select a new location for the log file storage. Then
+        *	            the program copies the current file to the new location. If the copy is successful, 
+        *	            the old file is deleted. Otherwise the old file is kept. 
+        *	\exception	From FileStream and StreamReader / StreamWriter
         *	\see		
-        *	\return		
+        *	\return		Void
         *
         * ---------------------------------------------------------------------------------------------------- */
-        private void LogSettingsClick(object sender, RoutedEventArgs e)
+        private void ChangeLogLocation(object sender, RoutedEventArgs e)
         {
+            string newLocationName = "";
+            // View Save As File Dialog
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Text Document (*.txt)|*.txt|All files (*.*)|*.*";
 
-        }
+            // Set a text range using the textbox name
+            //TextRange textRange = new TextRange(myTextbox.Document.ContentStart, myTextbox.Document.ContentEnd);
 
-        /// METHOD HEADER COMMENT -------------------------------------------------------------------------------
-        /**
-        *	\fn			private void Time_Period_SelectionChanged(object sender, SelectionChangedEventArgs e) -- STUB
-        *	\brief		
-        *	\details	
-        *	\see		
-        *	\return		
-        *
-        * ---------------------------------------------------------------------------------------------------- */
-        private void Time_Period_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                newLocationName = saveFileDialog.FileName; 
 
-        }
+                //// Save work area to chosen file
+                FileStream fileStream = new FileStream(saveFileDialog.FileName, FileMode.Create);
+                //textRange.Save(fileStream, DataFormats.Rtf);
 
-        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
-        /**
-        *	\fn			private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e) -- STUB
-        *	\brief		
-        *	\details	
-        *	\see		
-        *	\return		
-        *
-        * ---------------------------------------------------------------------------------------------------- */
-        private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
-        {
+                //// Set unsaved flag to false
+                //unsavedText = false;
 
+            }
+            
+            //string nLoggerPath = "";
+            // Copy over log from old location to new one
+            // If successful, inform user, delete old log
+            // If failed, inform user, keep old log  
         }
 
         private void SwitchUserClick(object sender, RoutedEventArgs e)

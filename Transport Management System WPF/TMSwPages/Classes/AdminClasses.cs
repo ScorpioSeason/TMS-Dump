@@ -190,50 +190,6 @@ namespace TMSwPages
 
         }
 
-        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
-        /**
-        *	\fn			void ChangeLogLocation() -- STUB
-        *	\brief		This function will change where the log file is stored
-        *	\details	This function allows the user to select a new location for the log file storage. Then
-        *	            the program copies the current file to the new location. If the copy is successful, 
-        *	            the old file is deleted. Otherwise the old file is kept. 
-        *	\exception	From FileStream and StreamReader / StreamWriter
-        *	\see		
-        *	\return		Void
-        *
-        * ---------------------------------------------------------------------------------------------------- */
-        static void ChangeLogLocation()
-        {
-            string newLoggerPath = "";
-            /* Select a new location from the popup box
-            private void SaveAs_Click(object sender, RoutedEventArgs e)
-            {
-                // View Save As File Dialog
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
-                saveFileDialog.Filter = "Rich Text Format (*.rtf)|*.rtf|All files (*.*)|*.*";
-
-                // Set a text range using the textbox name
-                TextRange textRange = new TextRange(myTextbox.Document.ContentStart, myTextbox.Document.ContentEnd);
-
-                if (saveFileDialog.ShowDialog() == true)
-                {
-                    // Save work area to chosen file
-                    FileStream fileStream = new FileStream(saveFileDialog.FileName, FileMode.Create);
-                    textRange.Save(fileStream, DataFormats.Rtf);
-
-                    // Set unsaved flag to false
-                    unsavedText = false;
-
-                }
-            } */
-
-            //string nLoggerPath = "";
-            // Copy over log from old location to new one
-            // If successful, inform user, delete old log
-            // If failed, inform user, keep old log
-
-        }
-
     }
 
     // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
