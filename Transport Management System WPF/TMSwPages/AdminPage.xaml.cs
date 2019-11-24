@@ -57,12 +57,11 @@ namespace TMSwPages
             InitializeComponent();
 
             // Load the page components
-            //TMSLogger.SetDefaultLogFilePath(); 
-            startDate.SelectedDate = (DateTime.Today.AddDays(-7));
-            endDate.SelectedDate = DateTime.Today;
-            searchTags.Focus(); 
+            LogStartDate.SelectedDate = (DateTime.Today.AddDays(-7));
+            LogEndDate.SelectedDate = DateTime.Today;
+            LogSearchTags.Focus(); 
             LogsList.ItemsSource = searchResults;
-            LoadClick(null, null); 
+            LogLoadClick(null, null); 
         }
 
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
@@ -76,10 +75,10 @@ namespace TMSwPages
         *	\return		void
         *
         * ---------------------------------------------------------------------------------------------------- */
-        private void LoadClick(object sender, RoutedEventArgs e)
+        private void LogLoadClick(object sender, RoutedEventArgs e)
         {
             bool dateRange = false;
-            string tempString = (searchTags.Text.Trim()).ToLower();
+            string tempString = (LogSearchTags.Text.Trim()).ToLower();
 
             /// This clears searchResults if the Log file is read in successfully
             if (TMSLogger.ReadExistingLogFile() == true)
@@ -92,7 +91,7 @@ namespace TMSwPages
                 {
                     dateRange = false;
 
-                    if ((l.logTime.Date >= startDate.SelectedDate) && (l.logTime.Date <= endDate.SelectedDate))
+                    if ((l.logTime.Date >= LogStartDate.SelectedDate) && (l.logTime.Date <= LogEndDate.SelectedDate))
                     {
                         dateRange = true;
                     }
@@ -137,7 +136,7 @@ namespace TMSwPages
         *	\return		void
         *
         * ---------------------------------------------------------------------------------------------------- */
-        private void ViewMoreClick(object sender, RoutedEventArgs e)
+        private void LogViewMoreClick(object sender, RoutedEventArgs e)
         {
             if (LogsList.SelectedItem != null)
             {
@@ -228,5 +227,11 @@ namespace TMSwPages
             LoginPage newpage = new LoginPage();
             this.NavigationService.Navigate(newpage);
         }
+
+        private void Carrier_DataLoadClick(object sender, RoutedEventArgs e)
+        {
+            Carrier_DataList.Items.Refresh(); 
+        }
+
     }
 }

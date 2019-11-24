@@ -308,17 +308,17 @@ namespace TMSwPages
     * -------------------------------------------------------------------------------------------------------- */
     class AlterTables
     {
-        // Access tables
+        // Access tables -- xaml.cs?
         // Carrier Data Table
         // Route Table
         // Rate / Fee Table
 
-        // Draw tables
+        // Draw tables -- UI
         // Carrier Data Table
         // Route Table
         // Rate / Fee Table
 
-        // Change table data 
+        // Change table data -- UI
         // Carrier Data Table
         // Route Table
         // Rate / Fee Table
