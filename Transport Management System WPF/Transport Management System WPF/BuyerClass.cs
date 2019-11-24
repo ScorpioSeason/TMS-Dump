@@ -33,11 +33,13 @@ namespace Transport_Management_System_WPF
     *   \details	public class
     *   
     * -------------------------------------------------------------------------------------------------------- */
-    public class BuyerClass
+    public static class BuyerClass
     {
-        private List<Contract> contracts= new List<Contract>();
+        public static List<Contract> acceptedContracts = new List<Contract>();
 
-        internal List<Contract> Contracts { get => contracts; set => contracts = value; }
+        private static List<Contract> contracts= new List<Contract>();
+
+        internal static List<Contract> Contracts { get => contracts; set => contracts = value; }
 
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
@@ -51,7 +53,7 @@ namespace Transport_Management_System_WPF
         *	\return		None
         *
         * ---------------------------------------------------------------------------------------------------- */
-        public void ParseContracts()
+        public static void ParseContracts()
         {
             contracts.Clear();
             SQL_Query SQL = new SQL_Query();
@@ -89,19 +91,62 @@ namespace Transport_Management_System_WPF
 
                 contracts.Add(block);
             }
-        } 
+        }
+        /**
+        *	\fn			int contract_Nominations()
+        *	\brief		sets the nominations through possible 
+        *	\details	Calls SQL_Query.Select_Contracts from a instance of the class and uses the list it returns to populate the list.
+        *	\param[in]  void
+        *	\param[out]	void
+        *	\exception	This is if we have some big ol try catches?
+        *	\see		CallsMade()
+        *	\return		None
+        *
+        * ---------------------------------------------------------------------------------------------------- */
+
+        static int contract_Nominations()
+        {
+            SQL_Query_TMS SQL = new SQL_Query_TMS();
+
+            List<string>[] temp = new List<string>[6];
+            temp = SQL.Select_Carriers();
+
+            for (int i = 0; i < temp[0].Count; i++)
+            {
+                Contract block = new Contract();
+
+                block.client_Name = temp[0][i];
+
+                if (temp[1][i] == "0")
+                {
+                    block.job_Type = false;
+                }
+                else
+                {
+                    block.job_Type = true;
+                }
+
+                block.quantity = int.Parse(temp[2][i]);
+                block.origin = temp[3][i];
+                block.destination = temp[4][i];
+
+                if (temp[5][i] == "0")
+                {
+                    block.van_Type = false;
+                }
+                else
+                {
+                    block.van_Type = true;
+                }
+
+                contracts.Add(block);
+            }
+
+            return 1;
+        }
     }
+
 }
 
 
-/**
-*	\fn			int Send_Contacts_W_Nominations()
-*	\brief		sets the nominations through possible 
-*	\details	Calls SQL_Query.Select_Contracts from a instance of the class and uses the list it returns to populate the list.
-*	\param[in]  void
-*	\param[out]	void
-*	\exception	This is if we have some big ol try catches?
-*	\see		CallsMade()
-*	\return		None
-*
-* ---------------------------------------------------------------------------------------------------- */
+    

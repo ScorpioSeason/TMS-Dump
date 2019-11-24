@@ -33,13 +33,12 @@
                                 <DataGridTextColumn Header="Origin" Binding="{Binding origin}" IsReadOnly="True"/>
                                 <DataGridTextColumn Header="Destination" Binding="{Binding destination}" IsReadOnly="True"/>
                                 <DataGridTextColumn Header="Van Type" Binding="{Binding van_Type}" IsReadOnly="True"/>
-                                <DataGridCheckBoxColumn Header="Selected" Binding="{Binding is_Selected}" />
                                 <!--The Email property contains a URI.  For example "mailto:lucy0@adventure-works.com"-->
                             </DataGrid.Columns>
                         </DataGrid>
 						
-                        <Button Content="ADD MY SHIT!" Width="100" HorizontalAlignment="Left" Click="Button_AddContract"/>
-                        <Button Content="Load/Refresh" Width="100" HorizontalAlignment="Left" Click="Button_Click_1"/>
+                        <Button Content="Add Selected" Width="100" HorizontalAlignment="Left" Click="Button_AddContracts"/>
+                        <Button Content="Load/Refresh" Width="100" HorizontalAlignment="Left" Click="Button_RefreshActiveContracts"/>
 						
                         <DataGrid Name="DG2" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="False" MaxHeight="200" MinHeight="140">
                             <DataGrid.Columns>

@@ -38,8 +38,6 @@ namespace Transport_Management_System_WPF
     * -------------------------------------------------------------------------------------------------------- */
     public partial class MainWindow : Window
     {
-        List<Contract> acceptedContracts = new List<Contract>();
-        public static BuyerClass buyer = new BuyerClass();
         public static string a = "";
 
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
@@ -57,8 +55,8 @@ namespace Transport_Management_System_WPF
         public MainWindow()
         {
             InitializeComponent();
-            DG1.ItemsSource = buyer.Contracts;
-            DG2.ItemsSource = this.acceptedContracts;
+            DG1.ItemsSource = BuyerClass.Contracts;
+            DG2.ItemsSource = BuyerClass.acceptedContracts;
         }
 
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
@@ -111,7 +109,7 @@ namespace Transport_Management_System_WPF
         private void Button_Click(object sender, RoutedEventArgs e)//load/ refresh button
         {
             
-            buyer.ParseContracts();
+            BuyerClass.ParseContracts();
             DG1.Items.Refresh();
         }
 
@@ -127,7 +125,7 @@ namespace Transport_Management_System_WPF
         *	\return		None
         *
         * ---------------------------------------------------------------------------------------------------- */
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Button_RefreshActiveContracts(object sender, RoutedEventArgs e)
         {
             DG2.Items.Refresh();
         }
@@ -144,8 +142,12 @@ namespace Transport_Management_System_WPF
         *	\return		None
         *
         * ---------------------------------------------------------------------------------------------------- */
-        private void Button_AddContract(object sender, RoutedEventArgs e)
+        private void Button_AddContracts(object sender, RoutedEventArgs e)
         {
+            foreach (Contract c in DG1.SelectedItems)
+            {
+                BuyerClass.acceptedContracts.Add(c);
+            }
 
             DG2.Items.Refresh();
         }

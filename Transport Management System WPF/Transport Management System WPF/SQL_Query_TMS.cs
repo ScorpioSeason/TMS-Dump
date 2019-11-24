@@ -125,7 +125,7 @@ namespace Transport_Management_System_WPF
 
                     case 1045:
                         //MessageBox.Show("Invalid username/password, please try again");
-                        .LogIt("Invalid username/password, please try again");
+                        TMSLogger.LogIt("Invalid username/password, please try again");
                         break;
                 }
                 return false;
@@ -154,7 +154,7 @@ namespace Transport_Management_System_WPF
             }
             catch (MySqlException ex)
             {
-                //MessageBox.Show(ex.Message);
+                TMSLogger.LogIt(ex.Message);
                 return false;
             }
         }
