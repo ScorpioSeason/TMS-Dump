@@ -57,6 +57,7 @@ namespace TMSwPages
             InitializeComponent();
 
             // Load the page components
+            //TMSLogger.SetDefaultLogFilePath(); 
             startDate.SelectedDate = (DateTime.Today.AddDays(-7));
             endDate.SelectedDate = DateTime.Today;
             searchTags.Focus(); 
@@ -159,31 +160,67 @@ namespace TMSwPages
         * ---------------------------------------------------------------------------------------------------- */
         private void ChangeLogLocation(object sender, RoutedEventArgs e)
         {
-            string newLocationName = "";
+            bool saveSuccess = true;
+            string oldLogPath = TMSLogger.LogFilePath;
+            string newLogPath = "";
+
             // View Save As File Dialog
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Text Document (*.txt)|*.txt|All files (*.*)|*.*";
 
             // Set a text range using the textbox name
-            //TextRange textRange = new TextRange(myTextbox.Document.ContentStart, myTextbox.Document.ContentEnd);
+            // TextRange textRange = new TextRange(myTextbox.Document.ContentStart, myTextbox.Document.ContentEnd);
 
             if (saveFileDialog.ShowDialog() == true)
             {
-                newLocationName = saveFileDialog.FileName; 
+                /// Get the new path
+                newLogPath = (saveFileDialog.FileName); 
 
-                //// Save work area to chosen file
-                FileStream fileStream = new FileStream(saveFileDialog.FileName, FileMode.Create);
-                //textRange.Save(fileStream, DataFormats.Rtf);
+                /// Open both files to copy
+                try
+                {
+                    /// Open file streams
+                    FileStream newFile = new FileStream(newLogPath, FileMode.Create);
+                    FileStream oldFile = new FileStream(oldLogPath, FileMode.Open);
+                    StreamReader streamReader = new StreamReader(oldFile);
+                    StreamWriter streamWriter = new StreamWriter(newFile);
 
-                //// Set unsaved flag to false
-                //unsavedText = false;
+                    /// Read any copy through the files
+                    while (!streamReader.EndOfStream)
+                    {
+                        streamWriter.WriteLine(streamReader.ReadLine());
+                        streamWriter.Flush(); 
+                    }
+
+                    /// Close all the streams
+                    streamWriter.Close(); streamReader.Close();
+                    newFile.Close(); oldFile.Close(); 
+
+                }
+                catch (Exception ex)
+                {
+                    TMSLogger.LogIt("|" + "/AdminPage.xaml.cs" + "|" + "AdminPage" + "|" + "ChangeLogLocation" + "|" + ex.GetType() + "|" + ex.Message + "|");
+                    saveSuccess = false; 
+                }
+                
+                if (saveSuccess == true)
+                {
+                    /// Set location of LogFilePath to new path
+                    TMSLogger.LogFilePath = newLogPath;
+
+                    /// Delete old file 
+                    try
+                    {
+                        File.Delete(oldLogPath);
+                    }
+                    catch (Exception exc)
+                    {
+                        TMSLogger.LogIt("|" + "/AdminPage.xaml.cs" + "|" + "AdminPage" + "|" + "ChangeLogLocation" + "|" + exc.GetType() + "|" + exc.Message + "|");
+                    }
+                }
 
             }
-            
-            //string nLoggerPath = "";
-            // Copy over log from old location to new one
-            // If successful, inform user, delete old log
-            // If failed, inform user, keep old log  
+
         }
 
         private void SwitchUserClick(object sender, RoutedEventArgs e)
