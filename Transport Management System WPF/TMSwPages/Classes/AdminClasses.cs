@@ -31,22 +31,23 @@ namespace TMSwPages
     *   choose to run. For example button presses and UI drawingRight now this class does nothing.
     *   
     * -------------------------------------------------------------------------------------------------------- */
-    class Admin
-    {
-        //TMSLogger adminLogger = null;
-        BackupTMS adminBackup = null;
-        AlterTables adminAlter = null;
+    //class Admin
+    //{
+    //    //TMSLogger adminLogger = null;
+    //    BackupTMS adminBackup = null;
+    //    AlterTables adminAlter = null;
 
-        Admin()
-        {
-            //adminLogger = new TMSLogger();
-            adminBackup = new BackupTMS();
-            adminAlter = new AlterTables();
-        }
+    //    public Admin()
+    //    {
+    //        //adminLogger = new TMSLogger();
+    //        adminBackup = new BackupTMS();
+    //        adminAlter = new AlterTables();
+    //    }
 
-    }
+    //}
 
     // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
+
     /**   
     *   \class		TMSLogger
     *   \brief		This class runs the logging functionality for all files in this solution
@@ -246,7 +247,7 @@ namespace TMSwPages
                 logMethod = temp[3];
                 logType = temp[4];
                 logMessage = temp[5];
-                logTime = DateTime.UtcNow;
+                logTime = DateTime.Now;
             }
             /// Used in reading in from a file
             else if ((Regex.Matches(nUnparsed, "\\|").Count) == 7)
@@ -267,7 +268,7 @@ namespace TMSwPages
                 logMethod = "Constructor";
                 logType = "LogParseError";
                 logMessage = "The log message did not enter as the correct string format";
-                logTime = DateTime.UtcNow;
+                logTime = DateTime.Now;
                 nUnparsed = "|" + logPath + "|" + logClass + "|" + logMethod + "|" + logType + "|" + logMessage + "|";
             }
 

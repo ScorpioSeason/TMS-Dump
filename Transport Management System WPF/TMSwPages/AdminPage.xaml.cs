@@ -222,6 +222,8 @@ namespace TMSwPages
 
         }
 
+
+
         private void SwitchUserClick(object sender, RoutedEventArgs e)
         {
             LoginPage newpage = new LoginPage();
