@@ -38,13 +38,13 @@
 
         </Menu>
 
-        <Label Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="15" Content="TMS APPLICATION"></Label>
-        
-        <StackPanel Grid.Row="2" Grid.Column="1" VerticalAlignment="Center">
+        <Label Grid.Row="1" Grid.Column="1" VerticalAlignment="center" HorizontalAlignment="Center" FontSize="15" Content="TMS APPLICATION"></Label>
+
+        <!--<StackPanel Grid.Row="2" Grid.Column="1" VerticalAlignment="Center">
             <Button Click="AdminClick">Admin</Button>
             <Button Click="BuyerClick">Buyer</Button>
             <Button Click="PlannerClick">Planner</Button>
-        </StackPanel>
+        </StackPanel>-->
 
         <!--This displays statuses for the user-->
         <StatusBar Grid.Row="3" Grid.ColumnSpan="3" VerticalAlignment="Bottom">
@@ -53,5 +53,14 @@
             </StatusBarItem>
         </StatusBar >
 
+        <ComboBox Name="username" Grid.Column="1" Grid.Row="2" VerticalAlignment="top">
+            <ComboBoxItem Name="defaultSelection"></ComboBoxItem>
+            <ComboBoxItem Name="admin" Content="Admin"></ComboBoxItem>
+            <ComboBoxItem Name="buyer" Content="Buyer"></ComboBoxItem>
+            <ComboBoxItem Name="planner" Content="Planner"></ComboBoxItem>
+        </ComboBox>
+        <PasswordBox Name="password" Grid.Row="2" Grid.Column="1" MinWidth="100" HorizontalAlignment="center" VerticalAlignment="center"/>
+        <Button Grid.Row="2" Grid.Column="1" HorizontalAlignment="center" VerticalAlignment="bottom" MinWidth="100" Click="LoginClick">Log In</Button>
+        
     </Grid>
 </Page>
