@@ -79,7 +79,7 @@ namespace Transport_Management_System_WPF
         public void Initialize()
         {
             server = "35.193.37.75";
-            database = "cigtms";
+            database = "TheRealDB";
             uid = "test";
             password = "password";
             string connectionString;
@@ -222,10 +222,11 @@ namespace Transport_Management_System_WPF
         }
 
 
-        ////Insert statement
-        //public void Insert()
-        //{
-        //}
+        //Insert statement
+        public void Insert()
+        {
+
+        }
 
         ////Update statement
         //public void Update()
