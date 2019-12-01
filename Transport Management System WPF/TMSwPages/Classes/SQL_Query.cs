@@ -254,32 +254,4 @@ namespace TMSwPages
         //}
     }
 
-
-    //class SQL_Query
-    //{
-    //    public string sql = null;
-    //    public void ContractCalling()
-    //    {
-    //        sql = null;
-    //        string connetionString = null;
-    //        SqlConnection connection;
-    //        SqlDataAdapter adapter = new SqlDataAdapter();
-    //        connetionString = "Data Source=159.89.117.198,3306;Initial Catalog=cmp;User ID=DevOSHT;Password=Snodgr4ss!";
-    //        connection = new SqlConnection(connetionString);
-    //        sql = "SELECT * FROM Contract;";
-
-    //        connection.Open();
-    //        //adapter.InsertCommand = new SqlCommand(sql, connection);
-    //        //adapter.InsertCommand.ExecuteNonQuery();
-
-    //        SqlCommand cmd = new SqlCommand(sql, connection);
-    //        using (SqlDataReader reader = cmd.ExecuteReader()) 
-    //        {
-    //            while (reader.Read())
-    //            {  
-    //              string returnString = reader.GetValue().ToString().Trim();  
-    //            }
-    //        }
-    //    }
-    //}
 }
