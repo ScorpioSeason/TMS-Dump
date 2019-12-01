@@ -100,7 +100,7 @@ namespace Transport_Management_System_WPF
         *
         * ---------------------------------------------------------------------------------------------------- */
         //open connection to database
-        private bool OpenConnection()
+        public  bool OpenConnection()
         {
             try
             {
@@ -143,7 +143,7 @@ namespace Transport_Management_System_WPF
         *
         * ---------------------------------------------------------------------------------------------------- */
         //Close connection
-        private bool CloseConnection()
+        public  bool CloseConnection()
         {
             try
             {
@@ -184,38 +184,30 @@ namespace Transport_Management_System_WPF
             list[4] = new List<string>();
             list[5] = new List<string>();
 
-            //Open connection
-            if (this.OpenConnection() == true)
+            //Create Command
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            //Create a data reader and Execute the command
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+
+            //Read the data and store them in the list
+            while (dataReader.Read())
             {
-                //Create Command
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                //Create a data reader and Execute the command
-                MySqlDataReader dataReader = cmd.ExecuteReader();
-
-                //Read the data and store them in the list
-                while (dataReader.Read())
-                {
-                    list[0].Add(dataReader["Client_Name"] + "");
-                    list[1].Add(dataReader["Job_Type"] + "");
-                    list[2].Add(dataReader["Quantity"] + "");
-                    list[3].Add(dataReader["Origin"] + "");
-                    list[4].Add(dataReader["Destination"] + "");
-                    list[5].Add(dataReader["Van_Type"] + "");
-                }
-
-                //close Data Reader
-                dataReader.Close();
-
-                //close Connection
-                this.CloseConnection();
-
-                //return list to be displayed
-                return list;
+                list[0].Add(dataReader["Client_Name"] + "");
+                list[1].Add(dataReader["Job_Type"] + "");
+                list[2].Add(dataReader["Quantity"] + "");
+                list[3].Add(dataReader["Origin"] + "");
+                list[4].Add(dataReader["Destination"] + "");
+                list[5].Add(dataReader["Van_Type"] + "");
             }
-            else
-            {
-                return list;
-            }
+
+            //close Data Reader
+            dataReader.Close();
+
+            //close Connection
+            //this.CloseConnection();
+
+            //return list to be displayed
+            return list;
         }
 
         ////Insert statement

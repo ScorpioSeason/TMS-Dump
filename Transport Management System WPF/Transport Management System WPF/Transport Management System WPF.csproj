@@ -79,8 +79,11 @@
     <Compile Include="AdminClasses.cs" />
     <Compile Include="BuyerClass.cs" />
     <Compile Include="Carrier.cs" />
+    <Compile Include="LoadCSV.cs" />
     <Compile Include="mysqlConnector.cs" />
     <Compile Include="Contract.cs" />
+    <Compile Include="PlannerSQLStatments.cs" />
+    <Compile Include="PlannerSupportClasses.cs" />
     <Compile Include="SQL_Query_TMS.cs" />
     <Compile Include="SQL_Query.cs" />
     <Compile Include="MappingClass.cs" />

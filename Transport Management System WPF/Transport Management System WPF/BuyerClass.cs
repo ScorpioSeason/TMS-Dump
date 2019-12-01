@@ -67,27 +67,18 @@ namespace Transport_Management_System_WPF
 
                 block.client_Name = temp[0][i];
 
-                if(temp[1][i] == "0")
-                {
-                    block.job_Type = false;
-                }
-                else
-                {
-                    block.job_Type = true;
-                }
+                //Duane Changed this line. the contract has job type as a int again
+                block.job_Type = int.Parse(temp[1][i]);
+
 
                 block.quantity = int.Parse(temp[2][i]);
                 block.origin = temp[3][i];
                 block.destination = temp[4][i];
 
-                if (temp[5][i] == "0")
-                {
-                    block.van_Type = false;
-                }
-                else
-                {
-                    block.van_Type = true;
-                }
+                //Duane Changed this line. the contract has van type as a int again
+                block.van_Type = int.Parse(temp[5][i]);
+
+                
 
                 contracts.Add(block);
             }
@@ -117,27 +108,16 @@ namespace Transport_Management_System_WPF
 
                 block.client_Name = temp[0][i];
 
-                if (temp[1][i] == "0")
-                {
-                    block.job_Type = false;
-                }
-                else
-                {
-                    block.job_Type = true;
-                }
+
+                //Duane Changed this line. the contract has job type as a int again
+                block.job_Type = int.Parse(temp[1][i]);
 
                 block.quantity = int.Parse(temp[2][i]);
                 block.origin = temp[3][i];
                 block.destination = temp[4][i];
 
-                if (temp[5][i] == "0")
-                {
-                    block.van_Type = false;
-                }
-                else
-                {
-                    block.van_Type = true;
-                }
+                //Duane Changed this line. the contract has van type as a int again
+                block.van_Type = int.Parse(temp[5][i]);
 
                 contracts.Add(block);
             }

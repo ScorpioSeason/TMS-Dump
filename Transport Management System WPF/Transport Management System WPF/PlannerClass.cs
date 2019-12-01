@@ -99,7 +99,7 @@ namespace Transport_Management_System_WPF
             {
 
                 Contract NewContract = null; //from the database
-                List<Carrier> NominatedCarriers = new List<Carrier>(); //from the database
+                //List<Carrier> NominatedCarriers = new List<Carrier>(); //from the database
 
                     
                 //List<Trip_Ticket> tickets = Select_Carriers_From_Nominations(NominatedCarriers, NewContract);

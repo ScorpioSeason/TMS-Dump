@@ -27,6 +27,13 @@ namespace UnitTestTMS
     [TestClass]
     public class PlannerClassTests
     {
+        //Test city 7 - 0, FTL
+        [TestMethod]
+        public void testReadInCMP()
+        {
+            LoadCMPintoDatabase.Load();
+        }
+
 
         //Test city 7 - 0, FTL
         [TestMethod]
@@ -124,49 +131,49 @@ namespace UnitTestTMS
         public void routCalc4()
         {
 
-            //ARRANGE
-            MappingClass graphClass = new MappingClass();
-            List<RouteData> ReturnList = new List<RouteData>();
+            ////ARRANGE
+            //MappingClass graphClass = new MappingClass();
+            //List<RouteData> ReturnList = new List<RouteData>();
 
-            Contract contract = new Contract
-            {
-                client_Name = "Wally World",
-                origin = "Windsor",
-                destination = "Hamilton",
-                job_Type = true
-            };
+            //Contract contract = new Contract
+            //{
+            //    client_Name = "Wally World",
+            //    origin = "Windsor",
+            //    destination = "Hamilton",
+            //    //job_Type = true
+            //};
 
-            ReturnList = graphClass.GetTravelData(Contract.ToCityID(contract.origin), Contract.ToCityID(contract.destination), contract.job_Type);
+            //ReturnList = graphClass.GetTravelData(Contract.ToCityID(contract.origin), Contract.ToCityID(contract.destination), contract.job_Type);
 
-            Truck truck = new Truck
-            {
-                TruckID = ReturnList[0].CityA,
-                CurrentCityID = 0,
-                Is_Reefer = false
-            };
+            //Truck truck = new Truck
+            //{
+            //    TruckID = ReturnList[0].CityA,
+            //    CurrentCityID = 0,
+            //    Is_Reefer = false
+            //};
 
-            Trip_Ticket trip_Ticket = new Trip_Ticket
-            {
-                TicketID = 32,
-                Days_Passed = 0,
-                FTL_or_LTL = true,
-                Is_Reefer = false,
-                Size_In_Palette = 3,
-                TruckID = truck
-            };
+            //Trip_Ticket trip_Ticket = new Trip_Ticket
+            //{
+            //    TicketID = 32,
+            //    Days_Passed = 0,
+            //    FTL_or_LTL = true,
+            //    Is_Reefer = false,
+            //    Size_In_Palette = 3,
+            //    TruckID = truck
+            //};
 
-            List<Trip_Ticket_Line> trip_Ticket_Lines = new List<Trip_Ticket_Line>();
+            //List<Trip_Ticket_Line> trip_Ticket_Lines = new List<Trip_Ticket_Line>();
 
-            foreach(RouteData x in ReturnList)
-            {
-                Trip_Ticket_Line TTL1 = new Trip_Ticket_Line
-                {
-                    Ticket = trip_Ticket,
-                    Route = x
-                };
-            }
+            //foreach(RouteData x in ReturnList)
+            //{
+            //    Trip_Ticket_Line TTL1 = new Trip_Ticket_Line
+            //    {
+            //        Ticket = trip_Ticket,
+            //        Route = x
+            //    };
+            //}
 
-            //TimePass.IncrementDay(ReturnList, truck, trip_Ticket);
+            ////TimePass.IncrementDay(ReturnList, truck, trip_Ticket);
 
         }
     }

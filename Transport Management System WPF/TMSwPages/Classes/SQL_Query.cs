@@ -100,7 +100,7 @@ namespace TMSwPages
         *
         * ---------------------------------------------------------------------------------------------------- */
         //open connection to database
-        private bool OpenConnection()
+        public bool OpenConnection()
         {
             try
             {
@@ -143,7 +143,7 @@ namespace TMSwPages
         *
         * ---------------------------------------------------------------------------------------------------- */
         //Close connection
-        private bool CloseConnection()
+        public bool CloseConnection()
         {
             try
             {

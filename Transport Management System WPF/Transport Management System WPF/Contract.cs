@@ -26,40 +26,42 @@ namespace Transport_Management_System_WPF
     *   \details	This class will mainly be used to pass contract data through out the application.
     *   
     * -------------------------------------------------------------------------------------------------------- */
-    public class Contract
-    {
-        public string client_Name 
-        { 
-            get;
-            set; 
-        }
-        public bool job_Type 
-        { 
-            get; 
-            set; 
-        }
-        public int quantity 
-        { 
-            get;
-            set; 
-        }
-        public string origin 
-        { 
-            get;
-            set; 
-        }
-        public string destination 
-        { 
-            get;
-            set; 
-        }
-        public bool van_Type 
-        { 
-            get;
-            set; 
-        }
 
-        public List<string> nominatedCarriers;
+        //There is a new definiton for this class in plannerSupportClasses
+    //public class Contract
+    //{
+    //    public string client_Name 
+    //    { 
+    //        get;
+    //        set; 
+    //    }
+    //    public bool job_Type 
+    //    { 
+    //        get; 
+    //        set; 
+    //    }
+    //    public int quantity 
+    //    { 
+    //        get;
+    //        set; 
+    //    }
+    //    public string origin 
+    //    { 
+    //        get;
+    //        set; 
+    //    }
+    //    public string destination 
+    //    { 
+    //        get;
+    //        set; 
+    //    }
+    //    public bool van_Type 
+    //    { 
+    //        get;
+    //        set; 
+    //    }
+
+        //public List<string> nominatedCarriers;
 
 
 
@@ -76,44 +78,8 @@ namespace Transport_Management_System_WPF
         *	\return		cityID in int format
         *
         * ---------------------------------------------------------------------------------------------------- */
-        public static int ToCityID(string inputCity)
-        {
-            if(inputCity == "Windsor")
-            {
-                return 0;
-            }
-            else if(inputCity == "London")
-            {
-                return 1;
-            }
-            else if (inputCity == "Hamilton")
-            {
-                return 2;
-            }
-            else if (inputCity == "Toronto")
-            {
-                return 3;
-            }
-            else if (inputCity == "Oshawa")
-            {
-                return 4;
-            }
-            else if (inputCity == "Belleville")
-            {
-                return 5;
-            }
-            else if (inputCity == "Kingston")
-            {
-                return 6;
-            }
-            else if (inputCity == "Ottawa")
-            {
-                return 7;
-            }
-
-            return -1;
-        }
-    }
+        
+    //}
 
 
 
