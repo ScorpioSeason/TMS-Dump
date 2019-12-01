@@ -31,13 +31,13 @@ namespace TMSwPages
     *   choose to run. For example button presses and UI drawingRight now this class does nothing.
     *   
     * -------------------------------------------------------------------------------------------------------- */
-    class Admin
+    public class Admin
     {
         //TMSLogger adminLogger = null;
         BackupTMS adminBackup = null;
         AlterTables adminAlter = null;
 
-        Admin()
+        public Admin()
         {
             //adminLogger = new TMSLogger();
             adminBackup = new BackupTMS();

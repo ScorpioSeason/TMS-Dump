@@ -25,6 +25,17 @@ namespace TMSwPages
             InitializeComponent();
         }
 
+        public PlannerPage(SQL_Query_TMS validatedConnection)
+        {
+            InitializeComponent();
+
+            // Load SQL Connection
+            //admin.SetTMSConnection(validatedConnection);
+
+            /// Bind to incoming log data.
+            //this.DataContext = data;
+        }
+
         //private void Button_Click(object sender, RoutedEventArgs e)//load/ refresh button
         //{
         //    buyer.ParseContracts();
@@ -36,6 +47,8 @@ namespace TMSwPages
             LoginPage newpage = new LoginPage();
             this.NavigationService.Navigate(newpage);
         }
+
+
 
     }
 }

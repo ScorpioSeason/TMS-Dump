@@ -44,36 +44,49 @@ namespace TMSwPages
             TMSLogger.SetDefaultLogFilePath(); // Initialize logger location when app opens
         }
 
-        private void LoginClick(object sender, RoutedEventArgs e)
+        private void ValidateLogIn(object sender, RoutedEventArgs e)
         {
-            bool loginSuccess = false; 
+            bool loginSuccess = false;
+            SQL_Query_TMS loginConnection = null; 
             // Check that values have been entered first
             if ((password.Password != "") && (username.SelectedIndex != -1))
             {
+                // Get login connection
                 if (loginSuccess == false)
                 {
-                    SQL_Query_TMS login = new SQL_Query_TMS(username.Text, password.Password.ToString()); // pass login to each page for access privileges
-                    loginSuccess = login.isConnected;
+                    loginConnection = new SQL_Query_TMS(username.Text, password.Password.ToString()); // pass login to each page for access privileges
+                    loginSuccess = loginConnection._isConnected;
 
                     password.Password = "";
 
                 }
+                // If the connection credentials were validated, redirect to page with set connection
                 if (loginSuccess == true)
                 {
                     if (username.Text == "Admin")
                     {
-                        AdminPage newpage = new AdminPage();
-                        this.NavigationService.Navigate(newpage);
+                        if (loginConnection != null)
+                        {
+                            AdminPage newpage = new AdminPage(loginConnection);
+                            this.NavigationService.Navigate(newpage);
+                        }
+                        
                     }
                     else if (username.Text == "Buyer")
                     {
-                        BuyerPage newpage = new BuyerPage();
-                        this.NavigationService.Navigate(newpage);
+                        if (loginConnection != null)
+                        {
+                            BuyerPage newpage = new BuyerPage(loginConnection);
+                            this.NavigationService.Navigate(newpage);
+                        }
                     }
                     else if (username.Text == "Planner")
                     {
-                        PlannerPage newpage = new PlannerPage();
-                        this.NavigationService.Navigate(newpage);
+                        if (loginConnection != null)
+                        {
+                            PlannerPage newpage = new PlannerPage(loginConnection);
+                            this.NavigationService.Navigate(newpage);
+                        }
                     }
                 }
 

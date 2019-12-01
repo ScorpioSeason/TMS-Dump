@@ -40,7 +40,14 @@ namespace TMSwPages
         private string database;
         private string uid;
         private string password;
-        public bool isConnected;
+        private bool isConnected;
+
+        public MySqlConnection _connection { get { return connection; } }
+        public string _server { get { return server; } }
+        public string _database { get { return database; } }
+        public string _uid { get { return uid; } }
+        public string _password { get { return password; } }
+        public bool _isConnected { get { return isConnected; } }
 
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /*
@@ -142,7 +149,7 @@ namespace TMSwPages
         *
         * ---------------------------------------------------------------------------------------------------- */
         //open connection to database
-        private bool OpenConnection()
+        public bool OpenConnection()
         {
             try
             {
@@ -186,7 +193,7 @@ namespace TMSwPages
         *
         * ---------------------------------------------------------------------------------------------------- */
         //Close connection
-        private bool CloseConnection()
+        public bool CloseConnection()
         {
             try
             {
@@ -215,10 +222,10 @@ namespace TMSwPages
         //Select statement
         public List<string>[] Select_Carriers()
         {
-            string query = "SELECT * FROM CUS;";
+            string query = "SELECT * FROM Carrier;";
 
             //Create a list to store the result
-            List<string>[] list = new List<string>[6];
+            List<string>[] list = new List<string>[8];
             list[0] = new List<string>();
             list[1] = new List<string>();
             list[2] = new List<string>();
@@ -261,6 +268,10 @@ namespace TMSwPages
                 return list;
             }
         }
+
+
+
+        // Select list of 
 
 
         ////Insert statement

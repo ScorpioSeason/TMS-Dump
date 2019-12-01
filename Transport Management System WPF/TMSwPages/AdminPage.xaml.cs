@@ -43,6 +43,7 @@ namespace TMSwPages
     public partial class AdminPage : Page
     {
         List<TMSLog> searchResults = new List<TMSLog>();
+        static Admin admin = new Admin(); 
 
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
@@ -61,7 +62,46 @@ namespace TMSwPages
             LogEndDate.SelectedDate = DateTime.Today;
             LogSearchTags.Focus(); 
             LogsList.ItemsSource = searchResults;
-            LogLoadClick(null, null); 
+            LogLoadClick(null, null);
+
+            // Load SQL Connection
+            if (admin.GetTMSConnection() == null)
+            {
+                admin.SetTMSConnection(new SQL_Query_TMS()); // It shouldn't EVER get to this!!!
+            }
+
+            Carrier_DataList.ItemsSource = admin.DisplayCarrier(); 
+            //Carrier_DataList.ItemsSource = admin.DisplayTable();
+            //Carrier_DataLoadClick(null, null);
+        }
+
+        public AdminPage(SQL_Query_TMS validatedConnection)
+        {
+            try
+            {
+                InitializeComponent();
+
+                // Load the page LOG components
+                LogStartDate.SelectedDate = (DateTime.Today.AddDays(-7));
+                LogEndDate.SelectedDate = DateTime.Today;
+                LogSearchTags.Focus();
+                LogsList.ItemsSource = searchResults;
+                LogLoadClick(null, null);
+
+                // Load SQL Connection
+                admin.SetTMSConnection(validatedConnection);
+                Carrier_DataList.ItemsSource = admin.DisplayCarrier();
+                //admin.SelectTable("Carrier");
+                //Carrier_DataList.ItemsSource = admin.DisplayTable();
+                //Carrier_DataLoadClick(null, null);
+            }
+            catch (Exception e)
+            {
+               
+            }
+            
+            /// Bind to incoming log data.
+            //this.DataContext = data;
         }
 
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------

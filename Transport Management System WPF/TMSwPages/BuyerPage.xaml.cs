@@ -43,6 +43,17 @@ namespace TMSwPages
             DG2.ItemsSource = this.acceptedContracts;
         }
 
+        public BuyerPage(SQL_Query_TMS validatedConnection)
+        {
+            InitializeComponent();
+
+            // Load SQL Connection
+            //admin.SetTMSConnection(validatedConnection);
+
+            /// Bind to incoming log data.
+            //this.DataContext = data;
+        }
+
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /*
         *	\fn			int Square()

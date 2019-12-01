@@ -20,6 +20,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Documents;
+using MySql.Data.MySqlClient;
 
 namespace TMSwPages
 {
@@ -31,23 +32,340 @@ namespace TMSwPages
     *   choose to run. For example button presses and UI drawingRight now this class does nothing.
     *   
     * -------------------------------------------------------------------------------------------------------- */
-    //class Admin
-    //{
-    //    //TMSLogger adminLogger = null;
-    //    BackupTMS adminBackup = null;
-    //    AlterTables adminAlter = null;
+    public class Admin
+    {
+        SQL_Query_TMS adminTMSConnection = null;
+        string query = ""; 
+        
+        public void SetTMSConnection(SQL_Query_TMS validConnection)
+        {
+            adminTMSConnection = validConnection;
+        }
+        public SQL_Query_TMS GetTMSConnection()
+        {
+            return adminTMSConnection;
+        }
+        
+        public List<string>[] DisplayCarrier() {
 
-    //    public Admin()
-    //    {
-    //        //adminLogger = new TMSLogger();
-    //        adminBackup = new BackupTMS();
-    //        adminAlter = new AlterTables();
-    //    }
+            int numColumns = 0;
+            List<string> columnNames = new List<string>();
+            List<string>[] columns = null; 
 
-    //}
+            try
+            {
+                query = "SELECT * FROM Carrier;";
+                columnNames.Clear();
+                columnNames.Add("CarrierID");
+                columnNames.Add("Carrier_Name");
+                numColumns = columnNames.Count();
+                
+                columns = new List<string>[numColumns];
+
+                if (adminTMSConnection.OpenConnection() == true)
+                {
+                    MySqlCommand command = new MySqlCommand(query, adminTMSConnection._connection);
+                    MySqlDataReader dataReader = command.ExecuteReader();
+
+                    while (dataReader.Read())
+                    {
+                        int i = 0;
+
+                        foreach (string s in columnNames)
+                        {
+                            columns[i].Add(dataReader[s] + "");
+                            i++;
+                        }
+
+                    }
+
+                    dataReader.Close();
+
+                    adminTMSConnection.CloseConnection();
+                }
+
+                return columns;
+            }
+            catch (Exception e)
+            {
+                return columns;
+            }
+            
+        }
+
+        public List<string>[] DisplayRoutes()
+        {
+            int numColumns = 0;
+            List<string> columnNames = new List<string>();
+            List<string>[] columns = null;
+
+            try
+            {
+                query = "SELECT * FROM RouteData;";
+                columnNames.Clear();
+                columnNames.Add("RouteDataID");
+                columnNames.Add("CityA");
+                columnNames.Add("CityB");
+                columnNames.Add("PickUpTime");
+                columnNames.Add("DropOffTime");
+                columnNames.Add("LtlTime");
+                columnNames.Add("DrivenTime");
+                numColumns = columnNames.Count();
+                
+                columns = new List<string>[numColumns];
+
+                if (adminTMSConnection.OpenConnection() == true)
+                {
+                    MySqlCommand command = new MySqlCommand(query, adminTMSConnection._connection);
+                    MySqlDataReader dataReader = command.ExecuteReader();
+
+                    while (dataReader.Read())
+                    {
+                        int i = 0;
+
+                        foreach (string s in columnNames)
+                        {
+                            columns[i].Add(dataReader[s] + "");
+                            i++;
+                        }
+
+                    }
+
+                    dataReader.Close();
+
+                    adminTMSConnection.CloseConnection();
+                }
+
+                return columns;
+            }
+            catch (Exception e)
+            {
+                return columns;
+            }
+        }
+
+        public List<string>[] DisplayFees()
+        {
+            int numColumns = 0;
+            List<string> columnNames = new List<string>();
+            List<string>[] columns = null;
+
+            try
+            {
+                query = "SELECT * FROM CarrierDepot;";
+                columnNames.Clear();
+                columnNames.Add("Depot_CityID");
+                columnNames.Add("CarrierID");
+                columnNames.Add("FTL_Availibility"); // spelled wrong in database
+                columnNames.Add("LTL_Availibility"); // same thing
+                columnNames.Add("FTL_Rate");
+                columnNames.Add("LTL_Rate");
+                columnNames.Add("Reefer_Charge");
+                numColumns = columnNames.Count();                
+
+                columns = new List<string>[numColumns];
+
+                if (adminTMSConnection.OpenConnection() == true)
+                {
+                    MySqlCommand command = new MySqlCommand(query, adminTMSConnection._connection);
+                    MySqlDataReader dataReader = command.ExecuteReader();
+
+                    while (dataReader.Read())
+                    {
+                        int i = 0;
+
+                        foreach (string s in columnNames)
+                        {
+                            columns[i].Add(dataReader[s] + "");
+                            i++;
+                        }
+
+                    }
+
+                    dataReader.Close();
+
+                    adminTMSConnection.CloseConnection();
+                }
+
+                return columns;
+            }
+            catch (Exception e)
+            {
+                return columns;
+            }
+        }
+
+
+        public void SelectData() { }
+        public void DeleteSelection() { }
+        public void AddNew()
+        {
+            // column
+            // row
+            // cell
+        }
+
+    }
+
+    // Backup Option 1: PHP
+    /*" <?php
+        include 'config.php';
+        include 'opendb.php';
+
+        $tableName  = 'mypet';
+        $backupFile = 'backup/mypet.sql';
+        $query      = "SELECT * INTO OUTFILE '$backupFile' FROM $tableName";
+        $result = mysql_query($query);
+
+        include 'closedb.php';
+        ?> 
+
+    // Restore
+        <?php
+        include 'config.php';
+        include 'opendb.php';
+
+        $tableName  = 'mypet';
+        $backupFile = 'mypet.sql';
+        $query      = "LOAD DATA INFILE 'backupFile' INTO TABLE $tableName";
+        $result = mysql_query($query);
+
+        include 'closedb.php';
+        ?>
+     "*/
+
+    // Backup Option 2: Command Line
+    /*"
+        Change to the bin subdirectory in the directory where MySQL is installed.
+
+        For instance, type cd c:Program FilesMySQLMySQL Server 5.0bin into the command prompt.
+
+        Type the following:
+
+        mysqldump --user=accountname --password=password databasename >pathbackupfilename
+
+    "*/
+
+    // Backup Option 3: Flush
+    /*"
+     Making Backups by Copying Table Files
+    For storage engines that represent each table using its own files, tables can be backed up by 
+    copying those files. For example, MyISAM tables are stored as files, so it is easy to do a backup 
+    by copying files (*.frm, *.MYD, and *.MYI files). To get a consistent backup, stop the server or 
+    lock and flush the relevant tables:
+
+    FLUSH TABLES tbl_list WITH READ LOCK;
+    You need only a read lock; this enables other clients to continue to query the tables while you are
+    making a copy of the files in the database directory. The flush is needed to ensure that the all 
+    active index pages are written to disk before you start the backup. See Section 13.3.5, “LOCK 
+    TABLES and UNLOCK TABLES Statements”, and Section 13.7.6.3, “FLUSH Statement”.
+
+    You can also create a binary backup simply by copying all table files, as long as the server 
+    isn't updating anything. (But note that table file copying methods do not work if your database 
+    contains InnoDB tables. Also, even if the server is not actively updating data, InnoDB may still 
+    have modified data cached in memory and not flushed to disk.)
+    "*/
+
+    // Backup Option 4: Delimited-Text file Backups 
+    /*
+     "Making Delimited-Text File Backups
+    To create a text file containing a table's data, you can use 
+    SELECT * INTO OUTFILE 'file_name' FROM tbl_name. The file is created on the MySQL server host, 
+    not the client host. For this statement, the output file cannot already exist because permitting 
+    files to be overwritten constitutes a security risk. See Section 13.2.9, “SELECT Statement”. 
+    This method works for any kind of data file, but saves only table data, not the table structure.
+
+    Another way to create text data files (along with files containing CREATE TABLE statements for the
+    backed up tables) is to use mysqldump with the --tab option. See Section 7.4.3, “Dumping Data in 
+    Delimited-Text Format with mysqldump”.
+
+    To reload a delimited-text data file, use LOAD DATA or mysqlimport.
+    "*/
+
+    // Backup Option 5: Binary Logs
+    /*"
+     Making Incremental Backups by Enabling the Binary Log
+     MySQL supports incremental backups: You must start the server with the --log-bin option to enable 
+     binary logging; see Section 5.4.4, “The Binary Log”. The binary log files provide you with the 
+     information you need to replicate changes to the database that are made subsequent to the point 
+     at which you performed a backup. At the moment you want to make an incremental backup (containing 
+     all changes that happened since the last full or incremental backup), you should rotate the binary 
+     log by using FLUSH LOGS. This done, you need to copy to the backup location all binary logs which 
+     range from the one of the moment of the last full or incremental backup to the last but one. These 
+     binary logs are the incremental backup; at restore time, you apply them as explained in Section 7.5, 
+     “Point-in-Time (Incremental) Recovery Using the Binary Log”. The next time you do a full backup, 
+     you should also rotate the binary log using FLUSH LOGS or mysqldump --flush-logs. See Section 4.5.4, 
+     “mysqldump — A Database Backup Program”.
+
+   "*/
+
+    // Backup Notes: Recovering Corrupt tables
+    /*"Recovering Corrupt Tables
+       If you have to restore MyISAM tables that have become corrupt, try to recover them using REPAIR TABLE 
+       or myisamchk -r first. That should work in 99.9% of all cases. If myisamchk fails, see Section 7.6, 
+       “MyISAM Table Maintenance and Crash Recovery”.
+
+    "*/
+
+
+    // Read store location
+    // Choose new store location
+    // Copy files from old location to new location
+    // If error, inform user, do not delete old copy. 
+    // Else if success, inform user, delete old copy
+
+    // Initiate backup (button) 
+    // Write to location
+    // If successful write, delete old copy of backup (do not immediately overwrite)
+
+    /*DROP TABLE IF EXISTS 'Carrier';
+         CREATE TABLE 'Carrier' (
+         'Carrier_Name' VARCHAR(100),
+         'FTL_Rate' DOUBLE(5, 4),
+         'LTL_Rate' DOUBLE(5, 4),
+         'Reefer_Charge' DOUBLE(5, 4),
+         'FTL_Availability' INT,
+         'LTL_Availability' INT,
+         PRIMARY KEY('Carrier_Name')
+         )
+         */
+
+    /*
+    DROP TABLE IF EXISTS 'RouteData';
+    CREATE TABLE 'RouteData' (
+    'RouteDataID' VARCHAR(100),
+    'CityA' VARCHAR(100),
+    'CityB' VARCHAR(100),
+    'PickUpTime' DOUBLE(2, 2),
+    'DropOffTime' DOUBLE(2, 2),
+    'LtlTime' DOUBLE(2, 2),
+    'DrivenTime' DOUBLE(2, 2),
+    PRIMARY KEY('RouteDataID'),
+    FOREIGN KEY('CityA') REFERENCES Location('CityID'),
+    FOREIGN KEY('CityB') REFERENCES Location('CityID')) 
+     */
+
+    /*
+    cName,dCity,FTLA,LTLA,FTLRate,LTLRate,reefCharge
+    Planet Express,Windsor,50,640,5.21,0.3621,0.08
+    ,Hamilton,50,640,5.21,0.3621,0.08
+    ,Oshawa,50,640,5.21,0.3621,0.08
+    ,Belleville,50,640,5.21,0.3621,0.08
+    ,Ottawa,50,640,5.21,0.3621,0.08
+    Schooner's,London,18,98,5.05,0.3434,0.07
+    ,Toronto,18,98,5.05,0.3434,0.07
+    ,Kingston,18,98,5.05,0.3434,0.07
+    Tillman Transport,Windsor,24,35,5.11,0.3012,0.09
+    ,London,18,45,5.11,0.3012,0.09
+    ,Hamilton,18,45,5.11,0.3012,0.09
+    We Haul,Ottawa,11,0,5.2,0,0.065
+    ,Toronto,11,0,5.2,0,0.065
+    */
+
+
+
 
     // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
-
     /**   
     *   \class		TMSLogger
     *   \brief		This class runs the logging functionality for all files in this solution
@@ -72,7 +390,7 @@ namespace TMSwPages
             {
                 // error finding/starting logger file. 
             }
-            
+
         }
 
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
@@ -93,7 +411,7 @@ namespace TMSwPages
             if (AppendLogFile(myLog) == false)
             {
                 /// Error writing to Log File: Try once again
-                AppendLogFile(myLog); 
+                AppendLogFile(myLog);
             };
 
         }
@@ -216,13 +534,22 @@ namespace TMSwPages
     public class TMSLog
     {
         /// Data for each individual log (not currently protected)
-        public string logPath { set; get; }
-        public string logClass { set; get; }
-        public string logMethod { set; get; }
-        public string logType { set; get; }
-        public string logMessage { set; get; }
-        public string BSV { set; get; }                     /// Bar separated values
-        public DateTime logTime { set; get; }
+        string _logPath;
+        string _logClass;
+        string _logMethod;
+        string _logType;
+        string _logMessage;
+        string _BSV;                  /// Bar separated values
+        DateTime _logTime;
+
+        // Public accessors 
+        public string logPath { get { return _logPath; } }
+        public string logClass { get { return _logClass; } }
+        public string logMethod { get { return _logMethod; } }
+        public string logType { get { return _logType; } }
+        public string logMessage { get { return _logMessage; } }
+        public string BSV { get { return _BSV; } }                  /// Bar separated values
+        public DateTime logTime { get { return _logTime; } }
 
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
@@ -242,231 +569,42 @@ namespace TMSwPages
             if ((Regex.Matches(nUnparsed, "\\|").Count) == 6)
             {
                 string[] temp = nUnparsed.Split('|');
-                logPath = temp[1];
-                logClass = temp[2];
-                logMethod = temp[3];
-                logType = temp[4];
-                logMessage = temp[5];
-                logTime = DateTime.Now;
+                _logPath = temp[1];
+                _logClass = temp[2];
+                _logMethod = temp[3];
+                _logType = temp[4];
+                _logMessage = temp[5];
+                _logTime = DateTime.Now;
             }
             /// Used in reading in from a file
             else if ((Regex.Matches(nUnparsed, "\\|").Count) == 7)
             {
                 string[] temp = nUnparsed.Split('|');
-                logTime = DateTime.Parse(temp[1]);
-                logPath = temp[2];
-                logClass = temp[3];
-                logMethod = temp[4];
-                logType = temp[5];
-                logMessage = temp[6];
+                _logTime = DateTime.Parse(temp[1]);
+                _logPath = temp[2];
+                _logClass = temp[3];
+                _logMethod = temp[4];
+                _logType = temp[5];
+                _logMessage = temp[6];
             }
             /// Used in formatting error
             else
             {
-                logPath = TMSLogger.thisFileDir + "/AdminClasses.cs";
-                logClass = "TMSLog";
-                logMethod = "Constructor";
-                logType = "LogParseError";
-                logMessage = "The log message did not enter as the correct string format";
-                logTime = DateTime.Now;
-                nUnparsed = "|" + logPath + "|" + logClass + "|" + logMethod + "|" + logType + "|" + logMessage + "|";
+                _logPath = TMSLogger.thisFileDir + "/AdminClasses.cs";
+                _logClass = "TMSLog";
+                _logMethod = "Constructor";
+                _logType = "LogParseError";
+                _logMessage = "The log message did not enter as the correct string format";
+                _logTime = DateTime.Now;
+                nUnparsed = "|" + _logPath + "|" + _logClass + "|" + _logMethod + "|" + _logType + "|" + _logMessage + "|";
             }
 
-            BSV = "|" + logTime + nUnparsed;
+            _BSV = "|" + _logTime + nUnparsed;
 
         }
 
     }
 
-    // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
-    /**   
-    *   \class		BackupTMS -- STUB
-    *   \brief		This class executes the Admin functions related to Backup. 
-    *   \details	This class can initiate the backup of the TMS database and change where the backup is 
-    *               stored.
-    *   
-    * -------------------------------------------------------------------------------------------------------- */
-    class BackupTMS
-    {
-
-        // Backup Option 1: PHP
-        /*" <?php
-            include 'config.php';
-            include 'opendb.php';
-
-            $tableName  = 'mypet';
-            $backupFile = 'backup/mypet.sql';
-            $query      = "SELECT * INTO OUTFILE '$backupFile' FROM $tableName";
-            $result = mysql_query($query);
-
-            include 'closedb.php';
-            ?> 
-
-        // Restore
-            <?php
-            include 'config.php';
-            include 'opendb.php';
-
-            $tableName  = 'mypet';
-            $backupFile = 'mypet.sql';
-            $query      = "LOAD DATA INFILE 'backupFile' INTO TABLE $tableName";
-            $result = mysql_query($query);
-
-            include 'closedb.php';
-            ?>
-         "*/
-
-        // Backup Option 2: Command Line
-        /*"
-            Change to the bin subdirectory in the directory where MySQL is installed.
-
-            For instance, type cd c:Program FilesMySQLMySQL Server 5.0bin into the command prompt.
-
-            Type the following:
-
-            mysqldump --user=accountname --password=password databasename >pathbackupfilename
-            
-        "*/
-
-        // Backup Option 3: Flush
-        /*"
-         Making Backups by Copying Table Files
-        For storage engines that represent each table using its own files, tables can be backed up by 
-        copying those files. For example, MyISAM tables are stored as files, so it is easy to do a backup 
-        by copying files (*.frm, *.MYD, and *.MYI files). To get a consistent backup, stop the server or 
-        lock and flush the relevant tables:
-
-        FLUSH TABLES tbl_list WITH READ LOCK;
-        You need only a read lock; this enables other clients to continue to query the tables while you are
-        making a copy of the files in the database directory. The flush is needed to ensure that the all 
-        active index pages are written to disk before you start the backup. See Section 13.3.5, “LOCK 
-        TABLES and UNLOCK TABLES Statements”, and Section 13.7.6.3, “FLUSH Statement”.
-
-        You can also create a binary backup simply by copying all table files, as long as the server 
-        isn't updating anything. (But note that table file copying methods do not work if your database 
-        contains InnoDB tables. Also, even if the server is not actively updating data, InnoDB may still 
-        have modified data cached in memory and not flushed to disk.)
-        "*/
-
-        // Backup Option 4: Delimited-Text file Backups 
-        /*
-         "Making Delimited-Text File Backups
-        To create a text file containing a table's data, you can use 
-        SELECT * INTO OUTFILE 'file_name' FROM tbl_name. The file is created on the MySQL server host, 
-        not the client host. For this statement, the output file cannot already exist because permitting 
-        files to be overwritten constitutes a security risk. See Section 13.2.9, “SELECT Statement”. 
-        This method works for any kind of data file, but saves only table data, not the table structure.
-
-        Another way to create text data files (along with files containing CREATE TABLE statements for the
-        backed up tables) is to use mysqldump with the --tab option. See Section 7.4.3, “Dumping Data in 
-        Delimited-Text Format with mysqldump”.
-
-        To reload a delimited-text data file, use LOAD DATA or mysqlimport.
-        "*/
-
-        // Backup Option 5: Binary Logs
-        /*"
-         Making Incremental Backups by Enabling the Binary Log
-         MySQL supports incremental backups: You must start the server with the --log-bin option to enable 
-         binary logging; see Section 5.4.4, “The Binary Log”. The binary log files provide you with the 
-         information you need to replicate changes to the database that are made subsequent to the point 
-         at which you performed a backup. At the moment you want to make an incremental backup (containing 
-         all changes that happened since the last full or incremental backup), you should rotate the binary 
-         log by using FLUSH LOGS. This done, you need to copy to the backup location all binary logs which 
-         range from the one of the moment of the last full or incremental backup to the last but one. These 
-         binary logs are the incremental backup; at restore time, you apply them as explained in Section 7.5, 
-         “Point-in-Time (Incremental) Recovery Using the Binary Log”. The next time you do a full backup, 
-         you should also rotate the binary log using FLUSH LOGS or mysqldump --flush-logs. See Section 4.5.4, 
-         “mysqldump — A Database Backup Program”.
-         
-       "*/
-
-        // Backup Notes: Recovering Corrupt tables
-        /*"Recovering Corrupt Tables
-           If you have to restore MyISAM tables that have become corrupt, try to recover them using REPAIR TABLE 
-           or myisamchk -r first. That should work in 99.9% of all cases. If myisamchk fails, see Section 7.6, 
-           “MyISAM Table Maintenance and Crash Recovery”.
-           
-        "*/
-
-
-        // Read store location
-        // Choose new store location
-        // Copy files from old location to new location
-        // If error, inform user, do not delete old copy. 
-        // Else if success, inform user, delete old copy
-
-        // Initiate backup (button) 
-        // Write to location
-        // If successful write, delete old copy of backup (do not immediately overwrite)
-    }
-
-    // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
-    /**   
-    *   \class		AlterTables -- STUB
-    *   \brief		This class executes functions related to Altering Tables
-    *   \details	This class should be able to access, view, and change data in the Carrier Data Table, Route
-    *   Table, and Rate / Fee Table
-    *   
-    * -------------------------------------------------------------------------------------------------------- */
-    class AlterTables
-    {
-        // Access tables -- xaml.cs?
-        // Carrier Data Table
-        // Route Table
-        // Rate / Fee Table
-
-        /*DROP TABLE IF EXISTS 'Carrier';
-        CREATE TABLE 'Carrier' (
-        'Carrier_Name' VARCHAR(100),
-        'FTL_Rate' DOUBLE(5, 4),
-        'LTL_Rate' DOUBLE(5, 4),
-        'Reefer_Charge' DOUBLE(5, 4),
-        'FTL_Availability' INT,
-        'LTL_Availability' INT,
-        PRIMARY KEY('Carrier_Name')
-        )*/
-
-        /*
-        DROP TABLE IF EXISTS 'RouteData';
-        CREATE TABLE 'RouteData' (
-        'RouteDataID' VARCHAR(100),
-        'CityA' VARCHAR(100),
-        'CityB' VARCHAR(100),
-        'PickUpTime' DOUBLE(2, 2),
-        'DropOffTime' DOUBLE(2, 2),
-        'LtlTime' DOUBLE(2, 2),
-        'DrivenTime' DOUBLE(2, 2),
-        PRIMARY KEY('RouteDataID'),
-        FOREIGN KEY('CityA') REFERENCES Location('CityID'),
-        FOREIGN KEY('CityB') REFERENCES Location('CityID')) 
-         */
-
-        /*
-        cName,dCity,FTLA,LTLA,FTLRate,LTLRate,reefCharge
-        Planet Express,Windsor,50,640,5.21,0.3621,0.08
-        ,Hamilton,50,640,5.21,0.3621,0.08
-        ,Oshawa,50,640,5.21,0.3621,0.08
-        ,Belleville,50,640,5.21,0.3621,0.08
-        ,Ottawa,50,640,5.21,0.3621,0.08
-        Schooner's,London,18,98,5.05,0.3434,0.07
-        ,Toronto,18,98,5.05,0.3434,0.07
-        ,Kingston,18,98,5.05,0.3434,0.07
-        Tillman Transport,Windsor,24,35,5.11,0.3012,0.09
-        ,London,18,45,5.11,0.3012,0.09
-        ,Hamilton,18,45,5.11,0.3012,0.09
-        We Haul,Ottawa,11,0,5.2,0,0.065
-        ,Toronto,11,0,5.2,0,0.065
-        */
-
-        // Draw tables -- UI
-        // Carrier Data Table
-        // Route Table
-        // Rate / Fee Table
-
-        // Change table data -- UI
-        // Carrier Data Table
-        // Route Table
-        // Rate / Fee Table
-    }
 }
+
+   
