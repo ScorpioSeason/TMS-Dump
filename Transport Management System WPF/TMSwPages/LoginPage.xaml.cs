@@ -12,6 +12,13 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
+using System.Configuration;
+using System.Data;
+using MySql.Data.MySqlClient;
+using MySql.Data;
+using System.Diagnostics;
+using TMSwPages;
 
 namespace TMSwPages
 {
@@ -37,26 +44,42 @@ namespace TMSwPages
             TMSLogger.SetDefaultLogFilePath(); // Initialize logger location when app opens
         }
 
-        private void AdminClick(object sender, RoutedEventArgs e)
+        private void LoginClick(object sender, RoutedEventArgs e)
         {
-            AdminPage newpage = new AdminPage();
-            this.NavigationService.Navigate(newpage);
+            bool loginSuccess = false; 
+            // Check that values have been entered first
+            if ((password.Password != "") && (username.SelectedIndex != -1))
+            {
+                if (loginSuccess == false)
+                {
+                    SQL_Query_TMS login = new SQL_Query_TMS(username.Text, password.Password.ToString()); // pass login to each page for access privileges
+                    loginSuccess = login.isConnected;
 
+                    password.Password = "";
+
+                }
+                if (loginSuccess == true)
+                {
+                    if (username.Text == "Admin")
+                    {
+                        AdminPage newpage = new AdminPage();
+                        this.NavigationService.Navigate(newpage);
+                    }
+                    else if (username.Text == "Buyer")
+                    {
+                        BuyerPage newpage = new BuyerPage();
+                        this.NavigationService.Navigate(newpage);
+                    }
+                    else if (username.Text == "Planner")
+                    {
+                        PlannerPage newpage = new PlannerPage();
+                        this.NavigationService.Navigate(newpage);
+                    }
+                }
+
+            }
         }
-
-        private void BuyerClick(object sender, RoutedEventArgs e)
-        {
-            BuyerPage newpage = new BuyerPage();
-            this.NavigationService.Navigate(newpage);
-
-        }
-
-        private void PlannerClick(object sender, RoutedEventArgs e)
-        {
-            PlannerPage newpage = new PlannerPage();
-            this.NavigationService.Navigate(newpage);
-
-        }
-
     }
-}
+
+}   
+

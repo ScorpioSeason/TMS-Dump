@@ -40,6 +40,7 @@ namespace TMSwPages
         private string database;
         private string uid;
         private string password;
+        public bool isConnected;
 
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /*
@@ -58,6 +59,48 @@ namespace TMSwPages
         {
             Initialize();
         }
+
+        // Alternate constructor
+        public SQL_Query_TMS(string userType, string password)
+        {
+            isConnected = Initialize(userType, password);
+        }
+
+        public bool Initialize(string userType, string passKey)
+        {
+            server = "35.193.37.75";
+            database = "TheRealDB";
+            uid = userType.Trim().ToLower();
+            password = passKey;
+            string connectionString;
+            connectionString = "SERVER=" + server + ";" + "DATABASE=" +
+            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+
+            bool returnValue = false; 
+
+            try
+            {
+                connection = new MySqlConnection(connectionString);
+                connection.Open();
+                
+            }
+            catch (Exception e)
+            {
+                returnValue = false; 
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                    returnValue = true; 
+                }
+            }
+
+            return returnValue; 
+
+        }
+
 
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /*
