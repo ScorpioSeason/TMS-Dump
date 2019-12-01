@@ -288,6 +288,108 @@ namespace TMSwPages
     * -------------------------------------------------------------------------------------------------------- */
     class BackupTMS
     {
+
+        // Backup Option 1: PHP
+        /*" <?php
+            include 'config.php';
+            include 'opendb.php';
+
+            $tableName  = 'mypet';
+            $backupFile = 'backup/mypet.sql';
+            $query      = "SELECT * INTO OUTFILE '$backupFile' FROM $tableName";
+            $result = mysql_query($query);
+
+            include 'closedb.php';
+            ?> 
+
+        // Restore
+            <?php
+            include 'config.php';
+            include 'opendb.php';
+
+            $tableName  = 'mypet';
+            $backupFile = 'mypet.sql';
+            $query      = "LOAD DATA INFILE 'backupFile' INTO TABLE $tableName";
+            $result = mysql_query($query);
+
+            include 'closedb.php';
+            ?>
+         "*/
+
+        // Backup Option 2: Command Line
+        /*"
+            Change to the bin subdirectory in the directory where MySQL is installed.
+
+            For instance, type cd c:Program FilesMySQLMySQL Server 5.0bin into the command prompt.
+
+            Type the following:
+
+            mysqldump --user=accountname --password=password databasename >pathbackupfilename
+            
+        "*/
+
+        // Backup Option 3: Flush
+        /*"
+         Making Backups by Copying Table Files
+        For storage engines that represent each table using its own files, tables can be backed up by 
+        copying those files. For example, MyISAM tables are stored as files, so it is easy to do a backup 
+        by copying files (*.frm, *.MYD, and *.MYI files). To get a consistent backup, stop the server or 
+        lock and flush the relevant tables:
+
+        FLUSH TABLES tbl_list WITH READ LOCK;
+        You need only a read lock; this enables other clients to continue to query the tables while you are
+        making a copy of the files in the database directory. The flush is needed to ensure that the all 
+        active index pages are written to disk before you start the backup. See Section 13.3.5, “LOCK 
+        TABLES and UNLOCK TABLES Statements”, and Section 13.7.6.3, “FLUSH Statement”.
+
+        You can also create a binary backup simply by copying all table files, as long as the server 
+        isn't updating anything. (But note that table file copying methods do not work if your database 
+        contains InnoDB tables. Also, even if the server is not actively updating data, InnoDB may still 
+        have modified data cached in memory and not flushed to disk.)
+        "*/
+
+        // Backup Option 4: Delimited-Text file Backups 
+        /*
+         "Making Delimited-Text File Backups
+        To create a text file containing a table's data, you can use 
+        SELECT * INTO OUTFILE 'file_name' FROM tbl_name. The file is created on the MySQL server host, 
+        not the client host. For this statement, the output file cannot already exist because permitting 
+        files to be overwritten constitutes a security risk. See Section 13.2.9, “SELECT Statement”. 
+        This method works for any kind of data file, but saves only table data, not the table structure.
+
+        Another way to create text data files (along with files containing CREATE TABLE statements for the
+        backed up tables) is to use mysqldump with the --tab option. See Section 7.4.3, “Dumping Data in 
+        Delimited-Text Format with mysqldump”.
+
+        To reload a delimited-text data file, use LOAD DATA or mysqlimport.
+        "*/
+
+        // Backup Option 5: Binary Logs
+        /*"
+         Making Incremental Backups by Enabling the Binary Log
+         MySQL supports incremental backups: You must start the server with the --log-bin option to enable 
+         binary logging; see Section 5.4.4, “The Binary Log”. The binary log files provide you with the 
+         information you need to replicate changes to the database that are made subsequent to the point 
+         at which you performed a backup. At the moment you want to make an incremental backup (containing 
+         all changes that happened since the last full or incremental backup), you should rotate the binary 
+         log by using FLUSH LOGS. This done, you need to copy to the backup location all binary logs which 
+         range from the one of the moment of the last full or incremental backup to the last but one. These 
+         binary logs are the incremental backup; at restore time, you apply them as explained in Section 7.5, 
+         “Point-in-Time (Incremental) Recovery Using the Binary Log”. The next time you do a full backup, 
+         you should also rotate the binary log using FLUSH LOGS or mysqldump --flush-logs. See Section 4.5.4, 
+         “mysqldump — A Database Backup Program”.
+         
+       "*/
+
+        // Backup Notes: Recovering Corrupt tables
+        /*"Recovering Corrupt Tables
+           If you have to restore MyISAM tables that have become corrupt, try to recover them using REPAIR TABLE 
+           or myisamchk -r first. That should work in 99.9% of all cases. If myisamchk fails, see Section 7.6, 
+           “MyISAM Table Maintenance and Crash Recovery”.
+           
+        "*/
+
+
         // Read store location
         // Choose new store location
         // Copy files from old location to new location
