@@ -44,6 +44,7 @@ namespace TMSwPages
     {
         List<TMSLog> searchResults = new List<TMSLog>();
         static Admin admin = new Admin(); 
+        static int selectedTab = -1; 
 
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
@@ -57,22 +58,31 @@ namespace TMSwPages
         {
             InitializeComponent();
 
-            // Load the page LOG components
-            LogStartDate.SelectedDate = (DateTime.Today.AddDays(-7));
-            LogEndDate.SelectedDate = DateTime.Today;
-            LogSearchTags.Focus(); 
-            LogsList.ItemsSource = searchResults;
-            LogLoadClick(null, null);
-
-            // Load SQL Connection
-            if (admin.GetTMSConnection() == null)
+            try
             {
-                admin.SetTMSConnection(new SQL_Query_TMS()); // It shouldn't EVER get to this!!!
-            }
+                InitializeComponent();
 
-            Carrier_DataList.ItemsSource = admin.DisplayCarrier(); 
-            //Carrier_DataList.ItemsSource = admin.DisplayTable();
-            //Carrier_DataLoadClick(null, null);
+                // Load SQL Connection
+                admin.SetTMSConnection(new SQL_Query_TMS());
+
+                selectedTab = 0;
+
+                LogStartDate.SelectedDate = (DateTime.Today.AddDays(-7));
+                LogEndDate.SelectedDate = DateTime.Today;
+                LogSearchTags.Focus();
+                LogsList.ItemsSource = searchResults;
+                LogLoadClick(null, null);
+
+                LogsList.ItemsSource = searchResults; 
+                Carrier_DataList.ItemsSource = admin.DisplayCarrier();
+                Route_TableList.ItemsSource = admin.DisplayRoutes();
+                Rate_Fee_TablesList.ItemsSource = admin.DisplayFees();
+
+            }
+            catch (Exception e)
+            {
+
+            }
         }
 
         public AdminPage(SQL_Query_TMS validatedConnection)
@@ -81,19 +91,17 @@ namespace TMSwPages
             {
                 InitializeComponent();
 
-                // Load the page LOG components
+                // Load SQL Connection
+                admin.SetTMSConnection(validatedConnection);
+
+                selectedTab = 0;
+
                 LogStartDate.SelectedDate = (DateTime.Today.AddDays(-7));
                 LogEndDate.SelectedDate = DateTime.Today;
                 LogSearchTags.Focus();
                 LogsList.ItemsSource = searchResults;
                 LogLoadClick(null, null);
 
-                // Load SQL Connection
-                admin.SetTMSConnection(validatedConnection);
-                Carrier_DataList.ItemsSource = admin.DisplayCarrier();
-                //admin.SelectTable("Carrier");
-                //Carrier_DataList.ItemsSource = admin.DisplayTable();
-                //Carrier_DataLoadClick(null, null);
             }
             catch (Exception e)
             {
@@ -262,7 +270,6 @@ namespace TMSwPages
 
         }
 
-
         private void SwitchUserClick(object sender, RoutedEventArgs e)
         {
             LoginPage newpage = new LoginPage();
@@ -274,5 +281,67 @@ namespace TMSwPages
             Carrier_DataList.Items.Refresh(); 
         }
 
+        private void Route_TableLoadClick(object sender, RoutedEventArgs e)
+        {
+            Route_TableList.Items.Refresh();
+        }
+
+        private void Rate_Fee_TablesClick(object sender, RoutedEventArgs e)
+        {
+            Rate_Fee_TablesList.Items.Refresh();
+        }
+        
+        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (selectedTab != tabber.SelectedIndex)
+            {
+                if ((tabber.SelectedIndex <= 4) && (tabber.SelectedIndex >= -1))
+                {
+                    selectedTab = tabber.SelectedIndex;
+
+                    try
+                    {
+                        switch (selectedTab)
+                        {
+                            case (0):
+                                LogStartDate.SelectedDate = (DateTime.Today.AddDays(-7));
+                                LogEndDate.SelectedDate = DateTime.Today;
+                                LogSearchTags.Focus();
+                                LogsList.ItemsSource = searchResults;
+                                LogLoadClick(null, null);
+                                break;
+                            case (1):
+                                //backup
+                                break;
+                            case (2):
+                                //Carrier_Data.DataContext = admin.DisplayCarrier();
+                                Carrier_DataList.ItemsSource = admin.DisplayCarrier();
+                                Carrier_DataLoadClick(null, null);
+                                break;
+                            case (3):
+                                //Route_Table.DataContext = admin.DisplayRoutes();
+                                Route_TableList.ItemsSource = admin.DisplayRoutes();
+                                Route_TableLoadClick(null, null);
+                                break;
+                            case (4):
+                                //Rate_Fee_Tables.DataContext = admin.DisplayFees();
+                                admin.DisplayFees(); 
+                                Rate_Fee_TablesList.ItemsSource = admin.feeTable;
+                                Rate_Fee_TablesClick(null, null);
+                                break;
+                            default:
+                                break;
+                        }
+                        
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+
+                }
+                
+            }
+        }
     }
 }

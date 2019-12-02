@@ -76,7 +76,7 @@ namespace TMSwPages
         public bool Initialize(string userType, string passKey)
         {
             server = "35.193.37.75";
-            database = "TheRealDB";
+            database = "duane_test";
             uid = userType.Trim().ToLower();
             password = passKey;
             string connectionString;

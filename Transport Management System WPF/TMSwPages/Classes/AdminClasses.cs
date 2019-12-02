@@ -36,7 +36,10 @@ namespace TMSwPages
     {
         SQL_Query_TMS adminTMSConnection = null;
         string query = ""; 
-        
+       // public List<Carrier> carrierTable = new List<Carrier>();
+        public List<Route> routeTable = new List<Route>();
+        public List<Fee> feeTable = new List<Fee>();
+
         public void SetTMSConnection(SQL_Query_TMS validConnection)
         {
             adminTMSConnection = validConnection;
@@ -146,25 +149,16 @@ namespace TMSwPages
 
         public List<string>[] DisplayFees()
         {
-            int numColumns = 0;
-            List<string> columnNames = new List<string>();
-            List<string>[] columns = null;
-
+            List<string>[] columns = new List<string>[7];
+            for (int i = 0; i < 7; i++)
+            {
+                columns[i] = new List<string>();
+            }
+            
             try
             {
                 query = "SELECT * FROM CarrierDepot;";
-                columnNames.Clear();
-                columnNames.Add("Depot_CityID");
-                columnNames.Add("CarrierID");
-                columnNames.Add("FTL_Availibility"); // spelled wrong in database
-                columnNames.Add("LTL_Availibility"); // same thing
-                columnNames.Add("FTL_Rate");
-                columnNames.Add("LTL_Rate");
-                columnNames.Add("Reefer_Charge");
-                numColumns = columnNames.Count();                
-
-                columns = new List<string>[numColumns];
-
+                       
                 if (adminTMSConnection.OpenConnection() == true)
                 {
                     MySqlCommand command = new MySqlCommand(query, adminTMSConnection._connection);
@@ -172,19 +166,29 @@ namespace TMSwPages
 
                     while (dataReader.Read())
                     {
-                        int i = 0;
-
-                        foreach (string s in columnNames)
-                        {
-                            columns[i].Add(dataReader[s] + "");
-                            i++;
-                        }
+                        columns[0].Add(dataReader["CityName"] + "");
+                        columns[1].Add(dataReader["CarrierID"] + "");
+                        columns[2].Add(dataReader["FTL_Availibility"] + "");// spelled wrong in database
+                        columns[3].Add(dataReader["LTL_Availibility"] + "");
+                        columns[4].Add(dataReader["FTL_Rate"] + "");
+                        columns[5].Add(dataReader["LTL_Rate"] + "");
+                        columns[6].Add(dataReader["Reefer_Charge"] + "");
 
                     }
 
                     dataReader.Close();
 
                     adminTMSConnection.CloseConnection();
+
+                    feeTable.Clear(); 
+
+                    for (int x = 0; x < 7; x++ )
+                    {
+                        Fee temp = new Fee(columns[x]);
+                        feeTable.Add(temp);  
+                    }
+                    
+
                 }
 
                 return columns;
@@ -193,9 +197,10 @@ namespace TMSwPages
             {
                 return columns;
             }
+
+            
         }
-
-
+        
         public void SelectData() { }
         public void DeleteSelection() { }
         public void AddNew()
@@ -205,6 +210,48 @@ namespace TMSwPages
             // cell
         }
 
+    }
+
+   
+    public class Route
+    {
+
+    }
+    public class Fee
+    {
+        string CityName;
+        int CarrierID;
+        int FTL_Availibility;
+        int LTL_Availibility;
+        double FTL_Rate;
+        double LTL_Rate;
+        double Reefer_Charge;
+
+        public Fee(List<string> incomingList)
+        {
+            try
+            {
+                CityName = incomingList.ElementAt(0);
+                CarrierID = Int32.Parse(incomingList.ElementAt(1));
+                FTL_Availibility = Int32.Parse(incomingList.ElementAt(2));
+                LTL_Availibility = Int32.Parse(incomingList.ElementAt(3));
+                FTL_Rate = Double.Parse(incomingList.ElementAt(4));
+                LTL_Rate = Double.Parse(incomingList.ElementAt(5));
+                Reefer_Charge = Double.Parse(incomingList.ElementAt(6));
+            }
+            catch (Exception e)
+            {
+                CityName = null; 
+                CarrierID = -1;
+                FTL_Availibility = -1;
+                LTL_Availibility = -1;
+                FTL_Rate = -1;
+                LTL_Rate = -1;
+                Reefer_Charge = -1;
+            }
+                       
+        }
+        
     }
 
     // Backup Option 1: PHP

@@ -37,10 +37,10 @@
         </Menu>
 
         <!--These tabs allow different functions of the Admin to be accessed from one main page-->
-        <TabControl Grid.Row="1" Margin="5,5,5,5">
+        <TabControl Name="tabber" Grid.Row="1" Margin="5,5,5,5" SelectionChanged="TabControl_SelectionChanged">
 
             <!--This is the content of the Logs tab-->
-            <TabItem Name="Logs" Header="Logs">
+            <TabItem Name="Logs" Header="Logs" RenderTransformOrigin="0.5,0.509" HorizontalAlignment="Left" Width="41">
 
                 <!--Logs Tab-->
                 <TabItem.Content>
@@ -167,9 +167,9 @@
                             </Grid.RowDefinitions>
 
                             <!--Controls Row (0) -->
-                            <DatePicker Name="Carrier_DataStartDate" DockPanel.Dock="top" Grid.Row="0" Grid.Column="0" Margin="5,5,5,5"/>
+                            <!--<DatePicker Name="Carrier_DataStartDate" DockPanel.Dock="top" Grid.Row="0" Grid.Column="0" Margin="5,5,5,5"/>
                             <DatePicker Name="Carrier_DataEndDate" DockPanel.Dock="top" Grid.Row="0" Grid.Column="1" Margin="5,5,5,5"/>
-                            <TextBox  x:Name="Carrier_DataSearchTags" DockPanel.Dock="top" Grid.Row="0" Grid.Column="2" Margin="5,5,5,5" Grid.ColumnSpan="2"/>
+                            <TextBox  x:Name="Carrier_DataSearchTags" DockPanel.Dock="top" Grid.Row="0" Grid.Column="2" Margin="5,5,5,5" Grid.ColumnSpan="2"/>-->
                             <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Click="Carrier_DataLoadClick" Content="Load"/> 
                             
                             <!--Main Content Row (1) -->
@@ -181,9 +181,9 @@
                                 <DataGrid.Resources/>
                             </DataGrid>
 
-                            <!--Buttons Row (2) --><!--
+                            <!--Buttons Row (2)--> 
                             <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="ChangeLogLocation">Change Log Location...</Button>
-                            <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="4" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="LogViewMoreClick" >View More...</Button>-->
+                            <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="4" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="LogViewMoreClick" >View More...</Button>
 
                         </Grid>
 
@@ -194,10 +194,110 @@
             </TabItem>
 
             <!--This is the content of the Route_Table tab-->
-            <TabItem Name="Route_Table" Header="Route Table"></TabItem>
+            <TabItem Name="Route_Table" Header="Route Table" >
+                <TabItem.Content>
+
+                    <DockPanel>
+
+                        <!--This is only visible within the logs tab-->
+                        <Grid Name="Route_TableInnerGrid">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition x:Name="Route_TableControls" Height="auto"/>
+                                <RowDefinition x:Name="Route_TableMain" Height="*"/>
+                                <RowDefinition x:Name="Route_TableButtons" Height="auto"/>
+                            </Grid.RowDefinitions>
+
+                            <!--Controls Row (0) -->
+                            <!--<DatePicker Name="Carrier_DataStartDate" DockPanel.Dock="top" Grid.Row="0" Grid.Column="0" Margin="5,5,5,5"/>
+                            <DatePicker Name="Carrier_DataEndDate" DockPanel.Dock="top" Grid.Row="0" Grid.Column="1" Margin="5,5,5,5"/>
+                            <TextBox  x:Name="Carrier_DataSearchTags" DockPanel.Dock="top" Grid.Row="0" Grid.Column="2" Margin="5,5,5,5" Grid.ColumnSpan="2"/>-->
+                            <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Click="Route_TableLoadClick" Content="Load"/>
+
+                            <!--Main Content Row (1) -->
+                            <DataGrid Grid.ColumnSpan="5" Grid.Row="1" Name="Route_TableList" ItemsSource="{Binding}" Margin="5,5,5,5" SelectionMode="Single" AutoGenerateColumns="False" CanUserAddRows="true" IsReadOnly="false">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="RouteDataID" Binding="{Binding RouteDataID}"/>
+                                    <DataGridTextColumn Header="CityA" Binding="{Binding CityA}" />
+                                    <DataGridTextColumn Header="CityB" Binding="{Binding CityB}" />
+                                    <DataGridTextColumn Header="PickUpTime" Binding="{Binding PickUpTime}" />
+                                    <DataGridTextColumn Header="DropOffTime" Binding="{Binding DropOffTime}" />
+                                    <DataGridTextColumn Header="LtlTime" Binding="{Binding LtlTime}" />
+                                    <DataGridTextColumn Header="DrivenTime" Binding="{Binding DrivenTime}" />
+                                </DataGrid.Columns>
+                                <DataGrid.Resources/>
+                            </DataGrid>
+
+                            <!--Buttons Row (2)-->
+                            <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="ChangeLogLocation">Change Log Location...</Button>
+                            <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="4" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="LogViewMoreClick" >View More...</Button>
+
+                        </Grid>
+
+                    </DockPanel>
+
+                </TabItem.Content>
+            </TabItem>
 
             <!--This is the content of the Rate_Fee_Tables tab-->
-            <TabItem Name="Rate_Fee_Tables" Header="Rate / Fee Tables"></TabItem>
+            <TabItem Name="Rate_Fee_Tables" Header="Rate / Fee Tables">
+                <TabItem.Content>
+
+                    <DockPanel>
+
+                        <!--This is only visible within the logs tab-->
+                        <Grid Name="Rate_Fee_TablesInnerGrid">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition x:Name="Rate_Fee_TablesControls" Height="auto"/>
+                                <RowDefinition x:Name="Rate_Fee_TablesMain" Height="*"/>
+                                <RowDefinition x:Name="Rate_Fee_TablesButtons" Height="auto"/>
+                            </Grid.RowDefinitions>
+
+                            <!--Controls Row (0) -->
+                            <!--<DatePicker Name="Carrier_DataStartDate" DockPanel.Dock="top" Grid.Row="0" Grid.Column="0" Margin="5,5,5,5"/>
+                            <DatePicker Name="Carrier_DataEndDate" DockPanel.Dock="top" Grid.Row="0" Grid.Column="1" Margin="5,5,5,5"/>
+                            <TextBox  x:Name="Carrier_DataSearchTags" DockPanel.Dock="top" Grid.Row="0" Grid.Column="2" Margin="5,5,5,5" Grid.ColumnSpan="2"/>-->
+                            <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Click="Rate_Fee_TablesClick" Content="Load"/>
+
+                            <!--Main Content Row (1) -->
+                            <DataGrid Grid.ColumnSpan="5" Grid.Row="1" Name="Rate_Fee_TablesList" ItemsSource="{Binding}" Margin="5,5,5,5" SelectionMode="Single" AutoGenerateColumns="False" CanUserAddRows="true" IsReadOnly="false">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="CityName" Binding="{Binding CityName}"/>
+                                    <DataGridTextColumn Header="CarrierID" Binding="{Binding CarrierID}" />
+                                    <DataGridTextColumn Header="FTL_Availibility" Binding="{Binding FTL_Availibility}" />
+                                    <DataGridTextColumn Header="LTL_Availibility" Binding="{Binding LTL_Availibility}" />
+                                    <DataGridTextColumn Header="FTL_Rate" Binding="{Binding FTL_Rate}" />
+                                    <DataGridTextColumn Header="LTL_Rate" Binding="{Binding LTL_Rate}" />
+                                    <DataGridTextColumn Header="Reefer_Charge" Binding="{Binding Reefer_Charge}" />
+                                </DataGrid.Columns>
+                                <DataGrid.Resources/>
+                            </DataGrid>
+                            
+                            <!--Buttons Row (2)-->
+                            <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="ChangeLogLocation">Change Log Location...</Button>
+                            <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="4" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="LogViewMoreClick" >View More...</Button>
+
+                        </Grid>
+
+                    </DockPanel>
+
+                </TabItem.Content>                
+            </TabItem>
 
         </TabControl >
 
