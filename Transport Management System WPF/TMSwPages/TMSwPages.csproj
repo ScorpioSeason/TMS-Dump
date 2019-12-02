@@ -103,15 +103,11 @@
     <Compile Include="mainwindow.xaml.cs">
       <DependentUpon>mainwindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Classes\MappingClass.cs" />
-    <Compile Include="Classes\mysqlConnector.cs" />
     <Compile Include="Classes\PlannerClass.cs" />
     <Compile Include="PlannerPage.xaml.cs">
       <DependentUpon>PlannerPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Classes\SQL_Query.cs" />
     <Compile Include="Classes\SQL_Query_TMS.cs" />
-    <Compile Include="Classes\TimePass.cs" />
     <Compile Include="ViewLogDetails.xaml.cs">
       <DependentUpon>ViewLogDetails.xaml</DependentUpon>
     </Compile>

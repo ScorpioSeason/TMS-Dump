@@ -29,36 +29,31 @@
                 <MenuItem Header="Switch User" Click="SwitchUserClick" />
             </MenuItem>
 
-            <!-- Time Menu: About -->
-            <MenuItem Header="Time">
-                <MenuItem Header="Increment Time" />
-            </MenuItem>
-
             <!-- Help Menu: About -->
             <MenuItem Header="Help">
                 <MenuItem Header="About Planner" />
                 <MenuItem Header="About TMS" />
             </MenuItem>
 
-            <!--Don't know what these are for but I included them?-->
-            <MenuItem Header="Red" Name="Red"/>
-            <MenuItem Header="Blue" Name="Blue" />
-            <MenuItem Header="Orange" Name="Orange" />
+            <!-- Time Menu: Increment Time -->
+            <MenuItem Header="Time">
+                <MenuItem Header="Increment Time" />
+            </MenuItem>
 
         </Menu>
 
         <!--These tabs allow different functions of the Planner to be accessed from one main page-->
-        <TabControl Grid.Row="1" Margin="5,5,5,5">
+        <TabControl Name="PlannerTabs" Grid.Row="1" Margin="5,5,5,5">
 
             <!--This is the content of the Available Contracts tab-->
-            <TabItem Name="PendingCarriers" Header="Pending Carriers / Available Contracts?">
+            <TabItem Name="PendingCarriers" Header="Contracts Pending Carriers">
 
                 <!--PendingCarriers Tab-->
                 <TabItem.Content>
 
                     <DockPanel>
 
-                        <!--This is only visible within the logs tab-->
+                        <!--This is only visible within the CPC tab-->
                         <Grid Name="InnerGrid">
 
                             <Grid.ColumnDefinitions>
@@ -74,12 +69,12 @@
                                 <RowDefinition x:Name="Buttons" Height="auto"></RowDefinition>
                             </Grid.RowDefinitions>
 
-                            <!--Controls Row (0) -->
-                            <!--<Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Content="Load/Refresh" Click="Button_Click"></Button>
-                            <Button  DockPanel.Dock="top" Grid.Row="0" Grid.Column="0" Margin="5,5,5,5" Content="Increment Time (1 Day)"/>-->
+                            <!--Controls Row (0)--> 
+                            <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Content="Load Contracts" Click="Button_Click"></Button>
+                            <!--<Button  DockPanel.Dock="top" Grid.Row="0" Grid.Column="0" Margin="5,5,5,5" Content="Increment Time (1 Day)"/>-->
 
                             <!--Main Content Row (1) -->
-                            <DataGrid Grid.ColumnSpan="5" Grid.Row="1" Name="DG3" ItemsSource="{Binding}"  Margin="5,5,5,5" AutoGenerateColumns="False">
+                            <DataGrid Grid.ColumnSpan="5" Grid.Row="1" Name="NomContractList" ItemsSource="{Binding}"  Margin="5,5,5,5" AutoGenerateColumns="true" CanUserAddRows="False" >
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="First Name"  Binding="{Binding FirstName}"/>
                                     <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}" />
@@ -88,8 +83,8 @@
                             </DataGrid>
 
                             <!--Buttons Row (2) -->
-                            <!--<Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="LogSettingsClick">Log Settings</Button>
-                            <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="4" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="ViewMoreClick" >View More...</Button>-->
+                            <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="LogSettingsClick">Log Settings</Button>
+                            <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="4" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="ViewMoreClick" >View More...</Button>
 
                         </Grid>
 
@@ -100,7 +95,7 @@
             </TabItem>
 
             <!--This is the content of the Pending Carriers tab-->
-            <TabItem Name="ActiveOrders" Header="Active Orders / Active Tickets?">
+            <TabItem Name="ActiveOrders" Header="Active Orders">
 
             <!--ActiveOrders Tab-->
                 <TabItem.Content>
