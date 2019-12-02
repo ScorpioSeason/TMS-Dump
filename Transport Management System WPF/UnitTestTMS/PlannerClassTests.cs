@@ -34,6 +34,15 @@ namespace UnitTestTMS
             LoadCMPintoDatabase.Load();
         }
 
+        [TestMethod]
+        public void testHighestnumber()
+        {
+            PlannerSQL psql = new PlannerSQL();
+            psql.Open();
+            psql.GetHighestCustomerOrderID();
+            psql.Close();
+        }
+
 
         //Test city 7 - 0, FTL
         [TestMethod]

@@ -28,40 +28,49 @@ namespace Transport_Management_System_WPF
         public string Customer_Name; ///The Customer Name
     }
 
-    public struct Trip_Ticket
-    {
-        public int TicketID; ///The ticket ID Number
-        public Truck TruckID; ///The Truck that the ticket will attached to
-        public bool FTL_or_LTL; ///If the ticket is FTL or LTL
-        public bool Is_Reefer; ///If the ticket is reefer
-        public int Size_In_Palette; ///Size of the ticket
-        public bool Is_Complete; ///If the ticket is marked as complete
-        public int Days_Passed; ///The days passed for this ticket.
-    }
-
-
-    public struct Trip_Ticket_Line
-    {
-        public Trip_Ticket Ticket; ///The ticket for this order
-        public RouteData Route;
-        public DateTime Date_Added;
-    }
-
-    public struct Location
-    {
-        public string CityName;
-    }
-
-    public struct Truck
+    public class Truck
     {
         public int TruckID;
-        public int CurrentCityID;
-        //public Carrier carrier;
-        public bool Is_Reefer;
-        public int Free_Space;
-        public bool Waiting_or_Transit;
-        public bool FTL_or_LTL;
-    };
+        public string Current_Location;
+        public int CarrierID;
+        public int Is_Reefer;
+    }
+
+
+    //public struct Trip_Ticket
+    //{
+    //    public int TicketID; ///The ticket ID Number
+    //    public Truck TruckID; ///The Truck that the ticket will attached to
+    //    public bool FTL_or_LTL; ///If the ticket is FTL or LTL
+    //    public bool Is_Reefer; ///If the ticket is reefer
+    //    public int Size_In_Palette; ///Size of the ticket
+    //    public bool Is_Complete; ///If the ticket is marked as complete
+    //    public int Days_Passed; ///The days passed for this ticket.
+    //}
+
+
+    //public struct Trip_Ticket_Line
+    //{
+    //    public Trip_Ticket Ticket; ///The ticket for this order
+    //    public RouteData Route;
+    //    public DateTime Date_Added;
+    //}
+
+    //public struct Location
+    //{
+    //    public string CityName;
+    //}
+
+    //public struct Truck
+    //{
+    //    public int TruckID;
+    //    public int CurrentCityID;
+    //    //public Carrier carrier;
+    //    public bool Is_Reefer;
+    //    public int Free_Space;
+    //    public bool Waiting_or_Transit;
+    //    public bool FTL_or_LTL;
+    //};
 
     // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
     /**   
