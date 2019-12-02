@@ -21,6 +21,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Documents;
 using MySql.Data.MySqlClient;
+using TMSwPages.Classes;
 
 namespace TMSwPages
 {
@@ -37,8 +38,8 @@ namespace TMSwPages
         SQL_Query_TMS adminTMSConnection = null;
         string query = ""; 
        // public List<Carrier> carrierTable = new List<Carrier>();
-        public List<Route> routeTable = new List<Route>();
-        public List<Fee> feeTable = new List<Fee>();
+        //public List<Route> routeTable = new List<Route>();
+        //public List<Fee> feeTable = new List<Fee>();
 
         public void SetTMSConnection(SQL_Query_TMS validConnection)
         {
@@ -147,9 +148,11 @@ namespace TMSwPages
             }
         }
 
-        public List<string>[] DisplayFees()
+        public List<CarrierDepot> DisplayFees()
         {
             List<string>[] columns = new List<string>[7];
+            List<CarrierDepot> ReadInData = new List<CarrierDepot>();
+
             for (int i = 0; i < 7; i++)
             {
                 columns[i] = new List<string>();
@@ -177,25 +180,32 @@ namespace TMSwPages
                     }
 
                     dataReader.Close();
+                    
+                    for (int i = 0; i < columns[0].Count(); i++)
+                    {
+                        CarrierDepot current = new CarrierDepot();
+
+                        current.CityName = columns[0][i];
+                        current.CarrierID = Int32.Parse(columns[1][i]);
+                        current.FTL_Availibility = Int32.Parse(columns[2][i]);
+                        current.LTL_Availibility = Int32.Parse(columns[3][i]);
+                        current.FTL_Rate = Double.Parse(columns[4][i]);
+                        current.LTL_Rate = Double.Parse(columns[5][i]);
+                        current.Reefer_Charge = Double.Parse(columns[6][i]);
+
+                        ReadInData.Add(current); 
+                    }
 
                     adminTMSConnection.CloseConnection();
 
-                    feeTable.Clear(); 
-
-                    for (int x = 0; x < 7; x++ )
-                    {
-                        Fee temp = new Fee(columns[x]);
-                        feeTable.Add(temp);  
-                    }
                     
-
                 }
 
-                return columns;
+                return ReadInData;
             }
             catch (Exception e)
             {
-                return columns;
+                return ReadInData;
             }
 
             
@@ -212,47 +222,7 @@ namespace TMSwPages
 
     }
 
-   
-    public class Route
-    {
 
-    }
-    public class Fee
-    {
-        string CityName;
-        int CarrierID;
-        int FTL_Availibility;
-        int LTL_Availibility;
-        double FTL_Rate;
-        double LTL_Rate;
-        double Reefer_Charge;
-
-        public Fee(List<string> incomingList)
-        {
-            try
-            {
-                CityName = incomingList.ElementAt(0);
-                CarrierID = Int32.Parse(incomingList.ElementAt(1));
-                FTL_Availibility = Int32.Parse(incomingList.ElementAt(2));
-                LTL_Availibility = Int32.Parse(incomingList.ElementAt(3));
-                FTL_Rate = Double.Parse(incomingList.ElementAt(4));
-                LTL_Rate = Double.Parse(incomingList.ElementAt(5));
-                Reefer_Charge = Double.Parse(incomingList.ElementAt(6));
-            }
-            catch (Exception e)
-            {
-                CityName = null; 
-                CarrierID = -1;
-                FTL_Availibility = -1;
-                LTL_Availibility = -1;
-                FTL_Rate = -1;
-                LTL_Rate = -1;
-                Reefer_Charge = -1;
-            }
-                       
-        }
-        
-    }
 
     // Backup Option 1: PHP
     /*" <?php

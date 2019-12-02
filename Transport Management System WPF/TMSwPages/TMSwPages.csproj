@@ -96,6 +96,7 @@
     </Compile>
     <Compile Include="Classes\Carrier.cs" />
     <Compile Include="Classes\Contract.cs" />
+    <Compile Include="Classes\SQLTableClasses.cs" />
     <Compile Include="LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
