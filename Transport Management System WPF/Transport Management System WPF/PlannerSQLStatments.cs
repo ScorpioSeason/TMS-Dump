@@ -27,6 +27,83 @@ namespace Transport_Management_System_WPF
             connection = new MySqlConnection(connectionString);
         }
 
+        public bool InsertIntoTruck(List<Truck> inList)
+        {
+            bool worked = true;
+
+            try
+            {
+                foreach (Truck x in inList)
+                {
+                    string query = "insert into Truck(TruckID, Current_Location, CarrierID, Is_Reefer) value(" +
+                         x.TruckID.ToString() + "," +
+                         "\"" + x.Current_Location + "\"," +
+                         x.CarrierID.ToString() + "," +
+                         x.Is_Reefer.ToString() + ");";
+
+                    //create command and assign the query and connection from the constructor
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                    //Execute command
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception e)
+            {
+                worked = false;
+            }
+
+            return worked;
+        }
+
+        public List<Truck> ReadFromTrucks()
+        {
+            string query = "select * from trucks;";
+
+            //Create a list to store the result
+            List<string>[] list = new List<string>[7];
+            list[0] = new List<string>();
+            list[1] = new List<string>();
+            list[2] = new List<string>();
+            list[3] = new List<string>();
+
+
+            //Create Command
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            //Create a data reader and Execute the command
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+
+            //Read the data and store them in the list
+            while (dataReader.Read())
+            {
+                list[0].Add(dataReader["TruckID"] + "");
+                list[1].Add(dataReader["Current_Location"] + "");
+                list[2].Add(dataReader["CarrierID"] + "");
+                list[3].Add(dataReader["Is_Reefer"] + "");
+            }
+
+            //close Data Reader
+            dataReader.Close();
+
+            List<Truck> output = new List<Truck>(); 
+
+            for (int i = 0; i < list[0].Count; i++)
+            {
+                Truck current = new Truck();
+
+                current.TruckID = int.Parse(list[0][i]);
+                current.Current_Location = list[1][i];
+                current.CarrierID = int.Parse(list[2][i]);
+                current.Is_Reefer = int.Parse(list[3][i]);
+
+                output.Add(current);
+            }
+
+            return output;
+        }
+
+
+
         public bool LoadTheCSV()
         {
             LoadCSV.Load(connection);
@@ -71,12 +148,10 @@ namespace Transport_Management_System_WPF
 
             try
             {
-                int contractID = 0;
-
                 foreach (Contract x in contracts)
                 {
                     string query = "insert into CustomerOrder (Customer_OrderID, Client_Name, Job_type, Quantity, Origin, Destination, Van_Type) values(" +
-                         contractID + "," +
+                         x.ContractID.ToString() + "," +
                          "\"" + x.client_Name + "\"," +
                          x.job_Type.ToString() + "," +
                          x.quantity.ToString() + "," +
@@ -89,10 +164,7 @@ namespace Transport_Management_System_WPF
 
                     //Execute command
                     cmd.ExecuteNonQuery();
-
-                    contractID++;
                 }
-
             }
             catch (Exception e)
             {
@@ -106,7 +178,7 @@ namespace Transport_Management_System_WPF
         {
             List<Contract> contracts = new List<Contract>();
 
-            PlannerSQL plannerSQL = new PlannerSQL();
+            //PlannerSQL plannerSQL = new PlannerSQL();
           
             contracts = PullDownAllCustomerOrders();
 
