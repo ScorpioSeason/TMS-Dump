@@ -150,8 +150,7 @@ namespace Transport_Management_System_WPF
             {
                 foreach (Contract x in contracts)
                 {
-                    string query = "insert into CustomerOrder (Customer_OrderID, Client_Name, Job_type, Quantity, Origin, Destination, Van_Type) values(" +
-                         x.ContractID.ToString() + "," +
+                    string query = "insert into CustomerOrder (Client_Name, Job_type, Quantity, Origin, Destination, Van_Type) values(" +
                          "\"" + x.client_Name + "\"," +
                          x.job_Type.ToString() + "," +
                          x.quantity.ToString() + "," +
@@ -525,7 +524,7 @@ namespace Transport_Management_System_WPF
                 //Read the data and store them in the list
                 while (dataReader.Read())
                 {
-                    list[0].Add(dataReader["New_ContractID"] + "");
+                    list[0].Add(dataReader["NewContractID"] + "");
                     list[1].Add(dataReader["CarrierID"] + "");
                 }
 
