@@ -37,9 +37,14 @@ namespace UnitTestTMS
         [TestMethod]
         public void testHighestnumber()
         {
+
+
+
+
             PlannerSQL psql = new PlannerSQL();
             psql.Open();
-            psql.GetHighestCustomerOrderID();
+            psql.LoadTheCSV();
+
             psql.Close();
         }
 

@@ -82,7 +82,7 @@ namespace Transport_Management_System_WPF
                     MySqlCommand cmd = new MySqlCommand(query, connection);
 
                     //Execute command
-                    cmd.ExecuteNonQuery();
+                    var r = cmd.ExecuteNonQuery();
 
                     foreach (CarrierDepot y in x.CityList)
                     {

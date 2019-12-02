@@ -163,7 +163,7 @@ namespace Transport_Management_System_WPF
                     MySqlCommand cmd = new MySqlCommand(query, connection);
 
                     //Execute command
-                    cmd.ExecuteNonQuery();
+                    var r = cmd.ExecuteNonQuery();
                 }
             }
             catch (Exception e)
