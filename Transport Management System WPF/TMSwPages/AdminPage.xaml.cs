@@ -325,8 +325,7 @@ namespace TMSwPages
                                 break;
                             case (4):
                                 //Rate_Fee_Tables.DataContext = admin.DisplayFees();
-                                admin.DisplayFees(); 
-                                Rate_Fee_TablesList.ItemsSource = admin.feeTable;
+                                Rate_Fee_TablesList.ItemsSource = admin.DisplayFees();
                                 Rate_Fee_TablesClick(null, null);
                                 break;
                             default:
