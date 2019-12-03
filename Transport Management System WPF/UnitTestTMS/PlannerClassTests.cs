@@ -24,171 +24,194 @@ namespace UnitTestTMS
     *   \details	See the test plan document attached to this milestone.
     *   
     * -------------------------------------------------------------------------------------------------------- */
+    
     [TestClass]
     public class PlannerClassTests
     {
-        //Test city 7 - 0, FTL
         [TestMethod]
-        public void testReadInCMP()
+        public void testNomCarriers()
         {
-            LoadCMPintoDatabase.Load();
-        }
+            //LoadCMPintoDatabase.Load();
 
-        [TestMethod]
-        public void testHighestnumber()
-        {
+            // load the csv into the database
+            PlannerSQL sql = new PlannerSQL();
+            sql.Open();
+            //sql.LoadTheCSV();
+
+            //add some data in work bench to simulate buyer
+
+            List<Noninated_Contract> noninated_Contracts = new List<Noninated_Contract>();
+            noninated_Contracts = sql.LoadNominatedContracts();
+
+            List<CompleteNomination> completeNominations = new List<CompleteNomination>();
+
+            completeNominations = sql.AddCarriersToNominatedContracts(noninated_Contracts);
 
 
-
-
-            PlannerSQL psql = new PlannerSQL();
-            psql.Open();
-            psql.LoadTheCSV();
-
-            psql.Close();
-        }
-
-
-        //Test city 7 - 0, FTL
-        [TestMethod]
-        public void GetTravelData1()
-        {
-
-            //ARRANGE
-            MappingClass graphClass = new MappingClass();
-            List<RouteData> ReturnList = new List<RouteData>();
-
-            ReturnList = graphClass.GetTravelData(7, 0, true);
-
-            RouteSumData totalTrip = graphClass.SummerizeTrip(ReturnList);
-
-            //ASSERT
-            Assert.AreEqual(totalTrip.DestinationCity, 0);
-            Assert.AreEqual(totalTrip.OriginCity, 7);
-            Assert.AreEqual((int)(totalTrip.totalDriveTime * 100), 1214);
-            Assert.AreEqual((int)(totalTrip.totalTripTime * 100), 2815);
-            Assert.AreEqual(totalTrip.totalKM, 859);
-        }
-
-        //Test city 7 - 0, LTL
-        [TestMethod]
-        public void GetTravelData2()
-        {
-
-            //ARRANGE
-            MappingClass graphClass = new MappingClass();
-            List<RouteData> ReturnList = new List<RouteData>();
-
-            ReturnList = graphClass.GetTravelData(7, 0, false);
-
-            RouteSumData totalTrip = graphClass.SummerizeTrip(ReturnList);
-
-            //ASSERT
-            Assert.AreEqual(totalTrip.DestinationCity, 0);
-            Assert.AreEqual(totalTrip.OriginCity, 7);
-            Assert.AreEqual((int)(totalTrip.totalDriveTime * 100), 1214);
-            Assert.AreEqual((int)(totalTrip.totalTripTime * 100), 1614);
-            Assert.AreEqual(totalTrip.totalKM, 859);
-        }
-
-        //Test city 7 - 0, LTL
-        [TestMethod]
-        public void GetTravelData3()
-        {
-
-            //ARRANGE
-            MappingClass graphClass = new MappingClass();
-            List<RouteData> ReturnList = new List<RouteData>();
-
-            ReturnList = graphClass.GetTravelData(8, -1, false);
-
-            RouteSumData totalTrip = graphClass.SummerizeTrip(ReturnList);
-
-            //ASSERT
-            Assert.AreEqual(totalTrip.DestinationCity, -1);
+            sql.Close();
         }
 
 
 
-        //Test city 7 - 0, LTL
-        [TestMethod]
-        public void routCalc3()
-        {
-            //ARRANGE
-            MappingClass graphClass = new MappingClass();
-            List<RouteData> ReturnList = new List<RouteData>();
+        ////Test city 7 - 0, FTL
+        //[TestMethod]
+        //public void testReadInCMP()
+        //{
+        //    LoadCMPintoDatabase.Load();
+        //}
 
-            ReturnList = graphClass.GetTravelData(3, 4, true); 
+        //[TestMethod]
+        //public void testHighestnumber()
+        //{
 
-            RouteSumData totalTrip = graphClass.SummerizeTrip(ReturnList);
+        //    PlannerSQL psql = new PlannerSQL();
+        //    psql.Open();
+        //    psql.LoadTheCSV();
 
-            //ASSERT
-            Assert.AreEqual(totalTrip.OriginCity, 3);
-            Assert.AreEqual(totalTrip.DestinationCity, 4);
-            Assert.AreEqual((int)(totalTrip.totalDriveTime * 100), 130);
-            Assert.AreEqual((int)(totalTrip.totalTripTime * 100), 530);
-            Assert.AreEqual(totalTrip.totalKM, 60);
-        }
-
-        struct TestingContract
-        {
-            public string client_Name { get; set; }
-            public bool job_Type { get; set; }
-            public string quantity { get; set; }
-            public int origin { get; set; }
-            public int destination { get; set; }
-            public string van_Type { get; set; }
-        };
+        //    psql.Close();
+        //}
 
 
-        [TestMethod]
-        public void routCalc4()
-        {
+        ////Test city 7 - 0, FTL
+        //[TestMethod]
+        //public void GetTravelData1()
+        //{
 
-            ////ARRANGE
-            //MappingClass graphClass = new MappingClass();
-            //List<RouteData> ReturnList = new List<RouteData>();
+        //    //ARRANGE
+        //    MappingClass graphClass = new MappingClass();
+        //    List<RouteData> ReturnList = new List<RouteData>();
 
-            //Contract contract = new Contract
-            //{
-            //    client_Name = "Wally World",
-            //    origin = "Windsor",
-            //    destination = "Hamilton",
-            //    //job_Type = true
-            //};
+        //    ReturnList = graphClass.GetTravelData(7, 0, true);
 
-            //ReturnList = graphClass.GetTravelData(Contract.ToCityID(contract.origin), Contract.ToCityID(contract.destination), contract.job_Type);
+        //    RouteSumData totalTrip = graphClass.SummerizeTrip(ReturnList);
 
-            //Truck truck = new Truck
-            //{
-            //    TruckID = ReturnList[0].CityA,
-            //    CurrentCityID = 0,
-            //    Is_Reefer = false
-            //};
+        //    //ASSERT
+        //    Assert.AreEqual(totalTrip.DestinationCity, 0);
+        //    Assert.AreEqual(totalTrip.OriginCity, 7);
+        //    Assert.AreEqual((int)(totalTrip.totalDriveTime * 100), 1214);
+        //    Assert.AreEqual((int)(totalTrip.totalTripTime * 100), 2815);
+        //    Assert.AreEqual(totalTrip.totalKM, 859);
+        //}
 
-            //Trip_Ticket trip_Ticket = new Trip_Ticket
-            //{
-            //    TicketID = 32,
-            //    Days_Passed = 0,
-            //    FTL_or_LTL = true,
-            //    Is_Reefer = false,
-            //    Size_In_Palette = 3,
-            //    TruckID = truck
-            //};
+        ////Test city 7 - 0, LTL
+        //[TestMethod]
+        //public void GetTravelData2()
+        //{
 
-            //List<Trip_Ticket_Line> trip_Ticket_Lines = new List<Trip_Ticket_Line>();
+        //    //ARRANGE
+        //    MappingClass graphClass = new MappingClass();
+        //    List<RouteData> ReturnList = new List<RouteData>();
 
-            //foreach(RouteData x in ReturnList)
-            //{
-            //    Trip_Ticket_Line TTL1 = new Trip_Ticket_Line
-            //    {
-            //        Ticket = trip_Ticket,
-            //        Route = x
-            //    };
-            //}
+        //    ReturnList = graphClass.GetTravelData(7, 0, false);
 
-            ////TimePass.IncrementDay(ReturnList, truck, trip_Ticket);
+        //    RouteSumData totalTrip = graphClass.SummerizeTrip(ReturnList);
 
-        }
+        //    //ASSERT
+        //    Assert.AreEqual(totalTrip.DestinationCity, 0);
+        //    Assert.AreEqual(totalTrip.OriginCity, 7);
+        //    Assert.AreEqual((int)(totalTrip.totalDriveTime * 100), 1214);
+        //    Assert.AreEqual((int)(totalTrip.totalTripTime * 100), 1614);
+        //    Assert.AreEqual(totalTrip.totalKM, 859);
+        //}
+
+        ////Test city 7 - 0, LTL
+        //[TestMethod]
+        //public void GetTravelData3()
+        //{
+
+        //    //ARRANGE
+        //    MappingClass graphClass = new MappingClass();
+        //    List<RouteData> ReturnList = new List<RouteData>();
+
+        //    ReturnList = graphClass.GetTravelData(8, -1, false);
+
+        //    RouteSumData totalTrip = graphClass.SummerizeTrip(ReturnList);
+
+        //    //ASSERT
+        //    Assert.AreEqual(totalTrip.DestinationCity, -1);
+        //}
+
+
+
+        ////Test city 7 - 0, LTL
+        //[TestMethod]
+        //public void routCalc3()
+        //{
+        //    //ARRANGE
+        //    MappingClass graphClass = new MappingClass();
+        //    List<RouteData> ReturnList = new List<RouteData>();
+
+        //    ReturnList = graphClass.GetTravelData(3, 4, true); 
+
+        //    RouteSumData totalTrip = graphClass.SummerizeTrip(ReturnList);
+
+        //    //ASSERT
+        //    Assert.AreEqual(totalTrip.OriginCity, 3);
+        //    Assert.AreEqual(totalTrip.DestinationCity, 4);
+        //    Assert.AreEqual((int)(totalTrip.totalDriveTime * 100), 130);
+        //    Assert.AreEqual((int)(totalTrip.totalTripTime * 100), 530);
+        //    Assert.AreEqual(totalTrip.totalKM, 60);
+        //}
+
+        //struct TestingContract
+        //{
+        //    public string client_Name { get; set; }
+        //    public bool job_Type { get; set; }
+        //    public string quantity { get; set; }
+        //    public int origin { get; set; }
+        //    public int destination { get; set; }
+        //    public string van_Type { get; set; }
+        //};
+
+
+        //[TestMethod]
+        //public void routCalc4()
+        //{
+
+        //    ////ARRANGE
+        //    //MappingClass graphClass = new MappingClass();
+        //    //List<RouteData> ReturnList = new List<RouteData>();
+
+        //    //Contract contract = new Contract
+        //    //{
+        //    //    client_Name = "Wally World",
+        //    //    origin = "Windsor",
+        //    //    destination = "Hamilton",
+        //    //    //job_Type = true
+        //    //};
+
+        //    //ReturnList = graphClass.GetTravelData(Contract.ToCityID(contract.origin), Contract.ToCityID(contract.destination), contract.job_Type);
+
+        //    //Truck truck = new Truck
+        //    //{
+        //    //    TruckID = ReturnList[0].CityA,
+        //    //    CurrentCityID = 0,
+        //    //    Is_Reefer = false
+        //    //};
+
+        //    //Trip_Ticket trip_Ticket = new Trip_Ticket
+        //    //{
+        //    //    TicketID = 32,
+        //    //    Days_Passed = 0,
+        //    //    FTL_or_LTL = true,
+        //    //    Is_Reefer = false,
+        //    //    Size_In_Palette = 3,
+        //    //    TruckID = truck
+        //    //};
+
+        //    //List<Trip_Ticket_Line> trip_Ticket_Lines = new List<Trip_Ticket_Line>();
+
+        //    //foreach(RouteData x in ReturnList)
+        //    //{
+        //    //    Trip_Ticket_Line TTL1 = new Trip_Ticket_Line
+        //    //    {
+        //    //        Ticket = trip_Ticket,
+        //    //        Route = x
+        //    //    };
+        //    //}
+
+        //    ////TimePass.IncrementDay(ReturnList, truck, trip_Ticket);
+
+        //}
     }
 }

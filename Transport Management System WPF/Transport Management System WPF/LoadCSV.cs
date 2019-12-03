@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Transport_Management_System_WPF
 {
-    class LoadCSV
+    public class LoadCSV
     {
 
         public static MySqlConnection connection;
@@ -154,5 +154,43 @@ namespace Transport_Management_System_WPF
             return -1;
         }
 
+        public static string ToCityName(int inputCity)
+        {
+
+            if (inputCity == 0)
+            {
+                return "WINDSOR";
+            }
+            else if (inputCity == 1)
+            {
+                return "LONDON";
+            }
+            else if (inputCity == 2)
+            {
+                return "HAMILTON";
+            }
+            else if (inputCity == 3)
+            {
+                return "TORONTO";
+            }
+            else if (inputCity == 4)
+            {
+                return "OSHAWA";
+            }
+            else if (inputCity == 5)
+            {
+                return "BELLEVILLE";
+            }
+            else if (inputCity == 6)
+            {
+                return "KINGSTON";
+            }
+            else if (inputCity == 7)
+            {
+                return "OTTAWA";
+            }
+
+            return "-1";
+        }
     }
 }

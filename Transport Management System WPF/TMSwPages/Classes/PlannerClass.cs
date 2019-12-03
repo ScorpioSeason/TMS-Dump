@@ -31,12 +31,12 @@ namespace TMSwPages
     public struct Trip_Ticket
     {
         public int TicketID; ///The ticket ID Number
-        public Truck TruckID; ///The Truck that the ticket will attached to
+        public int TruckID; ///The Truck that the ticket will attached to
         public bool FTL_or_LTL; ///If the ticket is FTL or LTL
         public bool Is_Reefer; ///If the ticket is reefer
         public int Size_In_Palette; ///Size of the ticket
-        public bool Is_Complete; ///If the ticket is marked as complete
         public int Days_Passed; ///The days passed for this ticket.
+        public int Is_Complete; ///If the ticket is marked as complete
     }
 
 

@@ -129,5 +129,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TMSwPages\TMSwPages.csproj">
+      <Project>{DAA75FFB-9FD1-4B59-A352-472371B78017}</Project>
+      <Name>TMSwPages</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

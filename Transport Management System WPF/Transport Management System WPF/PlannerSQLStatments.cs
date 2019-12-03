@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using TMSwPages;
 
 namespace Transport_Management_System_WPF
 {
@@ -25,6 +23,101 @@ namespace Transport_Management_System_WPF
             connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
 
             connection = new MySqlConnection(connectionString);
+        }
+
+        public List<RouteData> PullRouteDataByTicket(int inTicketID)
+        {
+            string query = "select RouteDataID, CityA, CityB, PickUpTime, DropOffTime, LtlTime, DrivenTime, KM from RouteData as RD" +
+                            "left join TicketRouteLine as TRL on TRL.RouteID = RD.RouteDataID" + 
+                            "left join TripTicket as TT on TT.TicketID = TRL.TicketID" +
+                            "where TT.TicketID = " + inTicketID + ";";
+
+            //Create a list to store the result
+            List<string>[] list = new List<string>[8];
+
+            for(int i = 0; i < list.Length; i++)
+            {
+                list[i] = new List<string>();
+            }
+         
+
+
+            //Create Command
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            //Create a data reader and Execute the command
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+
+            //Read the data and store them in the list
+            while (dataReader.Read())
+            {
+                list[0].Add(dataReader["RouteDataID"] + "");
+                list[1].Add(dataReader["CityA"] + "");
+                list[2].Add(dataReader["CityB"] + "");
+                list[3].Add(dataReader["PickUpTime"] + "");
+                list[4].Add(dataReader["DropOffTime"] + "");
+                list[5].Add(dataReader["LtlTime"] + "");
+                list[6].Add(dataReader["DrivenTime"] + "");
+                list[7].Add(dataReader["KM"] + "");
+            }
+
+            //close Data Reader
+            dataReader.Close();
+
+            List<RouteData> output = new List<RouteData>();
+
+            for (int i = 0; i < list[0].Count; i++)
+            {
+                RouteData current = new RouteData();
+
+                current.RouteDataID = int.Parse(list[0][i]);
+                current.CityA = LoadCSV.ToCityID(list[1][i]);
+                current.CityB = LoadCSV.ToCityID(list[2][i]);
+                current.PickupTime = double.Parse(list[3][i]);
+                current.DropoffTime = double.Parse(list[4][i]);
+                current.LtlTime = double.Parse(list[5][i]);
+                current.DrivenTime = double.Parse(list[6][i]);
+                current.KM = int.Parse(list[7][i]);
+
+                output.Add(current);
+            }
+
+            return output;
+        }
+
+        public bool UpdateTicket(Trip_Ticket inTicket)
+        {
+            try
+            {
+                string query = "update TripTicket " +
+                           "set Days_Passed = '" + inTicket.Days_Passed + "'," +
+                           "Is_Complete = '" + inTicket.Is_Complete + "'" +
+                           "where TruckID = '" + inTicket.TicketID + "';";
+
+                //create command and assign the query and connection from the constructor
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                //Execute command
+                cmd.ExecuteNonQuery();
+
+                return true;
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool UpdateTruckLocation(int truckID, int newLocation)
+        {
+            string query = "update Truck set Current_Location = '" + LoadCSV.ToCityName(newLocation) + "' where TruckID = '" + truckID + "';";
+
+            //create command and assign the query and connection from the constructor
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+
+            //Execute command
+            cmd.ExecuteNonQuery();
+
+            return true;
         }
 
         public bool InsertIntoTruck(List<Truck> inList)
@@ -56,9 +149,9 @@ namespace Transport_Management_System_WPF
             return worked;
         }
 
-        public List<Truck> ReadFromTrucks()
+        public Truck ReadFromTrucksByID(int inTruckID)
         {
-            string query = "select * from trucks;";
+            string query = "select * from trucks where TruckID = " + inTruckID + ";";
 
             //Create a list to store the result
             List<string>[] list = new List<string>[7];
@@ -99,7 +192,16 @@ namespace Transport_Management_System_WPF
                 output.Add(current);
             }
 
-            return output;
+            if(output.Count == 1)
+            {
+                return output[0];
+            }
+            else
+            {
+                //something went wrong
+            }
+
+            return null;
         }
 
 
@@ -150,8 +252,7 @@ namespace Transport_Management_System_WPF
             {
                 foreach (Contract x in contracts)
                 {
-                    string query = "insert into CustomerOrder (Customer_OrderID, Client_Name, Job_type, Quantity, Origin, Destination, Van_Type) values(" +
-                         x.ContractID.ToString() + "," +
+                    string query = "insert into CustomerOrder (Client_Name, Job_type, Quantity, Origin, Destination, Van_Type) values(" +
                          "\"" + x.client_Name + "\"," +
                          x.job_Type.ToString() + "," +
                          x.quantity.ToString() + "," +
@@ -525,7 +626,7 @@ namespace Transport_Management_System_WPF
                 //Read the data and store them in the list
                 while (dataReader.Read())
                 {
-                    list[0].Add(dataReader["New_ContractID"] + "");
+                    list[0].Add(dataReader["NewContractID"] + "");
                     list[1].Add(dataReader["CarrierID"] + "");
                 }
 

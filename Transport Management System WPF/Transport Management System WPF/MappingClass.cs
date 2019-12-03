@@ -24,16 +24,17 @@ using System.Threading.Tasks;
 namespace Transport_Management_System_WPF
 {
 
-    public struct RouteData
+    public class RouteData
     {
         public int RouteDataID;
-        public int KM;
-        public double PickupTime;
-        public double DriveTime;
-        public double LtlTime;
-        public double DropoffTime;
         public int CityA;
         public int CityB;
+        public double PickupTime;
+        public double DrivenTime;
+        public double LtlTime;
+        public double DropoffTime;
+        public int KM;
+
     }
 
     public struct RouteSumData
@@ -193,14 +194,14 @@ namespace Transport_Management_System_WPF
                         //going west
                         nextCity = current.West;
                         tripDataPassBack.KM = current.WestKM;
-                        tripDataPassBack.DriveTime = current.WestHour;
+                        tripDataPassBack.DrivenTime = current.WestHour;
                     }
                     else
                     {
                         //going east
                         nextCity = current.East;
                         tripDataPassBack.KM = current.EastKM;
-                        tripDataPassBack.DriveTime = current.EastHour;
+                        tripDataPassBack.DrivenTime = current.EastHour;
                     }
 
                     tripDataPassBack.CityA = current.CityID;
@@ -229,7 +230,6 @@ namespace Transport_Management_System_WPF
                 } while (nextCity.CityID != DestinationID);
 
                 return returnList;
-
             }
 
             return null;
@@ -255,9 +255,9 @@ namespace Transport_Management_System_WPF
             {
                 foreach (RouteData x in inData)
                 {
-                    outData.totalDriveTime += x.DriveTime;
+                    outData.totalDriveTime += x.DrivenTime;
 
-                    outData.totalTripTime += x.DriveTime;
+                    outData.totalTripTime += x.DrivenTime;
 
                     outData.totalTripTime += x.PickupTime;
                     outData.totalTripTime += x.DropoffTime;
