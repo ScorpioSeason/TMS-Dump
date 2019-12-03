@@ -71,7 +71,7 @@
 
         <DockPanel>
             <DockPanel.Resources>
-                <src:ListCarrierList x:Key="MyList"/>
+                <!--<src:ListCarrierList x:Key="MyList"/>  wasnt building - duane -->
 
                 <HierarchicalDataTemplate DataType = "{x:Type src:Carrier}"
                                 ItemsSource = "{Binding Path=Depots}">

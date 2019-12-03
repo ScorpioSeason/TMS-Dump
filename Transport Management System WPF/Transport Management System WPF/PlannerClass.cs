@@ -106,6 +106,24 @@ namespace Transport_Management_System_WPF
             * ---------------------------------------------------------------------------------------------------- */
             public int Receive_Customer_Order_From_Buyer()
             {
+                PlannerSQL sql = new PlannerSQL();
+
+                sql.Open();
+                List<Noninated_Contract> noninated_Contracts = new List<Noninated_Contract>();
+                noninated_Contracts = sql.LoadNominatedContracts();
+
+                List<CompleteNomination> completeNominations = new List<CompleteNomination>();
+
+                completeNominations = sql.AddCarriersToNominatedContracts(noninated_Contracts);
+
+
+                sql.Close();
+
+                MappingClass map = new MappingClass();
+
+                List<RouteData> TripRoutes = new List<RouteData>();
+
+
 
                 Contract NewContract = null; //from the database
                 //List<Carrier> NominatedCarriers = new List<Carrier>(); //from the database

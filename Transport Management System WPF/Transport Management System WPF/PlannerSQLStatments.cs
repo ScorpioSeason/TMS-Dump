@@ -28,8 +28,7 @@ namespace Transport_Management_System_WPF
         public List<RouteData> PullRouteDataByTicket(int inTicketID)
         {
             string query = "select RouteDataID, CityA, CityB, PickUpTime, DropOffTime, LtlTime, DrivenTime, KM from RouteData as RD" +
-                            "left join TicketRouteLine as TRL on TRL.RouteID = RD.RouteDataID" + 
-                            "left join TripTicket as TT on TT.TicketID = TRL.TicketID" +
+                            "left join TripTicket as TT on TT.TicketID = RD.TicketID" +
                             "where TT.TicketID = " + inTicketID + ";";
 
             //Create a list to store the result
@@ -40,8 +39,6 @@ namespace Transport_Management_System_WPF
                 list[i] = new List<string>();
             }
          
-
-
             //Create Command
             MySqlCommand cmd = new MySqlCommand(query, connection);
             //Create a data reader and Execute the command
@@ -363,7 +360,7 @@ namespace Transport_Management_System_WPF
         {
 
             List<Noninated_Contract> OutList = new List<Noninated_Contract>();
-            string query = "SELECT * FROM BuyerToPlannerContacts;";
+            string query = "SELECT * FROM BuyerToPlannerContracts;";
 
             //Create a list to store the result
             List<string>[] list = new List<string>[2];
@@ -379,7 +376,7 @@ namespace Transport_Management_System_WPF
             //Read the data and store them in the list
             while (dataReader.Read())
             {
-                list[0].Add(dataReader["NewContactID"] + "");
+                list[0].Add(dataReader["NewContractID"] + "");
                 list[1].Add(dataReader["Customer_OrderID"] + "");
             }
 
