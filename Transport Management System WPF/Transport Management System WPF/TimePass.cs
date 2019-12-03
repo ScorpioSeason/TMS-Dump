@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TMSwPages;
 
 namespace Transport_Management_System_WPF
 {
@@ -44,20 +45,20 @@ namespace Transport_Management_System_WPF
         *	\return		void
         *
         * ---------------------------------------------------------------------------------------------------- */
-        public static void IncrementDay()
+        public static void IncrementDay(Trip_Ticket inTicket)
         {
-            //pull down a ticket from the orders that are incomplete
-            // Trip_Ticket trip = new Trip_Ticket();
 
-            double localDaysPassed = 0; //From the data base
-            double DriveTime = localDaysPassed * 8;
-            double StopTime = localDaysPassed * 12;
+            inTicket.Days_Passed += 1;
+            double DriveTime = inTicket.Days_Passed * 8;
+            double StopTime = inTicket.Days_Passed * 12;
 
             //load the route stops from data base
-            List<RouteData> stops = new List<RouteData>();
+            PlannerSQL sql = new PlannerSQL();
+            sql.Open();
+            List<RouteData> stops = sql.PullRouteDataByTicket(inTicket.TicketID);
+            Truck localTruck = sql.ReadFromTrucksByID(inTicket.TruckID);
+            sql.Close();
 
-            //find the truck passed on the ticket id
-            //Truck truck = new Truck();  -----Zena: Commented out for debugging purposes
 
             int i = 0;
             RouteData current;
@@ -70,7 +71,7 @@ namespace Transport_Management_System_WPF
                 DriveTime -= current.PickupTime;
                 StopTime -= current.PickupTime;
 
-                DriveTime -= current.DriveTime;
+                DriveTime -= current.DrivenTime;
 
                 DriveTime -= current.LtlTime;
                 StopTime -= current.LtlTime;
@@ -86,9 +87,10 @@ namespace Transport_Management_System_WPF
                 i++;
             }
 
-            //update the truck location in the data base
-            //truck.CurrentCityID = current.CityA;
-
+            sql.Open();
+            sql.UpdateTruckLocation(inTicket.TruckID, current.CityA); //the city a thing is wrong, change it at some point.
+            sql.UpdateTicket(inTicket);
+            sql.Close();
         }
     }
 }
