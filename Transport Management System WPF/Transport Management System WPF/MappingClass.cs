@@ -34,7 +34,6 @@ namespace Transport_Management_System_WPF
         public double LtlTime;
         public double DropoffTime;
         public int KM;
-
     }
 
     public struct RouteSumData

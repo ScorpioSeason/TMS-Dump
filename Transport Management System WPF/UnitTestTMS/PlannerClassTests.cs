@@ -40,13 +40,38 @@ namespace UnitTestTMS
 
             //add some data in work bench to simulate buyer
 
-            List<Noninated_Contract> noninated_Contracts = new List<Noninated_Contract>();
-            noninated_Contracts = sql.LoadNominatedContracts();
+            //List<Noninated_Contract> noninated_Contracts = new List<Noninated_Contract>();
+            //noninated_Contracts = sql.LoadNominatedContracts();
 
-            List<CompleteNomination> completeNominations = new List<CompleteNomination>();
+            //List<CompleteNomination> completeNominations = new List<CompleteNomination>();
 
-            completeNominations = sql.AddCarriersToNominatedContracts(noninated_Contracts);
+            ////completeNominations = sql.AddCarriersToNominatedContracts(noninated_Contracts);
 
+            ////some fancy ui stuff
+
+            
+
+            //MappingClass map = new MappingClass();
+
+            //foreach(CompleteNomination x in completeNominations)
+            //{
+            //    List<RouteData> TripRoutes = new List<RouteData>();
+
+            //    bool jobType = false;
+
+            //    if(x.theContract.job_Type == 0)
+            //    {
+            //        jobType = false;
+            //    }
+            //    else if(x.theContract.job_Type == 1)
+            //    {
+            //        jobType = true;
+            //    }
+
+            //    TripRoutes = map.GetTravelData(LoadCSV.ToCityID(x.theContract.origin), LoadCSV.ToCityID(x.theContract.destination), jobType);
+
+            //    int i = 0;
+            //}
 
             sql.Close();
         }
