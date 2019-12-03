@@ -43,7 +43,7 @@
         </Menu>
 
         <!--These tabs allow different functions of the Planner to be accessed from one main page-->
-        <TabControl Name="PlannerTabs" Grid.Row="1" Margin="5,5,5,5">
+        <TabControl Name="PlannerTabs" Grid.Row="1" Margin="5,5,5,5" SelectionChanged="TabControl_SelectionChanged">
 
             <!--This is the content of the Available Contracts tab-->
             <TabItem Name="PendingCarriers" Header="Contracts Pending Carriers">
@@ -69,22 +69,21 @@
                                 <RowDefinition x:Name="Buttons" Height="auto"></RowDefinition>
                             </Grid.RowDefinitions>
 
-                            <!--Controls Row (0)--> 
-                            <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Content="Load Contracts" Click="Button_Click"></Button>
-                            <!--<Button  DockPanel.Dock="top" Grid.Row="0" Grid.Column="0" Margin="5,5,5,5" Content="Increment Time (1 Day)"/>-->
+                            <!--Controls Row (0)-->
+                            <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Content="Select Carriers..." Click="SelectCarriers_Click"></Button>
+                            <Button  DockPanel.Dock="top" Grid.Row="0" Grid.Column="0" Margin="5,5,5,5" Content="Load Contracts" Click="LoadContracts_Click"/>
 
                             <!--Main Content Row (1) -->
-                            <DataGrid Grid.ColumnSpan="5" Grid.Row="1" Name="NomContractList" ItemsSource="{Binding}"  Margin="5,5,5,5" AutoGenerateColumns="true" CanUserAddRows="False" >
+                            <DataGrid Grid.ColumnSpan="5" Grid.Row="1" Name="NomContractList" ItemsSource="{Binding}"  Margin="5,5,5,5" SelectionMode="Single" CanUserAddRows="False" IsReadOnly="True">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="First Name"  Binding="{Binding FirstName}"/>
                                     <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}" />
-                                    <!--The Email property contains a URI.  For example "mailto:lucy0@adventure-works.com"-->
                                 </DataGrid.Columns>
                             </DataGrid>
 
                             <!--Buttons Row (2) -->
-                            <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="LogSettingsClick">Log Settings</Button>
-                            <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="4" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="ViewMoreClick" >View More...</Button>
+                            <!--<Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="LogSettingsClick">Log Settings</Button>
+                            <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="4" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="ViewMoreClick" >View More...</Button>-->
 
                         </Grid>
 

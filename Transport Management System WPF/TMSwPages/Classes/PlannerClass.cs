@@ -43,7 +43,7 @@ namespace TMSwPages
     public struct Trip_Ticket_Line
     {
         public Trip_Ticket Ticket; ///The ticket for this order
-        public RouteData Route;
+        //public RouteData Route;
         public DateTime Date_Added;
     }
 

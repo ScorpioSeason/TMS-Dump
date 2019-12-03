@@ -60,8 +60,6 @@ namespace TMSwPages
 
             try
             {
-                InitializeComponent();
-
                 // Load SQL Connection
                 admin.SetTMSConnection(new SQL_Query_TMS());
 
