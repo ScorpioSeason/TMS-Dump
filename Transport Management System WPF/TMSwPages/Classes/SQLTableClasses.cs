@@ -35,9 +35,9 @@ namespace TMSwPages.Classes
 
     public class CompleteNomination
     {
-        public int New_ContractID;
-        public Contract theContract;
-        public List<Carrier> ListOfCarriers;
+        public int New_ContractID { get; set; }
+        public Contract theContract { get; set; }
+        public List<Carrier> ListOfCarriers { get; set; }
 
         public CompleteNomination()
         {

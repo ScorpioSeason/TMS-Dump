@@ -18,7 +18,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TMSwPages
+namespace TMSwPages.Classes
 {
     // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
     /*   

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TMSwPages.Classes;
 
 namespace TMSwPages
 {
@@ -27,12 +28,28 @@ namespace TMSwPages
             InitializeComponent();
             selectedTab = 0;
 
+            List<Carrier> testCarriersList = new List<Carrier>();
+            Carrier testCarrier = new Carrier(42, "CarrierBob");
+            Carrier testCarrier2 = new Carrier(32, "CarrierFred");
+            Carrier testCarrier3 = new Carrier(1, "CarrierJoe");
+            testCarriersList.Add(testCarrier);
+            testCarriersList.Add(testCarrier2);
+            testCarriersList.Add(testCarrier3); 
+
+            List<CompleteNomination> test = new List<CompleteNomination>();
+            CompleteNomination testNomination = new CompleteNomination();
+            testNomination.ListOfCarriers = testCarriersList; 
+            test.Add(testNomination);
+
+            NomContractList.ItemsSource = test;
+
         }
 
         public PlannerPage(SQL_Query_TMS validatedConnection)
         {
             InitializeComponent();
             selectedTab = 0;
+            NomContractList.Items.Refresh();
 
             // Load SQL Connection
             //admin.SetTMSConnection(validatedConnection);
@@ -54,14 +71,11 @@ namespace TMSwPages
 
         private void SelectCarriers_Click(object sender, RoutedEventArgs e)
         {
-            //if (NomContractList.SelectedItem != null)
-            //{
-            //    PlannerCarriersWDepo newpage = new PlannerCarriersWDepo(this.NomContractList.SelectedItem);
-            //    this.NavigationService.Navigate(newpage);
-            //}
-
-            PlannerCarriersWDepo newpage = new PlannerCarriersWDepo();
-            this.NavigationService.Navigate(newpage); 
+            if (NomContractList.SelectedItem != null)
+            {
+                PlannerCarriersWDepo newpage = new PlannerCarriersWDepo(this.NomContractList.SelectedItem);
+                this.NavigationService.Navigate(newpage);
+            }
 
         }
         

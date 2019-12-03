@@ -76,8 +76,9 @@
                             <!--Main Content Row (1) -->
                             <DataGrid Grid.ColumnSpan="5" Grid.Row="1" Name="NomContractList" ItemsSource="{Binding}"  Margin="5,5,5,5" SelectionMode="Single" CanUserAddRows="False" IsReadOnly="True">
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Header="First Name"  Binding="{Binding FirstName}"/>
-                                    <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}" />
+                                    <DataGridTextColumn Header="Contract ID"  Binding="{Binding New_ContractID}"/>
+                                    <DataGridTextColumn Header="Contract Name"  Binding="{Binding theContract}"/>
+                                    <DataGridTextColumn Header="Last Name" Binding="{Binding ListOfCarriers}" />
                                 </DataGrid.Columns>
                             </DataGrid>
 

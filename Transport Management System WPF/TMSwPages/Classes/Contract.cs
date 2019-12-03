@@ -17,7 +17,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 // This class represents the contract table
-namespace TMSwPages
+namespace TMSwPages.Classes
 {
     // Contract HEADER COMMENT -----------------------------------------------------------------------------------
     /**   

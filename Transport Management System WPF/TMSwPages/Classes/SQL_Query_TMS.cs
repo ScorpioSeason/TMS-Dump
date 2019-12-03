@@ -24,7 +24,7 @@ using System.Diagnostics;
 
 //from https://www.codeproject.com/articles/43438/connect-c-to-mysql
 
-namespace TMSwPages
+namespace TMSwPages.Classes
 {
     // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
     /*

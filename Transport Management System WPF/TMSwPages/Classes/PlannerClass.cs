@@ -21,7 +21,7 @@ using System.Threading.Tasks;
 // viewing active orders, viewing delivered orders pending completion, 
 // and generating invoice reports. Furthermore the planner can also increment time. 
 
-namespace TMSwPages
+namespace TMSwPages.Classes
 {
     public struct Customer
     {

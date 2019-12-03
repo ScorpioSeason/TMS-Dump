@@ -23,7 +23,7 @@ using System.Windows.Documents;
 using MySql.Data.MySqlClient;
 using TMSwPages.Classes;
 
-namespace TMSwPages
+namespace TMSwPages.Classes
 {
     // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
     /**   
