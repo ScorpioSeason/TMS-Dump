@@ -47,31 +47,31 @@ namespace TMSwPages.Classes
         }
     }
 
-    public class Carrier
-    {
-        public int CarrierID;
-        public string CarrierName;
-        public List<CarrierDepot> CityList;
+    //public class Carrier
+    //{
+    //    public int CarrierID;
+    //    public string CarrierName;
+    //    public List<CarrierDepot> CityList;
 
-        public Carrier()
-        {
-            CarrierID = -1;
-            CarrierName = "";
-            CityList = new List<CarrierDepot>();
-        }
+    //    public Carrier()
+    //    {
+    //        CarrierID = -1;
+    //        CarrierName = "";
+    //        CityList = new List<CarrierDepot>();
+    //    }
 
-        public Carrier(int inCarrierID, string Carrier_Name)
-        {
-            CarrierID = inCarrierID;
-            CarrierName = Carrier_Name;
-            CityList = new List<CarrierDepot>();
-        }
+    //    public Carrier(int inCarrierID, string Carrier_Name)
+    //    {
+    //        CarrierID = inCarrierID;
+    //        CarrierName = Carrier_Name;
+    //        CityList = new List<CarrierDepot>();
+    //    }
 
 
-        public void AddCity(string inCity, int inFTLA, int inLTLA, double inFTLRate, double inLTLRate, double inReeferCharge)
-        {
-            CarrierDepot temp = new CarrierDepot(CarrierID, inCity, inFTLA, inLTLA, inFTLRate, inLTLRate, inReeferCharge);
-            CityList.Add(temp);
-        }
-    }
+    //    public void AddCity(string inCity, int inFTLA, int inLTLA, double inFTLRate, double inLTLRate, double inReeferCharge)
+    //    {
+    //        CarrierDepot temp = new CarrierDepot(CarrierID, inCity, inFTLA, inLTLA, inFTLRate, inLTLRate, inReeferCharge);
+    //        CityList.Add(temp);
+    //    }
+    //}
 }

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMS_8000C", "TMS_8000C\TMS_8000C.csproj", "{063E0FBA-1890-448A-80A9-AD7AC313BFCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMSwPages", "TMSwPages\TMSwPages.csproj", "{DAA75FFB-9FD1-4B59-A352-472371B78017}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{063E0FBA-1890-448A-80A9-AD7AC313BFCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{063E0FBA-1890-448A-80A9-AD7AC313BFCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{063E0FBA-1890-448A-80A9-AD7AC313BFCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{063E0FBA-1890-448A-80A9-AD7AC313BFCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAA75FFB-9FD1-4B59-A352-472371B78017}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAA75FFB-9FD1-4B59-A352-472371B78017}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAA75FFB-9FD1-4B59-A352-472371B78017}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAA75FFB-9FD1-4B59-A352-472371B78017}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A62BE641-A9EF-4C70-B8FC-32F3A36A205E}
+	EndGlobalSection
+EndGlobal
