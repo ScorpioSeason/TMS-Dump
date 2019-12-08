@@ -40,7 +40,7 @@ namespace TMSwPages
         public BuyerPage()
         {
             InitializeComponent();
-            DG1.ItemsSource = buyer.Contracts;
+            
 
             //DG2.ItemsSource = this.acceptedContracts;
         }
@@ -105,8 +105,12 @@ namespace TMSwPages
         * ---------------------------------------------------------------------------------------------------- */
         private void Button_Click(object sender, RoutedEventArgs e)//load refresh button
         {
+
+            DG1.ItemsSource = null;
+
             buyer.ParseContracts();
-            DG1.Items.Refresh();
+            DG1.ItemsSource = buyer.Contracts;
+
         }
 
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------

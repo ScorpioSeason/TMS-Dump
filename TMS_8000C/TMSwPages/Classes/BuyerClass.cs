@@ -60,6 +60,8 @@ namespace TMSwPages
             FC_ContractFromRuss f = new FC_ContractFromRuss();
             contracts = f.ObjToTable(SQL.SelectFromCMP(f));
 
+
+
         } 
     }
 }
