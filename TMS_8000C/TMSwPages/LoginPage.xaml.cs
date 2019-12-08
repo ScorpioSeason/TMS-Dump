@@ -1,24 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Data.SqlClient;
-using System.Configuration;
-using System.Data;
-using MySql.Data.MySqlClient;
-using MySql.Data;
-using System.Diagnostics;
-using TMSwPages;
 
 namespace TMSwPages
 {
@@ -41,21 +22,21 @@ namespace TMSwPages
              */
 
             InitializeComponent();
-            TMSLogger.SetDefaultLogFilePath(); // Initialize logger location when app opens
+            //TMSLogger.SetDefaultLogFilePath(); // Initialize logger location when app opens
         }
 
         private void ValidateLogIn(object sender, RoutedEventArgs e)
         {
             bool loginSuccess = false;
-            SQL_Query_TMS loginConnection = null; 
+            //SQL_Query_TMS loginConnection = null; 
             // Check that values have been entered first
             if ((password.Password != "") && (username.SelectedIndex != -1))
             {
                 // Get login connection
                 if (loginSuccess == false)
                 {
-                    loginConnection = new SQL_Query_TMS(username.Text, password.Password.ToString()); // pass login to each page for access privileges
-                    loginSuccess = loginConnection._isConnected;
+                    //loginConnection = new SQL_Query_TMS(username.Text, password.Password.ToString()); // pass login to each page for access privileges
+                    //loginSuccess = loginConnection._isConnected;
 
                     password.Password = "";
 
@@ -65,28 +46,28 @@ namespace TMSwPages
                 {
                     if (username.Text == "Admin")
                     {
-                        if (loginConnection != null)
-                        {
-                            AdminPage newpage = new AdminPage(loginConnection);
-                            this.NavigationService.Navigate(newpage);
-                        }
+                        //if (loginConnection != null)
+                        //{
+                        //    AdminPage newpage = new AdminPage(loginConnection);
+                        //    this.NavigationService.Navigate(newpage);
+                        //}
                         
                     }
                     else if (username.Text == "Buyer")
                     {
-                        if (loginConnection != null)
-                        {
-                            BuyerPage newpage = new BuyerPage(loginConnection);
-                            this.NavigationService.Navigate(newpage);
-                        }
+                        //if (loginConnection != null)
+                        //{
+                        //    BuyerPage newpage = new BuyerPage(loginConnection);
+                        //    this.NavigationService.Navigate(newpage);
+                        //}
                     }
                     else if (username.Text == "Planner")
                     {
-                        if (loginConnection != null)
-                        {
-                            PlannerPage newpage = new PlannerPage(loginConnection);
-                            this.NavigationService.Navigate(newpage);
-                        }
+                        //if (loginConnection != null)
+                        //{
+                        //    PlannerPage newpage = new PlannerPage(loginConnection);
+                        //    this.NavigationService.Navigate(newpage);
+                        //}
                     }
                 }
 

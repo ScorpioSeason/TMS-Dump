@@ -36,7 +36,7 @@ namespace TMSwPages
     * -------------------------------------------------------------------------------------------------------- */
     public class BuyerClass
     {
-        private List<FC_ContractFromRuss> contracts= new List<FC_ContractFromRuss>();
+        public List<FC_ContractFromRuss> contracts = new List<FC_ContractFromRuss>();
 
         internal List<FC_ContractFromRuss> Contracts { get => contracts; set => contracts = value; }
 
@@ -58,8 +58,6 @@ namespace TMSwPages
 
             FC_ContractFromRuss f = new FC_ContractFromRuss();
             contracts = f.ObjToTable(SQL.SelectFromCMP(f));
-
-
         } 
     }
 }
@@ -74,5 +72,5 @@ namespace TMSwPages
 *	\exception	This is if we have some big ol try catches?
 *	\see		CallsMade()
 *	\return		None
-*
+
 * ---------------------------------------------------------------------------------------------------- */

@@ -98,8 +98,8 @@ namespace TMSwPages.Classes
             public int Receive_Customer_Order_From_Buyer()
             {
 
-                Contract NewContract = null; //from the database
-                List<Carrier> NominatedCarriers = new List<Carrier>(); //from the database
+                //Contract NewContract = null; //from the database
+                //List<Carrier> NominatedCarriers = new List<Carrier>(); //from the database
 
                     
                 //List<Trip_Ticket> tickets = Select_Carriers_From_Nominations(NominatedCarriers, NewContract);

@@ -22,7 +22,7 @@ namespace TMSwPages
     public partial class BuyerPage : Page
     {
         //List<> acceptedContracts = new List<Contract>();
-        //public static BuyerClass buyer = new BuyerClass();
+        public static BuyerClass buyer = new BuyerClass();
         //public static string a = "";
 
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
@@ -40,8 +40,9 @@ namespace TMSwPages
         public BuyerPage()
         {
             InitializeComponent();
-           // DG1.ItemsSource = buyer.Contracts;
-            // DG2.ItemsSource = this.acceptedContracts;
+            DG1.ItemsSource = buyer.contracts;
+
+            //DG2.ItemsSource = this.acceptedContracts;
         }
 
         //public BuyerPage(SQL_Query_TMS validatedConnection)
@@ -104,7 +105,7 @@ namespace TMSwPages
         * ---------------------------------------------------------------------------------------------------- */
         private void Button_Click(object sender, RoutedEventArgs e)//load/ refresh button
         {
-            //buyer.ParseContracts();
+            buyer.ParseContracts();
             DG1.Items.Refresh();
         }
 
