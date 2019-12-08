@@ -21,9 +21,9 @@ namespace TMSwPages
     /// </summary>
     public partial class BuyerPage : Page
     {
-        List<Contract> acceptedContracts = new List<Contract>();
-        public static BuyerClass buyer = new BuyerClass();
-        public static string a = "";
+        //List<> acceptedContracts = new List<Contract>();
+        //public static BuyerClass buyer = new BuyerClass();
+        //public static string a = "";
 
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /*
@@ -40,20 +40,20 @@ namespace TMSwPages
         public BuyerPage()
         {
             InitializeComponent();
-            DG1.ItemsSource = buyer.Contracts;
-            DG2.ItemsSource = this.acceptedContracts;
+           // DG1.ItemsSource = buyer.Contracts;
+            // DG2.ItemsSource = this.acceptedContracts;
         }
 
-        public BuyerPage(SQL_Query_TMS validatedConnection)
-        {
-            InitializeComponent();
+        //public BuyerPage(SQL_Query_TMS validatedConnection)
+        //{
+        //    InitializeComponent();
 
-            // Load SQL Connection
-            //admin.SetTMSConnection(validatedConnection);
+        //    // Load SQL Connection
+        //    //admin.SetTMSConnection(validatedConnection);
 
-            /// Bind to incoming log data.
-            //this.DataContext = data;
-        }
+        //    /// Bind to incoming log data.
+        //    //this.DataContext = data;
+        //}
 
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /*
@@ -104,7 +104,7 @@ namespace TMSwPages
         * ---------------------------------------------------------------------------------------------------- */
         private void Button_Click(object sender, RoutedEventArgs e)//load/ refresh button
         {
-            buyer.ParseContracts();
+            //buyer.ParseContracts();
             DG1.Items.Refresh();
         }
 

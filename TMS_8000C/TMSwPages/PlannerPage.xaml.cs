@@ -26,37 +26,37 @@ namespace TMSwPages
         public PlannerPage()
         {
             InitializeComponent();
-            selectedTab = 0;
+            //selectedTab = 0;
 
-            List<Carrier> testCarriersList = new List<Carrier>();
-            Carrier testCarrier = new Carrier(42, "CarrierBob");
-            Carrier testCarrier2 = new Carrier(32, "CarrierFred");
-            Carrier testCarrier3 = new Carrier(1, "CarrierJoe");
-            testCarriersList.Add(testCarrier);
-            testCarriersList.Add(testCarrier2);
-            testCarriersList.Add(testCarrier3); 
+            //List<Carrier> testCarriersList = new List<Carrier>();
+            //Carrier testCarrier = new Carrier(42, "CarrierBob");
+            //Carrier testCarrier2 = new Carrier(32, "CarrierFred");
+            //Carrier testCarrier3 = new Carrier(1, "CarrierJoe");
+            //testCarriersList.Add(testCarrier);
+            //testCarriersList.Add(testCarrier2);
+            //testCarriersList.Add(testCarrier3); 
 
-            List<CompleteNomination> test = new List<CompleteNomination>();
-            CompleteNomination testNomination = new CompleteNomination();
-            testNomination.ListOfCarriers = testCarriersList; 
-            test.Add(testNomination);
+            //List<CompleteNomination> test = new List<CompleteNomination>();
+            //CompleteNomination testNomination = new CompleteNomination();
+            //testNomination.ListOfCarriers = testCarriersList; 
+            //test.Add(testNomination);
 
-            NomContractList.ItemsSource = test;
+            //NomContractList.ItemsSource = test;
 
         }
 
-        public PlannerPage(SQL_Query_TMS validatedConnection)
-        {
-            InitializeComponent();
-            selectedTab = 0;
-            NomContractList.Items.Refresh();
+        //public PlannerPage(SQL_Query_TMS validatedConnection)
+        //{
+        //    InitializeComponent();
+        //    selectedTab = 0;
+        //    NomContractList.Items.Refresh();
 
-            // Load SQL Connection
-            //admin.SetTMSConnection(validatedConnection);
+        //    // Load SQL Connection
+        //    //admin.SetTMSConnection(validatedConnection);
 
-            /// Bind to incoming log data.
-            //this.DataContext = data;
-        }
+        //    /// Bind to incoming log data.
+        //    //this.DataContext = data;
+        //}
 
         private void SwitchUserClick(object sender, RoutedEventArgs e)
         {
@@ -66,6 +66,16 @@ namespace TMSwPages
 
         private void LoadContracts_Click(object sender, RoutedEventArgs e)
         {
+            string query = "select LC.FC_LocalContractID, LC.Client_Name, LC.Job_type, LC.Quantity, LC.Origin, LC.Destination, LC.Van_type " +
+               "from FC_BuyerToPlannerContract as bp " +
+               "left join FC_LocalContract as LC on LC.FC_LocalContractID = bp.FC_LocalContractID;";
+
+            FC_LocalContract n = new FC_LocalContract();
+            List<FC_LocalContract> NominatedContracts = n.ObjToTable(SQL.Select(n, query));
+
+            NomContractList.ItemsSource = null;
+            NomContractList.ItemsSource = NominatedContracts;
+
             NomContractList.Items.Refresh();
         }
 
