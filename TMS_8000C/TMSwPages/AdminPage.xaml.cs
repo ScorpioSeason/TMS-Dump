@@ -62,7 +62,7 @@ namespace TMSwPages
             try
             {
                 // Load SQL Connection
-                admin.SetTMSConnection(new SQL_Query_TMS());
+                //admin.SetTMSConnection(new SQL_Query_TMS());
 
                 selectedTab = 0;
 
@@ -75,7 +75,7 @@ namespace TMSwPages
                 LogsList.ItemsSource = searchResults; 
                 Carrier_DataList.ItemsSource = admin.DisplayCarrier();
                 Route_TableList.ItemsSource = admin.DisplayRoutes();
-                Rate_Fee_TablesList.ItemsSource = admin.DisplayFees();
+                //Rate_Fee_TablesList.ItemsSource = admin.DisplayFees();
 
             }
             catch (Exception e)
@@ -84,32 +84,32 @@ namespace TMSwPages
             }
         }
 
-        public AdminPage(SQL_Query_TMS validatedConnection)
-        {
-            try
-            {
-                InitializeComponent();
+        //public AdminPage(SQL_Query_TMS validatedConnection)
+        //{
+        //    try
+        //    {
+        //        InitializeComponent();
 
-                // Load SQL Connection
-                admin.SetTMSConnection(validatedConnection);
+        //        // Load SQL Connection
+        //        admin.SetTMSConnection(validatedConnection);
 
-                selectedTab = 0;
+        //        selectedTab = 0;
 
-                LogStartDate.SelectedDate = (DateTime.Today.AddDays(-7));
-                LogEndDate.SelectedDate = DateTime.Today;
-                LogSearchTags.Focus();
-                LogsList.ItemsSource = searchResults;
-                LogLoadClick(null, null);
+        //        LogStartDate.SelectedDate = (DateTime.Today.AddDays(-7));
+        //        LogEndDate.SelectedDate = DateTime.Today;
+        //        LogSearchTags.Focus();
+        //        LogsList.ItemsSource = searchResults;
+        //        LogLoadClick(null, null);
 
-            }
-            catch (Exception e)
-            {
+        //    }
+        //    catch (Exception e)
+        //    {
                
-            }
+        //    }
             
-            /// Bind to incoming log data.
-            //this.DataContext = data;
-        }
+        //    /// Bind to incoming log data.
+        //    //this.DataContext = data;
+        //}
 
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
@@ -324,7 +324,7 @@ namespace TMSwPages
                                 break;
                             case (4):
                                 //Rate_Fee_Tables.DataContext = admin.DisplayFees();
-                                Rate_Fee_TablesList.ItemsSource = admin.DisplayFees();
+                                //Rate_Fee_TablesList.ItemsSource = admin.DisplayFees();
                                 Rate_Fee_TablesClick(null, null);
                                 break;
                             default:

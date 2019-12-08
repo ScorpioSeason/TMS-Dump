@@ -22,8 +22,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TMSwPages.Classes;
 
-namespace TMSwPages.Classes
+namespace TMSwPages
 {
     
     // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
@@ -35,9 +36,9 @@ namespace TMSwPages.Classes
     * -------------------------------------------------------------------------------------------------------- */
     public class BuyerClass
     {
-        private List<Contract> contracts= new List<Contract>();
+        private List<FC_ContractFromRuss> contracts= new List<FC_ContractFromRuss>();
 
-        internal List<Contract> Contracts { get => contracts; set => contracts = value; }
+        internal List<FC_ContractFromRuss> Contracts { get => contracts; set => contracts = value; }
 
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
@@ -54,41 +55,11 @@ namespace TMSwPages.Classes
         public void ParseContracts()
         {
             contracts.Clear();
-            SQL_Query SQL = new SQL_Query();
-            
-            List<string>[] temp = new List<string>[6];
-            temp = SQL.Select_Contracts();
 
-            for(int i = 0; i < temp[0].Count; i++)
-            {
-                Contract block = new Contract();
+            FC_ContractFromRuss f = new FC_ContractFromRuss();
+            contracts = f.ObjToTable(SQL.SelectFromCMP(f));
 
-                block.client_Name = temp[0][i];
 
-                if(temp[1][i] == "0")
-                {
-                    block.job_Type = false;
-                }
-                else
-                {
-                    block.job_Type = true;
-                }
-
-                block.quantity = int.Parse(temp[2][i]);
-                block.origin = temp[3][i];
-                block.destination = temp[4][i];
-
-                if (temp[5][i] == "0")
-                {
-                    block.van_Type = false;
-                }
-                else
-                {
-                    block.van_Type = true;
-                }
-
-                contracts.Add(block);
-            }
         } 
     }
 }

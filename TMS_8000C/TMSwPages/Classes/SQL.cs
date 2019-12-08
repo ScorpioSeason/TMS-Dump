@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TMSwPages.Classes
 {
-    public class SQL
+    public static class SQL
     {
         //variables
         public static MySqlConnection connection;
