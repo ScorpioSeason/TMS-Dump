@@ -95,6 +95,7 @@
     <Compile Include="BuyerPage.xaml.cs">
       <DependentUpon>BuyerPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Classes\NominateForPlanner.cs" />
     <Compile Include="Classes\ParentTables.cs" />
     <Compile Include="Classes\SQL.cs" />
     <Compile Include="LoginPage.xaml.cs">
