@@ -40,7 +40,7 @@ namespace TMSwPages
         public BuyerPage()
         {
             InitializeComponent();
-            DG1.ItemsSource = buyer.contracts;
+            DG1.ItemsSource = buyer.Contracts;
 
             //DG2.ItemsSource = this.acceptedContracts;
         }
@@ -103,7 +103,7 @@ namespace TMSwPages
         *	\return		None
         *
         * ---------------------------------------------------------------------------------------------------- */
-        private void Button_Click(object sender, RoutedEventArgs e)//load/ refresh button
+        private void Button_Click(object sender, RoutedEventArgs e)//load refresh button
         {
             buyer.ParseContracts();
             DG1.Items.Refresh();

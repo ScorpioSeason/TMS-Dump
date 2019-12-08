@@ -76,13 +76,12 @@
                             <!--Main Content Row (1) -->
                             <DataGrid Name="DG1" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="False"  Grid.ColumnSpan="5" Grid.Row="1" Margin="5,5,5,5">
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Header="Client Name" Binding="{Binding client_Name}" IsReadOnly="True" />
-                                    <DataGridTextColumn Header="Job Type" Binding="{Binding job_Type}" IsReadOnly="True"/>
-                                    <DataGridTextColumn Header="Quantity" Binding="{Binding quantity}" IsReadOnly="True"/>
-                                    <DataGridTextColumn Header="Origin" Binding="{Binding origin}" IsReadOnly="True"/>
-                                    <DataGridTextColumn Header="Destination" Binding="{Binding destination}" IsReadOnly="True"/>
-                                    <DataGridTextColumn Header="Van Type" Binding="{Binding van_Type}" IsReadOnly="True"/>
-                                    <DataGridCheckBoxColumn Header="Selected" Binding="{Binding is_Selected}" />
+                                    <DataGridTextColumn Header="Client Name" Binding="{Binding Client_Name}" IsReadOnly="True" />
+                                    <DataGridTextColumn Header="Job Type" Binding="{Binding Job_type}" IsReadOnly="True"/>
+                                    <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" IsReadOnly="True"/>
+                                    <DataGridTextColumn Header="Origin" Binding="{Binding Origin}" IsReadOnly="True"/>
+                                    <DataGridTextColumn Header="Destination" Binding="{Binding Destination}" IsReadOnly="True"/>
+                                    <DataGridTextColumn Header="Van Type" Binding="{Binding Van_type}" IsReadOnly="True"/>
                                     <!--The Email property contains a URI.  For example "mailto:lucy0@adventure-works.com"-->
                                 </DataGrid.Columns>
                             </DataGrid>
