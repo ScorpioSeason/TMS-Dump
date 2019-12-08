@@ -95,10 +95,8 @@
     <Compile Include="BuyerPage.xaml.cs">
       <DependentUpon>BuyerPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Classes\Carrier.cs" />
-    <Compile Include="Classes\Contract.cs" />
-    <Compile Include="Classes\SQLTableClasses.cs" />
-    <Compile Include="Classes\SQL_Query.cs" />
+    <Compile Include="Classes\ParentTables.cs" />
+    <Compile Include="Classes\SQL.cs" />
     <Compile Include="LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
@@ -112,7 +110,6 @@
     <Compile Include="PlannerPage.xaml.cs">
       <DependentUpon>PlannerPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Classes\SQL_Query_TMS.cs" />
     <Compile Include="ViewLogDetails.xaml.cs">
       <DependentUpon>ViewLogDetails.xaml</DependentUpon>
     </Compile>
