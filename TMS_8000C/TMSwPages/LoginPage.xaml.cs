@@ -30,7 +30,7 @@ namespace TMSwPages
             bool loginSuccess = false;
             //SQL_Query_TMS loginConnection = null; 
             // Check that values have been entered first
-            if ((password.Password != "") && (username.SelectedIndex != -1))
+            if (/*(password.Password != "") &&*/ (username.SelectedIndex != -1))
             {
                 // Get login connection
                 if (loginSuccess == false)
@@ -38,23 +38,35 @@ namespace TMSwPages
                     //loginConnection = new SQL_Query_TMS(username.Text, password.Password.ToString()); // pass login to each page for access privileges
                     //loginSuccess = loginConnection._isConnected;
 
-                    password.Password = "";
+                    //password.Password = "";
+
+                    loginSuccess = true;
 
                 }
                 // If the connection credentials were validated, redirect to page with set connection
                 if (loginSuccess == true)
                 {
+
+                    //duane messed with this just for testing
+
                     if (username.Text == "Admin")
                     {
+                        AdminPage newpage = new AdminPage();
+                        this.NavigationService.Navigate(newpage);
+
                         //if (loginConnection != null)
                         //{
                         //    AdminPage newpage = new AdminPage(loginConnection);
                         //    this.NavigationService.Navigate(newpage);
                         //}
-                        
+
                     }
                     else if (username.Text == "Buyer")
                     {
+
+                        BuyerPage newpage = new BuyerPage();
+                        this.NavigationService.Navigate(newpage);
+
                         //if (loginConnection != null)
                         //{
                         //    BuyerPage newpage = new BuyerPage(loginConnection);
@@ -63,6 +75,10 @@ namespace TMSwPages
                     }
                     else if (username.Text == "Planner")
                     {
+
+                        PlannerPage newpage = new PlannerPage();
+                        this.NavigationService.Navigate(newpage);
+
                         //if (loginConnection != null)
                         //{
                         //    PlannerPage newpage = new PlannerPage(loginConnection);

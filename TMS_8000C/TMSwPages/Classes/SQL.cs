@@ -129,7 +129,7 @@ namespace TMSwPages.Classes
             string query = tabletype.GetSelectStatment();
 
             if (TableID != -1)
-            {
+            { 
                 //if a id was passed in, add a where class to the select statement
                 string sufix = " where " + tabletype.GetTableName() + "ID = " + TableID.ToString() + ";";
                 query = query.Replace(";", sufix);
@@ -169,6 +169,14 @@ namespace TMSwPages.Classes
             return outList;
         }
 
+
+        public static bool Update(ParentTable input)
+        {
+
+
+
+            return true;
+        }
 
 
         //this method will be able to insert into any table that using the corresponding  ParentTable

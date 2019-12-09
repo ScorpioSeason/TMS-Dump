@@ -102,6 +102,7 @@
     <Compile Include="Classes\ParentTables.cs" />
     <Compile Include="Classes\PlannerClass.cs" />
     <Compile Include="Classes\SQL.cs" />
+    <Compile Include="Classes\TimePass.cs" />
     <Compile Include="LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>

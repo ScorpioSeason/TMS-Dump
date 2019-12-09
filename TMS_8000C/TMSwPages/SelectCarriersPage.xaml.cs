@@ -75,9 +75,29 @@ namespace TMSwPages
 
         private void SelectCarriers_Click(object sender, RoutedEventArgs e)
         {
-            FC_Carrier t = (FC_Carrier)CarriersList.SelectedCells[0].Item;
+            CarrierWithDepot_View t = (CarrierWithDepot_View)CarriersList.SelectedCells[0].Item;
 
-            CreateTripInfo tripInfo = new CreateTripInfo(PassedInContract, t);
+
+            FC_Carrier SelectedContract = new FC_Carrier(t.FC_CarrierID, t.Carrier_Name);
+
+            CreateTripInfo tripInfo = new CreateTripInfo(PassedInContract, SelectedContract);
+
+            string Query = "select bp.FC_BuyerToPlannerContractID, bp.FC_LocalContractID " +
+                "from FC_BuyerToPlannerContract as bp " +
+                "left join FC_LocalContract on FC_LocalContract.FC_LocalContractID = bp.FC_LocalContractID " +
+                "where FC_LocalContract.FC_LocalContractID = " + PassedInContract.FC_LocalContractID + ";";
+
+            FC_BuyerToPlannerContract p = new FC_BuyerToPlannerContract();
+            List<FC_BuyerToPlannerContract> B2P = p.ObjToTable(SQL.Select(p, Query));
+
+            Query = "delete from FC_CarrierNom where FC_BuyerToPlannerContractID = " + B2P[0].FC_BuyerToPlannerContractID + ";";
+            SQL.GenericFunction(Query);
+
+            Query = "delete from FC_BuyerToPlannerContract where FC_BuyerToPlannerContractID = " + B2P[0].FC_BuyerToPlannerContractID + ";";
+
+            SQL.GenericFunction(Query);
+
+
         }
         
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
