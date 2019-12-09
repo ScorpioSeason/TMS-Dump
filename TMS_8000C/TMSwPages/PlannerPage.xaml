@@ -66,15 +66,15 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition x:Name="Controls" Height="auto"></RowDefinition>
                                 <RowDefinition x:Name="Main" Height="*"></RowDefinition>
-                                <RowDefinition x:Name="Buttons" Height="auto"></RowDefinition>
+                                <RowDefinition x:Name="Buttons" Height="*"></RowDefinition>
                             </Grid.RowDefinitions>
 
                             <!--Controls Row (0)-->
-                            <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Content="Select Carriers..." Click="NavCarriersDepots_Click"></Button>
+                            <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Content="Create This Order" Click="CreateChossenOrder"></Button>
                             <Button  DockPanel.Dock="top" Grid.Row="0" Grid.Column="0" Margin="5,5,5,5" Content="Load Contracts" Click="LoadContracts_Click"/>
 
                             <!--Main Content Row (1) -->
-                            <DataGrid Grid.ColumnSpan="5" Grid.Row="1" Name="NomContractList" AutoGenerateColumns="False" ItemsSource="{Binding}"  Margin="5,5,5,5" SelectionMode="Single" CanUserAddRows="False" IsReadOnly="True">
+                            <DataGrid Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="2" Name="NomContractList" AutoGenerateColumns="False" ItemsSource="{Binding}"  Margin="5,5,5,5" SelectionMode="Single" CanUserAddRows="False" IsReadOnly="True" SelectionChanged="NomContractList_SelectionChanged">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="ID" Binding="{Binding FC_LocalContractID}"/>
                                     <DataGridTextColumn Header="Client Name" Binding="{Binding Client_Name}"/>
@@ -84,6 +84,32 @@
                                     <DataGridTextColumn Header="Destination" Binding="{Binding Destination}" />
                                     <DataGridTextColumn Header="Van Type" Binding="{Binding Van_type}" />
                                 </DataGrid.Columns>
+                            </DataGrid>
+
+                            <DataGrid  Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="1" x:Name="CarriersList" ItemsSource="{Binding}" AutoGenerateColumns="False" Margin="5,5.333,5.333,4.667" SelectionMode="Single" CanUserAddRows="False" IsReadOnly="True">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Carrier ID"  Binding="{Binding FC_CarrierID}"/>
+                                    <DataGridTextColumn Header="Carrier Name"  Binding="{Binding Carrier_Name}"/>
+                                    <DataGridTextColumn Header="City Name"  Binding="{Binding CityName}"/>
+                                    <DataGridTextColumn Header="Ftl Ava" Binding="{Binding FTL_Availibility}"/>
+                                    <DataGridTextColumn Header="Ltl Ava" Binding="{Binding LTL_Availibility}"/>
+                                    <DataGridTextColumn Header="FTL Rate" Binding="{Binding FTL_Rate}"/>
+                                    <DataGridTextColumn Header="LTL Rate" Binding="{Binding LTL_Rate}"/>
+                                    <DataGridTextColumn Header="Reefer Charge" Binding="{Binding Reefer_Charge}"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+
+                            <DataGrid Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="2"  Name="OtherTickets" AutoGenerateColumns="False" ItemsSource="{Binding}" Margin="5,5.333,5.333,4.667" SelectionMode="Single" CanUserAddRows="False" IsReadOnly="True">
+
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="TicketID"  Binding="{Binding FC_TripTicketID}"/>
+                                    <DataGridTextColumn Header="Carrier"  Binding="{Binding FC_CarrierID}"/>
+                                    <DataGridTextColumn Header="Current Location" Binding="{Binding CurrentLocation}"/>
+                                    <DataGridTextColumn Header="Size" Binding="{Binding Size_in_Palettes}"/>
+                                    <DataGridTextColumn Header="Days Past" Binding="{Binding Days_Passes}"/>
+                                    <DataGridTextColumn Header="Status" Binding="{Binding Is_Complete}"/>
+                                </DataGrid.Columns>
+
                             </DataGrid>
 
                             <!--Buttons Row (2) -->

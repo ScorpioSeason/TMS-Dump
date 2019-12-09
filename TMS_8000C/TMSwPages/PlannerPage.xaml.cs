@@ -23,6 +23,8 @@ namespace TMSwPages
     {
         static int selectedTab = -1;
 
+        static FC_LocalContract Selected_Contract = new FC_LocalContract();
+
         public PlannerPage()
         {
             InitializeComponent();
@@ -66,15 +68,7 @@ namespace TMSwPages
 
         private void LoadContracts_Click(object sender, RoutedEventArgs e)
         {
-            string query = "select LC.FC_LocalContractID, LC.Client_Name, LC.Job_type, LC.Quantity, LC.Origin, LC.Destination, LC.Van_type " +
-               "from FC_BuyerToPlannerContract as bp " +
-               "left join FC_LocalContract as LC on LC.FC_LocalContractID = bp.FC_LocalContractID;";
-
-            FC_LocalContract n = new FC_LocalContract();
-            List<FC_LocalContract> NominatedContracts = n.ObjToTable(SQL.Select(n, query));
-
-          
-            NomContractList.ItemsSource = NominatedContracts;
+            NomContractList.ItemsSource = PlannerClass.GetNominatedContracts();
             NomContractList.Items.Refresh();
         }
 
@@ -145,6 +139,43 @@ namespace TMSwPages
                 }
 
             }
+        }
+
+        private void NomContractList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(this.NomContractList.SelectedItem != null)
+            {
+                FC_LocalContract SelectedContract = (FC_LocalContract)this.NomContractList.SelectedItem;
+
+                Selected_Contract = SelectedContract;
+
+                CarriersList.ItemsSource = PlannerClass.GetNomCarriers_withDepot(SelectedContract);
+
+
+                string query = "Select * from FC_TripTicket where Is_Complete = 0 and CurrentLocation = \"" + SelectedContract.Origin + "\";";
+
+                FC_TripTicket t = new FC_TripTicket();
+                List<FC_TripTicket> PossibleTickets = t.ObjToTable(SQL.Select(t, query));
+
+                OtherTickets.ItemsSource = PossibleTickets;
+            }
+        }
+
+        private void CreateChossenOrder(object sender, RoutedEventArgs e)
+        {
+            if(CarriersList.SelectedCells[0].Item != null)
+            {
+                CarrierWithDepot_View t = (CarrierWithDepot_View)CarriersList.SelectedCells[0].Item;
+                FC_Carrier ChossenContract = new FC_Carrier(t.FC_CarrierID, t.Carrier_Name);
+
+                CreateTripInfo tripInfo = new CreateTripInfo(Selected_Contract, ChossenContract);
+
+                PlannerClass.DeleteNominations(Selected_Contract);
+
+
+            }
+
+            
         }
     }
 }

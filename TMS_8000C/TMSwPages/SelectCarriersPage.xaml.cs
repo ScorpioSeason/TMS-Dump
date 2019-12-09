@@ -37,24 +37,14 @@ namespace TMSwPages
             FC_LocalContract ReadInContract = (FC_LocalContract)data;
             PassedInContract = ReadInContract;
 
-            string query = "select ca.FC_CarrierID, ca.Carrier_Name, dc.CityName, dc.FTL_Availibility, dc.LTL_Availibility, dc.FTL_Rate, dc.LTL_Rate, dc.Reefer_Charge " +
-                           "from FC_BuyerToPlannerContract as bp " +
-                           "left join FC_CarrierNom as CN on CN.FC_BuyerToPlannerContractID = bp.FC_BuyerToPlannerContractID " +
-                           "left join FC_Carrier as ca on ca.FC_CarrierID = CN.FC_CarrierID " +
-                           "left join FC_DepotCity as dc on dc.FC_CarrierID = ca.FC_CarrierID " +
-                           "where bp.FC_LocalContractID = " + ReadInContract.FC_LocalContractID.ToString() + " and dc.CityName = \"" + ReadInContract.Origin + "\";";
+            //CarriersList.ItemsSource = NominatedCarriers;
 
-            CarrierWithDepot_View c = new CarrierWithDepot_View();
-            List<CarrierWithDepot_View> NominatedCarriers = c.ObjToTable(SQL.Select(c, query));
+            //query = "Select * from FC_TripTicket where Is_Complete = 0 and CurrentLocation = \"" + ReadInContract.Origin + "\";";
 
-            CarriersList.ItemsSource = NominatedCarriers;
+            //FC_TripTicket t = new FC_TripTicket();
+            //List<FC_TripTicket> PossibleTickets = t.ObjToTable(SQL.Select(t, query));
 
-            query = "Select * from FC_TripTicket where Is_Complete = 0 and CurrentLocation = \"" + ReadInContract.Origin + "\";";
-
-            FC_TripTicket t = new FC_TripTicket();
-            List<FC_TripTicket> PossibleTickets = t.ObjToTable(SQL.Select(t, query));
-
-            OtherTickets.ItemsSource = PossibleTickets;
+            //OtherTickets.ItemsSource = PossibleTickets;
         }
 
         private void SwitchUserClick(object sender, RoutedEventArgs e)
@@ -77,27 +67,11 @@ namespace TMSwPages
         {
             CarrierWithDepot_View t = (CarrierWithDepot_View)CarriersList.SelectedCells[0].Item;
 
-
             FC_Carrier SelectedContract = new FC_Carrier(t.FC_CarrierID, t.Carrier_Name);
 
             CreateTripInfo tripInfo = new CreateTripInfo(PassedInContract, SelectedContract);
 
-            string Query = "select bp.FC_BuyerToPlannerContractID, bp.FC_LocalContractID " +
-                "from FC_BuyerToPlannerContract as bp " +
-                "left join FC_LocalContract on FC_LocalContract.FC_LocalContractID = bp.FC_LocalContractID " +
-                "where FC_LocalContract.FC_LocalContractID = " + PassedInContract.FC_LocalContractID + ";";
-
-            FC_BuyerToPlannerContract p = new FC_BuyerToPlannerContract();
-            List<FC_BuyerToPlannerContract> B2P = p.ObjToTable(SQL.Select(p, Query));
-
-            Query = "delete from FC_CarrierNom where FC_BuyerToPlannerContractID = " + B2P[0].FC_BuyerToPlannerContractID + ";";
-            SQL.GenericFunction(Query);
-
-            Query = "delete from FC_BuyerToPlannerContract where FC_BuyerToPlannerContractID = " + B2P[0].FC_BuyerToPlannerContractID + ";";
-
-            SQL.GenericFunction(Query);
-
-
+            PlannerClass.DeleteNominations(PassedInContract);
         }
         
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
