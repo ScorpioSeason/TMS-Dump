@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TMSwPages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="500" d:DesignWidth="1000"
       Title="BuyerPage">
 
     <!--This is the grid which holds the page display-->
@@ -61,31 +61,47 @@
                                 <ColumnDefinition></ColumnDefinition>
                                 <ColumnDefinition></ColumnDefinition>
                                 <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition x:Name="InitiateOrderControls" Height="auto"></RowDefinition>
-                                <RowDefinition x:Name="InitiateOrderMain" Height="*"></RowDefinition>
+                                <RowDefinition x:Name="InitiateOrderMain" Height="1*"></RowDefinition>
+                                <RowDefinition Height="auto"></RowDefinition>
+                                <RowDefinition x:Name="NomView" Height="1*"></RowDefinition>
                                 <RowDefinition x:Name="InitiateOrderButtons" Height="auto"></RowDefinition>
                             </Grid.RowDefinitions>
 
                             <!--Controls Row (0) -->
-                            <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Content="Load/Refresh" Click="Button_Click"></Button>
+                            <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Content="Confirm Contract Selection" Click="Confirm_Click"></Button>
+                            <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="1" Margin="5,5,5,5" Content="Add Contract(s) to Selection" Click="Button_AddContract"></Button>
+                            <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="2" Margin="5,5,5,5" Content="Load/Refresh Selection" Click="Button_Click_1"></Button>
+                            <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="0" Margin="5,5,5,5" Content="Load/Refresh Contract MarketPlace" Click="Button_Click"></Button>
                             <!--<Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="0" Margin="5,5,5,5" Content="Increment Time (1 Day)"/>-->
 
                             <!--Main Content Row (1) -->
-                            <DataGrid Name="DG1" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="False"  Grid.ColumnSpan="5" Grid.Row="1" Margin="5,5,5,5">
+                            <DataGrid Name="DG1" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="False"  Grid.ColumnSpan="2" Grid.RowSpan="3" Grid.Row="1" Margin="5,5,5,5">
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Header="Client Name" Binding="{Binding Client_Name}" IsReadOnly="True" />
+                                    <DataGridTextColumn Header="Client Name" Binding="{Binding Client_Name}" />
                                     <DataGridTextColumn Header="Job Type" Binding="{Binding Job_type}" IsReadOnly="True"/>
                                     <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" IsReadOnly="True"/>
                                     <DataGridTextColumn Header="Origin" Binding="{Binding Origin}" IsReadOnly="True"/>
                                     <DataGridTextColumn Header="Destination" Binding="{Binding Destination}" IsReadOnly="True"/>
                                     <DataGridTextColumn Header="Van Type" Binding="{Binding Van_type}" IsReadOnly="True"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <DataGrid Name="DG2" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="False" Grid.ColumnSpan="2" Grid.Row="1" Grid.Column="2" Margin="5,5,5,5" SelectionMode="Single" SelectionChanged="DG2_SelectionChanged">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Client Name" Binding="{Binding Client_Name}" />
+                                    <DataGridTextColumn Header="Job Type" Binding="{Binding Job_type}"/>
+                                    <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" />
+                                    <DataGridTextColumn Header="Origin" Binding="{Binding Origin}"/>
+                                    <DataGridTextColumn Header="Destination" Binding="{Binding Destination}" />
+                                    <DataGridTextColumn Header="Van Type" Binding="{Binding Van_type}"/>
                                     <!--The Email property contains a URI.  For example "mailto:lucy0@adventure-works.com"-->
                                 </DataGrid.Columns>
                             </DataGrid>
-
+                            <TextBlock Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="2" Margin="5,5,5,5">Possible Carriers(Nominations):</TextBlock>
+                            <DataGrid Name="DG3" ItemsSource="{Binding}" AutoGenerateColumns="True" CanUserAddRows="False" Grid.ColumnSpan="2" Grid.Row="3" Grid.Column="2" Margin="5,5,5,5"  SelectionMode="Single" SelectionChanged="DG2_SelectionChanged">
+                            </DataGrid>
                             <!--Buttons Row (2) -->
                             <!--<Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="LogSettingsClick">Log Settings</Button>-->
 
@@ -122,21 +138,8 @@
                             </Grid.RowDefinitions>
 
                             <!--Controls Row (0) -->
-                            <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="0" Margin="5,5,5,5" Content="ADD MY SHIT!" Click="Button_AddContract"></Button>
-                            <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Content="Load/Refresh" Click="Button_Click_1"></Button>
+                            
 
-                            <!--Main Content Row (1) -->
-                            <DataGrid Name="DG2" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="False" Grid.ColumnSpan="5" Grid.Row="1" Margin="5,5,5,5">
-                                <DataGrid.Columns>
-                                    <DataGridTextColumn Header="Client Name" Binding="{Binding client_Name}" />
-                                    <DataGridTextColumn Header="Job Type" Binding="{Binding job_Type}"/>
-                                    <DataGridTextColumn Header="Quantity" Binding="{Binding quantity}" />
-                                    <DataGridTextColumn Header="Origin" Binding="{Binding origin}"/>
-                                    <DataGridTextColumn Header="Destination" Binding="{Binding destination}" />
-                                    <DataGridTextColumn Header="Van Type" Binding="{Binding van_Type}"/>
-                                    <!--The Email property contains a URI.  For example "mailto:lucy0@adventure-works.com"-->
-                                </DataGrid.Columns>
-                            </DataGrid>
 
                             <!--Buttons Row (2) -->
                             <!--<Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="LogSettingsClick">Log Settings</Button>
