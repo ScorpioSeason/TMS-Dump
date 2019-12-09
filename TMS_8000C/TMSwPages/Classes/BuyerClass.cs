@@ -34,11 +34,12 @@ namespace TMSwPages
     *   \details	public class
     *   
     * -------------------------------------------------------------------------------------------------------- */
-    public class BuyerClass
+    public static class BuyerClass
     {
-        private List<FC_ContractFromRuss> contracts = new List<FC_ContractFromRuss>();
+        public static List<FC_ContractFromRuss> acceptedContracts = new List<FC_ContractFromRuss>();
+        public static List<FC_ContractFromRuss> contracts = new List<FC_ContractFromRuss>();
 
-        internal List<FC_ContractFromRuss> Contracts { get => contracts; set => contracts = value; }
+        internal static List<FC_ContractFromRuss> Contracts { get => contracts; set => contracts = value; }
 
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
@@ -52,29 +53,68 @@ namespace TMSwPages
         *	\return		None
         *
         * ---------------------------------------------------------------------------------------------------- */
-        public void ParseContracts()
+        public static void ParseContracts()
         {
-
             contracts.Clear();
 
             FC_ContractFromRuss f = new FC_ContractFromRuss();
             contracts = f.ObjToTable(SQL.SelectFromCMP(f));
+        }
+        public static List<FC_Carrier> nomCarriers = new List<FC_Carrier>();  
+        public static void Nominations()
+        {
+            FC_Carrier f = new FC_Carrier();
+            List<FC_Carrier> AllCarriers = f.ObjToTable(SQL.Select(f));
+            foreach (FC_ContractFromRuss y in acceptedContracts) {
+                NominateForPlanner NewNomination = new NominateForPlanner();
+                NewNomination.Add_Contract(y);
+                foreach (FC_Carrier x in AllCarriers)
+                {
+                    string query = "select dc.FC_CarrierID, dc.CityName, dc.FTL_Availibility, dc.LTL_Availibility, dc.FTL_Rate, dc.LTL_Rate, dc.Reefer_Charge " +
+                               "from FC_Carrier as c " +
+                               "left join FC_DepotCity as dc on dc.FC_CarrierID = c.FC_CarrierID " +
+                               "where c.FC_CarrierID = " + x.FC_CarrierID + ";";
 
+                    FC_DepotCity dc = new FC_DepotCity();
+                    List<FC_DepotCity> Depots = dc.ObjToTable(SQL.Select(dc, query));
+                    foreach(FC_DepotCity l in Depots)
+                    {
+                        if (l.CityName.ToUpper() == y.Origin.ToUpper())
+                        {
+                            NewNomination.AddCarrier(x);
+                        }
+                    }
+                }
+                NewNomination.PushToDataBase();
+            }
+            acceptedContracts.Clear();
+        }
 
+        public static List<FC_Carrier> tempCarriers = new List<FC_Carrier>();
 
-        } 
+        public static void NominationView(FC_ContractFromRuss temp)
+        {
+            tempCarriers.Clear();
+            FC_Carrier f = new FC_Carrier();
+            List<FC_Carrier> AllCarriers = f.ObjToTable(SQL.Select(f));
+            
+            foreach (FC_Carrier x in AllCarriers)
+            {
+                string query = "select dc.FC_CarrierID, dc.CityName, dc.FTL_Availibility, dc.LTL_Availibility, dc.FTL_Rate, dc.LTL_Rate, dc.Reefer_Charge " +
+                            "from FC_Carrier as c " +
+                            "left join FC_DepotCity as dc on dc.FC_CarrierID = c.FC_CarrierID " +
+                            "where c.FC_CarrierID = " + x.FC_CarrierID + ";";
+
+                FC_DepotCity dc = new FC_DepotCity();
+                List<FC_DepotCity> Depots = dc.ObjToTable(SQL.Select(dc, query));
+                foreach (FC_DepotCity l in Depots)
+                {
+                    if (l.CityName.ToUpper() == temp.Origin.ToUpper())
+                    {
+                        tempCarriers.Add(x);
+                    }
+                }
+            }
+        }
     }
 }
-
-
-/**
-*	\fn			int Send_Contacts_W_Nominations()
-*	\brief		sets the nominations through possible 
-*	\details	Calls SQL_Query.Select_Contracts from a instance of the class and uses the list it returns to populate the list.
-*	\param[in]  void
-*	\param[out]	void
-*	\exception	This is if we have some big ol try catches?
-*	\see		CallsMade()
-*	\return		None
-
-* ---------------------------------------------------------------------------------------------------- */

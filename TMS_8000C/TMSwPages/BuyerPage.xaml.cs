@@ -21,8 +21,6 @@ namespace TMSwPages
     /// </summary>
     public partial class BuyerPage : Page
     {
-        //List<> acceptedContracts = new List<Contract>();
-        public static BuyerClass buyer = new BuyerClass();
         //public static string a = "";
 
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
@@ -40,9 +38,9 @@ namespace TMSwPages
         public BuyerPage()
         {
             InitializeComponent();
-            
-
-            //DG2.ItemsSource = this.acceptedContracts;
+            BuyerClass.ParseContracts();
+            DG1.ItemsSource = BuyerClass.Contracts;
+            DG2.ItemsSource = BuyerClass.acceptedContracts;
         }
 
         //public BuyerPage(SQL_Query_TMS validatedConnection)
@@ -105,12 +103,9 @@ namespace TMSwPages
         * ---------------------------------------------------------------------------------------------------- */
         private void Button_Click(object sender, RoutedEventArgs e)//load refresh button
         {
-
             DG1.ItemsSource = null;
-
-            buyer.ParseContracts();
-            DG1.ItemsSource = buyer.Contracts;
-
+            BuyerClass.ParseContracts();
+            DG1.ItemsSource = BuyerClass.Contracts;
         }
 
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
@@ -144,13 +139,34 @@ namespace TMSwPages
         * ---------------------------------------------------------------------------------------------------- */
         private void Button_AddContract(object sender, RoutedEventArgs e)
         {
-            DG2.Items.Refresh();
+            foreach (FC_ContractFromRuss c in DG1.SelectedItems)
+            {
+                BuyerClass.acceptedContracts.Add(c);
+            }
+            DG2.ItemsSource = null;
+            DG2.ItemsSource = BuyerClass.acceptedContracts;
         }
 
         private void SwitchUserClick(object sender, RoutedEventArgs e)
         {
             LoginPage newpage = new LoginPage();
             this.NavigationService.Navigate(newpage);
+        }
+
+        private void DG2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            foreach (FC_ContractFromRuss c in DG2.SelectedItems)
+            {
+                BuyerClass.NominationView(c);
+            }
+            DG3.ItemsSource = null;
+            DG3.ItemsSource = BuyerClass.tempCarriers;
+        }
+
+        private void Confirm_Click(object sender, RoutedEventArgs e)
+        {
+            BuyerClass.Nominations();
+            DG3.ItemsSource = null;
         }
     }
 }

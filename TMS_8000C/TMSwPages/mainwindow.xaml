@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TMSwPages"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Source="BuyerPage.xaml">
+        Title="MainWindow" Height="500" Width="1000" Source="BuyerPage.xaml">
 
     <!-- 
     https://docs.microsoft.com/en-us/dotnet/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application
