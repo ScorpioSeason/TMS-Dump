@@ -41,7 +41,6 @@ namespace TMSwPages.Classes
                     FC_Carrier current = new FC_Carrier(CurrentCarrierID, SeperaterStrings[index]);
                     index++;
 
-
                     bool cityFound = true;
 
                     do
@@ -50,7 +49,6 @@ namespace TMSwPages.Classes
                         {
                             FC_DepotCity tempDepot = new FC_DepotCity(CurrentCarrierID, SeperaterStrings[index], int.Parse(SeperaterStrings[index + 1]), int.Parse(SeperaterStrings[index + 2]), double.Parse(SeperaterStrings[index + 3]), double.Parse(SeperaterStrings[index + 4]), double.Parse(SeperaterStrings[index + 5]));
                             InDeoptCities.Add(tempDepot);
-
 
                             index += 6;
                         }
@@ -85,7 +83,6 @@ namespace TMSwPages.Classes
             }
 
             return worked;
-
         }
 
 

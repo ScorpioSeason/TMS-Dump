@@ -684,7 +684,7 @@ namespace TMSwPages.Classes
 
             return outList;
         }
-        
+
         public override List<object> PackageClasses(List<string>[] inList)
         {
             List<object> outList = new List<object>();
@@ -902,5 +902,118 @@ namespace TMSwPages.Classes
 
             return ConvertList;
         }
+
+
     }
+
+    public class CarrierWithDepot_View : ParentTable
+    {
+        public int FC_CarrierID { get; set; }
+        public string Carrier_Name { get; set; }
+        public string CityName { get; set; }
+        public int FTL_Availibility { get; set; }
+        public int LTL_Availibility { get; set; }
+        public double FTL_Rate { get; set; }
+        public double LTL_Rate { get; set; }
+        public double Reefer_Charge { get; set; }
+
+
+        public CarrierWithDepot_View()
+        {
+            FC_CarrierID = -1;
+            Carrier_Name = "not_set";
+            CityName = "not_set";
+            FTL_Availibility = -1;
+            LTL_Availibility = -1;
+            FTL_Rate = -1;
+            LTL_Rate = -1;
+            Reefer_Charge = -1;
+        }
+
+        public CarrierWithDepot_View(int IN_FC_CarrierID, string IN_Carrier_Name, string IN_CityName, int IN_FTL_Availibility, int IN_LTL_Availibility, double IN_FTL_Rate, double IN_LTL_Rate, double IN_Reefer_Charge)
+        {
+            FC_CarrierID = IN_FC_CarrierID;
+            Carrier_Name = IN_Carrier_Name;
+            CityName = IN_CityName;
+            FTL_Availibility = IN_FTL_Availibility;
+            LTL_Availibility = IN_LTL_Availibility;
+            FTL_Rate = IN_FTL_Rate;
+            LTL_Rate = IN_LTL_Rate;
+            Reefer_Charge = IN_Reefer_Charge;
+        }
+
+
+        public override string GetTableName()
+        {
+            return "CarrierWithDepot_View";
+        }
+
+        public override string GetSelectStatment()
+        {
+            return "This shoulc not have been called";
+        }
+
+        public override int GetColoumInt()
+        {
+            return 8;
+        }
+
+        public override List<string> GetColoumNames()
+        {
+            List<string> outList = new List<string>();
+
+            outList.Add("FC_CarrierID");
+            outList.Add("Carrier_Name");
+            outList.Add("CityName");
+            outList.Add("FTL_Availibility");
+            outList.Add("LTL_Availibility");
+            outList.Add("FTL_Rate");
+            outList.Add("LTL_Rate");
+            outList.Add("Reefer_Charge");
+
+            return outList;
+        }
+
+
+        public override List<object> PackageClasses(List<string>[] inList)
+        {
+            List<object> outList = new List<object>();
+
+            for (int i = 0; i < inList[0].Count; i++)
+            {
+                CarrierWithDepot_View current = new CarrierWithDepot_View();
+
+                current.FC_CarrierID = int.Parse(inList[0][i]);
+                current.Carrier_Name = inList[1][i];
+                current.CityName = inList[2][i];
+                current.FTL_Availibility = int.Parse(inList[3][i]);
+                current.LTL_Availibility = int.Parse(inList[4][i]);
+                current.FTL_Rate = double.Parse(inList[5][i]);
+                current.LTL_Rate = double.Parse(inList[6][i]);
+                current.Reefer_Charge = double.Parse(inList[7][i]);
+
+                outList.Add(current);
+            }
+
+            return outList;
+        }
+
+
+        public List<CarrierWithDepot_View> ObjToTable(List<object> inList)
+        {
+            List<CarrierWithDepot_View> ConvertList = new List<CarrierWithDepot_View>();
+
+            foreach (object x in inList)
+            {
+                ConvertList.Add((CarrierWithDepot_View)x);
+            }
+
+            return ConvertList;
+        }
+
+
+
+    }
+
+
 }

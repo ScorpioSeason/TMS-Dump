@@ -35,14 +35,15 @@ namespace TMSwPages
             FC_LocalContract ReadInContract = (FC_LocalContract)data;
             PassedInContract = ReadInContract;
 
-            string query = "select ca.FC_CarrierID, ca.Carrier_Name " +
+            string query = "select ca.FC_CarrierID, ca.Carrier_Name, dc.CityName, dc.FTL_Availibility, dc.LTL_Availibility, dc.FTL_Rate, dc.LTL_Rate, dc.Reefer_Charge " +
                            "from FC_BuyerToPlannerContract as bp " +
                            "left join FC_CarrierNom as CN on CN.FC_BuyerToPlannerContractID = bp.FC_BuyerToPlannerContractID " +
                            "left join FC_Carrier as ca on ca.FC_CarrierID = CN.FC_CarrierID " +
-                           "where bp.FC_LocalContractID = " + ReadInContract.FC_LocalContractID.ToString() + ";";
+                           "left join FC_DepotCity as dc on dc.FC_CarrierID = ca.FC_CarrierID " +
+                           "where bp.FC_LocalContractID = " + ReadInContract.FC_LocalContractID.ToString() + " and dc.CityName = \"" + ReadInContract.Origin + "\";";
 
-            FC_Carrier c = new FC_Carrier();
-            List<FC_Carrier> NominatedCarriers = c.ObjToTable(SQL.Select(c, query));
+            CarrierWithDepot_View c = new CarrierWithDepot_View();
+            List<CarrierWithDepot_View> NominatedCarriers = c.ObjToTable(SQL.Select(c, query));
 
             CarriersList.ItemsSource = NominatedCarriers;
         }
@@ -68,8 +69,6 @@ namespace TMSwPages
             FC_Carrier t = (FC_Carrier)CarriersList.SelectedCells[0].Item;
 
             CreateTripInfo tripInfo = new CreateTripInfo(PassedInContract, t);
-
-
         }
         
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -113,29 +112,12 @@ namespace TMSwPages
                     {
 
                     }
-
                 }
-
             }
         }
 
         private void CarriersList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            FC_Carrier t = (FC_Carrier)CarriersList.SelectedCells[0].Item;
-
-            if (t != null)
-            {
-
-                string query = "select dc.FC_CarrierID, dc.CityName, dc.FTL_Availibility, dc.LTL_Availibility, dc.FTL_Rate, dc.LTL_Rate, dc.Reefer_Charge " +
-                           "from FC_Carrier as c " +
-                           "left join FC_DepotCity as dc on dc.FC_CarrierID = c.FC_CarrierID " +
-                           "where c.FC_CarrierID = " + t.FC_CarrierID + ";";
-
-                FC_DepotCity dc = new FC_DepotCity();
-                List<FC_DepotCity> Depots = dc.ObjToTable(SQL.Select(dc, query));
-
-                DepotsList.ItemsSource = Depots;
-            }
 
         }
     }

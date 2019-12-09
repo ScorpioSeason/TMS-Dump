@@ -79,6 +79,12 @@
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="Carrier ID"  Binding="{Binding FC_CarrierID}"/>
                                     <DataGridTextColumn Header="Carrier Name"  Binding="{Binding Carrier_Name}"/>
+                                    <DataGridTextColumn Header="City Name"  Binding="{Binding CityName}"/>
+                                    <DataGridTextColumn Header="Ftl Ava" Binding="{Binding FTL_Availibility}"/>
+                                    <DataGridTextColumn Header="Ltl Ava" Binding="{Binding LTL_Availibility}"/>
+                                    <DataGridTextColumn Header="FTL Rate" Binding="{Binding FTL_Rate}"/>
+                                    <DataGridTextColumn Header="LTL Rate" Binding="{Binding LTL_Rate}"/>
+                                    <DataGridTextColumn Header="Reefer Charge" Binding="{Binding Reefer_Charge}"/>
                                 </DataGrid.Columns>
                             </DataGrid>
 
