@@ -28,6 +28,8 @@ namespace TMSwPages
         public SelectCarriersPage()
         {
             InitializeComponent();
+
+            DG5.ItemsSource = 
         }
 
         public SelectCarriersPage(object data) : this()
@@ -138,5 +140,24 @@ namespace TMSwPages
             }
 
         }
+        public List<FC_LocalContract> ContractsPerTicket = new List<FC_LocalContract>();
+        private void DG5_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ContractsPerTicket.Clear();
+            foreach (FC_TripTicket c in DG5.SelectedItems)
+            {
+                string query = "select LC.FC_LocalContractID, LC.Client_Name, LC.Job_type, LC.Quantity, LC.Origin, LC.Destination, LC.Van_type " +
+                    "from FC_LocalContract as LC " +
+                    "left join FC_TripTicketLine as ttl on ttl.FC_LocalContractID = LC.FC_LocalContractID " +
+                    "left join FC_TripTicket as tt on tt.FC_TripTicketID = ttl.FC_TripTicketID " +
+                    "where tt.FC_TripTicketID = " + c.FC_TripTicketID + ";";
+                FC_LocalContract lc = new FC_LocalContract();
+                ContractsPerTicket = lc.ObjToTable(SQL.Select(lc, query));
+            }
+            DG6.ItemsSource = null;
+            DG6.ItemsSource = ContractsPerTicket;
+        }
+
+
     }
 }

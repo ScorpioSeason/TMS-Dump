@@ -100,6 +100,7 @@
     <Compile Include="Classes\MappingClass.cs" />
     <Compile Include="Classes\NominateForPlanner.cs" />
     <Compile Include="Classes\ParentTables.cs" />
+    <Compile Include="Classes\PlannerClass.cs" />
     <Compile Include="Classes\SQL.cs" />
     <Compile Include="LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
@@ -107,7 +108,6 @@
     <Compile Include="mainwindow.xaml.cs">
       <DependentUpon>mainwindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Classes\PlannerClass.cs" />
     <Compile Include="PlannerCarriersWDepo.xaml.cs">
       <DependentUpon>PlannerCarriersWDepo.xaml</DependentUpon>
     </Compile>

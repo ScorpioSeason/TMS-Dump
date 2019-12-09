@@ -83,7 +83,7 @@
                             </DataGrid>
 
                             <DataGrid Grid.ColumnSpan="5" Grid.Row="2" Name="DepotsList" AutoGenerateColumns="False" ItemsSource="{Binding}" Margin="5,5,5,5" SelectionMode="Single" CanUserAddRows="False" IsReadOnly="True">
-                                
+
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="Carrier ID"  Binding="{Binding FC_CarrierID}"/>
                                     <DataGridTextColumn Header="City Name"  Binding="{Binding CityName}"/>
@@ -102,7 +102,33 @@
                 </TabItem.Content>
 
             </TabItem>
+            <TabItem Name="ActiveTickets" Header="Ative Tickets">
+                <TabItem.Content>
 
+                    <!--This is only visible within the logs tab-->
+                    <Grid Name="ActiveTicketsInnerGrid">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition x:Name="ActiveTicketsControls" Height="auto"></RowDefinition>
+                            <RowDefinition x:Name="ActiveTicketsMain" Height="1*"></RowDefinition>
+                            <RowDefinition x:Name="ActiveTicketsContracts" Height="1*"></RowDefinition>
+                            <RowDefinition x:Name="ActiveTicketsButtons" Height="auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <DataGrid Grid.ColumnSpan="5" Grid.Row="1" Margin="5,5,5,5" Name="DG5" ItemsSource="{Binding}" AutoGenerateColumns="True" SelectionChanged="DG5_SelectionChanged">
+                        </DataGrid>
+                        <DataGrid Grid.ColumnSpan="5" Grid.Row="2" Margin="5,5,5,5" Name="DG6" ItemsSource="{Binding}" AutoGenerateColumns="True" SelectionChanged="DG5_SelectionChanged">
+                        </DataGrid>
+                        <Button x:Name="RefreshActiveTickets" Grid.Row="0" Margin="5,5,5,5">Refresh Active Contracts</Button>
+                    </Grid>
+                </TabItem.Content>
+            </TabItem>
             <!--This is the content of the Pending Carriers tab-->
             <TabItem Name="ActiveOrders" Header="Active Orders">
 
