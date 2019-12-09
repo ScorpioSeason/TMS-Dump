@@ -109,12 +109,6 @@
     <Compile Include="mainwindow.xaml.cs">
       <DependentUpon>mainwindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PlannerCarriersWDepo.xaml.cs">
-      <DependentUpon>PlannerCarriersWDepo.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="SelectCarriersPage.xaml.cs">
-      <DependentUpon>SelectCarriersPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="PlannerPage.xaml.cs">
       <DependentUpon>PlannerPage.xaml</DependentUpon>
     </Compile>
@@ -141,14 +135,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="PlannerCarriersWDepo.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="SelectCarriersPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="PlannerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -72,26 +72,26 @@ namespace TMSwPages
             NomContractList.Items.Refresh();
         }
 
-        private void SelectCarriers_Click(object sender, RoutedEventArgs e)
-        {
-            if (NomContractList.SelectedItem != null)
-            {
-                PlannerCarriersWDepo newpage = new PlannerCarriersWDepo(this.NomContractList.SelectedItem);
-                this.NavigationService.Navigate(newpage);
-            }
+        //private void SelectCarriers_Click(object sender, RoutedEventArgs e)
+        //{
+        //    if (NomContractList.SelectedItem != null)
+        //    {
+        //        PlannerCarriersWDepo newpage = new PlannerCarriersWDepo(this.NomContractList.SelectedItem);
+        //        this.NavigationService.Navigate(newpage);
+        //    }
 
-        }
+        //}
 
-        private void NavCarriersDepots_Click(object sender, RoutedEventArgs e)
-        {
-            if (NomContractList.SelectedItem != null)
-            {
-                FC_LocalContract t = (FC_LocalContract)NomContractList.SelectedCells[0].Item;
+        //private void NavCarriersDepots_Click(object sender, RoutedEventArgs e)
+        //{
+        //    if (NomContractList.SelectedItem != null)
+        //    {
+        //        FC_LocalContract t = (FC_LocalContract)NomContractList.SelectedCells[0].Item;
 
-                SelectCarriersPage newpage = new SelectCarriersPage(t);
-                this.NavigationService.Navigate(newpage);
-            }
-        }
+        //        SelectCarriersPage newpage = new SelectCarriersPage(t);
+        //        this.NavigationService.Navigate(newpage);
+        //    }
+        //}
         
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -176,6 +176,26 @@ namespace TMSwPages
             }
 
             
+        }
+
+        private void DG5_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            foreach (FC_TripTicket c in DG5.SelectedItems)
+            {
+                PlannerClass.ContractsPerTicket_Populate(c);
+                PlannerClass.RoutSegsPerTicket_Populate(c);
+            }
+            DG6.ItemsSource = null;
+            DG6.ItemsSource = PlannerClass.ContractsPerTicket;
+            DG7.ItemsSource = null;
+            DG7.ItemsSource = PlannerClass.RouteSegsPerTicket;
+        }
+
+        private void RefreshActiveTickets_Click(object sender, RoutedEventArgs e)
+        {
+            PlannerClass.TicketsWithStatus_Populate(1);
+            DG5.ItemsSource = null;
+            DG5.ItemsSource = PlannerClass.ActiveTickets;
         }
     }
 }

@@ -125,51 +125,34 @@
             </TabItem>
 
             <!--This is the content of the Pending Carriers tab-->
-            <TabItem Name="ActiveOrders" Header="Active Orders">
-
-            <!--ActiveOrders Tab-->
+            <TabItem Name="ActiveTickets" Header="Ative Tickets">
                 <TabItem.Content>
 
-                    <DockPanel>
+                    <!--This is only visible within the logs tab-->
+                    <Grid Name="ActiveTicketsInnerGrid">
 
-                        <!--This is only visible within the logs tab-->
-                        <Grid Name="ActiveOrdersInnerGrid">
-
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition x:Name="ActiveOrdersControls" Height="auto"></RowDefinition>
-                                <RowDefinition x:Name="ActiveOrdersMain" Height="*"></RowDefinition>
-                                <RowDefinition x:Name="ActiveOrdersButtons" Height="auto"></RowDefinition>
-                            </Grid.RowDefinitions>
-
-                            <!--Controls Row (0) -->
-                            <!--<Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Content="Load/Refresh" Click="Button_Click"></Button>
-                            <Button  DockPanel.Dock="top" Grid.Row="0" Grid.Column="0" Margin="5,5,5,5" Content="Increment Time (1 Day)"/>-->
-                            
-                            <!--Main Content Row (1) -->
-                            <DataGrid Grid.ColumnSpan="5" Grid.Row="1" Margin="5,5,5,5" Name="DG4" ItemsSource="{Binding}" AutoGenerateColumns="False">
-                                <DataGrid.Columns>
-                                    <DataGridTextColumn Header="First Name"  Binding="{Binding FirstName}"/>
-                                    <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}" />
-                                    <!--The Email property contains a URI.  For example "mailto:lucy0@adventure-works.com"-->
-                                </DataGrid.Columns>
-                            </DataGrid>
-
-                            <!--Buttons Row (2) -->
-                            <!--<Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="LogSettingsClick">Log Settings</Button>-->
-
-                        </Grid>
-
-                    </DockPanel>
-
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition x:Name="ActiveTicketsControls" Height="auto"></RowDefinition>
+                            <RowDefinition x:Name="ActiveTicketsMain" Height="1*"></RowDefinition>
+                            <RowDefinition x:Name="ActiveTicketsContracts" Height="1*"></RowDefinition>
+                            <RowDefinition x:Name="ActiveTicketsButtons" Height="auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <DataGrid Grid.ColumnSpan="2" Grid.RowSpan ="2" Grid.Row="1" Margin="5,5,5,5" Name="DG5" ItemsSource="{Binding}" AutoGenerateColumns="True" SelectionChanged="DG5_SelectionChanged" IsReadOnly="True">
+                        </DataGrid>
+                        <DataGrid Grid.ColumnSpan="3" Grid.Row="1" Grid.Column="2" Margin="5,5,5,5" Name="DG6" ItemsSource="{Binding}" AutoGenerateColumns="True" SelectionChanged="DG5_SelectionChanged" IsReadOnly="True">
+                        </DataGrid>
+                        <DataGrid Grid.ColumnSpan="3" Grid.Row="2" Grid.Column="2" Margin="5,5,5,5" Name="DG7" ItemsSource="{Binding}" AutoGenerateColumns="True" SelectionChanged="DG5_SelectionChanged" IsReadOnly="True">
+                        </DataGrid>
+                        <Button x:Name="RefreshActiveTickets" Grid.Row="0" Margin="5,5,5,5" Click="RefreshActiveTickets_Click">Refresh Active Tickets</Button>
+                    </Grid>
                 </TabItem.Content>
-
             </TabItem>
 
             <!--I assume these haven't been implemented yet, but I made room for them.--> 
