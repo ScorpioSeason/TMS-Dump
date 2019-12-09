@@ -50,31 +50,15 @@ namespace TMSwPages
         *	\exception	none
         *	\see		SQL_Query Class
         *	\return		None
-        *
         * ---------------------------------------------------------------------------------------------------- */
         public void ParseContracts()
         {
-
             contracts.Clear();
 
             FC_ContractFromRuss f = new FC_ContractFromRuss();
             contracts = f.ObjToTable(SQL.SelectFromCMP(f));
-
-
-
         } 
     }
 }
 
 
-/**
-*	\fn			int Send_Contacts_W_Nominations()
-*	\brief		sets the nominations through possible 
-*	\details	Calls SQL_Query.Select_Contracts from a instance of the class and uses the list it returns to populate the list.
-*	\param[in]  void
-*	\param[out]	void
-*	\exception	This is if we have some big ol try catches?
-*	\see		CallsMade()
-*	\return		None
-
-* ---------------------------------------------------------------------------------------------------- */

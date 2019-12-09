@@ -19,44 +19,33 @@ namespace TMSwPages
     /// <summary>
     /// Interaction logic for PlannerPage.xaml
     /// </summary>
-    public partial class PlannerPage : Page
+    public partial class SelectCarriersPage : Page
     {
         static int selectedTab = -1;
 
-        public PlannerPage()
+        FC_LocalContract PassedInContract = null;
+
+        public SelectCarriersPage()
         {
             InitializeComponent();
-            //selectedTab = 0;
-
-            //List<Carrier> testCarriersList = new List<Carrier>();
-            //Carrier testCarrier = new Carrier(42, "CarrierBob");
-            //Carrier testCarrier2 = new Carrier(32, "CarrierFred");
-            //Carrier testCarrier3 = new Carrier(1, "CarrierJoe");
-            //testCarriersList.Add(testCarrier);
-            //testCarriersList.Add(testCarrier2);
-            //testCarriersList.Add(testCarrier3); 
-
-            //List<CompleteNomination> test = new List<CompleteNomination>();
-            //CompleteNomination testNomination = new CompleteNomination();
-            //testNomination.ListOfCarriers = testCarriersList; 
-            //test.Add(testNomination);
-
-            //NomContractList.ItemsSource = test;
-
         }
 
-        //public PlannerPage(SQL_Query_TMS validatedConnection)
-        //{
-        //    InitializeComponent();
-        //    selectedTab = 0;
-        //    NomContractList.Items.Refresh();
+        public SelectCarriersPage(object data) : this()
+        {
+            FC_LocalContract ReadInContract = (FC_LocalContract)data;
+            PassedInContract = ReadInContract;
 
-        //    // Load SQL Connection
-        //    //admin.SetTMSConnection(validatedConnection);
+            string query = "select ca.FC_CarrierID, ca.Carrier_Name " +
+                           "from FC_BuyerToPlannerContract as bp " +
+                           "left join FC_CarrierNom as CN on CN.FC_BuyerToPlannerContractID = bp.FC_BuyerToPlannerContractID " +
+                           "left join FC_Carrier as ca on ca.FC_CarrierID = CN.FC_CarrierID " +
+                           "where bp.FC_LocalContractID = " + ReadInContract.FC_LocalContractID.ToString() + ";";
 
-        //    /// Bind to incoming log data.
-        //    //this.DataContext = data;
-        //}
+            FC_Carrier c = new FC_Carrier();
+            List<FC_Carrier> NominatedCarriers = c.ObjToTable(SQL.Select(c, query));
+
+            CarriersList.ItemsSource = NominatedCarriers;
+        }
 
         private void SwitchUserClick(object sender, RoutedEventArgs e)
         {
@@ -72,34 +61,17 @@ namespace TMSwPages
 
             FC_LocalContract n = new FC_LocalContract();
             List<FC_LocalContract> NominatedContracts = n.ObjToTable(SQL.Select(n, query));
-
-          
-            NomContractList.ItemsSource = NominatedContracts;
-            NomContractList.Items.Refresh();
         }
 
         private void SelectCarriers_Click(object sender, RoutedEventArgs e)
         {
-            if (NomContractList.SelectedItem != null)
-            {
-                PlannerCarriersWDepo newpage = new PlannerCarriersWDepo(this.NomContractList.SelectedItem);
-                this.NavigationService.Navigate(newpage);
-            }
+            FC_Carrier t = (FC_Carrier)CarriersList.SelectedCells[0].Item;
 
-        }
+            CreateTripInfo tripInfo = new CreateTripInfo(PassedInContract, t);
 
-        private void NavCarriersDepots_Click(object sender, RoutedEventArgs e)
-        {
-            if (NomContractList.SelectedItem != null)
-            {
-                FC_LocalContract t = (FC_LocalContract)NomContractList.SelectedCells[0].Item;
 
-                SelectCarriersPage newpage = new SelectCarriersPage(t);
-                this.NavigationService.Navigate(newpage);
-            }
         }
         
-
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (selectedTab != PlannerTabs.SelectedIndex)
@@ -145,6 +117,26 @@ namespace TMSwPages
                 }
 
             }
+        }
+
+        private void CarriersList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            FC_Carrier t = (FC_Carrier)CarriersList.SelectedCells[0].Item;
+
+            if (t != null)
+            {
+
+                string query = "select dc.FC_CarrierID, dc.CityName, dc.FTL_Availibility, dc.LTL_Availibility, dc.FTL_Rate, dc.LTL_Rate, dc.Reefer_Charge " +
+                           "from FC_Carrier as c " +
+                           "left join FC_DepotCity as dc on dc.FC_CarrierID = c.FC_CarrierID " +
+                           "where c.FC_CarrierID = " + t.FC_CarrierID + ";";
+
+                FC_DepotCity dc = new FC_DepotCity();
+                List<FC_DepotCity> Depots = dc.ObjToTable(SQL.Select(dc, query));
+
+                DepotsList.ItemsSource = Depots;
+            }
+
         }
     }
 }

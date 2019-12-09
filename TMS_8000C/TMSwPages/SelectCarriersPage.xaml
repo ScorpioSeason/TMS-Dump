@@ -1,4 +1,4 @@
-﻿<Page x:Class="TMSwPages.PlannerPage"
+﻿<Page x:Class="TMSwPages.SelectCarriersPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:TMSwPages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="PlannerPage">
+      Title="SelectCarriersPage">
 
     <!--This is the grid which holds the page display-->
     <Grid Name="OuterGrid" Margin="0,0,0,0">
@@ -65,31 +65,36 @@
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition x:Name="Controls" Height="auto"></RowDefinition>
-                                <RowDefinition x:Name="Main" Height="*"></RowDefinition>
+                                <RowDefinition x:Name="Carriers" Height="*"></RowDefinition>
+                                <RowDefinition x:Name="Depots" Height="*"></RowDefinition>
                                 <RowDefinition x:Name="Buttons" Height="auto"></RowDefinition>
                             </Grid.RowDefinitions>
 
                             <!--Controls Row (0)-->
-                            <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Content="Select Carriers..." Click="NavCarriersDepots_Click"></Button>
+                            <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Content="Confirm / Submit" Click="SelectCarriers_Click"></Button>
                             <Button  DockPanel.Dock="top" Grid.Row="0" Grid.Column="0" Margin="5,5,5,5" Content="Load Contracts" Click="LoadContracts_Click"/>
 
                             <!--Main Content Row (1) -->
-                            <DataGrid Grid.ColumnSpan="5" Grid.Row="1" Name="NomContractList" AutoGenerateColumns="False" ItemsSource="{Binding}"  Margin="5,5,5,5" SelectionMode="Single" CanUserAddRows="False" IsReadOnly="True">
+                            <DataGrid Grid.ColumnSpan="5" Grid.Row="1" x:Name="CarriersList" ItemsSource="{Binding}" AutoGenerateColumns="False" Margin="5,5,5,5" SelectionMode="Single" CanUserAddRows="False" IsReadOnly="True" SelectionChanged="CarriersList_SelectionChanged">
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Header="ID" Binding="{Binding FC_LocalContractID}"/>
-                                    <DataGridTextColumn Header="Client Name" Binding="{Binding Client_Name}"/>
-                                    <DataGridTextColumn Header="Job Type" Binding="{Binding Job_type}"/>
-                                    <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" />
-                                    <DataGridTextColumn Header="Origin" Binding="{Binding Origin}" />
-                                    <DataGridTextColumn Header="Destination" Binding="{Binding Destination}" />
-                                    <DataGridTextColumn Header="Van Type" Binding="{Binding Van_type}" />
+                                    <DataGridTextColumn Header="Carrier ID"  Binding="{Binding FC_CarrierID}"/>
+                                    <DataGridTextColumn Header="Carrier Name"  Binding="{Binding Carrier_Name}"/>
                                 </DataGrid.Columns>
                             </DataGrid>
 
-                            <!--Buttons Row (2) -->
-                            <!--<Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="LogSettingsClick">Log Settings</Button>
-                            <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="4" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="ViewMoreClick" >View More...</Button>-->
+                            <DataGrid Grid.ColumnSpan="5" Grid.Row="2" Name="DepotsList" AutoGenerateColumns="False" ItemsSource="{Binding}" Margin="5,5,5,5" SelectionMode="Single" CanUserAddRows="False" IsReadOnly="True">
+                                
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Carrier ID"  Binding="{Binding FC_CarrierID}"/>
+                                    <DataGridTextColumn Header="City Name"  Binding="{Binding CityName}"/>
+                                    <DataGridTextColumn Header="Ftl Ava" Binding="{Binding FTL_Availibility}"/>
+                                    <DataGridTextColumn Header="Ltl Ava" Binding="{Binding LTL_Availibility}"/>
+                                    <DataGridTextColumn Header="FTL Rate" Binding="{Binding FTL_Rate}"/>
+                                    <DataGridTextColumn Header="LTL Rate" Binding="{Binding LTL_Rate}"/>
+                                    <DataGridTextColumn Header="Reefer Charge" Binding="{Binding Reefer_Charge}"/>
+                                </DataGrid.Columns>
 
+                            </DataGrid>
                         </Grid>
 
                     </DockPanel>

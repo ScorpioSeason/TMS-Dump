@@ -1,40 +1,11 @@
-﻿// MappingClass FILE HEADER COMMENT: =================================================================================
-/**
- *  \file		MappingClass.cs
- *  \ingroup	TMS
- *  \date		November 20, 2019
- *  \author		8000 Cigarettes - Duane
- *  \brief	    This file contains the functionality for Route Calculation. This will be used by the Planner.
- *  \see		PlannerClass.cs
- *  \details    This file holds the struct definitions that will be used to pass data from class to class.                                       
- *              It also holds the definition Mapping class. This class has the functionality that is needed to calculate route data for trip tickets.
- *
- * =========================================================================================================== */
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-// This class calculates the optimal route for a new trip. This calculation would
-// occur after the Buyer has selected cities for the order, and the planner 
-// nominates carriers for the order. 
-
-namespace TMSwPages
+namespace TMSwPages.Classes
 {
-
-    public struct RouteData
-    {
-        public int RouteDataID;
-        public int KM;
-        public double PickupTime;
-        public double DriveTime;
-        public double LtlTime;
-        public double DropoffTime;
-        public int CityA;
-        public int CityB;
-    }
 
     public struct RouteSumData
     {
@@ -62,6 +33,7 @@ namespace TMSwPages
         public CityNode West { get; set; }
         public int WestKM { get; set; }
         public double WestHour { get; set; }
+
 
         public CityNode(string inName, int inCityId)
         {
@@ -93,19 +65,18 @@ namespace TMSwPages
         *	\exception	null
         *	\see		na
         *	\return		null
-        *
         * ---------------------------------------------------------------------------------------------------- */
         public MappingClass()
         {
 
-            CityNode Windsor = new CityNode ("Windsor", 0 );
-            CityNode London = new CityNode ( "London", 1 );
-            CityNode Hamilton = new CityNode ( "Hamilton", 2 );
-            CityNode Toronto = new CityNode ( "Toronto", 3 );
-            CityNode Oshawa = new CityNode ( "Oshawa", 4 );
-            CityNode Belleville = new CityNode ( "Belleville", 5 );
-            CityNode Kingston = new CityNode ( "Kingston", 6 );
-            CityNode Ottawa = new CityNode ( "Ottawa", 7 );
+            CityNode Windsor = new CityNode("Windsor", 0);
+            CityNode London = new CityNode("London", 1);
+            CityNode Hamilton = new CityNode("Hamilton", 2);
+            CityNode Toronto = new CityNode("Toronto", 3);
+            CityNode Oshawa = new CityNode("Oshawa", 4);
+            CityNode Belleville = new CityNode("Belleville", 5);
+            CityNode Kingston = new CityNode("Kingston", 6);
+            CityNode Ottawa = new CityNode("Ottawa", 7);
 
             Windsor.West = null;
             London.West = Windsor;
@@ -174,33 +145,43 @@ namespace TMSwPages
         *	\return		List<RouteData> A list of the RouteData structs. The list all together will hold all the data for a trip.
         *
         * ---------------------------------------------------------------------------------------------------- */
-        public List<RouteData> GetTravelData(int OriginID, int DestinationID, bool FLTorLTL) //ftl is true
+        public List<FC_RouteSeg> GetTravelData(string Origin, string Destination, int inFTL, int InTicketID) //ftl is true
         {
+            int OriginID = LoadCSV.ToCityID(Origin);
+            int DestinationID = LoadCSV.ToCityID(Destination);
+
+            bool FLTorLTL = false;
+
+            if (inFTL == 1)
+            {
+                FLTorLTL = true;
+            }
+
             //figure out if we need to travel east or west
             CityNode current = nodes.Find(x => x.CityID == OriginID);
             CityNode nextCity;
 
-            List<RouteData> returnList = new List<RouteData>();
+            List<FC_RouteSeg> returnList = new List<FC_RouteSeg>();
 
-            if(OriginID >= 0 && OriginID < Number_of_Cities && DestinationID >= 0 && DestinationID < Number_of_Cities && OriginID != DestinationID)
+            if (OriginID >= 0 && OriginID < Number_of_Cities && DestinationID >= 0 && DestinationID < Number_of_Cities && OriginID != DestinationID)
             {
                 do
                 {
-                    RouteData tripDataPassBack = new RouteData();
+                    FC_RouteSeg tripDataPassBack = new FC_RouteSeg(InTicketID, 0, 0, 0, 0, 0, 0, 0);
 
                     if (OriginID > DestinationID)
                     {
                         //going west
                         nextCity = current.West;
                         tripDataPassBack.KM = current.WestKM;
-                        tripDataPassBack.DriveTime = current.WestHour;
+                        tripDataPassBack.DrivenTime = current.WestHour;
                     }
                     else
                     {
                         //going east
                         nextCity = current.East;
                         tripDataPassBack.KM = current.EastKM;
-                        tripDataPassBack.DriveTime = current.EastHour;
+                        tripDataPassBack.DrivenTime = current.EastHour;
                     }
 
                     tripDataPassBack.CityA = current.CityID;
@@ -208,15 +189,15 @@ namespace TMSwPages
 
                     if (current.CityID == OriginID)
                     {
-                        tripDataPassBack.PickupTime += 2;
+                        tripDataPassBack.PickUpTime += 2;
                     }
 
                     if (nextCity.CityID == DestinationID)
                     {
-                        tripDataPassBack.DropoffTime += 2;
+                        tripDataPassBack.DropOffTime += 2;
                     }
 
-                    if (FLTorLTL && !(nextCity.CityID == DestinationID))
+                    if (FLTorLTL && (nextCity.CityID != DestinationID))
                     {
                         tripDataPassBack.LtlTime += 2;
                     }
@@ -229,7 +210,6 @@ namespace TMSwPages
                 } while (nextCity.CityID != DestinationID);
 
                 return returnList;
-
             }
 
             return null;
@@ -246,21 +226,21 @@ namespace TMSwPages
         *	\see		na
         *	\return		RouteSumData The condensed data
         * ---------------------------------------------------------------------------------------------------- */
-        public RouteSumData SummerizeTrip(List<RouteData> inData)
+        public RouteSumData SummerizeTrip(List<FC_RouteSeg> inData)
         {
             RouteSumData outData = new RouteSumData();
             outData.DestinationCity = -1;
 
             if (inData == null)
             {
-                foreach (RouteData x in inData)
+                foreach (FC_RouteSeg x in inData)
                 {
-                    outData.totalDriveTime += x.DriveTime;
+                    outData.totalDriveTime += x.DrivenTime;
 
-                    outData.totalTripTime += x.DriveTime;
+                    outData.totalTripTime += x.DrivenTime;
 
-                    outData.totalTripTime += x.PickupTime;
-                    outData.totalTripTime += x.DropoffTime;
+                    outData.totalTripTime += x.PickUpTime;
+                    outData.totalTripTime += x.DropOffTime;
                     outData.totalTripTime += x.LtlTime;
 
                     outData.totalKM += x.KM;
