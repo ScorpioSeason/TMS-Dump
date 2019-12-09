@@ -29,7 +29,7 @@ namespace TMSwPages
         {
             InitializeComponent();
 
-            DG5.ItemsSource = 
+            //DG5.ItemsSource = 
         }
 
         public SelectCarriersPage(object data) : this()
