@@ -621,6 +621,8 @@ namespace TMSwPages.Classes
         public string Origin { get; set; }
         public string Destination { get; set; }
         public int Van_type { get; set; }
+        public int Contract_Status { get; set; }
+
 
         public FC_LocalContract()
         {
@@ -631,9 +633,10 @@ namespace TMSwPages.Classes
             Origin = "not_set";
             Destination = "not_set";
             Van_type = -1;
+            Contract_Status = -1;
         }
 
-        public FC_LocalContract(int IN_FC_LocalContractID, string IN_Client_Name, int IN_Job_type, int IN_Quantity, string IN_Origin, string IN_Destination, int IN_Van_type)
+        public FC_LocalContract(int IN_FC_LocalContractID, string IN_Client_Name, int IN_Job_type, int IN_Quantity, string IN_Origin, string IN_Destination, int IN_Van_type, int IN_Contract_Status = -1)
         {
             FC_LocalContractID = IN_FC_LocalContractID;
             Client_Name = IN_Client_Name;
@@ -642,7 +645,9 @@ namespace TMSwPages.Classes
             Origin = IN_Origin;
             Destination = IN_Destination;
             Van_type = IN_Van_type;
+            Contract_Status = IN_Contract_Status;
         }
+
         public override string GetTableName()
         {
             return "FC_LocalContract";
@@ -655,19 +660,20 @@ namespace TMSwPages.Classes
 
         public override int GetColoumInt()
         {
-            return 7;
+            return 8;
         }
 
         public override string GetInsertStatment()
         {
-            return "insert into FC_LocalContract(FC_LocalContractID, Client_Name, Job_type, Quantity, Origin, Destination, Van_type) value (" +
+            return "insert into FC_LocalContract(FC_LocalContractID, Client_Name, Job_type, Quantity, Origin, Destination, Van_type, Contract_Status) value (" +
                 FC_LocalContractID.ToString() + "," +
                 "\"" + Client_Name + "\"," +
                 Job_type.ToString() + "," +
                 Quantity.ToString() + "," +
                 "\"" + Origin + "\"," +
                 "\"" + Destination + "\"," +
-                Van_type.ToString() + ");";
+                Van_type.ToString() + "," +
+                Contract_Status.ToString() + ");";
         }
 
         public override List<string> GetColoumNames()
@@ -681,9 +687,11 @@ namespace TMSwPages.Classes
             outList.Add("Origin");
             outList.Add("Destination");
             outList.Add("Van_type");
+            outList.Add("Contract_Status");
 
             return outList;
         }
+
 
         public override List<object> PackageClasses(List<string>[] inList)
         {
@@ -700,6 +708,7 @@ namespace TMSwPages.Classes
                 current.Origin = inList[4][i];
                 current.Destination = inList[5][i];
                 current.Van_type = int.Parse(inList[6][i]);
+                current.Contract_Status = int.Parse(inList[7][i]);
 
                 outList.Add(current);
             }
@@ -719,6 +728,9 @@ namespace TMSwPages.Classes
 
             return ConvertList;
         }
+
+
+
     }
 
     public class FC_ContractFromRuss : ParentTable

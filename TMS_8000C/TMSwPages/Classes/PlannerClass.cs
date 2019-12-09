@@ -48,6 +48,81 @@ namespace TMSwPages.Classes
             SQL.GenericFunction(Query);
         }
 
+        public static bool AddContractToTicket(FC_TripTicket OriginalTick, FC_TripTicket TempTicket, FC_LocalContract TheContract)
+        {
+            string Query = "select * from FC_RouteSeg where FC_TripTicketID = " + OriginalTick.FC_TripTicketID + ";";
+
+            FC_RouteSeg r = new FC_RouteSeg();
+            List<FC_RouteSeg> OriginalSegs = r.ObjToTable(SQL.Select(r, Query));
+
+            MappingClass map = new MappingClass();
+
+            List<FC_RouteSeg> NewSegs = map.GetTravelData(TheContract.Origin, TheContract.Destination, 0, -1);
+
+            if(OriginalSegs[0].CityA == NewSegs[0].CityA && OriginalSegs[0].CityB == NewSegs[0].CityB)
+            {
+                if(OriginalTick.Size_in_Palettes + TempTicket.Size_in_Palettes < 26)
+                {
+                    if(NewSegs.Count > OriginalSegs.Count)
+                    {
+                        for(int index = OriginalSegs.Count; index < NewSegs.Count; index++ )
+                        {
+                            NewSegs[index].FC_TripTicketID = OriginalTick.FC_TripTicketID;
+
+                            SQL.Insert(NewSegs[index]);
+                        }
+                    }
+
+                    FC_TripTicketLine NewLine = new FC_TripTicketLine(OriginalTick.FC_TripTicketID, TheContract.FC_LocalContractID);
+                    SQL.Insert(NewLine);
+
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public static List<FC_TripTicket> CreateTicketsFromContract(FC_LocalContract InContract)
+        {
+            List<FC_TripTicket> ReturnTickets = new List<FC_TripTicket>();
+
+            if (InContract.Quantity == 0 || InContract.Quantity == 26)
+            {
+                FC_TripTicket newTicket = new FC_TripTicket(-1, -1, InContract.Origin, 0, 0, 0);
+                ReturnTickets.Add(newTicket);
+            }
+            else if(InContract.Quantity < 26)
+            {
+                FC_TripTicket newTicket = new FC_TripTicket(-1, -1, InContract.Origin, InContract.Quantity, 0, 0);
+                ReturnTickets.Add(newTicket);
+            }
+            else if(InContract.Quantity > 26)
+            {
+                FC_TripTicket newTicket = new FC_TripTicket();
+
+                do
+                {
+                    if(InContract.Quantity >= 26)
+                    {
+                        newTicket = new FC_TripTicket(-1, -1, InContract.Origin, 0, 0, 0);
+                    }
+                    else if (InContract.Quantity < 26)
+                    {
+                        newTicket = new FC_TripTicket(-1, -1, InContract.Origin, InContract.Quantity, 0, 0);
+                    }
+
+
+                    ReturnTickets.Add(newTicket);
+
+                    InContract.Quantity -= 26;
+
+                } while (InContract.Quantity > 0);
+            }
+
+            return ReturnTickets;
+        }
+
 
         public static List<FC_LocalContract> GetNominatedContracts()
         {
