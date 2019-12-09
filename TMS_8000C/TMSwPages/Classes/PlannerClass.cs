@@ -10,6 +10,8 @@ namespace TMSwPages.Classes
     {
         public static List<FC_LocalContract> ContractsPerTicket = new List<FC_LocalContract>();
         public static List<FC_TripTicket> ActiveTickets = new List<FC_TripTicket>();
+        public static List<FC_RouteSeg> RouteSegsPerTicket = new List<FC_RouteSeg>();
+        //Ivan
         public static void ContractsPerTicket_Populate(FC_TripTicket temp)
         {
             ContractsPerTicket.Clear();
@@ -21,7 +23,18 @@ namespace TMSwPages.Classes
             FC_LocalContract lc = new FC_LocalContract();
             ContractsPerTicket = lc.ObjToTable(SQL.Select(lc, query));
         }
+        //Ivan
+        public static void RoutSegsPerTicket_Populate(FC_TripTicket inTicket)
+        {
+            if (inTicket != null)
+            {
+                string query = "select * from FC_RouteSeg where FC_TripTicketID =  " + inTicket.FC_TripTicketID + ";";
 
+                FC_RouteSeg c = new FC_RouteSeg();
+                RouteSegsPerTicket = c.ObjToTable(SQL.Select(c, query));
+            }
+        }
+        //Ivan
         public static void TicketsWithStatus_Populate(int status)
         {
             ActiveTickets.Clear();
@@ -151,5 +164,7 @@ namespace TMSwPages.Classes
 
             return null;
         }
+
+        
     }
 }
