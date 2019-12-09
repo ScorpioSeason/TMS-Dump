@@ -48,6 +48,13 @@ namespace TMSwPages
             List<CarrierWithDepot_View> NominatedCarriers = c.ObjToTable(SQL.Select(c, query));
 
             CarriersList.ItemsSource = NominatedCarriers;
+
+            query = "Select * from FC_TripTicket where Is_Complete = 0 and CurrentLocation = \"" + ReadInContract.Origin + "\";";
+
+            FC_TripTicket t = new FC_TripTicket();
+            List<FC_TripTicket> PossibleTickets = t.ObjToTable(SQL.Select(t, query));
+
+            OtherTickets.ItemsSource = PossibleTickets;
         }
 
         private void SwitchUserClick(object sender, RoutedEventArgs e)
