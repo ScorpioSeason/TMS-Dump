@@ -131,7 +131,7 @@
                         </DataGrid>
                         <DataGrid Grid.ColumnSpan="5" Grid.Row="2" Margin="5,5,5,5" Name="DG6" ItemsSource="{Binding}" AutoGenerateColumns="True" SelectionChanged="DG5_SelectionChanged">
                         </DataGrid>
-                        <Button x:Name="RefreshActiveTickets" Grid.Row="0" Margin="5,5,5,5">Refresh Active Contracts</Button>
+                        <Button x:Name="RefreshActiveTickets" Grid.Row="0" Margin="5,5,5,5" Click="RefreshActiveTickets_Click">Refresh Active Contracts</Button>
                     </Grid>
                 </TabItem.Content>
             </TabItem>
