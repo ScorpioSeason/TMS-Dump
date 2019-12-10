@@ -47,6 +47,8 @@ namespace TMSwPages.Classes
                 "where tt.FC_TripTicketID = " + temp.FC_TripTicketID + ";";
             FC_LocalContract lc = new FC_LocalContract();
             ContractsPerTicket = lc.ObjToTable(SQL.Select(lc, query));
+
+ 
         }
 
         //Ivan
