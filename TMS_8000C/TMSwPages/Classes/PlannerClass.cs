@@ -40,13 +40,27 @@ namespace TMSwPages.Classes
         public static List<FC_LocalContract> ContractsPerTicket_Populate(FC_TripTicket temp)
         {
             ContractsPerTicket.Clear();
-            string query = "select LC.FC_LocalContractID, LC.Client_Name, LC.Job_type, LC.Quantity, LC.Origin, LC.Destination, LC.Van_type " +
+            string query = "select LC.FC_LocalContractID, LC.Client_Name, LC.Job_type, LC.Quantity, LC.Origin, LC.Destination, LC.Van_type, LC.Contract_Status " +
                 "from FC_LocalContract as LC " +
                 "left join FC_TripTicketLine as ttl on ttl.FC_LocalContractID = LC.FC_LocalContractID " +
                 "left join FC_TripTicket as tt on tt.FC_TripTicketID = ttl.FC_TripTicketID " +
                 "where tt.FC_TripTicketID = " + temp.FC_TripTicketID + ";";
             FC_LocalContract lc = new FC_LocalContract();
             return lc.ObjToTable(SQL.Select(lc, query));
+        }
+
+        //Duane
+        public static void UpdateContratState(FC_LocalContract inContract, int newState)
+        {
+            string query = "update FC_LocalContract set Contract_Status = " + newState.ToString() + " where FC_LocalContractID = " + inContract.FC_LocalContractID + ";";
+            SQL.GenericFunction(query);
+        }
+
+        //Duane
+        public static void UpdateTicketState(FC_TripTicket inTicket, int newState)
+        {
+            string query = "update FC_TripTicket set Is_Complete = " + newState.ToString() + " where FC_TripTicketID = " + inTicket.FC_TripTicketID.ToString() + ";";
+            SQL.GenericFunction(query);
         }
 
         //Ivan

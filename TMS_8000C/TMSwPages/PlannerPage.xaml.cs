@@ -141,34 +141,13 @@ namespace TMSwPages
             }
         }
 
-        private void NomContractList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if(this.NomContractList.SelectedItem != null)
-            {
-                FC_LocalContract SelectedContract = (FC_LocalContract)this.NomContractList.SelectedItem;
-
-                Selected_Contract = SelectedContract;
-
-                CarriersList.ItemsSource = PlannerClass.GetNomCarriers_withDepot(SelectedContract);
-
-
-                string query = "Select * from FC_TripTicket where Is_Complete = 0 and CurrentLocation = \"" + SelectedContract.Origin + "\";";
-
-                FC_TripTicket t = new FC_TripTicket();
-                List<FC_TripTicket> PossibleTickets = t.ObjToTable(SQL.Select(t, query));
-
-                OtherTickets.ItemsSource = PossibleTickets;
-            }
-        }
 
         private void CreateChossenOrder(object sender, RoutedEventArgs e)
         {
-            if(NomContractList.SelectedCells[0].Item != null)
+            if (NomContractList.SelectedCells != null)
             {
                 AttatchTicketPage newpage = new AttatchTicketPage(this.NomContractList.SelectedItem);
                 this.NavigationService.Navigate(newpage);
-
-
             }
         }
 
@@ -179,6 +158,7 @@ namespace TMSwPages
                 PlannerClass.ContractsPerTicket = PlannerClass.ContractsPerTicket_Populate(c);
                 PlannerClass.RoutSegsPerTicket_Populate(c);
             }
+
             DG6.ItemsSource = null;
             DG6.ItemsSource = PlannerClass.ContractsPerTicket;
             DG7.ItemsSource = null;

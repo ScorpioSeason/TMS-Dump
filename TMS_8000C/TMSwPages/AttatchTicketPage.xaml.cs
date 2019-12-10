@@ -42,22 +42,41 @@ namespace TMSwPages
 
             NominatedCarrierDG.ItemsSource = PlannerClass.GetNomCarriers_withDepot(ReadInContract);
 
+            RefreshPossibleTickets();
+        }
 
-            string query = "Select * from FC_TripTicket where Is_Complete = 0 and CurrentLocation = \"" + ReadInContract.Origin + "\" and not Size_in_Palettes = 0;";
+        public void RefreshPossibleTickets()
+        {
+
+            string query = "Select * from FC_TripTicket where Is_Complete = 0 and CurrentLocation = \"" + PassedInContract.Origin + "\" and not Size_in_Palettes = 0;";
 
             FC_TripTicket t = new FC_TripTicket();
             List<FC_TripTicket> OtherTickets = t.ObjToTable(SQL.Select(t, query));
             List<FC_TripTicket> ValidatedTickets = new List<FC_TripTicket>();
 
-            foreach(FC_TripTicket x in OtherTickets)
+            foreach (FC_TripTicket x in OtherTickets)
             {
-                
+                List<FC_LocalContract> ContractsForTicket = PlannerClass.ContractsPerTicket_Populate(x);
+
+                bool matchfound = false;
+
+                foreach (FC_LocalContract y in ContractsForTicket)
+                {
+                    if (y.FC_LocalContractID == PassedInContract.FC_LocalContractID)
+                    {
+                        matchfound = true;
+                    }
+                }
+
+                if (!matchfound)
+                {
+                    ValidatedTickets.Add(x);
+                }
             }
 
-
-
-            PossibleTickets.ItemsSource = OtherTickets;
+            PossibleTickets.ItemsSource = ValidatedTickets;
         }
+
 
         private void AllTickets_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -130,11 +149,14 @@ namespace TMSwPages
                     }
                 }
             }
+
+            RefreshPossibleTickets();
         }
 
         private void Complete_Click(object sender, RoutedEventArgs e)
         {
             PlannerClass.DeleteNominations(PassedInContract);
+            PlannerClass.UpdateContratState(PassedInContract, 1);
 
             PlannerPage newpage = new PlannerPage();
             this.NavigationService.Navigate(newpage);
