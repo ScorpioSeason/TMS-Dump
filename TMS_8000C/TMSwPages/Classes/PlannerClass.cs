@@ -11,6 +11,31 @@ namespace TMSwPages.Classes
         public static List<FC_LocalContract> ContractsPerTicket = new List<FC_LocalContract>();
         public static List<FC_TripTicket> ActiveTickets = new List<FC_TripTicket>();
         public static List<FC_RouteSeg> RouteSegsPerTicket = new List<FC_RouteSeg>();
+        //Active contracts and their connected tickets
+        public static List<FC_LocalContract> ActiveContracts = new List<FC_LocalContract>();
+        public static List<FC_TripTicket> ConnectedTickets = new List<FC_TripTicket>();
+
+        //Ivan
+        public static void ActiveContracts_Populate()
+        {
+            ActiveContracts.Clear();
+            string query = "select * from FC_LocalContract where Contract_Status = " + 1.ToString() + ";";
+            FC_LocalContract temp = new FC_LocalContract();
+            ActiveContracts = temp.ObjToTable(SQL.Select(temp, query));
+        }
+
+        //Ivan
+        public static void ConnectedTickets_Populate(FC_LocalContract temp)
+        {
+            ConnectedTickets.Clear();
+            string query = "select t.FC_TripTicketID, t.FC_CarrierID, t.CurrentLocation, t.Size_in_Palettes, t.Days_Passes, t.Is_Complete from FC_LocalContract as lc " +
+                "left join FC_TripTicketLine as tt on tt.FC_LocalContractID = lc.FC_LocalContractID " +
+                "left join FC_TripTicket as t on t.FC_TripTicketID = tt.FC_TripTicketID " +
+                "where lc.FC_LocalContractID = " + temp.FC_LocalContractID + ";";
+            FC_TripTicket lc = new FC_TripTicket();
+            ConnectedTickets = lc.ObjToTable(SQL.Select(lc, query));
+        }
+
         //Ivan
         public static void ContractsPerTicket_Populate(FC_TripTicket temp)
         {
@@ -23,6 +48,7 @@ namespace TMSwPages.Classes
             FC_LocalContract lc = new FC_LocalContract();
             ContractsPerTicket = lc.ObjToTable(SQL.Select(lc, query));
         }
+
         //Ivan
         public static void RoutSegsPerTicket_Populate(FC_TripTicket inTicket)
         {
@@ -34,6 +60,7 @@ namespace TMSwPages.Classes
                 RouteSegsPerTicket = c.ObjToTable(SQL.Select(c, query));
             }
         }
+
         //Ivan
         public static void TicketsWithStatus_Populate(int status)
         {
@@ -185,7 +212,5 @@ namespace TMSwPages.Classes
 
             return null;
         }
-
-        
     }
 }

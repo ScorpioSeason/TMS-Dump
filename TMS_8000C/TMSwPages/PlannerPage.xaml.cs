@@ -170,8 +170,6 @@ namespace TMSwPages
 
 
             }
-
-            
         }
 
         private void DG5_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -192,6 +190,24 @@ namespace TMSwPages
             PlannerClass.TicketsWithStatus_Populate(1);
             DG5.ItemsSource = null;
             DG5.ItemsSource = PlannerClass.ActiveTickets;
+        }
+
+        private void DGActiveContracts_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            foreach (FC_LocalContract c in DGActiveContracts.SelectedItems)
+            {
+                PlannerClass.ConnectedTickets_Populate(c);
+            }
+            DGConnectedTickets.ItemsSource = null;
+            DGConnectedTickets.ItemsSource = PlannerClass.ConnectedTickets;
+        }
+
+        private void RefreshActiveContracts_Click(object sender, RoutedEventArgs e)
+        {
+            PlannerClass.ActiveContracts_Populate();
+            DGActiveContracts.ItemsSource = null;
+            DGActiveContracts.ItemsSource = PlannerClass.ActiveContracts;
+            DGConnectedTickets.ItemsSource = null;
         }
     }
 }
