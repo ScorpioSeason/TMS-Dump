@@ -43,7 +43,7 @@ namespace TMSwPages
             NominatedCarrierDG.ItemsSource = PlannerClass.GetNomCarriers_withDepot(ReadInContract);
 
 
-            string query = "Select * from FC_TripTicket where Is_Complete = 0 and CurrentLocation = \"" + ReadInContract.Origin + "\";";
+            string query = "Select * from FC_TripTicket where Is_Complete = 0 and CurrentLocation = \"" + ReadInContract.Origin + "\" and not Size_in_Palettes = 0;";
 
             FC_TripTicket t = new FC_TripTicket();
             List<FC_TripTicket> OtherTickets = t.ObjToTable(SQL.Select(t, query));
@@ -63,29 +63,73 @@ namespace TMSwPages
 
         private void Confirm_Click(object sender, RoutedEventArgs e)
         {
-            if(this.NominatedCarrierDG.SelectedItem != null)
+            List<FC_TripTicket> ticketsFromScreen = new List<FC_TripTicket>();
+
+            if (this.NominatedCarrierDG.SelectedItem != null)
             {
-                FC_Carrier selCarrier = (FC_Carrier)this.NominatedCarrierDG.SelectedItem;
+                CarrierWithDepot_View t = (CarrierWithDepot_View)NominatedCarrierDG.SelectedCells[0].Item;
+                FC_Carrier selCarrier = new FC_Carrier(t.FC_CarrierID, t.Carrier_Name);
+
+                CreateTripInfo tripInfo = new CreateTripInfo(PassedInContract, selCarrier, SelectedTicket);
+
+                ticketsFromScreen = new List<FC_TripTicket>();
+
+                foreach (FC_TripTicket x in AllTickets.Items)
+                {
+                    if (x.FC_TripTicketID != SelectedTicket.FC_TripTicketID)
+                    {
+                        ticketsFromScreen.Add(x);
+                    }
+                }
 
 
-
+                AllTickets.ItemsSource = ticketsFromScreen;
             }
-            else if(this.PossibleTickets.SelectedItem != null)
+            else if (this.PossibleTickets.SelectedItem != null)
             {
+
                 FC_TripTicket ExcistingTicket = (FC_TripTicket)this.PossibleTickets.SelectedItem;
 
-                if (PlannerClass.AddContractToTicket(ExcistingTicket, SelectedTicket, PassedInContract))
+                int PalletesAddedToTicket = PlannerClass.AddContractToTicket(ExcistingTicket, SelectedTicket, PassedInContract);
+
+                if (PalletesAddedToTicket != -1)
                 {
-                    //worked
+                    SelectedTicket.Size_in_Palettes -= PalletesAddedToTicket;
+
+                    foreach (FC_TripTicket x in AllTickets.Items)
+                    {
+                        if (x.FC_TripTicketID == SelectedTicket.FC_TripTicketID)
+                        {
+                            x.Size_in_Palettes = SelectedTicket.Size_in_Palettes;
+
+                            if (x.Size_in_Palettes > 0)
+                            {
+                                ticketsFromScreen.Add(x);
+                            }
+                        }
+                    }
+
+                    AllTickets.ItemsSource = ticketsFromScreen;
+
+                    if (ticketsFromScreen.Count == 0)
+                    {
+                        Complete.IsEnabled = true;
+                    }
                 }
-                else
-                {
-                    //didnt
-                }
+
+                
 
             }
 
+            
+        }
 
+        private void Complete_Click(object sender, RoutedEventArgs e)
+        {
+            PlannerClass.DeleteNominations(PassedInContract);
+
+            PlannerPage newpage = new PlannerPage();
+            this.NavigationService.Navigate(newpage);
         }
     }
 }

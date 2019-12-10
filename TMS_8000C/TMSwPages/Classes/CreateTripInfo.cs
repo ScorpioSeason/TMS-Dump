@@ -8,13 +8,13 @@ namespace TMSwPages.Classes
 {
     public class CreateTripInfo
     {
-        public CreateTripInfo(FC_LocalContract inContract, FC_Carrier inCarrier)
+        public CreateTripInfo(FC_LocalContract inContract, FC_Carrier inCarrier, FC_TripTicket partTicket)
         {
             FC_TripTicket theTicket = new FC_TripTicket();
             theTicket.FC_TripTicketID = SQL.GetNextID("FC_TripTicket");
             theTicket.FC_CarrierID = inCarrier.FC_CarrierID;
             theTicket.Days_Passes = 0;
-            theTicket.Size_in_Palettes = inContract.Quantity;
+            theTicket.Size_in_Palettes = partTicket.Size_in_Palettes;
             theTicket.Is_Complete = 0; //0 is not done. 1 is done
             theTicket.CurrentLocation = inContract.Origin;
 

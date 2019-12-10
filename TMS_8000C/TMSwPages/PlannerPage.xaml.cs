@@ -169,17 +169,6 @@ namespace TMSwPages
                 this.NavigationService.Navigate(newpage);
 
 
-                //CarrierWithDepot_View t = (CarrierWithDepot_View)CarriersList.SelectedCells[0].Item;
-                //FC_Carrier ChossenContract = new FC_Carrier(t.FC_CarrierID, t.Carrier_Name);
-
-                CreateTripInfo tripInfo = new CreateTripInfo(Selected_Contract, ChossenContract);
-
-                //PlannerClass.DeleteNominations(Selected_Contract);
-
-                
-              
-
-
             }
 
             
