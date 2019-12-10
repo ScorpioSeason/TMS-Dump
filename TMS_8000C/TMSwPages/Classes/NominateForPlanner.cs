@@ -51,7 +51,7 @@ namespace TMSwPages.Classes
 
         public bool PushToDataBase()
         {
-            TheContract = new FC_LocalContract(SQL.GetNextID("FC_LocalContract"), InContract.Client_Name, InContract.Job_type, InContract.Quantity, InContract.Origin, InContract.Destination, InContract.Van_type);
+            TheContract = new FC_LocalContract(SQL.GetNextID("FC_LocalContract"), InContract.Client_Name, InContract.Job_type, InContract.Quantity, InContract.Origin, InContract.Destination, InContract.Van_type, 0);
 
             SQL.Insert(TheContract);
 

@@ -132,35 +132,35 @@ namespace TMSwPages.Classes
 
             if (inputCity == 0)
             {
-                return "WINDSOR";
+                return "Windsor";
             }
             else if (inputCity == 1)
             {
-                return "LONDON";
+                return "London";
             }
             else if (inputCity == 2)
             {
-                return "HAMILTON";
+                return "Hamilton";
             }
             else if (inputCity == 3)
             {
-                return "TORONTO";
+                return "Toronto";
             }
             else if (inputCity == 4)
             {
-                return "OSHAWA";
+                return "Oshawa";
             }
             else if (inputCity == 5)
             {
-                return "BELLEVILLE";
+                return "Belleville";
             }
             else if (inputCity == 6)
             {
-                return "KINGSTON";
+                return "Kingston";
             }
             else if (inputCity == 7)
             {
-                return "OTTAWA";
+                return "Ottawa";
             }
 
             return "-1";
