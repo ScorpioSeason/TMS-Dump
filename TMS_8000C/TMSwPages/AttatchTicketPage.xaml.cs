@@ -47,6 +47,14 @@ namespace TMSwPages
 
             FC_TripTicket t = new FC_TripTicket();
             List<FC_TripTicket> OtherTickets = t.ObjToTable(SQL.Select(t, query));
+            List<FC_TripTicket> ValidatedTickets = new List<FC_TripTicket>();
+
+            foreach(FC_TripTicket x in OtherTickets)
+            {
+                
+            }
+
+
 
             PossibleTickets.ItemsSource = OtherTickets;
         }
@@ -82,8 +90,13 @@ namespace TMSwPages
                     }
                 }
 
-
                 AllTickets.ItemsSource = ticketsFromScreen;
+
+                if (ticketsFromScreen.Count == 0)
+                {
+                    Complete.IsEnabled = true;
+                }
+
             }
             else if (this.PossibleTickets.SelectedItem != null)
             {
@@ -116,12 +129,7 @@ namespace TMSwPages
                         Complete.IsEnabled = true;
                     }
                 }
-
-                
-
             }
-
-            
         }
 
         private void Complete_Click(object sender, RoutedEventArgs e)
