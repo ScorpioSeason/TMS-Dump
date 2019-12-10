@@ -37,7 +37,7 @@ namespace TMSwPages.Classes
         }
 
         //Ivan
-        public static void ContractsPerTicket_Populate(FC_TripTicket temp)
+        public static List<FC_LocalContract> ContractsPerTicket_Populate(FC_TripTicket temp)
         {
             ContractsPerTicket.Clear();
             string query = "select LC.FC_LocalContractID, LC.Client_Name, LC.Job_type, LC.Quantity, LC.Origin, LC.Destination, LC.Van_type " +
@@ -46,9 +46,7 @@ namespace TMSwPages.Classes
                 "left join FC_TripTicket as tt on tt.FC_TripTicketID = ttl.FC_TripTicketID " +
                 "where tt.FC_TripTicketID = " + temp.FC_TripTicketID + ";";
             FC_LocalContract lc = new FC_LocalContract();
-            ContractsPerTicket = lc.ObjToTable(SQL.Select(lc, query));
-
- 
+            return lc.ObjToTable(SQL.Select(lc, query));
         }
 
         //Ivan

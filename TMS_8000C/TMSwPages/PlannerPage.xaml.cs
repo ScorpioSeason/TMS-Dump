@@ -176,7 +176,7 @@ namespace TMSwPages
         {
             foreach (FC_TripTicket c in DG5.SelectedItems)
             {
-                PlannerClass.ContractsPerTicket_Populate(c);
+                PlannerClass.ContractsPerTicket = PlannerClass.ContractsPerTicket_Populate(c);
                 PlannerClass.RoutSegsPerTicket_Populate(c);
             }
             DG6.ItemsSource = null;
