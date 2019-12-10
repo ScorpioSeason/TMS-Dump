@@ -11,6 +11,8 @@ namespace TMSwPages.Classes
         public static List<FC_LocalContract> ContractsPerTicket = new List<FC_LocalContract>();
         public static List<FC_TripTicket> ActiveTickets = new List<FC_TripTicket>();
         public static List<FC_RouteSeg> RouteSegsPerTicket = new List<FC_RouteSeg>();
+        //for selecting tickets
+        public static List<FC_TripTicket> PendingTickets = new List<FC_TripTicket>();
         //Active contracts and their connected tickets
         public static List<FC_LocalContract> ActiveContracts = new List<FC_LocalContract>();
         public static List<FC_TripTicket> ConnectedTickets = new List<FC_TripTicket>();
@@ -39,8 +41,8 @@ namespace TMSwPages.Classes
         //Ivan
         public static List<FC_LocalContract> ContractsPerTicket_Populate(FC_TripTicket temp)
         {
-            ContractsPerTicket.Clear();
-            string query = "select LC.FC_LocalContractID, LC.Client_Name, LC.Job_type, LC.Quantity, LC.Origin, LC.Destination, LC.Van_type, LC.Contract_Status " +
+            
+            string query = "select LC.FC_LocalContractID, LC.Client_Name, LC.Job_type, LC.Quantity, LC.Origin, LC.Destination, LC.Van_type " +
                 "from FC_LocalContract as LC " +
                 "left join FC_TripTicketLine as ttl on ttl.FC_LocalContractID = LC.FC_LocalContractID " +
                 "left join FC_TripTicket as tt on tt.FC_TripTicketID = ttl.FC_TripTicketID " +
@@ -76,12 +78,12 @@ namespace TMSwPages.Classes
         }
 
         //Ivan
-        public static void TicketsWithStatus_Populate(int status)
+        public static List<FC_TripTicket> TicketsWithStatus_Populate(int status)
         {
-            ActiveTickets.Clear();
+            
             string query = "select * from FC_TripTicket where Is_Complete = " + status.ToString() + ";";
             FC_TripTicket temp = new FC_TripTicket();
-            ActiveTickets = temp.ObjToTable(SQL.Select(temp, query));
+            return temp.ObjToTable(SQL.Select(temp, query));
         }
 
         public static void DeleteNominations(FC_LocalContract InContract)

@@ -155,6 +155,29 @@
                     </Grid>
                 </TabItem.Content>
             </TabItem>
+            <TabItem Name="PendingTickets" Header="Pending Tickets">
+                <TabItem.Content>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="1*"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBlock Margin="5,5,5,5" Grid.ColumnSpan="4" Grid.Row="0" Grid.Column="0" TextWrapping="Wrap">Active Contracts:</TextBlock>
+                        <Button x:Name="RefeshPendingTickets" Margin="5,5,5,5" Grid.ColumnSpan="1" Grid.Row="0" Grid.Column="4" Click="RefeshPendingTickets_Click">Refresh Pending Tickets</Button>
+                        <DataGrid Grid.ColumnSpan="5" Grid.Row="1" Grid.Column="0" Margin="5,5,5,5" Name="DGPendingTickets" ItemsSource="{Binding}" AutoGenerateColumns="True" SelectionMode="Single" IsReadOnly="True">
+                        </DataGrid>
+                        <Button x:Name="StartSelectedTicket" Margin="5,5,5,5" Grid.ColumnSpan="1" Grid.Row="2" Grid.Column="4" Click="StartSelectedTicket_Click">Start Selected Ticket</Button>
+                    </Grid>
+                </TabItem.Content>
+            </TabItem>
             <!--I assume these haven't been implemented yet, but I made room for them.--> 
             <TabItem Name="PendingCompletion" Header="Pending Completion">
 

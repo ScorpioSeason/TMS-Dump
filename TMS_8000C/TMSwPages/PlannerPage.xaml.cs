@@ -153,6 +153,7 @@ namespace TMSwPages
 
         private void DG5_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            PlannerClass.ContractsPerTicket.Clear();
             foreach (FC_TripTicket c in DG5.SelectedItems)
             {
                 PlannerClass.ContractsPerTicket = PlannerClass.ContractsPerTicket_Populate(c);
@@ -167,7 +168,8 @@ namespace TMSwPages
 
         private void RefreshActiveTickets_Click(object sender, RoutedEventArgs e)
         {
-            PlannerClass.TicketsWithStatus_Populate(1);
+            PlannerClass.ActiveTickets.Clear();
+            PlannerClass.ActiveTickets = PlannerClass.TicketsWithStatus_Populate(1);
             DG5.ItemsSource = null;
             DG5.ItemsSource = PlannerClass.ActiveTickets;
         }
@@ -188,6 +190,19 @@ namespace TMSwPages
             DGActiveContracts.ItemsSource = null;
             DGActiveContracts.ItemsSource = PlannerClass.ActiveContracts;
             DGConnectedTickets.ItemsSource = null;
+        }
+
+        private void RefeshPendingTickets_Click(object sender, RoutedEventArgs e)
+        {
+            PlannerClass.PendingTickets.Clear();
+            PlannerClass.PendingTickets = PlannerClass.TicketsWithStatus_Populate(0);//0 is pending
+            DGPendingTickets.ItemsSource = null;
+            DGPendingTickets.ItemsSource = PlannerClass.PendingTickets;
+        }
+
+        private void StartSelectedTicket_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
