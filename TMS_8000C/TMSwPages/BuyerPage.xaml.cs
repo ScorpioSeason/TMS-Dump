@@ -142,7 +142,10 @@ namespace TMSwPages
             foreach (FC_ContractFromRuss c in DG1.SelectedItems)
             {
                 BuyerClass.acceptedContracts.Add(c);
+                BuyerClass.contracts.Remove(c);
             }
+            DG1.ItemsSource = null;
+            DG1.ItemsSource = BuyerClass.contracts;
             DG2.ItemsSource = null;
             DG2.ItemsSource = BuyerClass.acceptedContracts;
         }
@@ -166,6 +169,7 @@ namespace TMSwPages
         private void Confirm_Click(object sender, RoutedEventArgs e)
         {
             BuyerClass.Nominations();
+            DG2.ItemsSource = null;
             DG3.ItemsSource = null;
         }
     }

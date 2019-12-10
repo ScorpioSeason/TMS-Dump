@@ -186,7 +186,6 @@ namespace TMSwPages.Classes
             return ReturnTickets;
         }
 
-
         public static List<FC_LocalContract> GetNominatedContracts()
         {
             string query = "select LC.FC_LocalContractID, LC.Client_Name, LC.Job_type, LC.Quantity, LC.Origin, LC.Destination, LC.Van_type, LC.Contract_Status " +
