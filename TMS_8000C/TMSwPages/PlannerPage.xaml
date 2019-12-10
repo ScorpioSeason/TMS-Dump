@@ -37,7 +37,7 @@
 
             <!-- Time Menu: Increment Time -->
             <MenuItem Header="Time">
-                <MenuItem Header="Increment Time" />
+                <MenuItem Header="Increment Time" Click="MakeTimePass"/>
             </MenuItem>
 
         </Menu>
@@ -57,11 +57,13 @@
                         <Grid Name="InnerGrid">
 
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition Width="157*"></ColumnDefinition>
+                                <ColumnDefinition Width="157*"></ColumnDefinition>
+                                <ColumnDefinition Width="30*"></ColumnDefinition>
+                                <ColumnDefinition Width="17*"/>
+                                <ColumnDefinition Width="111*"/>
+                                <ColumnDefinition Width="157*"></ColumnDefinition>
+                                <ColumnDefinition Width="157*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition x:Name="Controls" Height="auto"></RowDefinition>
@@ -70,11 +72,11 @@
                             </Grid.RowDefinitions>
 
                             <!--Controls Row (0)-->
-                            <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Content="Create This Order" Click="CreateChossenOrder"></Button>
-                            <Button  DockPanel.Dock="top" Grid.Row="0" Grid.Column="0" Margin="5,5,5,5" Content="Load Contracts" Click="LoadContracts_Click"/>
+                            <Button Grid.Row="0" Grid.Column="6" Margin="5.333,5,5.333,4.667" Content="Create This Order" Click="CreateChossenOrder"/>
+                            <Button Grid.Row="0" Grid.Column="0" Margin="5,5,4.667,4.667" Content="Load Contracts" Click="LoadContracts_Click"/>
 
                             <!--Main Content Row (1) -->
-                            <DataGrid Grid.ColumnSpan="5"  Grid.Row="1" Grid.RowSpan="2" Name="NomContractList" AutoGenerateColumns="False" ItemsSource="{Binding}"  Margin="5,5,5,5" SelectionMode="Single" CanUserAddRows="False" IsReadOnly="True">
+                            <DataGrid Grid.ColumnSpan="7"  Grid.Row="1" Grid.RowSpan="2" Name="NomContractList" AutoGenerateColumns="False" ItemsSource="{Binding}"  Margin="5,5.333,5.333,4.667" SelectionMode="Single" CanUserAddRows="False" IsReadOnly="True">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="ID" Binding="{Binding FC_LocalContractID}"/>
                                     <DataGridTextColumn Header="Client Name" Binding="{Binding Client_Name}"/>
@@ -99,7 +101,7 @@
             </TabItem>
 
             <!--This is the content of the Pending Carriers tab-->
-            <TabItem Name="ActiveTickets" Header="Ative Tickets">
+            <TabItem Name="ActiveTickets" Header="Active Tickets">
                 <TabItem.Content>
 
                     <!--This is only visible within the logs tab-->
@@ -159,34 +161,38 @@
                 <TabItem.Content>
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition Width="157*"></ColumnDefinition>
+                            <ColumnDefinition Width="30*"></ColumnDefinition>
+                            <ColumnDefinition Width="127*"/>
+                            <ColumnDefinition Width="157*"></ColumnDefinition>
+                            <ColumnDefinition Width="157*"></ColumnDefinition>
+                            <ColumnDefinition Width="157*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="auto"></RowDefinition>
                             <RowDefinition Height="1*"></RowDefinition>
                             <RowDefinition Height="auto"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <TextBlock Margin="5,5,5,5" Grid.ColumnSpan="4" Grid.Row="0" Grid.Column="0" TextWrapping="Wrap">Active Contracts:</TextBlock>
-                        <Button x:Name="RefeshPendingTickets" Margin="5,5,5,5" Grid.ColumnSpan="1" Grid.Row="0" Grid.Column="4" Click="RefeshPendingTickets_Click">Refresh Pending Tickets</Button>
-                        <DataGrid Grid.ColumnSpan="5" Grid.Row="1" Grid.Column="0" Margin="5,5,5,5" Name="DGPendingTickets" ItemsSource="{Binding}" AutoGenerateColumns="True" SelectionMode="Single" IsReadOnly="True">
+                        <TextBlock Margin="5,5,4.667,4.667" Grid.ColumnSpan="5" Grid.Row="0" Grid.Column="0" TextWrapping="Wrap">Active Contracts:</TextBlock>
+                        <Button x:Name="RefeshPendingTickets" Margin="5.333,5,5.334,4.667" Grid.ColumnSpan="1" Grid.Row="0" Grid.Column="5" Click="RefeshPendingTickets_Click">Refresh Pending Tickets</Button>
+                        <DataGrid Grid.ColumnSpan="6" Grid.Row="1" Grid.Column="0" Margin="5,5.333,5.334,5" Name="DGPendingTickets" ItemsSource="{Binding}" AutoGenerateColumns="True" SelectionMode="Single" IsReadOnly="True">
                         </DataGrid>
-                        <Button x:Name="StartSelectedTicket" Margin="5,5,5,5" Grid.ColumnSpan="1" Grid.Row="2" Grid.Column="4" Click="StartSelectedTicket_Click">Start Selected Ticket</Button>
+                        <Button x:Name="StartSelectedTicket" Margin="5.333,5,5.334,4.667" Grid.ColumnSpan="1" Grid.Row="2" Grid.Column="5" Click="StartSelectedTicket_Click">Start Selected Ticket</Button>
                     </Grid>
                 </TabItem.Content>
             </TabItem>
-            <!--I assume these haven't been implemented yet, but I made room for them.--> 
+            <!--I assume these haven't been implemented yet, but I made room for them.-->
             <TabItem Name="PendingCompletion" Header="Pending Completion">
 
-                <!--PendingCompletion Tab--><!--
+                <!--PendingCompletion Tab-->
+                <!--
                 <TabItem.Content>
 
                     <DockPanel>
 
-                        --><!--This is only visible within the logs tab--><!--
+                        -->
+                <!--This is only visible within the logs tab-->
+                <!--
                         <Grid Name="PendingCompletionInnerGrid">
 
                             <Grid.ColumnDefinitions>
@@ -202,7 +208,9 @@
                                 <RowDefinition x:Name="PendingCompletionButtons" Height="auto"></RowDefinition>
                             </Grid.RowDefinitions>
 
-                            --><!--Controls Row (0) --><!--
+                            -->
+                <!--Controls Row (0) -->
+                <!--
                             <ComboBox DockPanel.Dock="top" Grid.Row="0" Grid.Column="0" Margin="5,5,5,5" Name="Time_Period" SelectionChanged="Time_Period_SelectionChanged">
                                 <ComboBoxItem>Date Range Picker...</ComboBoxItem>
                             </ComboBox>
@@ -210,7 +218,9 @@
                             <TextBox DockPanel.Dock="top" x:Name="searchTags" Grid.Row="0" Grid.Column="2" Margin="5,5,5,5" Grid.ColumnSpan="2"></TextBox>
                             <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Click="LoadClick">Load</Button>
 
-                            --><!--Main Content Row (1) --><!--
+                            -->
+                <!--Main Content Row (1) -->
+                <!--
                             <DataGrid Grid.ColumnSpan="5" Grid.Row="1" Name="LogsList" ItemsSource="{Binding}" Margin="5,5,5,5" SelectionMode="Single" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="UTC Date/Time" Binding="{Binding logTime}"/>
@@ -220,7 +230,9 @@
                                 <DataGrid.Resources></DataGrid.Resources>
                             </DataGrid>
 
-                            --><!--Buttons Row (2) --><!--
+                            -->
+                <!--Buttons Row (2) -->
+                <!--
                             <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="LogSettingsClick">Log Settings</Button>
                             <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="4" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="ViewMoreClick" >View More...</Button>
 
@@ -231,15 +243,18 @@
                 </TabItem.Content>-->
 
             </TabItem>
-            
+
             <TabItem Name="InvoiceReports" Header="Invoice Reports">
 
-                <!--InvoiceReports Tab--><!--
+                <!--InvoiceReports Tab-->
+                <!--
                 <TabItem.Content>
 
                     <DockPanel>
 
-                        --><!--This is only visible within the logs tab--><!--
+                        -->
+                <!--This is only visible within the logs tab-->
+                <!--
                         <Grid Name="InvoiceReportsInnerGrid">
 
                             <Grid.ColumnDefinitions>
@@ -255,7 +270,9 @@
                                 <RowDefinition x:Name="InvoiceReportsButtons" Height="auto"></RowDefinition>
                             </Grid.RowDefinitions>
 
-                            --><!--Controls Row (0) --><!--
+                            -->
+                <!--Controls Row (0) -->
+                <!--
                             <ComboBox DockPanel.Dock="top" Grid.Row="0" Grid.Column="0" Margin="5,5,5,5" Name="Time_Period" SelectionChanged="Time_Period_SelectionChanged">
                                 <ComboBoxItem>Date Range Picker...</ComboBoxItem>
                             </ComboBox>
@@ -263,7 +280,9 @@
                             <TextBox DockPanel.Dock="top" x:Name="searchTags" Grid.Row="0" Grid.Column="2" Margin="5,5,5,5" Grid.ColumnSpan="2"></TextBox>
                             <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Click="LoadClick">Load</Button>
 
-                            --><!--Main Content Row (1) --><!--
+                            -->
+                <!--Main Content Row (1) -->
+                <!--
                             <DataGrid Grid.ColumnSpan="5" Grid.Row="1" Name="LogsList" ItemsSource="{Binding}" Margin="5,5,5,5" SelectionMode="Single" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="UTC Date/Time" Binding="{Binding logTime}"/>
@@ -273,7 +292,9 @@
                                 <DataGrid.Resources></DataGrid.Resources>
                             </DataGrid>
 
-                            --><!--Buttons Row (2) --><!--
+                            -->
+                <!--Buttons Row (2) -->
+                <!--
                             <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="LogSettingsClick">Log Settings</Button>
                             <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="4" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="ViewMoreClick" >View More...</Button>
 
@@ -295,5 +316,5 @@
         </StatusBar >
 
     </Grid>
-    
+
 </Page>

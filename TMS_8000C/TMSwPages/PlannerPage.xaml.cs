@@ -202,7 +202,18 @@ namespace TMSwPages
 
         private void StartSelectedTicket_Click(object sender, RoutedEventArgs e)
         {
+            foreach(FC_TripTicket x in PlannerClass.PendingTickets)
+            {
+                PlannerClass.UpdateTicketState(x, 1);
+                x.Is_Complete = 1;
+            }
 
+            RefeshPendingTickets_Click(null, null);
+        }
+
+        private void MakeTimePass(object sender, RoutedEventArgs e)
+        {
+            TimePass.IncrementOneDay();
         }
     }
 }

@@ -41,14 +41,20 @@ namespace TMSwPages.Classes
         //Ivan
         public static List<FC_LocalContract> ContractsPerTicket_Populate(FC_TripTicket temp)
         {
-            
-            string query = "select LC.FC_LocalContractID, LC.Client_Name, LC.Job_type, LC.Quantity, LC.Origin, LC.Destination, LC.Van_type " +
+            string query = "select LC.FC_LocalContractID, LC.Client_Name, LC.Job_type, LC.Quantity, LC.Origin, LC.Destination, LC.Van_type, LC.Contract_Status " +
                 "from FC_LocalContract as LC " +
                 "left join FC_TripTicketLine as ttl on ttl.FC_LocalContractID = LC.FC_LocalContractID " +
                 "left join FC_TripTicket as tt on tt.FC_TripTicketID = ttl.FC_TripTicketID " +
                 "where tt.FC_TripTicketID = " + temp.FC_TripTicketID + ";";
             FC_LocalContract lc = new FC_LocalContract();
             return lc.ObjToTable(SQL.Select(lc, query));
+        }
+
+        //Duane
+        public static void UpdateTicketLocation(FC_TripTicket inTicket)
+        {
+            string query = "update FC_TripTicket set CurrentLocation = \'" + inTicket.CurrentLocation + "\' , Days_Passes = " + inTicket.Days_Passes + "  where FC_TripTicketID = " + inTicket.FC_TripTicketID + ";";
+            SQL.GenericFunction(query);
         }
 
         //Duane
