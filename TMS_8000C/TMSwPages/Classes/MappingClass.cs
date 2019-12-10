@@ -145,16 +145,16 @@ namespace TMSwPages.Classes
         *	\return		List<RouteData> A list of the RouteData structs. The list all together will hold all the data for a trip.
         *
         * ---------------------------------------------------------------------------------------------------- */
-        public List<FC_RouteSeg> GetTravelData(string Origin, string Destination, int inFTL, int InTicketID) //ftl is true
+        public List<FC_RouteSeg> GetTravelData(string Origin, string Destination, int inFTL, int InTicketID) //one is ltl
         {
             int OriginID = LoadCSV.ToCityID(Origin);
             int DestinationID = LoadCSV.ToCityID(Destination);
 
-            bool FLTorLTL = false;
+            bool FTL = true;
 
             if (inFTL == 1)
             {
-                FLTorLTL = true;
+                FTL = false;
             }
 
             //figure out if we need to travel east or west
@@ -197,7 +197,7 @@ namespace TMSwPages.Classes
                         tripDataPassBack.DropOffTime += 2;
                     }
 
-                    if (FLTorLTL && (nextCity.CityID != DestinationID))
+                    if (!FTL && (nextCity.CityID != DestinationID))
                     {
                         tripDataPassBack.LtlTime += 2;
                     }
@@ -213,6 +213,33 @@ namespace TMSwPages.Classes
             }
 
             return null;
+        }
+
+        public bool AtOrPastCity(FC_LocalContract inContract, FC_TripTicket inTicket)
+        {
+            int OrginId = LoadCSV.ToCityID(inContract.Origin);
+            int DestId = LoadCSV.ToCityID(inContract.Destination);
+
+            int current = LoadCSV.ToCityID(inTicket.CurrentLocation);
+
+            if (OrginId > DestId)
+            {
+                //going west
+
+                if(current <= DestId)
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                if (current >= DestId)
+                {
+                    return true;
+                }
+            }
+
+            return  false;
         }
 
         // SummerizeTrip METHOD HEADER COMMENT -------------------------------------------------------------------------------

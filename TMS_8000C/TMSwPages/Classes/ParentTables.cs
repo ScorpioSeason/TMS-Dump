@@ -158,19 +158,23 @@ namespace TMSwPages.Classes
     {
         public int FC_TripTicketID { get; set; }
         public int FC_LocalContractID { get; set; }
+        public int PalletsOnTicket { get; set; }
 
 
         public FC_TripTicketLine()
         {
             FC_TripTicketID = -1;
             FC_LocalContractID = -1;
+            PalletsOnTicket = -1;
         }
 
-        public FC_TripTicketLine(int IN_FC_TripTicketID, int IN_FC_LocalContractID)
+        public FC_TripTicketLine(int IN_FC_TripTicketID, int IN_FC_LocalContractID, int IN_PalletsOnTicket = 1)
         {
             FC_TripTicketID = IN_FC_TripTicketID;
             FC_LocalContractID = IN_FC_LocalContractID;
+            PalletsOnTicket = IN_PalletsOnTicket;
         }
+
 
         public override string GetTableName()
         {
@@ -184,14 +188,15 @@ namespace TMSwPages.Classes
 
         public override int GetColoumInt()
         {
-            return 2;
+            return 3;
         }
 
         public override string GetInsertStatment()
         {
-            return "insert into FC_TripTicketLine(FC_TripTicketID, FC_LocalContractID) value (" +
+            return "insert into FC_TripTicketLine(FC_TripTicketID, FC_LocalContractID, PalletsOnTicket) value (" +
                 FC_TripTicketID.ToString() + "," +
-                FC_LocalContractID.ToString() + ");";
+                FC_LocalContractID.ToString() + "," +
+                PalletsOnTicket.ToString() + ");";
         }
 
         public override List<string> GetColoumNames()
@@ -200,9 +205,11 @@ namespace TMSwPages.Classes
 
             outList.Add("FC_TripTicketID");
             outList.Add("FC_LocalContractID");
+            outList.Add("PalletsOnTicket");
 
             return outList;
         }
+
 
         public override List<object> PackageClasses(List<string>[] inList)
         {
@@ -214,12 +221,14 @@ namespace TMSwPages.Classes
 
                 current.FC_TripTicketID = int.Parse(inList[0][i]);
                 current.FC_LocalContractID = int.Parse(inList[1][i]);
+                current.PalletsOnTicket = int.Parse(inList[2][i]);
 
                 outList.Add(current);
             }
 
             return outList;
         }
+
 
         public List<FC_TripTicketLine> ObjToTable(List<object> inList)
         {
@@ -232,6 +241,9 @@ namespace TMSwPages.Classes
 
             return ConvertList;
         }
+
+
+
     }
 
     public class FC_RouteSeg : ParentTable

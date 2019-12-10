@@ -27,7 +27,7 @@ namespace TMSwPages.Classes
         }
 
         //Ivan
-        public static void ConnectedTickets_Populate(FC_LocalContract temp)
+        public static List<FC_TripTicket> ConnectedTickets_Populate(FC_LocalContract temp)
         {
             ConnectedTickets.Clear();
             string query = "select t.FC_TripTicketID, t.FC_CarrierID, t.CurrentLocation, t.Size_in_Palettes, t.Days_Passes, t.Is_Complete from FC_LocalContract as lc " +
@@ -36,6 +36,8 @@ namespace TMSwPages.Classes
                 "where lc.FC_LocalContractID = " + temp.FC_LocalContractID + ";";
             FC_TripTicket lc = new FC_TripTicket();
             ConnectedTickets = lc.ObjToTable(SQL.Select(lc, query));
+
+            return ConnectedTickets;
         }
 
         //Ivan
@@ -119,6 +121,7 @@ namespace TMSwPages.Classes
 
             MappingClass map = new MappingClass();
 
+
             List<FC_RouteSeg> NewSegs = map.GetTravelData(TheContract.Origin, TheContract.Destination, 0, -1);
 
             //check that these tickets are going in the same direction
@@ -143,6 +146,16 @@ namespace TMSwPages.Classes
                 string query = "update FC_TripTicket " +
                       "set Size_in_Palettes = " + OrignalTickNewSize +
                       " where FC_TripTicketID = " + OriginalTick.FC_TripTicketID + ";";
+
+                int FTL = 1;
+
+                if(OrignalTickNewSize == 0)
+                {
+                    FTL = 0;
+                }
+
+                NewSegs = map.GetTravelData(TheContract.Origin, TheContract.Destination, FTL, -1);
+
 
                 SQL.GenericFunction(query);
 
