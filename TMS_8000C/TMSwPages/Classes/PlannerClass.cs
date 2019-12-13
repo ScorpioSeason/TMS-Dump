@@ -121,7 +121,6 @@ namespace TMSwPages.Classes
 
             MappingClass map = new MappingClass();
 
-
             List<FC_RouteSeg> NewSegs = map.GetTravelData(TheContract.Origin, TheContract.Destination, 0, -1);
 
             //check that these tickets are going in the same direction
@@ -141,7 +140,6 @@ namespace TMSwPages.Classes
                 {
                     OrignalTickNewSize = 0;
                 }
-
 
                 string query = "update FC_TripTicket " +
                       "set Size_in_Palettes = " + OrignalTickNewSize +
@@ -169,7 +167,7 @@ namespace TMSwPages.Classes
                     }
                 }
 
-                FC_TripTicketLine NewLine = new FC_TripTicketLine(OriginalTick.FC_TripTicketID, TheContract.FC_LocalContractID);
+                FC_TripTicketLine NewLine = new FC_TripTicketLine(OriginalTick.FC_TripTicketID, TheContract.FC_LocalContractID, PalletesAddedToOgrinal);
                 SQL.Insert(NewLine);
 
                 return PalletesAddedToOgrinal;

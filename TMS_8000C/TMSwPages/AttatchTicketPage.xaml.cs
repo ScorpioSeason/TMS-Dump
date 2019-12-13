@@ -77,7 +77,6 @@ namespace TMSwPages
             PossibleTickets.ItemsSource = ValidatedTickets;
         }
 
-
         private void AllTickets_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if(this.AllTickets.SelectedItem != null)
@@ -115,11 +114,9 @@ namespace TMSwPages
                 {
                     Complete.IsEnabled = true;
                 }
-
             }
             else if (this.PossibleTickets.SelectedItem != null)
             {
-
                 FC_TripTicket ExcistingTicket = (FC_TripTicket)this.PossibleTickets.SelectedItem;
 
                 int PalletesAddedToTicket = PlannerClass.AddContractToTicket(ExcistingTicket, SelectedTicket, PassedInContract);

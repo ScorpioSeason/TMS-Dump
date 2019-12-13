@@ -47,12 +47,12 @@ namespace TMSwPages.Classes
             InContract = new FC_ContractFromRuss(in_clientName, in_jobtype, IN_Quantity, IN_Origin, IN_Destination, IN_Van_type);
 
             return true;
-        }
+        }  
 
         public bool PushToDataBase()
         {
             TheContract = new FC_LocalContract(SQL.GetNextID("FC_LocalContract"), InContract.Client_Name, InContract.Job_type, InContract.Quantity, InContract.Origin, InContract.Destination, InContract.Van_type, 0);
-
+           
             SQL.Insert(TheContract);
 
             FC_BuyerToPlannerContract B2PC = new FC_BuyerToPlannerContract();
@@ -64,8 +64,8 @@ namespace TMSwPages.Classes
             foreach (FC_Carrier x in TheCarriers)
             {
                 SQL.Insert(new FC_CarrierNom(B2PC.FC_BuyerToPlannerContractID, x.FC_CarrierID));
-            }
-
+            } 
+            
             return true;
         }
 

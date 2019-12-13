@@ -29,7 +29,7 @@ namespace TMSwPages.Classes
                 SQL.Insert(x);
             }
 
-            FC_TripTicketLine tripTicketLine = new FC_TripTicketLine(theTicket.FC_TripTicketID, inContract.FC_LocalContractID);
+            FC_TripTicketLine tripTicketLine = new FC_TripTicketLine(theTicket.FC_TripTicketID, inContract.FC_LocalContractID, partTicket.Size_in_Palettes);
             SQL.Insert(tripTicketLine);
 
             int j = 0;
