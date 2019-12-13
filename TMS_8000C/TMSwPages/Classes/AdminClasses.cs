@@ -52,8 +52,6 @@ namespace TMSwPages.Classes
         
         public List<string>[] DisplayCarrier() {
 
-
-
             int numColumns = 0;
             List<string> columnNames = new List<string>();
             List<string>[] columns = null; 
@@ -223,166 +221,6 @@ namespace TMSwPages.Classes
 
     }
 
-
-
-    // Backup Option 1: PHP
-    /*" <?php
-        include 'config.php';
-        include 'opendb.php';
-
-        $tableName  = 'mypet';
-        $backupFile = 'backup/mypet.sql';
-        $query      = "SELECT * INTO OUTFILE '$backupFile' FROM $tableName";
-        $result = mysql_query($query);
-
-        include 'closedb.php';
-        ?> 
-
-    // Restore
-        <?php
-        include 'config.php';
-        include 'opendb.php';
-
-        $tableName  = 'mypet';
-        $backupFile = 'mypet.sql';
-        $query      = "LOAD DATA INFILE 'backupFile' INTO TABLE $tableName";
-        $result = mysql_query($query);
-
-        include 'closedb.php';
-        ?>
-     "*/
-
-    // Backup Option 2: Command Line
-    /*"
-        Change to the bin subdirectory in the directory where MySQL is installed.
-
-        For instance, type cd c:Program FilesMySQLMySQL Server 5.0bin into the command prompt.
-
-        Type the following:
-
-        mysqldump --user=accountname --password=password databasename >pathbackupfilename
-
-    "*/
-
-    // Backup Option 3: Flush
-    /*"
-     Making Backups by Copying Table Files
-    For storage engines that represent each table using its own files, tables can be backed up by 
-    copying those files. For example, MyISAM tables are stored as files, so it is easy to do a backup 
-    by copying files (*.frm, *.MYD, and *.MYI files). To get a consistent backup, stop the server or 
-    lock and flush the relevant tables:
-
-    FLUSH TABLES tbl_list WITH READ LOCK;
-    You need only a read lock; this enables other clients to continue to query the tables while you are
-    making a copy of the files in the database directory. The flush is needed to ensure that the all 
-    active index pages are written to disk before you start the backup. See Section 13.3.5, “LOCK 
-    TABLES and UNLOCK TABLES Statements”, and Section 13.7.6.3, “FLUSH Statement”.
-
-    You can also create a binary backup simply by copying all table files, as long as the server 
-    isn't updating anything. (But note that table file copying methods do not work if your database 
-    contains InnoDB tables. Also, even if the server is not actively updating data, InnoDB may still 
-    have modified data cached in memory and not flushed to disk.)
-    "*/
-
-    // Backup Option 4: Delimited-Text file Backups 
-    /*
-     "Making Delimited-Text File Backups
-    To create a text file containing a table's data, you can use 
-    SELECT * INTO OUTFILE 'file_name' FROM tbl_name. The file is created on the MySQL server host, 
-    not the client host. For this statement, the output file cannot already exist because permitting 
-    files to be overwritten constitutes a security risk. See Section 13.2.9, “SELECT Statement”. 
-    This method works for any kind of data file, but saves only table data, not the table structure.
-
-    Another way to create text data files (along with files containing CREATE TABLE statements for the
-    backed up tables) is to use mysqldump with the --tab option. See Section 7.4.3, “Dumping Data in 
-    Delimited-Text Format with mysqldump”.
-
-    To reload a delimited-text data file, use LOAD DATA or mysqlimport.
-    "*/
-
-    // Backup Option 5: Binary Logs
-    /*"
-     Making Incremental Backups by Enabling the Binary Log
-     MySQL supports incremental backups: You must start the server with the --log-bin option to enable 
-     binary logging; see Section 5.4.4, “The Binary Log”. The binary log files provide you with the 
-     information you need to replicate changes to the database that are made subsequent to the point 
-     at which you performed a backup. At the moment you want to make an incremental backup (containing 
-     all changes that happened since the last full or incremental backup), you should rotate the binary 
-     log by using FLUSH LOGS. This done, you need to copy to the backup location all binary logs which 
-     range from the one of the moment of the last full or incremental backup to the last but one. These 
-     binary logs are the incremental backup; at restore time, you apply them as explained in Section 7.5, 
-     “Point-in-Time (Incremental) Recovery Using the Binary Log”. The next time you do a full backup, 
-     you should also rotate the binary log using FLUSH LOGS or mysqldump --flush-logs. See Section 4.5.4, 
-     “mysqldump — A Database Backup Program”.
-
-   "*/
-
-    // Backup Notes: Recovering Corrupt tables
-    /*"Recovering Corrupt Tables
-       If you have to restore MyISAM tables that have become corrupt, try to recover them using REPAIR TABLE 
-       or myisamchk -r first. That should work in 99.9% of all cases. If myisamchk fails, see Section 7.6, 
-       “MyISAM Table Maintenance and Crash Recovery”.
-
-    "*/
-
-
-    // Read store location
-    // Choose new store location
-    // Copy files from old location to new location
-    // If error, inform user, do not delete old copy. 
-    // Else if success, inform user, delete old copy
-
-    // Initiate backup (button) 
-    // Write to location
-    // If successful write, delete old copy of backup (do not immediately overwrite)
-
-    /*DROP TABLE IF EXISTS 'Carrier';
-         CREATE TABLE 'Carrier' (
-         'Carrier_Name' VARCHAR(100),
-         'FTL_Rate' DOUBLE(5, 4),
-         'LTL_Rate' DOUBLE(5, 4),
-         'Reefer_Charge' DOUBLE(5, 4),
-         'FTL_Availability' INT,
-         'LTL_Availability' INT,
-         PRIMARY KEY('Carrier_Name')
-         )
-         */
-
-    /*
-    DROP TABLE IF EXISTS 'RouteData';
-    CREATE TABLE 'RouteData' (
-    'RouteDataID' VARCHAR(100),
-    'CityA' VARCHAR(100),
-    'CityB' VARCHAR(100),
-    'PickUpTime' DOUBLE(2, 2),
-    'DropOffTime' DOUBLE(2, 2),
-    'LtlTime' DOUBLE(2, 2),
-    'DrivenTime' DOUBLE(2, 2),
-    PRIMARY KEY('RouteDataID'),
-    FOREIGN KEY('CityA') REFERENCES Location('CityID'),
-    FOREIGN KEY('CityB') REFERENCES Location('CityID')) 
-     */
-
-    /*
-    cName,dCity,FTLA,LTLA,FTLRate,LTLRate,reefCharge
-    Planet Express,Windsor,50,640,5.21,0.3621,0.08
-    ,Hamilton,50,640,5.21,0.3621,0.08
-    ,Oshawa,50,640,5.21,0.3621,0.08
-    ,Belleville,50,640,5.21,0.3621,0.08
-    ,Ottawa,50,640,5.21,0.3621,0.08
-    Schooner's,London,18,98,5.05,0.3434,0.07
-    ,Toronto,18,98,5.05,0.3434,0.07
-    ,Kingston,18,98,5.05,0.3434,0.07
-    Tillman Transport,Windsor,24,35,5.11,0.3012,0.09
-    ,London,18,45,5.11,0.3012,0.09
-    ,Hamilton,18,45,5.11,0.3012,0.09
-    We Haul,Ottawa,11,0,5.2,0,0.065
-    ,Toronto,11,0,5.2,0,0.065
-    */
-
-
-
-
     // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
     /**   
     *   \class		TMSLogger
@@ -393,8 +231,8 @@ namespace TMSwPages.Classes
     * -------------------------------------------------------------------------------------------------------- */
     static public class TMSLogger
     {
-        static public string LogFilePath;                                  /// Stores location of the log file
-        static public List<TMSLog> logs = new List<TMSLog>();       /// This is a list of logs stored locally
+        static public string LogFilePath;                               /// Stores location of the log file
+        static public List<TMSLog> logs = new List<TMSLog>();           /// This is a list of logs stored locally
         static public string thisFileDir;
 
         static public void SetDefaultLogFilePath()
@@ -618,6 +456,126 @@ namespace TMSwPages.Classes
             }
 
             _BSV = "|" + _logTime + nUnparsed;
+
+        }
+
+    }
+
+    static public class TMSBackup
+    {
+        static string BackupDate;
+        static DateTime time;
+        static string outgoingQuery;
+        static string incomingQuery;
+        static string filePath;
+        static string thisFileDir;
+        static int restoreNumber;
+
+        static public bool WriteQuery(string pushedQuery) 
+        {
+            incomingQuery = pushedQuery;
+            // Parse pushed query (remove "s)
+            // Set outgoingQuery
+
+            // writeQuery to file
+            bool appendSuccess = true;
+
+            try
+            {
+                /// Open the filestream to append to the file. 
+                FileStream fileStream = new FileStream(filePath, FileMode.Append, FileAccess.Write);
+                StreamWriter fileWriter = new StreamWriter(fileStream);
+
+                /// Add each log entry from the working list to the file as a BSV
+                fileWriter.WriteLine(outgoingQuery);
+                fileWriter.Flush();
+
+                /// Close the file
+                fileWriter.Close(); fileStream.Close();
+            }
+            /// If an exception is thrown here, catch it
+            catch (Exception e)
+            {
+                /// This could become problematic as it calls itself
+                TMSLogger.LogIt("|" + "/AdminClasses.cs" + "|" + "TMSBackup" + "|" + "WriteQuery" + "|" + "Exception" + "|" + e.Message + "|");
+                appendSuccess = false;
+            }
+
+            return appendSuccess;
+
+        }
+
+        static public bool CreateRestorePoint()
+        {
+            // Copy current file to a new one with the restore date. 
+            // Change the write file path to the new file
+            // Start appending to the new file. 
+
+            return true;
+        }
+
+        static public bool RecoverRestorePoint()
+        {
+            // Allow file selection
+            // Read in file
+            // Create Query string
+            // Run it. 
+            // Refresh everything. 
+
+            bool readSuccess = true;
+
+            try
+            {
+                ///// Clear out the working list 
+                //logs.Clear();
+
+                ///// Open the file stream to read from the file
+                //FileStream fileStream = new FileStream((TMSLogger.LogFilePath), FileMode.Open, FileAccess.Read);
+                //StreamReader streamReader = new StreamReader(fileStream);
+
+                ///// Fill the working list with lines from the file 
+                //while (!streamReader.EndOfStream)
+                //{
+                //    string lineString = "";
+                //    if ((lineString = streamReader.ReadLine()).Trim() != "")
+                //    {
+                //        NewLog(lineString);
+                //    }
+
+                //}
+
+                ///// Close the file
+                //streamReader.Close(); fileStream.Close();
+            }
+            /// If an exception is thrown here, create a log for it. 
+            catch (Exception e)
+            {
+                TMSLogger.LogIt("|" + thisFileDir + "/AdminClasses.cs" + "|" + "TMSLogger" + "|" + "ReadExistingLogFile" + "|" + "Exception" + "|" + e.Message + "|");
+                readSuccess = false;
+            }
+
+            return readSuccess;
+        }
+
+        static public void ChangeBackupPath()
+        {
+            // Allow user to select path (folder?)
+            // Copy files in the current folder to the new one
+            // if successful, delete the old files. 
+
+        }
+
+        static public void SetDefaultBackupFilePath()
+        {
+            try
+            {
+                filePath = Environment.CurrentDirectory + "/TMSBackup_" + DateTime.Now.ToFileTimeUtc() + ".sql";
+                thisFileDir = Environment.CurrentDirectory;
+            }
+            catch (Exception e)
+            {
+                TMSLogger.LogIt("|" + "/AdminClasses.cs" + "|" + "TMSBackup" + "|" + "SetDefaultBackupFilePath" + "|" + "Exception" + "|" + e.Message + "|");
+            }
 
         }
 
