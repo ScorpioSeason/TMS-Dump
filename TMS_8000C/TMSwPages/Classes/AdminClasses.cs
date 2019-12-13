@@ -562,7 +562,6 @@ namespace TMSwPages.Classes
             // Allow user to select path (folder?)
             // Copy files in the current folder to the new one
             // if successful, delete the old files. 
-
         }
 
         static public void SetDefaultBackupFilePath()
