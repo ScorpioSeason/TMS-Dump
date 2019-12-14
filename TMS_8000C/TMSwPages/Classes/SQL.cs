@@ -63,12 +63,22 @@ namespace TMSwPages.Classes
         {
             SQL.close();
 
-            server = "127.0.0.1";
-            database = "Ivan_Test";
-            uid = "root";
-            password = "Conestoga1";
-            string connectionString;
-            connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+            int Use_Test_CMP = 1;
+
+            string connectionString = string.Empty;
+
+            if (Use_Test_CMP == 1)
+            {
+                server = "127.0.0.1";
+                database = "Ivan_Test";
+                uid = "root";
+                password = "Conestoga1";
+                connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+            }
+            else
+            {
+                //put the real code here
+            }
 
             //set up the connection
             connection = new MySqlConnection(connectionString);
@@ -81,7 +91,6 @@ namespace TMSwPages.Classes
             SQL.init();
             SQL.open();
 
-            return RetrunedContracts;
         }
 
         //This select statement will take in a table type and specific select statement.

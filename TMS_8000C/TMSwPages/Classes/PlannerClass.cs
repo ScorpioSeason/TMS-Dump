@@ -177,12 +177,7 @@ namespace TMSwPages.Classes
 
                 SQL.GenericFunction(query);
 
-                int FTL = 1;
-
-                if(OrignalTickNewSize == 0)
-                {
-                    FTL = 0;
-                }
+                int FTL = 0;
 
                 List<FC_RouteSeg> NewSegmentsFTL = new List<FC_RouteSeg>();
                 List<FC_RouteSeg> NewSegmentsLTL = new List<FC_RouteSeg>();
