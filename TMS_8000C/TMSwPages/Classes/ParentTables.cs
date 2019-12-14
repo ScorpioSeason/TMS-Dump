@@ -1045,4 +1045,268 @@ namespace TMSwPages.Classes
         public int Contract_Status { get; set; }
         public int Progress { get; set; }
     }
+
+
+    public class FC_Customer : ParentTable
+    {
+        public int FC_CustomerID { get; set; }
+        public string CustName { get; set; }
+        public double Balance { get; set; }
+
+
+        public FC_Customer()
+        {
+            FC_CustomerID = -1;
+            CustName = "not_set";
+            Balance = -1;
+        }
+
+        public FC_Customer(int IN_FC_CustomerID, string IN_CustName, double IN_Balance)
+        {
+            FC_CustomerID = IN_FC_CustomerID;
+            CustName = IN_CustName;
+            Balance = IN_Balance;
+        }
+
+
+        public override string GetTableName()
+        {
+            return "FC_Customer";
+        }
+
+        public override string GetSelectStatment()
+        {
+            return "Select * from FC_Customer;";
+        }
+
+        public override int GetColoumInt()
+        {
+            return 3;
+        }
+
+        public override string GetInsertStatment()
+        {
+            return "insert into FC_Customer(FC_CustomerID, CustName, Balance) value (" +
+                FC_CustomerID.ToString() + "," +
+                "\"" + CustName + "\"," +
+                Balance.ToString() + ");";
+        }
+
+        public override List<string> GetColoumNames()
+        {
+            List<string> outList = new List<string>();
+
+            outList.Add("FC_CustomerID");
+            outList.Add("CustName");
+            outList.Add("Balance");
+
+            return outList;
+        }
+
+
+        public override List<object> PackageClasses(List<string>[] inList)
+        {
+            List<object> outList = new List<object>();
+
+            for (int i = 0; i < inList[0].Count; i++)
+            {
+                FC_Customer current = new FC_Customer();
+
+                current.FC_CustomerID = int.Parse(inList[0][i]);
+                current.CustName = inList[1][i];
+                current.Balance = double.Parse(inList[2][i]);
+
+                outList.Add(current);
+            }
+
+            return outList;
+        }
+
+
+        public List<FC_Customer> ObjToTable(List<object> inList)
+        {
+            List<FC_Customer> ConvertList = new List<FC_Customer>();
+
+            foreach (object x in inList)
+            {
+                ConvertList.Add((FC_Customer)x);
+            }
+
+            return ConvertList;
+        }
+    }
+
+    public class FC_CustContratLine : ParentTable
+    {
+        public int FC_CustomerID { get; set; }
+        public int FC_LocalContractID { get; set; }
+
+        public FC_CustContratLine()
+        {
+            FC_CustomerID = -1;
+            FC_LocalContractID = -1;
+        }
+
+        public FC_CustContratLine(int IN_FC_CustomerID, int IN_FC_LocalContractID)
+        {
+            FC_CustomerID = IN_FC_CustomerID;
+            FC_LocalContractID = IN_FC_LocalContractID;
+        }
+
+
+        public override string GetTableName()
+        {
+            return "FC_CustContratLine";
+        }
+
+        public override string GetSelectStatment()
+        {
+            return "Select * from FC_CustContratLine;";
+        }
+
+        public override int GetColoumInt()
+        {
+            return 2;
+        }
+
+        public override string GetInsertStatment()
+        {
+            return "insert into FC_CustContratLine(FC_CustomerID, FC_LocalContractID) value (" +
+                FC_CustomerID.ToString() + "," +
+                FC_LocalContractID.ToString() + ");";
+        }
+
+        public override List<string> GetColoumNames()
+        {
+            List<string> outList = new List<string>();
+
+            outList.Add("FC_CustomerID");
+            outList.Add("FC_LocalContractID");
+
+            return outList;
+        }
+
+
+        public override List<object> PackageClasses(List<string>[] inList)
+        {
+            List<object> outList = new List<object>();
+
+            for (int i = 0; i < inList[0].Count; i++)
+            {
+                FC_CustContratLine current = new FC_CustContratLine();
+
+                current.FC_CustomerID = int.Parse(inList[0][i]);
+                current.FC_LocalContractID = int.Parse(inList[1][i]);
+
+                outList.Add(current);
+            }
+
+            return outList;
+        }
+
+
+        public List<FC_CustContratLine> ObjToTable(List<object> inList)
+        {
+            List<FC_CustContratLine> ConvertList = new List<FC_CustContratLine>();
+
+            foreach (object x in inList)
+            {
+                ConvertList.Add((FC_CustContratLine)x);
+            }
+
+            return ConvertList;
+        }
+    }
+
+    public class FC_Invoice : ParentTable
+    {
+        public int FC_CustomerID { get; set; }
+        public int FC_LocalContractID { get; set; }
+        public double TotalCost { get; set; }
+
+        public FC_Invoice()
+        {
+            FC_CustomerID = -1;
+            FC_LocalContractID = -1;
+            TotalCost = -1;
+        }
+
+        public FC_Invoice(int IN_FC_CustomerID, int IN_FC_LocalContractID, double IN_TotalCost)
+        {
+            FC_CustomerID = IN_FC_CustomerID;
+            FC_LocalContractID = IN_FC_LocalContractID;
+            TotalCost = IN_TotalCost;
+        }
+
+        public override string GetTableName()
+        {
+            return "FC_Invoice";
+        }
+
+        public override string GetSelectStatment()
+        {
+            return "Select * from FC_Invoice;";
+        }
+
+        public override int GetColoumInt()
+        {
+            return 3;
+        }
+
+        public override string GetInsertStatment()
+        {
+            return "insert into FC_Invoice(FC_CustomerID, FC_LocalContractID, TotalCost) value (" +
+                FC_CustomerID.ToString() + "," +
+                FC_LocalContractID.ToString() + "," +
+                TotalCost.ToString() + ");";
+        }
+
+        public override List<string> GetColoumNames()
+        {
+            List<string> outList = new List<string>();
+
+            outList.Add("FC_CustomerID");
+            outList.Add("FC_LocalContractID");
+            outList.Add("TotalCost");
+
+            return outList;
+        }
+
+
+        public override List<object> PackageClasses(List<string>[] inList)
+        {
+            List<object> outList = new List<object>();
+
+            for (int i = 0; i < inList[0].Count; i++)
+            {
+                FC_Invoice current = new FC_Invoice();
+
+                current.FC_CustomerID = int.Parse(inList[0][i]);
+                current.FC_LocalContractID = int.Parse(inList[1][i]);
+                current.TotalCost = double.Parse(inList[2][i]);
+
+                outList.Add(current);
+            }
+
+            return outList;
+        }
+
+
+        public List<FC_Invoice> ObjToTable(List<object> inList)
+        {
+            List<FC_Invoice> ConvertList = new List<FC_Invoice>();
+
+            foreach (object x in inList)
+            {
+                ConvertList.Add((FC_Invoice)x);
+            }
+
+            return ConvertList;
+        }
+
+
+        
+
+    }
+
 }

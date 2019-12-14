@@ -308,5 +308,91 @@ namespace TMSwPages.Classes
 
             return null;
         }
+
+        public static List<FC_Invoice> GetAllInvoices(int oneForAll_2For2Weeks)
+        {
+            string query = "select * from FC_LocalContract where Contract_Status = 1 or Contract_Status = 2 or Contract_Status = 3;";
+
+            FC_LocalContract l = new FC_LocalContract();
+            List<FC_LocalContract> AllContracts = l.ObjToTable(SQL.Select(l, query));
+
+            if(oneForAll_2For2Weeks == 2)
+            {
+                List<FC_LocalContract> TempContrats = AllContracts;
+                AllContracts.Clear();
+
+                foreach(FC_LocalContract x in TempContrats)
+                {
+                    List<FC_TripTicket> theTickets = ConnectedTickets_Populate(x);
+
+                    if(theTickets[0].Days_Passes > 14)
+                    {
+                        AllContracts.Add(x);
+                    }
+                }
+            }
+
+            List<FC_Invoice> OutInvoices = new List<FC_Invoice>();
+
+            foreach(FC_LocalContract x in AllContracts)
+            {
+                OutInvoices.Add(GenerateInvoice(x));
+            }
+
+            return OutInvoices;
+        }
+
+        public static FC_Invoice GenerateInvoice(FC_LocalContract inContract)
+        {
+            List<FC_TripTicket> AllTickets = ConnectedTickets_Populate(inContract);
+
+            MappingClass map = new MappingClass();
+            List<FC_RouteSeg> TempRouteSegs = map.GetTravelData(inContract.Origin, inContract.Destination, 1, 1);
+
+            double Total_Cost = 0;
+
+            foreach (FC_TripTicket x in AllTickets)
+            {
+                List<FC_RouteSeg> TotalContractSegments = new List<FC_RouteSeg>();
+
+                List<FC_RouteSeg> segments = RoutSegsPerTicket_Populate(x);
+
+                for(int i = 0; i < TempRouteSegs.Count; i++)
+                {
+                    TotalContractSegments.Add(segments[i]);
+                }
+
+                RouteSumData sumData = new RouteSumData();
+                sumData = sumData.SummerizeTrip(TotalContractSegments);
+
+                string query = "select FC_CarrierID, CityName, FTL_Availibility, LTL_Availibility, FTL_Rate, LTL_Rate, Reefer_Charge " +
+                    "from FC_DepotCity " +
+                    "where FC_CarrierID = " + x.FC_CarrierID.ToString() + " and CityName = \"" + inContract + "\";";
+
+                FC_DepotCity d = new FC_DepotCity();
+                List<FC_DepotCity> theDepotCity = d.ObjToTable(SQL.Select(d, query));
+
+                double tempPrice = 0;
+
+                if (inContract.Job_type == 0)
+                {
+                    tempPrice = sumData.totalKM * theDepotCity[0].FTL_Rate;
+                }
+                else
+                {
+                    tempPrice = sumData.totalKM * theDepotCity[0].LTL_Rate;
+                }
+
+                if (inContract.Van_type == 1)
+                {
+                    tempPrice *= theDepotCity[0].Reefer_Charge;
+                }
+
+                Total_Cost += tempPrice;
+            }
+
+            return new FC_Invoice(-1, inContract.FC_LocalContractID, Total_Cost);
+
+        }
     }
 }
