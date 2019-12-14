@@ -96,6 +96,7 @@ namespace TMSwPages.Classes
             SQL.init();
             SQL.open();
 
+            return RetrunedContracts;
         }
 
         //This select statement will take in a table type and specific select statement.

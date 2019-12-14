@@ -971,7 +971,7 @@ namespace TMSwPages.Classes
 
         public override string GetSelectStatment()
         {
-            return "This shoulc not have been called";
+            return "This should not have been called";
         }
 
         public override int GetColoumInt()
@@ -1031,9 +1031,6 @@ namespace TMSwPages.Classes
 
             return ConvertList;
         }
-
-
-
     }
 
     public class FC_LocalContractPROGRESS 
@@ -1046,5 +1043,6 @@ namespace TMSwPages.Classes
         public string Destination { get; set; }
         public int Van_type { get; set; }
         public int Contract_Status { get; set; }
+        public int Progress { get; set; }
     }
 }
