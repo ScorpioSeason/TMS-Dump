@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace TMSwPages.Classes
 {
     public static class TimePass
     {
-
         public static void IncrementOneDay()
         {
             FC_TripTicket t = new FC_TripTicket();
@@ -66,8 +61,6 @@ namespace TMSwPages.Classes
 
                 PlannerClass.UpdateTicketLocation(x);
             }
-
-
 
             string Query = "select FC_LocalContractID, Client_Name, Job_type, Quantity, Origin, Destination, Van_type, Contract_Status from " +
                 "FC_LocalContract where Contract_Status = 1";

@@ -63,10 +63,10 @@ namespace TMSwPages.Classes
         {
             SQL.close();
 
-            server = "159.89.117.198";
-            database = "cmp";
-            uid = "DevOSHT";
-            password = "Snodgr4ss!";
+            server = "127.0.0.1";
+            database = "Ivan_Test";
+            uid = "root";
+            password = "Conestoga1";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
 
@@ -168,16 +168,6 @@ namespace TMSwPages.Classes
             //return the list
             return outList;
         }
-
-
-        public static bool Update(ParentTable input)
-        {
-
-
-
-            return true;
-        }
-
 
         //this method will be able to insert into any table that using the corresponding  ParentTable
         public static bool Insert(ParentTable input)

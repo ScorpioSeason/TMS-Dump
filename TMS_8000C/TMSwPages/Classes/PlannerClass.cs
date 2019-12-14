@@ -74,7 +74,7 @@ namespace TMSwPages.Classes
         }
 
         //Ivan
-        public static void RoutSegsPerTicket_Populate(FC_TripTicket inTicket)
+        public static List<FC_RouteSeg> RoutSegsPerTicket_Populate(FC_TripTicket inTicket)
         {
             if (inTicket != null)
             {
@@ -82,16 +82,46 @@ namespace TMSwPages.Classes
 
                 FC_RouteSeg c = new FC_RouteSeg();
                 RouteSegsPerTicket = c.ObjToTable(SQL.Select(c, query));
+
+                return RouteSegsPerTicket;
             }
+
+            return null;
         }
 
         //Ivan
         public static List<FC_TripTicket> TicketsWithStatus_Populate(int status)
         {
-            
             string query = "select * from FC_TripTicket where Is_Complete = " + status.ToString() + ";";
             FC_TripTicket temp = new FC_TripTicket();
             return temp.ObjToTable(SQL.Select(temp, query));
+        }
+
+        public static int GetTicketProgress(FC_TripTicket InTicket)
+        {
+            string Location = InTicket.CurrentLocation;
+
+            List<FC_RouteSeg> TicketSegs = RoutSegsPerTicket_Populate(InTicket);
+
+            List<FC_RouteSeg> PassedTickets = new List<FC_RouteSeg>();
+
+            foreach(FC_RouteSeg x in TicketSegs)
+            {
+                if(LoadCSV.ToCityName(x.CityB).ToUpper() == InTicket.CurrentLocation.ToUpper())
+                {
+                    break;
+                }
+
+                PassedTickets.Add(x);
+            }
+
+            RouteSumData TraveledData = new RouteSumData();
+            TraveledData = TraveledData.SummerizeTrip(PassedTickets);
+
+            RouteSumData TotalData = new RouteSumData();
+            TotalData = TotalData.SummerizeTrip(TicketSegs);
+
+             return (int)(TraveledData.totalKM / TotalData.totalKM);
         }
 
         public static void DeleteNominations(FC_LocalContract InContract)
@@ -145,6 +175,8 @@ namespace TMSwPages.Classes
                       "set Size_in_Palettes = " + OrignalTickNewSize +
                       " where FC_TripTicketID = " + OriginalTick.FC_TripTicketID + ";";
 
+                SQL.GenericFunction(query);
+
                 int FTL = 1;
 
                 if(OrignalTickNewSize == 0)
@@ -152,19 +184,54 @@ namespace TMSwPages.Classes
                     FTL = 0;
                 }
 
-                NewSegs = map.GetTravelData(TheContract.Origin, TheContract.Destination, FTL, -1);
-
-
-                SQL.GenericFunction(query);
+                List<FC_RouteSeg> NewSegmentsFTL = new List<FC_RouteSeg>();
+                List<FC_RouteSeg> NewSegmentsLTL = new List<FC_RouteSeg>();
 
                 if (NewSegs.Count > OriginalSegs.Count)
                 {
-                    for (int index = OriginalSegs.Count; index < NewSegs.Count; index++)
-                    {
-                        NewSegs[index].FC_TripTicketID = OriginalTick.FC_TripTicketID;
+                    string orginCity = LoadCSV.ToCityName(OriginalSegs[0].CityA);
+                    string EndOfFTL = LoadCSV.ToCityName(OriginalSegs[OriginalSegs.Count - 1].CityB);
+                    string startLTL = LoadCSV.ToCityName(NewSegs[OriginalSegs.Count].CityA);
+                    string endCity = LoadCSV.ToCityName(NewSegs[NewSegs.Count - 1].CityB);
 
-                        SQL.Insert(NewSegs[index]);
-                    }
+                    NewSegmentsFTL = map.GetTravelData(orginCity, EndOfFTL, FTL, OriginalTick.FC_TripTicketID);
+                    NewSegmentsLTL = map.GetTravelData(startLTL, endCity, 1, OriginalTick.FC_TripTicketID);
+                }
+                else if (NewSegs.Count < OriginalSegs.Count)
+                {
+                    string orginCity = LoadCSV.ToCityName(OriginalSegs[0].CityA);
+                    string EndOfFTL = LoadCSV.ToCityName(NewSegs[NewSegs.Count - 1].CityB);
+                    string startLTL = LoadCSV.ToCityName(OriginalSegs[NewSegs.Count + 1].CityA);
+                    string endCity = LoadCSV.ToCityName(OriginalSegs[NewSegs.Count - 1].CityB);
+
+                    NewSegmentsFTL = map.GetTravelData(orginCity, EndOfFTL, FTL, OriginalTick.FC_TripTicketID);
+                    NewSegmentsLTL = map.GetTravelData(startLTL, endCity, 1, OriginalTick.FC_TripTicketID);
+                }
+                else
+                {
+                    string orginCity = LoadCSV.ToCityName(OriginalSegs[0].CityA);
+                    string endCity = LoadCSV.ToCityName(OriginalSegs[NewSegs.Count - 1].CityB);
+
+                    NewSegmentsLTL = map.GetTravelData(orginCity, endCity, FTL, OriginalTick.FC_TripTicketID);
+                }
+
+                if(NewSegmentsLTL != null)
+                {
+                    NewSegmentsLTL[0].PickUpTime = 0;
+                }
+
+
+                query = "delete from FC_RouteSeg where FC_TripTicketID = " + OriginalTick.FC_TripTicketID + ";";
+                SQL.GenericFunction(query);
+
+                foreach (FC_RouteSeg x in NewSegmentsFTL)
+                {
+                    SQL.Insert(x);
+                }
+
+                foreach (FC_RouteSeg x in NewSegmentsLTL)
+                {
+                    SQL.Insert(x);
                 }
 
                 FC_TripTicketLine NewLine = new FC_TripTicketLine(OriginalTick.FC_TripTicketID, TheContract.FC_LocalContractID, PalletesAddedToOgrinal);

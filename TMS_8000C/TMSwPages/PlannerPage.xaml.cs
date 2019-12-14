@@ -154,9 +154,21 @@ namespace TMSwPages
         private void DG5_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             PlannerClass.ContractsPerTicket.Clear();
+
             foreach (FC_TripTicket c in DG5.SelectedItems)
             {
                 PlannerClass.ContractsPerTicket = PlannerClass.ContractsPerTicket_Populate(c);
+
+                foreach(FC_LocalContract x in PlannerClass.ContractsPerTicket)
+                {
+                    string query = "select * from FC_TripTicketLine where FC_TripTicketID = " + c.FC_TripTicketID.ToString() + " and FC_LocalContractID =  " + x.FC_LocalContractID.ToString() + " ;";
+
+                    FC_TripTicketLine t = new FC_TripTicketLine();
+                    List<FC_TripTicketLine> theTicketLine = t.ObjToTable(SQL.Select(t, query));
+
+                    x.Quantity = theTicketLine[0].PalletsOnTicket;
+                }
+
                 PlannerClass.RoutSegsPerTicket_Populate(c);
             }
 
@@ -165,6 +177,8 @@ namespace TMSwPages
             DG7.ItemsSource = null;
             DG7.ItemsSource = PlannerClass.RouteSegsPerTicket;
         }
+
+
 
         private void RefreshActiveTickets_Click(object sender, RoutedEventArgs e)
         {
@@ -215,5 +229,6 @@ namespace TMSwPages
         {
             TimePass.IncrementOneDay();
         }
+
     }
 }
