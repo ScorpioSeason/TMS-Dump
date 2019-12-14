@@ -321,19 +321,9 @@ namespace TMSwPages
                                 //backup
                                 BackupsStartDate.SelectedDate = (DateTime.Today.AddDays(-7));
                                 BackupsEndDate.SelectedDate = DateTime.Today;
-                                backupSearchResults.Clear();
-
                                 
-                                backup.ReadInBackupsList(); 
-                                foreach (TMSBackup b in TMSBackup.backupPoints)
-                                {
-                                    //if ((b.backupDate <= BackupsEndDate.SelectedDate) && (b.BackupDate >= BackupsStartDate.SelectedDate))
-                                    //{
-                                        backupSearchResults.Add(b); 
-                                    //}
-                                }
                                 BackupsList.ItemsSource = backupSearchResults;
-                                BackupsList.Items.Refresh(); 
+                                UpdateBackupsList();
 
                                 break;
                             case (2):
@@ -368,38 +358,62 @@ namespace TMSwPages
 
         private void RestoreSelected_Click(object sender, RoutedEventArgs e)
         {
+            if (BackupsList.SelectedItem != null)
+            {
+                TMSBackup.RecoverRestorePoint((TMSBackup)BackupsList.SelectedItem);
+            }
+
+            UpdateBackupsList();
             // Restore from selected backup point
         }
 
         private void CreateRestore_Click(object sender, RoutedEventArgs e)
         {
+            backup.CreateRestorePoint();
             // Create a new restore point
-            BackupsList.Items.Refresh();
+            UpdateBackupsList();
         }
 
         private void ChangeDir_Click(object sender, RoutedEventArgs e)
         {
-            backup.ChangeBackupPath(); 
+            backup.ChangeBackupPath();
             // change the directory of the backup files
-            BackupsList.Items.Refresh();
+            UpdateBackupsList();
         }
 
         private void BackupsDate_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
             // Update search
+            UpdateBackupsList(); 
+        }
 
-            //backupSearchResults.Clear();
+        private void UpdateBackupsList()
+        {
+            backupSearchResults.Clear();
 
-            //foreach (TMSBackup b in TMSBackup.backupPoints)
-            //{
-            //    if ((b.backupDate <= BackupsEndDate.SelectedDate) && (b.backupDate >= BackupsStartDate.SelectedDate))
-            //    {
-            //        backupSearchResults.Add(b);
-            //    }
-            //}
+            backup.ReadInBackupsList(); // This probably should not be here
+            foreach (TMSBackup b in TMSBackup.backupPoints)
+            {
+                if ((b.backupDate.Date <= BackupsEndDate.SelectedDate) && (b.backupDate.Date >= BackupsStartDate.SelectedDate))
+                {
+                    backupSearchResults.Add(b);
+                }
+            }
 
+            //BackupsList.ItemsSource = backupSearchResults;
             BackupsList.Items.Refresh();
         }
 
+        private void ChangeCUSLocation(object sender, RoutedEventArgs e)
+        {
+            // View Save As File Dialog
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "csv Files (*.csv)|*.csv";
+
+            if(openFileDialog.ShowDialog() == true)
+            {
+                LoadCSV.SetNewCSVLocation(openFileDialog.FileName);
+            }
+        }
     }
 }

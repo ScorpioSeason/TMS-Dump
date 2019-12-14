@@ -469,35 +469,18 @@ namespace TMSwPages.Classes
         // Overall List of restore point files found
         public static List<TMSBackup> backupPoints = new List<TMSBackup>(); 
         static public string thisFileDir { get; set; }
-        public int restoreNumber { get; set; }
-        public string filePath { get; set; }
-        //public DateTime backupDate; 
+
+        static public string filePath { get; set; }
+        public DateTime backupDate { get; set; }
 
         public TMSBackup() { }
-
-        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
-        /**
-        *	\fn		
-        *	\brief			
-        *	\param[in]
-        *	\param[out]	 
-        *	\return		
-        * ---------------------------------------------------------------------------------------------------- */
-        public TMSBackup(string fn, int readNum)
+        public TMSBackup(string fp, DateTime bd)
         {
-            restoreNumber = readNum;
-            filePath = fn;
+            filePath = fp;
+            backupDate = bd;
         }
 
-        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
-        /**
-        *	\fn		
-        *	\brief			
-        *	\param[in]
-        *	\param[out]	 
-        *	\return		
-        * ---------------------------------------------------------------------------------------------------- */
-        public bool WriteQuery(TMSBackupQuery bq)
+        static public bool WriteQueryToCurrentFile(TMSBackupQuery bq)
         {
             // writeQuery to file
             bool appendSuccess = true;
@@ -526,31 +509,34 @@ namespace TMSwPages.Classes
 
         }
 
-        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
-        /**
-        *	\fn		
-        *	\brief			
-        *	\param[in]
-        *	\param[out]	 
-        *	\return		
-        * ---------------------------------------------------------------------------------------------------- */
         public bool CreateRestorePoint()
         {
             // Copy current file to a new one with the restore date. 
             // Change the write file path to the new file
             // Start appending to the new file. 
-
-            // Basically change backup path but the former should delete and 
-            // 
-
+            
             bool saveSuccess = true;
-            string oldPath = filePath;
-            string newPath = "";
 
             // View Save As File Dialog
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Text Files|*.sql";
-            thisFileDir = (saveFileDialog.InitialDirectory);
+            saveFileDialog.DefaultExt = ".sql";
+            saveFileDialog.InitialDirectory = thisFileDir;
+            saveFileDialog.FileName = "RestoreTo_" + DateTime.Now.ToString().Replace(':', '-').Replace(' ', '_');
+
+            DateTime newestFileTime = new DateTime();
+            string lastBackupPath = "";
+
+            // Find the most recent backup file created
+            foreach (string file in Directory.EnumerateFiles(thisFileDir, "*.sql"))
+            {
+                FileInfo fi = new FileInfo(file);
+                if (fi.CreationTime >= newestFileTime)
+                {
+                    newestFileTime = fi.CreationTime;
+                    lastBackupPath = fi.FullName;
+                }
+            }
 
             // Set a text range using the textbox name
             // TextRange textRange = new TextRange(myTextbox.Document.ContentStart, myTextbox.Document.ContentEnd);
@@ -559,18 +545,18 @@ namespace TMSwPages.Classes
             if ((res == DialogResult.OK) && (string.IsNullOrWhiteSpace(saveFileDialog.FileName.ToString()) == false))
             {
                 /// Get the new path
-                newPath = (saveFileDialog.FileName);
+                string newFilePath = (saveFileDialog.FileName);
 
                 /// Open both files to copy
                 try
                 {
                     /// Open file streams
-                    FileStream newFile = new FileStream(newPath, FileMode.Create);
-                    FileStream oldFile = new FileStream(oldPath, FileMode.Open);
+                    FileStream newFile = new FileStream(newFilePath, FileMode.Create);
+                    FileStream oldFile = new FileStream(lastBackupPath, FileMode.Open);
                     StreamReader streamReader = new StreamReader(oldFile);
                     StreamWriter streamWriter = new StreamWriter(newFile);
 
-                    /// Read any copy through the files
+                    /// Read and copy through the files
                     while (!streamReader.EndOfStream)
                     {
                         streamWriter.WriteLine(streamReader.ReadLine());
@@ -591,17 +577,10 @@ namespace TMSwPages.Classes
                 if (saveSuccess == true)
                 {
                     /// Set location of LogFilePath to new path
+                    FileInfo tmpfi = new FileInfo(newFilePath);
 
-
-                    /// Delete old file 
-                    //try
-                    //{
-                    //    File.Delete(oldPath);
-                    //}
-                    //catch (Exception exc)
-                    //{
-                    //    TMSLogger.LogIt("|" + "/AdminPage.xaml.cs" + "|" + "AdminPage" + "|" + "ChangeLogLocation" + "|" + exc.GetType() + "|" + exc.Message + "|");
-                    //}
+                    backupPoints.Add(new TMSBackup(newFilePath, tmpfi.CreationTime)); 
+                    
                 }
 
             }
@@ -609,38 +588,13 @@ namespace TMSwPages.Classes
             return true;
         }
 
-        public bool RecoverRestorePoint()
+        static public bool RecoverRestorePoint(TMSBackup b)
         {
-            // Allow file selection
-            // Read in file
-            // Create Query string
-            // Run it. 
-            // Refresh everything. 
-
             bool readSuccess = true;
 
             try
             {
-                ///// Clear out the working list 
-                //logs.Clear();
-
-                ///// Open the file stream to read from the file
-                //FileStream fileStream = new FileStream((TMSLogger.LogFilePath), FileMode.Open, FileAccess.Read);
-                //StreamReader streamReader = new StreamReader(fileStream);
-
-                ///// Fill the working list with lines from the file 
-                //while (!streamReader.EndOfStream)
-                //{
-                //    string lineString = "";
-                //    if ((lineString = streamReader.ReadLine()).Trim() != "")
-                //    {
-                //        NewLog(lineString);
-                //    }
-
-                //}
-
-                ///// Close the file
-                //streamReader.Close(); fileStream.Close();
+                // run the selected tms restore point sql
             }
             /// If an exception is thrown here, create a log for it. 
             catch (Exception e)
@@ -655,34 +609,78 @@ namespace TMSwPages.Classes
         public void ChangeBackupPath()
         {
             string oldFileDir = thisFileDir;
-            string newFileDir = "";
+            string copyFileName = "";
+            DateTime newestFileTime = new DateTime();
+            string lastBackupPath = "";
+            bool saveSuccess = true; 
 
-            FolderBrowserDialog browser = new FolderBrowserDialog(); 
-
-            DialogResult res = browser.ShowDialog();
-
-            if (res == DialogResult.OK && (string.IsNullOrWhiteSpace(browser.SelectedPath.ToString()) == false))
-            {
-                newFileDir = browser.SelectedPath;
-            }
-
+            // Find the most recent backup file created
             foreach (string file in Directory.EnumerateFiles(oldFileDir, "*.sql"))
             {
-                // open files 
-                // copy over to new file in new directory? 
-                // if successful delete old file?
+                FileInfo fi = new FileInfo(file);
+                if (fi.CreationTime >= newestFileTime)
+                {
+                    newestFileTime = fi.CreationTime;
+                    lastBackupPath = fi.FullName;
+                    copyFileName = fi.Name;
+                }
+            }
+
+            // Open a folder browser to choose the new folder
+            FolderBrowserDialog browser = new FolderBrowserDialog(); 
+            DialogResult res = browser.ShowDialog();
+            
+            if (res == DialogResult.OK && (string.IsNullOrWhiteSpace(browser.SelectedPath.ToString()) == false))
+            {
+                thisFileDir = browser.SelectedPath;
+            }
+
+            // Copy over the newest restore point to the new folder 
+            try
+            {
+                /// Open file streams
+                FileStream newFile = new FileStream((thisFileDir + copyFileName), FileMode.Create);
+                FileStream oldFile = new FileStream(lastBackupPath, FileMode.Open);
+                StreamReader streamReader = new StreamReader(oldFile);
+                StreamWriter streamWriter = new StreamWriter(newFile);
+
+                /// Read and copy through the files
+                while (!streamReader.EndOfStream)
+                {
+                    streamWriter.WriteLine(streamReader.ReadLine());
+                    streamWriter.Flush();
+                }
+
+                /// Close all the streams
+                streamWriter.Close(); streamReader.Close();
+                newFile.Close(); oldFile.Close();
+
+            }
+            catch (Exception ex)
+            {
+                //TMSLogger.LogIt("|" + "/AdminPage.xaml.cs" + "|" + "AdminPage" + "|" + "ChangeLogLocation" + "|" + ex.GetType() + "|" + ex.Message + "|");
+                saveSuccess = false;
             }
 
         }
 
         public void ReadInBackupsList()
         {
-            int i = 0;
-            TMSBackup.backupPoints.Clear(); 
-            foreach (string file in Directory.EnumerateFiles(thisFileDir, "*.sql"))
+            try
             {
-                backupPoints.Add(new TMSBackup(file, i));
-                i++;
+
+                TMSBackup.backupPoints.Clear();
+                foreach (string file in Directory.EnumerateFiles(thisFileDir, "*.sql"))
+                {
+                    FileInfo fi = new FileInfo(file);
+
+                    backupPoints.Add(new TMSBackup(fi.FullName, fi.CreationTime));
+
+                }
+            }
+            catch (Exception e)
+            {
+
             }
                
         }

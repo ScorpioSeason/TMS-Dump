@@ -67,7 +67,7 @@
                             <DatePicker Name="LogStartDate" DockPanel.Dock="top" Grid.Row="0" Grid.Column="0" Margin="5,5,5,5"/>
                             <DatePicker Name="LogEndDate" DockPanel.Dock="top" Grid.Row="0" Grid.Column="1" Margin="5,5,5,5"/>
                             <TextBox  x:Name="LogSearchTags" DockPanel.Dock="top" Grid.Row="0" Grid.Column="2" Margin="5,5,5,5" Grid.ColumnSpan="2"/>
-                            <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Click="LogLoadClick" Content="Load"/> 
+                            <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Click="LogLoadClick" Content="Load"/>
 
                             <!--Main Content Row (1) -->
                             <DataGrid Grid.ColumnSpan="5" Grid.Row="1" Name="LogsList" ItemsSource="{Binding}" Margin="5,5,5,5" SelectionMode="Single" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
@@ -78,13 +78,13 @@
                                 </DataGrid.Columns>
                                 <DataGrid.Resources/>
                             </DataGrid>
-                            
+
                             <!--Buttons Row (2) -->
                             <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="ChangeLogLocation" Content="Change Log Location..."/>
                             <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="4" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="LogViewMoreClick" Content="View More..." />
 
                         </Grid>
-                        
+
                     </DockPanel>
 
                 </TabItem.Content>
@@ -93,7 +93,7 @@
 
             <!--This is the content of the Backups tab THIS IS CURRENTLY JUST A STUB / STRUCTURE AND IT DOES NOTHING AT ALL-->
             <TabItem Name="Backups" Header="Backups">
-                
+
                 <!--Backups Tab-->
                 <TabItem.Content>
 
@@ -123,8 +123,7 @@
                             <!--Main Content Row (1) -->
                             <DataGrid Grid.ColumnSpan="5" Grid.Row="1" Name="BackupsList" ItemsSource="{Binding}" Margin="5,5,5,5" SelectionMode="Single" AutoGenerateColumns="false" CanUserAddRows="False" IsReadOnly="True">
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Header="Number" Binding="{Binding restoreNumber}"></DataGridTextColumn>
-                                    <!--<DataGridTextColumn Header="Date" Binding="{Binding backupDate}"></DataGridTextColumn>-->
+                                    <DataGridTextColumn Header="Date" Binding="{Binding backupDate}"></DataGridTextColumn>
                                     <DataGridTextColumn Header="File Name" Binding="{Binding filePath}"></DataGridTextColumn>
                                 </DataGrid.Columns>
                                 <DataGrid.Resources></DataGrid.Resources>
@@ -153,11 +152,12 @@
                         <Grid Name="Carrier_DataInnerGrid">
 
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
+                                <ColumnDefinition Width="129*"/>
+                                <ColumnDefinition Width="28*"/>
+                                <ColumnDefinition Width="157*"/>
+                                <ColumnDefinition Width="157*"/>
+                                <ColumnDefinition Width="157*"/>
+                                <ColumnDefinition Width="157*"/>
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition x:Name="Carrier_DataControls" Height="auto"/>
@@ -169,10 +169,10 @@
                             <!--<DatePicker Name="Carrier_DataStartDate" DockPanel.Dock="top" Grid.Row="0" Grid.Column="0" Margin="5,5,5,5"/>
                             <DatePicker Name="Carrier_DataEndDate" DockPanel.Dock="top" Grid.Row="0" Grid.Column="1" Margin="5,5,5,5"/>
                             <TextBox  x:Name="Carrier_DataSearchTags" DockPanel.Dock="top" Grid.Row="0" Grid.Column="2" Margin="5,5,5,5" Grid.ColumnSpan="2"/>-->
-                            <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Click="Carrier_DataLoadClick" Content="Load"/> 
-                            
+                            <Button Grid.Row="2" Grid.Column="2" Margin="5.334,5,5.333,4.667" Content="Load"/>
+
                             <!--Main Content Row (1) -->
-                            <DataGrid Grid.ColumnSpan="5" Grid.Row="1" Name="Carrier_DataList" ItemsSource="{Binding}" Margin="5,5,5,5" SelectionMode="Single" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="false">
+                            <DataGrid Grid.ColumnSpan="6" Grid.Row="1" Name="Carrier_DataList" ItemsSource="{Binding}" Margin="5,5.333,5.333,5" SelectionMode="Single" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="false">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="CarrierID" Binding="{Binding FC_CarrierID}"/>
                                     <DataGridTextColumn Header="Carrier_Name" Binding="{Binding Carrier_Name}" />
@@ -180,9 +180,9 @@
                                 <DataGrid.Resources/>
                             </DataGrid>
 
-                            <!--Buttons Row (2)--> 
-                            <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="ChangeLogLocation">Change Log Location...</Button>
-                            <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="4" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="LogViewMoreClick" >View More...</Button>
+                            <!--Buttons Row (2)-->
+                            <Button Grid.Row="2" Grid.Column="0" Click="ChangeCUSLocation" Margin="5,0,4.666,4.667" VerticalAlignment="Bottom" Grid.ColumnSpan="2">Change CSV load Location</Button>
+                            <Button Grid.Row="2" Grid.Column="5" Margin="5.334,0,5.333,4.667" VerticalAlignment="Bottom" Click="LogViewMoreClick" >View More...</Button>
 
                         </Grid>
 
@@ -286,7 +286,7 @@
                                 </DataGrid.Columns>
                                 <DataGrid.Resources/>
                             </DataGrid>
-                            
+
                             <!--Buttons Row (2)-->
                             <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="ChangeLogLocation">Change Log Location...</Button>
                             <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="4" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="LogViewMoreClick" >View More...</Button>
@@ -295,7 +295,7 @@
 
                     </DockPanel>
 
-                </TabItem.Content>                
+                </TabItem.Content>
             </TabItem>
 
         </TabControl >
