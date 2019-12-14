@@ -45,6 +45,22 @@ namespace TMSwPages.Classes
             }
         }
 
+        public static void UpdateDepotAvalibility(int carrierID, string inCityName, int FTForLTL, int NewValue)
+        {
+            string avalType = "LTL";
+
+            if (FTForLTL == 0)
+            {
+                avalType = "FTL";
+            }
+            
+            
+            string query = "update FC_DepotCity set " + avalType + "_Availibility = " + NewValue.ToString() +
+                " where CityName = \'" + inCityName + "\' and FC_CarrierID = " + carrierID.ToString() + ";";
+
+            SQL.GenericFunction(query);
+        }
+
         //this method will close the connection
         public static bool close()
         {
@@ -62,7 +78,7 @@ namespace TMSwPages.Classes
         public static List<object> SelectFromCMP(ParentTable tabletype)
         {
             SQL.close();
-            int Use_Test_CMP = 0;
+            int Use_Test_CMP = 1;
 
             string connectionString = string.Empty;
 

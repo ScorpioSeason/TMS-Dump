@@ -66,6 +66,11 @@ namespace TMSwPages
                     {
                         matchfound = true;
                     }
+
+                    if(y.Van_type != PassedInContract.Van_type)
+                    {
+                        matchfound = true;
+                    }
                 }
 
                 if (!matchfound)
@@ -99,6 +104,15 @@ namespace TMSwPages
                     FC_Carrier selCarrier = new FC_Carrier(t.FC_CarrierID, t.Carrier_Name);
 
                     CreateTripInfo tripInfo = new CreateTripInfo(PassedInContract, selCarrier, SelectedTicket);
+
+                    int AvalType = t.LTL_Availibility - 1;
+
+                    if(SelectedTicket.Size_in_Palettes == 0)
+                    {
+                        AvalType = t.FTL_Availibility - 1;
+                    }
+
+                    SQL.UpdateDepotAvalibility(t.FC_CarrierID, t.CityName, SelectedTicket.Size_in_Palettes, AvalType);
 
                     ticketsFromScreen = new List<FC_TripTicket>();
 
@@ -163,6 +177,11 @@ namespace TMSwPages
 
             PlannerPage newpage = new PlannerPage();
             this.NavigationService.Navigate(newpage);
+        }
+
+        private void PossibleTickets_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
