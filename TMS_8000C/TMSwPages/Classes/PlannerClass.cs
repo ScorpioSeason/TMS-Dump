@@ -16,14 +16,16 @@ namespace TMSwPages.Classes
         //Active contracts and their connected tickets
         public static List<FC_LocalContract> ActiveContracts = new List<FC_LocalContract>();
         public static List<FC_TripTicket> ConnectedTickets = new List<FC_TripTicket>();
-
+        //completed contracts to be confirmed.
+        public static List<FC_LocalContract> ToBeConfirmedContracts = new List<FC_LocalContract>();
+        //completed contracts
+        public static List<FC_LocalContract> ConfirmedContracts = new List<FC_LocalContract>();
         //Ivan
-        public static void ActiveContracts_Populate()
+        public static List<FC_LocalContract> ContractsByStatus_Populate(int status)
         {
-            ActiveContracts.Clear();
-            string query = "select * from FC_LocalContract where Contract_Status = " + 1.ToString() + ";";
+            string query = "select * from FC_LocalContract where Contract_Status = " + status.ToString() + ";";
             FC_LocalContract temp = new FC_LocalContract();
-            ActiveContracts = temp.ObjToTable(SQL.Select(temp, query));
+            return temp.ObjToTable(SQL.Select(temp, query));
         }
 
         //Ivan
