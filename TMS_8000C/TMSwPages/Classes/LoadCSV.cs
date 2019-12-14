@@ -6,12 +6,24 @@ using System.Threading.Tasks;
 
 namespace TMSwPages.Classes
 {
+    // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
+    /**   
+    *   \class	    Load CSV
+    *   \brief		This class loads the CVS for the carrier update system and then parses it for the carrier
+    *               info and depot city
+    * -------------------------------------------------------------------------------------------------------- */
     public static class LoadCSV
     {
-
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		        Load
+        *	\brief			This method loads the carrier csv, parses it for the carrier info and depot city
+        *	\param[in]      none
+        *	\param[out]	    none
+        *	\return		    bool
+        * ---------------------------------------------------------------------------------------------------- */
         public static bool Load()
         {
-
 
             bool worked = true;
 
@@ -88,7 +100,14 @@ namespace TMSwPages.Classes
 
         }
 
-        
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		       ToCityID
+        *	\brief		   This method assigns a city id to a city based on the inputCity string value
+        *	\param[in]     string inputCity
+        *	\param[out]	   none
+        *	\return		   int
+        * ---------------------------------------------------------------------------------------------------- */
         public static int ToCityID(string inputCity)
         {
             inputCity = inputCity.ToUpper();
@@ -129,6 +148,14 @@ namespace TMSwPages.Classes
             return -1;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		        ToCityName
+        *	\brief			This method gets the city name from the city id
+        *	\param[in]      int inputCity
+        *	\param[out]	    none
+        *	\return		    string
+        * ---------------------------------------------------------------------------------------------------- */
         public static string ToCityName(int inputCity)
         {
 
