@@ -400,5 +400,16 @@ namespace TMSwPages
             BackupsList.Items.Refresh();
         }
 
+        private void ChangeCUSLocation(object sender, RoutedEventArgs e)
+        {
+            // View Save As File Dialog
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "csv Files (*.csv)|*.csv";
+
+            if(openFileDialog.ShowDialog() == true)
+            {
+                LoadCSV.SetNewCSVLocation(openFileDialog.FileName);
+            }
+        }
     }
 }

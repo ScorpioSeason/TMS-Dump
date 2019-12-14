@@ -16,6 +16,8 @@ namespace TMSwPages.Classes
         private static string uid;
         private static string password;
 
+
+
         //This method will be used to initialize the connection
         public static void init()
         {
@@ -211,6 +213,8 @@ namespace TMSwPages.Classes
                 //create command and assign the query and connection from the constructor
                 MySqlCommand cmd = new MySqlCommand(query, connection);
 
+                
+
                 //Execute command
                 cmd.ExecuteNonQuery();
 
@@ -282,6 +286,8 @@ namespace TMSwPages.Classes
             {
                 //create command and assign the query and connection from the constructor
                 MySqlCommand cmd = new MySqlCommand(Query, connection);
+                
+                //send to admin here
 
                 //Execute command
                 var r = cmd.ExecuteNonQuery();

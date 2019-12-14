@@ -14,6 +14,13 @@ namespace TMSwPages.Classes
     * -------------------------------------------------------------------------------------------------------- */
     public static class LoadCSV
     {
+        private static string CSVLocation = string.Empty;
+
+        public static void SetNewCSVLocation(string input)
+        {
+            CSVLocation = input;
+        }
+
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
         *	\fn		        Load
@@ -29,7 +36,7 @@ namespace TMSwPages.Classes
 
             try
             {
-                string localResourcePath = "C://dctemp/carriers.csv";
+                string localResourcePath = CSVLocation;
                 string ReadInData = System.IO.File.ReadAllText(localResourcePath);
 
                 ReadInData = ReadInData.Replace("\r\n", ",");
