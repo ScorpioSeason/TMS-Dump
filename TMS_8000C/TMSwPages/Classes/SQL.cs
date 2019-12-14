@@ -19,6 +19,7 @@ namespace TMSwPages.Classes
         //This method will be used to initialize the connection
         public static void init()
         {
+
             //This is a prototype application, so this data will not ever change
             server = "35.193.37.75";
             database = "duane_test";
@@ -214,6 +215,8 @@ namespace TMSwPages.Classes
                 //Execute command
                 cmd.ExecuteNonQuery();
 
+                TMSBackup.WriteQueryToCurrentFile(new TMSBackupQuery(query));
+
                 return true;
             }
             catch (Exception e)
@@ -284,7 +287,9 @@ namespace TMSwPages.Classes
                 MySqlCommand cmd = new MySqlCommand(Query, connection);
 
                 //Execute command
-                var r = cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
+
+                TMSBackup.WriteQueryToCurrentFile(new TMSBackupQuery(Query));
 
                 return true;
             }
