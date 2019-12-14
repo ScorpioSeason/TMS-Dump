@@ -309,7 +309,7 @@ namespace TMSwPages.Classes
             return null;
         }
 
-        public static List<FC_Invoice> GetAllInvoices(int oneForAll_2For2Weeks)
+        public static List<Contract_Invoice> GetAllInvoices(int oneForAll_2For2Weeks)
         {
             string query = "select * from FC_LocalContract where Contract_Status = 1 or Contract_Status = 2 or Contract_Status = 3;";
 
@@ -338,7 +338,7 @@ namespace TMSwPages.Classes
                 }
             }
 
-            List<FC_Invoice> OutInvoices = new List<FC_Invoice>();
+            List<Contract_Invoice> OutInvoices = new List<Contract_Invoice>();
 
             foreach(FC_LocalContract x in AllContracts)
             {
@@ -348,7 +348,7 @@ namespace TMSwPages.Classes
             return OutInvoices;
         }
 
-        public static FC_Invoice GenerateInvoice(FC_LocalContract inContract)
+        public static Contract_Invoice GenerateInvoice(FC_LocalContract inContract)
         {
             List<FC_TripTicket> AllTickets = ConnectedTickets_Populate(inContract);
 
@@ -382,7 +382,7 @@ namespace TMSwPages.Classes
 
                 if (inContract.Job_type == 0)
                 {
-                    tempPrice = sumData.totalKM * theDepotCity[0].FTL_Rate;
+                    tempPrice = sumData.totalKM * theDepotCity[0].FTL_Rate * 1.08;
                 }
                 else
                 {
@@ -393,12 +393,12 @@ namespace TMSwPages.Classes
 
                     int QuantityOnTruck = theTicketLine[0].PalletsOnTicket;
 
-                    tempPrice = sumData.totalKM * theDepotCity[0].LTL_Rate * QuantityOnTruck;
+                    tempPrice = sumData.totalKM * theDepotCity[0].LTL_Rate * QuantityOnTruck * 1.05;
                 }
 
                 if (inContract.Van_type == 1)
                 {
-                    tempPrice *= theDepotCity[0].Reefer_Charge;
+                    tempPrice *= (theDepotCity[0].Reefer_Charge + 1);
                 }
 
                 Total_Cost += tempPrice;
@@ -406,7 +406,7 @@ namespace TMSwPages.Classes
 
             Total_Cost = Math.Round(Total_Cost, 2);
 
-            return new FC_Invoice(-1, inContract.FC_LocalContractID, Total_Cost);
+            return new Contract_Invoice(inContract, new FC_Invoice(inContract.FC_LocalContractID, Total_Cost));
 
         }
     }

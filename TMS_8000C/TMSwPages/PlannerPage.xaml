@@ -38,7 +38,7 @@
         </Menu>
 
         <!--These tabs allow different functions of the Planner to be accessed from one main page-->
-        <TabControl Name="PlannerTabs" Grid.Row="1" Margin="10,0.333,0,10" SelectionChanged="TabControl_SelectionChanged">
+        <TabControl Name="PlannerTabs" Grid.Row="1" SelectionChanged="TabControl_SelectionChanged">
             <!--This is the content of the Available Contracts tab-->
             <TabItem Name="PendingCarriers" Header="Contracts Pending Carriers" >
                 <!--PendingCarriers Tab-->

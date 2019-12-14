@@ -279,17 +279,23 @@ namespace TMSwPages
 
         private void Carrier_DataLoadClick(object sender, RoutedEventArgs e)
         {
-            Carrier_DataList.Items.Refresh(); 
+            FC_Carrier c = new FC_Carrier();
+
+            Carrier_DataList.ItemsSource = c.ObjToTable(SQL.Select(c));
         }
 
         private void Route_TableLoadClick(object sender, RoutedEventArgs e)
         {
-            Route_TableList.Items.Refresh();
+            
+
+            Route_TableList.Items.Refresh(); 
         }
 
         private void Rate_Fee_TablesClick(object sender, RoutedEventArgs e)
         {
-            Rate_Fee_TablesList.Items.Refresh();
+            FC_DepotCity d = new FC_DepotCity();
+
+            Rate_Fee_TablesList.ItemsSource = d.ObjToTable(SQL.Select(d));
         }
         
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -1220,23 +1220,22 @@ namespace TMSwPages.Classes
 
     public class FC_Invoice : ParentTable
     {
-        public int FC_CustomerID { get; set; }
         public int FC_LocalContractID { get; set; }
         public double TotalCost { get; set; }
 
+
         public FC_Invoice()
         {
-            FC_CustomerID = -1;
             FC_LocalContractID = -1;
             TotalCost = -1;
         }
 
-        public FC_Invoice(int IN_FC_CustomerID, int IN_FC_LocalContractID, double IN_TotalCost)
+        public FC_Invoice(int IN_FC_LocalContractID, double IN_TotalCost)
         {
-            FC_CustomerID = IN_FC_CustomerID;
             FC_LocalContractID = IN_FC_LocalContractID;
             TotalCost = IN_TotalCost;
         }
+
 
         public override string GetTableName()
         {
@@ -1250,13 +1249,12 @@ namespace TMSwPages.Classes
 
         public override int GetColoumInt()
         {
-            return 3;
+            return 2;
         }
 
         public override string GetInsertStatment()
         {
-            return "insert into FC_Invoice(FC_CustomerID, FC_LocalContractID, TotalCost) value (" +
-                FC_CustomerID.ToString() + "," +
+            return "insert into FC_Invoice(FC_LocalContractID, TotalCost) value (" +
                 FC_LocalContractID.ToString() + "," +
                 TotalCost.ToString() + ");";
         }
@@ -1265,7 +1263,6 @@ namespace TMSwPages.Classes
         {
             List<string> outList = new List<string>();
 
-            outList.Add("FC_CustomerID");
             outList.Add("FC_LocalContractID");
             outList.Add("TotalCost");
 
@@ -1281,9 +1278,8 @@ namespace TMSwPages.Classes
             {
                 FC_Invoice current = new FC_Invoice();
 
-                current.FC_CustomerID = int.Parse(inList[0][i]);
-                current.FC_LocalContractID = int.Parse(inList[1][i]);
-                current.TotalCost = double.Parse(inList[2][i]);
+                current.FC_LocalContractID = int.Parse(inList[0][i]);
+                current.TotalCost = double.Parse(inList[1][i]);
 
                 outList.Add(current);
             }
@@ -1305,7 +1301,33 @@ namespace TMSwPages.Classes
         }
 
 
-        
+
+    }
+
+    public class Contract_Invoice
+    {
+        public double TotalCost { get; set; }
+        public int FC_LocalContractID { get; set; }
+        public string Client_Name { get; set; }
+        public int Job_type { get; set; }
+        public int Quantity { get; set; }
+        public string Origin { get; set; }
+        public string Destination { get; set; }
+        public int Van_type { get; set; }
+        public int Contract_Status { get; set; }
+
+        public Contract_Invoice(FC_LocalContract inContract, FC_Invoice InInvoice)
+        {
+            TotalCost = InInvoice.TotalCost;
+            FC_LocalContractID = inContract.FC_LocalContractID;
+            Client_Name = inContract.Client_Name;
+            Job_type = inContract.Job_type;
+            Quantity = inContract.Quantity;
+            Origin = inContract.Origin;
+            Destination = inContract.Destination;
+            Van_type = inContract.Van_type;
+            Contract_Status = inContract.Contract_Status;
+        }
 
     }
 
