@@ -318,14 +318,20 @@ namespace TMSwPages.Classes
 
             if(oneForAll_2For2Weeks == 2)
             {
-                List<FC_LocalContract> TempContrats = AllContracts;
+                List<FC_LocalContract> TempContrats = new List<FC_LocalContract>();
+
+                foreach(FC_LocalContract x in AllContracts)
+                {
+                    TempContrats.Add(x);
+                }
+
                 AllContracts.Clear();
 
                 foreach(FC_LocalContract x in TempContrats)
                 {
                     List<FC_TripTicket> theTickets = ConnectedTickets_Populate(x);
 
-                    if(theTickets[0].Days_Passes > 14)
+                    if(theTickets[0].Days_Passes < 14)
                     {
                         AllContracts.Add(x);
                     }
@@ -367,7 +373,7 @@ namespace TMSwPages.Classes
 
                 string query = "select FC_CarrierID, CityName, FTL_Availibility, LTL_Availibility, FTL_Rate, LTL_Rate, Reefer_Charge " +
                     "from FC_DepotCity " +
-                    "where FC_CarrierID = " + x.FC_CarrierID.ToString() + " and CityName = \"" + inContract + "\";";
+                    "where FC_CarrierID = " + x.FC_CarrierID.ToString() + " and CityName = \"" + inContract.Origin + "\";";
 
                 FC_DepotCity d = new FC_DepotCity();
                 List<FC_DepotCity> theDepotCity = d.ObjToTable(SQL.Select(d, query));
@@ -380,7 +386,14 @@ namespace TMSwPages.Classes
                 }
                 else
                 {
-                    tempPrice = sumData.totalKM * theDepotCity[0].LTL_Rate;
+                    query = "select * from FC_TripTicketLine where FC_TripTicketID = " + x.FC_TripTicketID.ToString() + " and FC_LocalContractID =  " + inContract.FC_LocalContractID.ToString() + " ;";
+
+                    FC_TripTicketLine t = new FC_TripTicketLine();
+                    List<FC_TripTicketLine> theTicketLine = t.ObjToTable(SQL.Select(t, query));
+
+                    int QuantityOnTruck = theTicketLine[0].PalletsOnTicket;
+
+                    tempPrice = sumData.totalKM * theDepotCity[0].LTL_Rate * QuantityOnTruck;
                 }
 
                 if (inContract.Van_type == 1)
@@ -390,6 +403,8 @@ namespace TMSwPages.Classes
 
                 Total_Cost += tempPrice;
             }
+
+            Total_Cost = Math.Round(Total_Cost, 2);
 
             return new FC_Invoice(-1, inContract.FC_LocalContractID, Total_Cost);
 
