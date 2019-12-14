@@ -200,7 +200,8 @@ namespace TMSwPages
 
         private void RefreshActiveContracts_Click(object sender, RoutedEventArgs e)
         {
-            PlannerClass.ActiveContracts_Populate();
+            PlannerClass.ActiveContracts.Clear();
+            PlannerClass.ActiveContracts = PlannerClass.ContractsByStatus_Populate(1);
             DGActiveContracts.ItemsSource = null;
             DGActiveContracts.ItemsSource = PlannerClass.ActiveContracts;
             DGConnectedTickets.ItemsSource = null;
@@ -230,5 +231,37 @@ namespace TMSwPages
             TimePass.IncrementOneDay();
         }
 
+        private void SetOrderToComplete_Click(object sender, RoutedEventArgs e)
+        {
+            foreach(FC_LocalContract c in DGActiveContracts.SelectedItems)
+            {
+                PlannerClass.UpdateContratState(c, 2);
+            }
+            PlannerClass.ActiveContracts.Clear();
+            PlannerClass.ActiveContracts = PlannerClass.ContractsByStatus_Populate(1);
+            DGActiveContracts.ItemsSource = null;
+            DGActiveContracts.ItemsSource = PlannerClass.ActiveContracts;
+            DGConnectedTickets.ItemsSource = null;
+        }
+
+        private void RefreshConfirmed_Click(object sender, RoutedEventArgs e)
+        {
+            PlannerClass.ToBeConfirmedContracts.Clear();
+            PlannerClass.ToBeConfirmedContracts = PlannerClass.ContractsByStatus_Populate(2);
+            DGConfirmCompletion.ItemsSource = null;
+            DGConfirmCompletion.ItemsSource = PlannerClass.ToBeConfirmedContracts;
+        }
+
+        private void Confirm_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (FC_LocalContract c in DGConfirmCompletion.SelectedItems)
+            {
+                PlannerClass.UpdateContratState(c, 3);
+            }
+            PlannerClass.ConfirmedContracts.Clear();
+            PlannerClass.ConfirmedContracts = PlannerClass.ContractsByStatus_Populate(1);
+            DGConfirmCompletion.ItemsSource = null;
+            DGConfirmCompletion.ItemsSource = PlannerClass.ConfirmedContracts;
+        }
     }
 }

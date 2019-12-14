@@ -97,7 +97,6 @@ namespace TMSwPages
         //        LogSearchTags.Focus();
         //        LogsList.ItemsSource = searchResults;
         //        LogLoadClick(null, null);
-
         //    }
         //    catch (Exception e)
         //    {

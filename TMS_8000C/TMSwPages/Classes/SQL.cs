@@ -62,7 +62,6 @@ namespace TMSwPages.Classes
         public static List<object> SelectFromCMP(ParentTable tabletype)
         {
             SQL.close();
-
             int Use_Test_CMP = 1;
 
             string connectionString = string.Empty;
@@ -77,8 +76,14 @@ namespace TMSwPages.Classes
             }
             else
             {
+                server = "159.89.117.198";
+                database = "cmp";
+                uid = "DevOSHT";
+                password = "Snodgr4ss!";
                 //put the real code here
+                connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
             }
+            //string connectionString;
 
             //set up the connection
             connection = new MySqlConnection(connectionString);

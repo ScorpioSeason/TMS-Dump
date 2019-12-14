@@ -622,7 +622,6 @@ namespace TMSwPages.Classes
         }
     }
 
-
     public class FC_LocalContract : ParentTable
     {
         public int FC_LocalContractID { get; set; }
@@ -847,7 +846,6 @@ namespace TMSwPages.Classes
         }
     }
 
-
     public class FC_CarrierNom : ParentTable
     {
         public int FC_BuyerToPlannerContractID { get; set; }
@@ -1038,5 +1036,15 @@ namespace TMSwPages.Classes
 
     }
 
-
+    public class FC_LocalContractPROGRESS 
+    {
+        public int FC_LocalContractID { get; set; }
+        public string Client_Name { get; set; }
+        public int Job_type { get; set; }
+        public int Quantity { get; set; }
+        public string Origin { get; set; }
+        public string Destination { get; set; }
+        public int Van_type { get; set; }
+        public int Contract_Status { get; set; }
+    }
 }
