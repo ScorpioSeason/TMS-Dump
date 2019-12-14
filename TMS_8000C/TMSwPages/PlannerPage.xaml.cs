@@ -179,7 +179,6 @@ namespace TMSwPages
         }
 
 
-
         private void RefreshActiveTickets_Click(object sender, RoutedEventArgs e)
         {
             PlannerClass.ActiveTickets.Clear();
@@ -262,6 +261,18 @@ namespace TMSwPages
             PlannerClass.ConfirmedContracts = PlannerClass.ContractsByStatus_Populate(1);
             DGConfirmCompletion.ItemsSource = null;
             DGConfirmCompletion.ItemsSource = PlannerClass.ConfirmedContracts;
+        }
+
+
+
+        private void ViewAllButton_Click(object sender, RoutedEventArgs e)
+        {
+            InvoiceViewerDataGrid.ItemsSource = PlannerClass.GetAllInvoices(1);
+        }
+
+        private void VeiwTwoWeekButton_Click(object sender, RoutedEventArgs e)
+        {
+            InvoiceViewerDataGrid.ItemsSource = PlannerClass.GetAllInvoices(2);
         }
     }
 }

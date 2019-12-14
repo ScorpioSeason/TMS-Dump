@@ -38,7 +38,7 @@
         </Menu>
 
         <!--These tabs allow different functions of the Planner to be accessed from one main page-->
-        <TabControl Name="PlannerTabs" Grid.Row="1" Margin="5,5,5,5" SelectionChanged="TabControl_SelectionChanged">
+        <TabControl Name="PlannerTabs" Grid.Row="1" Margin="10,0.333,0,10" SelectionChanged="TabControl_SelectionChanged">
             <!--This is the content of the Available Contracts tab-->
             <TabItem Name="PendingCarriers" Header="Contracts Pending Carriers" >
                 <!--PendingCarriers Tab-->
@@ -55,7 +55,6 @@
                                 <ColumnDefinition Width="17*"/>
                                 <ColumnDefinition Width="111*"/>
                                 <ColumnDefinition Width="156*"></ColumnDefinition>
-                                <ColumnDefinition Width="157*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition x:Name="Controls" Height="auto"></RowDefinition>
@@ -101,7 +100,7 @@
                             <RowDefinition x:Name="ActiveTicketsContracts" Height="1*"></RowDefinition>
                             <RowDefinition x:Name="ActiveTicketsButtons" Height="auto"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <DataGrid Grid.ColumnSpan="2" Grid.RowSpan ="2" Grid.Row="1" Margin="5,5,5,5" Name="DG5" ItemsSource="{Binding}" AutoGenerateColumns="True" SelectionChanged="DG5_SelectionChanged" IsReadOnly="True">
+                        <DataGrid Grid.ColumnSpan="4" Grid.RowSpan ="2" Grid.Row="1" Margin="5,5,5,5" Name="DG5" ItemsSource="{Binding}" AutoGenerateColumns="True" SelectionChanged="DG5_SelectionChanged" IsReadOnly="True">
                             <DataGrid.Columns>
                                 <DataGridTemplateColumn Header="Orders Count" Width="380">
                                     <DataGridTemplateColumn.CellTemplate>
@@ -181,8 +180,30 @@
                 <TabItem.Content>
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition Width="131*"></ColumnDefinition>
+                            <ColumnDefinition Width="131*"></ColumnDefinition>
+                            <ColumnDefinition Width="131*"></ColumnDefinition>
+                            <ColumnDefinition Width="131*"></ColumnDefinition>
+                            <ColumnDefinition Width="108*"></ColumnDefinition>
+                            <ColumnDefinition Width="23*"/>
+                            <ColumnDefinition Width="130*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="1*"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Button x:Name="RefreshConfirmed" Grid.Row="0" Grid.Column="4" Margin="5.333,5,5.334,4.667" Grid.ColumnSpan="3" Click="RefreshConfirmed_Click">Refresh Contracts to Confirm</Button>
+                        <DataGrid Grid.ColumnSpan="7" Grid.Row="1" Grid.Column="0" Margin="5,5.333,5.334,5" Name="DGConfirmCompletion" ItemsSource="{Binding}" AutoGenerateColumns="True" SelectionMode="Single" IsReadOnly="True">
+                        </DataGrid>
+                        <Button x:Name="Confirm" Grid.Row="2" Grid.Column="6" Margin="4.666,5,5.334,4.667" Grid.ColumnSpan="1" Click="Confirm_Click">Confirm Completion</Button>
+                    </Grid>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem Name="InvoiceReports" Header="Invoice Reports">
+                <TabItem.Content>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
@@ -190,17 +211,17 @@
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="auto"></RowDefinition>
-                            <RowDefinition Height="1*"></RowDefinition>
                             <RowDefinition Height="auto"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <Button x:Name="RefreshConfirmed" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Grid.ColumnSpan="2" Click="RefreshConfirmed_Click">Refresh Contracts to Confirm</Button>
-                        <DataGrid Grid.ColumnSpan="6" Grid.Row="1" Grid.Column="0" Margin="5,5,5,5" Name="DGConfirmCompletion" ItemsSource="{Binding}" AutoGenerateColumns="True" SelectionMode="Single" IsReadOnly="True">
-                        </DataGrid>
-                        <Button x:Name="Confirm" Grid.Row="2" Grid.Column="5" Margin="5,5,5,5" Grid.ColumnSpan="1" Click="Confirm_Click">Confirm Completion</Button>
+
+                        <Button x:Name="ViewAllButton" Content="View All" Grid.Column="1" Grid.Row="0" Margin="5,5,5,5" Click="ViewAllButton_Click"></Button>
+                        <Button x:Name="VeiwTwoWeekButton" Content="View Past 2 Weeks" Grid.Column="2" Grid.Row="0" Margin="5,5,5,5" Click="VeiwTwoWeekButton_Click"></Button>
+                        <DataGrid x:Name="InvoiceViewerDataGrid" Grid.Row="1" Grid.ColumnSpan="4" Grid.Column="0" ItemsSource="{Binding}" AutoGenerateColumns="True" SelectionMode="Single" IsReadOnly="True"></DataGrid>
+
+
                     </Grid>
                 </TabItem.Content>
-            </TabItem>
-            <TabItem Name="InvoiceReports" Header="Invoice Reports">
+
             </TabItem>
         </TabControl >
 
