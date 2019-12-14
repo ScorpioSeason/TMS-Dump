@@ -47,7 +47,7 @@ namespace TMSwPages
         List<TMSBackup> backupSearchResults = new List<TMSBackup>(); 
         static Admin admin = new Admin(); 
         static int selectedTab = -1;
-        TMSBackup backup = new TMSBackup(); 
+        //TMSBackup backup = new TMSBackup(); 
 
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
