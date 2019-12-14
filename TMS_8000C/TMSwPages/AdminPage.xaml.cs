@@ -61,9 +61,6 @@ namespace TMSwPages
 
             try
             {
-                // Load SQL Connection
-                //admin.SetTMSConnection(new SQL_Query_TMS());
-
                 selectedTab = 0;
 
                 LogStartDate.SelectedDate = (DateTime.Today.AddDays(-7));
@@ -73,8 +70,8 @@ namespace TMSwPages
                 LogLoadClick(null, null);
 
                 LogsList.ItemsSource = searchResults; 
-                Carrier_DataList.ItemsSource = admin.DisplayCarrier();
-                Route_TableList.ItemsSource = admin.DisplayRoutes();
+                //Carrier_DataList.ItemsSource = admin.DisplayCarrier();
+                //Route_TableList.ItemsSource = admin.DisplayRoutes();
                 //Rate_Fee_TablesList.ItemsSource = admin.DisplayFees();
 
             }
@@ -103,9 +100,9 @@ namespace TMSwPages
         //    }
         //    catch (Exception e)
         //    {
-               
+
         //    }
-            
+
         //    /// Bind to incoming log data.
         //    //this.DataContext = data;
         //}
@@ -313,12 +310,12 @@ namespace TMSwPages
                                 break;
                             case (2):
                                 //Carrier_Data.DataContext = admin.DisplayCarrier();
-                                Carrier_DataList.ItemsSource = admin.DisplayCarrier();
+                                //Carrier_DataList.ItemsSource = admin.DisplayCarrier();
                                 Carrier_DataLoadClick(null, null);
                                 break;
                             case (3):
                                 //Route_Table.DataContext = admin.DisplayRoutes();
-                                Route_TableList.ItemsSource = admin.DisplayRoutes();
+                                //Route_TableList.ItemsSource = admin.DisplayRoutes();
                                 Route_TableLoadClick(null, null);
                                 break;
                             case (4):
@@ -340,5 +337,26 @@ namespace TMSwPages
                 
             }
         }
+
+        private void RestoreSelected_Click(object sender, RoutedEventArgs e)
+        {
+            // Restore from selected backup point
+        }
+
+        private void CreateRestore_Click(object sender, RoutedEventArgs e)
+        {
+            // Create a new restore point
+        }
+
+        private void ChangeDir_Click(object sender, RoutedEventArgs e)
+        {
+            // change the directory of the backup files
+        }
+
+        private void BackupsDate_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // Update search
+        }
+
     }
 }

@@ -43,7 +43,7 @@
         </Menu>
 
         <!--These tabs allow different functions of the Buyer to be accessed from one main page-->
-        <TabControl Grid.Row="1" Margin="5,5,5,5">
+        <TabControl x:Name="BuyerTabs" Grid.Row="1" Margin="5,5,5,5" SelectionChanged="BuyerTabs_SelectionChanged">
 
             <!--This is the content of the InitiateOrder tab-->
             <TabItem Name="InitiateOrder" Header="Initiate Order / Add contract??">

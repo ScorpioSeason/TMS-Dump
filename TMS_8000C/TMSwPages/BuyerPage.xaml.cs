@@ -21,6 +21,8 @@ namespace TMSwPages
     /// </summary>
     public partial class BuyerPage : Page
     {
+        static int selectedTab = -1;
+
         //public static string a = "";
 
         // COP-OUT METHOD HEADER COMMENT -------------------------------------------------------------------------------
@@ -171,6 +173,65 @@ namespace TMSwPages
             BuyerClass.Nominations();
             DG2.ItemsSource = null;
             DG3.ItemsSource = null;
+        }
+
+        private void BuyerTabs_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (selectedTab != BuyerTabs.SelectedIndex)
+            {
+                if ((BuyerTabs.SelectedIndex <= 4) && (BuyerTabs.SelectedIndex >= -1))
+                {
+                    selectedTab = BuyerTabs.SelectedIndex;
+
+                    try
+                    {
+                        switch (selectedTab)
+                        {
+                            case (0):
+                                // Initialize everything that you want on startup for the tab
+
+                                //LogStartDate.SelectedDate = (DateTime.Today.AddDays(-7));
+                                //LogEndDate.SelectedDate = DateTime.Today;
+                                //LogSearchTags.Focus();
+                                //LogsList.ItemsSource = searchResults;
+                                //LogLoadClick(null, null);
+
+                                break;
+                            case (1):
+                                //backup
+                                break;
+
+                            //case (2):
+                            //    //Carrier_Data.DataContext = admin.DisplayCarrier();
+                            //    Carrier_DataList.ItemsSource = admin.DisplayCarrier();
+                            //    Carrier_DataLoadClick(null, null);
+                            //    break;
+                            //case (3):
+                            //    //Route_Table.DataContext = admin.DisplayRoutes();
+                            //    Route_TableList.ItemsSource = admin.DisplayRoutes();
+                            //    Route_TableLoadClick(null, null);
+                            //    break;
+                            //case (4):
+                            //    //Rate_Fee_Tables.DataContext = admin.DisplayFees();
+                            //    //Rate_Fee_TablesList.ItemsSource = admin.DisplayFees();
+                            //    Rate_Fee_TablesClick(null, null);
+                            //    break;
+
+                            default:
+                                break;
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+
+                }
+
+            }
+            
+        
         }
     }
 }

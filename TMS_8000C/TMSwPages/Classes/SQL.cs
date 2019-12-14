@@ -184,16 +184,6 @@ namespace TMSwPages.Classes
             return outList;
         }
 
-
-        public static bool Update(ParentTable input)
-        {
-
-
-
-            return true;
-        }
-
-
         //this method will be able to insert into any table that using the corresponding  ParentTable
         public static bool Insert(ParentTable input)
         {

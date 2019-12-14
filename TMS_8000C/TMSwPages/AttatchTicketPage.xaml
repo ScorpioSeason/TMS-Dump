@@ -28,7 +28,7 @@
         
         <Button x:Name="Confirm" Content="Confirm" Grid.Column="3" Grid.Row="0" Margin="5,5,5,5" Click="Confirm_Click"></Button>
         
-        <DataGrid x:Name="AllTickets" Grid.Row="4" Grid.ColumnSpan="2" Grid.Column="0" ItemsSource="{Binding}" Margin="5,5,5,5" SelectionMode="Single" CanUserAddRows="False" IsReadOnly="True" SelectionChanged="AllTickets_SelectionChanged">
+        <DataGrid x:Name="AllTickets" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="0" ItemsSource="{Binding}" Margin="5,5,5,5" SelectionMode="Single" CanUserAddRows="False" IsReadOnly="True" SelectionChanged="AllTickets_SelectionChanged">
             
         </DataGrid>
 

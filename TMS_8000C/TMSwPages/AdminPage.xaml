@@ -116,10 +116,9 @@
                             </Grid.RowDefinitions>
 
                             <!--Controls Row (0) -->
-                            <DatePicker Name="BackupsstartDate" DockPanel.Dock="top" Grid.Row="0" Grid.Column="0" Margin="5,5,5,5"></DatePicker>
-                            <DatePicker Name="BackupsendDate" DockPanel.Dock="top" Grid.Row="0" Grid.Column="1" Margin="5,5,5,5"></DatePicker>
-                            <TextBox  x:Name="BackupssearchTags" DockPanel.Dock="top" Grid.Row="0" Grid.Column="2" Margin="5,5,5,5" Grid.ColumnSpan="2"></TextBox>
-                            <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Click="LogLoadClick">Load</Button>
+                            <DatePicker Name="BackupsStartDate" DockPanel.Dock="top" Grid.Row="0" Grid.Column="0" Margin="5,5,5,5" SelectedDateChanged="BackupsDate_SelectedDateChanged"></DatePicker>
+                            <DatePicker Name="BackupsEndDate" DockPanel.Dock="top" Grid.Row="0" Grid.Column="1" Margin="5,5,5,5" SelectedDateChanged="BackupsDate_SelectedDateChanged"></DatePicker>
+                            <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Click="RestoreSelected_Click">Restore to Selection</Button>
 
                             <!--Main Content Row (1) -->
                             <DataGrid Grid.ColumnSpan="5" Grid.Row="1" Name="BackupsLogsList" ItemsSource="{Binding}" Margin="5,5,5,5" SelectionMode="Single" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
@@ -132,8 +131,8 @@
                             </DataGrid>
 
                             <!--Buttons Row (2) -->
-                            <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="ChangeLogLocation">Change Log Location...</Button>
-                            <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="4" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="LogViewMoreClick" >View More...</Button>
+                            <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="ChangeDir_Click">Change Backup Directory...</Button>
+                            <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="4" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="CreateRestore_Click">Create Restore Point</Button>
 
                         </Grid>
 
