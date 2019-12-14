@@ -16,11 +16,10 @@ namespace TMSwPages.Classes
         private static string uid;
         private static string password;
 
-
-
         //This method will be used to initialize the connection
         public static void init()
         {
+
             //This is a prototype application, so this data will not ever change
             server = "35.193.37.75";
             database = "duane_test";
@@ -213,10 +212,10 @@ namespace TMSwPages.Classes
                 //create command and assign the query and connection from the constructor
                 MySqlCommand cmd = new MySqlCommand(query, connection);
 
-                
-
                 //Execute command
                 cmd.ExecuteNonQuery();
+
+                TMSBackup.WriteQueryToCurrentFile(new TMSBackupQuery(query));
 
                 return true;
             }
@@ -286,11 +285,11 @@ namespace TMSwPages.Classes
             {
                 //create command and assign the query and connection from the constructor
                 MySqlCommand cmd = new MySqlCommand(Query, connection);
-                
-                //send to admin here
 
                 //Execute command
-                var r = cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
+
+                TMSBackup.WriteQueryToCurrentFile(new TMSBackupQuery(Query));
 
                 return true;
             }
