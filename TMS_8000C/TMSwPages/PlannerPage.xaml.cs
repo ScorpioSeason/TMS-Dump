@@ -181,17 +181,25 @@ namespace TMSwPages
 
         private void RefreshActiveTickets_Click(object sender, RoutedEventArgs e)
         {
+            progresses.Clear();
             PlannerClass.ActiveTickets.Clear();
             PlannerClass.ActiveTickets = PlannerClass.TicketsWithStatus_Populate(1);
+            foreach (FC_TripTicket c in PlannerClass.ActiveTickets)
+            {
+                progresses.Add(FC_TripTicket.GetTicketProgress(c));
+            }
+            
             DG5.ItemsSource = null;
             DG5.ItemsSource = PlannerClass.ActiveTickets;
         }
-
+        public static List<int> progresses = new List<int>();
         private void DGActiveContracts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+           
             foreach (FC_LocalContract c in DGActiveContracts.SelectedItems)
             {
                 PlannerClass.ConnectedTickets_Populate(c);
+                
             }
             DGConnectedTickets.ItemsSource = null;
             DGConnectedTickets.ItemsSource = PlannerClass.ConnectedTickets;
@@ -199,6 +207,7 @@ namespace TMSwPages
 
         private void RefreshActiveContracts_Click(object sender, RoutedEventArgs e)
         {
+            
             PlannerClass.ActiveContracts.Clear();
             PlannerClass.ActiveContracts = PlannerClass.ContractsByStatus_Populate(1);
             DGActiveContracts.ItemsSource = null;
@@ -261,6 +270,18 @@ namespace TMSwPages
             PlannerClass.ConfirmedContracts = PlannerClass.ContractsByStatus_Populate(1);
             DGConfirmCompletion.ItemsSource = null;
             DGConfirmCompletion.ItemsSource = PlannerClass.ConfirmedContracts;
+        }
+
+
+
+        private void ViewAllButton_Click(object sender, RoutedEventArgs e)
+        {
+            InvoiceViewerDataGrid.ItemsSource = PlannerClass.GetAllInvoices(1);
+        }
+
+        private void VeiwTwoWeekButton_Click(object sender, RoutedEventArgs e)
+        {
+            InvoiceViewerDataGrid.ItemsSource = PlannerClass.GetAllInvoices(2);
         }
     }
 }

@@ -6,8 +6,22 @@ using System.Threading.Tasks;
 
 namespace TMSwPages.Classes
 {
+    // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
+    /**   
+    *   \class	    CreateTripInfo
+    *   \brief		This is a class that is used to enter information for the Trip Tciket table
+    *   
+    * -------------------------------------------------------------------------------------------------------- */
     public class CreateTripInfo
     {
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		       CreatTripInfo
+        *	\brief		   This inserts data into the columns for the Trip Ticket table
+        *	\param[in]     FC_LocalContract inContract, FC_Carrier inCarrier, FC_TripTicket partTicket
+        *	\param[out]	   None
+        *	\return		   None
+        * ---------------------------------------------------------------------------------------------------- */
         public CreateTripInfo(FC_LocalContract inContract, FC_Carrier inCarrier, FC_TripTicket partTicket)
         {
             FC_TripTicket theTicket = new FC_TripTicket();

@@ -43,7 +43,7 @@ namespace TMSwPages
 
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
-        *	\fn			int ParseContracts()
+        *	\fn			void ParseContracts()
         *	\brief		To call the sql query to populate list of contract class objects in order to display to the program all available contracts.
         *	\details	Calls SQL_Query.Select_Contracts from a instance of the class and uses the list it returns to populate the list.
         *	\param[in]	void
@@ -59,7 +59,16 @@ namespace TMSwPages
             FC_ContractFromRuss f = new FC_ContractFromRuss();
             contracts = f.ObjToTable(SQL.SelectFromCMP(f));
         }
-        public static List<FC_Carrier> nomCarriers = new List<FC_Carrier>();  
+        public static List<FC_Carrier> nomCarriers = new List<FC_Carrier>();
+
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn			void Nominations()
+        *	\brief		This method nominates
+        *	\param[in]	void
+        *	\param[out]	void 
+        *	\return		None
+        * ---------------------------------------------------------------------------------------------------- */
         public static void Nominations()
         {
             FC_Carrier f = new FC_Carrier();
@@ -91,6 +100,14 @@ namespace TMSwPages
 
         public static List<FC_Carrier> tempCarriers = new List<FC_Carrier>();
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		        void NominationView
+        *	\brief			
+        *	\param[in]      FC_ContractFromRuss temp
+        *	\param[out]	    none
+        *	\return		    none
+        * ---------------------------------------------------------------------------------------------------- */
         public static void NominationView(FC_ContractFromRuss temp)
         {
             tempCarriers.Clear();

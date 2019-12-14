@@ -171,9 +171,9 @@
                             <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Click="Carrier_DataLoadClick" Content="Load"/> 
                             
                             <!--Main Content Row (1) -->
-                            <DataGrid Grid.ColumnSpan="5" Grid.Row="1" Name="Carrier_DataList" ItemsSource="{Binding}" Margin="5,5,5,5" SelectionMode="Single" AutoGenerateColumns="False" CanUserAddRows="true" IsReadOnly="false">
+                            <DataGrid Grid.ColumnSpan="5" Grid.Row="1" Name="Carrier_DataList" ItemsSource="{Binding}" Margin="5,5,5,5" SelectionMode="Single" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="false">
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Header="CarrierID" Binding="{Binding CarrierID}"/>
+                                    <DataGridTextColumn Header="CarrierID" Binding="{Binding FC_CarrierID}"/>
                                     <DataGridTextColumn Header="Carrier_Name" Binding="{Binding Carrier_Name}" />
                                 </DataGrid.Columns>
                                 <DataGrid.Resources/>
@@ -276,7 +276,7 @@
                             <DataGrid Grid.ColumnSpan="5" Grid.Row="1" Name="Rate_Fee_TablesList" ItemsSource="{Binding}" Margin="5,5,5,5" SelectionMode="Single" AutoGenerateColumns="False" CanUserAddRows="true" IsReadOnly="false">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="CityName" Binding="{Binding CityName}"/>
-                                    <DataGridTextColumn Header="CarrierID" Binding="{Binding CarrierID}" />
+                                    <DataGridTextColumn Header="CarrierID" Binding="{Binding FC_CarrierID}" />
                                     <DataGridTextColumn Header="FTL_Availibility" Binding="{Binding FTL_Availibility}" />
                                     <DataGridTextColumn Header="LTL_Availibility" Binding="{Binding LTL_Availibility}" />
                                     <DataGridTextColumn Header="FTL_Rate" Binding="{Binding FTL_Rate}" />

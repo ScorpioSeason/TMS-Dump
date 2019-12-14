@@ -10,6 +10,7 @@ namespace TMSwPages.Classes
     {
         public static List<FC_LocalContract> ContractsPerTicket = new List<FC_LocalContract>();
         public static List<FC_TripTicket> ActiveTickets = new List<FC_TripTicket>();
+        
         public static List<FC_RouteSeg> RouteSegsPerTicket = new List<FC_RouteSeg>();
         //for selecting tickets
         public static List<FC_TripTicket> PendingTickets = new List<FC_TripTicket>();
@@ -97,34 +98,7 @@ namespace TMSwPages.Classes
             string query = "select * from FC_TripTicket where Is_Complete = " + status.ToString() + ";";
             FC_TripTicket temp = new FC_TripTicket();
             return temp.ObjToTable(SQL.Select(temp, query));
-        }
-
-        public static int GetTicketProgress(FC_TripTicket InTicket)
-        {
-            string Location = InTicket.CurrentLocation;
-
-            List<FC_RouteSeg> TicketSegs = RoutSegsPerTicket_Populate(InTicket);
-
-            List<FC_RouteSeg> PassedTickets = new List<FC_RouteSeg>();
-
-            foreach(FC_RouteSeg x in TicketSegs)
-            {
-                if(LoadCSV.ToCityName(x.CityB).ToUpper() == InTicket.CurrentLocation.ToUpper())
-                {
-                    break;
-                }
-
-                PassedTickets.Add(x);
-            }
-
-            RouteSumData TraveledData = new RouteSumData();
-            TraveledData = TraveledData.SummerizeTrip(PassedTickets);
-
-            RouteSumData TotalData = new RouteSumData();
-            TotalData = TotalData.SummerizeTrip(TicketSegs);
-
-             return (int)(TraveledData.totalKM / TotalData.totalKM);
-        }
+        }        
 
         public static void DeleteNominations(FC_LocalContract InContract)
         {
@@ -309,7 +283,7 @@ namespace TMSwPages.Classes
             return null;
         }
 
-        public static List<FC_Invoice> GetAllInvoices(int oneForAll_2For2Weeks)
+        public static List<Contract_Invoice> GetAllInvoices(int oneForAll_2For2Weeks)
         {
             string query = "select * from FC_LocalContract where Contract_Status = 1 or Contract_Status = 2 or Contract_Status = 3;";
 
@@ -318,21 +292,27 @@ namespace TMSwPages.Classes
 
             if(oneForAll_2For2Weeks == 2)
             {
-                List<FC_LocalContract> TempContrats = AllContracts;
+                List<FC_LocalContract> TempContrats = new List<FC_LocalContract>();
+
+                foreach(FC_LocalContract x in AllContracts)
+                {
+                    TempContrats.Add(x);
+                }
+
                 AllContracts.Clear();
 
                 foreach(FC_LocalContract x in TempContrats)
                 {
                     List<FC_TripTicket> theTickets = ConnectedTickets_Populate(x);
 
-                    if(theTickets[0].Days_Passes > 14)
+                    if(theTickets[0].Days_Passes < 14)
                     {
                         AllContracts.Add(x);
                     }
                 }
             }
 
-            List<FC_Invoice> OutInvoices = new List<FC_Invoice>();
+            List<Contract_Invoice> OutInvoices = new List<Contract_Invoice>();
 
             foreach(FC_LocalContract x in AllContracts)
             {
@@ -342,7 +322,7 @@ namespace TMSwPages.Classes
             return OutInvoices;
         }
 
-        public static FC_Invoice GenerateInvoice(FC_LocalContract inContract)
+        public static Contract_Invoice GenerateInvoice(FC_LocalContract inContract)
         {
             List<FC_TripTicket> AllTickets = ConnectedTickets_Populate(inContract);
 
@@ -367,7 +347,7 @@ namespace TMSwPages.Classes
 
                 string query = "select FC_CarrierID, CityName, FTL_Availibility, LTL_Availibility, FTL_Rate, LTL_Rate, Reefer_Charge " +
                     "from FC_DepotCity " +
-                    "where FC_CarrierID = " + x.FC_CarrierID.ToString() + " and CityName = \"" + inContract + "\";";
+                    "where FC_CarrierID = " + x.FC_CarrierID.ToString() + " and CityName = \"" + inContract.Origin + "\";";
 
                 FC_DepotCity d = new FC_DepotCity();
                 List<FC_DepotCity> theDepotCity = d.ObjToTable(SQL.Select(d, query));
@@ -376,22 +356,31 @@ namespace TMSwPages.Classes
 
                 if (inContract.Job_type == 0)
                 {
-                    tempPrice = sumData.totalKM * theDepotCity[0].FTL_Rate;
+                    tempPrice = sumData.totalKM * theDepotCity[0].FTL_Rate * 1.08;
                 }
                 else
                 {
-                    tempPrice = sumData.totalKM * theDepotCity[0].LTL_Rate;
+                    query = "select * from FC_TripTicketLine where FC_TripTicketID = " + x.FC_TripTicketID.ToString() + " and FC_LocalContractID =  " + inContract.FC_LocalContractID.ToString() + " ;";
+
+                    FC_TripTicketLine t = new FC_TripTicketLine();
+                    List<FC_TripTicketLine> theTicketLine = t.ObjToTable(SQL.Select(t, query));
+
+                    int QuantityOnTruck = theTicketLine[0].PalletsOnTicket;
+
+                    tempPrice = sumData.totalKM * theDepotCity[0].LTL_Rate * QuantityOnTruck * 1.05;
                 }
 
                 if (inContract.Van_type == 1)
                 {
-                    tempPrice *= theDepotCity[0].Reefer_Charge;
+                    tempPrice *= (theDepotCity[0].Reefer_Charge + 1);
                 }
 
                 Total_Cost += tempPrice;
             }
 
-            return new FC_Invoice(-1, inContract.FC_LocalContractID, Total_Cost);
+            Total_Cost = Math.Round(Total_Cost, 2);
+
+            return new Contract_Invoice(inContract, new FC_Invoice(inContract.FC_LocalContractID, Total_Cost));
 
         }
     }
