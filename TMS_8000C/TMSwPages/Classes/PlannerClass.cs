@@ -10,6 +10,7 @@ namespace TMSwPages.Classes
     {
         public static List<FC_LocalContract> ContractsPerTicket = new List<FC_LocalContract>();
         public static List<FC_TripTicket> ActiveTickets = new List<FC_TripTicket>();
+        
         public static List<FC_RouteSeg> RouteSegsPerTicket = new List<FC_RouteSeg>();
         //for selecting tickets
         public static List<FC_TripTicket> PendingTickets = new List<FC_TripTicket>();
@@ -97,34 +98,7 @@ namespace TMSwPages.Classes
             string query = "select * from FC_TripTicket where Is_Complete = " + status.ToString() + ";";
             FC_TripTicket temp = new FC_TripTicket();
             return temp.ObjToTable(SQL.Select(temp, query));
-        }
-
-        public static int GetTicketProgress(FC_TripTicket InTicket)
-        {
-            string Location = InTicket.CurrentLocation;
-
-            List<FC_RouteSeg> TicketSegs = RoutSegsPerTicket_Populate(InTicket);
-
-            List<FC_RouteSeg> PassedTickets = new List<FC_RouteSeg>();
-
-            foreach(FC_RouteSeg x in TicketSegs)
-            {
-                if(LoadCSV.ToCityName(x.CityB).ToUpper() == InTicket.CurrentLocation.ToUpper())
-                {
-                    break;
-                }
-
-                PassedTickets.Add(x);
-            }
-
-            RouteSumData TraveledData = new RouteSumData();
-            TraveledData = TraveledData.SummerizeTrip(PassedTickets);
-
-            RouteSumData TotalData = new RouteSumData();
-            TotalData = TotalData.SummerizeTrip(TicketSegs);
-
-             return (int)(TraveledData.totalKM / TotalData.totalKM);
-        }
+        }        
 
         public static void DeleteNominations(FC_LocalContract InContract)
         {

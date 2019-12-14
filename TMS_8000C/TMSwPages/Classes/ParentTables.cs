@@ -576,14 +576,33 @@ namespace TMSwPages.Classes
         public int Days_Passes { get; set; }
         public int Is_Complete { get; set; }
 
-        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
-        /**
-        *	\fn		
-        *	\brief			
-        *	\param[in]
-        *	\param[out]	 
-        *	\return		
-        * ---------------------------------------------------------------------------------------------------- */
+        public static int GetTicketProgress(FC_TripTicket InTicket)
+        {
+            string Location = InTicket.CurrentLocation;
+
+            List<FC_RouteSeg> TicketSegs = PlannerClass.RoutSegsPerTicket_Populate(InTicket);
+
+            List<FC_RouteSeg> PassedTickets = new List<FC_RouteSeg>();
+
+            foreach (FC_RouteSeg x in TicketSegs)
+            {
+                if (LoadCSV.ToCityName(x.CityB).ToUpper() == InTicket.CurrentLocation.ToUpper())
+                {
+                    break;
+                }
+
+                PassedTickets.Add(x);
+            }
+
+            RouteSumData TraveledData = new RouteSumData();
+            TraveledData = TraveledData.SummerizeTrip(PassedTickets);
+
+            RouteSumData TotalData = new RouteSumData();
+            TotalData = TotalData.SummerizeTrip(TicketSegs);
+
+            return (int)(100 * (TraveledData.totalKM / TotalData.totalKM));
+        }
+
         public FC_TripTicket()
         {
             FC_TripTicketID = -1;
