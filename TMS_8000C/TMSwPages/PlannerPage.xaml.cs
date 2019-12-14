@@ -155,13 +155,13 @@ namespace TMSwPages
         {
             PlannerClass.ContractsPerTicket.Clear();
 
-            foreach (FC_TripTicket c in DG5.SelectedItems)
+            foreach (FC_TripTicket_WProgress c in DG5.SelectedItems)
             {
-                PlannerClass.ContractsPerTicket = PlannerClass.ContractsPerTicket_Populate(c);
+                PlannerClass.ContractsPerTicket = PlannerClass.ContractsPerTicket_Populate(c.instance);
 
                 foreach(FC_LocalContract x in PlannerClass.ContractsPerTicket)
                 {
-                    string query = "select * from FC_TripTicketLine where FC_TripTicketID = " + c.FC_TripTicketID.ToString() + " and FC_LocalContractID =  " + x.FC_LocalContractID.ToString() + " ;";
+                    string query = "select * from FC_TripTicketLine where FC_TripTicketID = " + c.instance.FC_TripTicketID.ToString() + " and FC_LocalContractID =  " + x.FC_LocalContractID.ToString() + " ;";
 
                     FC_TripTicketLine t = new FC_TripTicketLine();
                     List<FC_TripTicketLine> theTicketLine = t.ObjToTable(SQL.Select(t, query));
@@ -169,7 +169,7 @@ namespace TMSwPages
                     x.Quantity = theTicketLine[0].PalletsOnTicket;
                 }
 
-                PlannerClass.RoutSegsPerTicket_Populate(c);
+                PlannerClass.RoutSegsPerTicket_Populate(c.instance);
             }
 
             DG6.ItemsSource = null;
@@ -186,13 +186,15 @@ namespace TMSwPages
             PlannerClass.ActiveTickets = PlannerClass.TicketsWithStatus_Populate(1);
             foreach (FC_TripTicket c in PlannerClass.ActiveTickets)
             {
-                progresses.Add(FC_TripTicket.GetTicketProgress(c));
+                FC_TripTicket_WProgress temp = new FC_TripTicket_WProgress(c);
+                temp.GetTicketProgress(temp.instance);
+                progresses.Add(temp);
             }
             
             DG5.ItemsSource = null;
-            DG5.ItemsSource = PlannerClass.ActiveTickets;
+            DG5.ItemsSource = progresses;
         }
-        public static List<int> progresses = new List<int>();
+        public static List<FC_TripTicket_WProgress> progresses = new List<FC_TripTicket_WProgress>();
         private void DGActiveContracts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
            

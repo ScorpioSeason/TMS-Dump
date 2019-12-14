@@ -100,13 +100,13 @@
                             <RowDefinition x:Name="ActiveTicketsContracts" Height="1*"></RowDefinition>
                             <RowDefinition x:Name="ActiveTicketsButtons" Height="auto"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <DataGrid Grid.ColumnSpan="4" Grid.RowSpan ="2" Grid.Row="1" Margin="5,5,5,5" Name="DG5" ItemsSource="{Binding}" AutoGenerateColumns="True" SelectionChanged="DG5_SelectionChanged" IsReadOnly="True">
+                        <DataGrid Grid.ColumnSpan="4" Grid.RowSpan ="2" Grid.Row="1" Margin="5,5,5,5" Name="DG5" ItemsSource="{Binding}" AutoGenerateColumns="False" SelectionChanged="DG5_SelectionChanged" IsReadOnly="True">
                             <DataGrid.Columns>
-                                <DataGridTemplateColumn Header="Orders Count" Width="380">
+                                <DataGridTemplateColumn x:Name="BARS" Header="Orders Count" Width="380">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <Grid>
-                                                <ProgressBar Grid.Row="0" Grid.Column="0"  Minimum="0" Maximum="100" Value="{Binding progresses}" Width="100">
+                                                <ProgressBar Grid.Row="0" Grid.Column="0"  Minimum="0" Maximum="100" Value="{Binding progress}" Width="100">
                                                 </ProgressBar>
                                             </Grid>
                                         </DataTemplate>

@@ -567,16 +567,18 @@ namespace TMSwPages.Classes
         }
     }
 
-    public class FC_TripTicket : ParentTable
+    public class FC_TripTicket_WProgress : ParentTable
     {
-        public int FC_TripTicketID { get; set; }
-        public int FC_CarrierID { get; set; }
-        public string CurrentLocation { get; set; }
-        public int Size_in_Palettes { get; set; }
-        public int Days_Passes { get; set; }
-        public int Is_Complete { get; set; }
+        public FC_TripTicket instance = new FC_TripTicket();
+        public int progress { get; set; }
 
-        public static int GetTicketProgress(FC_TripTicket InTicket)
+        public FC_TripTicket_WProgress(FC_TripTicket temp)
+        {
+            instance = temp;
+            progress = 0;
+        }
+
+        public void GetTicketProgress(FC_TripTicket InTicket)
         {
             string Location = InTicket.CurrentLocation;
 
@@ -600,8 +602,21 @@ namespace TMSwPages.Classes
             RouteSumData TotalData = new RouteSumData();
             TotalData = TotalData.SummerizeTrip(TicketSegs);
 
-            return (int)(100 * (TraveledData.totalKM / TotalData.totalKM));
+            //progress = (int)(100 * (TraveledData.totalKM / TotalData.totalKM));
+            progress = 86;
         }
+    }
+
+    public class FC_TripTicket : ParentTable
+    {
+        public int FC_TripTicketID { get; set; }
+        public int FC_CarrierID { get; set; }
+        public string CurrentLocation { get; set; }
+        public int Size_in_Palettes { get; set; }
+        public int Days_Passes { get; set; }
+        public int Is_Complete { get; set; }
+
+        
 
         public FC_TripTicket()
         {
