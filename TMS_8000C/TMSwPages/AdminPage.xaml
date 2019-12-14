@@ -169,7 +169,7 @@
                             <!--<DatePicker Name="Carrier_DataStartDate" DockPanel.Dock="top" Grid.Row="0" Grid.Column="0" Margin="5,5,5,5"/>
                             <DatePicker Name="Carrier_DataEndDate" DockPanel.Dock="top" Grid.Row="0" Grid.Column="1" Margin="5,5,5,5"/>
                             <TextBox  x:Name="Carrier_DataSearchTags" DockPanel.Dock="top" Grid.Row="0" Grid.Column="2" Margin="5,5,5,5" Grid.ColumnSpan="2"/>-->
-                            <Button Grid.Row="2" Grid.Column="2" Margin="5.334,5,5.333,4.667" Content="Load"/>
+                            <Button Grid.Row="2" Grid.Column="2" Margin="5.334,5,5.333,4.667" Content="Load" Click="LoadCsvIntoBD"/>
 
                             <!--Main Content Row (1) -->
                             <DataGrid Grid.ColumnSpan="6" Grid.Row="1" Name="Carrier_DataList" ItemsSource="{Binding}" Margin="5,5.333,5.333,5" SelectionMode="Single" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="false">

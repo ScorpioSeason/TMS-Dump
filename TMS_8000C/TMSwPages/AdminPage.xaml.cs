@@ -415,5 +415,18 @@ namespace TMSwPages
                 LoadCSV.SetNewCSVLocation(openFileDialog.FileName);
             }
         }
+
+        private void LoadCsvIntoBD(object sender, RoutedEventArgs e)
+        {
+            //check if it is empty
+            FC_Carrier c = new FC_Carrier();
+
+            if(c.ObjToTable(SQL.Select(c)).Count == 0)
+            {
+                LoadCSV.Load();
+            }
+
+            Carrier_DataLoadClick(null, null);
+        }
     }
 }

@@ -31,80 +31,79 @@ namespace TMSwPages.Classes
         * ---------------------------------------------------------------------------------------------------- */
         public static bool Load()
         {
-
             bool worked = true;
 
-            try
+            if(CSVLocation != "")
             {
-                string localResourcePath = CSVLocation;
-                string ReadInData = System.IO.File.ReadAllText(localResourcePath);
 
-                ReadInData = ReadInData.Replace("\r\n", ",");
-                ReadInData = ReadInData.Replace(",,", ",");
-
-                String[] SeperaterStrings = ReadInData.Split(',');
-
-                List<FC_Carrier> ReadInCarriers = new List<FC_Carrier>();
-                List<FC_DepotCity> InDeoptCities = new List<FC_DepotCity>();
-
-                int index = 7;
-                bool CarrierFound = true;
-
-
-                index = 7;
-
-                do
+                try
                 {
-                    int CurrentCarrierID = SQL.GetNextID("FC_Carrier");
+                    string localResourcePath = CSVLocation;
+                    string ReadInData = System.IO.File.ReadAllText(localResourcePath);
 
-                    FC_Carrier current = new FC_Carrier(CurrentCarrierID, SeperaterStrings[index]);
-                    index++;
+                    ReadInData = ReadInData.Replace("\r\n", ",");
+                    ReadInData = ReadInData.Replace(",,", ",");
 
+                    String[] SeperaterStrings = ReadInData.Split(',');
 
-                    bool cityFound = true;
+                    List<FC_Carrier> ReadInCarriers = new List<FC_Carrier>();
+                    List<FC_DepotCity> InDeoptCities = new List<FC_DepotCity>();
+
+                    int index = 7;
+                    bool CarrierFound = true;
+
+                    index = 7;
 
                     do
                     {
-                        if (ToCityID(SeperaterStrings[index]) != -1)
+                        int CurrentCarrierID = SQL.GetNextID("FC_Carrier");
+
+                        FC_Carrier current = new FC_Carrier(CurrentCarrierID, SeperaterStrings[index]);
+                        index++;
+
+                        bool cityFound = true;
+
+                        do
                         {
-                            FC_DepotCity tempDepot = new FC_DepotCity(CurrentCarrierID, SeperaterStrings[index], int.Parse(SeperaterStrings[index + 1]), int.Parse(SeperaterStrings[index + 2]), double.Parse(SeperaterStrings[index + 3]), double.Parse(SeperaterStrings[index + 4]), double.Parse(SeperaterStrings[index + 5]));
-                            InDeoptCities.Add(tempDepot);
+                            if (ToCityID(SeperaterStrings[index]) != -1)
+                            {
+                                FC_DepotCity tempDepot = new FC_DepotCity(CurrentCarrierID, SeperaterStrings[index], int.Parse(SeperaterStrings[index + 1]), int.Parse(SeperaterStrings[index + 2]), double.Parse(SeperaterStrings[index + 3]), double.Parse(SeperaterStrings[index + 4]), double.Parse(SeperaterStrings[index + 5]));
+                                InDeoptCities.Add(tempDepot);
 
+                                index += 6;
+                            }
+                            else
+                            {
+                                cityFound = false;
+                            }
 
-                            index += 6;
-                        }
-                        else
+                        } while (cityFound);
+
+                        ReadInCarriers.Add(current);
+
+                        if (SeperaterStrings[index] == "")
                         {
-                            cityFound = false;
+                            CarrierFound = false;
                         }
 
-                    } while (cityFound);
+                        SQL.Insert(current);
 
-                    ReadInCarriers.Add(current);
+                    } while (CarrierFound);
 
-                    if (SeperaterStrings[index] == "")
+                    foreach (FC_DepotCity x in InDeoptCities)
                     {
-                        CarrierFound = false;
+                        SQL.Insert(x);
                     }
 
-                    SQL.Insert(current);
-
-                } while (CarrierFound);
-
-                foreach (FC_DepotCity x in InDeoptCities)
-                {
-                    SQL.Insert(x);
                 }
-
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.ToString());
-                worked = false;
+                catch (Exception e)
+                {
+                    //Console.WriteLine(e.ToString());
+                    worked = false;
+                }
             }
 
             return worked;
-
         }
 
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
