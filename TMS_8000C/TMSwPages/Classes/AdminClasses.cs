@@ -22,6 +22,7 @@ using System.Threading.Tasks;
 using System.Windows.Documents;
 using MySql.Data.MySqlClient;
 using TMSwPages.Classes;
+using Microsoft.Win32;
 
 namespace TMSwPages.Classes
 {
@@ -36,8 +37,10 @@ namespace TMSwPages.Classes
     public class Admin
     {
         //SQL_Query_TMS adminTMSConnection = null;
-        string query = ""; 
-       // public List<Carrier> carrierTable = new List<Carrier>();
+        string query = "";
+
+
+        // public List<Carrier> carrierTable = new List<Carrier>();
         //public List<Route> routeTable = new List<Route>();
         //public List<Fee> feeTable = new List<Fee>();
 
@@ -49,7 +52,7 @@ namespace TMSwPages.Classes
         //{
         //    return adminTMSConnection;
         //}
-        
+
         public List<string>[] DisplayCarrier() {
 
             int numColumns = 0;
@@ -461,32 +464,34 @@ namespace TMSwPages.Classes
 
     }
 
-    static public class TMSBackup
+    public class TMSBackup 
     {
-        static string BackupDate;
-        static DateTime time;
-        static string outgoingQuery;
-        static string incomingQuery;
-        static string filePath;
-        static string thisFileDir;
-        static int restoreNumber;
+        // Overall List of restore point files found
+        public static List<TMSBackup> backupPoints = new List<TMSBackup>(); 
+        static public string thisFileDir { get; set; }
+        public int restoreNumber { get; set; }
+        static public string filePath { get; set; }
+        //public DateTime backupDate; 
 
-        static public bool WriteQuery(string pushedQuery) 
+        public TMSBackup() { }
+        public TMSBackup(string fn, int readNum)
         {
-            incomingQuery = pushedQuery;
-            incomingQuery.Replace("\"", "");
-            outgoingQuery = incomingQuery; 
+            restoreNumber = readNum;
+            filePath = fn;
+        }
 
+        public bool WriteQuery(TMSBackupQuery bq)
+        {
             // writeQuery to file
             bool appendSuccess = true;
 
             try
             {
                 /// Open the filestream to append to the file. 
-                FileStream fileStream = new FileStream(filePath, FileMode.Append, FileAccess.Write);
+                FileStream fileStream = new FileStream((filePath), FileMode.Append, FileAccess.Write);
                 StreamWriter fileWriter = new StreamWriter(fileStream);
 
-                fileWriter.WriteLine(outgoingQuery);
+                fileWriter.WriteLine(bq.outgoingQuery);
                 fileWriter.Flush();
 
                 /// Close the file
@@ -504,16 +509,19 @@ namespace TMSwPages.Classes
 
         }
 
-        static public bool CreateRestorePoint()
+        public bool CreateRestorePoint()
         {
             // Copy current file to a new one with the restore date. 
             // Change the write file path to the new file
             // Start appending to the new file. 
 
+            // Basically change backup path but the former should delete and 
+            // 
+
             return true;
         }
 
-        static public bool RecoverRestorePoint()
+        public bool RecoverRestorePoint()
         {
             // Allow file selection
             // Read in file
@@ -556,83 +564,93 @@ namespace TMSwPages.Classes
             return readSuccess;
         }
 
-        static public void ChangeBackupPath()
+        public void ChangeBackupPath()
         {
             // Allow user to select path (folder?)
             // Copy files in the current folder to the new one
             // if successful, delete the old files. 
 
-            //private void ChangeLogLocation(object sender, RoutedEventArgs e)
-            //{
-            //    bool saveSuccess = true;
-            //    string oldLogPath = TMSLogger.LogFilePath;
-            //    string newLogPath = "";
+            bool saveSuccess = true;
+            string oldPath = filePath; 
+            string newPath = "";
 
-            //    // View Save As File Dialog
-            //    SaveFileDialog saveFileDialog = new SaveFileDialog();
-            //    saveFileDialog.Filter = "Text Document (*.txt)|*.txt|All files (*.*)|*.*";
+            // View Save As File Dialog
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Text Files|*.sql";
+            thisFileDir = (saveFileDialog.InitialDirectory);
 
-            //    // Set a text range using the textbox name
-            //    // TextRange textRange = new TextRange(myTextbox.Document.ContentStart, myTextbox.Document.ContentEnd);
+            // Set a text range using the textbox name
+            // TextRange textRange = new TextRange(myTextbox.Document.ContentStart, myTextbox.Document.ContentEnd);
 
-            //    if (saveFileDialog.ShowDialog() == true)
-            //    {
-            //        /// Get the new path
-            //        newLogPath = (saveFileDialog.FileName);
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                /// Get the new path
+                newPath = (saveFileDialog.FileName);
 
-            //        /// Open both files to copy
-            //        try
-            //        {
-            //            /// Open file streams
-            //            FileStream newFile = new FileStream(newLogPath, FileMode.Create);
-            //            FileStream oldFile = new FileStream(oldLogPath, FileMode.Open);
-            //            StreamReader streamReader = new StreamReader(oldFile);
-            //            StreamWriter streamWriter = new StreamWriter(newFile);
+                /// Open both files to copy
+                try
+                {
+                    /// Open file streams
+                    FileStream newFile = new FileStream(newPath, FileMode.Create);
+                    FileStream oldFile = new FileStream(oldPath, FileMode.Open);
+                    StreamReader streamReader = new StreamReader(oldFile);
+                    StreamWriter streamWriter = new StreamWriter(newFile);
 
-            //            /// Read any copy through the files
-            //            while (!streamReader.EndOfStream)
-            //            {
-            //                streamWriter.WriteLine(streamReader.ReadLine());
-            //                streamWriter.Flush();
-            //            }
+                    /// Read any copy through the files
+                    while (!streamReader.EndOfStream)
+                    {
+                        streamWriter.WriteLine(streamReader.ReadLine());
+                        streamWriter.Flush();
+                    }
 
-            //            /// Close all the streams
-            //            streamWriter.Close(); streamReader.Close();
-            //            newFile.Close(); oldFile.Close();
+                    /// Close all the streams
+                    streamWriter.Close(); streamReader.Close();
+                    newFile.Close(); oldFile.Close();
 
-            //        }
-            //        catch (Exception ex)
-            //        {
-            //            TMSLogger.LogIt("|" + "/AdminPage.xaml.cs" + "|" + "AdminPage" + "|" + "ChangeLogLocation" + "|" + ex.GetType() + "|" + ex.Message + "|");
-            //            saveSuccess = false;
-            //        }
+                }
+                catch (Exception ex)
+                {
+                    //TMSLogger.LogIt("|" + "/AdminPage.xaml.cs" + "|" + "AdminPage" + "|" + "ChangeLogLocation" + "|" + ex.GetType() + "|" + ex.Message + "|");
+                    saveSuccess = false;
+                }
 
-            //        if (saveSuccess == true)
-            //        {
-            //            /// Set location of LogFilePath to new path
-            //            TMSLogger.LogFilePath = newLogPath;
+                if (saveSuccess == true)
+                {
+                    /// Set location of LogFilePath to new path
+                    TMSBackup.filePath = newPath;
 
-            //            /// Delete old file 
-            //            try
-            //            {
-            //                File.Delete(oldLogPath);
-            //            }
-            //            catch (Exception exc)
-            //            {
-            //                TMSLogger.LogIt("|" + "/AdminPage.xaml.cs" + "|" + "AdminPage" + "|" + "ChangeLogLocation" + "|" + exc.GetType() + "|" + exc.Message + "|");
-            //            }
-            //        }
+                    /// Delete old file 
+                    //try
+                    //{
+                    //    File.Delete(oldPath);
+                    //}
+                    //catch (Exception exc)
+                    //{
+                    //    TMSLogger.LogIt("|" + "/AdminPage.xaml.cs" + "|" + "AdminPage" + "|" + "ChangeLogLocation" + "|" + exc.GetType() + "|" + exc.Message + "|");
+                    //}
+                }
 
-            //    }
+            }
 
-            //}
+            
+        }
+
+        public void ReadInBackupsList()
+        {
+            int i = 0;
+            foreach (string fileName in Directory.EnumerateFiles(thisFileDir, "*.sql"))
+            {
+                backupPoints.Add(new TMSBackup(fileName, i));
+                i++;
+            }
+               
         }
 
         static public void SetDefaultBackupFilePath()
         {
             try
             {
-                filePath = Environment.CurrentDirectory + "/TMSBackup_" + DateTime.Now.ToFileTimeUtc() + ".sql";
+                //(fileName) = Environment.CurrentDirectory + "/TMSBackup/Backup_" + DateTime.Now.ToFileTimeUtc() + ".sql";
                 thisFileDir = Environment.CurrentDirectory;
             }
             catch (Exception e)
@@ -640,6 +658,38 @@ namespace TMSwPages.Classes
                 TMSLogger.LogIt("|" + "/AdminClasses.cs" + "|" + "TMSBackup" + "|" + "SetDefaultBackupFilePath" + "|" + "Exception" + "|" + e.Message + "|");
             }
 
+        }
+    }
+
+    public class TMSBackupQuery
+    {
+        public TMSBackupQuery() { }
+
+        public TMSBackupQuery(string iq)
+        {
+            BackupDate = DateTime.Today;
+            incomingQuery = iq;
+        }
+
+        public DateTime BackupDate{ get; set; }
+        public string incomingQuery{ get; set; }
+        public string outgoingQuery
+        {
+            get
+            {
+                string returnString = "";
+                try
+                {
+                    int firstQuote = incomingQuery.IndexOf('"');
+                    int lastQuote = incomingQuery.LastIndexOf('"');
+                    returnString = incomingQuery.Substring(firstQuote + 1, (lastQuote - firstQuote));
+                }
+                catch (Exception e)
+                {
+
+                }
+                return returnString; 
+            }
         }
 
     }

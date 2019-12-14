@@ -43,15 +43,17 @@ namespace TMSwPages
     * -------------------------------------------------------------------------------------------------------- */
     public partial class AdminPage : Page
     {
-        List<TMSLog> searchResults = new List<TMSLog>();
+        List<TMSLog> logSearchResults = new List<TMSLog>();
+        List<TMSBackup> backupSearchResults = new List<TMSBackup>(); 
         static Admin admin = new Admin(); 
-        static int selectedTab = -1; 
+        static int selectedTab = -1;
+        TMSBackup backup = new TMSBackup(); 
 
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
         *	\fn			public AdminPage()
         *	\brief		This is a constructor for the AdminPage user interface. 
-        *	\details	This loads the searchResults TMSLogs into the LogsList data grid. 
+        *	\details	This loads the logSearchResults TMSLogs into the LogsList data grid. 
         *	\return		Instantiates the AdminPage
         *
         * ---------------------------------------------------------------------------------------------------- */
@@ -66,10 +68,14 @@ namespace TMSwPages
                 LogStartDate.SelectedDate = (DateTime.Today.AddDays(-7));
                 LogEndDate.SelectedDate = DateTime.Today;
                 LogSearchTags.Focus();
-                LogsList.ItemsSource = searchResults;
+                LogsList.ItemsSource = logSearchResults;
                 LogLoadClick(null, null);
 
-                LogsList.ItemsSource = searchResults; 
+                LogsList.ItemsSource = logSearchResults;
+
+                BackupsList.ItemsSource = backupSearchResults;
+
+
                 //Carrier_DataList.ItemsSource = admin.DisplayCarrier();
                 //Route_TableList.ItemsSource = admin.DisplayRoutes();
                 //Rate_Fee_TablesList.ItemsSource = admin.DisplayFees();
@@ -95,7 +101,7 @@ namespace TMSwPages
         //        LogStartDate.SelectedDate = (DateTime.Today.AddDays(-7));
         //        LogEndDate.SelectedDate = DateTime.Today;
         //        LogSearchTags.Focus();
-        //        LogsList.ItemsSource = searchResults;
+        //        LogsList.ItemsSource = logSearchResults;
         //        LogLoadClick(null, null);
 
         //    }
@@ -124,10 +130,10 @@ namespace TMSwPages
             bool dateRange = false;
             string tempString = (LogSearchTags.Text.Trim()).ToLower();
 
-            /// This clears searchResults if the Log file is read in successfully
+            /// This clears logSearchResults if the Log file is read in successfully
             if (TMSLogger.ReadExistingLogFile() == true)
             {
-                searchResults.Clear();
+                logSearchResults.Clear();
             }
             try
             {
@@ -142,19 +148,19 @@ namespace TMSwPages
 
                     if ((dateRange == true) && (tempString != ""))
                     {
-                        /// Compare search tags box to logs in the local list and add to searchResults list if matching
+                        /// Compare search tags box to logs in the local list and add to logSearchResults list if matching
                         if ((l.logType.ToLower()).Contains(tempString) || ((l.logMessage.ToLower()).Contains(tempString)))
                         {
-                            searchResults.Add(l);
+                            logSearchResults.Add(l);
                         }
                         else if ((l.logMethod.ToLower()).Contains(tempString) || ((l.logClass.ToLower()).Contains(tempString)))
                         {
-                            searchResults.Add(l);
+                            logSearchResults.Add(l);
                         }
                     }
                     else if ((dateRange == true) && (tempString == ""))
                     {
-                        searchResults.Add(l);
+                        logSearchResults.Add(l);
                     }
 
                 }
@@ -303,11 +309,27 @@ namespace TMSwPages
                                 LogStartDate.SelectedDate = (DateTime.Today.AddDays(-7));
                                 LogEndDate.SelectedDate = DateTime.Today;
                                 LogSearchTags.Focus();
-                                LogsList.ItemsSource = searchResults;
+                                LogsList.ItemsSource = logSearchResults;
                                 LogLoadClick(null, null);
                                 break;
                             case (1):
                                 //backup
+                                BackupsStartDate.SelectedDate = (DateTime.Today.AddDays(-7));
+                                BackupsEndDate.SelectedDate = DateTime.Today;
+                                backupSearchResults.Clear();
+
+                                
+                                backup.ReadInBackupsList(); 
+                                foreach (TMSBackup b in TMSBackup.backupPoints)
+                                {
+                                    //if ((b.backupDate <= BackupsEndDate.SelectedDate) && (b.BackupDate >= BackupsStartDate.SelectedDate))
+                                    //{
+                                        backupSearchResults.Add(b); 
+                                    //}
+                                }
+                                BackupsList.ItemsSource = backupSearchResults;
+                                BackupsList.Items.Refresh(); 
+
                                 break;
                             case (2):
                                 //Carrier_Data.DataContext = admin.DisplayCarrier();
@@ -347,16 +369,31 @@ namespace TMSwPages
         private void CreateRestore_Click(object sender, RoutedEventArgs e)
         {
             // Create a new restore point
+            BackupsList.Items.Refresh();
         }
 
         private void ChangeDir_Click(object sender, RoutedEventArgs e)
         {
+            backup.ChangeBackupPath(); 
             // change the directory of the backup files
+            BackupsList.Items.Refresh();
         }
 
         private void BackupsDate_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
             // Update search
+
+            //backupSearchResults.Clear();
+
+            //foreach (TMSBackup b in TMSBackup.backupPoints)
+            //{
+            //    if ((b.backupDate <= BackupsEndDate.SelectedDate) && (b.backupDate >= BackupsStartDate.SelectedDate))
+            //    {
+            //        backupSearchResults.Add(b);
+            //    }
+            //}
+
+            BackupsList.Items.Refresh();
         }
 
     }
