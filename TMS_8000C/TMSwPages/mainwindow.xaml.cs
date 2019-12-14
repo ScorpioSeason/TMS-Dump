@@ -25,6 +25,8 @@ namespace TMSwPages
 
             SQL.init();
             SQL.open();
+
+            TMSLogger.SetDefaultLogFilePath(); // Initialize logger location when app opens
         }
     }
 }

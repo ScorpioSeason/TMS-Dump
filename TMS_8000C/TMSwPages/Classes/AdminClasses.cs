@@ -474,8 +474,8 @@ namespace TMSwPages.Classes
         static public bool WriteQuery(string pushedQuery) 
         {
             incomingQuery = pushedQuery;
-            // Parse pushed query (remove "s)
-            // Set outgoingQuery
+            incomingQuery.Replace("\"", "");
+            outgoingQuery = incomingQuery; 
 
             // writeQuery to file
             bool appendSuccess = true;
@@ -486,7 +486,6 @@ namespace TMSwPages.Classes
                 FileStream fileStream = new FileStream(filePath, FileMode.Append, FileAccess.Write);
                 StreamWriter fileWriter = new StreamWriter(fileStream);
 
-                /// Add each log entry from the working list to the file as a BSV
                 fileWriter.WriteLine(outgoingQuery);
                 fileWriter.Flush();
 
@@ -562,6 +561,71 @@ namespace TMSwPages.Classes
             // Allow user to select path (folder?)
             // Copy files in the current folder to the new one
             // if successful, delete the old files. 
+
+            //private void ChangeLogLocation(object sender, RoutedEventArgs e)
+            //{
+            //    bool saveSuccess = true;
+            //    string oldLogPath = TMSLogger.LogFilePath;
+            //    string newLogPath = "";
+
+            //    // View Save As File Dialog
+            //    SaveFileDialog saveFileDialog = new SaveFileDialog();
+            //    saveFileDialog.Filter = "Text Document (*.txt)|*.txt|All files (*.*)|*.*";
+
+            //    // Set a text range using the textbox name
+            //    // TextRange textRange = new TextRange(myTextbox.Document.ContentStart, myTextbox.Document.ContentEnd);
+
+            //    if (saveFileDialog.ShowDialog() == true)
+            //    {
+            //        /// Get the new path
+            //        newLogPath = (saveFileDialog.FileName);
+
+            //        /// Open both files to copy
+            //        try
+            //        {
+            //            /// Open file streams
+            //            FileStream newFile = new FileStream(newLogPath, FileMode.Create);
+            //            FileStream oldFile = new FileStream(oldLogPath, FileMode.Open);
+            //            StreamReader streamReader = new StreamReader(oldFile);
+            //            StreamWriter streamWriter = new StreamWriter(newFile);
+
+            //            /// Read any copy through the files
+            //            while (!streamReader.EndOfStream)
+            //            {
+            //                streamWriter.WriteLine(streamReader.ReadLine());
+            //                streamWriter.Flush();
+            //            }
+
+            //            /// Close all the streams
+            //            streamWriter.Close(); streamReader.Close();
+            //            newFile.Close(); oldFile.Close();
+
+            //        }
+            //        catch (Exception ex)
+            //        {
+            //            TMSLogger.LogIt("|" + "/AdminPage.xaml.cs" + "|" + "AdminPage" + "|" + "ChangeLogLocation" + "|" + ex.GetType() + "|" + ex.Message + "|");
+            //            saveSuccess = false;
+            //        }
+
+            //        if (saveSuccess == true)
+            //        {
+            //            /// Set location of LogFilePath to new path
+            //            TMSLogger.LogFilePath = newLogPath;
+
+            //            /// Delete old file 
+            //            try
+            //            {
+            //                File.Delete(oldLogPath);
+            //            }
+            //            catch (Exception exc)
+            //            {
+            //                TMSLogger.LogIt("|" + "/AdminPage.xaml.cs" + "|" + "AdminPage" + "|" + "ChangeLogLocation" + "|" + exc.GetType() + "|" + exc.Message + "|");
+            //            }
+            //        }
+
+            //    }
+
+            //}
         }
 
         static public void SetDefaultBackupFilePath()
