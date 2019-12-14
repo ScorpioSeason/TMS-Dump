@@ -7,13 +7,32 @@ using System.Threading.Tasks;
 namespace TMSwPages.Classes
 {
 
-    public struct RouteSumData
+    public class RouteSumData
     {
         public double totalDriveTime;
         public double totalTripTime;
         public int totalKM;
-        public int OriginCity;
-        public int DestinationCity;
+
+
+        public RouteSumData SummerizeTrip(List<FC_RouteSeg> inData)
+        {
+            RouteSumData outData = new RouteSumData();
+
+            foreach (FC_RouteSeg x in inData)
+            {
+                outData.totalDriveTime += x.DrivenTime;
+
+                outData.totalTripTime += x.DrivenTime;
+
+                outData.totalTripTime += x.PickUpTime;
+                outData.totalTripTime += x.DropOffTime;
+                outData.totalTripTime += x.LtlTime;
+
+                outData.totalKM += x.KM;
+            }
+
+            return outData;
+        }
     };
 
     // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
@@ -253,31 +272,6 @@ namespace TMSwPages.Classes
         *	\see		na
         *	\return		RouteSumData The condensed data
         * ---------------------------------------------------------------------------------------------------- */
-        public RouteSumData SummerizeTrip(List<FC_RouteSeg> inData)
-        {
-            RouteSumData outData = new RouteSumData();
-            outData.DestinationCity = -1;
-
-            if (inData == null)
-            {
-                foreach (FC_RouteSeg x in inData)
-                {
-                    outData.totalDriveTime += x.DrivenTime;
-
-                    outData.totalTripTime += x.DrivenTime;
-
-                    outData.totalTripTime += x.PickUpTime;
-                    outData.totalTripTime += x.DropOffTime;
-                    outData.totalTripTime += x.LtlTime;
-
-                    outData.totalKM += x.KM;
-                }
-
-                outData.OriginCity = inData[0].CityA;
-                outData.DestinationCity = inData[inData.Count - 1].CityB;
-            }
-
-            return outData;
-        }
+        
     }
 }

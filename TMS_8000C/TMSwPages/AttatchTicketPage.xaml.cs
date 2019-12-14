@@ -84,57 +84,29 @@ namespace TMSwPages
                 FC_TripTicket selected = (FC_TripTicket)this.AllTickets.SelectedItem;
 
                 SelectedTicket = selected;
-            }           
+            }
         }
 
         private void Confirm_Click(object sender, RoutedEventArgs e)
         {
             List<FC_TripTicket> ticketsFromScreen = new List<FC_TripTicket>();
 
-            if (this.NominatedCarrierDG.SelectedItem != null)
+            if(SelectedTicket != null)
             {
-                CarrierWithDepot_View t = (CarrierWithDepot_View)NominatedCarrierDG.SelectedCells[0].Item;
-                FC_Carrier selCarrier = new FC_Carrier(t.FC_CarrierID, t.Carrier_Name);
-
-                CreateTripInfo tripInfo = new CreateTripInfo(PassedInContract, selCarrier, SelectedTicket);
-
-                ticketsFromScreen = new List<FC_TripTicket>();
-
-                foreach (FC_TripTicket x in AllTickets.Items)
+                if (this.NominatedCarrierDG.SelectedItem != null && SelectedTicket != null)
                 {
-                    if (x.FC_TripTicketID != SelectedTicket.FC_TripTicketID)
-                    {
-                        ticketsFromScreen.Add(x);
-                    }
-                }
+                    CarrierWithDepot_View t = (CarrierWithDepot_View)NominatedCarrierDG.SelectedCells[0].Item;
+                    FC_Carrier selCarrier = new FC_Carrier(t.FC_CarrierID, t.Carrier_Name);
 
-                AllTickets.ItemsSource = ticketsFromScreen;
+                    CreateTripInfo tripInfo = new CreateTripInfo(PassedInContract, selCarrier, SelectedTicket);
 
-                if (ticketsFromScreen.Count == 0)
-                {
-                    Complete.IsEnabled = true;
-                }
-            }
-            else if (this.PossibleTickets.SelectedItem != null)
-            {
-                FC_TripTicket ExcistingTicket = (FC_TripTicket)this.PossibleTickets.SelectedItem;
-
-                int PalletesAddedToTicket = PlannerClass.AddContractToTicket(ExcistingTicket, SelectedTicket, PassedInContract);
-
-                if (PalletesAddedToTicket != -1)
-                {
-                    SelectedTicket.Size_in_Palettes -= PalletesAddedToTicket;
+                    ticketsFromScreen = new List<FC_TripTicket>();
 
                     foreach (FC_TripTicket x in AllTickets.Items)
                     {
-                        if (x.FC_TripTicketID == SelectedTicket.FC_TripTicketID)
+                        if (x.FC_TripTicketID != SelectedTicket.FC_TripTicketID)
                         {
-                            x.Size_in_Palettes = SelectedTicket.Size_in_Palettes;
-
-                            if (x.Size_in_Palettes > 0)
-                            {
-                                ticketsFromScreen.Add(x);
-                            }
+                            ticketsFromScreen.Add(x);
                         }
                     }
 
@@ -145,7 +117,41 @@ namespace TMSwPages
                         Complete.IsEnabled = true;
                     }
                 }
+                else if (this.PossibleTickets.SelectedItem != null)
+                {
+                    FC_TripTicket ExcistingTicket = (FC_TripTicket)this.PossibleTickets.SelectedItem;
+
+                    int PalletesAddedToTicket = PlannerClass.AddContractToTicket(ExcistingTicket, SelectedTicket, PassedInContract);
+
+                    if (PalletesAddedToTicket != -1)
+                    {
+                        SelectedTicket.Size_in_Palettes -= PalletesAddedToTicket;
+
+                        foreach (FC_TripTicket x in AllTickets.Items)
+                        {
+                            if (x.FC_TripTicketID == SelectedTicket.FC_TripTicketID)
+                            {
+                                x.Size_in_Palettes = SelectedTicket.Size_in_Palettes;
+
+                                if (x.Size_in_Palettes > 0)
+                                {
+                                    ticketsFromScreen.Add(x);
+                                }
+                            }
+                        }
+
+                        AllTickets.ItemsSource = ticketsFromScreen;
+
+                        if (ticketsFromScreen.Count == 0)
+                        {
+                            Complete.IsEnabled = true;
+                        }
+                    }
+                }
             }
+
+            this.NominatedCarrierDG.UnselectAll();
+            this.PossibleTickets.UnselectAll();
 
             RefreshPossibleTickets();
         }

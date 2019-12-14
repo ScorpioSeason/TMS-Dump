@@ -154,9 +154,21 @@ namespace TMSwPages
         private void DG5_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             PlannerClass.ContractsPerTicket.Clear();
+
             foreach (FC_TripTicket c in DG5.SelectedItems)
             {
                 PlannerClass.ContractsPerTicket = PlannerClass.ContractsPerTicket_Populate(c);
+
+                foreach(FC_LocalContract x in PlannerClass.ContractsPerTicket)
+                {
+                    string query = "select * from FC_TripTicketLine where FC_TripTicketID = " + c.FC_TripTicketID.ToString() + " and FC_LocalContractID =  " + x.FC_LocalContractID.ToString() + " ;";
+
+                    FC_TripTicketLine t = new FC_TripTicketLine();
+                    List<FC_TripTicketLine> theTicketLine = t.ObjToTable(SQL.Select(t, query));
+
+                    x.Quantity = theTicketLine[0].PalletsOnTicket;
+                }
+
                 PlannerClass.RoutSegsPerTicket_Populate(c);
             }
 
@@ -165,6 +177,8 @@ namespace TMSwPages
             DG7.ItemsSource = null;
             DG7.ItemsSource = PlannerClass.RouteSegsPerTicket;
         }
+
+
 
         private void RefreshActiveTickets_Click(object sender, RoutedEventArgs e)
         {
@@ -186,7 +200,8 @@ namespace TMSwPages
 
         private void RefreshActiveContracts_Click(object sender, RoutedEventArgs e)
         {
-            PlannerClass.ActiveContracts_Populate();
+            PlannerClass.ActiveContracts.Clear();
+            PlannerClass.ActiveContracts = PlannerClass.ContractsByStatus_Populate(1);
             DGActiveContracts.ItemsSource = null;
             DGActiveContracts.ItemsSource = PlannerClass.ActiveContracts;
             DGConnectedTickets.ItemsSource = null;
@@ -214,6 +229,39 @@ namespace TMSwPages
         private void MakeTimePass(object sender, RoutedEventArgs e)
         {
             TimePass.IncrementOneDay();
+        }
+
+        private void SetOrderToComplete_Click(object sender, RoutedEventArgs e)
+        {
+            foreach(FC_LocalContract c in DGActiveContracts.SelectedItems)
+            {
+                PlannerClass.UpdateContratState(c, 2);
+            }
+            PlannerClass.ActiveContracts.Clear();
+            PlannerClass.ActiveContracts = PlannerClass.ContractsByStatus_Populate(1);
+            DGActiveContracts.ItemsSource = null;
+            DGActiveContracts.ItemsSource = PlannerClass.ActiveContracts;
+            DGConnectedTickets.ItemsSource = null;
+        }
+
+        private void RefreshConfirmed_Click(object sender, RoutedEventArgs e)
+        {
+            PlannerClass.ToBeConfirmedContracts.Clear();
+            PlannerClass.ToBeConfirmedContracts = PlannerClass.ContractsByStatus_Populate(2);
+            DGConfirmCompletion.ItemsSource = null;
+            DGConfirmCompletion.ItemsSource = PlannerClass.ToBeConfirmedContracts;
+        }
+
+        private void Confirm_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (FC_LocalContract c in DGConfirmCompletion.SelectedItems)
+            {
+                PlannerClass.UpdateContratState(c, 3);
+            }
+            PlannerClass.ConfirmedContracts.Clear();
+            PlannerClass.ConfirmedContracts = PlannerClass.ContractsByStatus_Populate(1);
+            DGConfirmCompletion.ItemsSource = null;
+            DGConfirmCompletion.ItemsSource = PlannerClass.ConfirmedContracts;
         }
     }
 }
