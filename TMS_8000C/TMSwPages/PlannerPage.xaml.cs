@@ -179,7 +179,6 @@ namespace TMSwPages
         }
 
 
-
         private void RefreshActiveTickets_Click(object sender, RoutedEventArgs e)
         {
             PlannerClass.ActiveTickets.Clear();
