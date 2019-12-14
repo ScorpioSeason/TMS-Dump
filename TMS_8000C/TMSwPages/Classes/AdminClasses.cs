@@ -474,12 +474,29 @@ namespace TMSwPages.Classes
         //public DateTime backupDate; 
 
         public TMSBackup() { }
+
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public TMSBackup(string fn, int readNum)
         {
             restoreNumber = readNum;
             filePath = fn;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public bool WriteQuery(TMSBackupQuery bq)
         {
             // writeQuery to file
@@ -509,6 +526,14 @@ namespace TMSwPages.Classes
 
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public bool CreateRestorePoint()
         {
             // Copy current file to a new one with the restore date. 

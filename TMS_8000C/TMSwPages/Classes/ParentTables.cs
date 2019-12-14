@@ -45,6 +45,7 @@ namespace TMSwPages.Classes
         }
     }
 
+
     public class FC_DepotCity : ParentTable
     {
         public int FC_CarrierID { get; set; }
@@ -55,6 +56,14 @@ namespace TMSwPages.Classes
         public double LTL_Rate { get; set; }
         public double Reefer_Charge { get; set; }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public FC_DepotCity()
         {
             FC_CarrierID = -1;
@@ -66,6 +75,14 @@ namespace TMSwPages.Classes
             Reefer_Charge = -1;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public FC_DepotCity(int IN_FC_CarrierID, string IN_CityName, int IN_FTL_Availibility, int IN_LTL_Availibility, double IN_FTL_Rate, double IN_LTL_Rate, double IN_Reefer_Charge)
         {
             FC_CarrierID = IN_FC_CarrierID;
@@ -77,21 +94,53 @@ namespace TMSwPages.Classes
             Reefer_Charge = IN_Reefer_Charge;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override string GetTableName()
         {
             return "FC_DepotCity";
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override string GetSelectStatment()
         {
             return "Select * from FC_DepotCity;";
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override int GetColoumInt()
         {
             return 7;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override string GetInsertStatment()
         {
             return "insert into FC_DepotCity(FC_CarrierID, CityName, FTL_Availibility, LTL_Availibility, FTL_Rate, LTL_Rate, Reefer_Charge) value (" +
@@ -104,6 +153,14 @@ namespace TMSwPages.Classes
                 Reefer_Charge.ToString() + ");";
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override List<string> GetColoumNames()
         {
             List<string> outList = new List<string>();
@@ -119,7 +176,14 @@ namespace TMSwPages.Classes
             return outList;
         }
 
-
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override List<object> PackageClasses(List<string>[] inList)
         {
             List<object> outList = new List<object>();
@@ -141,6 +205,14 @@ namespace TMSwPages.Classes
 
             return outList;
         }
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public List<FC_DepotCity> ObjToTable(List<object> inList)
         {
             List<FC_DepotCity> ConvertList = new List<FC_DepotCity>();
@@ -154,13 +226,21 @@ namespace TMSwPages.Classes
         }
     }
 
+
     public class FC_TripTicketLine : ParentTable
     {
         public int FC_TripTicketID { get; set; }
         public int FC_LocalContractID { get; set; }
         public int PalletsOnTicket { get; set; }
 
-
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public FC_TripTicketLine()
         {
             FC_TripTicketID = -1;
@@ -168,6 +248,14 @@ namespace TMSwPages.Classes
             PalletsOnTicket = -1;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public FC_TripTicketLine(int IN_FC_TripTicketID, int IN_FC_LocalContractID, int IN_PalletsOnTicket = 1)
         {
             FC_TripTicketID = IN_FC_TripTicketID;
@@ -175,22 +263,53 @@ namespace TMSwPages.Classes
             PalletsOnTicket = IN_PalletsOnTicket;
         }
 
-
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override string GetTableName()
         {
             return "FC_TripTicketLine";
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override string GetSelectStatment()
         {
             return "Select * from FC_TripTicketLine;";
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override int GetColoumInt()
         {
             return 3;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override string GetInsertStatment()
         {
             return "insert into FC_TripTicketLine(FC_TripTicketID, FC_LocalContractID, PalletsOnTicket) value (" +
@@ -199,6 +318,14 @@ namespace TMSwPages.Classes
                 PalletsOnTicket.ToString() + ");";
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override List<string> GetColoumNames()
         {
             List<string> outList = new List<string>();
@@ -210,6 +337,14 @@ namespace TMSwPages.Classes
             return outList;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override List<object> PackageClasses(List<string>[] inList)
         {
             List<object> outList = new List<object>();
@@ -256,6 +391,14 @@ namespace TMSwPages.Classes
         public double DrivenTime { get; set; }
         public int KM { get; set; }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public FC_RouteSeg()
         {
             FC_TripTicketID = -1;
@@ -268,6 +411,14 @@ namespace TMSwPages.Classes
             KM = -1;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public FC_RouteSeg(int IN_FC_TripTicketID, int IN_CityA, int IN_CityB, double IN_PickUpTime, double IN_DropOffTime, double IN_LtlTime, double IN_DrivenTime, int IN_KM)
         {
             FC_TripTicketID = IN_FC_TripTicketID;
@@ -280,21 +431,53 @@ namespace TMSwPages.Classes
             KM = IN_KM;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override string GetTableName()
         {
             return "FC_RouteSeg";
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override string GetSelectStatment()
         {
             return "Select * from FC_RouteSeg;";
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override int GetColoumInt()
         {
             return 8;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override string GetInsertStatment()
         {
             return "insert into FC_RouteSeg(FC_TripTicketID, CityA, CityB, PickUpTime, DropOffTime, LtlTime, DrivenTime, KM) value (" +
@@ -308,6 +491,14 @@ namespace TMSwPages.Classes
                 KM.ToString() + ");";
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override List<string> GetColoumNames()
         {
             List<string> outList = new List<string>();
@@ -324,6 +515,14 @@ namespace TMSwPages.Classes
             return outList;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override List<object> PackageClasses(List<string>[] inList)
         {
             List<object> outList = new List<object>();
@@ -347,6 +546,14 @@ namespace TMSwPages.Classes
             return outList;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public List<FC_RouteSeg> ObjToTable(List<object> inList)
         {
             List<FC_RouteSeg> ConvertList = new List<FC_RouteSeg>();
@@ -369,6 +576,14 @@ namespace TMSwPages.Classes
         public int Days_Passes { get; set; }
         public int Is_Complete { get; set; }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public FC_TripTicket()
         {
             FC_TripTicketID = -1;
@@ -379,6 +594,14 @@ namespace TMSwPages.Classes
             Is_Complete = -1;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public FC_TripTicket(int IN_FC_TripTicketID, int IN_FC_CarrierID, string IN_CurrentLocation, int IN_Size_in_Palettes, int IN_Days_Passes, int IN_Is_Complete)
         {
             FC_TripTicketID = IN_FC_TripTicketID;
@@ -389,21 +612,53 @@ namespace TMSwPages.Classes
             Is_Complete = IN_Is_Complete;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override string GetTableName()
         {
             return "FC_TripTicket";
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override string GetSelectStatment()
         {
             return "Select * from FC_TripTicket;";
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override int GetColoumInt()
         {
             return 6;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override string GetInsertStatment()
         {
             return "insert into FC_TripTicket(FC_TripTicketID, FC_CarrierID, CurrentLocation, Size_in_Palettes, Days_Passes, Is_Complete) value (" +
@@ -415,6 +670,14 @@ namespace TMSwPages.Classes
                 Is_Complete.ToString() + ");";
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override List<string> GetColoumNames()
         {
             List<string> outList = new List<string>();
@@ -429,6 +692,14 @@ namespace TMSwPages.Classes
             return outList;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override List<object> PackageClasses(List<string>[] inList)
         {
             List<object> outList = new List<object>();
@@ -450,6 +721,14 @@ namespace TMSwPages.Classes
             return outList;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public List<FC_TripTicket> ObjToTable(List<object> inList)
         {
             List<FC_TripTicket> ConvertList = new List<FC_TripTicket>();
@@ -463,44 +742,102 @@ namespace TMSwPages.Classes
         }
     }
 
+
     public class FC_BuyerToPlannerContract : ParentTable
     {
         public int FC_BuyerToPlannerContractID { get; set; }
         public int FC_LocalContractID { get; set; }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public FC_BuyerToPlannerContract()
         {
             FC_BuyerToPlannerContractID = -1;
             FC_LocalContractID = -1;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public FC_BuyerToPlannerContract(int IN_FC_BuyerToPlannerContractID, int IN_FC_LocalContractID)
         {
             FC_BuyerToPlannerContractID = IN_FC_BuyerToPlannerContractID;
             FC_LocalContractID = IN_FC_LocalContractID;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override string GetTableName()
         {
             return "FC_BuyerToPlannerContract";
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override string GetSelectStatment()
         {
             return "Select * from FC_BuyerToPlannerContract;";
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override int GetColoumInt()
         {
             return 2;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override string GetInsertStatment()
         {
             return "insert into FC_BuyerToPlannerContract(FC_BuyerToPlannerContractID, FC_LocalContractID) value (" +
                 FC_BuyerToPlannerContractID.ToString() + "," +
                 FC_LocalContractID.ToString() + ");";
         }
+
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override List<string> GetColoumNames()
         {
             List<string> outList = new List<string>();
@@ -511,6 +848,14 @@ namespace TMSwPages.Classes
             return outList;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override List<object> PackageClasses(List<string>[] inList)
         {
             List<object> outList = new List<object>();
@@ -528,6 +873,14 @@ namespace TMSwPages.Classes
             return outList;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public List<FC_BuyerToPlannerContract> ObjToTable(List<object> inList)
         {
             List<FC_BuyerToPlannerContract> ConvertList = new List<FC_BuyerToPlannerContract>();
@@ -546,34 +899,81 @@ namespace TMSwPages.Classes
         public int FC_CarrierID { get; set; }
         public string Carrier_Name { get; set; }
 
-
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public FC_Carrier()
         {
             FC_CarrierID = -1;
             Carrier_Name = "not_set";
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public FC_Carrier(int IN_FC_CarrierID, string IN_Carrier_Name)
         {
             FC_CarrierID = IN_FC_CarrierID;
             Carrier_Name = IN_Carrier_Name;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override string GetTableName()
         {
             return "FC_Carrier";
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override string GetSelectStatment()
         {
             return "Select * from FC_Carrier;";
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override int GetColoumInt()
         {
             return 2;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override string GetInsertStatment()
         {
             return "insert into FC_Carrier(FC_CarrierID, Carrier_Name) value (" +
@@ -581,6 +981,14 @@ namespace TMSwPages.Classes
                 "\"" + Carrier_Name + "\");";
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override List<string> GetColoumNames()
         {
             List<string> outList = new List<string>();
@@ -591,7 +999,14 @@ namespace TMSwPages.Classes
             return outList;
         }
 
-
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override List<object> PackageClasses(List<string>[] inList)
         {
             List<object> outList = new List<object>();
@@ -609,6 +1024,14 @@ namespace TMSwPages.Classes
             return outList;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public List<FC_Carrier> ObjToTable(List<object> inList)
         {
             List<FC_Carrier> ConvertList = new List<FC_Carrier>();
@@ -633,7 +1056,14 @@ namespace TMSwPages.Classes
         public int Van_type { get; set; }
         public int Contract_Status { get; set; }
 
-
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public FC_LocalContract()
         {
             FC_LocalContractID = -1;
@@ -646,6 +1076,14 @@ namespace TMSwPages.Classes
             Contract_Status = -1;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public FC_LocalContract(int IN_FC_LocalContractID, string IN_Client_Name, int IN_Job_type, int IN_Quantity, string IN_Origin, string IN_Destination, int IN_Van_type, int IN_Contract_Status = -1)
         {
             FC_LocalContractID = IN_FC_LocalContractID;
@@ -658,21 +1096,53 @@ namespace TMSwPages.Classes
             Contract_Status = IN_Contract_Status;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override string GetTableName()
         {
             return "FC_LocalContract";
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override string GetSelectStatment()
         {
             return "Select * from FC_LocalContract;";
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override int GetColoumInt()
         {
             return 8;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override string GetInsertStatment()
         {
             return "insert into FC_LocalContract(FC_LocalContractID, Client_Name, Job_type, Quantity, Origin, Destination, Van_type, Contract_Status) value (" +
@@ -686,6 +1156,14 @@ namespace TMSwPages.Classes
                 Contract_Status.ToString() + ");";
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override List<string> GetColoumNames()
         {
             List<string> outList = new List<string>();
@@ -702,7 +1180,14 @@ namespace TMSwPages.Classes
             return outList;
         }
 
-
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override List<object> PackageClasses(List<string>[] inList)
         {
             List<object> outList = new List<object>();
@@ -726,7 +1211,14 @@ namespace TMSwPages.Classes
             return outList;
         }
 
-
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public List<FC_LocalContract> ObjToTable(List<object> inList)
         {
             List<FC_LocalContract> ConvertList = new List<FC_LocalContract>();
@@ -752,6 +1244,14 @@ namespace TMSwPages.Classes
         public string Destination { get; set; }
         public int Van_type { get; set; }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public FC_ContractFromRuss()
         {
             Client_Name = "not_set";
@@ -762,6 +1262,14 @@ namespace TMSwPages.Classes
             Van_type = -1;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public FC_ContractFromRuss(string IN_Client_Name, int IN_Job_type, int IN_Quantity, string IN_Origin, string IN_Destination, int IN_Van_type)
         {
             Client_Name = IN_Client_Name;
@@ -772,21 +1280,53 @@ namespace TMSwPages.Classes
             Van_type = IN_Van_type;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override string GetTableName()
         {
             return "FC_ContractFromRuss";
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override string GetSelectStatment()
         {
             return "Select * from FC_ContractFromRuss;";
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override int GetColoumInt()
         {
             return 6;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override string GetInsertStatment()
         {
             return "insert into FC_ContractFromRuss(Client_Name, Job_type, Quantity, Origin, Destination, Van_type) value (" +
@@ -798,6 +1338,14 @@ namespace TMSwPages.Classes
                 Van_type.ToString() + ");";
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override List<string> GetColoumNames()
         {
             List<string> outList = new List<string>();
@@ -812,6 +1360,14 @@ namespace TMSwPages.Classes
             return outList;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override List<object> PackageClasses(List<string>[] inList)
         {
             List<object> outList = new List<object>();
@@ -833,6 +1389,14 @@ namespace TMSwPages.Classes
             return outList;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public List<FC_ContractFromRuss> ObjToTable(List<object> inList)
         {
             List<FC_ContractFromRuss> ConvertList = new List<FC_ContractFromRuss>();
@@ -851,33 +1415,82 @@ namespace TMSwPages.Classes
         public int FC_BuyerToPlannerContractID { get; set; }
         public int FC_CarrierID { get; set; }
 
+
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public FC_CarrierNom()
         {
             FC_BuyerToPlannerContractID = -1;
             FC_CarrierID = -1;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public FC_CarrierNom(int IN_FC_BuyerToPlannerContractID, int IN_FC_CarrierID)
         {
             FC_BuyerToPlannerContractID = IN_FC_BuyerToPlannerContractID;
             FC_CarrierID = IN_FC_CarrierID;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override string GetTableName()
         {
             return "FC_CarrierNom";
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override string GetSelectStatment()
         {
             return "Select * from FC_CarrierNom;";
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override int GetColoumInt()
         {
             return 2;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override string GetInsertStatment()
         {
             return "insert into FC_CarrierNom(FC_BuyerToPlannerContractID, FC_CarrierID) value (" +
@@ -885,6 +1498,14 @@ namespace TMSwPages.Classes
                 FC_CarrierID.ToString() + ");";
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override List<string> GetColoumNames()
         {
             List<string> outList = new List<string>();
@@ -895,6 +1516,14 @@ namespace TMSwPages.Classes
             return outList;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override List<object> PackageClasses(List<string>[] inList)
         {
             List<object> outList = new List<object>();
@@ -912,6 +1541,14 @@ namespace TMSwPages.Classes
             return outList;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public List<FC_CarrierNom> ObjToTable(List<object> inList)
         {
             List<FC_CarrierNom> ConvertList = new List<FC_CarrierNom>();
@@ -938,7 +1575,14 @@ namespace TMSwPages.Classes
         public double LTL_Rate { get; set; }
         public double Reefer_Charge { get; set; }
 
-
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public CarrierWithDepot_View()
         {
             FC_CarrierID = -1;
@@ -951,6 +1595,14 @@ namespace TMSwPages.Classes
             Reefer_Charge = -1;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public CarrierWithDepot_View(int IN_FC_CarrierID, string IN_Carrier_Name, string IN_CityName, int IN_FTL_Availibility, int IN_LTL_Availibility, double IN_FTL_Rate, double IN_LTL_Rate, double IN_Reefer_Charge)
         {
             FC_CarrierID = IN_FC_CarrierID;
@@ -963,22 +1615,55 @@ namespace TMSwPages.Classes
             Reefer_Charge = IN_Reefer_Charge;
         }
 
-
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override string GetTableName()
         {
             return "CarrierWithDepot_View";
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override string GetSelectStatment()
         {
             return "This should not have been called";
         }
 
+
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override int GetColoumInt()
         {
             return 8;
         }
 
+
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override List<string> GetColoumNames()
         {
             List<string> outList = new List<string>();
@@ -995,7 +1680,14 @@ namespace TMSwPages.Classes
             return outList;
         }
 
-
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public override List<object> PackageClasses(List<string>[] inList)
         {
             List<object> outList = new List<object>();
@@ -1019,7 +1711,14 @@ namespace TMSwPages.Classes
             return outList;
         }
 
-
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		
+        *	\brief			
+        *	\param[in]
+        *	\param[out]	 
+        *	\return		
+        * ---------------------------------------------------------------------------------------------------- */
         public List<CarrierWithDepot_View> ObjToTable(List<object> inList)
         {
             List<CarrierWithDepot_View> ConvertList = new List<CarrierWithDepot_View>();

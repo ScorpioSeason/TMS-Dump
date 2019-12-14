@@ -6,14 +6,26 @@ using System.Threading.Tasks;
 
 namespace TMSwPages.Classes
 {
-
+    // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
+    /**   
+    *   \class	    RouteSumData
+    *   \brief		
+    *   
+    * -------------------------------------------------------------------------------------------------------- */
     public class RouteSumData
     {
         public double totalDriveTime;
         public double totalTripTime;
         public int totalKM;
 
-
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn             SummerizeTrip
+        *	\brief			This method generates a summary of route trip data 
+        *	\param[in]      List<FC_RouteSeg> inData
+        *	\param[out]	    none
+        *	\return		    RouteSumData
+        * ---------------------------------------------------------------------------------------------------- */
         public RouteSumData SummerizeTrip(List<FC_RouteSeg> inData)
         {
             RouteSumData outData = new RouteSumData();
@@ -38,9 +50,7 @@ namespace TMSwPages.Classes
     // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
     /**   
     *   \class		CityNode
-    *   \brief		This class runs the CityNode functionality
-    *   \details	... static class?  
-    *   
+    *   \brief		This class runs the CityNode functionality 
     * -------------------------------------------------------------------------------------------------------- */
     public class CityNode
     {
@@ -53,7 +63,14 @@ namespace TMSwPages.Classes
         public int WestKM { get; set; }
         public double WestHour { get; set; }
 
-
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		        CityNode
+        *	\brief			This sets the CityName and CityID 
+        *	\param[in]      string inName, int inCityId
+        *	\param[out]	    none
+        *	\return		    none
+        * ---------------------------------------------------------------------------------------------------- */
         public CityNode(string inName, int inCityId)
         {
             CityName = inName;
@@ -234,6 +251,14 @@ namespace TMSwPages.Classes
             return null;
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *	\fn		        AtOrPastCity
+        *	\brief			This method determins if a truck is currently at or past a destination city
+        *	\param[in]      FC_LocalContract inContract, FC_TripTicket inTicket
+        *	\param[out]	    none
+        *	\return		    bool
+        * ---------------------------------------------------------------------------------------------------- */
         public bool AtOrPastCity(FC_LocalContract inContract, FC_TripTicket inTicket)
         {
             int OrginId = LoadCSV.ToCityID(inContract.Origin);
