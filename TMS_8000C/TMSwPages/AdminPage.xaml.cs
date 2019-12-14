@@ -358,7 +358,11 @@ namespace TMSwPages
 
         private void RestoreSelected_Click(object sender, RoutedEventArgs e)
         {
-            backup.RecoverRestorePoint();
+            if (BackupsList.SelectedItem != null)
+            {
+                TMSBackup.RecoverRestorePoint((TMSBackup)BackupsList.SelectedItem);
+            }
+
             UpdateBackupsList();
             // Restore from selected backup point
         }

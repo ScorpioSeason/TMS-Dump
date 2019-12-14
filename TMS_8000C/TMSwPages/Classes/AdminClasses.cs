@@ -470,7 +470,7 @@ namespace TMSwPages.Classes
         public static List<TMSBackup> backupPoints = new List<TMSBackup>(); 
         static public string thisFileDir { get; set; }
 
-        public string filePath { get; set; }
+        static public string filePath { get; set; }
         public DateTime backupDate { get; set; }
 
         public TMSBackup() { }
@@ -480,7 +480,7 @@ namespace TMSwPages.Classes
             backupDate = bd;
         }
 
-        public bool WriteQuery(TMSBackupQuery bq)
+        static public bool WriteQueryToCurrentFile(TMSBackupQuery bq)
         {
             // writeQuery to file
             bool appendSuccess = true;
@@ -588,38 +588,13 @@ namespace TMSwPages.Classes
             return true;
         }
 
-        public bool RecoverRestorePoint()
+        static public bool RecoverRestorePoint(TMSBackup b)
         {
-            // Allow file selection
-            // Read in file
-            // Create Query string
-            // Run it. 
-            // Refresh everything. 
-
             bool readSuccess = true;
 
             try
             {
-                ///// Clear out the working list 
-                //logs.Clear();
-
-                ///// Open the file stream to read from the file
-                //FileStream fileStream = new FileStream((TMSLogger.LogFilePath), FileMode.Open, FileAccess.Read);
-                //StreamReader streamReader = new StreamReader(fileStream);
-
-                ///// Fill the working list with lines from the file 
-                //while (!streamReader.EndOfStream)
-                //{
-                //    string lineString = "";
-                //    if ((lineString = streamReader.ReadLine()).Trim() != "")
-                //    {
-                //        NewLog(lineString);
-                //    }
-
-                //}
-
-                ///// Close the file
-                //streamReader.Close(); fileStream.Close();
+                // run the selected tms restore point sql
             }
             /// If an exception is thrown here, create a log for it. 
             catch (Exception e)
