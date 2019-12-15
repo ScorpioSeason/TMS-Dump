@@ -175,6 +175,7 @@ namespace TMSwPages
             DG3.ItemsSource = null;
         }
 
+
         private void BuyerTabs_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (selectedTab != BuyerTabs.SelectedIndex)
@@ -226,12 +227,16 @@ namespace TMSwPages
                     {
 
                     }
-
                 }
-
             }
-            
-        
+        }
+
+        private void RefreshCustomers_2(object sender, RoutedEventArgs e)
+        {
+            BuyerClass.AllCustomers.Clear();
+            BuyerClass.AllCustomers_Populate();
+            DGCustomers.ItemsSource = null;
+            DGCustomers.ItemsSource = BuyerClass.AllCustomers;
         }
     }
 }
