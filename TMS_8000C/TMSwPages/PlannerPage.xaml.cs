@@ -274,16 +274,22 @@ namespace TMSwPages
             DGConfirmCompletion.ItemsSource = PlannerClass.ConfirmedContracts;
         }
 
-
-
         private void ViewAllButton_Click(object sender, RoutedEventArgs e)
         {
-            InvoiceViewerDataGrid.ItemsSource = PlannerClass.GetAllInvoices(1);
+            //InvoiceViewerDataGrid.ItemsSource = PlannerClass.GetAllInvoices(1);
         }
 
         private void VeiwTwoWeekButton_Click(object sender, RoutedEventArgs e)
         {
-            InvoiceViewerDataGrid.ItemsSource = PlannerClass.GetAllInvoices(2);
+            //InvoiceViewerDataGrid.ItemsSource = PlannerClass.GetAllInvoices(2);
+        }
+
+        private void InvoiceDG_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //if(InvoiceDG.SelectedCell != null)
+            //{
+
+            //}
         }
     }
 }

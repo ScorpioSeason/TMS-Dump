@@ -487,7 +487,7 @@ namespace TMSwPages.Classes
 
             try
             {
-                /// Open the filestream to append to the file. 
+                /// Open the file stream to append to the file. 
                 FileStream fileStream = new FileStream((filePath), FileMode.Append, FileAccess.Write);
                 StreamWriter fileWriter = new StreamWriter(fileStream);
 

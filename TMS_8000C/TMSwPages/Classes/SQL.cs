@@ -116,6 +116,11 @@ namespace TMSwPages.Classes
             return RetrunedContracts;
         }
 
+        public static List<string> GetAllCustomerNames()
+        {
+            List<string> inData = new List<string>();
+        }
+
         //This select statement will take in a table type and specific select statement.
         //It will return a list of objects that can then be cast to the correct class type
         public static List<object> Select(ParentTable tabletype, String InputStatment)

@@ -295,53 +295,61 @@ namespace TMSwPages.Classes
             return c.ObjToTable(SQL.Select(c, query));
         }
 
-        public static List<Contract_Invoice> GetAllInvoices(int oneForAll_2For2Weeks)
+        public static List<Contract_Invoice> BuildInvoicesWithContract(List<FC_Invoice> inInvoices)
+        {
+            List<Contract_Invoice> ReturnList = new List<Contract_Invoice>();
+
+            foreach(FC_Invoice x in inInvoices)
+            {
+                ReturnList.Add(new Contract_Invoice(GetContracts_PreInvoice(x), x));
+            }
+
+            return ReturnList;
+        }
+
+        public static List<FC_Invoice> GetAllInvoices()
+        {
+            FC_Invoice i = new FC_Invoice();
+            return i.ObjToTable(SQL.Select(i));
+        }
+
+        public static List<FC_Invoice> TwoWeekInvoices()
         {
 
-            //FC_Invoice I = new FC_Invoice();
-            //List<FC_Invoice> AllInvoices = I.ObjToTable(SQL.Select(I));
+            FC_Invoice i = new FC_Invoice();
+            List<FC_Invoice> AllInvoices = i.ObjToTable(SQL.Select(i));
 
-            //string query 
+            List<FC_Invoice> TwoWeek = new List<FC_Invoice>();
 
+            foreach (FC_Invoice x in AllInvoices)
+            {
+                bool withinRange = false;
 
+                List<FC_LocalContract> contracts = GetContracts_PreInvoice(x);
 
-            //string query = "select * from FC_LocalContract where Contract_Status = 1 or Contract_Status = 2 or Contract_Status = 3;";
+                foreach(FC_LocalContract y in contracts)
+                {
+                    List<FC_TripTicket> tickets = ConnectedTickets_Populate(y);
 
-            //FC_LocalContract l = new FC_LocalContract();
-            //List<FC_LocalContract> AllContracts = l.ObjToTable(SQL.Select(l, query));
+                    foreach(FC_TripTicket z in tickets)
+                    {
+                        if(z.Days_Passes <= 14)
+                        {
+                            withinRange = true;
+                            break;
+                        }
+                    }
 
-            //if(oneForAll_2For2Weeks == 2)
-            //{
-            //    List<FC_LocalContract> TempContrats = new List<FC_LocalContract>();
+                    if(withinRange) 
+                    {
+                        TwoWeek.Add(x);
+                        break;
+                    }
+                }
 
-            //    foreach(FC_LocalContract x in AllContracts)
-            //    {
-            //        TempContrats.Add(x);
-            //    }
+            }
 
-            //    AllContracts.Clear();
-
-            //    foreach(FC_LocalContract x in TempContrats)
-            //    {
-            //        List<FC_TripTicket> theTickets = ConnectedTickets_Populate(x);
-
-            //        if(theTickets[0].Days_Passes < 14)
-            //        {
-            //            AllContracts.Add(x);
-            //        }
-            //    }
-            //}
-
-            //List<Contract_Invoice> OutInvoices = new List<Contract_Invoice>();
-
-            //foreach(FC_LocalContract x in AllContracts)
-            //{
-            //    OutInvoices.Add((x));
-            //}
-
-            //return OutInvoices;
-
-            return null;
+            return TwoWeek;
         }
 
         public static FC_Invoice GenerateInvoice(FC_LocalContract InContract)
@@ -373,7 +381,6 @@ namespace TMSwPages.Classes
 
             SQL.Insert(newLine);
         }
-
 
         public static double GenerateInvoiceTotal(FC_LocalContract inContract)
         {

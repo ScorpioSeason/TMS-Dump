@@ -2030,29 +2030,15 @@ namespace TMSwPages.Classes
 
     public class Contract_Invoice
     {
-        public double TotalCost { get; set; }
-        public int FC_LocalContractID { get; set; }
-        public string Client_Name { get; set; }
-        public int Job_type { get; set; }
-        public int Quantity { get; set; }
-        public string Origin { get; set; }
-        public string Destination { get; set; }
-        public int Van_type { get; set; }
-        public int Contract_Status { get; set; }
 
-        public Contract_Invoice(FC_LocalContract inContract, FC_Invoice InInvoice)
+        public List<FC_LocalContract> theContracts;
+        public double TotalCost { get; set; }
+
+        public Contract_Invoice(List<FC_LocalContract> inContract, FC_Invoice InInvoice)
         {
             TotalCost = InInvoice.TotalCost;
-            FC_LocalContractID = inContract.FC_LocalContractID;
-            Client_Name = inContract.Client_Name;
-            Job_type = inContract.Job_type;
-            Quantity = inContract.Quantity;
-            Origin = inContract.Origin;
-            Destination = inContract.Destination;
-            Van_type = inContract.Van_type;
-            Contract_Status = inContract.Contract_Status;
+            theContracts = inContract;
         }
-
     }
 
     public class FC_InvoiceContractLine : ParentTable
