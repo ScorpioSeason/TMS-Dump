@@ -39,8 +39,7 @@ namespace TMSwPages.Classes
 
         //This method will be used to initialize the connection
         public static void init()
-        {
-
+        { 
             //This is a prototype application, so this data will not ever change
             server = "35.193.37.75";
             database = "duane_test";
@@ -114,12 +113,12 @@ namespace TMSwPages.Classes
             }
             else
             {
-                server = "159.89.117.198";
-                database = "cmp";
-                uid = "DevOSHT";
-                password = "Snodgr4ss!";
+                //server = "";
+                //database = "cmp";
+                //uid = "DevOSHT";
+                //password = "Snodgr4ss!";
                 //put the real code here
-                connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+                connectionString = "SERVER=" + "159.89.117.198" + ";" + "DATABASE=" + "cmp" + ";" + "UID=" + "DevOSHT" + ";" + "PASSWORD=" + "Snodgr4ss!" + ";";
             }
             //string connectionString;
 
@@ -341,6 +340,30 @@ namespace TMSwPages.Classes
             catch (Exception e)
             {
                 return false;
+            }
+        }
+
+        public static void WipeEverything()
+        {
+            List<string> AllTableName = new List<string>();
+
+            AllTableName.Add("FC_DepotCity");
+
+
+            AllTableName.Add("FC_TripTicketLine");
+            AllTableName.Add("FC_RouteSeg");
+            AllTableName.Add("FC_TripTicket");
+            AllTableName.Add("FC_BuyerToPlannerContract");
+            AllTableName.Add("FC_Carrier");
+            AllTableName.Add("FC_LocalContract");
+            AllTableName.Add("FC_CarrierNom");
+            AllTableName.Add("FC_Invoice");
+            AllTableName.Add("FC_InvoiceContractLine");
+
+            foreach(string x in AllTableName)
+            {
+                string query = "TRUNCATE TABLE " + x + ";";
+                SQL.GenericFunction(query);
             }
         }
     }

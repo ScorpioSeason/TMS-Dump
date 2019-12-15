@@ -154,6 +154,8 @@ namespace TMSwPages
 
         private void SwitchUserClick(object sender, RoutedEventArgs e)
         {
+            SQL.close();
+
             LoginPage newpage = new LoginPage();
             this.NavigationService.Navigate(newpage);
         }
