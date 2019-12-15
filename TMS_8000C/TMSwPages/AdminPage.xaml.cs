@@ -356,19 +356,20 @@ namespace TMSwPages
             }
 
             UpdateBackupsList();
+
             // Restore from selected backup point
         }
 
         private void CreateRestore_Click(object sender, RoutedEventArgs e)
         {
-            //backup.CreateRestorePoint();
+            TMSBackup.CreateRestorePoint();
             // Create a new restore point
             UpdateBackupsList();
         }
 
         private void ChangeDir_Click(object sender, RoutedEventArgs e)
         {
-            //backup.ChangeBackupPath();
+            TMSBackup.ChangeBackupPath();
             //change the directory of the backup files
             UpdateBackupsList();
         }
@@ -383,7 +384,7 @@ namespace TMSwPages
         {
             backupSearchResults.Clear();
 
-            //backup.ReadInBackupsList(); // This probably should not be here
+            TMSBackup.ReadInBackupsList(); // This probably should not be here
             foreach (TMSBackup b in TMSBackup.backupPoints)
             {
                 if ((b.backupDate.Date <= BackupsEndDate.SelectedDate) && (b.backupDate.Date >= BackupsStartDate.SelectedDate))

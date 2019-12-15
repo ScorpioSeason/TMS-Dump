@@ -470,7 +470,8 @@ namespace TMSwPages.Classes
         public static List<TMSBackup> backupPoints = new List<TMSBackup>(); 
         static public string thisFileDir { get; set; }
 
-        static public string filePath { get; set; }
+        public string filePath { get; set; }
+        static string writeFilePath { get; set; }
         public DateTime backupDate { get; set; }
 
         public TMSBackup() { }
@@ -488,7 +489,7 @@ namespace TMSwPages.Classes
             try
             {
                 /// Open the file stream to append to the file. 
-                FileStream fileStream = new FileStream((filePath), FileMode.Append, FileAccess.Write);
+                FileStream fileStream = new FileStream((writeFilePath), FileMode.Append, FileAccess.Write);
                 StreamWriter fileWriter = new StreamWriter(fileStream);
 
                 fileWriter.WriteLine(bq.outgoingQuery);
@@ -509,7 +510,7 @@ namespace TMSwPages.Classes
 
         }
 
-        public bool CreateRestorePoint()
+        static public bool CreateRestorePoint()
         {
             // Copy current file to a new one with the restore date. 
             // Change the write file path to the new file
@@ -567,6 +568,8 @@ namespace TMSwPages.Classes
                     streamWriter.Close(); streamReader.Close();
                     newFile.Close(); oldFile.Close();
 
+                    // Set the write file path to the new path
+                    writeFilePath = newFilePath;
                 }
                 catch (Exception ex)
                 {
@@ -606,7 +609,7 @@ namespace TMSwPages.Classes
             return readSuccess;
         }
 
-        public void ChangeBackupPath()
+        static public void ChangeBackupPath()
         {
             string oldFileDir = thisFileDir;
             string copyFileName = "";
@@ -655,6 +658,9 @@ namespace TMSwPages.Classes
                 streamWriter.Close(); streamReader.Close();
                 newFile.Close(); oldFile.Close();
 
+                // Set the write file path to the new path
+                writeFilePath = thisFileDir + copyFileName;
+
             }
             catch (Exception ex)
             {
@@ -664,7 +670,7 @@ namespace TMSwPages.Classes
 
         }
 
-        public void ReadInBackupsList()
+        static public void ReadInBackupsList()
         {
             try
             {
