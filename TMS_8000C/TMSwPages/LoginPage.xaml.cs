@@ -41,7 +41,7 @@ namespace TMSwPages
                 // Get login connection
                 if (loginSuccess == false)
                 {
-                    SQL.SetUserID(username.Text);
+                    SQL.SetUserID(username.Text.ToLower());
                     SQL.SetPassWord(password.Password.ToString());
 
                     SQL.init();
