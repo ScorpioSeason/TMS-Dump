@@ -54,7 +54,6 @@
         </StatusBar >
 
         <ComboBox Name="username" Grid.Column="1" Grid.Row="2" VerticalAlignment="top">
-            <ComboBoxItem Name="defaultSelection"></ComboBoxItem>
             <ComboBoxItem Name="admin" Content="Admin"></ComboBoxItem>
             <ComboBoxItem Name="buyer" Content="Buyer"></ComboBoxItem>
             <ComboBoxItem Name="planner" Content="Planner"></ComboBoxItem>
