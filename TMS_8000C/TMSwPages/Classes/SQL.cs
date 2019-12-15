@@ -137,7 +137,7 @@ namespace TMSwPages.Classes
             return RetrunedContracts;
         }
 
-        public static List<string> GetAllCustomerNames()
+        public static List<CustomerName> GetAllCustomerNames()
         {
             string query = "select DISTINCT client_name from FC_LocalContract;";
 
@@ -147,11 +147,13 @@ namespace TMSwPages.Classes
             //Create a data reader and Execute the command
             MySqlDataReader dataReader = cmd.ExecuteReader();
             
-            List<string> inData = new List<string>();       
+            List<CustomerName> inData = new List<CustomerName>();       
             
             while (dataReader.Read())
             {
-                inData.Add(dataReader["client_name"] + "");
+                CustomerName temp = new CustomerName();
+                temp.CustName = dataReader["client_name"] + "";
+                inData.Add(temp);
             }
 
             dataReader.Close();

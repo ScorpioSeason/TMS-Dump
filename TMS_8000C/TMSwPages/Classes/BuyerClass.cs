@@ -132,14 +132,10 @@ namespace TMSwPages
                 }
             }
         }
-
-        public static List<string> AllCustomers = new List<FC_Customer>();
-
-        public static List<FC_Customer> AllCustomers_Populate()
-        {
-            string query = "select DISTINCT client_name from FC_LocalContract;";
-            FC_Customer temp = new FC_Customer();
-            return temp.ObjToTable(SQL.Select(temp, query));
-        }
+        public static List<CustomerName> AllCustomers = new List<CustomerName>();
+    }
+    public class CustomerName
+    {
+        public string CustName { get; set; }
     }
 }

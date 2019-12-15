@@ -130,7 +130,6 @@
                                 <ColumnDefinition></ColumnDefinition>
                                 <ColumnDefinition></ColumnDefinition>
                                 <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition x:Name="ReviewCompletedOrdersControls" Height="auto"></RowDefinition>
@@ -139,11 +138,11 @@
                             </Grid.RowDefinitions>
                             <Button x:Name="RefreshCustomers" Grid.Row="0" Click="RefreshCustomers_2" Margin="5,5,5,5">Refresh Customers</Button>
                             <Button x:Name="RefreshInvoices" Grid.Row="0" Grid.Column="5" Margin="5,5,5,5">Refresh Invoices</Button>
-                            <DataGrid x:Name="DGCustomers" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="5,5,5,5">
+                            <DataGrid x:Name="DGCustomers" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" Margin="5,5,5,5">
                             </DataGrid>
-                            <DataGrid x:Name="DGContractsForCustomer" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Margin="5,5,5,5">
+                            <DataGrid x:Name="DGContractsForCustomer" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="5,5,5,5">
                             </DataGrid>
-                            <DataGrid x:Name="DGInvoices" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2" Margin="5,5,5,5">
+                            <DataGrid x:Name="DGInvoices" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Margin="5,5,5,5">
                             </DataGrid>
                             <Button x:Name="AddSelectedToInvoice" Grid.Row="2" Grid.Column="3" Margin="5,5,5,5">Refresh Invoices</Button>
                         </Grid>
