@@ -182,6 +182,9 @@ namespace TMSwPages
                 ViewLogDetails newpage = new ViewLogDetails(this.LogsList.SelectedItem);
                 this.NavigationService.Navigate(newpage);
             }
+
+            // This is just a test to try writing to the backup sql file. 
+            TMSBackup.WriteQueryToCurrentFile(new TMSBackupQuery("This is a test string to test the query; can this write?"));
         }
 
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------

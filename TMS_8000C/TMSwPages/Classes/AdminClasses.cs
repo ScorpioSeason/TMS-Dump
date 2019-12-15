@@ -471,7 +471,7 @@ namespace TMSwPages.Classes
         static public string thisFileDir { get; set; }
 
         public string filePath { get; set; }
-        static string writeFilePath { get; set; }
+        public static string writeFilePath { get; set; }
         public DateTime backupDate { get; set; }
 
         public TMSBackup() { }
@@ -489,7 +489,7 @@ namespace TMSwPages.Classes
             try
             {
                 /// Open the file stream to append to the file. 
-                FileStream fileStream = new FileStream((writeFilePath), FileMode.Append, FileAccess.Write);
+                FileStream fileStream = new FileStream((writeFilePath), FileMode.Append, FileAccess.Write); // this is currently null...?
                 StreamWriter fileWriter = new StreamWriter(fileStream);
 
                 fileWriter.WriteLine(bq.outgoingQuery);
@@ -695,7 +695,7 @@ namespace TMSwPages.Classes
         {
             try
             {
-                //(filePath) = Environment.CurrentDirectory + "/TMSBackup/Backup_" + DateTime.Now.ToFileTimeUtc() + ".sql";
+                (writeFilePath) = Environment.CurrentDirectory + "/TMSBackup/Backup_" + DateTime.Now.ToFileTimeUtc() + ".sql";
                 thisFileDir = Environment.CurrentDirectory;
             }
             catch (Exception e)
