@@ -21,12 +21,13 @@
             <RowDefinition></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
             
         </Grid.RowDefinitions>
 
         <Button x:Name="Complete" Content="AllDone" Grid.Column="0" Grid.Row="0" Margin="5,5,5,5" IsEnabled="False" Click="Complete_Click"></Button>
         
-        <Button x:Name="Confirm" Content="Confirm" Grid.Row="2" Grid.Column="1" Margin="5,5,5,5" Click="Confirm_Click"></Button>
+        <Button x:Name="Confirm" Content="Confirm" Grid.Row="4" Grid.Column="3" Margin="5,5,5,5" Click="Confirm_Click"></Button>
 
         <DataGrid x:Name="AllTickets" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0" ItemsSource="{Binding}" Margin="5,5,5,5" SelectionMode="Single" CanUserAddRows="False" IsReadOnly="True" SelectionChanged="AllTickets_SelectionChanged"></DataGrid>
 

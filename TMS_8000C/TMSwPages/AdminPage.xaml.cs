@@ -399,13 +399,12 @@ namespace TMSwPages
 
         private void ChangeCUSLocation(object sender, RoutedEventArgs e)
         {
-            SQL.WipeEverything();
-
+            
             // View Save As File Dialog
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "csv Files (*.csv)|*.csv";
 
-            if(openFileDialog.ShowDialog() == true)
+            if (openFileDialog.ShowDialog() == true)
             {
                 LoadCSV.SetNewCSVLocation(openFileDialog.FileName);
                 LoadCSV.Load();
@@ -423,6 +422,12 @@ namespace TMSwPages
             }
 
             Carrier_DataLoadClick(null, null);
+        }
+
+        private void ResetTheDataBase(object sender, RoutedEventArgs e)
+        {
+            SQL.WipeEverything();
+
         }
     }
 }

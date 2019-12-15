@@ -132,6 +132,7 @@
                             <!--Buttons Row (2) -->
                             <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="ChangeDir_Click">Change Backup Directory...</Button>
                             <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="4" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="CreateRestore_Click">Create Restore Point</Button>
+                            <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="1" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="ResetTheDataBase">RESET EVERYTHING</Button>
 
                         </Grid>
 
