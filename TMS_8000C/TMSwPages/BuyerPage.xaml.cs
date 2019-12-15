@@ -238,5 +238,15 @@ namespace TMSwPages
             DGCustomers.ItemsSource = null;
             DGCustomers.ItemsSource = BuyerClass.AllCustomers;
         }
+
+        private void DGCustomers_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            BuyerClass.ContractsForCustomer.Clear();
+            foreach (CustomerName c in DGCustomers.SelectedItems)
+            {
+                BuyerClass.ContractsForCustomer = PlannerClass.ContractsByName_Populate(c.CustName);
+            }
+            DGContractsForCustomer.ItemsSource = BuyerClass.ContractsForCustomer;
+        }
     }
 }

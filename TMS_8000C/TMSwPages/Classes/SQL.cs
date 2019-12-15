@@ -44,8 +44,8 @@ namespace TMSwPages.Classes
             //This is a prototype application, so this data will not ever change
             server = "35.193.37.75";
             database = "duane_test";
-            //uid = "test";
-            //password = "password";
+            uid = "test";
+            password = "password";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
 
