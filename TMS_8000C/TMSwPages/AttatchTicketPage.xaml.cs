@@ -183,5 +183,10 @@ namespace TMSwPages
         {
 
         }
+
+        private void NominatedCarrierDG_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

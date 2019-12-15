@@ -45,7 +45,6 @@ namespace TMSwPages.Classes
         }
     }
 
-
     public class FC_DepotCity : ParentTable
     {
         public int FC_CarrierID { get; set; }
@@ -225,7 +224,6 @@ namespace TMSwPages.Classes
             return ConvertList;
         }
     }
-
 
     public class FC_TripTicketLine : ParentTable
     {

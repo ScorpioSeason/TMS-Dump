@@ -217,7 +217,7 @@
 
                         <Button x:Name="ViewAllButton" Content="View All" Grid.Column="1" Grid.Row="0" Margin="5,5,5,5" Click="ViewAllButton_Click"></Button>
                         <Button x:Name="VeiwTwoWeekButton" Content="View Past 2 Weeks" Grid.Column="2" Grid.Row="0" Margin="5,5,5,5" Click="VeiwTwoWeekButton_Click"></Button>
-                        <DataGrid x:Name="InvoiceDG" Grid.Row="1" Grid.ColumnSpan="4" Grid.Column="0" ItemsSource="{Binding}" AutoGenerateColumns="True" SelectionMode="Single" IsReadOnly="True" SelectionChanged="InvoiceDG_SelectionChanged"></DataGrid>
+                        <DataGrid x:Name="InvoiceDG" Grid.Row="1" Grid.ColumnSpan="4" Grid.Column="0" ItemsSource="{Binding}" AutoGenerateColumns="True" SelectionMode="Single" IsReadOnly="True" SelectionChanged="InvoiceDG_SelectionChanged" Margin="-10,0.333,10.333,173.667" Grid.RowSpan="2"></DataGrid>
                         <DataGrid x:Name="ContractsPreInvouce" Grid.Row="2" Grid.ColumnSpan="4" Grid.Column="0" ItemsSource="{Binding}" AutoGenerateColumns="True" SelectionMode="Single" IsReadOnly="True"></DataGrid>
 
                     </Grid>

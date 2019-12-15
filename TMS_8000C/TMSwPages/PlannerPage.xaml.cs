@@ -129,15 +129,12 @@ namespace TMSwPages
                             default:
                                 break;
                         }
-
                     }
                     catch (Exception ex)
                     {
 
                     }
-
                 }
-
             }
         }
 
@@ -247,6 +244,7 @@ namespace TMSwPages
             {
                 PlannerClass.UpdateContratState(c, 2);
             }
+
             PlannerClass.ActiveContracts.Clear();
             PlannerClass.ActiveContracts = PlannerClass.ContractsByStatus_Populate(1);
             DGActiveContracts.ItemsSource = null;
@@ -276,20 +274,22 @@ namespace TMSwPages
 
         private void ViewAllButton_Click(object sender, RoutedEventArgs e)
         {
-            //InvoiceViewerDataGrid.ItemsSource = PlannerClass.GetAllInvoices(1);
+            InvoiceDG.ItemsSource = PlannerClass.GetAllInvoices();
         }
 
         private void VeiwTwoWeekButton_Click(object sender, RoutedEventArgs e)
         {
-            //InvoiceViewerDataGrid.ItemsSource = PlannerClass.GetAllInvoices(2);
+            InvoiceDG.ItemsSource = PlannerClass.TwoWeekInvoices();
         }
 
         private void InvoiceDG_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //if(InvoiceDG.SelectedCell != null)
-            //{
+            if (InvoiceDG.SelectedItem != null)
+            {
+                FC_Invoice SelectedInvoice = (FC_Invoice)InvoiceDG.SelectedItem;
 
-            //}
+                ContractsPreInvouce.ItemsSource = PlannerClass.GetContracts_PreInvoice(SelectedInvoice);
+            }
         }
     }
 }

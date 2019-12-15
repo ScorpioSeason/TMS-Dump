@@ -16,6 +16,27 @@ namespace TMSwPages.Classes
         private static string uid;
         private static string password;
 
+        public static void SetPassWord(string inString)
+        {
+            password = inString;
+        }
+
+        public static void SetDatabaseName(string inString)
+        {
+            database = inString;
+        }
+
+        public static void SetUserID(string inString)
+        {
+            uid = inString;
+        }
+
+        public static void SetServer(string inString)
+        {
+            server = inString;
+        }
+
+
         //This method will be used to initialize the connection
         public static void init()
         {
@@ -118,7 +139,24 @@ namespace TMSwPages.Classes
 
         public static List<string> GetAllCustomerNames()
         {
-            List<string> inData = new List<string>();
+            string query = "select DISTINCT client_name from FC_LocalContract;";
+
+            //Create Command
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+
+            //Create a data reader and Execute the command
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+            
+            List<string> inData = new List<string>();       
+            
+            while (dataReader.Read())
+            {
+                inData.Add(dataReader["client_name"] + "");
+            }
+
+            dataReader.Close();
+
+            return inData;
         }
 
         //This select statement will take in a table type and specific select statement.
