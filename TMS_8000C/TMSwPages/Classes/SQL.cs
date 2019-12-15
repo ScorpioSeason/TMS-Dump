@@ -100,7 +100,7 @@ namespace TMSwPages.Classes
         public static List<object> SelectFromCMP(ParentTable tabletype)
         {
             SQL.close();
-            int Use_Test_CMP = 1;
+            int Use_Test_CMP = 0;
 
             string connectionString = string.Empty;
 
@@ -197,7 +197,7 @@ namespace TMSwPages.Classes
         }
 
         //This select statement will take in a table type and a optional Id number for the table
-        //It will return a list of objects that can then be cast to the correct class type
+        //It will return a list of objects that can then be cast to the correct class typeC:\Users\Ivan\Source\Repos\ScorpioSeason\TMS-Dump\TMS_8000C\TMSwPages\Classes\SQL.cs
         public static List<object> Select(ParentTable tabletype, int TableID = -1)
         {
             //get the select statement for the table
