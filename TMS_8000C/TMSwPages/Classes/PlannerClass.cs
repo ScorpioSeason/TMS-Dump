@@ -21,6 +21,13 @@ namespace TMSwPages.Classes
         public static List<FC_LocalContract> ToBeConfirmedContracts = new List<FC_LocalContract>();
         //completed contracts
         public static List<FC_LocalContract> ConfirmedContracts = new List<FC_LocalContract>();
+
+        public static List<FC_LocalContract> ContractsByName_Populate(string name)
+        {
+            string query = "select * from FC_LocalContract where Client_Name = " + name.ToString() + ";";
+            FC_LocalContract temp = new FC_LocalContract();
+            return temp.ObjToTable(SQL.Select(temp, query));
+        }
         //Ivan
         public static List<FC_LocalContract> ContractsByStatus_Populate(int status)
         {
