@@ -1,9 +1,11 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.Win32;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
+using System.Windows;
+using System.Windows.Controls;
+using TMSwPages.Classes;
 
 namespace TMSwPages.Classes
 {
@@ -347,27 +349,19 @@ namespace TMSwPages.Classes
         {
             List<string> AllTableName = new List<string>();
 
-            //AllTableName.Add("FC_DepotCity");
-            //AllTableName.Add("FC_RouteSeg");
-            //AllTableName.Add("FC_Invoice");
-            //AllTableName.Add("FC_InvoiceContractLine");
-            //AllTableName.Add("FC_Carrier");
-            //AllTableName.Add("FC_TripTicket");
-            //AllTableName.Add("FC_BuyerToPlannerContract");
-            //AllTableName.Add("FC_CarrierNom");
-            //AllTableName.Add("FC_LocalContract");
-            //AllTableName.Add("FC_TripTicketLine");
-
-
-            //foreach(string x in AllTableName)
-            //{
-            //    string query = "TRUNCATE TABLE " + x + ";";
-            //    SQL.GenericFunction(query);
-            //}
-
             string query = "DROP DATABASE IF EXISTS duane_test; CREATE DATABASE duane_test;";
             SQL.GenericFunction(query);
 
+            //View Save As File Dialog
+            // View Save As File Dialog
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "sql Files (*.sql)|*.sql";
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                string text = System.IO.File.ReadAllText(openFileDialog.FileName);
+                SQL.GenericFunction(text);
+            }
         }
     }
 }

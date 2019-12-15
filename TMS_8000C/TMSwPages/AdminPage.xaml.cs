@@ -408,6 +408,7 @@ namespace TMSwPages
             if(openFileDialog.ShowDialog() == true)
             {
                 LoadCSV.SetNewCSVLocation(openFileDialog.FileName);
+                LoadCSV.Load();
             }
         }
 
