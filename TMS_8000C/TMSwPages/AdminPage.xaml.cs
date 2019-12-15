@@ -263,6 +263,8 @@ namespace TMSwPages
 
         private void SwitchUserClick(object sender, RoutedEventArgs e)
         {
+            SQL.close();
+
             LoginPage newpage = new LoginPage();
             this.NavigationService.Navigate(newpage);
         }
@@ -396,6 +398,8 @@ namespace TMSwPages
 
         private void ChangeCUSLocation(object sender, RoutedEventArgs e)
         {
+            SQL.WipeEverything();
+
             // View Save As File Dialog
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "csv Files (*.csv)|*.csv";
