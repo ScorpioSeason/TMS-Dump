@@ -333,7 +333,7 @@ namespace TMSwPages.Classes
                 //Execute command
                 cmd.ExecuteNonQuery();
 
-                TMSBackup.WriteQueryToCurrentFile(new TMSBackupQuery(Query));
+                //TMSBackup.WriteQueryToCurrentFile(new TMSBackupQuery(Query));
 
                 return true;
             }
@@ -347,24 +347,27 @@ namespace TMSwPages.Classes
         {
             List<string> AllTableName = new List<string>();
 
-            AllTableName.Add("FC_DepotCity");
+            //AllTableName.Add("FC_DepotCity");
+            //AllTableName.Add("FC_RouteSeg");
+            //AllTableName.Add("FC_Invoice");
+            //AllTableName.Add("FC_InvoiceContractLine");
+            //AllTableName.Add("FC_Carrier");
+            //AllTableName.Add("FC_TripTicket");
+            //AllTableName.Add("FC_BuyerToPlannerContract");
+            //AllTableName.Add("FC_CarrierNom");
+            //AllTableName.Add("FC_LocalContract");
+            //AllTableName.Add("FC_TripTicketLine");
 
 
-            AllTableName.Add("FC_TripTicketLine");
-            AllTableName.Add("FC_RouteSeg");
-            AllTableName.Add("FC_TripTicket");
-            AllTableName.Add("FC_BuyerToPlannerContract");
-            AllTableName.Add("FC_Carrier");
-            AllTableName.Add("FC_LocalContract");
-            AllTableName.Add("FC_CarrierNom");
-            AllTableName.Add("FC_Invoice");
-            AllTableName.Add("FC_InvoiceContractLine");
+            //foreach(string x in AllTableName)
+            //{
+            //    string query = "TRUNCATE TABLE " + x + ";";
+            //    SQL.GenericFunction(query);
+            //}
 
-            foreach(string x in AllTableName)
-            {
-                string query = "TRUNCATE TABLE " + x + ";";
-                SQL.GenericFunction(query);
-            }
+            string query = "DROP DATABASE IF EXISTS duane_test; CREATE DATABASE duane_test;";
+            SQL.GenericFunction(query);
+
         }
     }
 }
