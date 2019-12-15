@@ -283,6 +283,18 @@ namespace TMSwPages.Classes
             return null;
         }
 
+        public static List<FC_LocalContract> GetContracts_PreInvoice(FC_Invoice inInvoice)
+        {
+            string query = "select c.FC_LocalContractID, c.Client_Name, c.Job_type, c.Quantity, c.Origin, c.Destination, c.Van_type, c.Contract_Status " +
+                "from FC_Invoice as inn " +
+                "left join FC_InvoiceContractLine as cl on cl.FC_InvoiceID = inn.FC_InvoiceID " +
+                "left join FC_LocalContract as c on c.FC_LocalContractID = cl.FC_LocalContractID " +
+                "where inn.FC_InvoiceID = " + inInvoice.FC_InvoiceID.ToString() + ";";
+
+            FC_LocalContract c = new FC_LocalContract();
+            return c.ObjToTable(SQL.Select(c, query));
+        }
+
         public static List<Contract_Invoice> GetAllInvoices(int oneForAll_2For2Weeks)
         {
 
