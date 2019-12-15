@@ -14,19 +14,15 @@
  *              intermediate table for planner completion.-- This would potentially raise an event... later. )
  *              The buyer can also view the table of completed orders (read and display from db, 
  *              via DAL,select an order, preview an invoice, and then generate the invoice to a text file)
- *
+ *              
  * =========================================================================================================== */
 
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TMSwPages.Classes;
 
 namespace TMSwPages
 {
-    
+
     // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
     /**   
     *   \class		BuyerClass
@@ -117,9 +113,9 @@ namespace TMSwPages
             foreach (FC_Carrier x in AllCarriers)
             {
                 string query = "select dc.FC_CarrierID, dc.CityName, dc.FTL_Availibility, dc.LTL_Availibility, dc.FTL_Rate, dc.LTL_Rate, dc.Reefer_Charge " +
-                            "from FC_Carrier as c " +
-                            "left join FC_DepotCity as dc on dc.FC_CarrierID = c.FC_CarrierID " +
-                            "where c.FC_CarrierID = " + x.FC_CarrierID + ";";
+                               "from FC_Carrier as c " +
+                               "left join FC_DepotCity as dc on dc.FC_CarrierID = c.FC_CarrierID " +
+                               "where c.FC_CarrierID = " + x.FC_CarrierID + ";";
 
                 FC_DepotCity dc = new FC_DepotCity();
                 List<FC_DepotCity> Depots = dc.ObjToTable(SQL.Select(dc, query));

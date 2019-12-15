@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using TMSwPages.Classes;
 
 namespace TMSwPages
 {
@@ -19,7 +20,13 @@ namespace TMSwPages
                We can implement navigation as seen below in AdminClick OR using the 
                NavigationService object's methods (this.NavigationService.GoBack());
               
+             *
+             *
+             *
              */
+
+
+            
 
             InitializeComponent();
         }
@@ -29,17 +36,23 @@ namespace TMSwPages
             bool loginSuccess = false;
             //SQL_Query_TMS loginConnection = null; 
             // Check that values have been entered first
-            if (/*(password.Password != "") &&*/ (username.SelectedIndex != -1))
+            if ((password.Password != "") && (username.SelectedIndex != -1))
             {
                 // Get login connection
                 if (loginSuccess == false)
                 {
+                    SQL.SetUserID(username.Text);
+                    SQL.SetPassWord(password.Password.ToString());
+
+                    SQL.init();
+                    loginSuccess = SQL.open();
+
                     //loginConnection = new SQL_Query_TMS(username.Text, password.Password.ToString()); // pass login to each page for access privileges
                     //loginSuccess = loginConnection._isConnected;
 
                     //password.Password = "";
 
-                    loginSuccess = true;
+                    //loginSuccess = true;
 
                 }
                 // If the connection credentials were validated, redirect to page with set connection

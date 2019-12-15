@@ -25,8 +25,6 @@ namespace TMSwPages
         public FC_TripTicket SelectedTicket;
         public FC_LocalContract PassedInContract;
 
-
-
         public AttatchTicketPage()
         {
             InitializeComponent();
@@ -40,8 +38,7 @@ namespace TMSwPages
             List<FC_TripTicket> ContractsTickets = PlannerClass.CreateTicketsFromContract(ReadInContract);
             AllTickets.ItemsSource = ContractsTickets;
 
-            NominatedCarrierDG.ItemsSource = PlannerClass.GetNomCarriers_withDepot(ReadInContract);
-
+            RefreshNomCarriers();
             RefreshPossibleTickets();
         }
 
@@ -80,6 +77,32 @@ namespace TMSwPages
             }
 
             PossibleTickets.ItemsSource = ValidatedTickets;
+        }
+
+        private void RefreshNomCarriers()
+        {
+            List<CarrierWithDepot_View> PotentialDepots = PlannerClass.GetNomCarriers_withDepot(PassedInContract);
+            List<CarrierWithDepot_View> OutDepots = new List<CarrierWithDepot_View>();
+
+            foreach (CarrierWithDepot_View x in PotentialDepots)
+            {
+                if (PassedInContract.Job_type == 0)
+                {
+                    if (x.FTL_Availibility > 0)
+                    {
+                        OutDepots.Add(x);
+                    }
+                }
+                else
+                {
+                    if (x.LTL_Availibility > 0)
+                    {
+                        OutDepots.Add(x);
+                    }
+                }
+            }
+
+            NominatedCarrierDG.ItemsSource = OutDepots;
         }
 
         private void AllTickets_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -167,6 +190,7 @@ namespace TMSwPages
             this.NominatedCarrierDG.UnselectAll();
             this.PossibleTickets.UnselectAll();
 
+            RefreshNomCarriers();
             RefreshPossibleTickets();
         }
 
