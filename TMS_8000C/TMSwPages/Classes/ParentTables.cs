@@ -776,7 +776,6 @@ namespace TMSwPages.Classes
         }
     }
 
-
     public class FC_BuyerToPlannerContract : ParentTable
     {
         public int FC_BuyerToPlannerContractID { get; set; }
@@ -1264,9 +1263,6 @@ namespace TMSwPages.Classes
 
             return ConvertList;
         }
-
-
-
     }
 
     public class FC_ContractFromRuss : ParentTable
@@ -1779,7 +1775,6 @@ namespace TMSwPages.Classes
         public int Progress { get; set; }
     }
 
-
     public class FC_Customer : ParentTable
     {
         public int FC_CustomerID { get; set; }
@@ -1953,19 +1948,19 @@ namespace TMSwPages.Classes
 
     public class FC_Invoice : ParentTable
     {
-        public int FC_LocalContractID { get; set; }
+        public int FC_InvoiceID { get; set; }
         public double TotalCost { get; set; }
 
 
         public FC_Invoice()
         {
-            FC_LocalContractID = -1;
+            FC_InvoiceID = -1;
             TotalCost = -1;
         }
 
-        public FC_Invoice(int IN_FC_LocalContractID, double IN_TotalCost)
+        public FC_Invoice(int IN_FC_InvoiceID, double IN_TotalCost)
         {
-            FC_LocalContractID = IN_FC_LocalContractID;
+            FC_InvoiceID = IN_FC_InvoiceID;
             TotalCost = IN_TotalCost;
         }
 
@@ -1987,8 +1982,8 @@ namespace TMSwPages.Classes
 
         public override string GetInsertStatment()
         {
-            return "insert into FC_Invoice(FC_LocalContractID, TotalCost) value (" +
-                FC_LocalContractID.ToString() + "," +
+            return "insert into FC_Invoice(FC_InvoiceID, TotalCost) value (" +
+                FC_InvoiceID.ToString() + "," +
                 TotalCost.ToString() + ");";
         }
 
@@ -1996,7 +1991,7 @@ namespace TMSwPages.Classes
         {
             List<string> outList = new List<string>();
 
-            outList.Add("FC_LocalContractID");
+            outList.Add("FC_InvoiceID");
             outList.Add("TotalCost");
 
             return outList;
@@ -2011,7 +2006,7 @@ namespace TMSwPages.Classes
             {
                 FC_Invoice current = new FC_Invoice();
 
-                current.FC_LocalContractID = int.Parse(inList[0][i]);
+                current.FC_InvoiceID = int.Parse(inList[0][i]);
                 current.TotalCost = double.Parse(inList[1][i]);
 
                 outList.Add(current);
@@ -2019,8 +2014,7 @@ namespace TMSwPages.Classes
 
             return outList;
         }
-
-
+ 
         public List<FC_Invoice> ObjToTable(List<object> inList)
         {
             List<FC_Invoice> ConvertList = new List<FC_Invoice>();
@@ -2032,9 +2026,6 @@ namespace TMSwPages.Classes
 
             return ConvertList;
         }
-
-
-
     }
 
     public class Contract_Invoice
@@ -2064,4 +2055,83 @@ namespace TMSwPages.Classes
 
     }
 
+    public class FC_InvoiceContractLine : ParentTable
+    {
+        public int FC_LocalContractID { get; set; }
+        public int FC_InvoiceID { get; set; }
+
+
+        public FC_InvoiceContractLine()
+        {
+            FC_LocalContractID = -1;
+            FC_InvoiceID = -1;
+        }
+
+        public FC_InvoiceContractLine(int IN_FC_LocalContractID, int IN_FC_InvoiceID)
+        {
+            FC_LocalContractID = IN_FC_LocalContractID;
+            FC_InvoiceID = IN_FC_InvoiceID;
+        }
+
+        public override string GetTableName()
+        {
+            return "FC_InvoiceContractLine";
+        }
+
+        public override string GetSelectStatment()
+        {
+            return "Select * from FC_InvoiceContractLine;";
+        }
+
+        public override int GetColoumInt()
+        {
+            return 2;
+        }
+
+        public override string GetInsertStatment()
+        {
+            return "insert into FC_InvoiceContractLine(FC_LocalContractID, FC_InvoiceID) value (" +
+                FC_LocalContractID.ToString() + "," +
+                FC_InvoiceID.ToString() + ");";
+        }
+
+        public override List<string> GetColoumNames()
+        {
+            List<string> outList = new List<string>();
+
+            outList.Add("FC_LocalContractID");
+            outList.Add("FC_InvoiceID");
+
+            return outList;
+        }
+
+        public override List<object> PackageClasses(List<string>[] inList)
+        {
+            List<object> outList = new List<object>();
+
+            for (int i = 0; i < inList[0].Count; i++)
+            {
+                FC_InvoiceContractLine current = new FC_InvoiceContractLine();
+
+                current.FC_LocalContractID = int.Parse(inList[0][i]);
+                current.FC_InvoiceID = int.Parse(inList[1][i]);
+
+                outList.Add(current);
+            }
+
+            return outList;
+        }
+
+        public List<FC_InvoiceContractLine> ObjToTable(List<object> inList)
+        {
+            List<FC_InvoiceContractLine> ConvertList = new List<FC_InvoiceContractLine>();
+
+            foreach (object x in inList)
+            {
+                ConvertList.Add((FC_InvoiceContractLine)x);
+            }
+
+            return ConvertList;
+        }
+    }
 }

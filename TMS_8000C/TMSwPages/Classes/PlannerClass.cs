@@ -285,44 +285,85 @@ namespace TMSwPages.Classes
 
         public static List<Contract_Invoice> GetAllInvoices(int oneForAll_2For2Weeks)
         {
-            string query = "select * from FC_LocalContract where Contract_Status = 1 or Contract_Status = 2 or Contract_Status = 3;";
 
-            FC_LocalContract l = new FC_LocalContract();
-            List<FC_LocalContract> AllContracts = l.ObjToTable(SQL.Select(l, query));
+            //FC_Invoice I = new FC_Invoice();
+            //List<FC_Invoice> AllInvoices = I.ObjToTable(SQL.Select(I));
 
-            if(oneForAll_2For2Weeks == 2)
-            {
-                List<FC_LocalContract> TempContrats = new List<FC_LocalContract>();
+            //string query 
 
-                foreach(FC_LocalContract x in AllContracts)
-                {
-                    TempContrats.Add(x);
-                }
 
-                AllContracts.Clear();
 
-                foreach(FC_LocalContract x in TempContrats)
-                {
-                    List<FC_TripTicket> theTickets = ConnectedTickets_Populate(x);
+            //string query = "select * from FC_LocalContract where Contract_Status = 1 or Contract_Status = 2 or Contract_Status = 3;";
 
-                    if(theTickets[0].Days_Passes < 14)
-                    {
-                        AllContracts.Add(x);
-                    }
-                }
-            }
+            //FC_LocalContract l = new FC_LocalContract();
+            //List<FC_LocalContract> AllContracts = l.ObjToTable(SQL.Select(l, query));
 
-            List<Contract_Invoice> OutInvoices = new List<Contract_Invoice>();
+            //if(oneForAll_2For2Weeks == 2)
+            //{
+            //    List<FC_LocalContract> TempContrats = new List<FC_LocalContract>();
 
-            foreach(FC_LocalContract x in AllContracts)
-            {
-                OutInvoices.Add(GenerateInvoice(x));
-            }
+            //    foreach(FC_LocalContract x in AllContracts)
+            //    {
+            //        TempContrats.Add(x);
+            //    }
 
-            return OutInvoices;
+            //    AllContracts.Clear();
+
+            //    foreach(FC_LocalContract x in TempContrats)
+            //    {
+            //        List<FC_TripTicket> theTickets = ConnectedTickets_Populate(x);
+
+            //        if(theTickets[0].Days_Passes < 14)
+            //        {
+            //            AllContracts.Add(x);
+            //        }
+            //    }
+            //}
+
+            //List<Contract_Invoice> OutInvoices = new List<Contract_Invoice>();
+
+            //foreach(FC_LocalContract x in AllContracts)
+            //{
+            //    OutInvoices.Add((x));
+            //}
+
+            //return OutInvoices;
+
+            return null;
         }
 
-        public static Contract_Invoice GenerateInvoice(FC_LocalContract inContract)
+        public static FC_Invoice GenerateInvoice(FC_LocalContract InContract)
+        {
+            double OtherContractCost = GenerateInvoiceTotal(InContract);
+            return new FC_Invoice(-1, OtherContractCost);
+        }
+
+        public static int InsertInvoice(FC_Invoice inInvoice, FC_LocalContract InContract)
+        {
+            inInvoice.FC_InvoiceID = SQL.GetNextID("FC_Invoice");
+            SQL.Insert(inInvoice);
+
+            FC_InvoiceContractLine newLine = new FC_InvoiceContractLine(InContract.FC_LocalContractID, inInvoice.FC_InvoiceID);
+            SQL.Insert(newLine);
+
+            return inInvoice.FC_InvoiceID;
+        }
+
+        public static void AddContractToInvoices(FC_Invoice inInvoice, FC_LocalContract InContract)
+        {
+            double OtherContractCost = GenerateInvoiceTotal(InContract);
+
+            string query = "update FC_Invoice set TotalCost = " + Math.Round((inInvoice.TotalCost + OtherContractCost), 2) + " where FC_InvoiceID = " + inInvoice.FC_InvoiceID.ToString() + ";";
+
+            SQL.GenericFunction(query);
+
+            FC_InvoiceContractLine newLine = new FC_InvoiceContractLine(InContract.FC_LocalContractID, inInvoice.FC_InvoiceID);
+
+            SQL.Insert(newLine);
+        }
+
+
+        public static double GenerateInvoiceTotal(FC_LocalContract inContract)
         {
             List<FC_TripTicket> AllTickets = ConnectedTickets_Populate(inContract);
 
@@ -380,8 +421,9 @@ namespace TMSwPages.Classes
 
             Total_Cost = Math.Round(Total_Cost, 2);
 
-            return new Contract_Invoice(inContract, new FC_Invoice(inContract.FC_LocalContractID, Total_Cost));
-
+            return Total_Cost;
         }
+
+
     }
 }
