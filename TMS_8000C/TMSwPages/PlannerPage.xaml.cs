@@ -196,7 +196,6 @@ namespace TMSwPages
                 temp.GetTicketProgress(temp.instance);
                 progresses.Add(temp);
             }
-            
             DG5.ItemsSource = null;
             DG5.ItemsSource = progresses;
         }
