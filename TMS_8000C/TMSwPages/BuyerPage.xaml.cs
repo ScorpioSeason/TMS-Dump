@@ -244,7 +244,10 @@ namespace TMSwPages
         private void RefreshCustomers_2(object sender, RoutedEventArgs e)
         {
             BuyerClass.AllCustomers.Clear();
-            BuyerClass.AllCustomers = SQL.GetAllCustomerNames(); 
+
+            Cust_Price cp = new Cust_Price();
+            BuyerClass.AllCustomers = cp.ObjToTable(SQL.Select(cp));
+
             DGCustomers.ItemsSource = null;
             DGCustomers.ItemsSource = BuyerClass.AllCustomers;
         }
@@ -252,10 +255,11 @@ namespace TMSwPages
         private void DGCustomers_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             BuyerClass.ContractsForCustomer.Clear();
-            foreach (CustomerName c in DGCustomers.SelectedItems)
+            foreach (Cust_Price c in DGCustomers.SelectedItems)
             {
-                BuyerClass.ContractsForCustomer = PlannerClass.ContractsByName_Populate(c.CustName);
+                BuyerClass.ContractsForCustomer = PlannerClass.ContractsByName_Populate(c.Client_Name);
             }
+
             DGContractsForCustomer.ItemsSource = BuyerClass.ContractsForCustomer;
         }
 

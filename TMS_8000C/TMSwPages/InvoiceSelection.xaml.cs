@@ -37,10 +37,10 @@ namespace TMSwPages
                 BuyerClass.ContractsForCustomer.Remove(c);
                 BuyerClass.SelectedForInvoice.Add(c);
             }
+
             DGContractsForCustomer.ItemsSource = null;
             DGContractsForCustomer.ItemsSource = BuyerClass.ContractsForCustomer;
             DGSelectForInvoice.ItemsSource = BuyerClass.SelectedForInvoice;
-
         }
 
         private void ConfirmInvoice_Click(object sender, RoutedEventArgs e)

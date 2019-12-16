@@ -2221,4 +2221,95 @@ namespace TMSwPages.Classes
             return ConvertList;
         }
     }
+
+    public class Cust_Price : ParentTable
+    {
+        public string Client_Name { get; set; }
+        public double BalanceTotal { get; set; }
+
+
+        public Cust_Price()
+        {
+            Client_Name = "not_set";
+            BalanceTotal = -1;
+        }
+
+        public Cust_Price(string IN_Client_Name, double IN_BalanceTotal)
+        {
+            Client_Name = IN_Client_Name;
+            BalanceTotal = IN_BalanceTotal;
+        }
+
+
+        public override string GetTableName()
+        {
+            return "Cust_Price";
+        }
+
+        public override string GetSelectStatment()
+        {
+            return "Select c.Client_Name, SUM(inn.TotalCost) as BalanceTotal " +
+                "from FC_LocalContract as c " +
+                "left join FC_InvoiceContractLine as cl on cl.FC_LocalContractID = c.FC_LocalContractID " +
+                "left join FC_Invoice as inn on cl.FC_InvoiceID = inn.FC_InvoiceID " +
+                "group by(c.Client_Name);";
+        }
+
+        public override int GetColoumInt()
+        {
+            return 2;
+        }
+
+        public override string GetInsertStatment()
+        {
+            return "insert into Cust_Price(Client_Name, BalanceTotal) value (" +
+                "\"" + Client_Name + "\"," +
+                BalanceTotal.ToString() + ");";
+        }
+
+        public override List<string> GetColoumNames()
+        {
+            List<string> outList = new List<string>();
+
+            outList.Add("Client_Name");
+            outList.Add("BalanceTotal");
+
+            return outList;
+        }
+
+
+        public override List<object> PackageClasses(List<string>[] inList)
+        {
+            List<object> outList = new List<object>();
+
+            for (int i = 0; i < inList[0].Count; i++)
+            {
+                Cust_Price current = new Cust_Price();
+
+                current.Client_Name = inList[0][i];
+                current.BalanceTotal = double.Parse(inList[1][i]);
+
+                outList.Add(current);
+            }
+
+            return outList;
+        }
+
+
+        public List<Cust_Price> ObjToTable(List<object> inList)
+        {
+            List<Cust_Price> ConvertList = new List<Cust_Price>();
+
+            foreach (object x in inList)
+            {
+                ConvertList.Add((Cust_Price)x);
+            }
+
+            return ConvertList;
+        }
+
+
+
+    }
+
 }

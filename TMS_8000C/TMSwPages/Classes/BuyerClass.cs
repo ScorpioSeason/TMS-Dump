@@ -136,7 +136,8 @@ namespace TMSwPages
             TMSLogger.LogIt(" | " + "BuyerClass.cs" + " | " + "BuyerClass" + " | " + "NominationView" + " | " + "Confirmation" + " | " + "Nomination outputted" + " | ");
 
         }
-        public static List<CustomerName> AllCustomers = new List<CustomerName>();
+
+        public static List<Cust_Price> AllCustomers = new List<Cust_Price>();
         public static List<FC_LocalContract> ContractsForCustomer = new List<FC_LocalContract>();
         public static List<FC_LocalContract> SelectedForInvoice= new List<FC_LocalContract>();
     }
