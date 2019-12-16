@@ -43,6 +43,13 @@ namespace TMSwPages
             BuyerClass.ParseContracts();
             DG1.ItemsSource = BuyerClass.Contracts;
             DG2.ItemsSource = BuyerClass.acceptedContracts;
+            TMSLogger.LogStatusEvent += LogStatusEventHandler;
+        }
+
+        public void LogStatusEventHandler(TMSLog log)
+        {
+            // Handle the event (send it to the status bar)
+            status.Text = "Status: " + log.logMessage;
         }
 
         //public BuyerPage(SQL_Query_TMS validatedConnection)

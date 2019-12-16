@@ -39,7 +39,7 @@
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
-                    <RotateTransform Angle="-1.773"/>
+                    <RotateTransform Angle="-0.472"/>
                     <TranslateTransform/>
                 </TransformGroup>
             </Label.RenderTransform>

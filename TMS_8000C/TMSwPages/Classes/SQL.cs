@@ -123,21 +123,16 @@ namespace TMSwPages.Classes
         public static List<object> SelectFromCMP(ParentTable tabletype)
         {
             SQL.close();
-            int Use_Test_CMP = 0;
+            int Use_Test_CMP = 1;
 
             string connectionString = string.Empty;
 
-            if (Use_Test_CMP == 1)
+            if (Use_Test_CMP == 0)
             {
-                server = "127.0.0.1";
-                database = "Ivan_Test";
-                uid = "root";
-                password = "Conestoga1";
-                connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+                connectionString = "SERVER=" + "127.0.0.1" + ";" + "DATABASE=" + "Ivan_Test" + ";" + "UID=" + "root" + ";" + "PASSWORD=" + "Conestoga1" + ";";
             }
             else
             {
-
 
                 //CMPserver = "159.89.117.198";
                 CMPdatabase = "cmp";
