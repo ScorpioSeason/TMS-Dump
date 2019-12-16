@@ -163,8 +163,10 @@
                             <RowDefinition Height="auto"></RowDefinition>
                         </Grid.RowDefinitions>
                         <Button x:Name="ReadFolder" Grid.Column="0" Grid.Row="0" Margin="5,5,5,5" Click="ReadFolder_Click">Read All Invoices</Button>
-                        <DataGrid x:Name="Folder" SelectionMode="Single" IsReadOnly="True"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" Margin="5,5,5,5">
-                        </DataGrid>
+                        <!--<DataGrid x:Name="Folder" SelectionMode="Single" IsReadOnly="True"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" Margin="5,5,5,5">
+                        </DataGrid>-->
+                        <ListBox x:Name="Folder" SelectionMode="Single" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" Margin="5,5,5,5"></ListBox>
+                        <!--<ListBox Margin="5,5,5,5" x:Name="ViewInvoice" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"></ListBox>-->
                         <TextBlock Margin="5,5,5,5" x:Name="ViewInvoice" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"></TextBlock>
 
                         <!--Buttons Row (2) -->
