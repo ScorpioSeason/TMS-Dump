@@ -277,7 +277,7 @@ namespace TMSwPages
         {
             invoiceFiles.Clear();
 
-            FileInfo fold = new FileInfo(Directory.GetCurrentDirectory() + "/Invoices");
+            DirectoryInfo fold = new DirectoryInfo(Directory.GetCurrentDirectory() + "\\Invoices");
 
             if (fold.Exists == true)
             {
@@ -302,12 +302,6 @@ namespace TMSwPages
         private void ReacInvlocesFromDatabase(object sender, RoutedEventArgs e)
         {
             DirectoryInfo d = new DirectoryInfo(@"./Invoices/");//Assuming Test is your Folder
-
-            //FileInfo fi = new FileInfo(d);
-            //if (fi.Exists == false)
-            //{
-            //    Directory.CreateDirectory(invoiceDir);
-            //}
 
             if (Folder.SelectedItem != null)
             {
