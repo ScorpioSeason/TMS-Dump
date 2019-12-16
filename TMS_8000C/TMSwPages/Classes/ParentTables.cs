@@ -2316,15 +2316,21 @@ namespace TMSwPages.Classes
         public override List<object> PackageClasses(List<string>[] inList)
         {
             List<object> outList = new List<object>();
-
-            for (int i = 0; i < inList[0].Count; i++)
+            try
             {
-                Cust_Price current = new Cust_Price();
+                for (int i = 0; i < inList[0].Count; i++)
+                {
+                    Cust_Price current = new Cust_Price();
 
-                current.Client_Name = inList[0][i];
-                current.BalanceTotal = double.Parse(inList[1][i]);
+                    current.Client_Name = inList[0][i];
+                    current.BalanceTotal = double.Parse(inList[1][i]);
 
-                outList.Add(current);
+                    outList.Add(current);
+                }
+            }
+            catch (Exception e)
+            {
+                TMSLogger.LogIt(" | " + "ParentTables.cs" + " | " + "Cust_Price" + " | " + "PackageClasses" + " | " + e.GetType().ToString() + " | " + e.Message + " | ");
             }
 
             return outList;

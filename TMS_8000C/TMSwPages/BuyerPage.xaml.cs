@@ -275,19 +275,23 @@ namespace TMSwPages
 
         private void ReadFolder_Click(object sender, RoutedEventArgs e)
         {
-            invoiceFiles.Clear(); 
+            invoiceFiles.Clear();
 
-            //FileInfo fold = new FileInfo(Directory.GetCurrentDirectory() + "")
+            FileInfo fold = new FileInfo(Directory.GetCurrentDirectory() + "/Invoices");
 
-            foreach (string file in Directory.EnumerateFiles(Directory.GetCurrentDirectory() + "/Invoices/", "*.txt"))
+            if (fold.Exists == true)
             {
-                FileInfo fi = new FileInfo(file);
+                foreach (string file in Directory.EnumerateFiles(Directory.GetCurrentDirectory() + "/Invoices/", "*.txt"))
+                {
+                    FileInfo fi = new FileInfo(file);
 
-                invoiceFiles.Add(fi.FullName);
+                    invoiceFiles.Add(fi.FullName);
 
+                }
+
+                Folder.Items.Refresh();
             }
-
-            Folder.Items.Refresh(); 
+            
         }
 
         private void ChangeLogLocation(object sender, RoutedEventArgs e)
