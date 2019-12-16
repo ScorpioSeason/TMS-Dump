@@ -26,7 +26,7 @@
             <!-- File Menu: Open, New, Save As, Close -->
             <MenuItem Header="Admin">
                 <MenuItem Header="Switch User" Click="SwitchUserClick" />
-                <MenuItem Header="Edit CSV Location" Click="ChangeCSVLocation"></MenuItem>
+                <MenuItem Header="Load CSV" Click="ChangeCSVLocation"></MenuItem>
                 <MenuItem Header="Edit CMP IP Address">
                     <MenuItem Header="Original" Click="OriginalClick"></MenuItem>
                     <MenuItem Header="Local" Click="UseLocalClick"></MenuItem>
