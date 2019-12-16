@@ -568,11 +568,23 @@ namespace TMSwPages.Classes
     public class FC_TripTicket_WProgress : ParentTable
     {
         public FC_TripTicket instance = new FC_TripTicket();
+        public int FC_TripTicketID { get; set; }
+        public int FC_CarrierID { get; set; }
+        public string CurrentLocation { get; set; }
+        public int Size_in_Palettes { get; set; }
+        public int Days_Passes { get; set; }
+        public int Is_Complete { get; set; }
         public int progress { get; set; }
 
         public FC_TripTicket_WProgress(FC_TripTicket temp)
         {
             instance = temp;
+            FC_TripTicketID = temp.FC_TripTicketID;
+            FC_CarrierID = temp.FC_CarrierID;
+            CurrentLocation = temp.CurrentLocation;
+            Size_in_Palettes = temp.Size_in_Palettes;
+            Days_Passes = temp.Days_Passes;
+            Is_Complete = temp.Is_Complete;
             progress = 0;
         }
 

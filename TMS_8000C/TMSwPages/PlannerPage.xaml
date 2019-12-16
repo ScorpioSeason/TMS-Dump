@@ -135,8 +135,14 @@
                             <RowDefinition x:Name="ActiveTicketsButtons" Height="auto"></RowDefinition>
                         </Grid.RowDefinitions>
                         <DataGrid Grid.ColumnSpan="5" Grid.RowSpan ="2" Grid.Row="1" Margin="5,5,5,24" Name="DG5" ItemsSource="{Binding}" AutoGenerateColumns="False" SelectionChanged="DG5_SelectionChanged" IsReadOnly="True">
+                            <DataGridTextColumn Header="Trip Ticket ID" Binding="{Binding FC_TripTicketID}"/>
+                            <DataGridTextColumn Header="Carrier ID" Binding="{Binding FC_CarrierID}"/>
+                            <DataGridTextColumn Header="Current Location" Binding="{Binding CurrentLocation}"/>
+                            <DataGridTextColumn Header="Size In Pallets" Binding="{Binding Size_in_Palettes}" />
+                            <DataGridTextColumn Header="Days Passed" Binding="{Binding Days_Passes}" />
+                            <DataGridTextColumn Header="Is Complete" Binding="{Binding Is_Complete}" />
                             <DataGrid.Columns>
-                                <DataGridTemplateColumn x:Name="BARS" Header="Orders Count" Width="380">
+                                <DataGridTemplateColumn x:Name="BARS" Header="Orders Count" Width="110">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <Grid>
