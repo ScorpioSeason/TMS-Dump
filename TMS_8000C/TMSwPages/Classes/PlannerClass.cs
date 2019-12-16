@@ -179,8 +179,8 @@ namespace TMSwPages.Classes
                 {
                     string orginCity = LoadCSV.ToCityName(OriginalSegs[0].CityA);
                     string EndOfFTL = LoadCSV.ToCityName(NewSegs[NewSegs.Count - 1].CityB);
-                    string startLTL = LoadCSV.ToCityName(OriginalSegs[NewSegs.Count + 1].CityA);
-                    string endCity = LoadCSV.ToCityName(OriginalSegs[NewSegs.Count - 1].CityB);
+                    string startLTL = LoadCSV.ToCityName(OriginalSegs[NewSegs.Count].CityA);
+                    string endCity = LoadCSV.ToCityName(OriginalSegs[OriginalSegs.Count - 1].CityB);
 
                     NewSegmentsFTL = map.GetTravelData(orginCity, EndOfFTL, FTL, OriginalTick.FC_TripTicketID);
                     NewSegmentsLTL = map.GetTravelData(startLTL, endCity, 1, OriginalTick.FC_TripTicketID);

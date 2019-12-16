@@ -29,6 +29,7 @@ namespace TMSwPages
 
         private void AddSelectedToInvoice_Click(object sender, RoutedEventArgs e)
         {
+            BuyerClass.SelectedForInvoice.Clear();
             DGSelectForInvoice.ItemsSource = null;
             foreach (FC_LocalContract c in DGContractsForCustomer.SelectedItems)
             {
@@ -43,6 +44,7 @@ namespace TMSwPages
 
         private void ConfirmInvoice_Click(object sender, RoutedEventArgs e)
         {
+
             FC_Invoice invTemp = PlannerClass.GenerateInvoice(BuyerClass.SelectedForInvoice[0]);
             PlannerClass.InsertInvoice(invTemp, BuyerClass.SelectedForInvoice[0]);
 

@@ -245,11 +245,10 @@ namespace TMSwPages
         }
 
 
-        // Testing the logger event handler...
         public void LogStatusEventHandler(TMSLog log)
         {
-            status.Text = "Status: " + log.logMessage;
             // Handle the event (send it to the status bar)
+            status.Text = "Status: " + log.logMessage;
         }
 
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
