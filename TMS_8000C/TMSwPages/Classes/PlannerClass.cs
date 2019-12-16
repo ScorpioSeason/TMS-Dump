@@ -434,6 +434,11 @@ namespace TMSwPages.Classes
 
                     int QuantityOnTruck = theTicketLine[0].PalletsOnTicket;
 
+                    if(QuantityOnTruck == 0)
+                    {
+                        QuantityOnTruck = 26;
+                    }
+
                     tempPrice = sumData.totalKM * theDepotCity[0].LTL_Rate * QuantityOnTruck * 1.05;
                 }
 
