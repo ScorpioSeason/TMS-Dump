@@ -94,6 +94,7 @@
     <Compile Include="AdminPage.xaml.cs">
       <DependentUpon>AdminPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Classes\BuildTables.cs" />
     <Compile Include="Classes\BuyerClass.cs" />
     <Compile Include="BuyerPage.xaml.cs">
       <DependentUpon>BuyerPage.xaml</DependentUpon>

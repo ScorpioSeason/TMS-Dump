@@ -183,8 +183,6 @@ namespace TMSwPages
                 this.NavigationService.Navigate(newpage);
             }
 
-            // This is just a test to try writing to the backup sql file. 
-            TMSBackup.WriteQueryToCurrentFile(new TMSBackupQuery("This is a test string to test the query; can this write?"));
         }
 
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
@@ -281,8 +279,6 @@ namespace TMSwPages
 
         private void Route_TableLoadClick(object sender, RoutedEventArgs e)
         {
-            
-
             Route_TableList.Items.Refresh(); 
         }
 
@@ -400,7 +396,7 @@ namespace TMSwPages
             BackupsList.Items.Refresh();
         }
 
-        private void ChangeCUSLocation(object sender, RoutedEventArgs e)
+        private void ChangeCSVLocation(object sender, RoutedEventArgs e)
         {
             
             // View Save As File Dialog

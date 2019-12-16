@@ -91,7 +91,7 @@
 
             </TabItem>
 
-            <!--This is the content of the Backups tab THIS IS CURRENTLY JUST A STUB / STRUCTURE AND IT DOES NOTHING AT ALL-->
+            <!--This is the content of the Backups tab-->
             <TabItem Name="Backups" Header="Backups">
 
                 <!--Backups Tab-->
@@ -182,7 +182,7 @@
                             </DataGrid>
 
                             <!--Buttons Row (2)-->
-                            <Button Grid.Row="2" Grid.Column="0" Click="ChangeCUSLocation" Margin="5,0,4.666,4.667" VerticalAlignment="Bottom" Grid.ColumnSpan="2">Change CSV load Location</Button>
+                            <Button Grid.Row="2" Grid.Column="0" Click="ChangeCSVLocation" Margin="5,0,4.666,4.667" VerticalAlignment="Bottom" Grid.ColumnSpan="2">Change CSV load Location</Button>
                             <Button Grid.Row="2" Grid.Column="5" Margin="5.334,0,5.333,4.667" VerticalAlignment="Bottom" Click="LogViewMoreClick" >View More...</Button>
 
                         </Grid>
@@ -236,8 +236,8 @@
                             </DataGrid>
 
                             <!--Buttons Row (2)-->
-                            <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="ChangeLogLocation">Change Log Location...</Button>
-                            <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="4" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="LogViewMoreClick" >View More...</Button>
+                            <!--<Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="ChangeLogLocation">Change Log Location...</Button>
+                            <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="4" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="LogViewMoreClick" >View More...</Button>-->
 
                         </Grid>
 
@@ -289,8 +289,8 @@
                             </DataGrid>
 
                             <!--Buttons Row (2)-->
-                            <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="ChangeLogLocation">Change Log Location...</Button>
-                            <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="4" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="LogViewMoreClick" >View More...</Button>
+                            <!--<Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="ChangeLogLocation">Change Log Location...</Button>
+                            <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="4" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="LogViewMoreClick" >View More...</Button>-->
 
                         </Grid>
 
