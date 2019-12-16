@@ -127,7 +127,7 @@ namespace TMSwPages.Classes
 
             string connectionString = string.Empty;
 
-            if (Use_Test_CMP == 1)
+            if (Use_Test_CMP == 0)
             {
                 connectionString = "SERVER=" + "127.0.0.1" + ";" + "DATABASE=" + "Ivan_Test" + ";" + "UID=" + "root" + ";" + "PASSWORD=" + "Conestoga1" + ";";
             }
