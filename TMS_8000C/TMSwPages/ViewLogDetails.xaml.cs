@@ -25,6 +25,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TMSwPages.Classes;
 
 namespace TMSwPages
 {
@@ -49,6 +50,7 @@ namespace TMSwPages
         public ViewLogDetails()
         {
             InitializeComponent();
+            TMSLogger.LogStatusEvent += LogStatusEventHandler;
         }
 
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
@@ -64,6 +66,13 @@ namespace TMSwPages
         {
             /// Bind to incoming log data.
             this.DataContext = data;
+            TMSLogger.LogStatusEvent += LogStatusEventHandler;
+        }
+
+        public void LogStatusEventHandler(TMSLog log)
+        {
+            // Handle the event (send it to the status bar)
+            status.Text = "Status: " + log.logMessage;
         }
 
         private void SwitchUserClick(object sender, RoutedEventArgs e)

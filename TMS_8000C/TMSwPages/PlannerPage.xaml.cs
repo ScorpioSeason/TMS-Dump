@@ -28,6 +28,7 @@ namespace TMSwPages
         public PlannerPage()
         {
             InitializeComponent();
+            TMSLogger.LogStatusEvent += LogStatusEventHandler;
             //selectedTab = 0;
 
             //List<Carrier> testCarriersList = new List<Carrier>();
@@ -45,6 +46,12 @@ namespace TMSwPages
 
             //NomContractList.ItemsSource = test;
 
+        }
+
+        public void LogStatusEventHandler(TMSLog log)
+        {
+            // Handle the event (send it to the status bar)
+            status.Text = "Status: " + log.logMessage;
         }
 
         //public PlannerPage(SQL_Query_TMS validatedConnection)
