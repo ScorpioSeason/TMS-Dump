@@ -190,6 +190,7 @@ namespace TMSwPages
             progresses.Clear();
             PlannerClass.ActiveTickets.Clear();
             PlannerClass.ActiveTickets = PlannerClass.TicketsWithStatus_Populate(1);
+
             foreach (FC_TripTicket c in PlannerClass.ActiveTickets)
             {
                 FC_TripTicket_WProgress temp = new FC_TripTicket_WProgress(c);
