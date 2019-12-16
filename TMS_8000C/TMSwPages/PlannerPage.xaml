@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:TMSwPages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="PlannerPage">
+      Title="PlannerPage"> 
 
     <!--This is the grid which holds the page display-->
     <Grid Name="OuterGrid" Margin="0,0,0,0">
@@ -82,10 +82,31 @@
                     </DockPanel>
                 </TabItem.Content>
             </TabItem>
-            <TabItem Name="ActiveTickets">
-                <TabItem.Header>
-                    <Label Content="Active Tickets" MouseLeftButtonDown="RefreshActiveTickets_Click"/>
-                </TabItem.Header>
+            <TabItem Name="PendingTickets" Header="Pending Tickets" Height="22" VerticalAlignment="Top">
+                <TabItem.Content>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="157*"></ColumnDefinition>
+                            <ColumnDefinition Width="30*"></ColumnDefinition>
+                            <ColumnDefinition Width="127*"/>
+                            <ColumnDefinition Width="157*"></ColumnDefinition>
+                            <ColumnDefinition Width="157*"></ColumnDefinition>
+                            <ColumnDefinition Width="157*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="1*"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBlock Margin="5,5,5,5" Grid.ColumnSpan="5" Grid.Row="0" Grid.Column="0" TextWrapping="Wrap">Active Contracts:</TextBlock>
+                        <Button x:Name="RefeshPendingTickets" Margin="5,5,5,5" Grid.ColumnSpan="1" Grid.Row="0" Grid.Column="5" Click="RefeshPendingTickets_Click">Refresh Pending Tickets</Button>
+                        <DataGrid Grid.ColumnSpan="6" Grid.Row="1" Grid.Column="0" Margin="5,5,5,5" Name="DGPendingTickets" ItemsSource="{Binding}" AutoGenerateColumns="True" SelectionMode="Single" IsReadOnly="True">
+                        </DataGrid>
+                        <Button x:Name="StartSelectedTicket" Margin="5,5,5,5" Grid.ColumnSpan="1" Grid.Row="2" Grid.Column="5" Click="StartSelectedTicket_Click">Start all Tickets</Button>
+                    </Grid>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem Name="ActiveTickets" Header="Active Tickets">
                 <TabItem.Content>
                     <Grid Name="ActiveTicketsInnerGrid">
                         <Grid.ColumnDefinitions>
@@ -157,34 +178,7 @@
                     </Grid>
                 </TabItem.Content>
             </TabItem>
-            <TabItem Name="PendingTickets">
-                <TabItem.Header>
-                    <Label Content="Pending Tickets" MouseLeftButtonDown="RefeshPendingTickets_Click" />
-                </TabItem.Header>
-                <TabItem.Content>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="159*"></ColumnDefinition>
-                            <ColumnDefinition Width="30*"></ColumnDefinition>
-                            <ColumnDefinition Width="128*"/>
-                            <ColumnDefinition Width="159*"></ColumnDefinition>
-                            <ColumnDefinition Width="85*"></ColumnDefinition>
-                            <ColumnDefinition Width="74*"/>
-                            <ColumnDefinition Width="159*"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="auto"></RowDefinition>
-                            <RowDefinition Height="1*"></RowDefinition>
-                            <RowDefinition Height="auto"></RowDefinition>
-                        </Grid.RowDefinitions>
-                        <TextBlock Margin="5,5,5,5" Grid.ColumnSpan="6" Grid.Row="0" Grid.Column="0" TextWrapping="Wrap">Active Contracts:</TextBlock>
-                        <Button x:Name="RefeshPendingTickets" Margin="5,5,5,5" Grid.ColumnSpan="1" Grid.Row="0" Grid.Column="6" Click="RefeshPendingTickets_Click">Refresh Pending Tickets</Button>
-                        <DataGrid Grid.ColumnSpan="7" Grid.Row="1" Grid.Column="0" Margin="5,5,5,5" Name="DGPendingTickets" ItemsSource="{Binding}" AutoGenerateColumns="True" SelectionMode="Single" IsReadOnly="True">
-                        </DataGrid>
-                        <Button x:Name="StartSelectedTicket" Margin="5,5,5,5" Grid.ColumnSpan="1" Grid.Row="2" Grid.Column="6" Click="StartSelectedTicket_Click">Start Selected Ticket</Button>
-                    </Grid>
-                </TabItem.Content>
-            </TabItem>
+            
             <!--I assume these haven't been implemented yet, but I made room for them.-->
             <TabItem Name="PendingCompletion">
                 <TabItem.Header>

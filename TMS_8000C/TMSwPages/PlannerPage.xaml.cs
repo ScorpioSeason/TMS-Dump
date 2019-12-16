@@ -268,8 +268,9 @@ namespace TMSwPages
             {
                 PlannerClass.UpdateContratState(c, 3);
             }
+
             PlannerClass.ConfirmedContracts.Clear();
-            PlannerClass.ConfirmedContracts = PlannerClass.ContractsByStatus_Populate(1);
+            PlannerClass.ConfirmedContracts = PlannerClass.ContractsByStatus_Populate(2);
             DGConfirmCompletion.ItemsSource = null;
             DGConfirmCompletion.ItemsSource = PlannerClass.ConfirmedContracts;
         }
