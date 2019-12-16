@@ -142,7 +142,7 @@
                             </DataGrid>
                             <DataGrid x:Name="DGContractsForCustomer" IsReadOnly="True" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="5,5,5,5">
                             </DataGrid>
-                            <Button x:Name="AddSelectedToInvoice" Grid.Row="2" Grid.Column="2" Margin="5,5,5,5" Click="SelectCustomer_Click">Select Customer</Button>
+                            <Button x:Name="AddSelectedToInvoice" Grid.Row="2" Grid.Column="2" Margin="5,5,5,5" Focusable="False" Click="SelectCustomer_Click">Select Customer</Button>
                         </Grid>
                     </DockPanel>
                 </TabItem.Content>

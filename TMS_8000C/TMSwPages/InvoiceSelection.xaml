@@ -20,6 +20,10 @@
             <RowDefinition x:Name="ReviewCompletedOrdersMain" Height="*"></RowDefinition>
             <RowDefinition x:Name="ReviewCompletedOrdersButtons" Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
+
+        <TextBlock Text="Contracts from Customer"  Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center"></TextBlock>
+        <TextBlock Text="Selection for invoice creation" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center"></TextBlock>
+        
         <DataGrid x:Name="DGContractsForCustomer" IsReadOnly="True" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="5,5,5,5">
         </DataGrid>
         <DataGrid x:Name="DGSelectForInvoice" IsReadOnly="True" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Margin="5,5,5,5">

@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using TMSwPages.Classes;
 
 namespace TMSwPages
@@ -44,24 +32,23 @@ namespace TMSwPages
 
         private void ConfirmInvoice_Click(object sender, RoutedEventArgs e)
         {
-
             if(BuyerClass.SelectedForInvoice != null)
             {
                 FC_Invoice invTemp = PlannerClass.GenerateInvoice(BuyerClass.SelectedForInvoice[0]);
                 PlannerClass.InsertInvoice(invTemp, BuyerClass.SelectedForInvoice[0]);
+                PlannerClass.UpdateContratState(BuyerClass.SelectedForInvoice[0], 4);
 
                 BuyerClass.SelectedForInvoice.Remove(BuyerClass.SelectedForInvoice[0]);
 
                 foreach (FC_LocalContract c in BuyerClass.SelectedForInvoice)
                 {
                     PlannerClass.AddContractToInvoices(invTemp, c);
+                    PlannerClass.UpdateContratState(c, 4);
                 }
 
                 BuyerPage newpage = new BuyerPage();
                 this.NavigationService.Navigate(newpage);
             }
-
-            
         }
     }
 }
