@@ -273,6 +273,8 @@ namespace TMSwPages.Classes
                 AppendLogFile(myLog);
             };
 
+            LogStatusEvent(myLog);
+
         }
 
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
@@ -380,6 +382,9 @@ namespace TMSwPages.Classes
             return appendSuccess;
 
         }
+
+
+        static public event LogStatusDelegate LogStatusEvent;
 
     }
 
