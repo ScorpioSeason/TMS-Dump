@@ -17,6 +17,7 @@ using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using TMSwPages.Classes;
@@ -431,6 +432,15 @@ namespace TMSwPages
         {
             SQL.WipeEverything();
 
+        }
+        private void UseLocalClick(object sender, RoutedEventArgs e)
+        {
+            SQL.SetCMPIP(1);
+        }
+
+        private void OriginalClick(object sender, RoutedEventArgs e)
+        {
+            SQL.SetCMPIP(2);
         }
     }
 }

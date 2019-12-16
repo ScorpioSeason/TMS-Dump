@@ -34,6 +34,11 @@
                 <MenuItem Header="About TMS" />
             </MenuItem>
 
+            <MenuItem Header="Change Cmp IP">
+                <MenuItem Header="Use Original" Click="OriginalClick"></MenuItem>
+                <MenuItem Header="Use Local" Click="UseLocalClick"></MenuItem>
+            </MenuItem>
+
         </Menu>
 
         <!--These tabs allow different functions of the Admin to be accessed from one main page-->

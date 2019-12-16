@@ -18,6 +18,26 @@ namespace TMSwPages.Classes
         private static string uid;
         private static string password;
 
+        private const string ConstCmpIP = "159.89.117.198";
+
+        private static string CMPserver = ConstCmpIP;
+        private static string CMPdatabase;
+        private static string CMPuid;
+        private static string CMPpassword;
+
+        
+        public static void SetCMPIP(int inMode)
+        {
+            if(inMode == 1)
+            {
+                CMPserver = "127.0.0.1";
+            }
+            else
+            {
+                CMPserver = ConstCmpIP;
+            }
+        }
+
         public static void SetPassWord(string inString)
         {
             password = inString;
@@ -39,14 +59,16 @@ namespace TMSwPages.Classes
         }
 
 
+
+
         //This method will be used to initialize the connection
         public static void init()
         { 
             //This is a prototype application, so this data will not ever change
             server = "35.193.37.75";
             database = "duane_test";
-            uid = "test";
-            password = "password";
+            //uid = "test";
+            //password = "password";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
 
@@ -115,12 +137,13 @@ namespace TMSwPages.Classes
             }
             else
             {
-                //server = "";
-                //database = "cmp";
-                //uid = "DevOSHT";
-                //password = "Snodgr4ss!";
-                //put the real code here
-                connectionString = "SERVER=" + "159.89.117.198" + ";" + "DATABASE=" + "cmp" + ";" + "UID=" + "DevOSHT" + ";" + "PASSWORD=" + "Snodgr4ss!" + ";";
+
+
+                //CMPserver = "159.89.117.198";
+                CMPdatabase = "cmp";
+                CMPuid = "DevOSHT";
+                CMPpassword = "Snodgr4ss!";
+                connectionString = "SERVER=" + CMPserver + ";" + "DATABASE=" + CMPdatabase + ";" + "UID=" + CMPuid + ";" + "PASSWORD=" + CMPpassword + ";";
             }
             //string connectionString;
 
