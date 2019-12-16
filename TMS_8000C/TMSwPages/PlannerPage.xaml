@@ -82,7 +82,10 @@
                     </DockPanel>
                 </TabItem.Content>
             </TabItem>
-            <TabItem Name="ActiveTickets" Header="Active Tickets">
+            <TabItem Name="ActiveTickets">
+                <TabItem.Header>
+                    <Label Content="Active Tickets" MouseLeftButtonDown="RefreshActiveTickets_Click"/>
+                </TabItem.Header>
                 <TabItem.Content>
                     <Grid Name="ActiveTicketsInnerGrid">
                         <Grid.ColumnDefinitions>
@@ -122,15 +125,19 @@
                     </Grid>
                 </TabItem.Content>
             </TabItem>
-            <TabItem Name="ActiveContracts" Header="Active Contracts">
+            <TabItem Name="ActiveContracts">
+                <TabItem.Header>
+                    <Label Content="Active Contracts" PreviewMouseLeftButtonDown="RefreshActiveContracts_Click" />
+                </TabItem.Header>
                 <TabItem.Content>
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition Width="158*"></ColumnDefinition>
+                            <ColumnDefinition Width="126*"></ColumnDefinition>
+                            <ColumnDefinition Width="33*"/>
+                            <ColumnDefinition Width="159*"></ColumnDefinition>
+                            <ColumnDefinition Width="159*"></ColumnDefinition>
+                            <ColumnDefinition Width="159*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="auto"></RowDefinition>
@@ -139,14 +146,14 @@
                             <RowDefinition Height="1*"></RowDefinition>
                             <RowDefinition Height="auto"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <TextBlock Margin="5,5,5,5" Grid.ColumnSpan="3" Grid.Row="0" Grid.Column="0" TextWrapping="Wrap">Active Contracts:</TextBlock>
-                        <Button x:Name="RefreshActiveContracts" Margin="5,5,5,5" Grid.ColumnSpan="1" Grid.Row="0" Grid.Column="4" Click="RefreshActiveContracts_Click">Refresh Active Contracts</Button>
-                        <Button x:Name="SetOrderToComplete" Margin="5,5,5,5" Grid.ColumnSpan="1" Grid.Row="0" Grid.Column="3" Click="SetOrderToComplete_Click">Set Order To Complete</Button>
+                        <TextBlock Margin="5,5,5,5" Grid.ColumnSpan="4" Grid.Row="0" Grid.Column="0" TextWrapping="Wrap">Active Contracts:</TextBlock>
+                        <Button x:Name="RefreshActiveContracts" Margin="5,5,5,5" Grid.ColumnSpan="1" Grid.Row="0" Grid.Column="5" Click="RefreshActiveContracts_Click">Refresh Active Contracts</Button>
+                        <Button x:Name="SetOrderToComplete" Margin="5,5,5,5" Grid.ColumnSpan="1" Grid.Row="0" Grid.Column="4" Click="SetOrderToComplete_Click">Set Order To Complete</Button>
 
-                        <DataGrid Grid.ColumnSpan="5" Grid.Row="1" Grid.Column="0" Margin="5,5,5,5" Name="DGActiveContracts" ItemsSource="{Binding}" AutoGenerateColumns="True" SelectionChanged="DGActiveContracts_SelectionChanged" SelectionMode="Single" IsReadOnly="True">
+                        <DataGrid Grid.ColumnSpan="6" Grid.Row="1" Grid.Column="0" Margin="5,5,5,5" Name="DGActiveContracts" ItemsSource="{Binding}" AutoGenerateColumns="True" SelectionChanged="DGActiveContracts_SelectionChanged" SelectionMode="Single" IsReadOnly="True">
                         </DataGrid>
-                        <TextBlock Margin="5,5,5,5" Grid.ColumnSpan="4" Grid.Row="2" Grid.Column="0" TextWrapping="Wrap">Tickets Connected to Contract:</TextBlock>
-                        <DataGrid Grid.ColumnSpan="5" Grid.Row="3" Grid.Column="0" Margin="5,5,5,5" Name="DGConnectedTickets" ItemsSource="{Binding}" AutoGenerateColumns="True" IsReadOnly="True">
+                        <TextBlock Margin="5,5,5,5" Grid.ColumnSpan="5" Grid.Row="2" Grid.Column="0" TextWrapping="Wrap">Tickets Connected to Contract:</TextBlock>
+                        <DataGrid Grid.ColumnSpan="6" Grid.Row="3" Grid.Column="0" Margin="5,5,5,5" Name="DGConnectedTickets" ItemsSource="{Binding}" AutoGenerateColumns="True" IsReadOnly="True">
                         </DataGrid>
                     </Grid>
                 </TabItem.Content>
