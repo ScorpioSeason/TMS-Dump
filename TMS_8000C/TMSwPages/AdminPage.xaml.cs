@@ -56,12 +56,9 @@ namespace TMSwPages
             {
                 selectedTab = 0;
 
-                LogStartDate.SelectedDate = (DateTime.Today.AddDays(-7));
-                LogEndDate.SelectedDate = DateTime.Today;
-                LogSearchTags.Focus();
-                LogsList.ItemsSource = logSearchResults;
-                LogLoadClick(null, null);
-                BackupsList.ItemsSource = backupSearchResults;
+                LoadLogTab();
+                LoadBackupTab(); 
+
 
 
                 //Carrier_DataList.ItemsSource = admin.DisplayCarrier();
@@ -339,6 +336,7 @@ namespace TMSwPages
             SQL.WipeEverything();
 
         }
+
         private void UseLocalClick(object sender, RoutedEventArgs e)
         {
             SQL.SetCMPIP(1);
@@ -355,20 +353,38 @@ namespace TMSwPages
         }
 
         private void LoadLogTab() 
-        { 
-        
+        {
+            LogStartDate.SelectedDate = (DateTime.Today.AddDays(-7));
+            LogEndDate.SelectedDate = DateTime.Today;
+            LogSearchTags.Focus();
+            LogsList.ItemsSource = logSearchResults;
+            LogLoadClick(null, null);
         }
         private void LoadBackupTab() 
-        { 
-        
+        {
+            BackupsStartDate.SelectedDate = (DateTime.Today.AddDays(-7));
+            BackupsEndDate.SelectedDate = DateTime.Today;
+            BackupsList.ItemsSource = backupSearchResults;
+            UpdateBackupsList();
         }
         private void LoadCarrierDataTab() 
         {
-        
+            //Carrier_Data.DataContext = admin.DisplayCarrier();
+            //Carrier_DataList.ItemsSource = admin.DisplayCarrier();
+            Carrier_DataLoadClick(null, null);
         }
         private void LoadRouteTab() 
-        { 
-        
+        {
+            //Route_Table.DataContext = admin.DisplayRoutes();
+            //Route_TableList.ItemsSource = admin.DisplayRoutes();
+            Route_TableLoadClick(null, null);
+        }
+
+        private void LoadRateFeeTab()
+        {
+            //Rate_Fee_Tables.DataContext = admin.DisplayFees();
+            //Rate_Fee_TablesList.ItemsSource = admin.DisplayFees();
+            Rate_Fee_TablesClick(null, null);
         }
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -384,35 +400,19 @@ namespace TMSwPages
                         switch (selectedTab)
                         {
                             case (0):
-                                LogStartDate.SelectedDate = (DateTime.Today.AddDays(-7));
-                                LogEndDate.SelectedDate = DateTime.Today;
-                                LogSearchTags.Focus();
-                                LogsList.ItemsSource = logSearchResults;
-                                LogLoadClick(null, null);
+                                LoadLogTab(); 
                                 break;
                             case (1):
-                                //backup
-                                BackupsStartDate.SelectedDate = (DateTime.Today.AddDays(-7));
-                                BackupsEndDate.SelectedDate = DateTime.Today;
-
-                                BackupsList.ItemsSource = backupSearchResults;
-                                UpdateBackupsList();
-
+                                LoadBackupTab();
                                 break;
                             case (2):
-                                //Carrier_Data.DataContext = admin.DisplayCarrier();
-                                //Carrier_DataList.ItemsSource = admin.DisplayCarrier();
-                                Carrier_DataLoadClick(null, null);
+                                LoadCarrierDataTab();
                                 break;
                             case (3):
-                                //Route_Table.DataContext = admin.DisplayRoutes();
-                                //Route_TableList.ItemsSource = admin.DisplayRoutes();
-                                Route_TableLoadClick(null, null);
+                                LoadRouteTab();
                                 break;
                             case (4):
-                                //Rate_Fee_Tables.DataContext = admin.DisplayFees();
-                                //Rate_Fee_TablesList.ItemsSource = admin.DisplayFees();
-                                Rate_Fee_TablesClick(null, null);
+                                LoadRateFeeTab();
                                 break;
                             default:
                                 break;
