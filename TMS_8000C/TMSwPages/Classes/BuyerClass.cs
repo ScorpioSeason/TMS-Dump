@@ -130,6 +130,7 @@ namespace TMSwPages
         }
         public static List<CustomerName> AllCustomers = new List<CustomerName>();
         public static List<FC_LocalContract> ContractsForCustomer = new List<FC_LocalContract>();
+        public static List<FC_LocalContract> SelectedForInvoice= new List<FC_LocalContract>();
     }
     public class CustomerName
     {

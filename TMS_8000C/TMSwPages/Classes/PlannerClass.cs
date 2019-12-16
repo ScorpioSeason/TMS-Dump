@@ -24,7 +24,7 @@ namespace TMSwPages.Classes
 
         public static List<FC_LocalContract> ContractsByName_Populate(string name)
         {
-            string query = "select * from FC_LocalContract where Client_Name = " + name.ToString() + ";";
+            string query = "select * from FC_LocalContract where Client_Name = '" + name.ToString() + "' and Contract_Status = 3;";
             FC_LocalContract temp = new FC_LocalContract();
             return temp.ObjToTable(SQL.Select(temp, query));
         }
