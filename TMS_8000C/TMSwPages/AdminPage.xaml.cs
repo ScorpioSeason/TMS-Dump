@@ -61,9 +61,6 @@ namespace TMSwPages
                 LogSearchTags.Focus();
                 LogsList.ItemsSource = logSearchResults;
                 LogLoadClick(null, null);
-
-                LogsList.ItemsSource = logSearchResults;
-
                 BackupsList.ItemsSource = backupSearchResults;
 
 
@@ -77,32 +74,6 @@ namespace TMSwPages
 
             }
         }
-
-        //public AdminPage(SQL_Query_TMS validatedConnection)
-        //{
-        //    try
-        //    {
-        //        InitializeComponent();
-
-        //        // Load SQL Connection
-        //        admin.SetTMSConnection(validatedConnection);
-
-        //        selectedTab = 0;
-
-        //        LogStartDate.SelectedDate = (DateTime.Today.AddDays(-7));
-        //        LogEndDate.SelectedDate = DateTime.Today;
-        //        LogSearchTags.Focus();
-        //        LogsList.ItemsSource = logSearchResults;
-        //        LogLoadClick(null, null);
-        //    }
-        //    catch (Exception e)
-        //    {
-
-        //    }
-
-        //    /// Bind to incoming log data.
-        //    //this.DataContext = data;
-        //}
 
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
@@ -290,64 +261,6 @@ namespace TMSwPages
             Rate_Fee_TablesList.ItemsSource = d.ObjToTable(SQL.Select(d));
         }
         
-        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (selectedTab != tabber.SelectedIndex)
-            {
-                if ((tabber.SelectedIndex <= 4) && (tabber.SelectedIndex >= -1))
-                {
-                    selectedTab = tabber.SelectedIndex;
-
-                    try
-                    {
-                        switch (selectedTab)
-                        {
-                            case (0):
-                                LogStartDate.SelectedDate = (DateTime.Today.AddDays(-7));
-                                LogEndDate.SelectedDate = DateTime.Today;
-                                LogSearchTags.Focus();
-                                LogsList.ItemsSource = logSearchResults;
-                                LogLoadClick(null, null);
-                                break;
-                            case (1):
-                                //backup
-                                BackupsStartDate.SelectedDate = (DateTime.Today.AddDays(-7));
-                                BackupsEndDate.SelectedDate = DateTime.Today;
-                                
-                                BackupsList.ItemsSource = backupSearchResults;
-                                UpdateBackupsList();
-
-                                break;
-                            case (2):
-                                //Carrier_Data.DataContext = admin.DisplayCarrier();
-                                //Carrier_DataList.ItemsSource = admin.DisplayCarrier();
-                                Carrier_DataLoadClick(null, null);
-                                break;
-                            case (3):
-                                //Route_Table.DataContext = admin.DisplayRoutes();
-                                //Route_TableList.ItemsSource = admin.DisplayRoutes();
-                                Route_TableLoadClick(null, null);
-                                break;
-                            case (4):
-                                //Rate_Fee_Tables.DataContext = admin.DisplayFees();
-                                //Rate_Fee_TablesList.ItemsSource = admin.DisplayFees();
-                                Rate_Fee_TablesClick(null, null);
-                                break;
-                            default:
-                                break;
-                        }
-                        
-                    }
-                    catch (Exception ex)
-                    {
-
-                    }
-
-                }
-                
-            }
-        }
-
         private void RestoreSelected_Click(object sender, RoutedEventArgs e)
         {
             if (BackupsList.SelectedItem != null)
@@ -357,7 +270,6 @@ namespace TMSwPages
 
             UpdateBackupsList();
 
-            // Restore from selected backup point
         }
 
         private void CreateRestore_Click(object sender, RoutedEventArgs e)
@@ -393,13 +305,11 @@ namespace TMSwPages
                 }
             }
 
-            //BackupsList.ItemsSource = backupSearchResults;
             BackupsList.Items.Refresh();
         }
 
         private void ChangeCSVLocation(object sender, RoutedEventArgs e)
         {
-            
             // View Save As File Dialog
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "csv Files (*.csv)|*.csv";
@@ -438,5 +348,86 @@ namespace TMSwPages
         {
             SQL.SetCMPIP(2);
         }
+
+        private void LogDate_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            LogLoadClick(null, null); 
+        }
+
+        private void LoadLogTab() 
+        { 
+        
+        }
+        private void LoadBackupTab() 
+        { 
+        
+        }
+        private void LoadCarrierDataTab() 
+        {
+        
+        }
+        private void LoadRouteTab() 
+        { 
+        
+        }
+
+        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (selectedTab != tabber.SelectedIndex)
+            {
+                if ((tabber.SelectedIndex <= 4) && (tabber.SelectedIndex >= -1))
+                {
+                    selectedTab = tabber.SelectedIndex;
+
+                    try
+                    {
+                        switch (selectedTab)
+                        {
+                            case (0):
+                                LogStartDate.SelectedDate = (DateTime.Today.AddDays(-7));
+                                LogEndDate.SelectedDate = DateTime.Today;
+                                LogSearchTags.Focus();
+                                LogsList.ItemsSource = logSearchResults;
+                                LogLoadClick(null, null);
+                                break;
+                            case (1):
+                                //backup
+                                BackupsStartDate.SelectedDate = (DateTime.Today.AddDays(-7));
+                                BackupsEndDate.SelectedDate = DateTime.Today;
+
+                                BackupsList.ItemsSource = backupSearchResults;
+                                UpdateBackupsList();
+
+                                break;
+                            case (2):
+                                //Carrier_Data.DataContext = admin.DisplayCarrier();
+                                //Carrier_DataList.ItemsSource = admin.DisplayCarrier();
+                                Carrier_DataLoadClick(null, null);
+                                break;
+                            case (3):
+                                //Route_Table.DataContext = admin.DisplayRoutes();
+                                //Route_TableList.ItemsSource = admin.DisplayRoutes();
+                                Route_TableLoadClick(null, null);
+                                break;
+                            case (4):
+                                //Rate_Fee_Tables.DataContext = admin.DisplayFees();
+                                //Rate_Fee_TablesList.ItemsSource = admin.DisplayFees();
+                                Rate_Fee_TablesClick(null, null);
+                                break;
+                            default:
+                                break;
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+
+                }
+
+            }
+        }
+
     }
 }
