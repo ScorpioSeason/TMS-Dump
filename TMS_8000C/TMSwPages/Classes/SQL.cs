@@ -337,10 +337,11 @@ namespace TMSwPages.Classes
                 MySqlCommand cmd = new MySqlCommand(query, connection);
 
                 //Execute command
-                cmd.ExecuteNonQuery();
-
-                TMSBackup.WriteQueryToCurrentFile(new TMSBackupQuery(query));
-
+                if (cmd.ExecuteNonQuery() > 0 )
+                {
+                    TMSBackup.WriteQueryToCurrentFile(new TMSBackupQuery(query));
+                }
+                
                 return true;
             }
             catch (Exception e)
@@ -426,9 +427,10 @@ namespace TMSwPages.Classes
                 MySqlCommand cmd = new MySqlCommand(Query, connection);
 
                 //Execute command
-                cmd.ExecuteNonQuery();
-
-                //TMSBackup.WriteQueryToCurrentFile(new TMSBackupQuery(Query));
+                if (cmd.ExecuteNonQuery() > 0 )
+                {
+                    TMSBackup.WriteQueryToCurrentFile(new TMSBackupQuery(Query));
+                }
 
                 return true;
             }
