@@ -24,6 +24,7 @@ using TMSwPages.Classes;
 
 namespace TMSwPages
 {
+
     // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
     /**   
     *   \class		AdminPage
@@ -50,6 +51,7 @@ namespace TMSwPages
         public AdminPage()
         {
             InitializeComponent();
+            TMSLogger.LogStatusEvent += LogStatusEventHandler;
 
             try
             {
@@ -239,6 +241,15 @@ namespace TMSwPages
             LogsList.ItemsSource = logSearchResults;
             LogsList.Items.Refresh();
             LogSearchClick(null, null);
+
+        }
+
+
+        // Testing the logger event handler...
+        public void LogStatusEventHandler(TMSLog log)
+        {
+            status.Text = "Status: " + log.logMessage;
+            // Handle the event (send it to the status bar)
         }
 
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
