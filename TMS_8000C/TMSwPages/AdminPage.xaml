@@ -267,7 +267,11 @@
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition x:Name="Rate_Fee_TablesControls" Height="auto"/>
-                                <RowDefinition x:Name="Rate_Fee_TablesMain" Height="*"/>
+                                <RowDefinition x:Name="Rate_Fee_TablesMain" Height="129*"/>
+                                <RowDefinition Height="22*"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="129*"/>
                                 <RowDefinition x:Name="Rate_Fee_TablesButtons" Height="auto"/>
                             </Grid.RowDefinitions>
 
@@ -278,7 +282,7 @@
                             <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Click="Rate_Fee_TablesClick" Content="Load"/>
 
                             <!--Main Content Row (1) -->
-                            <DataGrid Grid.ColumnSpan="5" Grid.Row="1" Name="Rate_Fee_TablesList" ItemsSource="{Binding}" Margin="5,5,5,5" SelectionMode="Single" AutoGenerateColumns="False" CanUserAddRows="true" IsReadOnly="false" CurrentCellChanged="Rate_Fee_TablesList_CurrentCellChanged">
+                            <DataGrid Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="5" Name="Rate_Fee_TablesList" ItemsSource="{Binding}" Margin="5,5,5,5" SelectionMode="Single" AutoGenerateColumns="False" CanUserAddRows="true" IsReadOnly="false" CurrentCellChanged="Rate_Fee_TablesList_CurrentCellChanged" SelectionChanged="Rate_Fee_TablesList_SelectionChanged">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="CityName" Binding="{Binding CityName}"/>
                                     <DataGridTextColumn Header="CarrierID" Binding="{Binding FC_CarrierID}" />
@@ -291,6 +295,16 @@
                                 <DataGrid.Resources/>
                             </DataGrid>
 
+                            <ComboBox x:Name="AvalCB" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" MinWidth="200" HorizontalAlignment="Center">
+                                <ComboBoxItem Name="FTL_Availibility" Content="FTL_Availibility"></ComboBoxItem>
+                                <ComboBoxItem Name="LTL_Availibility" Content="LTL_Availibility"></ComboBoxItem>
+                                <ComboBoxItem Name="FTL_Rate" Content="FTL_Rate"></ComboBoxItem>
+                                <ComboBoxItem Name="LTL_Rate" Content="LTL_Rate"></ComboBoxItem>
+                                <ComboBoxItem Name="Reefer_Charge" Content="Reefer_Charge"></ComboBoxItem>
+                            </ComboBox>
+
+                            <TextBox x:Name="NewDataValueTB" Grid.Row="3" Grid.Column="3" Margin="5,5,5,5" Grid.ColumnSpan="2"></TextBox>
+                            <Button x:Name="ConfirmButton" Content="Submit"  Grid.Row="4" Grid.Column="3" Margin="5,5,5,5" Grid.ColumnSpan="2" Click="ConfirmButton_Click"></Button>
                             <!--Buttons Row (2)-->
                             <!--<Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="ChangeLogLocation">Change Log Location...</Button>
                             <Button DockPanel.Dock="Bottom" Grid.Row="2" Grid.Column="4" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="LogViewMoreClick" >View More...</Button>-->
