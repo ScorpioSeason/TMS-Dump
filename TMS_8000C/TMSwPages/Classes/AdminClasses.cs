@@ -247,6 +247,7 @@ namespace TMSwPages.Classes
             }
             catch (Exception e)
             {
+                //TMSLogger.LogIt(" | " + "AdminClasses.cs" + " | " + "TMSLogger" + " | " + "SetDefaultLogFilePath" + " | " + e.GetType().ToString() + " | " + e.Message + " | ");
                 // error finding/starting logger file. 
             }
 
@@ -374,7 +375,7 @@ namespace TMSwPages.Classes
             /// If an exception is thrown here, catch it
             catch (Exception e)
             {
-                /// This could become problematic as it calls itself
+                /// This could become problematic if it calls itself
                 LogIt("|" + thisFileDir + "/AdminClasses.cs" + "|" + "TMSLogger" + "|" + "AppendLogFile" + "|" + "Exception" + "|" + e.Message + "|");
                 appendSuccess = false;
             }
@@ -566,7 +567,7 @@ namespace TMSwPages.Classes
                 }
                 catch (Exception ex)
                 {
-                    //TMSLogger.LogIt("|" + "/AdminPage.xaml.cs" + "|" + "AdminPage" + "|" + "ChangeLogLocation" + "|" + ex.GetType() + "|" + ex.Message + "|");
+                    TMSLogger.LogIt(" | " + "AdminClasses.cs" + " | " + "TMSBackup" + " | " + "CreateRestorePoint" + " | " + ex.GetType().ToString() + " | " + ex.Message + " | ");
                     saveSuccess = false;
                 }
 
@@ -614,7 +615,7 @@ namespace TMSwPages.Classes
             /// If an exception is thrown here, create a log for it. 
             catch (Exception e)
             {
-                TMSLogger.LogIt("|" + thisFileDir + "/AdminClasses.cs" + "|" + "TMSLogger" + "|" + "ReadExistingLogFile" + "|" + "Exception" + "|" + e.Message + "|");
+                TMSLogger.LogIt(" | " + "AdminClasses.cs" + " | " + "TMSBackup" + " | " + "RecoverRestorePoint" + " | " + e.GetType().ToString() + " | " + e.Message + " | ");
                 readSuccess = false;
             }
 
@@ -662,7 +663,7 @@ namespace TMSwPages.Classes
             }
             catch (Exception ex)
             {
-                //TMSLogger.LogIt("|" + "/AdminPage.xaml.cs" + "|" + "AdminPage" + "|" + "ChangeLogLocation" + "|" + ex.GetType() + "|" + ex.Message + "|");
+                TMSLogger.LogIt(" | " + "AdminClasses.cs" + " | " + "TMSBackup" + " | " + "ChangeBackupPath" + " | " + ex.GetType().ToString() + " | " + ex.Message + " | ");
                 saveSuccess = false;
             }
 
@@ -684,7 +685,7 @@ namespace TMSwPages.Classes
             }
             catch (Exception e)
             {
-
+                TMSLogger.LogIt(" | " + "AdminClasses.cs" + " | " + "TMSBackup" + " | " + "ReadInBackupsList" + " | " + e.GetType().ToString() + " | " + e.Message + " | ");
             }
                
         }
