@@ -114,7 +114,10 @@
             </TabItem>
 
             <!--This is the content of the Initiate Order tab-->
-            <TabItem Name="ReviewCompletedOrders" Header="Review Completed Orders??">
+            <TabItem Name="ReviewCompletedOrders">
+                <TabItem.Header>
+                    <Label Content="Review Completed Orders" MouseLeftButtonDown="RefreshCustomers_2"/>
+                </TabItem.Header>
 
                 <!--ReviewCompletedOrders Tab-->
                 <TabItem.Content>
