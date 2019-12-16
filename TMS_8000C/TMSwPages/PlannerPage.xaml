@@ -158,8 +158,11 @@
                     </Grid>
                 </TabItem.Content>
             </TabItem>
-            <TabItem Name="PendingTickets" Header="Pending Tickets" Height="22" VerticalAlignment="Top">
-                <TabItem.Content>
+            <TabItem Name="PendingTickets">
+                <TabItem.Header>
+                    <Label Content="Pending Tickets" MouseLeftButtonDown="RefeshPendingTickets_Click" />
+                </TabItem.Header>
+            <TabItem.Content>
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="159*"></ColumnDefinition>
