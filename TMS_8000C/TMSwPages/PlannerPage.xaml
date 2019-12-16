@@ -40,7 +40,10 @@
         <!--These tabs allow different functions of the Planner to be accessed from one main page-->
         <TabControl Name="PlannerTabs" Grid.Row="1" SelectionChanged="TabControl_SelectionChanged" Grid.RowSpan="2">
             <!--This is the content of the Available Contracts tab-->
-            <TabItem Name="PendingCarriers" Header="Contracts Pending Carriers" >
+            <TabItem Name="PendingCarriers">
+                <TabItem.Header>
+                    <Label Content="Contracts Pending Carriers" MouseLeftButtonDown="LoadContracts_Click"/>
+                </TabItem.Header>
                 <!--PendingCarriers Tab-->
                 <TabItem.Content>
                     <DockPanel>
