@@ -168,7 +168,7 @@ namespace TMSwPages.Classes
             {
                 connectionString = "SERVER=" + "127.0.0.1" + ";" + "DATABASE=" + "Ivan_Test" + ";" + "UID=" + "root" + ";" + "PASSWORD=" + "Conestoga1" + ";";
             }
-            else
+            else 
             {
 
                 //CMPserver = "159.89.117.198";
