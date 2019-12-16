@@ -43,8 +43,12 @@ namespace TMSwPages.Classes
                 outData.totalKM += x.KM;
             }
 
+            TMSLogger.LogIt(" | " + "MappingClass.cs" + " | " + "RouteSumData" + " | " + "SummerizeTrip" + " | " + "Confirmation" + " | " + "Trip summarized" + " | ");
+
             return outData;
+
         }
+
     };
 
     // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
@@ -165,6 +169,8 @@ namespace TMSwPages.Classes
                 nodes[i].WestHour = WestHourArray[i];
             }
 
+            TMSLogger.LogIt(" | " + "MappingClass.cs" + " | " + "MappingClass" + " | " + "Constructor" + " | " + "Confirmation" + " | " + "Mapping Class created" + " | ");
+
             int k = 0;
         }
 
@@ -193,59 +199,67 @@ namespace TMSwPages.Classes
                 FTL = false;
             }
 
-            //figure out if we need to travel east or west
-            CityNode current = nodes.Find(x => x.CityID == OriginID);
-            CityNode nextCity;
-
-            List<FC_RouteSeg> returnList = new List<FC_RouteSeg>();
-
-            if (OriginID >= 0 && OriginID < Number_of_Cities && DestinationID >= 0 && DestinationID < Number_of_Cities && OriginID != DestinationID)
+            try
             {
-                do
+                //figure out if we need to travel east or west
+                CityNode current = nodes.Find(x => x.CityID == OriginID);
+                CityNode nextCity;
+                List<FC_RouteSeg> returnList = new List<FC_RouteSeg>();
+
+                if (OriginID >= 0 && OriginID < Number_of_Cities && DestinationID >= 0 && DestinationID < Number_of_Cities && OriginID != DestinationID)
                 {
-                    FC_RouteSeg tripDataPassBack = new FC_RouteSeg(InTicketID, 0, 0, 0, 0, 0, 0, 0);
-
-                    if (OriginID > DestinationID)
+                    do
                     {
-                        //going west
-                        nextCity = current.West;
-                        tripDataPassBack.KM = current.WestKM;
-                        tripDataPassBack.DrivenTime = current.WestHour;
-                    }
-                    else
-                    {
-                        //going east
-                        nextCity = current.East;
-                        tripDataPassBack.KM = current.EastKM;
-                        tripDataPassBack.DrivenTime = current.EastHour;
-                    }
+                        FC_RouteSeg tripDataPassBack = new FC_RouteSeg(InTicketID, 0, 0, 0, 0, 0, 0, 0);
 
-                    tripDataPassBack.CityA = current.CityID;
-                    tripDataPassBack.CityB = nextCity.CityID;
+                        if (OriginID > DestinationID)
+                        {
+                            //going west
+                            nextCity = current.West;
+                            tripDataPassBack.KM = current.WestKM;
+                            tripDataPassBack.DrivenTime = current.WestHour;
+                        }
+                        else
+                        {
+                            //going east
+                            nextCity = current.East;
+                            tripDataPassBack.KM = current.EastKM;
+                            tripDataPassBack.DrivenTime = current.EastHour;
+                        }
 
-                    if (current.CityID == OriginID)
-                    {
-                        tripDataPassBack.PickUpTime += 2;
-                    }
+                        tripDataPassBack.CityA = current.CityID;
+                        tripDataPassBack.CityB = nextCity.CityID;
 
-                    if (nextCity.CityID == DestinationID)
-                    {
-                        tripDataPassBack.DropOffTime += 2;
-                    }
+                        if (current.CityID == OriginID)
+                        {
+                            tripDataPassBack.PickUpTime += 2;
+                        }
 
-                    if (!FTL && (nextCity.CityID != DestinationID))
-                    {
-                        tripDataPassBack.LtlTime += 2;
-                    }
+                        if (nextCity.CityID == DestinationID)
+                        {
+                            tripDataPassBack.DropOffTime += 2;
+                        }
+
+                        if (!FTL && (nextCity.CityID != DestinationID))
+                        {
+                            tripDataPassBack.LtlTime += 2;
+                        }
 
 
-                    returnList.Add(tripDataPassBack);
+                        returnList.Add(tripDataPassBack);
 
-                    current = nextCity;
+                        current = nextCity;
 
-                } while (nextCity.CityID != DestinationID);
+                    } while (nextCity.CityID != DestinationID);
 
-                return returnList;
+                    TMSLogger.LogIt(" | " + "MappingClass.cs" + " | " + "MappingClass" + " | " + "GetTravelData" + " | " + "Confirmation" + " | " + "Route List calculated" + " | ");
+
+                    return returnList;
+                }
+            }
+            catch (Exception e)
+            {
+                TMSLogger.LogIt(" | " + "MappingClass.cs" + " | " + "MappingClass" + " | " + "GetTravelData" + " | " + e.GetType().ToString() + " | " + e.Message + " | ");
             }
 
             return null;
@@ -284,6 +298,7 @@ namespace TMSwPages.Classes
             }
 
             return  false;
+
         }
 
         // SummerizeTrip METHOD HEADER COMMENT -------------------------------------------------------------------------------

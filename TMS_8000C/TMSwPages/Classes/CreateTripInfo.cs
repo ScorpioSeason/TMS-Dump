@@ -45,6 +45,9 @@ namespace TMSwPages.Classes
 
             FC_TripTicketLine tripTicketLine = new FC_TripTicketLine(theTicket.FC_TripTicketID, inContract.FC_LocalContractID, partTicket.Size_in_Palettes);
             SQL.Insert(tripTicketLine);
+
+            TMSLogger.LogIt(" | " + "CreateTripInfo.cs" + " | " + "CreateTripInfo" + " | " + "CreateTripInfo" + " | " + "Confirmation" + " | " + "Trip info created" + " | ");
+
         }
     }
 }
