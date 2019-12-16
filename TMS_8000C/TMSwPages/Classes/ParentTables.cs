@@ -612,8 +612,8 @@ namespace TMSwPages.Classes
             RouteSumData TotalData = new RouteSumData();
             TotalData = TotalData.SummerizeTrip(TicketSegs);
 
-            //progress = (int)(100 * (TraveledData.totalKM / TotalData.totalKM));
-            progress = 86;
+            progress = (100 * (TraveledData.totalKM / TotalData.totalKM));
+            //progress = 86;
         }
     }
 

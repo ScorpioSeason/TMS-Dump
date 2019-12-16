@@ -34,7 +34,7 @@
         <DataGrid x:Name="AllTickets" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="0" ItemsSource="{Binding}" Margin="5,5,5,5" SelectionMode="Single" CanUserAddRows="False" IsReadOnly="True" SelectionChanged="AllTickets_SelectionChanged"></DataGrid>
 
         <DataGrid x:Name="NominatedCarrierDG" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" ItemsSource="{Binding}"  Margin="5,5,5,5" SelectionMode="Single" CanUserAddRows="False" IsReadOnly="True" SelectionChanged="NominatedCarrierDG_SelectionChanged"></DataGrid>
-        <Label Content="Tickets Pre this Contract" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5">
+        <Label Content="Tickets Per this Contract" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
