@@ -225,7 +225,7 @@ namespace TMSwPages.Classes
         {
             List<FC_TripTicket> ReturnTickets = new List<FC_TripTicket>();
 
-            if (InContract == null)
+            if (InContract != null)
             {
                 int TempTickedID = -10;
 

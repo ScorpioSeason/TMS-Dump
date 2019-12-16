@@ -6,8 +6,11 @@ namespace TMSwPages.Classes
     {
         public static void IncrementOneDay()
         {
+
+            string FirstQuery = "Select * from FC_TripTicket where not Is_Complete = 0;";
+
             FC_TripTicket t = new FC_TripTicket();
-            List<FC_TripTicket> AllTickets = t.ObjToTable(SQL.Select(t));
+            List<FC_TripTicket> AllTickets = t.ObjToTable(SQL.Select(t, FirstQuery));
 
             foreach (FC_TripTicket x in AllTickets)
             {
