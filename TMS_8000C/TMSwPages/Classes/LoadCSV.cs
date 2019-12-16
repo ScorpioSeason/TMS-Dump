@@ -104,6 +104,8 @@ namespace TMSwPages.Classes
                 }
             }
 
+            TMSLogger.LogIt(" | " + "LoadCSV.cs" + " | " + "LoadCSV" + " | " + "Load" + " | " + "Confirmation" + " | " + "CSV Loaded" + " | ");
+
             return worked;
         }
 
