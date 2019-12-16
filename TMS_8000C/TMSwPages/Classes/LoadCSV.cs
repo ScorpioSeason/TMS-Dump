@@ -99,6 +99,7 @@ namespace TMSwPages.Classes
                 catch (Exception e)
                 {
                     //Console.WriteLine(e.ToString());
+                    TMSLogger.LogIt(" | " + "LoadCSV.cs" + " | " + "LoadCSV" + " | " + "Load" + " | " + e.GetType().ToString() + " | " + e.Message + " | ");
                     worked = false;
                 }
             }
