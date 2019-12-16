@@ -11,20 +11,40 @@
  *
  * =========================================================================================================== */
 
+using System;
+using System.Windows;
 using System.Windows.Navigation;
 using TMSwPages.Classes;
 
 namespace TMSwPages
 {
+    public delegate void LogStatusDelegate(TMSLog log);
+
     /// \summary This is the Interaction Logic for the main navigation window
     public partial class MainWindow : NavigationWindow
     {
         public MainWindow()
         {
             InitializeComponent();
+            TMSStartup(); 
+        }
 
+        private void TMSStartup()
+        {
             TMSLogger.SetDefaultLogFilePath(); // Initialize logger location when app opens
             TMSBackup.SetDefaultBackupFilePath();
+            //TMSLogger.LogStatusEvent += LogStatusEventHandler;
+        }
+
+        //public void LogStatusEventHandler(TMSLog log) 
+        //{ 
+        //    // Handle the event (send it to the status bar)
+        //}
+
+        private void NavigationWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            SQL.close(); 
         }
     }
+
 }

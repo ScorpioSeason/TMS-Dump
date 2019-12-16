@@ -36,191 +36,191 @@ namespace TMSwPages.Classes
     * -------------------------------------------------------------------------------------------------------- */
     public class Admin
     {
-        //SQL_Query_TMS adminTMSConnection = null;
-        string query = "";
+        ////SQL_Query_TMS adminTMSConnection = null;
+        //string query = "";
 
 
-        // public List<Carrier> carrierTable = new List<Carrier>();
-        //public List<Route> routeTable = new List<Route>();
-        //public List<Fee> feeTable = new List<Fee>();
+        //// public List<Carrier> carrierTable = new List<Carrier>();
+        ////public List<Route> routeTable = new List<Route>();
+        ////public List<Fee> feeTable = new List<Fee>();
 
-        //public void SetTMSConnection(SQL_Query_TMS validConnection)
-        //{
-        //    adminTMSConnection = validConnection;
-        //}
-        //public SQL_Query_TMS GetTMSConnection()
-        //{
-        //    return adminTMSConnection;
-        //}
+        ////public void SetTMSConnection(SQL_Query_TMS validConnection)
+        ////{
+        ////    adminTMSConnection = validConnection;
+        ////}
+        ////public SQL_Query_TMS GetTMSConnection()
+        ////{
+        ////    return adminTMSConnection;
+        ////}
 
-        public List<string>[] DisplayCarrier() {
+        //public List<string>[] DisplayCarrier() {
 
-            int numColumns = 0;
-            List<string> columnNames = new List<string>();
-            List<string>[] columns = null; 
+        //    int numColumns = 0;
+        //    List<string> columnNames = new List<string>();
+        //    List<string>[] columns = null; 
 
-            try
-            {
-                query = "SELECT * FROM Carrier;";
-                columnNames.Clear();
-                columnNames.Add("CarrierID");
-                columnNames.Add("Carrier_Name");
-                numColumns = columnNames.Count();
-                
-                columns = new List<string>[numColumns];
-
-                //if (adminTMSConnection.OpenConnection() == true)
-                //{
-                //    MySqlCommand command = new MySqlCommand(query, adminTMSConnection._connection);
-                //    MySqlDataReader dataReader = command.ExecuteReader();
-
-                //    while (dataReader.Read())
-                //    {
-                //        int i = 0;
-
-                //        foreach (string s in columnNames)
-                //        {
-                //            columns[i].Add(dataReader[s] + "");
-                //            i++;
-                //        }
-
-                //    }
-
-                //    dataReader.Close();
-
-                //    adminTMSConnection.CloseConnection();
-                //}
-
-                return columns;
-            }
-            catch (Exception e)
-            {
-                return columns;
-            }
-            
-        }
-
-        public List<string>[] DisplayRoutes()
-        {
-            int numColumns = 0;
-            List<string> columnNames = new List<string>();
-            List<string>[] columns = null;
-
-            try
-            {
-                query = "SELECT * FROM RouteData;";
-                columnNames.Clear();
-                columnNames.Add("RouteDataID");
-                columnNames.Add("CityA");
-                columnNames.Add("CityB");
-                columnNames.Add("PickUpTime");
-                columnNames.Add("DropOffTime");
-                columnNames.Add("LtlTime");
-                columnNames.Add("DrivenTime");
-                numColumns = columnNames.Count();
-                
-                columns = new List<string>[numColumns];
-
-                //if (adminTMSConnection.OpenConnection() == true)
-                //{
-                //    MySqlCommand command = new MySqlCommand(query, adminTMSConnection._connection);
-                //    MySqlDataReader dataReader = command.ExecuteReader();
-
-                //    while (dataReader.Read())
-                //    {
-                //        int i = 0;
-
-                //        foreach (string s in columnNames)
-                //        {
-                //            columns[i].Add(dataReader[s] + "");
-                //            i++;
-                //        }
-
-                //    }
-
-                //    dataReader.Close();
-
-                //    adminTMSConnection.CloseConnection();
-                //}
-
-                return columns;
-            }
-            catch (Exception e)
-            {
-                return columns;
-            }
-        }
-
-        //public List<CarrierDepot> DisplayFees()
-        //{
-        //    List<string>[] columns = new List<string>[7];
-        //    List<CarrierDepot> ReadInData = new List<CarrierDepot>();
-
-        //    for (int i = 0; i < 7; i++)
-        //    {
-        //        columns[i] = new List<string>();
-        //    }
-            
         //    try
         //    {
-        //        query = "SELECT * FROM CarrierDepot;";
-                       
-        //        if (adminTMSConnection.OpenConnection() == true)
-        //        {
-        //            MySqlCommand command = new MySqlCommand(query, adminTMSConnection._connection);
-        //            MySqlDataReader dataReader = command.ExecuteReader();
+        //        query = "SELECT * FROM Carrier;";
+        //        columnNames.Clear();
+        //        columnNames.Add("CarrierID");
+        //        columnNames.Add("Carrier_Name");
+        //        numColumns = columnNames.Count();
+                
+        //        columns = new List<string>[numColumns];
 
-        //            while (dataReader.Read())
-        //            {
-        //                columns[0].Add(dataReader["CityName"] + "");
-        //                columns[1].Add(dataReader["CarrierID"] + "");
-        //                columns[2].Add(dataReader["FTL_Availibility"] + "");// spelled wrong in database
-        //                columns[3].Add(dataReader["LTL_Availibility"] + "");
-        //                columns[4].Add(dataReader["FTL_Rate"] + "");
-        //                columns[5].Add(dataReader["LTL_Rate"] + "");
-        //                columns[6].Add(dataReader["Reefer_Charge"] + "");
+        //        //if (adminTMSConnection.OpenConnection() == true)
+        //        //{
+        //        //    MySqlCommand command = new MySqlCommand(query, adminTMSConnection._connection);
+        //        //    MySqlDataReader dataReader = command.ExecuteReader();
 
-        //            }
+        //        //    while (dataReader.Read())
+        //        //    {
+        //        //        int i = 0;
 
-        //            dataReader.Close();
-                    
-        //            for (int i = 0; i < columns[0].Count(); i++)
-        //            {
-        //                CarrierDepot current = new CarrierDepot();
+        //        //        foreach (string s in columnNames)
+        //        //        {
+        //        //            columns[i].Add(dataReader[s] + "");
+        //        //            i++;
+        //        //        }
 
-        //                current.CityName = columns[0][i];
-        //                current.CarrierID = Int32.Parse(columns[1][i]);
-        //                current.FTL_Availibility = Int32.Parse(columns[2][i]);
-        //                current.LTL_Availibility = Int32.Parse(columns[3][i]);
-        //                current.FTL_Rate = Double.Parse(columns[4][i]);
-        //                current.LTL_Rate = Double.Parse(columns[5][i]);
-        //                current.Reefer_Charge = Double.Parse(columns[6][i]);
+        //        //    }
 
-        //                ReadInData.Add(current); 
-        //            }
+        //        //    dataReader.Close();
 
-        //            adminTMSConnection.CloseConnection();
+        //        //    adminTMSConnection.CloseConnection();
+        //        //}
 
-        //        }
-
-        //        return ReadInData;
+        //        return columns;
         //    }
         //    catch (Exception e)
         //    {
-        //        return ReadInData;
+        //        return columns;
         //    }
-
             
         //}
+
+        //public List<string>[] DisplayRoutes()
+        //{
+        //    int numColumns = 0;
+        //    List<string> columnNames = new List<string>();
+        //    List<string>[] columns = null;
+
+        //    try
+        //    {
+        //        query = "SELECT * FROM RouteData;";
+        //        columnNames.Clear();
+        //        columnNames.Add("RouteDataID");
+        //        columnNames.Add("CityA");
+        //        columnNames.Add("CityB");
+        //        columnNames.Add("PickUpTime");
+        //        columnNames.Add("DropOffTime");
+        //        columnNames.Add("LtlTime");
+        //        columnNames.Add("DrivenTime");
+        //        numColumns = columnNames.Count();
+                
+        //        columns = new List<string>[numColumns];
+
+        //        //if (adminTMSConnection.OpenConnection() == true)
+        //        //{
+        //        //    MySqlCommand command = new MySqlCommand(query, adminTMSConnection._connection);
+        //        //    MySqlDataReader dataReader = command.ExecuteReader();
+
+        //        //    while (dataReader.Read())
+        //        //    {
+        //        //        int i = 0;
+
+        //        //        foreach (string s in columnNames)
+        //        //        {
+        //        //            columns[i].Add(dataReader[s] + "");
+        //        //            i++;
+        //        //        }
+
+        //        //    }
+
+        //        //    dataReader.Close();
+
+        //        //    adminTMSConnection.CloseConnection();
+        //        //}
+
+        //        return columns;
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        return columns;
+        //    }
+        //}
+
+        ////public List<CarrierDepot> DisplayFees()
+        ////{
+        ////    List<string>[] columns = new List<string>[7];
+        ////    List<CarrierDepot> ReadInData = new List<CarrierDepot>();
+
+        ////    for (int i = 0; i < 7; i++)
+        ////    {
+        ////        columns[i] = new List<string>();
+        ////    }
+            
+        ////    try
+        ////    {
+        ////        query = "SELECT * FROM CarrierDepot;";
+                       
+        ////        if (adminTMSConnection.OpenConnection() == true)
+        ////        {
+        ////            MySqlCommand command = new MySqlCommand(query, adminTMSConnection._connection);
+        ////            MySqlDataReader dataReader = command.ExecuteReader();
+
+        ////            while (dataReader.Read())
+        ////            {
+        ////                columns[0].Add(dataReader["CityName"] + "");
+        ////                columns[1].Add(dataReader["CarrierID"] + "");
+        ////                columns[2].Add(dataReader["FTL_Availibility"] + "");// spelled wrong in database
+        ////                columns[3].Add(dataReader["LTL_Availibility"] + "");
+        ////                columns[4].Add(dataReader["FTL_Rate"] + "");
+        ////                columns[5].Add(dataReader["LTL_Rate"] + "");
+        ////                columns[6].Add(dataReader["Reefer_Charge"] + "");
+
+        ////            }
+
+        ////            dataReader.Close();
+                    
+        ////            for (int i = 0; i < columns[0].Count(); i++)
+        ////            {
+        ////                CarrierDepot current = new CarrierDepot();
+
+        ////                current.CityName = columns[0][i];
+        ////                current.CarrierID = Int32.Parse(columns[1][i]);
+        ////                current.FTL_Availibility = Int32.Parse(columns[2][i]);
+        ////                current.LTL_Availibility = Int32.Parse(columns[3][i]);
+        ////                current.FTL_Rate = Double.Parse(columns[4][i]);
+        ////                current.LTL_Rate = Double.Parse(columns[5][i]);
+        ////                current.Reefer_Charge = Double.Parse(columns[6][i]);
+
+        ////                ReadInData.Add(current); 
+        ////            }
+
+        ////            adminTMSConnection.CloseConnection();
+
+        ////        }
+
+        ////        return ReadInData;
+        ////    }
+        ////    catch (Exception e)
+        ////    {
+        ////        return ReadInData;
+        ////    }
+
+            
+        ////}
         
-        public void SelectData() { }
-        public void DeleteSelection() { }
-        public void AddNew()
-        {
-            // column
-            // row
-            // cell
-        }
+        //public void SelectData() { }
+        //public void DeleteSelection() { }
+        //public void AddNew()
+        //{
+        //    // column
+        //    // row
+        //    // cell
+        //}
 
     }
 
@@ -272,6 +272,8 @@ namespace TMSwPages.Classes
                 /// Error writing to Log File: Try once again
                 AppendLogFile(myLog);
             };
+
+            LogStatusEvent(myLog);
 
         }
 
@@ -380,6 +382,9 @@ namespace TMSwPages.Classes
             return appendSuccess;
 
         }
+
+
+        static public event LogStatusDelegate LogStatusEvent;
 
     }
 
