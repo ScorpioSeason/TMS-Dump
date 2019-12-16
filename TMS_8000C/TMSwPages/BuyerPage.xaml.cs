@@ -236,7 +236,7 @@ namespace TMSwPages
         private void RefreshCustomers_2(object sender, RoutedEventArgs e)
         {
             BuyerClass.AllCustomers.Clear();
-            BuyerClass.AllCustomers = SQL.GetAllCustomerNames();
+            BuyerClass.AllCustomers = SQL.GetAllCustomerNames(); 
             DGCustomers.ItemsSource = null;
             DGCustomers.ItemsSource = BuyerClass.AllCustomers;
         }
