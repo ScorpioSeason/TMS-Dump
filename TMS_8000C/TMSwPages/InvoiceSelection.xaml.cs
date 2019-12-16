@@ -45,18 +45,23 @@ namespace TMSwPages
         private void ConfirmInvoice_Click(object sender, RoutedEventArgs e)
         {
 
-            FC_Invoice invTemp = PlannerClass.GenerateInvoice(BuyerClass.SelectedForInvoice[0]);
-            PlannerClass.InsertInvoice(invTemp, BuyerClass.SelectedForInvoice[0]);
-
-            BuyerClass.SelectedForInvoice.Remove(BuyerClass.SelectedForInvoice[0]);
-            
-            foreach(FC_LocalContract c in BuyerClass.SelectedForInvoice)
+            if(BuyerClass.SelectedForInvoice != null)
             {
-                PlannerClass.AddContractToInvoices(invTemp, c);
+                FC_Invoice invTemp = PlannerClass.GenerateInvoice(BuyerClass.SelectedForInvoice[0]);
+                PlannerClass.InsertInvoice(invTemp, BuyerClass.SelectedForInvoice[0]);
+
+                BuyerClass.SelectedForInvoice.Remove(BuyerClass.SelectedForInvoice[0]);
+
+                foreach (FC_LocalContract c in BuyerClass.SelectedForInvoice)
+                {
+                    PlannerClass.AddContractToInvoices(invTemp, c);
+                }
+
+                BuyerPage newpage = new BuyerPage();
+                this.NavigationService.Navigate(newpage);
             }
 
-            BuyerPage newpage = new BuyerPage();
-            this.NavigationService.Navigate(newpage);
+            
         }
     }
 }

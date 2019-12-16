@@ -1,17 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using TMSwPages.Classes;
 
 namespace TMSwPages
@@ -80,28 +70,6 @@ namespace TMSwPages
             NomContractList.ItemsSource = PlannerClass.GetNominatedContracts();
             NomContractList.Items.Refresh();
         }
-
-        //private void SelectCarriers_Click(object sender, RoutedEventArgs e)
-        //{
-        //    if (NomContractList.SelectedItem != null)
-        //    {
-        //        PlannerCarriersWDepo newpage = new PlannerCarriersWDepo(this.NomContractList.SelectedItem);
-        //        this.NavigationService.Navigate(newpage);
-        //    }
-
-        //}
-
-        //private void NavCarriersDepots_Click(object sender, RoutedEventArgs e)
-        //{
-        //    if (NomContractList.SelectedItem != null)
-        //    {
-        //        FC_LocalContract t = (FC_LocalContract)NomContractList.SelectedCells[0].Item;
-
-        //        SelectCarriersPage newpage = new SelectCarriersPage(t);
-        //        this.NavigationService.Navigate(newpage);
-        //    }
-        //}
-        
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -203,8 +171,7 @@ namespace TMSwPages
         }
         public static List<FC_TripTicket_WProgress> progresses = new List<FC_TripTicket_WProgress>();
         private void DGActiveContracts_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-           
+        {  
             foreach (FC_LocalContract c in DGActiveContracts.SelectedItems)
             {
                 PlannerClass.ConnectedTickets_Populate(c);
