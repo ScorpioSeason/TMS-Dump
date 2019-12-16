@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -264,6 +265,55 @@ namespace TMSwPages
         {
             InvoiceSelection newpage = new InvoiceSelection();
             this.NavigationService.Navigate(newpage);
+        }
+
+        private void ReadFolder_Click(object sender, RoutedEventArgs e)
+        {
+            Folder.Items.Clear(); 
+
+            foreach (string file in Directory.EnumerateFiles(Directory.GetCurrentDirectory() + "/Invoices", "*.txt"))
+            {
+                FileInfo fi = new FileInfo(file);
+
+                Folder.Items.Add(fi.FullName);
+
+            }
+            
+        }
+
+        private void Folder_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (Folder.SelectedItem != null)
+            {
+                string viewInvoice = (string)Folder.SelectedItem;
+
+                ViewInvoice.Text = "";
+
+                try
+                {
+
+                    /// Open the file stream to read from the file
+                    FileStream fileStream = new FileStream((viewInvoice), FileMode.Open, FileAccess.Read);
+                    StreamReader streamReader = new StreamReader(fileStream);
+
+                    /// Fill the working list with lines from the file 
+                    while (!streamReader.EndOfStream)
+                    {
+                        ViewInvoice.Text += streamReader.ReadLine(); 
+                    }
+
+                    /// Close the file
+                    streamReader.Close(); fileStream.Close();
+                }
+                /// If an exception is thrown here, create a log for it. 
+                catch (Exception ex)
+                {
+                    TMSLogger.LogIt("|" + "/BuyerPage.xaml.cs" + "|" + "BuyerPage" + "|" + "Folder_SelectionChanged" + "|" + ex.GetType().ToString() + "|" + ex.Message + "|");
+                    
+                }
+
+
+            }
         }
     }
 }
