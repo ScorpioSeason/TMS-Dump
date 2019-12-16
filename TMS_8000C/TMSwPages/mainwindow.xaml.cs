@@ -11,6 +11,7 @@
  *
  * =========================================================================================================== */
 
+using System.Windows;
 using System.Windows.Navigation;
 using TMSwPages.Classes;
 
@@ -25,6 +26,12 @@ namespace TMSwPages
 
             TMSLogger.SetDefaultLogFilePath(); // Initialize logger location when app opens
             TMSBackup.SetDefaultBackupFilePath();
+
+        }
+
+        private void NavigationWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            SQL.close(); 
         }
     }
 }
