@@ -163,13 +163,12 @@
                             <RowDefinition Height="auto"></RowDefinition>
                         </Grid.RowDefinitions>
                         <Button x:Name="ReadFolder" Grid.Column="0" Grid.Row="0" Margin="5,5,5,5" Click="ReadFolder_Click">Read All Invoices</Button>
-                        <DataGrid SelectionChanged="Folder_SelectionChanged" x:Name="Folder" SelectionMode="Single" IsReadOnly="True"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" Margin="5,5,5,5">
+                        <DataGrid x:Name="Folder" SelectionMode="Single" IsReadOnly="True"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" Margin="5,5,5,5">
                         </DataGrid>
                         <TextBlock Margin="5,5,5,5" x:Name="ViewInvoice" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"></TextBlock>
 
                         <!--Buttons Row (2) -->
-                        <Button Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" VerticalAlignment="Bottom" Click="ChangeLogLocation" Content="Display Invoice"/>
-                        <Button Grid.Row="2" Grid.Column="4" Margin="5,5,5,5" VerticalAlignment="Bottom"  Content=".." />
+                        <Button Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" VerticalAlignment="Bottom" Content="Display Invoice" Click="ReacInvlocesFromDatabase"/>
 
                     </Grid>
                 </TabItem.Content>

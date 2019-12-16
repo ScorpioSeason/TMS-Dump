@@ -23,6 +23,7 @@ namespace TMSwPages
     public partial class BuyerPage : Page
     {
         static int selectedTab = -1;
+        List<string> invoiceFiles = new List<string>(); 
 
         //public static string a = "";
 
@@ -45,6 +46,8 @@ namespace TMSwPages
             DG1.ItemsSource = BuyerClass.Contracts;
             DG2.ItemsSource = BuyerClass.acceptedContracts;
             TMSLogger.LogStatusEvent += LogStatusEventHandler;
+
+            Folder.ItemsSource = invoiceFiles; 
         }
 
         public void LogStatusEventHandler(TMSLog log)
@@ -273,23 +276,37 @@ namespace TMSwPages
 
         private void ReadFolder_Click(object sender, RoutedEventArgs e)
         {
-            Folder.Items.Clear(); 
+            invoiceFiles.Clear(); 
 
             foreach (string file in Directory.EnumerateFiles(Directory.GetCurrentDirectory() + "/Invoices", "*.txt"))
             {
                 FileInfo fi = new FileInfo(file);
 
-                Folder.Items.Add(fi.FullName);
+                invoiceFiles.Add(fi.FullName);
 
             }
-            
+            Folder.Items.Refresh(); 
         }
 
-        private void Folder_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ChangeLogLocation(object sender, RoutedEventArgs e)
         {
+
+        }
+
+        private void ReacInvlocesFromDatabase(object sender, RoutedEventArgs e)
+        {
+            DirectoryInfo d = new DirectoryInfo(@"./Invoices/");//Assuming Test is your Folder
+
+            //FileInfo fi = new FileInfo(d);
+            //if (fi.Exists == false)
+            //{
+            //    Directory.CreateDirectory(invoiceDir);
+            //}
+
             if (Folder.SelectedItem != null)
             {
                 string viewInvoice = (string)Folder.SelectedItem;
+                string invoiceText = "";
 
                 ViewInvoice.Text = "";
 
@@ -303,8 +320,10 @@ namespace TMSwPages
                     /// Fill the working list with lines from the file 
                     while (!streamReader.EndOfStream)
                     {
-                        ViewInvoice.Text += streamReader.ReadLine(); 
+                        invoiceText += streamReader.ReadLine();
                     }
+
+                    ViewInvoice.Text = invoiceText;
 
                     /// Close the file
                     streamReader.Close(); fileStream.Close();
@@ -313,11 +332,47 @@ namespace TMSwPages
                 catch (Exception ex)
                 {
                     TMSLogger.LogIt("|" + "/BuyerPage.xaml.cs" + "|" + "BuyerPage" + "|" + "Folder_SelectionChanged" + "|" + ex.GetType().ToString() + "|" + ex.Message + "|");
-                    
+
                 }
 
 
             }
+
+
+            //Folder.Items.Clear(); 
+
+            //if (d.Exists)
+            //{
+            //    FileInfo[] Files = d.GetFiles("*.txt"); //Getting Text files
+            //    List<ViewInvoiceClass> filenames = new List<ViewInvoiceClass>();
+            //    foreach (FileInfo file in Files)
+            //    {
+
+
+
+            //        ViewInvoiceClass temp = new ViewInvoiceClass();
+            //        temp.theInvice = file.Name;
+            //        filenames.Add(temp);
+
+
+            //    }
+
+
+
+
+            //    Folder.ItemsSource = filenames;
+            //}
+
+           
         }
     }
+
+    public class ViewInvoiceClass
+    {
+        public string theInvice { get; set; }
+    }
+
+
+
+
 }

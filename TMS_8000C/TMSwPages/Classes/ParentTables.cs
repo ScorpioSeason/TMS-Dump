@@ -2038,6 +2038,41 @@ namespace TMSwPages.Classes
         }
     }
 
+    public class InvoiceForFileSystem
+    {
+        public int FC_InvoiceID;
+        public string Client_Name;
+        public List<FC_LocalContract> TheContracts;
+        public double TotalCost;
+
+        public InvoiceForFileSystem(FC_Invoice inInvoice)
+        {
+            TheContracts = PlannerClass.GetContracts_PreInvoice(inInvoice);
+
+            FC_InvoiceID = inInvoice.FC_InvoiceID;
+            TotalCost = inInvoice.TotalCost;
+
+            Client_Name = TheContracts[0].Client_Name;
+        }
+
+        public override string ToString()
+        {
+            string outString = "Invoice: #" + FC_InvoiceID.ToString() + "\n" +
+                "Customer Name: " + Client_Name + "\n\n";
+
+            foreach(FC_LocalContract x in TheContracts)
+            {
+                outString += "Contract ID: " + x.FC_LocalContractID.ToString() + ". No. Pallets: " + x.Quantity + ".\n" +
+                    "Cities: " + x.Origin + " ==> " + x.Destination + ". \n\n";
+            }
+
+            outString += "Total Cost: $" + TotalCost.ToString() + "\n\n";
+
+            return outString;
+        }
+    }
+
+
     public class FC_InvoiceContractLine : ParentTable
     {
         public int FC_LocalContractID { get; set; }

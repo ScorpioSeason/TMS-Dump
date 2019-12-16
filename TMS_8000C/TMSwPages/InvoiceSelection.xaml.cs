@@ -45,7 +45,7 @@ namespace TMSwPages
 
         private void ConfirmInvoice_Click(object sender, RoutedEventArgs e)
         {
-            if(BuyerClass.SelectedForInvoice != null)
+            if(BuyerClass.SelectedForInvoice != null && BuyerClass.SelectedForInvoice.Count > 0)
             {
                 FC_Invoice invTemp = PlannerClass.GenerateInvoice(BuyerClass.SelectedForInvoice[0]);
                 PlannerClass.InsertInvoice(invTemp, BuyerClass.SelectedForInvoice[0]);
@@ -58,24 +58,29 @@ namespace TMSwPages
                     PlannerClass.AddContractToInvoices(invTemp, c);
                     PlannerClass.UpdateContratState(c, 4);
                 }
-                
-                // sql read of the invoice 
 
-                // Write the invoice to a file
+
+                InvoiceForFileSystem fsIn = new InvoiceForFileSystem(invTemp);
+
 
                 try
                 {
-                    string invoiceDir = Directory.GetCurrentDirectory() + "/Invoices";
-                    Directory.CreateDirectory(invoiceDir);
+                    string invoiceDir = Directory.GetCurrentDirectory() + "\\Invoices";
 
-                    string filePath = "invoice_" + invTemp.FC_InvoiceID + ".txt";
+                    FileInfo fi = new FileInfo(invoiceDir); 
+                    if (fi.Exists == false)
+                    {
+                        Directory.CreateDirectory(invoiceDir);
+                    }
+
+                    string filePath = "\\invoice_" + fsIn.FC_InvoiceID + ".txt";
 
                     /// Open the filestream to append to the file. 
                     FileStream fileStream = new FileStream(invoiceDir + filePath, FileMode.Create, FileAccess.Write);
                     StreamWriter fileWriter = new StreamWriter(fileStream);
 
                     /// Add each log entry from the working list to the file as a BSV
-                    fileWriter.WriteLine(invTemp);
+                    fileWriter.WriteLine(fsIn.ToString());
                     fileWriter.Flush();
 
                     /// Close the file
