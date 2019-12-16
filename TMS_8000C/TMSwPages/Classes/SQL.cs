@@ -105,6 +105,7 @@ namespace TMSwPages.Classes
             }
             catch (Exception e)
             {
+                TMSLogger.LogIt(" | " + "SQL.cs" + " | " + "SQL" + " | " + "Open" + " | " + e.GetType().ToString() + " | " + e.Message + " | ");
                 return false;
             }
         }
@@ -142,6 +143,7 @@ namespace TMSwPages.Classes
             }
             catch (Exception e)
             {
+                TMSLogger.LogIt(" | " + "SQL.cs" + " | " + "SQL" + " | " + "close" + " | " + e.GetType().ToString() + " | " + e.Message + " | ");
                 return false;
             }
         }
@@ -344,6 +346,7 @@ namespace TMSwPages.Classes
             catch (Exception e)
             {
                 //logit
+                TMSLogger.LogIt(" | " + "SQL.cs" + " | " + "SQL" + " | " + "Insert" + " | " + e.GetType().ToString() + " | " + e.Message + " | ");
                 return false;
             }
         }
@@ -431,6 +434,7 @@ namespace TMSwPages.Classes
             }
             catch (Exception e)
             {
+                TMSLogger.LogIt(" | " + "SQL.cs" + " | " + "SQL" + " | " + "GenericFunction" + " | " + e.GetType().ToString() + " | " + e.Message + " | ");
                 return false;
             }
         }
