@@ -54,6 +54,9 @@ namespace TMSwPages
 
             FC_ContractFromRuss f = new FC_ContractFromRuss();
             contracts = f.ObjToTable(SQL.SelectFromCMP(f));
+
+            TMSLogger.LogIt(" | " + "BuyerClass.cs" + " | " + "BuyerClass" + " | " + "ParseContracts" + " | " + "Confirmation" + " | " + "Contracts parsed successfully" + " | ");
+
         }
         public static List<FC_Carrier> nomCarriers = new List<FC_Carrier>();
 
@@ -92,6 +95,8 @@ namespace TMSwPages
                 NewNomination.PushToDataBase();
             }
             acceptedContracts.Clear();
+
+            TMSLogger.LogIt(" | " + "BuyerClass.cs" + " | " + "BuyerClass" + " | " + "Nominations" + " | " + "Confirmation" + " | " + "Nomination completed" + " | ");
         }
 
         public static List<FC_Carrier> tempCarriers = new List<FC_Carrier>();
@@ -127,6 +132,9 @@ namespace TMSwPages
                     }
                 }
             }
+
+            TMSLogger.LogIt(" | " + "BuyerClass.cs" + " | " + "BuyerClass" + " | " + "NominationView" + " | " + "Confirmation" + " | " + "Nomination outputted" + " | ");
+
         }
         public static List<CustomerName> AllCustomers = new List<CustomerName>();
         public static List<FC_LocalContract> ContractsForCustomer = new List<FC_LocalContract>();

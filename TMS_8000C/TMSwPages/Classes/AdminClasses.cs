@@ -36,6 +36,7 @@ namespace TMSwPages.Classes
     * -------------------------------------------------------------------------------------------------------- */
     public class Admin
     {
+        
         ////SQL_Query_TMS adminTMSConnection = null;
         //string query = "";
 
@@ -247,7 +248,7 @@ namespace TMSwPages.Classes
             }
             catch (Exception e)
             {
-                //TMSLogger.LogIt(" | " + "AdminClasses.cs" + " | " + "TMSLogger" + " | " + "SetDefaultLogFilePath" + " | " + e.GetType().ToString() + " | " + e.Message + " | ");
+                TMSLogger.NewLog(" | " + "AdminClasses.cs" + " | " + "TMSLogger" + " | " + "SetDefaultLogFilePath" + " | " + e.GetType().ToString() + " | " + e.Message + " | ");
                 // error finding/starting logger file. 
             }
 
@@ -274,16 +275,16 @@ namespace TMSwPages.Classes
                 AppendLogFile(myLog);
             };
 
-
             try
             {
                 LogStatusEvent(myLog);
             }
             catch(Exception e)
             {
+                TMSLogger.NewLog(" | " + "AdminClasses.cs" + " | " + "TMSLogger" + " | " + "LogIt" + " | " + e.GetType().ToString() + " | " + e.Message + " | ");
                 //megan look here
             }
-            
+
 
         }
 
