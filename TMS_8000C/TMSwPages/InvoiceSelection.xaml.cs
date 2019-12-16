@@ -1,5 +1,18 @@
-﻿using System.Windows;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 using TMSwPages.Classes;
 
 namespace TMSwPages
@@ -45,7 +58,34 @@ namespace TMSwPages
                     PlannerClass.AddContractToInvoices(invTemp, c);
                     PlannerClass.UpdateContratState(c, 4);
                 }
+                
+                // sql read of the invoice 
 
+                // Write the invoice to a file
+
+                try
+                {
+                    string invoiceDir = Directory.GetCurrentDirectory() + "/Invoices";
+                    Directory.CreateDirectory(invoiceDir);
+
+                    string filePath = "invoice_" + invTemp.FC_InvoiceID + ".txt";
+
+                    /// Open the filestream to append to the file. 
+                    FileStream fileStream = new FileStream(invoiceDir + filePath, FileMode.Create, FileAccess.Write);
+                    StreamWriter fileWriter = new StreamWriter(fileStream);
+
+                    /// Add each log entry from the working list to the file as a BSV
+                    fileWriter.WriteLine(invTemp);
+                    fileWriter.Flush();
+
+                    /// Close the file
+                    fileWriter.Close(); fileStream.Close();
+                }
+                /// If an exception is thrown here, catch it
+                catch (Exception ex)
+                {
+                    TMSLogger.LogIt("|" + "/InvoiceSelection.xaml.cs" + "|" + "InvoiceSelection" + "|" + "ConfirmInvoice_Click" + "|" + ex.GetType().ToString() + "|" + ex.Message + "|");   
+                }
                 BuyerPage newpage = new BuyerPage();
                 this.NavigationService.Navigate(newpage);
             }
