@@ -25,7 +25,7 @@
             <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Label x:Name="ExitMessage" Content="You must assign all parts of the contract before leaving" Grid.ColumnSpan="3" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" FontWeight="Bold"></Label>
+        <Label x:Name="ExitMessage" Content="You must assign all parts of the contract before leaving" Grid.ColumnSpan="3" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" FontWeight="Bold" Foreground="#FF702424"></Label>
 
         <Button x:Name="Complete" Content="All Done" Grid.Column="0" Grid.Row="0" Margin="5,5,5,5" IsEnabled="False" Click="Complete_Click"></Button>
 

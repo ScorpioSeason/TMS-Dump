@@ -167,6 +167,7 @@ namespace TMSwPages
             }
             DG5.ItemsSource = null;
             DG5.ItemsSource = progresses;
+            
         }
         public static List<FC_TripTicket_WProgress> progresses = new List<FC_TripTicket_WProgress>();
         private void DGActiveContracts_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -252,11 +253,13 @@ namespace TMSwPages
         private void ViewAllButton_Click(object sender, RoutedEventArgs e)
         {
             InvoiceDG.ItemsSource = PlannerClass.GetAllInvoices();
+            ContractsPreInvouce.ItemsSource = null;
         }
 
         private void VeiwTwoWeekButton_Click(object sender, RoutedEventArgs e)
         {
             InvoiceDG.ItemsSource = PlannerClass.TwoWeekInvoices();
+            ContractsPreInvouce.ItemsSource = null;
         }
 
         private void InvoiceDG_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -267,6 +270,11 @@ namespace TMSwPages
 
                 ContractsPreInvouce.ItemsSource = PlannerClass.GetContracts_PreInvoice(SelectedInvoice);
             }
+        }
+
+        private void RefreshActiveTickets_Click(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+
         }
     }
 }

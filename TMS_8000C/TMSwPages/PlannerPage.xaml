@@ -9,7 +9,7 @@
       Title="PlannerPage" Loaded="LoadContracts_Click">
 
     <!--This is the grid which holds the page display-->
-    <Grid Name="OuterGrid" Margin="0,0,0,0" Background="AliceBlue">
+    <Grid Name="OuterGrid" Margin="0,0,0,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
@@ -206,7 +206,7 @@
                             <RowDefinition Height="auto"></RowDefinition>
                         </Grid.RowDefinitions>
                         <Button x:Name="RefreshConfirmed" Grid.Row="0" Grid.Column="4" Margin="5.333,5,5.334,4.667" Grid.ColumnSpan="3" Click="RefreshConfirmed_Click">Refresh Contracts to Confirm</Button>
-                        <DataGrid Grid.ColumnSpan="7" Grid.Row="1" Grid.Column="0" Margin="5,5,5,5" Name="DGConfirmCompletion" ItemsSource="{Binding}" AutoGenerateColumns="True" SelectionMode="Single" IsReadOnly="True">
+                        <DataGrid Grid.ColumnSpan="7" Grid.Row="1" Grid.Column="0" Margin="5,5,5,5" Name="DGConfirmCompletion" ItemsSource="{Binding}" AutoGenerateColumns="True" SelectionMode="Extended" IsReadOnly="True">
                         </DataGrid>
                         <Button x:Name="Confirm" Grid.Row="2" Grid.Column="6" Margin="5,5,5,5" Grid.ColumnSpan="1" Click="Confirm_Click" Grid.RowSpan="2">Confirm Completion</Button>
                     </Grid>

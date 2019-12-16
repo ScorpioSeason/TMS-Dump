@@ -115,7 +115,7 @@ namespace TMSwPages.Classes
 
                 if(!foundNotComple)
                 {
-                    theQuery = "Update FC_TripTicket set Is_Complete = 2 where FC_TripTicketID = " + x.FC_CarrierID + ";";
+                    theQuery = "Update FC_TripTicket set Is_Complete = 2 where FC_TripTicketID = " + x.FC_TripTicketID + ";";
                     SQL.GenericFunction(theQuery);
                 }
             }
