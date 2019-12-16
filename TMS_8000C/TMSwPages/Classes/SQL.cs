@@ -160,7 +160,7 @@ namespace TMSwPages.Classes
         public static List<object> SelectFromCMP(ParentTable tabletype)
         {
             SQL.close();
-            int Use_Test_CMP = 1;
+            int Use_Test_CMP = 0;
 
             string connectionString = string.Empty;
 
@@ -168,7 +168,7 @@ namespace TMSwPages.Classes
             {
                 connectionString = "SERVER=" + "127.0.0.1" + ";" + "DATABASE=" + "Ivan_Test" + ";" + "UID=" + "root" + ";" + "PASSWORD=" + "Conestoga1" + ";";
             }
-            else
+            else 
             {
 
                 //CMPserver = "159.89.117.198";

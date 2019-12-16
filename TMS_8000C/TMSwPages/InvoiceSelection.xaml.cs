@@ -45,17 +45,18 @@ namespace TMSwPages
 
         private void ConfirmInvoice_Click(object sender, RoutedEventArgs e)
         {
-
             if(BuyerClass.SelectedForInvoice != null)
             {
                 FC_Invoice invTemp = PlannerClass.GenerateInvoice(BuyerClass.SelectedForInvoice[0]);
                 PlannerClass.InsertInvoice(invTemp, BuyerClass.SelectedForInvoice[0]);
+                PlannerClass.UpdateContratState(BuyerClass.SelectedForInvoice[0], 4);
 
                 BuyerClass.SelectedForInvoice.Remove(BuyerClass.SelectedForInvoice[0]);
 
                 foreach (FC_LocalContract c in BuyerClass.SelectedForInvoice)
                 {
                     PlannerClass.AddContractToInvoices(invTemp, c);
+                    PlannerClass.UpdateContratState(c, 4);
                 }
                 
                 // sql read of the invoice 
@@ -88,8 +89,6 @@ namespace TMSwPages
                 BuyerPage newpage = new BuyerPage();
                 this.NavigationService.Navigate(newpage);
             }
-
-            
         }
     }
 }
