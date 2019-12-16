@@ -23,10 +23,14 @@ namespace TMSwPages
         public MainWindow()
         {
             InitializeComponent();
+            TMSStartup(); 
 
+        }
+
+        private void TMSStartup()
+        {
             TMSLogger.SetDefaultLogFilePath(); // Initialize logger location when app opens
             TMSBackup.SetDefaultBackupFilePath();
-
         }
 
         private void NavigationWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
