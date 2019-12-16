@@ -376,7 +376,6 @@ namespace TMSwPages.Classes
             string query = "DROP DATABASE IF EXISTS duane_test; CREATE DATABASE duane_test;";
             SQL.GenericFunction(query);
 
-            //View Save As File Dialog
             // View Save As File Dialog
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "sql Files (*.sql)|*.sql";

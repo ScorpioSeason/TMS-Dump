@@ -278,7 +278,7 @@
                             <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Click="Rate_Fee_TablesClick" Content="Load"/>
 
                             <!--Main Content Row (1) -->
-                            <DataGrid Grid.ColumnSpan="5" Grid.Row="1" Name="Rate_Fee_TablesList" ItemsSource="{Binding}" Margin="5,5,5,5" SelectionMode="Single" AutoGenerateColumns="False" CanUserAddRows="true" IsReadOnly="false">
+                            <DataGrid Grid.ColumnSpan="5" Grid.Row="1" Name="Rate_Fee_TablesList" ItemsSource="{Binding}" Margin="5,5,5,5" SelectionMode="Single" AutoGenerateColumns="False" CanUserAddRows="true" IsReadOnly="false" CurrentCellChanged="Rate_Fee_TablesList_CurrentCellChanged">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="CityName" Binding="{Binding CityName}"/>
                                     <DataGridTextColumn Header="CarrierID" Binding="{Binding FC_CarrierID}" />

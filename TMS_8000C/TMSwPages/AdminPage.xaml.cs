@@ -399,14 +399,14 @@ namespace TMSwPages
         {
             //Carrier_Data.DataContext = admin.DisplayCarrier();
             //Carrier_DataList.ItemsSource = admin.DisplayCarrier();
-            Carrier_DataLoadClick(null, null);
+            FC_Carrier c = new FC_Carrier();
+
+            Carrier_DataList.ItemsSource = c.ObjToTable(SQL.Select(c));
         }
 
         private void Carrier_DataLoadClick(object sender, RoutedEventArgs e)
         {
-            FC_Carrier c = new FC_Carrier();
-
-            Carrier_DataList.ItemsSource = c.ObjToTable(SQL.Select(c));
+            LoadCarrierDataTab(); 
         }
 
         // ROUTE TAB FUNCTIONS =================================================================================
@@ -414,28 +414,40 @@ namespace TMSwPages
         {
             //Route_Table.DataContext = admin.DisplayRoutes();
             //Route_TableList.ItemsSource = admin.DisplayRoutes();
-            Route_TableLoadClick(null, null);
+            Route_TableList.Items.Refresh();
         }
 
         private void Route_TableLoadClick(object sender, RoutedEventArgs e)
         {
-            Route_TableList.Items.Refresh();
+            LoadRouteTab(); 
         }
 
         // RATE FEE TAB FUNCTIONS ==============================================================================
         private void Rate_Fee_TablesClick(object sender, RoutedEventArgs e)
         {
-            FC_DepotCity d = new FC_DepotCity();
-
-            Rate_Fee_TablesList.ItemsSource = d.ObjToTable(SQL.Select(d));
+            LoadRateFeeTab(); 
+            
         }
 
         private void LoadRateFeeTab()
         {
             //Rate_Fee_Tables.DataContext = admin.DisplayFees();
             //Rate_Fee_TablesList.ItemsSource = admin.DisplayFees();
-            Rate_Fee_TablesClick(null, null);
+
+            FC_DepotCity d = new FC_DepotCity();
+            Rate_Fee_TablesList.ItemsSource = d.ObjToTable(SQL.Select(d));
+            Rate_Fee_TablesList.Items.Refresh(); 
         }
 
+        private void Rate_Fee_TablesList_CurrentCellChanged(object sender, EventArgs e)
+        {
+            if (Rate_Fee_TablesList.SelectedItem != null)
+            {
+                FC_DepotCity temp = (FC_DepotCity)Rate_Fee_TablesList.SelectedItem;
+                IList<DataGridCellInfo> cellInfo = Rate_Fee_TablesList.SelectedCells; 
+
+                // The cell contents are changed. Update the specified depot city. 
+            }
+        }
     }
 }
