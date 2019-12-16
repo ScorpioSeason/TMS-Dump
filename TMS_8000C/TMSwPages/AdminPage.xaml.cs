@@ -38,7 +38,6 @@ namespace TMSwPages
         List<TMSBackup> backupSearchResults = new List<TMSBackup>(); 
         static Admin admin = new Admin(); 
         static int selectedTab = -1;
-        //TMSBackup backup = new TMSBackup(); 
 
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
@@ -56,20 +55,11 @@ namespace TMSwPages
             {
                 selectedTab = 0;
 
-                LogStartDate.SelectedDate = (DateTime.Today.AddDays(-7));
-                LogEndDate.SelectedDate = DateTime.Today;
-                LogSearchTags.Focus();
-                LogsList.ItemsSource = logSearchResults;
-                LogLoadClick(null, null);
-
-                LogsList.ItemsSource = logSearchResults;
-
-                BackupsList.ItemsSource = backupSearchResults;
-
-
-                //Carrier_DataList.ItemsSource = admin.DisplayCarrier();
-                //Route_TableList.ItemsSource = admin.DisplayRoutes();
-                //Rate_Fee_TablesList.ItemsSource = admin.DisplayFees();
+                LoadLogTab();
+                LoadBackupTab();
+                LoadCarrierDataTab();
+                LoadRouteTab();
+                LoadRateFeeTab(); 
 
             }
             catch (Exception e)
@@ -78,32 +68,101 @@ namespace TMSwPages
             }
         }
 
-        //public AdminPage(SQL_Query_TMS validatedConnection)
-        //{
-        //    try
-        //    {
-        //        InitializeComponent();
+        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (selectedTab != tabber.SelectedIndex)
+            {
+                if ((tabber.SelectedIndex <= 4) && (tabber.SelectedIndex >= -1))
+                {
+                    selectedTab = tabber.SelectedIndex;
 
-        //        // Load SQL Connection
-        //        admin.SetTMSConnection(validatedConnection);
+                    try
+                    {
+                        switch (selectedTab)
+                        {
+                            case (0):
+                                LoadLogTab();
+                                break;
+                            case (1):
+                                LoadBackupTab();
+                                break;
+                            case (2):
+                                LoadCarrierDataTab();
+                                break;
+                            case (3):
+                                LoadRouteTab();
+                                break;
+                            case (4):
+                                LoadRateFeeTab();
+                                break;
+                            default:
+                                break;
+                        }
 
-        //        selectedTab = 0;
+                    }
+                    catch (Exception ex)
+                    {
 
-        //        LogStartDate.SelectedDate = (DateTime.Today.AddDays(-7));
-        //        LogEndDate.SelectedDate = DateTime.Today;
-        //        LogSearchTags.Focus();
-        //        LogsList.ItemsSource = logSearchResults;
-        //        LogLoadClick(null, null);
-        //    }
-        //    catch (Exception e)
-        //    {
+                    }
 
-        //    }
+                }
 
-        //    /// Bind to incoming log data.
-        //    //this.DataContext = data;
-        //}
+            }
+        }
 
+        // MENU FUNCTIONS ======================================================================================
+
+        private void SwitchUserClick(object sender, RoutedEventArgs e)
+        {
+            SQL.close();
+
+            LoginPage newpage = new LoginPage();
+            this.NavigationService.Navigate(newpage);
+        }
+
+        private void ChangeCSVLocation(object sender, RoutedEventArgs e)
+        {
+            // View Save As File Dialog
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "csv Files (*.csv)|*.csv";
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                LoadCSV.SetNewCSVLocation(openFileDialog.FileName);
+                LoadCSV.Load();
+            }
+        }
+
+        private void LoadCsvIntoBD(object sender, RoutedEventArgs e)
+        {
+            //check if it is empty
+            FC_Carrier c = new FC_Carrier();
+
+            if (c.ObjToTable(SQL.Select(c)).Count == 0)
+            {
+                LoadCSV.Load();
+            }
+
+            Carrier_DataLoadClick(null, null);
+        }
+
+        private void ResetTheDataBase(object sender, RoutedEventArgs e)
+        {
+            SQL.WipeEverything();
+
+        }
+
+        private void UseLocalClick(object sender, RoutedEventArgs e)
+        {
+            SQL.SetCMPIP(1);
+        }
+
+        private void OriginalClick(object sender, RoutedEventArgs e)
+        {
+            SQL.SetCMPIP(2);
+        }
+
+        // LOG TAB FUNCTIONS ===================================================================================
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
         *	\fn			private void LoadClick(object sender, RoutedEventArgs e)
@@ -115,7 +174,7 @@ namespace TMSwPages
         *	\return		void
         *
         * ---------------------------------------------------------------------------------------------------- */
-        private void LogLoadClick(object sender, RoutedEventArgs e)
+        private void LogSearchClick(object sender, RoutedEventArgs e)
         {
             bool dateRange = false;
             string tempString = (LogSearchTags.Text.Trim()).ToLower();
@@ -158,13 +217,28 @@ namespace TMSwPages
             /// Catch errors from Contains calls
             catch (Exception ex)
             {
-                TMSLogger.LogIt("|"+ "/AdminPage.xaml.cs" + "|" + "AdminPage" + "|" + "LoadClick" + "|" + "Exception" + "|" + ex.Message + "|");
+                TMSLogger.LogIt("|" + "/AdminPage.xaml.cs" + "|" + "AdminPage" + "|" + "LoadClick" + "|" + "Exception" + "|" + ex.Message + "|");
 
             }
 
             /// Refresh the UI data grid
             LogsList.Items.Refresh();
 
+        }
+
+        private void LogDate_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            LogSearchClick(null, null);
+        }
+
+        private void LoadLogTab()
+        {
+            LogStartDate.SelectedDate = (DateTime.Today.AddDays(-7));
+            LogEndDate.SelectedDate = DateTime.Today;
+            LogSearchTags.Focus();
+            LogsList.ItemsSource = logSearchResults;
+            LogsList.Items.Refresh();
+            LogSearchClick(null, null);
         }
 
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
@@ -184,8 +258,6 @@ namespace TMSwPages
                 this.NavigationService.Navigate(newpage);
             }
 
-            // This is just a test to try writing to the backup sql file. 
-            TMSBackup.WriteQueryToCurrentFile(new TMSBackupQuery("This is a test string to test the query; can this write?"));
         }
 
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
@@ -216,7 +288,7 @@ namespace TMSwPages
             if (saveFileDialog.ShowDialog() == true)
             {
                 /// Get the new path
-                newLogPath = (saveFileDialog.FileName); 
+                newLogPath = (saveFileDialog.FileName);
 
                 /// Open both files to copy
                 try
@@ -231,20 +303,20 @@ namespace TMSwPages
                     while (!streamReader.EndOfStream)
                     {
                         streamWriter.WriteLine(streamReader.ReadLine());
-                        streamWriter.Flush(); 
+                        streamWriter.Flush();
                     }
 
                     /// Close all the streams
                     streamWriter.Close(); streamReader.Close();
-                    newFile.Close(); oldFile.Close(); 
+                    newFile.Close(); oldFile.Close();
 
                 }
                 catch (Exception ex)
                 {
                     TMSLogger.LogIt("|" + "/AdminPage.xaml.cs" + "|" + "AdminPage" + "|" + "ChangeLogLocation" + "|" + ex.GetType() + "|" + ex.Message + "|");
-                    saveSuccess = false; 
+                    saveSuccess = false;
                 }
-                
+
                 if (saveSuccess == true)
                 {
                     /// Set location of LogFilePath to new path
@@ -265,91 +337,14 @@ namespace TMSwPages
 
         }
 
-        private void SwitchUserClick(object sender, RoutedEventArgs e)
+        // BACKUP TAB FUNCTIONS ================================================================================
+        private void LoadBackupTab()
         {
-            SQL.close();
-
-            LoginPage newpage = new LoginPage();
-            this.NavigationService.Navigate(newpage);
-        }
-
-        private void Carrier_DataLoadClick(object sender, RoutedEventArgs e)
-        {
-            FC_Carrier c = new FC_Carrier();
-
-            Carrier_DataList.ItemsSource = c.ObjToTable(SQL.Select(c));
-        }
-
-        private void Route_TableLoadClick(object sender, RoutedEventArgs e)
-        {
-            
-
-            Route_TableList.Items.Refresh(); 
-        }
-
-        private void Rate_Fee_TablesClick(object sender, RoutedEventArgs e)
-        {
-            FC_DepotCity d = new FC_DepotCity();
-
-            Rate_Fee_TablesList.ItemsSource = d.ObjToTable(SQL.Select(d));
-        }
-        
-        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (selectedTab != tabber.SelectedIndex)
-            {
-                if ((tabber.SelectedIndex <= 4) && (tabber.SelectedIndex >= -1))
-                {
-                    selectedTab = tabber.SelectedIndex;
-
-                    try
-                    {
-                        switch (selectedTab)
-                        {
-                            case (0):
-                                LogStartDate.SelectedDate = (DateTime.Today.AddDays(-7));
-                                LogEndDate.SelectedDate = DateTime.Today;
-                                LogSearchTags.Focus();
-                                LogsList.ItemsSource = logSearchResults;
-                                LogLoadClick(null, null);
-                                break;
-                            case (1):
-                                //backup
-                                BackupsStartDate.SelectedDate = (DateTime.Today.AddDays(-7));
-                                BackupsEndDate.SelectedDate = DateTime.Today;
-                                
-                                BackupsList.ItemsSource = backupSearchResults;
-                                UpdateBackupsList();
-
-                                break;
-                            case (2):
-                                //Carrier_Data.DataContext = admin.DisplayCarrier();
-                                //Carrier_DataList.ItemsSource = admin.DisplayCarrier();
-                                Carrier_DataLoadClick(null, null);
-                                break;
-                            case (3):
-                                //Route_Table.DataContext = admin.DisplayRoutes();
-                                //Route_TableList.ItemsSource = admin.DisplayRoutes();
-                                Route_TableLoadClick(null, null);
-                                break;
-                            case (4):
-                                //Rate_Fee_Tables.DataContext = admin.DisplayFees();
-                                //Rate_Fee_TablesList.ItemsSource = admin.DisplayFees();
-                                Rate_Fee_TablesClick(null, null);
-                                break;
-                            default:
-                                break;
-                        }
-                        
-                    }
-                    catch (Exception ex)
-                    {
-
-                    }
-
-                }
-                
-            }
+            BackupsStartDate.SelectedDate = (DateTime.Today.AddDays(-7));
+            BackupsEndDate.SelectedDate = DateTime.Today;
+            BackupsList.ItemsSource = backupSearchResults;
+            BackupsList.Items.Refresh();
+            UpdateBackupsList();
         }
 
         private void RestoreSelected_Click(object sender, RoutedEventArgs e)
@@ -361,7 +356,6 @@ namespace TMSwPages
 
             UpdateBackupsList();
 
-            // Restore from selected backup point
         }
 
         private void CreateRestore_Click(object sender, RoutedEventArgs e)
@@ -381,7 +375,7 @@ namespace TMSwPages
         private void BackupsDate_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
             // Update search
-            UpdateBackupsList(); 
+            UpdateBackupsList();
         }
 
         private void UpdateBackupsList()
@@ -397,50 +391,51 @@ namespace TMSwPages
                 }
             }
 
-            //BackupsList.ItemsSource = backupSearchResults;
             BackupsList.Items.Refresh();
         }
 
-        private void ChangeCUSLocation(object sender, RoutedEventArgs e)
+        // CARRIER TAB FUNCTIONS ===============================================================================
+        private void LoadCarrierDataTab()
         {
-            
-            // View Save As File Dialog
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "csv Files (*.csv)|*.csv";
-
-            if (openFileDialog.ShowDialog() == true)
-            {
-                LoadCSV.SetNewCSVLocation(openFileDialog.FileName);
-                LoadCSV.Load();
-            }
-        }
-
-        private void LoadCsvIntoBD(object sender, RoutedEventArgs e)
-        {
-            //check if it is empty
-            FC_Carrier c = new FC_Carrier();
-
-            if(c.ObjToTable(SQL.Select(c)).Count == 0)
-            {
-                LoadCSV.Load();
-            }
-
+            //Carrier_Data.DataContext = admin.DisplayCarrier();
+            //Carrier_DataList.ItemsSource = admin.DisplayCarrier();
             Carrier_DataLoadClick(null, null);
         }
 
-        private void ResetTheDataBase(object sender, RoutedEventArgs e)
+        private void Carrier_DataLoadClick(object sender, RoutedEventArgs e)
         {
-            SQL.WipeEverything();
+            FC_Carrier c = new FC_Carrier();
 
-        }
-        private void UseLocalClick(object sender, RoutedEventArgs e)
-        {
-            SQL.SetCMPIP(1);
+            Carrier_DataList.ItemsSource = c.ObjToTable(SQL.Select(c));
         }
 
-        private void OriginalClick(object sender, RoutedEventArgs e)
+        // ROUTE TAB FUNCTIONS =================================================================================
+        private void LoadRouteTab()
         {
-            SQL.SetCMPIP(2);
+            //Route_Table.DataContext = admin.DisplayRoutes();
+            //Route_TableList.ItemsSource = admin.DisplayRoutes();
+            Route_TableLoadClick(null, null);
         }
+
+        private void Route_TableLoadClick(object sender, RoutedEventArgs e)
+        {
+            Route_TableList.Items.Refresh();
+        }
+
+        // RATE FEE TAB FUNCTIONS ==============================================================================
+        private void Rate_Fee_TablesClick(object sender, RoutedEventArgs e)
+        {
+            FC_DepotCity d = new FC_DepotCity();
+
+            Rate_Fee_TablesList.ItemsSource = d.ObjToTable(SQL.Select(d));
+        }
+
+        private void LoadRateFeeTab()
+        {
+            //Rate_Fee_Tables.DataContext = admin.DisplayFees();
+            //Rate_Fee_TablesList.ItemsSource = admin.DisplayFees();
+            Rate_Fee_TablesClick(null, null);
+        }
+
     }
 }

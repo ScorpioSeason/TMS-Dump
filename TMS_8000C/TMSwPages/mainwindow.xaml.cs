@@ -23,8 +23,6 @@ namespace TMSwPages
         {
             InitializeComponent();
 
-           
-
             TMSLogger.SetDefaultLogFilePath(); // Initialize logger location when app opens
             TMSBackup.SetDefaultBackupFilePath();
         }

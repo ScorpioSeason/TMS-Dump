@@ -471,7 +471,7 @@ namespace TMSwPages.Classes
         static public string thisFileDir { get; set; }
 
         public string filePath { get; set; }
-        public static string writeFilePath { get; set; }
+        public static string writeFilePath = thisFileDir + "/TMStempBackup.sql";
         public DateTime backupDate { get; set; }
 
         public TMSBackup() { }
@@ -489,10 +489,12 @@ namespace TMSwPages.Classes
             try
             {
                 /// Open the file stream to append to the file. 
-                FileStream fileStream = new FileStream((writeFilePath), FileMode.Append, FileAccess.Write); // this is currently null...?
+                FileStream fileStream = new FileStream((writeFilePath), FileMode.Append, FileAccess.Write);
                 StreamWriter fileWriter = new StreamWriter(fileStream);
 
-                fileWriter.WriteLine(bq.outgoingQuery);
+                fileWriter.WriteLine("\n/*" + bq.BackupDate.ToString() + "*/\n");
+                fileWriter.WriteLine(bq.queryString);
+
                 fileWriter.Flush();
 
                 /// Close the file
@@ -525,20 +527,6 @@ namespace TMSwPages.Classes
             saveFileDialog.InitialDirectory = thisFileDir;
             saveFileDialog.FileName = "RestoreTo_" + DateTime.Now.ToString().Replace(':', '-').Replace(' ', '_');
 
-            DateTime newestFileTime = new DateTime();
-            string lastBackupPath = "";
-
-            // Find the most recent backup file created
-            foreach (string file in Directory.EnumerateFiles(thisFileDir, "*.sql"))
-            {
-                FileInfo fi = new FileInfo(file);
-                if (fi.CreationTime >= newestFileTime)
-                {
-                    newestFileTime = fi.CreationTime;
-                    lastBackupPath = fi.FullName;
-                }
-            }
-
             // Set a text range using the textbox name
             // TextRange textRange = new TextRange(myTextbox.Document.ContentStart, myTextbox.Document.ContentEnd);
             DialogResult res = saveFileDialog.ShowDialog();
@@ -553,7 +541,7 @@ namespace TMSwPages.Classes
                 {
                     /// Open file streams
                     FileStream newFile = new FileStream(newFilePath, FileMode.Create);
-                    FileStream oldFile = new FileStream(lastBackupPath, FileMode.Open);
+                    FileStream oldFile = new FileStream(writeFilePath, FileMode.Open);
                     StreamReader streamReader = new StreamReader(oldFile);
                     StreamWriter streamWriter = new StreamWriter(newFile);
 
@@ -597,7 +585,26 @@ namespace TMSwPages.Classes
 
             try
             {
-                // run the selected tms restore point sql
+                FileInfo restoreFile = new FileInfo(b.filePath);
+                if (restoreFile.Exists == true)
+                {
+                    List<string> AllTableName = new List<string>();
+
+                    // Reset database
+                    string query = "DROP DATABASE IF EXISTS duane_test; CREATE DATABASE duane_test;";
+                    SQL.GenericFunction(query);
+
+                    // Run table builder string
+                    SQL.GenericFunction(BuildTables.tableBuilder); 
+
+                    // Run CSV!
+
+                    // Run all queries since the database started
+                    string restoreQueries = System.IO.File.ReadAllText(b.filePath);
+                    SQL.GenericFunction(restoreQueries); 
+
+                }
+
             }
             /// If an exception is thrown here, create a log for it. 
             catch (Exception e)
@@ -613,21 +620,7 @@ namespace TMSwPages.Classes
         {
             string oldFileDir = thisFileDir;
             string copyFileName = "";
-            DateTime newestFileTime = new DateTime();
-            string lastBackupPath = "";
             bool saveSuccess = true; 
-
-            // Find the most recent backup file created
-            foreach (string file in Directory.EnumerateFiles(oldFileDir, "*.sql"))
-            {
-                FileInfo fi = new FileInfo(file);
-                if (fi.CreationTime >= newestFileTime)
-                {
-                    newestFileTime = fi.CreationTime;
-                    lastBackupPath = fi.FullName;
-                    copyFileName = fi.Name;
-                }
-            }
 
             // Open a folder browser to choose the new folder
             FolderBrowserDialog browser = new FolderBrowserDialog(); 
@@ -642,8 +635,8 @@ namespace TMSwPages.Classes
             try
             {
                 /// Open file streams
-                FileStream newFile = new FileStream((thisFileDir + copyFileName), FileMode.Create);
-                FileStream oldFile = new FileStream(lastBackupPath, FileMode.Open);
+                FileStream newFile = new FileStream((thisFileDir + "/TMStempBackup.sql"), FileMode.Create);
+                FileStream oldFile = new FileStream(writeFilePath, FileMode.Open);
                 StreamReader streamReader = new StreamReader(oldFile);
                 StreamWriter streamWriter = new StreamWriter(newFile);
 
@@ -695,7 +688,7 @@ namespace TMSwPages.Classes
         {
             try
             {
-                (writeFilePath) = Environment.CurrentDirectory + "/TMSBackup/Backup_" + DateTime.Now.ToFileTimeUtc() + ".sql";
+                (writeFilePath) = Environment.CurrentDirectory + "/TMStempBackup.sql";
                 thisFileDir = Environment.CurrentDirectory;
             }
             catch (Exception e)
@@ -713,31 +706,12 @@ namespace TMSwPages.Classes
         public TMSBackupQuery(string iq)
         {
             BackupDate = DateTime.Now;
-            incomingQuery = iq;
+            queryString = iq;
         }
 
         public DateTime BackupDate{ get; set; }
-        public string incomingQuery{ get; set; }
-        public string outgoingQuery
-        {
-            get
-            {
-                string returnString = "";
-                try
-                {
-                    int firstQuote = incomingQuery.IndexOf('"');
-                    int lastQuote = incomingQuery.LastIndexOf('"');
-                    returnString = incomingQuery.Substring(firstQuote + 1, (lastQuote - firstQuote));
-                    returnString = "-- " + BackupDate.ToString() + "\n" + returnString; 
-                }
-                catch (Exception e)
-                {
-
-                }
-                return returnString; 
-            }
-        }
-
+        public string queryString{ get; set; }
+        
     }
 
 }
