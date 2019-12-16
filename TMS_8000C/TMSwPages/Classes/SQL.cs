@@ -26,20 +26,26 @@ namespace TMSwPages.Classes
         private const string ConstCmpIP = "159.89.117.198";
 
         private static string CMPserver = ConstCmpIP;
-        private static string CMPdatabase;
-        private static string CMPuid;
-        private static string CMPpassword;
+        private static string CMPdatabase = "cmp";
+        private static string CMPuid = "DevOSHT";
+        private static string CMPpassword = "Snodgr4ss!";
 
-        
+
         public static void SetCMPIP(int inMode)
         {
             if(inMode == 1)
             {
                 CMPserver = "127.0.0.1";
+                CMPuid = "root";
+                CMPpassword = "Conestoga1";
+                CMPdatabase = "cmp";
             }
             else
             {
                 CMPserver = ConstCmpIP;
+                CMPdatabase = "cmp";
+                CMPuid = "DevOSHT";
+                CMPpassword = "Snodgr4ss!";
             }
         }
 
@@ -165,24 +171,11 @@ namespace TMSwPages.Classes
         public static List<object> SelectFromCMP(ParentTable tabletype)
         {
             SQL.close();
-            int Use_Test_CMP = 1; // Changed for testing
+   
 
             string connectionString = string.Empty;
+            connectionString = "SERVER=" + CMPserver + ";" + "DATABASE=" + CMPdatabase + ";" + "UID=" + CMPuid + ";" + "PASSWORD=" + CMPpassword + ";";
 
-            if (Use_Test_CMP == 0)
-            {
-                connectionString = "SERVER=" + "127.0.0.1" + ";" + "DATABASE=" + "Ivan_Test" + ";" + "UID=" + "root" + ";" + "PASSWORD=" + "Conestoga1" + ";";
-            }
-            else 
-            {
-
-                //CMPserver = "159.89.117.198";
-                CMPdatabase = "cmp";
-                CMPuid = "DevOSHT";
-                CMPpassword = "Snodgr4ss!";
-                connectionString = "SERVER=" + CMPserver + ";" + "DATABASE=" + CMPdatabase + ";" + "UID=" + CMPuid + ";" + "PASSWORD=" + CMPpassword + ";";
-            }
-            //string connectionString;
 
             //set up the connection
             connection = new MySqlConnection(connectionString);
