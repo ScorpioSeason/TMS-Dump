@@ -459,5 +459,41 @@ namespace TMSwPages
                 // The cell contents are changed. Update the specified depot city. 
             }
         }
+
+        public FC_DepotCity selectedCityForEditing;
+
+        private void Rate_Fee_TablesList_BeginningEdit(object sender, DataGridBeginningEditEventArgs e)
+        {
+            selectedCityForEditing = (FC_DepotCity)Rate_Fee_TablesList.SelectedItem;
+        }
+
+
+        private void Rate_Fee_TablesList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(Rate_Fee_TablesList.SelectedItem != null)
+            {
+                selectedCityForEditing = (FC_DepotCity)Rate_Fee_TablesList.SelectedItem;
+            }
+        }
+
+        private void ConfirmButton_Click(object sender, RoutedEventArgs e)
+        {
+            string FromCB = AvalCB.Text;
+
+            Regex CheckReg = new Regex("[^0-9.]");
+
+            string FromTB = NewDataValueTB.Text;
+
+            if (FromTB != null && !CheckReg.IsMatch(FromTB) && FromCB != "")
+            {
+                string query = "update FC_DepotCity set " + FromCB + " = "+ FromTB + " where FC_CarrierID = " + selectedCityForEditing.FC_CarrierID.ToString() + " and CityName = '" + selectedCityForEditing.CityName + "';";
+                SQL.GenericFunction(query);
+
+                NewDataValueTB.Text = "";
+                AvalCB.Text = "";
+
+                LoadRateFeeTab();
+            }
+        }
     }
 }
