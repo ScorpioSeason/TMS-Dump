@@ -147,7 +147,7 @@
                     </DockPanel>
                 </TabItem.Content>
             </TabItem>
-            <TabItem>
+            <TabItem Header="View Invoices from File System">
                 <TabItem.Content>
                     <Grid>
                         <Grid.ColumnDefinitions>
