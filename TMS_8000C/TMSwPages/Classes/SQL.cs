@@ -86,6 +86,8 @@ namespace TMSwPages.Classes
 
             //set up the connection
             connection = new MySqlConnection(connectionString);
+
+            TMSLogger.LogIt(" | " + "SQL.cs" + " | " + "SQL" + " | " + "init" + " | " + "Confirmation" + " | " + "SQL connection initialized" + " | ");
         }
 
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
@@ -101,6 +103,7 @@ namespace TMSwPages.Classes
             try
             {
                 connection.Open();
+                TMSLogger.LogIt(" | " + "SQL.cs" + " | " + "SQL" + " | " + "Open" + " | " + "Confirmation" + " | " + "SQL connection opened" + " | ");
                 return true;
             }
             catch (Exception e)
@@ -124,6 +127,7 @@ namespace TMSwPages.Classes
                 " where CityName = \'" + inCityName + "\' and FC_CarrierID = " + carrierID.ToString() + ";";
 
             SQL.GenericFunction(query);
+
         }
 
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
@@ -139,6 +143,7 @@ namespace TMSwPages.Classes
             try
             {
                 connection.Close();
+                TMSLogger.LogIt(" | " + "SQL.cs" + " | " + "SQL" + " | " + "close" + " | " + "Confirmation" + " | " + "SQL connection closed" + " | ");
                 return true;
             }
             catch (Exception e)
@@ -190,6 +195,8 @@ namespace TMSwPages.Classes
             SQL.init();
             SQL.open();
 
+            TMSLogger.LogIt(" | " + "SQL.cs" + " | " + "SQL" + " | " + "SelectFromCMP" + " | " + "Confirmation" + " | " + "Data selected from CMP" + " | ");
+
             return RetrunedContracts;
         }
 
@@ -214,6 +221,8 @@ namespace TMSwPages.Classes
             }
 
             dataReader.Close();
+
+            TMSLogger.LogIt(" | " + "SQL.cs" + " | " + "SQL" + " | " + "GetAllCustomerNames" + " | " + "Confirmation" + " | " + "Customer names loaded" + " | ");
 
             return inData;
         }
@@ -257,6 +266,8 @@ namespace TMSwPages.Classes
 
             //take the array of lists, and convert it to a list of objects
             List<object> outList = tabletype.PackageClasses(list);
+
+            TMSLogger.LogIt(" | " + "SQL.cs" + " | " + "SQL" + " | " + "Select" + " | " + "Confirmation" + " | " + "Data selected with SQL" + " | ");
 
             //return the list
             return outList;
@@ -313,6 +324,8 @@ namespace TMSwPages.Classes
             //take the array of lists, and convert it to a list of objects
             List<object> outList = tabletype.PackageClasses(list);
 
+            TMSLogger.LogIt(" | " + "SQL.cs" + " | " + "SQL" + " | " + "Select" + " | " + "Confirmation" + " | " + "Data selected with SQL" + " | ");
+
             //return the list
             return outList;
         }
@@ -341,7 +354,8 @@ namespace TMSwPages.Classes
                 {
                     TMSBackup.WriteQueryToCurrentFile(new TMSBackupQuery(query));
                 }
-                
+
+                TMSLogger.LogIt(" | " + "SQL.cs" + " | " + "SQL" + " | " + "Insert" + " | " + "Confirmation" + " | " + "Data inserted into SQL database" + " | ");
                 return true;
             }
             catch (Exception e)
@@ -432,6 +446,7 @@ namespace TMSwPages.Classes
                     TMSBackup.WriteQueryToCurrentFile(new TMSBackupQuery(Query));
                 }
 
+                TMSLogger.LogIt(" | " + "SQL.cs" + " | " + "SQL" + " | " + "GenericFunction" + " | " + "Confirmation" + " | " + "Query executed successfully" + " | ");
                 return true;
             }
             catch (Exception e)
@@ -457,6 +472,8 @@ namespace TMSwPages.Classes
                 string text = System.IO.File.ReadAllText(openFileDialog.FileName);
                 SQL.GenericFunction(text);
             }
+
+            TMSLogger.LogIt(" | " + "SQL.cs" + " | " + "SQL" + " | " + "WipeEverything" + " | " + "Confirmation" + " | " + "Database was wiped" + " | ");
         }
     }
 }
