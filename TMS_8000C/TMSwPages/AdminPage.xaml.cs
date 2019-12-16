@@ -219,7 +219,7 @@ namespace TMSwPages
             /// Catch errors from Contains calls
             catch (Exception ex)
             {
-                TMSLogger.LogIt("|" + "/AdminPage.xaml.cs" + "|" + "AdminPage" + "|" + "LoadClick" + "|" + "Exception" + "|" + ex.Message + "|");
+                TMSLogger.LogIt("|" + "/AdminPage.xaml.cs" + "|" + "AdminPage" + "|" + "LoadClick" + "|" + ex.GetType().ToString() + "|" + ex.Message + "|");
 
             }
 
@@ -323,7 +323,7 @@ namespace TMSwPages
                 }
                 catch (Exception ex)
                 {
-                    TMSLogger.LogIt("|" + "/AdminPage.xaml.cs" + "|" + "AdminPage" + "|" + "ChangeLogLocation" + "|" + ex.GetType() + "|" + ex.Message + "|");
+                    TMSLogger.LogIt("|" + "/AdminPage.xaml.cs" + "|" + "AdminPage" + "|" + "ChangeLogLocation" + "|" + ex.GetType().ToString() + "|" + ex.Message + "|");
                     saveSuccess = false;
                 }
 
@@ -339,7 +339,7 @@ namespace TMSwPages
                     }
                     catch (Exception exc)
                     {
-                        TMSLogger.LogIt("|" + "/AdminPage.xaml.cs" + "|" + "AdminPage" + "|" + "ChangeLogLocation" + "|" + exc.GetType() + "|" + exc.Message + "|");
+                        TMSLogger.LogIt("|" + "/AdminPage.xaml.cs" + "|" + "AdminPage" + "|" + "ChangeLogLocation" + "|" + exc.GetType().ToString() + "|" + exc.Message + "|");
                     }
                 }
 
@@ -359,9 +359,16 @@ namespace TMSwPages
 
         private void RestoreSelected_Click(object sender, RoutedEventArgs e)
         {
-            if (BackupsList.SelectedItem != null)
+            try
             {
-                TMSBackup.RecoverRestorePoint((TMSBackup)BackupsList.SelectedItem);
+                if (BackupsList.SelectedItem != null)
+                {
+                    TMSBackup.RecoverRestorePoint((TMSBackup)BackupsList.SelectedItem);
+                }
+            }
+            catch (Exception ex)
+            {
+                TMSLogger.LogIt(" | " + "AdminPage.xaml.cs" + " | " + "AdminPage" + " | " + "RestoreSelected_Click" + " | " + ex.GetType().ToString() + " | " + ex.Message + " | ");
             }
 
             UpdateBackupsList();
@@ -478,22 +485,30 @@ namespace TMSwPages
 
         private void ConfirmButton_Click(object sender, RoutedEventArgs e)
         {
-            string FromCB = AvalCB.Text;
-
-            Regex CheckReg = new Regex("[^0-9.]");
-
-            string FromTB = NewDataValueTB.Text;
-
-            if (FromTB != null && !CheckReg.IsMatch(FromTB) && FromCB != "")
+            try
             {
-                string query = "update FC_DepotCity set " + FromCB + " = "+ FromTB + " where FC_CarrierID = " + selectedCityForEditing.FC_CarrierID.ToString() + " and CityName = '" + selectedCityForEditing.CityName + "';";
-                SQL.GenericFunction(query);
+                string FromCB = AvalCB.Text;
 
-                NewDataValueTB.Text = "";
-                AvalCB.Text = "";
+                Regex CheckReg = new Regex("[^0-9.]");
 
-                LoadRateFeeTab();
+                string FromTB = NewDataValueTB.Text;
+
+                if (FromTB != null && !CheckReg.IsMatch(FromTB) && FromCB != "")
+                {
+                    string query = "update FC_DepotCity set " + FromCB + " = "+ FromTB + " where FC_CarrierID = " + selectedCityForEditing.FC_CarrierID.ToString() + " and CityName = '" + selectedCityForEditing.CityName + "';";
+                    SQL.GenericFunction(query);
+
+                    NewDataValueTB.Text = "";
+                    AvalCB.Text = "";
+
+                    LoadRateFeeTab();
+                }
             }
+            catch (Exception ex)
+            {
+                TMSLogger.LogIt(" | " + "AdminPage.xaml.cs" + " | " + "AdminPage" + " | " + "ConfirmButton_Click" + " | " + ex.GetType().ToString() + " | " + ex.Message + " | ");
+            }
+            
         }
     }
 }

@@ -113,9 +113,12 @@ namespace TMSwPages.Classes
             foreach (FC_Carrier x in TheCarriers)
             {
                 SQL.Insert(new FC_CarrierNom(B2PC.FC_BuyerToPlannerContractID, x.FC_CarrierID));
-            } 
-            
+            }
+
+            TMSLogger.LogIt(" | " + "NominateForPlanner.cs" + " | " + "NominateForPlanner" + " | " + "PushToDataBase" + " | " + "Confirmation" + " | " + "Contract pushed to database" + " | ");
+
             return true;
+
         }
 
     }

@@ -215,7 +215,10 @@ namespace TMSwPages.Classes
                 FC_TripTicketLine NewLine = new FC_TripTicketLine(OriginalTick.FC_TripTicketID, TheContract.FC_LocalContractID, PalletesAddedToOgrinal);
                 SQL.Insert(NewLine);
 
+                TMSLogger.LogIt(" | " + "PlannerClass.cs" + " | " + "PlannerClass" + " | " + "AddContractToTicket" + " | " + "Confirmation" + " | " + "Contract added to ticket" + " | ");
+
                 return PalletesAddedToOgrinal;
+
             }
 
             return -1;
@@ -261,6 +264,8 @@ namespace TMSwPages.Classes
                     } while (InContract.Quantity > 0);
                 }
             }
+
+            TMSLogger.LogIt(" | " + "PlannerClass.cs" + " | " + "PlannerClass" + " | " + "CreateTicketsFromContract" + " | " + "Confirmation" + " | " + "Ticket created from contract" + " | ");
 
             return ReturnTickets;
         }
@@ -365,6 +370,7 @@ namespace TMSwPages.Classes
         public static FC_Invoice GenerateInvoice(FC_LocalContract InContract)
         {
             double OtherContractCost = GenerateInvoiceTotal(InContract);
+            TMSLogger.LogIt(" | " + "PlannerClass.cs" + " | " + "PlannerClass" + " | " + "GenerateInvoice" + " | " + "Confirmation" + " | " + "Invoice generated" + " | ");
             return new FC_Invoice(-1, OtherContractCost);
         }
 
@@ -390,6 +396,9 @@ namespace TMSwPages.Classes
             FC_InvoiceContractLine newLine = new FC_InvoiceContractLine(InContract.FC_LocalContractID, inInvoice.FC_InvoiceID);
 
             SQL.Insert(newLine);
+
+            TMSLogger.LogIt(" | " + "PlannerClass.cs" + " | " + "PlannerClass" + " | " + "AddContractToInvoices" + " | " + "Confirmation" + " | " + "Contract added to invoices" + " | ");
+
         }
 
         public static double GenerateInvoiceTotal(FC_LocalContract inContract)
@@ -453,7 +462,17 @@ namespace TMSwPages.Classes
                 Total_Cost += tempPrice;
             }
 
-            Total_Cost = Math.Round(Total_Cost, 2);
+            try
+            {
+                Total_Cost = Math.Round(Total_Cost, 2);
+            }
+            catch (Exception e)
+            {
+                TMSLogger.LogIt(" | " + "PlannerClass.cs" + " | " + "PlannerClass" + " | " + "GenerateInvoiceTotal" + " | " + e.GetType().ToString() + " | " + e.Message + " | ");
+            }
+            
+
+            TMSLogger.LogIt(" | " + "PlannerClass.cs" + " | " + "PlannerClass" + " | " + "GenerateInvoiceTotal" + " | " + "Confirmation" + " | " + "Invoice total generated" + " | ");
 
             return Total_Cost;
         }
