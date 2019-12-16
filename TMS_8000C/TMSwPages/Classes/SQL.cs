@@ -9,6 +9,11 @@ using TMSwPages.Classes;
 
 namespace TMSwPages.Classes
 {
+     // CLASS HEADER COMMENT -----------------------------------------------------------------------------------
+    /**   
+    *   \class      SQL
+    *   \brief      This is a class used for connecting to the database and running SQL querries
+    * -------------------------------------------------------------------------------------------------------- */
     public static class SQL
     {
         //variables
@@ -61,7 +66,14 @@ namespace TMSwPages.Classes
 
 
 
-        //This method will be used to initialize the connection
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *   \fn         init    
+        *   \brief      This method will be used to initialize the connection
+        *   \param[in]  None     
+        *   \param[out] None    
+        *   \return     Void    
+        * ---------------------------------------------------------------------------------------------------- */
         public static void init()
         { 
             //This is a prototype application, so this data will not ever change
@@ -76,7 +88,14 @@ namespace TMSwPages.Classes
             connection = new MySqlConnection(connectionString);
         }
 
-        //This method will open up the connection to the database.
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *   \fn         open    
+        *   \brief      This method will open up the connection to the database
+        *   \param[in]  none     
+        *   \param[out] none    
+        *   \return     bool    
+        * ---------------------------------------------------------------------------------------------------- */
         public static bool open()
         {
             try
@@ -106,7 +125,14 @@ namespace TMSwPages.Classes
             SQL.GenericFunction(query);
         }
 
-        //this method will close the connection
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *   \fn         close    
+        *   \brief      this method will close the connection
+        *   \param[in]  none     
+        *   \param[out] none    
+        *   \return     bool    
+        * ---------------------------------------------------------------------------------------------------- */
         public static bool close()
         {
             try
@@ -120,24 +146,28 @@ namespace TMSwPages.Classes
             }
         }
 
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *   \fn         SelectFromCMP    
+        *   \brief      This will connection to the contract market place, query, and store the results in a 
+        *               list
+        *   \param[in]  ParentTable tabletyp     
+        *   \param[out] None    
+        *   \return     List<object>     
+        * ---------------------------------------------------------------------------------------------------- */
         public static List<object> SelectFromCMP(ParentTable tabletype)
         {
             SQL.close();
-            int Use_Test_CMP = 0;
+            int Use_Test_CMP = 1;
 
             string connectionString = string.Empty;
 
-            if (Use_Test_CMP == 1)
+            if (Use_Test_CMP == 0)
             {
-                server = "127.0.0.1";
-                database = "Ivan_Test";
-                uid = "root";
-                password = "Conestoga1";
-                connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+                connectionString = "SERVER=" + "127.0.0.1" + ";" + "DATABASE=" + "Ivan_Test" + ";" + "UID=" + "root" + ";" + "PASSWORD=" + "Conestoga1" + ";";
             }
             else
             {
-
 
                 //CMPserver = "159.89.117.198";
                 CMPdatabase = "cmp";
@@ -186,8 +216,15 @@ namespace TMSwPages.Classes
             return inData;
         }
 
-        //This select statement will take in a table type and specific select statement.
-        //It will return a list of objects that can then be cast to the correct class type
+         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *   \fn            Select 
+        *   \brief         This select statement will take in a table type and specific select statement
+        *                  It will return a list of objects that can then be cast to the correct class type
+        *   \param[in]     ParentTable tabletype, String InputStatment  
+        *   \param[out]    None 
+        *   \return        List<object> 
+        * ---------------------------------------------------------------------------------------------------- */
         public static List<object> Select(ParentTable tabletype, String InputStatment)
         {
             //Create an array of lists to store the result
@@ -223,8 +260,15 @@ namespace TMSwPages.Classes
             return outList;
         }
 
-        //This select statement will take in a table type and a optional Id number for the table
-        //It will return a list of objects that can then be cast to the correct class typeC:\Users\Ivan\Source\Repos\ScorpioSeason\TMS-Dump\TMS_8000C\TMSwPages\Classes\SQL.cs
+         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *   \fn             Select
+        *   \brief          This select statement will take in a table type and a optional Id number for the table
+        *                   It will return a list of objects that can then be cast to the correct class type
+        *   \param[in]      ParentTable tabletype, int TableID = -1 
+        *   \param[out]     None
+        *   \return         List<object>
+        * ---------------------------------------------------------------------------------------------------- */
         public static List<object> Select(ParentTable tabletype, int TableID = -1)
         {
             //get the select statement for the table
@@ -270,8 +314,16 @@ namespace TMSwPages.Classes
             //return the list
             return outList;
         }
-
-        //this method will be able to insert into any table that using the corresponding  ParentTable
+        
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *   \fn            Insert 
+        *   \brief         this method will be able to insert into any table that using the corresponding 
+        *                  ParentTable
+        *   \param[in]     ParentTable input  
+        *   \param[out]    none 
+        *   \return        bool 
+        * ---------------------------------------------------------------------------------------------------- */
         public static bool Insert(ParentTable input)
         {
             try
@@ -296,8 +348,15 @@ namespace TMSwPages.Classes
             }
         }
 
-        //This method will be able to get the next available id for any table.
-        //This will be used to ensure the uniqueness of primary keys
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *   \fn           GetNextID  
+        *   \brief        This method will be able to get the next available id for any table
+        *                 This will be used to ensure the uniqueness of primary keys
+        *   \param[in]    string TableName   
+        *   \param[out]   none  
+        *   \return       int  
+        * ---------------------------------------------------------------------------------------------------- */
         public static int GetNextID(string TableName)
         {
             //setup the select statement
@@ -348,7 +407,14 @@ namespace TMSwPages.Classes
             return ++currentIndex;
         }
 
-        //This method will be called if for a generic query.
+        // METHOD HEADER COMMENT -------------------------------------------------------------------------------
+        /**
+        *   \fn          GenericFunction   
+        *   \brief       This method will be called if for a generic query
+        *   \param[in]   string Query    
+        *   \param[out]  none   
+        *   \return      bool   
+        * ---------------------------------------------------------------------------------------------------- */
         public static bool GenericFunction(string Query)
         {
             try
