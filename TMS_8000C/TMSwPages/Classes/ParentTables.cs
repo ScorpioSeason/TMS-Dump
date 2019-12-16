@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace TMSwPages.Classes
 {
@@ -182,23 +183,35 @@ namespace TMSwPages.Classes
         public override List<object> PackageClasses(List<string>[] inList)
         {
             List<object> outList = new List<object>();
-
-            for (int i = 0; i < inList[0].Count; i++)
+            
+            try
             {
-                FC_DepotCity current = new FC_DepotCity();
+                
+                for (int i = 0; i < inList[0].Count; i++)
+                {
+                    FC_DepotCity current = new FC_DepotCity();
 
-                current.FC_CarrierID = int.Parse(inList[0][i]);
-                current.CityName = inList[1][i];
-                current.FTL_Availibility = int.Parse(inList[2][i]);
-                current.LTL_Availibility = int.Parse(inList[3][i]);
-                current.FTL_Rate = double.Parse(inList[4][i]);
-                current.LTL_Rate = double.Parse(inList[5][i]);
-                current.Reefer_Charge = double.Parse(inList[6][i]);
+                    current.FC_CarrierID = int.Parse(inList[0][i]);
+                    current.CityName = inList[1][i];
+                    current.FTL_Availibility = int.Parse(inList[2][i]);
+                    current.LTL_Availibility = int.Parse(inList[3][i]);
+                    current.FTL_Rate = double.Parse(inList[4][i]);
+                    current.LTL_Rate = double.Parse(inList[5][i]);
+                    current.Reefer_Charge = double.Parse(inList[6][i]);
 
-                outList.Add(current);
+                    outList.Add(current);
+
+                    TMSLogger.LogIt(" | " + "ParentTables.cs" + " | " + "FC_DepotCity" + " | " + "PackageClasses" + " | " + "Confirmation" + " | " + "Depot city packaged" + " | ");
+                    
+                }
+            }
+            catch (Exception e)
+            {
+                TMSLogger.LogIt(" | " + "ParentTables.cs" + " | " + "FC_DepotCity" + " | " + "PackageClasses" + " | " + e.GetType().ToString() + " | " + e.Message + " | ");
             }
 
             return outList;
+            
         }
         // METHOD HEADER COMMENT -------------------------------------------------------------------------------
         /**
@@ -343,17 +356,24 @@ namespace TMSwPages.Classes
         {
             List<object> outList = new List<object>();
 
-            for (int i = 0; i < inList[0].Count; i++)
+            try
             {
-                FC_TripTicketLine current = new FC_TripTicketLine();
+                for (int i = 0; i < inList[0].Count; i++)
+                {
+                    FC_TripTicketLine current = new FC_TripTicketLine();
 
-                current.FC_TripTicketID = int.Parse(inList[0][i]);
-                current.FC_LocalContractID = int.Parse(inList[1][i]);
-                current.PalletsOnTicket = int.Parse(inList[2][i]);
+                    current.FC_TripTicketID = int.Parse(inList[0][i]);
+                    current.FC_LocalContractID = int.Parse(inList[1][i]);
+                    current.PalletsOnTicket = int.Parse(inList[2][i]);
 
-                outList.Add(current);
+                    outList.Add(current);
+                }
             }
-
+            catch (Exception e)
+            {
+                TMSLogger.LogIt(" | " + "ParentTables.cs" + " | " + "FC_TripTicketLine" + " | " + "PackageClasses" + " | " + e.GetType().ToString() + " | " + e.Message + " | ");
+            }
+            
             return outList;
         }
 
@@ -369,9 +389,7 @@ namespace TMSwPages.Classes
 
             return ConvertList;
         }
-
-
-
+        
     }
 
     public class FC_RouteSeg : ParentTable
@@ -521,22 +539,29 @@ namespace TMSwPages.Classes
         {
             List<object> outList = new List<object>();
 
-            for (int i = 0; i < inList[0].Count; i++)
+            try
             {
-                FC_RouteSeg current = new FC_RouteSeg();
+                for (int i = 0; i < inList[0].Count; i++)
+                {
+                    FC_RouteSeg current = new FC_RouteSeg();
 
-                current.FC_TripTicketID = int.Parse(inList[0][i]);
-                current.CityA = int.Parse(inList[1][i]);
-                current.CityB = int.Parse(inList[2][i]);
-                current.PickUpTime = double.Parse(inList[3][i]);
-                current.DropOffTime = double.Parse(inList[4][i]);
-                current.LtlTime = double.Parse(inList[5][i]);
-                current.DrivenTime = double.Parse(inList[6][i]);
-                current.KM = int.Parse(inList[7][i]);
+                    current.FC_TripTicketID = int.Parse(inList[0][i]);
+                    current.CityA = int.Parse(inList[1][i]);
+                    current.CityB = int.Parse(inList[2][i]);
+                    current.PickUpTime = double.Parse(inList[3][i]);
+                    current.DropOffTime = double.Parse(inList[4][i]);
+                    current.LtlTime = double.Parse(inList[5][i]);
+                    current.DrivenTime = double.Parse(inList[6][i]);
+                    current.KM = int.Parse(inList[7][i]);
 
-                outList.Add(current);
+                    outList.Add(current);
+                }
             }
-
+            catch (Exception e)
+            {
+                TMSLogger.LogIt(" | " + "ParentTables.cs" + " | " + "FC_RouteSeg" + " | " + "PackageClasses" + " | " + e.GetType().ToString() + " | " + e.Message + " | ");
+            }
+            
             return outList;
         }
 
@@ -615,6 +640,8 @@ namespace TMSwPages.Classes
 
             progress = outInt;
 
+            TMSLogger.LogIt(" | " + "ParentTables.cs" + " | " + "FC_TripTicket_WProgress" + " | " + "GetTicketProgress" + " | " + "Confirmation" + " | " + "Ticket progress calculated" + " | ");
+
         }
     }
 
@@ -626,8 +653,6 @@ namespace TMSwPages.Classes
         public int Size_in_Palettes { get; set; }
         public int Days_Passes { get; set; }
         public int Is_Complete { get; set; }
-
-        
 
         public FC_TripTicket()
         {
@@ -749,20 +774,27 @@ namespace TMSwPages.Classes
         {
             List<object> outList = new List<object>();
 
-            for (int i = 0; i < inList[0].Count; i++)
+            try
             {
-                FC_TripTicket current = new FC_TripTicket();
+                for (int i = 0; i < inList[0].Count; i++)
+                {
+                    FC_TripTicket current = new FC_TripTicket();
 
-                current.FC_TripTicketID = int.Parse(inList[0][i]);
-                current.FC_CarrierID = int.Parse(inList[1][i]);
-                current.CurrentLocation = inList[2][i];
-                current.Size_in_Palettes = int.Parse(inList[3][i]);
-                current.Days_Passes = int.Parse(inList[4][i]);
-                current.Is_Complete = int.Parse(inList[5][i]);
+                    current.FC_TripTicketID = int.Parse(inList[0][i]);
+                    current.FC_CarrierID = int.Parse(inList[1][i]);
+                    current.CurrentLocation = inList[2][i];
+                    current.Size_in_Palettes = int.Parse(inList[3][i]);
+                    current.Days_Passes = int.Parse(inList[4][i]);
+                    current.Is_Complete = int.Parse(inList[5][i]);
 
-                outList.Add(current);
+                    outList.Add(current);
+                }
             }
-
+            catch(Exception e)
+            {
+                TMSLogger.LogIt(" | " + "ParentTables.cs" + " | " + "FC_TripTicket" + " | " + "PackageClasses" + " | " + e.GetType().ToString() + " | " + e.Message + " | ");
+            }
+            
             return outList;
         }
 
@@ -904,16 +936,23 @@ namespace TMSwPages.Classes
         {
             List<object> outList = new List<object>();
 
-            for (int i = 0; i < inList[0].Count; i++)
+            try
             {
-                FC_BuyerToPlannerContract current = new FC_BuyerToPlannerContract();
+                for (int i = 0; i < inList[0].Count; i++)
+                {
+                    FC_BuyerToPlannerContract current = new FC_BuyerToPlannerContract();
 
-                current.FC_BuyerToPlannerContractID = int.Parse(inList[0][i]);
-                current.FC_LocalContractID = int.Parse(inList[1][i]);
+                    current.FC_BuyerToPlannerContractID = int.Parse(inList[0][i]);
+                    current.FC_LocalContractID = int.Parse(inList[1][i]);
 
-                outList.Add(current);
+                    outList.Add(current);
+                }
             }
-
+            catch (Exception e)
+            {
+                TMSLogger.LogIt(" | " + "ParentTables.cs" + " | " + "FC_BuyerToPlannerContract" + " | " + "PackageClasses" + " | " + e.GetType().ToString() + " | " + e.Message + " | ");
+            }
+            
             return outList;
         }
 
@@ -1055,14 +1094,21 @@ namespace TMSwPages.Classes
         {
             List<object> outList = new List<object>();
 
-            for (int i = 0; i < inList[0].Count; i++)
+            try
             {
-                FC_Carrier current = new FC_Carrier();
+                for (int i = 0; i < inList[0].Count; i++)
+                {
+                    FC_Carrier current = new FC_Carrier();
 
-                current.FC_CarrierID = int.Parse(inList[0][i]);
-                current.Carrier_Name = inList[1][i];
+                    current.FC_CarrierID = int.Parse(inList[0][i]);
+                    current.Carrier_Name = inList[1][i];
 
-                outList.Add(current);
+                    outList.Add(current);
+                }
+            }
+            catch(Exception e)
+            {
+                TMSLogger.LogIt(" | " + "ParentTables.cs" + " | " + "FC_Carrier" + " | " + "PackageClasses" + " | " + e.GetType().ToString() + " | " + e.Message + " | ");
             }
 
             return outList;
@@ -1236,22 +1282,29 @@ namespace TMSwPages.Classes
         {
             List<object> outList = new List<object>();
 
-            for (int i = 0; i < inList[0].Count; i++)
+            try
             {
-                FC_LocalContract current = new FC_LocalContract();
+                for (int i = 0; i < inList[0].Count; i++)
+                {
+                    FC_LocalContract current = new FC_LocalContract();
 
-                current.FC_LocalContractID = int.Parse(inList[0][i]);
-                current.Client_Name = inList[1][i];
-                current.Job_type = int.Parse(inList[2][i]);
-                current.Quantity = int.Parse(inList[3][i]);
-                current.Origin = inList[4][i];
-                current.Destination = inList[5][i];
-                current.Van_type = int.Parse(inList[6][i]);
-                current.Contract_Status = int.Parse(inList[7][i]);
+                    current.FC_LocalContractID = int.Parse(inList[0][i]);
+                    current.Client_Name = inList[1][i];
+                    current.Job_type = int.Parse(inList[2][i]);
+                    current.Quantity = int.Parse(inList[3][i]);
+                    current.Origin = inList[4][i];
+                    current.Destination = inList[5][i];
+                    current.Van_type = int.Parse(inList[6][i]);
+                    current.Contract_Status = int.Parse(inList[7][i]);
 
-                outList.Add(current);
+                    outList.Add(current);
+                }
             }
-
+            catch (Exception e)
+            {
+                TMSLogger.LogIt(" | " + "ParentTables.cs" + " | " + "FC_LocalContracts" + " | " + "PackageClasses" + " | " + e.GetType().ToString() + " | " + e.Message + " | ");
+            }
+            
             return outList;
         }
 
@@ -1413,20 +1466,27 @@ namespace TMSwPages.Classes
         {
             List<object> outList = new List<object>();
 
-            for (int i = 0; i < inList[0].Count; i++)
+            try
             {
-                FC_ContractFromRuss current = new FC_ContractFromRuss();
+                for (int i = 0; i < inList[0].Count; i++)
+                {
+                    FC_ContractFromRuss current = new FC_ContractFromRuss();
 
-                current.Client_Name = inList[0][i];
-                current.Job_type = int.Parse(inList[1][i]);
-                current.Quantity = int.Parse(inList[2][i]);
-                current.Origin = inList[3][i];
-                current.Destination = inList[4][i];
-                current.Van_type = int.Parse(inList[5][i]);
+                    current.Client_Name = inList[0][i];
+                    current.Job_type = int.Parse(inList[1][i]);
+                    current.Quantity = int.Parse(inList[2][i]);
+                    current.Origin = inList[3][i];
+                    current.Destination = inList[4][i];
+                    current.Van_type = int.Parse(inList[5][i]);
 
-                outList.Add(current);
+                    outList.Add(current);
+                }
             }
-
+            catch (Exception e)
+            {
+                TMSLogger.LogIt(" | " + "ParentTables.cs" + " | " + "FC_ContractsFromRuss" + " | " + "PackageClasses" + " | " + e.GetType().ToString() + " | " + e.Message + " | ");
+            }
+            
             return outList;
         }
 
@@ -1569,16 +1629,23 @@ namespace TMSwPages.Classes
         {
             List<object> outList = new List<object>();
 
-            for (int i = 0; i < inList[0].Count; i++)
+            try
             {
-                FC_CarrierNom current = new FC_CarrierNom();
+                for (int i = 0; i < inList[0].Count; i++)
+                {
+                    FC_CarrierNom current = new FC_CarrierNom();
 
-                current.FC_BuyerToPlannerContractID = int.Parse(inList[0][i]);
-                current.FC_CarrierID = int.Parse(inList[1][i]);
+                    current.FC_BuyerToPlannerContractID = int.Parse(inList[0][i]);
+                    current.FC_CarrierID = int.Parse(inList[1][i]);
 
-                outList.Add(current);
+                    outList.Add(current);
+                }
             }
-
+            catch (Exception e)
+            {
+                TMSLogger.LogIt(" | " + "ParentTables.cs" + " | " + "FC_CarrierNom" + " | " + "PackageClasses" + " | " + e.GetType().ToString() + " | " + e.Message + " | ");
+            }
+            
             return outList;
         }
 
@@ -1679,6 +1746,7 @@ namespace TMSwPages.Classes
         * ---------------------------------------------------------------------------------------------------- */
         public override string GetSelectStatment()
         {
+            TMSLogger.LogIt(" | " + "ParentTables.cs" + " | " + "Carrier_WithDepotView" + " | " + "GetSelectStatement" + " | " + "Oh heck" + " | " + "This should not have been called" + " | ");
             return "This should not have been called";
         }
 
@@ -1733,22 +1801,29 @@ namespace TMSwPages.Classes
         {
             List<object> outList = new List<object>();
 
-            for (int i = 0; i < inList[0].Count; i++)
+            try
             {
-                CarrierWithDepot_View current = new CarrierWithDepot_View();
+                for (int i = 0; i < inList[0].Count; i++)
+                {
+                    CarrierWithDepot_View current = new CarrierWithDepot_View();
 
-                current.FC_CarrierID = int.Parse(inList[0][i]);
-                current.Carrier_Name = inList[1][i];
-                current.CityName = inList[2][i];
-                current.FTL_Availibility = int.Parse(inList[3][i]);
-                current.LTL_Availibility = int.Parse(inList[4][i]);
-                current.FTL_Rate = double.Parse(inList[5][i]);
-                current.LTL_Rate = double.Parse(inList[6][i]);
-                current.Reefer_Charge = double.Parse(inList[7][i]);
+                    current.FC_CarrierID = int.Parse(inList[0][i]);
+                    current.Carrier_Name = inList[1][i];
+                    current.CityName = inList[2][i];
+                    current.FTL_Availibility = int.Parse(inList[3][i]);
+                    current.LTL_Availibility = int.Parse(inList[4][i]);
+                    current.FTL_Rate = double.Parse(inList[5][i]);
+                    current.LTL_Rate = double.Parse(inList[6][i]);
+                    current.Reefer_Charge = double.Parse(inList[7][i]);
 
-                outList.Add(current);
+                    outList.Add(current);
+                }
             }
-
+            catch (Exception e)
+            {
+                TMSLogger.LogIt(" | " + "ParentTables.cs" + " | " + "CarrierWithDepot_View" + " | " + "PackageClasses" + " | " + e.GetType().ToString() + " | " + e.Message + " | ");
+            }
+            
             return outList;
         }
 
@@ -1833,15 +1908,22 @@ namespace TMSwPages.Classes
         {
             List<object> outList = new List<object>();
 
-            for (int i = 0; i < inList[0].Count; i++)
+            try
             {
-                FC_Customer current = new FC_Customer();
+                for (int i = 0; i < inList[0].Count; i++)
+                {
+                    FC_Customer current = new FC_Customer();
 
-                current.FC_CustomerID = int.Parse(inList[0][i]);
-                current.CustName = inList[1][i];
-                current.Balance = double.Parse(inList[2][i]);
+                    current.FC_CustomerID = int.Parse(inList[0][i]);
+                    current.CustName = inList[1][i];
+                    current.Balance = double.Parse(inList[2][i]);
 
-                outList.Add(current);
+                    outList.Add(current);
+                }
+            }
+            catch (Exception e)
+            {
+                TMSLogger.LogIt(" | " + "ParentTables.cs" + " | " + "FC_Customer" + " | " + "PackageClasses" + " | " + e.GetType().ToString() + " | " + e.Message + " | ");
             }
 
             return outList;
@@ -1916,15 +1998,23 @@ namespace TMSwPages.Classes
         {
             List<object> outList = new List<object>();
 
-            for (int i = 0; i < inList[0].Count; i++)
+            try
             {
-                FC_CustContratLine current = new FC_CustContratLine();
+                for (int i = 0; i < inList[0].Count; i++)
+                {
+                    FC_CustContratLine current = new FC_CustContratLine();
 
-                current.FC_CustomerID = int.Parse(inList[0][i]);
-                current.FC_LocalContractID = int.Parse(inList[1][i]);
+                    current.FC_CustomerID = int.Parse(inList[0][i]);
+                    current.FC_LocalContractID = int.Parse(inList[1][i]);
 
-                outList.Add(current);
+                    outList.Add(current);
+                }
             }
+            catch (Exception e)
+            {
+                TMSLogger.LogIt(" | " + "ParentTables.cs" + " | " + "FC_CustContractLine" + " | " + "PackageClasses" + " | " + e.GetType().ToString() + " | " + e.Message + " | ");
+            }
+            
 
             return outList;
         }
@@ -1998,15 +2088,21 @@ namespace TMSwPages.Classes
         public override List<object> PackageClasses(List<string>[] inList)
         {
             List<object> outList = new List<object>();
-
-            for (int i = 0; i < inList[0].Count; i++)
+            try
             {
-                FC_Invoice current = new FC_Invoice();
+                for (int i = 0; i < inList[0].Count; i++)
+                {
+                    FC_Invoice current = new FC_Invoice();
 
-                current.FC_InvoiceID = int.Parse(inList[0][i]);
-                current.TotalCost = double.Parse(inList[1][i]);
+                    current.FC_InvoiceID = int.Parse(inList[0][i]);
+                    current.TotalCost = double.Parse(inList[1][i]);
 
-                outList.Add(current);
+                    outList.Add(current);
+                }
+            }
+            catch (Exception e)
+            {
+                TMSLogger.LogIt(" | " + "ParentTables.cs" + " | " + "FC_Invoice" + " | " + "PackageClasses" + " | " + e.GetType().ToString() + " | " + e.Message + " | ");
             }
 
             return outList;
@@ -2092,15 +2188,23 @@ namespace TMSwPages.Classes
         {
             List<object> outList = new List<object>();
 
-            for (int i = 0; i < inList[0].Count; i++)
+            try
             {
-                FC_InvoiceContractLine current = new FC_InvoiceContractLine();
+                for (int i = 0; i < inList[0].Count; i++)
+                {
+                    FC_InvoiceContractLine current = new FC_InvoiceContractLine();
 
-                current.FC_LocalContractID = int.Parse(inList[0][i]);
-                current.FC_InvoiceID = int.Parse(inList[1][i]);
+                    current.FC_LocalContractID = int.Parse(inList[0][i]);
+                    current.FC_InvoiceID = int.Parse(inList[1][i]);
 
-                outList.Add(current);
+                    outList.Add(current);
+                }
             }
+            catch (Exception e)
+            {
+                TMSLogger.LogIt(" | " + "ParentTables.cs" + " | " + "FC_InvoiceContractLine" + " | " + "PackageClasses" + " | " + e.GetType().ToString() + " | " + e.Message + " | ");
+            }
+            
 
             return outList;
         }
