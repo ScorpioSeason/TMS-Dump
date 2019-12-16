@@ -38,7 +38,7 @@
         </Menu>
 
         <!--These tabs allow different functions of the Planner to be accessed from one main page-->
-        <TabControl Name="PlannerTabs" Grid.Row="1" SelectionChanged="TabControl_SelectionChanged">
+        <TabControl Name="PlannerTabs" Grid.Row="1" SelectionChanged="TabControl_SelectionChanged" Margin="-18,22,18,0" Grid.RowSpan="2">
             <!--This is the content of the Available Contracts tab-->
             <TabItem Name="PendingCarriers" Header="Contracts Pending Carriers" >
                 <!--PendingCarriers Tab-->
@@ -150,8 +150,7 @@
                         <Button x:Name="RefreshActiveContracts" Margin="5,5,5,5" Grid.ColumnSpan="1" Grid.Row="0" Grid.Column="5" Click="RefreshActiveContracts_Click">Refresh Active Contracts</Button>
                         <Button x:Name="SetOrderToComplete" Margin="5,5,5,5" Grid.ColumnSpan="1" Grid.Row="0" Grid.Column="4" Click="SetOrderToComplete_Click">Set Order To Complete</Button>
 
-                        <DataGrid Grid.ColumnSpan="6" Grid.Row="1" Grid.Column="0" Margin="5,5,5,5" Name="DGActiveContracts" ItemsSource="{Binding}" AutoGenerateColumns="True" SelectionChanged="DGActiveContracts_SelectionChanged" SelectionMode="Single" IsReadOnly="True">
-                        </DataGrid>
+                        <DataGrid Grid.ColumnSpan="6" Grid.Column="0" Margin="-10,18,20,22" Name="DGActiveContracts" ItemsSource="{Binding}" AutoGenerateColumns="True" SelectionChanged="DGActiveContracts_SelectionChanged" SelectionMode="Single" IsReadOnly="True" Grid.RowSpan="2"/>
                         <TextBlock Margin="5,5,5,5" Grid.ColumnSpan="5" Grid.Row="2" Grid.Column="0" TextWrapping="Wrap">Tickets Connected to Contract:</TextBlock>
                         <DataGrid Grid.ColumnSpan="6" Grid.Row="3" Grid.Column="0" Margin="5,5,5,5" Name="DGConnectedTickets" ItemsSource="{Binding}" AutoGenerateColumns="True" IsReadOnly="True">
                         </DataGrid>
@@ -162,7 +161,7 @@
                 <TabItem.Header>
                     <Label Content="Pending Tickets" MouseLeftButtonDown="RefeshPendingTickets_Click" />
                 </TabItem.Header>
-            <TabItem.Content>
+                <TabItem.Content>
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="159*"></ColumnDefinition>
@@ -214,7 +213,7 @@
                     </Grid>
                 </TabItem.Content>
             </TabItem>
-            <TabItem Name="InvoiceReports" Margin="-2,0,-2,-2">
+            <TabItem Name="InvoiceReports">
                 <TabItem.Header>
                     <Label Content="Invoice Reports" PreviewMouseLeftButtonDown="ViewAllButton_Click" />
                 </TabItem.Header>
