@@ -103,9 +103,9 @@
                         </Grid.RowDefinitions>
                         <TextBlock Margin="5,5,5,5" Grid.ColumnSpan="5" Grid.Row="0" Grid.Column="0" TextWrapping="Wrap">Active Contracts:</TextBlock>
                         <Button x:Name="RefeshPendingTickets" Margin="5,5,5,5" Grid.ColumnSpan="1" Grid.Row="0" Grid.Column="5" Click="RefeshPendingTickets_Click">Refresh Pending Tickets</Button>
-                        <DataGrid Grid.ColumnSpan="6" Grid.Row="1" Grid.Column="0" Margin="5,5,5,5" Name="DGPendingTickets" ItemsSource="{Binding}" AutoGenerateColumns="True" SelectionMode="Single" IsReadOnly="True">
+                        <DataGrid Grid.ColumnSpan="6" Grid.Row="1" Grid.Column="0" Margin="5,5,5,0" Name="DGPendingTickets" ItemsSource="{Binding}" AutoGenerateColumns="True" SelectionMode="Single" IsReadOnly="True" Height="301" VerticalAlignment="Top">
                         </DataGrid>
-                        <Button x:Name="StartSelectedTicket" Margin="5,5,5,5" Grid.ColumnSpan="1" Grid.Row="2" Grid.Column="5" Click="StartSelectedTicket_Click">Start all Tickets</Button>
+                        <Button x:Name="StartSelectedTicket" Margin="5,311,5,30" Grid.ColumnSpan="1" Grid.Row="1" Grid.Column="5" Click="StartSelectedTicket_Click">Start all Tickets</Button>
                     </Grid>
                 </TabItem.Content>
             </TabItem>
@@ -208,7 +208,7 @@
                             <RowDefinition Height="auto"></RowDefinition>
                         </Grid.RowDefinitions>
                         <Button x:Name="RefreshConfirmed" Grid.Row="0" Grid.Column="4" Margin="5.333,5,5.334,4.667" Grid.ColumnSpan="3" Click="RefreshConfirmed_Click">Refresh Contracts to Confirm</Button>
-                        <DataGrid Grid.ColumnSpan="7" Grid.Row="1" Grid.Column="0" Margin="5,5.333,5.334,5" Name="DGConfirmCompletion" ItemsSource="{Binding}" AutoGenerateColumns="True" SelectionMode="Single" IsReadOnly="True">
+                        <DataGrid Grid.ColumnSpan="7" Grid.Row="1" Grid.Column="0" Margin="5,5,5,10" Name="DGConfirmCompletion" ItemsSource="{Binding}" AutoGenerateColumns="True" SelectionMode="Single" IsReadOnly="True">
                         </DataGrid>
                         <Button x:Name="Confirm" Grid.Row="2" Grid.Column="6" Margin="4.666,5,5.334,4.667" Grid.ColumnSpan="1" Click="Confirm_Click">Confirm Completion</Button>
                     </Grid>
