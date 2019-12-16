@@ -172,6 +172,7 @@ namespace TMSwPages
                         if (ticketsFromScreen.Count == 0)
                         {
                             Complete.IsEnabled = true;
+                            ExitMessage.Visibility = Visibility.Hidden;
                         }
                     }
                 }

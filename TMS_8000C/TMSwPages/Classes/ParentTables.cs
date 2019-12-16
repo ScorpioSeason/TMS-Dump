@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace TMSwPages.Classes
 {
@@ -598,7 +594,7 @@ namespace TMSwPages.Classes
 
             foreach (FC_RouteSeg x in TicketSegs)
             {
-                if (LoadCSV.ToCityName(x.CityB).ToUpper() == InTicket.CurrentLocation.ToUpper())
+                if (LoadCSV.ToCityName(x.CityA).ToUpper() == InTicket.CurrentLocation.ToUpper())
                 {
                     break;
                 }
@@ -612,8 +608,13 @@ namespace TMSwPages.Classes
             RouteSumData TotalData = new RouteSumData();
             TotalData = TotalData.SummerizeTrip(TicketSegs);
 
-            //progress = (int)(100 * (TraveledData.totalKM / TotalData.totalKM));
-            progress = 86;
+            double output = (double)TraveledData.totalKM / (double)TotalData.totalKM;
+            output *= 100;
+
+            int outInt = (int)output;
+
+            progress = outInt;
+
         }
     }
 
@@ -1772,19 +1773,6 @@ namespace TMSwPages.Classes
         }
     }
 
-    public class FC_LocalContractPROGRESS 
-    {
-        public int FC_LocalContractID { get; set; }
-        public string Client_Name { get; set; }
-        public int Job_type { get; set; }
-        public int Quantity { get; set; }
-        public string Origin { get; set; }
-        public string Destination { get; set; }
-        public int Van_type { get; set; }
-        public int Contract_Status { get; set; }
-        public int Progress { get; set; }
-    }
-
     public class FC_Customer : ParentTable
     {
         public int FC_CustomerID { get; set; }
@@ -1840,7 +1828,6 @@ namespace TMSwPages.Classes
 
             return outList;
         }
-
 
         public override List<object> PackageClasses(List<string>[] inList)
         {
