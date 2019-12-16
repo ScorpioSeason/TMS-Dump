@@ -82,7 +82,10 @@
                     </DockPanel>
                 </TabItem.Content>
             </TabItem>
-            <TabItem Name="ActiveTickets" Header="Active Tickets">
+            <TabItem Name="ActiveTickets">
+                <TabItem.Header>
+                    <Label Content="Active Tickets" MouseLeftButtonDown="RefreshActiveTickets_Click"/>
+                </TabItem.Header>
                 <TabItem.Content>
                     <Grid Name="ActiveTicketsInnerGrid">
                         <Grid.ColumnDefinitions>
