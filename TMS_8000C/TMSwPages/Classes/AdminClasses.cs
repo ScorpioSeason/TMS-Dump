@@ -274,7 +274,16 @@ namespace TMSwPages.Classes
                 AppendLogFile(myLog);
             };
 
-            LogStatusEvent(myLog);
+
+            try
+            {
+                LogStatusEvent(myLog);
+            }
+            catch(Exception e)
+            {
+                //megan look here
+            }
+            
 
         }
 

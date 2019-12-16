@@ -225,38 +225,41 @@ namespace TMSwPages.Classes
         {
             List<FC_TripTicket> ReturnTickets = new List<FC_TripTicket>();
 
-            int TempTickedID = -10;
+            if (InContract != null)
+            {
+                int TempTickedID = -10;
 
-            if (InContract.Quantity == 0 || InContract.Quantity == 26)
-            {
-                FC_TripTicket newTicket = new FC_TripTicket(TempTickedID, -1, InContract.Origin, 0, 0, 0);
-                ReturnTickets.Add(newTicket);
-            }
-            else if(InContract.Quantity < 26)
-            {
-                FC_TripTicket newTicket = new FC_TripTicket(TempTickedID, -1, InContract.Origin, InContract.Quantity, 0, 0);
-                ReturnTickets.Add(newTicket);
-            }
-            else if(InContract.Quantity > 26)
-            {
-                FC_TripTicket newTicket = new FC_TripTicket();
-
-                do
+                if (InContract.Quantity == 0 || InContract.Quantity == 26)
                 {
-                    if(InContract.Quantity >= 26)
-                    {
-                        newTicket = new FC_TripTicket(TempTickedID--, -1, InContract.Origin, 0, 0, 0);
-                    }
-                    else if (InContract.Quantity < 26)
-                    {
-                        newTicket = new FC_TripTicket(TempTickedID--, -1, InContract.Origin, InContract.Quantity, 0, 0);
-                    }
-
+                    FC_TripTicket newTicket = new FC_TripTicket(TempTickedID, -1, InContract.Origin, 0, 0, 0);
                     ReturnTickets.Add(newTicket);
+                }
+                else if (InContract.Quantity < 26)
+                {
+                    FC_TripTicket newTicket = new FC_TripTicket(TempTickedID, -1, InContract.Origin, InContract.Quantity, 0, 0);
+                    ReturnTickets.Add(newTicket);
+                }
+                else if (InContract.Quantity > 26)
+                {
+                    FC_TripTicket newTicket = new FC_TripTicket();
 
-                    InContract.Quantity -= 26;
+                    do
+                    {
+                        if (InContract.Quantity >= 26)
+                        {
+                            newTicket = new FC_TripTicket(TempTickedID--, -1, InContract.Origin, 0, 0, 0);
+                        }
+                        else if (InContract.Quantity < 26)
+                        {
+                            newTicket = new FC_TripTicket(TempTickedID--, -1, InContract.Origin, InContract.Quantity, 0, 0);
+                        }
 
-                } while (InContract.Quantity > 0);
+                        ReturnTickets.Add(newTicket);
+
+                        InContract.Quantity -= 26;
+
+                    } while (InContract.Quantity > 0);
+                }
             }
 
             return ReturnTickets;

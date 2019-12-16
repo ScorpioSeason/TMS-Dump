@@ -6,8 +6,11 @@ namespace TMSwPages.Classes
     {
         public static void IncrementOneDay()
         {
+
+            string FirstQuery = "Select * from FC_TripTicket where not Is_Complete = 0;";
+
             FC_TripTicket t = new FC_TripTicket();
-            List<FC_TripTicket> AllTickets = t.ObjToTable(SQL.Select(t));
+            List<FC_TripTicket> AllTickets = t.ObjToTable(SQL.Select(t, FirstQuery));
 
             foreach (FC_TripTicket x in AllTickets)
             {
@@ -91,6 +94,31 @@ namespace TMSwPages.Classes
                 }
             }
 
+            string theQuery = "Select * from FC_TripTicket where Is_Complete = 1";
+
+            FC_TripTicket w = new FC_TripTicket();
+            List<FC_TripTicket> ActiveTickets = t.ObjToTable(SQL.Select(t, theQuery));
+
+            foreach(FC_TripTicket x in ActiveTickets)
+            {
+                bool foundNotComple = false;
+
+                List<FC_LocalContract> ContactsPerTick = PlannerClass.ContractsPerTicket_Populate(x);
+
+                foreach(FC_LocalContract y in ContactsPerTick)
+                {
+                    if(y.Contract_Status < 2)
+                    {
+                        foundNotComple = true;
+                    }
+                }
+
+                if(!foundNotComple)
+                {
+                    theQuery = "Update FC_TripTicket set Is_Complete = 2 where FC_TripTicketID = " + x.FC_CarrierID + ";";
+                    SQL.GenericFunction(theQuery);
+                }
+            }
         }
     }
 }

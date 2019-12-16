@@ -5,8 +5,6 @@ CREATE DATABASE duane_test;
 -- select the database
 USE duane_test;
 
-
-
 create table FC_LocalContract
 (
 	FC_LocalContractID int not null,
