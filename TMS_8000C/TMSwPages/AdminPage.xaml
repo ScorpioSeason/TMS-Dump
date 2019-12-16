@@ -72,7 +72,7 @@
                             <DatePicker Name="LogStartDate" DockPanel.Dock="top" Grid.Row="0" Grid.Column="0" Margin="5,5,5,5" SelectedDateChanged="LogDate_SelectedDateChanged"/>
                             <DatePicker Name="LogEndDate" DockPanel.Dock="top" Grid.Row="0" Grid.Column="1" Margin="5,5,5,5" SelectedDateChanged="LogDate_SelectedDateChanged"/>
                             <TextBox  x:Name="LogSearchTags" DockPanel.Dock="top" Grid.Row="0" Grid.Column="2" Margin="5,5,5,5" Grid.ColumnSpan="2"/>
-                            <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Click="LogLoadClick" Content="Search"/>
+                            <Button DockPanel.Dock="top" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Click="LogSearchClick" Content="Search"/>
 
                             <!--Main Content Row (1) -->
                             <DataGrid Grid.ColumnSpan="5" Grid.Row="1" Name="LogsList" ItemsSource="{Binding}" Margin="5,5,5,5" SelectionMode="Single" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
