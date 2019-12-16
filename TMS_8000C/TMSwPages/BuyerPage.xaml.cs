@@ -46,7 +46,6 @@ namespace TMSwPages
             DG1.ItemsSource = BuyerClass.Contracts;
             DG2.ItemsSource = BuyerClass.acceptedContracts;
             TMSLogger.LogStatusEvent += LogStatusEventHandler;
-
             Folder.ItemsSource = invoiceFiles; 
         }
 
@@ -278,13 +277,16 @@ namespace TMSwPages
         {
             invoiceFiles.Clear(); 
 
-            foreach (string file in Directory.EnumerateFiles(Directory.GetCurrentDirectory() + "/Invoices", "*.txt"))
+            //FileInfo fold = new FileInfo(Directory.GetCurrentDirectory() + "")
+
+            foreach (string file in Directory.EnumerateFiles(Directory.GetCurrentDirectory() + "/Invoices/", "*.txt"))
             {
                 FileInfo fi = new FileInfo(file);
 
                 invoiceFiles.Add(fi.FullName);
 
             }
+
             Folder.Items.Refresh(); 
         }
 
@@ -320,7 +322,7 @@ namespace TMSwPages
                     /// Fill the working list with lines from the file 
                     while (!streamReader.EndOfStream)
                     {
-                        invoiceText += streamReader.ReadLine();
+                        invoiceText += streamReader.ReadLine() + "\n";
                     }
 
                     ViewInvoice.Text = invoiceText;
@@ -337,31 +339,6 @@ namespace TMSwPages
 
 
             }
-
-
-            //Folder.Items.Clear(); 
-
-            //if (d.Exists)
-            //{
-            //    FileInfo[] Files = d.GetFiles("*.txt"); //Getting Text files
-            //    List<ViewInvoiceClass> filenames = new List<ViewInvoiceClass>();
-            //    foreach (FileInfo file in Files)
-            //    {
-
-
-
-            //        ViewInvoiceClass temp = new ViewInvoiceClass();
-            //        temp.theInvice = file.Name;
-            //        filenames.Add(temp);
-
-
-            //    }
-
-
-
-
-            //    Folder.ItemsSource = filenames;
-            //}
 
            
         }

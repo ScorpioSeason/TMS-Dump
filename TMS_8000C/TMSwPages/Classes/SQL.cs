@@ -165,7 +165,7 @@ namespace TMSwPages.Classes
         public static List<object> SelectFromCMP(ParentTable tabletype)
         {
             SQL.close();
-            int Use_Test_CMP = 0;
+            int Use_Test_CMP = 1; // Changed for testing
 
             string connectionString = string.Empty;
 
