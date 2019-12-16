@@ -213,7 +213,7 @@
                     </Grid>
                 </TabItem.Content>
             </TabItem>
-            <TabItem Name="InvoiceReports>
+            <TabItem Name="InvoiceReports">
                 <TabItem.Header>
                     <Label Content="Invoice Reports" PreviewMouseLeftButtonDown="ViewAllButton_Click" />
                 </TabItem.Header>
