@@ -58,7 +58,7 @@
             <ComboBoxItem Name="buyer" Content="Buyer"></ComboBoxItem>
             <ComboBoxItem Name="planner" Content="Planner"></ComboBoxItem>
         </ComboBox>
-        <PasswordBox Name="password" Grid.Row="2" Grid.Column="1" MinWidth="100" HorizontalAlignment="center" VerticalAlignment="center"/>
+        <PasswordBox Name="password" Grid.Row="2" Grid.Column="1" MinWidth="100" HorizontalAlignment="center" VerticalAlignment="center" KeyUp="Button_KeyUp"/>
         <Button Grid.Row="2" Grid.Column="1" HorizontalAlignment="center" VerticalAlignment="Top" MinWidth="100" Click="ValidateLogIn" Margin="83.333,123.333,83.333,0" Grid.RowSpan="2">Log In</Button>
 
     </Grid>
