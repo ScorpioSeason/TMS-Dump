@@ -161,6 +161,7 @@ namespace TMSwPages.Classes
             return RetrunedContracts;
         }
 
+
         public static List<CustomerName> GetAllCustomerNames()
         {
             string query = "select DISTINCT client_name from FC_LocalContract;";

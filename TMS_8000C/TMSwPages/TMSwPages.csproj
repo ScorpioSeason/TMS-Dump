@@ -107,6 +107,9 @@
     <Compile Include="Classes\PlannerClass.cs" />
     <Compile Include="Classes\SQL.cs" />
     <Compile Include="Classes\TimePass.cs" />
+    <Compile Include="InvoiceSelection.xaml.cs">
+      <DependentUpon>InvoiceSelection.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
@@ -128,6 +131,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="BuyerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InvoiceSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

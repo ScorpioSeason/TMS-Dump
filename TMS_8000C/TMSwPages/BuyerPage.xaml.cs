@@ -250,5 +250,13 @@ namespace TMSwPages
             }
             DGContractsForCustomer.ItemsSource = BuyerClass.ContractsForCustomer;
         }
+
+        
+
+        private void SelectCustomer_Click(object sender, RoutedEventArgs e)
+        {
+            InvoiceSelection newpage = new InvoiceSelection();
+            this.NavigationService.Navigate(newpage);
+        }
     }
 }
