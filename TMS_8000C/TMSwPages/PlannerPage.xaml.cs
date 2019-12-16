@@ -294,10 +294,5 @@ namespace TMSwPages
                 ContractsPreInvouce.ItemsSource = PlannerClass.GetContracts_PreInvoice(SelectedInvoice);
             }
         }
-
-        private void Label_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-
-        }
     }
 }
