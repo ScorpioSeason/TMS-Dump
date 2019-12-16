@@ -38,7 +38,7 @@
         </Menu>
 
         <!--These tabs allow different functions of the Planner to be accessed from one main page-->
-        <TabControl Name="PlannerTabs" Grid.Row="1" SelectionChanged="TabControl_SelectionChanged" Margin="-18,22,18,0" Grid.RowSpan="2">
+        <TabControl Name="PlannerTabs" Grid.Row="1" SelectionChanged="TabControl_SelectionChanged" Grid.RowSpan="2">
             <!--This is the content of the Available Contracts tab-->
             <TabItem Name="PendingCarriers" Header="Contracts Pending Carriers" >
                 <!--PendingCarriers Tab-->
@@ -82,7 +82,7 @@
                     </DockPanel>
                 </TabItem.Content>
             </TabItem>
-            <TabItem Name="PendingTickets" Header="Pending Tickets" Height="22" VerticalAlignment="Top">
+            <TabItem Name="PendingTickets" Header="Pending Tickets">
                 <TabItem.Content>
                     <Grid>
                         <Grid.ColumnDefinitions>
